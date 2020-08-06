@@ -41,6 +41,10 @@ export default {
         template: 'src/containers/Landing',
         getData: () => ({
           readmeSections,
+          repoInfo: {
+            owner: repoOwner,
+            name: repoName,
+          },
         }),
       },
     ]

@@ -3,3 +3,8 @@ export interface ReadmeSection {
   html: string
   titleHTML: string
 }
+
+export interface RepoInfo {
+  owner: string
+  name: string
+}

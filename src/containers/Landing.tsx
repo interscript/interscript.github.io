@@ -1,10 +1,10 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-import { ReadmeSection } from 'types'
+import { ReadmeSection, RepoInfo } from 'types'
 import styled from 'styled-components'
 
 export default () => {
-  const { readmeSections }: { readmeSections: ReadmeSection[] } = useRouteData()
+  const { readmeSections, repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo } = useRouteData()
 
   return (
     <>
@@ -15,7 +15,13 @@ export default () => {
             href={`#${section.id}`}
             dangerouslySetInnerHTML={{ __html: section.titleHTML }} />
         )}
+        <SectionNavItem
+            key="gh"
+            href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
+          <strong>View on GitHub</strong>
+        </SectionNavItem>
       </SectionNav>
+
       <SectionGrid>
         {readmeSections.map(section =>
           <Section
