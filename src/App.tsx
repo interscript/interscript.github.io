@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Root, Routes } from 'react-static'
 import { Router } from '@reach/router'
+import { Helmet } from 'react-helmet'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import styled, { createGlobalStyle } from 'styled-components'
 import logo from 'assets/symbol.svg'
@@ -10,6 +11,13 @@ function App() {
     <Root>
 
       <GlobalStyle />
+
+      <Helmet>
+        <title>Interscript: Interoperable script conversion systems</title>
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Helmet>
 
       <LogoHeader>
         <LogoSymbol src={logo} alt="is" />
