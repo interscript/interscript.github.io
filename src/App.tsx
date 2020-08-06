@@ -107,11 +107,12 @@ const ProjectTitleLarge = styled(ProjectTitle)`
     text-align: center;
     margin: 0;
     padding: 0;
-    letter-spacing: -.025em;
+    letter-spacing: -.02em;
   }
 
   .tagline {
     margin-top: .5em;
+    line-height: 1.1;
   }
 
   @media screen and (min-width: 800px) {
