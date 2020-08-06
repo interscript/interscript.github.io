@@ -123,7 +123,7 @@ const ProjectTitleLarge = styled(ProjectTitle)`
     line-height: 1.1;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     flex-flow: row-reverse nowrap;
 
     .tagline {
@@ -165,7 +165,7 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
     margin-left: .5rem;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     left: unset;
     right: unset;
     transform: scale(0.9);
@@ -190,7 +190,7 @@ const MainContent = styled.main`
     border-bottom: 1px dotted #008075;
   }
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 900px) {
     margin: 0 auto;
     width: 901px;
   }

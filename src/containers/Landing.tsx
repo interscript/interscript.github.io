@@ -38,7 +38,7 @@ const SectionNav = styled.nav`
   margin: 2rem 2rem 1rem 2rem;
   text-align: center;
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     text-align: unset;
     margin: 2rem 0 1rem 1rem;
   }
@@ -54,7 +54,7 @@ const SectionNavItem = styled.a`
     border-bottom: none;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     &::before {
       content: "•";
       display: inline;
@@ -225,7 +225,7 @@ const SectionGrid = styled.div`
 
   pre {
     overflow-x: auto;
-    padding: 1rem;
+    padding: .75rem 1rem;
     margin: 0 -1rem;
 
     ${GITHUB_HIGHLIGHT_THEME}
@@ -235,7 +235,7 @@ const SectionGrid = styled.div`
     padding: .1em .5em;
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 900px) {
     pre {
       margin: 0;
     }
