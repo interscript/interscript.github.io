@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouteData } from 'react-static'
 import { ReadmeSection, RepoInfo } from 'types'
 import axios, { AxiosResponse } from 'axios'
@@ -61,7 +61,13 @@ const LiveDemo: React.FC<{}> = function () {
   const [result, setResult] = useState<string | null | undefined>(null)
   const [error, setError] = useState<string | null>(null)
 
-  const systemCode = selectedSystem !== null ? systemToCode(selectedSystem) : null
+  const systemCode: string | null = selectedSystem !== null
+    ? systemToCode(selectedSystem)
+    : null
+
+  useEffect(() => {
+    setError(null)
+  }, [systemCode, sampleText])
 
   async function handleConvert() {
     if (systemCode !== null && sampleText.trim() !== '') {
