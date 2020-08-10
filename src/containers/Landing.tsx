@@ -19,14 +19,23 @@ export default () => {
   const { readmeSections, repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo } =
   useRouteData()
 
+  const [showDemo, setShowDemo] = useState(false)
+
+  useEffect(() => {
+    // Ensures interactive elements are not included in static HTML
+    setShowDemo(true)
+  }, [])
+
   return (
     <>
-      <SectionGrid>
-        <Section>
-          <h2>Try it live</h2>
-          <LiveDemo />
-        </Section>
-      </SectionGrid>
+      {showDemo
+        ? <SectionGrid>
+            <Section>
+              <h2>Try it live</h2>
+              <LiveDemo />
+            </Section>
+          </SectionGrid>
+        : null}
 
       <SectionNav>
         {readmeSections.map(section =>
