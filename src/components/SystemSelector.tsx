@@ -314,7 +314,7 @@ const SystemPropertySelectorGroup = styled.div`
 
   > * {
     margin-right: .5rem;
-    min-width: 20vw;
+    min-width: 30vw;
     margin-bottom: .5rem;
     flex: 1;
   }

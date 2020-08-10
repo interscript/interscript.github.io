@@ -150,6 +150,7 @@ const LiveDemo: React.FC<{}> = function () {
 
 const ConvertButton = styled.button`
   flex-shrink: 0;
+  margin: 0;
   padding: .25rem 1rem;
   border: 0;
   font-size: 100%;
@@ -177,8 +178,10 @@ const SampleTextArea = styled.textarea`
   width: 100%;
   font-size: 100%;
   padding: .5rem;
+  margin: 0;
   background: whiteSmoke;
   border: 0;
+  display: block;
 `
 
 
