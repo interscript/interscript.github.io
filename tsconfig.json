@@ -9,6 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
