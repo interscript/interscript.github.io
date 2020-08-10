@@ -101,6 +101,7 @@ const LogoHeader = styled.header`
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
+  z-index: 2;
 `
 
 const LogoSymbol = styled.img`
