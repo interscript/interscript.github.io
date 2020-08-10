@@ -74,7 +74,6 @@ function prepareReadmeSection(cheerioEl)/*: ReadmeSection | undefined */ {
   }
 
   const sectionTitle = cheerioEl('h2').clone().removeAttr('id');
-  console.debug(sectionTitle)
   sectionTitle.find('a.anchor').remove();
 
   // GitHub’s anchors have user-content- prefix in their IDs (but not in hrefs)
