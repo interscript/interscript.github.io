@@ -23,20 +23,13 @@ export default () => {
 
   useEffect(() => {
     // Ensures interactive elements are not included in static HTML
-    setShowDemo(true)
+    if (window.innerWidth >= 900) {
+      setShowDemo(true)
+    }
   }, [])
 
   return (
     <>
-      {showDemo
-        ? <SectionGrid>
-            <Section>
-              <h2>Try it live</h2>
-              <LiveDemo />
-            </Section>
-          </SectionGrid>
-        : null}
-
       <SectionNav>
         {readmeSections.map(section =>
           <SectionNavItem
@@ -52,6 +45,17 @@ export default () => {
       </SectionNav>
 
       <SectionGrid>
+        <Section>
+          <h2>
+            <a href="javascript: void 0;" onClick={() => setShowDemo(!showDemo)}>
+              {showDemo ? "Hide live demo" : "Try it live"}
+            </a>
+          </h2>
+          {showDemo
+            ? <LiveDemo />
+            : null}
+        </Section>
+
         {readmeSections.map(section =>
           <Section
             key={section.id}
@@ -118,6 +122,9 @@ const LiveDemo: React.FC<{}> = function () {
         <SampleTextArea
           value={sampleText}
           placeholder={placeholder}
+          style={{ boxShadow: (sampleText.trim() === '' && systemCode !== null)
+            ? `#${primaryColor} 0 0 0px .5rem`
+            : undefined }}
           onChange={(evt) => setSampleText(evt.currentTarget.value)} />
 
         <ConvertButton

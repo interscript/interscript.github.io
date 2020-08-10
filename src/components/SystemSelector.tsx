@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import iso15924_data from 'iso-15924/index-by-code.json'
 import iso639_2_data from 'iso-639-2'
+import { primaryColor } from '../App'
 
 
 type WritingSystemCode = keyof typeof iso15924_data
@@ -138,7 +139,9 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
 
   return (
     <SystemPropertySelectorGroup>
-      <SystemPropertySelector title="Source writing system">
+      <SystemPropertySelector
+          title="Source writing system"
+          highlighted={!systemSpec.source}>
         <SystemPropertyChoiceList>
           {sourceSystemCodes.map(sourceSystemCode =>
             <Choice
@@ -153,7 +156,9 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
         </SystemPropertyChoiceList>
       </SystemPropertySelector>
 
-      <SystemPropertySelector title="Language">
+      <SystemPropertySelector
+          title="Language"
+          highlighted={!systemSpec.lang}>
         <SystemPropertyChoiceList>
           {langCodes.map(langCode =>
             <Choice
@@ -168,7 +173,9 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
         </SystemPropertyChoiceList>
       </SystemPropertySelector>
 
-      <SystemPropertySelector title="Target writing system">
+      <SystemPropertySelector
+          title="Target writing system"
+          highlighted={!systemSpec.target}>
         <SystemPropertyChoiceList>
           {targetSystemCodes.map(targetSystemCode =>
             <Choice
@@ -183,7 +190,9 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
         </SystemPropertyChoiceList>
       </SystemPropertySelector>
 
-      <SystemPropertySelector title="Authority">
+      <SystemPropertySelector
+          title="Conversion system authority"
+          highlighted={systemSpec.source && systemSpec.target && systemSpec.lang && !systemSpec.authority}>
         <SystemPropertyChoiceList>
           {authorityCodes.map(authorityCode =>
             <Choice
@@ -199,8 +208,9 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
       </SystemPropertySelector>
 
       <SystemPropertySelector
-          title="System ID"
-          style={{ display: (systemSpec.authority || systemSpec.id) ? 'block' : 'hidden' }}>
+          title="Conversion system ID"
+          highlighted={systemSpec.authority && !systemSpec.id}
+          style={{ display: (systemSpec.authority || systemSpec.id) ? 'block' : 'none' }}>
         <SystemPropertyChoiceList>
           {systemIDs.map(id =>
             <Choice
@@ -222,9 +232,10 @@ export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSyste
 const Choice: React.FC<{
   available: boolean
   selected: boolean
+  availableStyle?: React.CSSProperties
   onSelect: () => void
   onForce?: () => void
-}> = function({ available, selected, onSelect, onForce, children }) {
+}> = function({ available, selected, onSelect, onForce, availableStyle, children }) {
   const action = available ? onSelect : onForce
 
   return (
@@ -233,6 +244,7 @@ const Choice: React.FC<{
           fontWeight: selected ? 'bold' : 'normal',
           opacity: available ? 1 : 0.3,
           cursor: !onForce && !available ? 'not-allowed' : 'unset',
+          ...(availableStyle || {}),
         }}>
       <label>
         <SystemPropertyChoiceInput
@@ -271,11 +283,24 @@ const WritingSystem: React.FC<{ code: WritingSystemCode }> = function ({ code })
 };
 
 
-const SystemPropertySelector: React.FC<{ title: string, style?: React.CSSProperties }> =
-function ({ title, children, style }) {
+const SystemPropertySelector: React.FC<{
+  title: string
+  style?: React.CSSProperties
+  highlighted?: boolean
+}> =
+function ({ title, highlighted, children, style }) {
+  const sectionStyle: React.CSSProperties = {
+    ...style,
+    borderColor: highlighted ? `#${primaryColor}` : undefined,
+  }
+  const headerStyle: React.CSSProperties = {
+    color: highlighted ? 'white' : undefined,
+    background: highlighted ? `#${primaryColor}` : undefined,
+  }
+
   return (
-    <SystemPropertySelectorWrapper style={style}>
-      <h4>{title}</h4>
+    <SystemPropertySelectorWrapper style={sectionStyle}>
+      <h4 style={headerStyle}>{title}</h4>
       {children}
     </SystemPropertySelectorWrapper>
   )
@@ -287,14 +312,21 @@ const SystemPropertySelectorGroup = styled.div`
   flex-flow: row wrap;
   align-items: stretch;
 
+  > * {
+    margin-right: .5rem;
+    min-width: 20vw;
+    margin-bottom: .5rem;
+    flex: 1;
+  }
+
   @media screen and (min-width: 900px) {
     flex-flow: row nowrap;
     align-items: flex-start;
-  }
 
-  > * {
-    margin-right: 1rem;
-    flex: 1;
+    > * {
+      min-width: unset;
+      margin-bottom: unset;
+    }
   }
 `
 
@@ -305,6 +337,7 @@ const SystemPropertySelectorWrapper = styled.section`
   padding-left: .5rem;
 
   > h4 {
+    font-size: 90%;
     background: whiteSmoke;
     padding: .5rem;
     margin-left: -.5rem;
