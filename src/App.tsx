@@ -182,6 +182,8 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
 
   box-shadow: rgba(0, 0, 0, 0.2) 0 10px 30px -10px;
 
+  z-index: 3;
+
   .tagline {
     text-align: right;
     margin: 0;
