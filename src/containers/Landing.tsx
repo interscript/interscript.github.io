@@ -114,7 +114,7 @@ const LiveDemo: React.FC<{}> = function () {
         <ResultTextArea
           placeholder={selectedSystem === null ? "Select a system above" : undefined}
           disabled
-          value={result === undefined ? 'Loading…' : result || error} />
+          value={result === undefined ? 'Loading…' : result || error || ''} />
 
       </SampleAndResult>
 
