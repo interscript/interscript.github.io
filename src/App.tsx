@@ -57,7 +57,7 @@ const HeaderTitle: React.FC<{}> = function() {
       {showCompact
         ? <ProjectTitleSmallWithLogo role="presentation">
             <h1 className="title"><b>Inter</b>script</h1>
-            <LogoSymbolSmall src={logo} role="presentation" aria-role="presentation" />
+            <LogoSymbolSmall src={logo} role="presentation" />
             <p className="tagline">
               Interoperable<br />
               script&nbsp;conversion&nbsp;systems
