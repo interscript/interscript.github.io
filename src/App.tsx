@@ -6,6 +6,34 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import styled, { createGlobalStyle } from 'styled-components'
 import logo from 'assets/symbol.svg'
 
+
+export const primaryColor = '008075'
+
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue',
+      Helvetica, 'Lucida Grande', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #${primaryColor};
+  }
+`
+
+
 function App() {
   return (
     <Root>
@@ -44,6 +72,7 @@ const HeaderTitle: React.FC<{}> = function() {
     const headerPadding = 20
     setShowCompact(currPos.y < (0 - logoHeight + headerPadding))
   })
+
   return (
     <>
       <ProjectTitleLarge>
@@ -193,29 +222,6 @@ const MainContent = styled.main`
   @media screen and (min-width: 900px) {
     margin: 0 auto;
     width: 901px;
-  }
-`
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family:
-      'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue',
-      Helvetica, 'Lucida Grande', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.4;
-
-    margin: 0;
-    padding: 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: #008075;
   }
 `
 
