@@ -14,7 +14,7 @@ import { primaryColor } from '../App'
 import { getLanguageTitleFrom6392BorT } from 'components/isoLang'
 
 
-const API_ENDPOINT = 'https://zkjrxjsleh.execute-api.us-east-1.amazonaws.com/prod/interscript'
+const API_ENDPOINT = 'https://api.interscript.com'
 
 
 export default () => {
