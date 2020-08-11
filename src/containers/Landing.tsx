@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { useRouteData } from 'react-static'
 import { ReadmeSection, RepoInfo } from 'types'
 import axios, { AxiosResponse } from 'axios'
-import iso639_2_data from 'iso-639-2'
 import styled from 'styled-components'
+import { SystemSelector } from '../components/SystemSelector'
+
 import {
-  SystemSelector,
   ScriptConversionSystem,
   systemToCode,
-} from '../components/SystemSelector'
+} from '../scs'
+
 import { primaryColor } from '../App'
+import { getLanguageTitleFrom6392BorT } from 'components/isoLang'
 
 
 const API_ENDPOINT = 'https://zkjrxjsleh.execute-api.us-east-1.amazonaws.com/prod/interscript'
@@ -108,7 +110,7 @@ const LiveDemo: React.FC<{}> = function () {
 
   let placeholder: string
   if (selectedSystem?.lang) {
-    placeholder = `Enter something in ${iso639_2_data.find(i => i.iso6392B === selectedSystem?.lang)?.name || "selected writing system"}…`
+    placeholder = `Enter something in ${getLanguageTitleFrom6392BorT(selectedSystem.lang) || "selected writing system"}…`
   } else {
     placeholder = "Enter something…"
   }

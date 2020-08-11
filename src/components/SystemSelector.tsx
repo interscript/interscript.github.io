@@ -1,50 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import iso15924_data from 'iso-15924/index-by-code.json'
-import iso639_2_data from 'iso-639-2'
 import { primaryColor } from '../App'
-
-
-type WritingSystemCode = keyof typeof iso15924_data
-
-type LangCode = typeof iso639_2_data[number]["iso6392B"]
-
-export interface ScriptConversionSystem {
-  // ISO 639-2 3-letter code
-  lang: LangCode
-
-  // ISO 15924 codes
-  source: WritingSystemCode
-  target: WritingSystemCode
-
-  authority: string
-  id: string
-}
-
-
-function systemFromCode(code: string): ScriptConversionSystem {
-  const parts = code.split('-')
-  const source = parts[2] as WritingSystemCode
-  const target = parts[3] as WritingSystemCode
-
-  if (!iso15924_data[source] || !iso15924_data[target]) {
-    console.error("Invalid ISCS code", code)
-    throw new Error("Invalid ISCS code")
-  }
-
-  return {
-    authority: parts[0],
-    lang: parts[1],
-    source,
-    target,
-    id: parts[4],
-  }
-}
-
-
-export function systemToCode(system: ScriptConversionSystem): string {
-  return `${system.authority}-${system.lang}-${system.source}-${system.target}-${system.id}`
-}
+import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from '../scs'
+import { getLanguageTitleFrom6392BorT } from './isoLang'
 
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
@@ -54,7 +13,8 @@ function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][]
 }
 
 
-export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void }> = function ({ onSelect }) {
+export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void }> =
+function ({ onSelect }) {
 
   // Selected transliteration options
   const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({})
@@ -260,14 +220,14 @@ const Choice: React.FC<{
 
 
 const Lang: React.FC<{ code: string }> = function ({ code }) {
-  const lang = iso639_2_data.find(i => i.iso6392B === code)
+  const lang = getLanguageTitleFrom6392BorT(code)
 
   if (!lang) {
     console.error("Unsupported ISO 639-2 3-letter language code", code)
     return <>{code}</>
   }
 
-  return <>{lang.name}</>
+  return <>{lang}</>
 };
 
 
