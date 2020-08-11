@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useRouteData } from 'react-static'
 import { ReadmeSection, RepoInfo } from 'types'
 import axios, { AxiosResponse } from 'axios'
@@ -77,6 +77,7 @@ const LiveDemo: React.FC<{}> = function () {
   const [error, setError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
 
+  const sampleInputRef = useRef<HTMLTextAreaElement>(null)
 
   const systemCode: string | null = selectedSystem !== null
     ? systemToCode(selectedSystem)
@@ -86,6 +87,12 @@ const LiveDemo: React.FC<{}> = function () {
     setError(null)
     setSubmitted(false)
   }, [systemCode, sampleText])
+
+  useEffect(() => {
+    if (systemCode) {
+      sampleInputRef.current?.focus();
+    }
+  }, [systemCode])
 
   async function handleConvert() {
     if (systemCode !== null && sampleText.trim() !== '') {
@@ -127,6 +134,7 @@ const LiveDemo: React.FC<{}> = function () {
       <SampleAndResult>
 
         <SampleTextArea
+          ref={sampleInputRef}
           value={sampleText}
           placeholder={placeholder}
           style={{ boxShadow: (sampleText.trim() === '' && systemCode !== null)
