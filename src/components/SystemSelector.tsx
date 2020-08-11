@@ -105,6 +105,7 @@ function ({ onSelect }) {
         <SystemPropertyChoiceList>
           {sourceSystemCodes.map(sourceSystemCode =>
             <Choice
+                name={`source-${sourceSystemCode}`}
                 key={sourceSystemCode}
                 available={availableSystems.filter(s => s.source === sourceSystemCode).length > 0}
                 selected={systemSpec.source === sourceSystemCode}
@@ -122,6 +123,7 @@ function ({ onSelect }) {
         <SystemPropertyChoiceList>
           {langCodes.map(langCode =>
             <Choice
+                name={`lang-${langCode}`}
                 key={langCode}
                 available={availableSystems.filter(s => s.lang === langCode).length > 0}
                 selected={systemSpec.lang === langCode}
@@ -139,6 +141,7 @@ function ({ onSelect }) {
         <SystemPropertyChoiceList>
           {targetSystemCodes.map(targetSystemCode =>
             <Choice
+                name={`target-${targetSystemCode}`}
                 key={targetSystemCode}
                 available={availableSystems.filter(s => s.target === targetSystemCode).length > 0}
                 selected={systemSpec.target === targetSystemCode}
@@ -156,6 +159,7 @@ function ({ onSelect }) {
         <SystemPropertyChoiceList>
           {authorityCodes.map(authorityCode =>
             <Choice
+                name={`authority-${authorityCode}`}
                 key={authorityCode}
                 available={availableSystems.filter(s => s.authority === authorityCode).length > 0}
                 selected={systemSpec.authority === authorityCode}
@@ -174,6 +178,7 @@ function ({ onSelect }) {
         <SystemPropertyChoiceList>
           {systemIDs.map(id =>
             <Choice
+                name={`id-${id}`}
                 key={id}
                 available={availableSystems.filter(s => s.id === id).length > 0}
                 selected={systemSpec.id === id}
@@ -190,13 +195,15 @@ function ({ onSelect }) {
 
 
 const Choice: React.FC<{
+  name: string
   available: boolean
   selected: boolean
   availableStyle?: React.CSSProperties
   onSelect: () => void
   onForce?: () => void
-}> = function({ available, selected, onSelect, onForce, availableStyle, children }) {
+}> = function({ available, selected, name, onSelect, onForce, availableStyle, children }) {
   const action = available ? onSelect : onForce
+  const elID = `system-property-${name}`
 
   return (
     <SystemPropertyChoice
@@ -206,9 +213,11 @@ const Choice: React.FC<{
           cursor: !onForce && !available ? 'not-allowed' : 'unset',
           ...(availableStyle || {}),
         }}>
-      <label>
+      <label htmlFor={elID}>
         <SystemPropertyChoiceInput
             type="radio"
+            name={name}
+            id={elID}
             disabled={!onForce && !available}
             checked={selected}
             onChange={(evt) => evt.currentTarget.checked ? action() : void 0} />
