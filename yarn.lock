@@ -1132,6 +1132,11 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
+"@riboseinc/iso-15924@^1.20200424.0":
+  version "1.20200424.0"
+  resolved "https://registry.yarnpkg.com/@riboseinc/iso-15924/-/iso-15924-1.20200424.0.tgz#5697adb892dd8fa6b794ce77fd5fe048ce041f43"
+  integrity sha512-u/60jvz0VIPw5xG8adidtA6Vfe7YN9Dzk/ZLxwZJAac1MQkG1sL7NRLgqO/R1E8oWt3QQ3y7iwaw1FCq9P2Gbw==
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -4929,10 +4934,6 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
-
-iso-15924@riboseinc/iso-15924#iso-15924-v1.20200424.0-gitpkg:
-  version "1.20200424.0"
-  resolved "https://codeload.github.com/riboseinc/iso-15924/tar.gz/fd0605ffeac43bdc59efcbb19154a79664dd2694"
 
 iso-639-2@^2.0.0:
   version "2.0.0"

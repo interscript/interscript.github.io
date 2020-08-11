@@ -1,5 +1,5 @@
 import type iso639_2_data from 'iso-639-2'
-import iso15924_data from 'iso-15924/index-by-code.json'
+import iso15924_data from '@riboseinc/iso-15924/index-by-code.json'
 
 
 export type WritingSystemCode = keyof typeof iso15924_data

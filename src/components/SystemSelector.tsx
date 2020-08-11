@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import iso15924_data from 'iso-15924/index-by-code.json'
+import iso15924_data from '@riboseinc/iso-15924/index-by-code.json'
 import { primaryColor } from '../App'
 import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from '../scs'
 import { getLanguageTitleFrom6392BorT } from './isoLang'
