@@ -183,6 +183,7 @@ const SampleTextArea = styled.textarea`
   margin: 0;
   background: whiteSmoke;
   border: 0;
+  z-index: 2;
   display: block;
 `
 
