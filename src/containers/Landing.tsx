@@ -75,6 +75,8 @@ const LiveDemo: React.FC<{}> = function () {
   const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null)
   const [result, setResult] = useState<string | null | undefined>(null)
   const [error, setError] = useState<string | null>(null)
+  const [submitted, setSubmitted] = useState(false)
+
 
   const systemCode: string | null = selectedSystem !== null
     ? systemToCode(selectedSystem)
@@ -82,6 +84,7 @@ const LiveDemo: React.FC<{}> = function () {
 
   useEffect(() => {
     setError(null)
+    setSubmitted(false)
   }, [systemCode, sampleText])
 
   async function handleConvert() {
@@ -90,6 +93,7 @@ const LiveDemo: React.FC<{}> = function () {
 
       setError(null)
       setResult(undefined)
+      setSubmitted(true)
 
       try {
         resp = await axios({
@@ -102,6 +106,7 @@ const LiveDemo: React.FC<{}> = function () {
         })
       } catch (e) {
         setResult(null)
+        setSubmitted(false)
         setError("Sorry, a network error occurred :(")
       }
       setResult(resp.data.data.transliterated)
@@ -131,7 +136,7 @@ const LiveDemo: React.FC<{}> = function () {
 
         <ConvertButton
             onClick={handleConvert}
-            disabled={systemCode === null || sampleText.trim() === ''}>
+            disabled={submitted === true || systemCode === null || sampleText.trim() === ''}>
           Convert &rarr;
         </ConvertButton>
 
