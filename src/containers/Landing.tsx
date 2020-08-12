@@ -29,7 +29,7 @@ export default () => {
     setDemoIsShowable(true)
 
     // Show demo by default only on wide viewports
-    if (window.innerWidth >= 900 && demoIsShowable) {
+    if (window.innerWidth >= 900) {
       setShowDemo(true)
     }
   }, [])
