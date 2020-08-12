@@ -122,7 +122,7 @@ const LiveDemo: React.FC<{}> = function () {
         setSubmitted(false)
         setError("Sorry, a network error occurred :(")
       }
-      setResult(resp.data.data.transliterated)
+      setResult(resp.data.data.transliterate)
     }
   }
 
