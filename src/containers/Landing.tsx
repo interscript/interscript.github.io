@@ -120,7 +120,7 @@ const LiveDemo: React.FC<{}> = function () {
       } catch (e) {
         setResult(null)
         setSubmitted(false)
-        setError("Sorry, a network error occurred :(")
+        setError("Sorry, an error occurred :(")
       }
       setResult(resp.data?.data?.transliterate || "No result returned, please check your sample!")
     }
