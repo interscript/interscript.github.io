@@ -22,10 +22,14 @@ export default () => {
   useRouteData()
 
   const [showDemo, setShowDemo] = useState(false)
+  const [demoIsShowable, setDemoIsShowable] = useState(false)
 
   useEffect(() => {
     // Ensures interactive elements are not included in static HTML
-    if (window.innerWidth >= 900) {
+    setDemoIsShowable(true)
+
+    // Show demo by default only on wide viewports
+    if (window.innerWidth >= 900 && demoIsShowable) {
       setShowDemo(true)
     }
   }, [])
@@ -47,16 +51,18 @@ export default () => {
       </SectionNav>
 
       <SectionGrid>
-        <Section>
-          <h2>
-            <a href="javascript: void 0;" onClick={() => setShowDemo(!showDemo)}>
-              {showDemo ? "Hide live demo" : "Try it live"}
-            </a>
-          </h2>
-          {showDemo
-            ? <LiveDemo />
-            : null}
-        </Section>
+        {demoIsShowable
+          ? <Section>
+              <h2>
+                <a href="javascript: void 0;" onClick={() => setShowDemo(!showDemo)}>
+                  {showDemo ? "Hide live demo" : "Try it live"}
+                </a>
+              </h2>
+              {showDemo
+                ? <LiveDemo />
+                : null}
+            </Section>
+          : null}
 
         {readmeSections.map(section =>
           <Section
