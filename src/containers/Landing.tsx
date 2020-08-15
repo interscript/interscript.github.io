@@ -171,8 +171,8 @@ const LiveDemo: React.FC<{}> = function () {
 
 const ConvertButton = styled.button`
   flex-shrink: 0;
-  margin: 0;
-  padding: .25rem 1rem;
+  margin: 0 .5rem;
+  padding: .5rem 1rem;
   border: 0;
   font-size: 100%;
 
@@ -190,7 +190,7 @@ const SampleAndResult = styled.div`
   @media screen and (min-width: 900px) {
     display: flex;
     flex-flow: row nowrap;
-    align-items: stretch;
+    align-items: flex-start;
   }
 `
 
