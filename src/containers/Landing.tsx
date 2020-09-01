@@ -188,13 +188,18 @@ const SampleAndResult = styled.div`
   margin-top: 1rem;
 
   > :first-child, > :last-child {
-    flex: 1;
+    width: 100%;
   }
 
   @media screen and (min-width: 900px) {
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
+
+    > :first-child, > :last-child {
+      flex: 1;
+      width: unset;
+    }
   }
 `
 
