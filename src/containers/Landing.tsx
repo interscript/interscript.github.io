@@ -187,6 +187,10 @@ const ConvertButton = styled.button`
 const SampleAndResult = styled.div`
   margin-top: 1rem;
 
+  > :first-child, > :last-child {
+    flex: 1;
+  }
+
   @media screen and (min-width: 900px) {
     display: flex;
     flex-flow: row nowrap;
@@ -196,7 +200,6 @@ const SampleAndResult = styled.div`
 
 
 const SampleTextArea = styled.textarea`
-  width: 100%;
   font-size: 100%;
   padding: .5rem;
   margin: 0;
