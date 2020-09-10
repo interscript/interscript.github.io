@@ -18,7 +18,7 @@ const API_ENDPOINT = 'https://api.interscript.com'
 
 
 export default () => {
-  const { readmeSections, repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo } =
+  const { readmeSections, repoInfo, mapsInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
   useRouteData()
 
   const [showDemo, setShowDemo] = useState(false)
@@ -33,6 +33,8 @@ export default () => {
       setShowDemo(true)
     }
   }, [])
+
+  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6392BorT(alpha3)} ${alpha3} ${mapsInfo.languages[alpha3]}`).sort().join(', ');
 
   return (
     <>
@@ -49,6 +51,12 @@ export default () => {
           <strong>View on GitHub</strong>
         </SectionNavItem>
       </SectionNav>
+
+      <SectionGrid>
+        <Section>
+          <p>{ `All language (${mapsInfo?.meta.total}), ${summary}` } </p>
+        </Section>
+      </SectionGrid>
 
       <SectionGrid>
         {demoIsShowable

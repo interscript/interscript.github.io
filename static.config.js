@@ -21,6 +21,36 @@ export default {
       },
     });
 
+    const { data: [{commit}] } = await octokit.repos.listCommits({
+      owner: repoOwner,
+      repo: repoName,
+      sha: 'master',
+      per_page: 1
+    });
+
+    const { data: { tree } } = await octokit.git.getTree({
+      owner: repoOwner,
+      repo: repoName,
+      tree_sha: commit.tree.sha,
+      recursive: "1"
+    });
+
+    const mapsInfo = {};
+    const maps = tree.filter(obj => !!obj.path.match(/maps\/[a-zA-Z0-9\-]+.yaml/))
+                      .map(x => x.path.split('/')[1].split('.')[0]);
+    mapsInfo.languages = {};
+    maps.forEach(systemCode => {
+      const alpha3 = systemCode.split('-')[1]
+      if (mapsInfo.languages[alpha3]) {
+        mapsInfo.languages[alpha3] ++;
+      } else {
+        mapsInfo.languages[alpha3] = 1;
+      }
+    });
+    mapsInfo['meta'] = {
+      total: Object.keys(maps).length,
+    };
+
     const readme = cheerio.load(readmeResp.data);
     const sectionHeaders = readme('h2');
     const readmeSections = [];
@@ -45,6 +75,7 @@ export default {
             owner: repoOwner,
             name: repoName,
           },
+          mapsInfo,
         }),
       },
     ]
