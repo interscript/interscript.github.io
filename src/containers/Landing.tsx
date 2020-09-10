@@ -11,7 +11,7 @@ import {
 } from '../scs'
 
 import { primaryColor } from '../App'
-import { getLanguageTitleFrom6392BorT } from 'components/isoLang'
+import { getLanguageTitleFrom6392BorT, getLanguageTitleFrom6393BorT } from 'components/isoLang'
 
 
 const API_ENDPOINT = 'https://api.interscript.com'
@@ -34,7 +34,7 @@ export default () => {
     }
   }, [])
 
-  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6392BorT(alpha3)} ${alpha3} ${mapsInfo.languages[alpha3]}`).sort().join(', ');
+  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} ${alpha3} ${mapsInfo.languages[alpha3]}`).sort().join(', ');
 
   return (
     <>
