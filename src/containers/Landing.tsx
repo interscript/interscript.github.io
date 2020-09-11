@@ -34,7 +34,7 @@ export default () => {
     }
   }, [])
 
-  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} ${alpha3} ${mapsInfo.languages[alpha3]}`).sort().join(', ');
+  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]})`).sort().join(', ');
 
   return (
     <>
@@ -54,7 +54,7 @@ export default () => {
 
       <SectionGrid>
         <Section>
-          <p>{ `All language (${mapsInfo?.meta.total}), ${summary}` } </p>
+          <p>{ `The live demo supports ${mapsInfo?.meta.total} transliteration systems.` } </p>
         </Section>
       </SectionGrid>
 
@@ -79,6 +79,21 @@ export default () => {
             dangerouslySetInnerHTML={{ __html: section.html }} />
         )}
       </SectionGrid>
+
+      <SectionGrid>
+        <Section>
+          <h2>{ `Statistics`}</h2>
+          <p>{ summary }</p>
+        </Section>
+      </SectionGrid>
+
+      <SectionGrid>
+        <Section>
+          <h2>{ `Copyright`}</h2>
+          <p>{ `Ribose© 2020. All rights reserved.`}</p>
+        </Section>
+      </SectionGrid>
+
     </>
   )
 }
