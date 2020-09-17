@@ -25,10 +25,10 @@ export function systemFromCode(code: string): ScriptConversionSystem {
   const source = parts[2] as WritingSystemCode
   const target = parts[3] as WritingSystemCode
 
-  if (!iso15924_data[source] || !iso15924_data[target]) {
-    console.error("Invalid ISCS code", code)
-    throw new Error("Invalid ISCS code")
-  }
+  // if (!iso15924_data[source] || !iso15924_data[target]) {
+  //   console.error("Invalid ISCS code", code)
+  //   throw new Error("Invalid ISCS code")
+  // }
 
   return {
     authority: parts[0],
