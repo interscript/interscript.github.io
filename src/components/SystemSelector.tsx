@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import iso15924_data from '@riboseinc/iso-15924/index-by-code.json'
 import { primaryColor } from '../App'
 import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from '../scs'
-import { getLanguageTitleFrom6392BorT } from './isoLang'
+import { getLanguageTitleFrom6393BorT } from './isoLang'
 
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
@@ -215,7 +215,7 @@ const Choice: React.FC<{
 
 
 const Lang: React.FC<{ code: string }> = function ({ code }) {
-  const lang = getLanguageTitleFrom6392BorT(code)
+  const lang = getLanguageTitleFrom6393BorT(code)
 
   if (!lang) {
     console.error("Unsupported ISO 639-2 3-letter language code", code)
