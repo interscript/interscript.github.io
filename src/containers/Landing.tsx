@@ -105,6 +105,7 @@ const LiveDemo: React.FC<{}> = function () {
   const [result, setResult] = useState<string | null | undefined>(null)
   const [error, setError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
+  const [systemCodes, setSystemCodes] = useState<string[]>([])
 
   const sampleInputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -115,6 +116,7 @@ const LiveDemo: React.FC<{}> = function () {
   useEffect(() => {
     setError(null)
     setSubmitted(false)
+
   }, [systemCode, sampleText])
 
   useEffect(() => {
@@ -122,6 +124,20 @@ const LiveDemo: React.FC<{}> = function () {
       sampleInputRef.current?.focus();
     }
   }, [systemCode])
+
+  useEffect(() => {
+    (async () => {
+      const resp: AxiosResponse<any> = await axios({
+        method: 'POST',
+        url: API_ENDPOINT,
+        data: '{systemCodes}',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setSystemCodes(resp.data?.data?.systemCodes || [])
+    })()
+  }, [])
 
   async function handleConvert() {
     if (systemCode !== null && sampleText.trim() !== '') {
@@ -158,7 +174,7 @@ const LiveDemo: React.FC<{}> = function () {
 
   return (
     <>
-      <SystemSelector onSelect={selectSystem} />
+      <SystemSelector onSelect={selectSystem} systemCodes={systemCodes} />
 
       <SampleAndResult>
 
