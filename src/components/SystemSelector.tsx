@@ -217,10 +217,10 @@ const Choice: React.FC<{
 const Lang: React.FC<{ code: string }> = function ({ code }) {
   const lang = getLanguageTitleFrom6392BorT(code)
 
-  // if (!lang) {
-  //   console.error("Unsupported ISO 639-2 3-letter language code", code)
-  //   return <>{code}</>
-  // }
+  if (!lang) {
+    console.error("Unsupported ISO 639-2 3-letter language code", code)
+    return <>{code}</>
+  }
 
   return <>{lang}</>
 };
@@ -229,10 +229,10 @@ const Lang: React.FC<{ code: string }> = function ({ code }) {
 const WritingSystem: React.FC<{ code: WritingSystemCode }> = function ({ code }) {
   const system: { Code: string, "English Name": string } | undefined = iso15924_data[code]
 
-  // if (!system) {
-  //   console.error("Unsupported ISO 15924 writing system code", code)
-  //   return <>{code}</>
-  // }
+  if (!system) {
+    console.error("Unsupported ISO 15924 writing system code", code)
+    return <>{code}</>
+  }
 
   return <>{system && system["English Name"]}</>
 };
