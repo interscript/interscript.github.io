@@ -127,22 +127,15 @@ const LiveDemo: React.FC<{}> = function () {
 
   useEffect(() => {
     (async () => {
-      let resp: AxiosResponse<any>
-
-      try{
-        resp = await axios({
-          method: 'POST',
-          url: API_ENDPOINT,
-          data: '{systemCodes}',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-        console.log(resp.data?.data?.systemCodes)
-        setSystemCodes(resp.data?.data?.systemCodes)
-      } catch (e) {
-        console.log(e)
-      }
+      const resp: AxiosResponse<any> = await axios({
+        method: 'POST',
+        url: API_ENDPOINT,
+        data: '{systemCodes}',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setSystemCodes(resp.data?.data?.systemCodes || [])
     })()
   }, [])
 
