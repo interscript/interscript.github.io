@@ -13,8 +13,10 @@ function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][]
 }
 
 
-export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void }> =
-function ({ onSelect }) {
+export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void,
+  systemCodes: string[]
+ }> =
+function ({ onSelect, systemCodes }) {
 
   // Selected transliteration options
   const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({})
@@ -27,25 +29,9 @@ function ({ onSelect }) {
   const [availableSystems, setAvailableSystems] = useState<ScriptConversionSystem[]>([])
 
   useEffect(() => {
-    (async () => {
-      // const resp = await axios({
-      //   method: 'POST',
-      //   url: 'https://zkjrxjsleh.execute-api.us-east-1.amazonaws.com/prod/interscript',
-      //   data: '{systemCodes}',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // });
-      // const systemCodes = resp.data.data.systemCodes;
-
-      // TODO: Replace when API sends a proper CORS header:
-      const systemCodes = ["bas-rus-Cyrl-Latn-bss","bas-rus-Cyrl-Latn-oss","bgnpcgn-arm-Armn-Latn-1981","bgnpcgn-bul-Cyrl-Latn-2013","bgnpcgn-chn-Hans-Latn-pinyin","bgnpcgn-per-Arab-Latn-1956","bgnpcgn-rus-Cyrl-Latn-1947","bgnpcgn-ukr-Cyrl-Latn-1965","cn-chn-Hans-Latn-pinyin","historic-jpn-Hrkt-Latn-hepburn","icao-bel-Cyrl-Latn-9303","icao-bul-Cyrl-Latn-9303","icao-gre-Grek-Latn-9303","icao-heb-Hebr-Latn-9303","icao-mkd-Cyrl-Latn-9303","icao-per-Arab-Latn-9303","icao-rus-Cyrl-Latn-9303","icao-srp-Cyrl-Latn-9303","icao-ukr-Cyrl-Latn-9303","iso-rus-Cyrl-Latn-iso9","mext-jpn-Hrkt-Latn-hepburn","mext-jpn-Hrkt-Latn-kunrei","un-jpn-Hrkt-Latn-hepburn","un-jpn-Hrkt-Latn-kunrei","un-mon-Mong-Latn-2013"]
-
-      const systems: ScriptConversionSystem[] = systemCodes.map(systemFromCode)
-
-      setSupportedSystems([ ...systems ])
-    })()
-  }, [])
+    const systems: ScriptConversionSystem[] = systemCodes.map(systemFromCode)
+    setSupportedSystems([ ...systems ])
+  }, [systemCodes])
 
   const langCodes = getSortedUniqueValues(supportedSystems, 'lang')
   const sourceSystemCodes = getSortedUniqueValues(supportedSystems, 'source')
@@ -231,10 +217,10 @@ const Choice: React.FC<{
 const Lang: React.FC<{ code: string }> = function ({ code }) {
   const lang = getLanguageTitleFrom6392BorT(code)
 
-  if (!lang) {
-    console.error("Unsupported ISO 639-2 3-letter language code", code)
-    return <>{code}</>
-  }
+  // if (!lang) {
+  //   console.error("Unsupported ISO 639-2 3-letter language code", code)
+  //   return <>{code}</>
+  // }
 
   return <>{lang}</>
 };
@@ -243,12 +229,12 @@ const Lang: React.FC<{ code: string }> = function ({ code }) {
 const WritingSystem: React.FC<{ code: WritingSystemCode }> = function ({ code }) {
   const system: { Code: string, "English Name": string } | undefined = iso15924_data[code]
 
-  if (!system) {
-    console.error("Unsupported ISO 15924 writing system code", code)
-    return <>{code}</>
-  }
+  // if (!system) {
+  //   console.error("Unsupported ISO 15924 writing system code", code)
+  //   return <>{code}</>
+  // }
 
-  return <>{system["English Name"]}</>
+  return <>{system && system["English Name"]}</>
 };
 
 
