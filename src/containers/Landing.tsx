@@ -12,7 +12,7 @@ import {
 
 import { primaryColor } from '../App'
 import { getLanguageTitleFrom6392BorT, getLanguageTitleFrom6393BorT } from 'components/isoLang'
-
+import samples from './samples.json'
 
 const API_ENDPOINT = 'https://api.interscript.com'
 
@@ -23,6 +23,7 @@ export default () => {
 
   const [showDemo, setShowDemo] = useState(false)
   const [demoIsShowable, setDemoIsShowable] = useState(false)
+  const [sampleData, setSampleData] = useState([])
 
   useEffect(() => {
     // Ensures interactive elements are not included in static HTML
@@ -32,6 +33,24 @@ export default () => {
     if (window.innerWidth >= 900) {
       setShowDemo(true)
     }
+
+    const Opal = (window as any).Opal as any
+    const InterscriptMaps = (window as any).InterscriptMaps as any
+    // load maps
+    Object.keys(InterscriptMaps).forEach(system => {
+      const json = require(`interscript/maps/${system}`);
+      Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+    })
+
+    const data = samples.map(s => {
+      const text = s.samples.join(',')
+      const { sysCode: system } = s
+      if (!text || !system) return s;
+      const result = Opal.Interscript.$transliterate(system, text).split(',');
+      return {...s, result }
+    })
+    setSampleData(data)
+
   }, [])
 
   const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]})`).sort().join(', ');
@@ -49,6 +68,11 @@ export default () => {
             key="gh"
             href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
           <strong>View on GitHub</strong>
+        </SectionNavItem>
+        <SectionNavItem
+            key="ex"
+            href={`#example`}>
+          Examples
         </SectionNavItem>
       </SectionNav>
 
@@ -94,6 +118,45 @@ export default () => {
         </Section>
       </SectionGrid>
 
+      <SectionGrid>
+        <Section
+            key={'ex'}
+            id={'example'}
+        >
+          <h2>{ `Romanization examples`}</h2>
+          <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
+                <div style={{display: 'flex'}}>
+                  <div style={{flex: 1}}>
+                    { sampleData.slice(0, sampleData.length/2).map(s => (
+                        <div>
+                        <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}] </p>
+                        <p>
+                          { s.samples.map((e: any, i: number) => (
+                              <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                          ))
+                          }
+                        </p>
+                        </div>
+                      ))
+                    }
+                  </div>
+                  <div style={{flex: 1}}>
+                    { sampleData.slice(sampleData.length/2+1, sampleData.length).map(s => (
+                        <div>
+                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}] </p>
+                          <p>
+                            { s.samples.map((e: any, i: number) => (
+                                <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                            ))
+                            }
+                          </p>
+                        </div>
+                      ))
+                    }
+                </div>
+              </div>
+        </Section>
+      </SectionGrid>
     </>
   )
 }

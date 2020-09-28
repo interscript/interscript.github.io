@@ -4591,6 +4591,11 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
+interscript@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.0.2.tgz#815a8e6ebfde2364a194c676fa6c603a17e8ac4a"
+  integrity sha512-NF4xHm6sDepbkLtwyazP2zga32RWdfSYsWLrZQ0gQIoLQIuqO/v0BIQUSa52An5h+kWiEjg7I1XA7Rh4c9VhJg==
+
 intersection-observer@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
