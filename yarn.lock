@@ -4591,10 +4591,10 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.0.2.tgz#815a8e6ebfde2364a194c676fa6c603a17e8ac4a"
-  integrity sha512-NF4xHm6sDepbkLtwyazP2zga32RWdfSYsWLrZQ0gQIoLQIuqO/v0BIQUSa52An5h+kWiEjg7I1XA7Rh4c9VhJg==
+interscript@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.0.3.tgz#1b718529b676153a9b61d40f84cb1bae76df083d"
+  integrity sha512-JGFa+ZKk76BoMFDOnPaS9srSfN7Edd0JhFILe90eAELTSTlFwGzdRL3D+LJdBf0x6Qp5oA2jc01PDAH/ypSsrw==
 
 intersection-observer@^0.7.0:
   version "0.7.0"
