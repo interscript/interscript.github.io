@@ -44,7 +44,7 @@ export default () => {
 
     const data = samples.map(s => {
       const text = s.samples.join(',')
-      const { sysCode: system } = s
+      const { systemName: system } = s
       if (!text || !system) return s;
       const result = Opal.Interscript.$transliterate(system, text).split(',');
       return {...s, result }
@@ -129,26 +129,30 @@ export default () => {
                   <div style={{flex: 1}}>
                     { sampleData.slice(0, sampleData.length/2).map(s => (
                         <div>
-                        <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}] </p>
+                        <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                        </p>
                         <p>
                           { s.samples.map((e: any, i: number) => (
                               <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
                           ))
                           }
+                          <i>{s.systemName ? '' : ' (To be implemented)'}</i>
                         </p>
                         </div>
                       ))
                     }
                   </div>
                   <div style={{flex: 1}}>
-                    { sampleData.slice(sampleData.length/2+1, sampleData.length).map(s => (
+                    { sampleData.slice(sampleData.length/2, sampleData.length).map(s => (
                         <div>
-                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}] </p>
+                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                          </p>
                           <p>
                             { s.samples.map((e: any, i: number) => (
                                 <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
                             ))
                             }
+                            <i>{s.systemName ? '' : ' (To be implemented)'}</i>
                           </p>
                         </div>
                       ))
