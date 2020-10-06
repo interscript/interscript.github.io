@@ -4591,11 +4591,6 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.0.3.tgz#1b718529b676153a9b61d40f84cb1bae76df083d"
-  integrity sha512-JGFa+ZKk76BoMFDOnPaS9srSfN7Edd0JhFILe90eAELTSTlFwGzdRL3D+LJdBf0x6Qp5oA2jc01PDAH/ypSsrw==
-
 intersection-observer@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
@@ -4944,11 +4939,6 @@ iso-639-2@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/iso-639-2/-/iso-639-2-2.0.0.tgz#6f89980ec785e2644c84944e9bf4880892221ea4"
   integrity sha512-rpjnAwiShaa/7VqVc1wpraOesD2qSz9hhUTzOQKHNvD0dV5Q/6tiJhy3raMdUl4HkzNrcL/wZh18tAmIs9Ljow==
-
-iso-639-3@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/iso-639-3/-/iso-639-3-2.1.0.tgz#f3733c7f2754c1bde34a8960b2a17146a4b41053"
-  integrity sha512-NYcq+YfrCFVGw/xWhRB9mhCSWxlOxYv3eK3WzWzc86P8huEZ7UDQq8Bu0zKqpZFOdq221Gy8VWWLr1aaYc+FJA==
 
 isobject@^2.0.0:
   version "2.1.0"

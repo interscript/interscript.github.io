@@ -19,15 +19,11 @@ export interface ScriptConversionSystem {
   id: string
 }
 
-function capitalize(s: string): string  {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
 
 export function systemFromCode(code: string): ScriptConversionSystem {
   const parts = code.split('-')
-  const source = capitalize(parts[2]) as WritingSystemCode
-  const target = capitalize(parts[3]) as WritingSystemCode
+  const source = parts[2] as WritingSystemCode
+  const target = parts[3] as WritingSystemCode
 
   if (!iso15924_data[source] || !iso15924_data[target]) {
     console.error("Invalid ISCS code", code)

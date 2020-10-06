@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import iso15924_data from '@riboseinc/iso-15924/index-by-code.json'
 import { primaryColor } from '../App'
 import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from '../scs'
-import { getLanguageTitleFrom6393BorT } from './isoLang'
+import { getLanguageTitleFrom6392BorT } from './isoLang'
 
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
@@ -13,10 +13,8 @@ function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][]
 }
 
 
-export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void,
-  systemCodes: string[]
- }> =
-function ({ onSelect, systemCodes }) {
+export const SystemSelector: React.FC<{ onSelect: (system: ScriptConversionSystem | null) => void }> =
+function ({ onSelect }) {
 
   // Selected transliteration options
   const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({})
@@ -29,9 +27,25 @@ function ({ onSelect, systemCodes }) {
   const [availableSystems, setAvailableSystems] = useState<ScriptConversionSystem[]>([])
 
   useEffect(() => {
-    const systems: ScriptConversionSystem[] = systemCodes.map(systemFromCode)
-    setSupportedSystems([ ...systems ])
-  }, [systemCodes])
+    (async () => {
+      // const resp = await axios({
+      //   method: 'POST',
+      //   url: 'https://zkjrxjsleh.execute-api.us-east-1.amazonaws.com/prod/interscript',
+      //   data: '{systemCodes}',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // });
+      // const systemCodes = resp.data.data.systemCodes;
+
+      // TODO: Replace when API sends a proper CORS header:
+      const systemCodes = ["bas-rus-Cyrl-Latn-bss","bas-rus-Cyrl-Latn-oss","bgnpcgn-arm-Armn-Latn-1981","bgnpcgn-bul-Cyrl-Latn-2013","bgnpcgn-chn-Hans-Latn-pinyin","bgnpcgn-per-Arab-Latn-1956","bgnpcgn-rus-Cyrl-Latn-1947","bgnpcgn-ukr-Cyrl-Latn-1965","cn-chn-Hans-Latn-pinyin","historic-jpn-Hrkt-Latn-hepburn","icao-bel-Cyrl-Latn-9303","icao-bul-Cyrl-Latn-9303","icao-gre-Grek-Latn-9303","icao-heb-Hebr-Latn-9303","icao-mkd-Cyrl-Latn-9303","icao-per-Arab-Latn-9303","icao-rus-Cyrl-Latn-9303","icao-srp-Cyrl-Latn-9303","icao-ukr-Cyrl-Latn-9303","iso-rus-Cyrl-Latn-iso9","mext-jpn-Hrkt-Latn-hepburn","mext-jpn-Hrkt-Latn-kunrei","un-jpn-Hrkt-Latn-hepburn","un-jpn-Hrkt-Latn-kunrei","un-mon-Mong-Latn-2013"]
+
+      const systems: ScriptConversionSystem[] = systemCodes.map(systemFromCode)
+
+      setSupportedSystems([ ...systems ])
+    })()
+  }, [])
 
   const langCodes = getSortedUniqueValues(supportedSystems, 'lang')
   const sourceSystemCodes = getSortedUniqueValues(supportedSystems, 'source')
@@ -215,7 +229,7 @@ const Choice: React.FC<{
 
 
 const Lang: React.FC<{ code: string }> = function ({ code }) {
-  const lang = getLanguageTitleFrom6393BorT(code)
+  const lang = getLanguageTitleFrom6392BorT(code)
 
   if (!lang) {
     console.error("Unsupported ISO 639-2 3-letter language code", code)
@@ -234,7 +248,7 @@ const WritingSystem: React.FC<{ code: WritingSystemCode }> = function ({ code })
     return <>{code}</>
   }
 
-  return <>{system && system["English Name"]}</>
+  return <>{system["English Name"]}</>
 };
 
 
