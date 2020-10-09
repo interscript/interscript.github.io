@@ -34,23 +34,25 @@ export default () => {
       setShowDemo(true)
     }
 
-    const Opal = (window as any).Opal as any
-    const InterscriptMaps = (window as any).InterscriptMaps as any
-    // load maps
-    Object.keys(InterscriptMaps).forEach(system => {
-      const json = require(`interscript/maps/${system}`);
-      Opal.Interscript.$load_map_json(system, JSON.stringify(json))
-    })
-
-    const data = samples.map(s => {
-      const text = s.samples.join(',')
-      const { systemName: system } = s
-      if (!text || !system) return s;
-      const result = Opal.Interscript.$transliterate(system, text).split(',');
-      return {...s, result }
-    })
-    setSampleData(data)
-
+    (async () => {
+      const Opal = (window as any).Opal as any
+      const data = await Promise.all(samples.map(async(s) => {
+        const text = s.samples.join(',')
+        const { systemName: system } = s
+        if (!text || !system) return s
+        try {
+          const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+          const { data: json } = resp
+          Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          const result = Opal.Interscript.$transliterate(system, text).split(',');
+          return {...s, result }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }))
+      setSampleData(data)
+    })()
   }, [])
 
   const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]})`).sort().join(', ');
