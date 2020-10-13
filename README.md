@@ -1,4 +1,4 @@
-# hello-world
+# Intersciprt JS Demo
 
 ## Project setup
 ```
