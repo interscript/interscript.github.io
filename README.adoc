@@ -1,0 +1,33 @@
+= Interscript JS demo mini-site
+
+== Project setup
+
+[source]
+----
+yarn install
+----
+
+=== Compiles and hot-reloads for development
+
+[source]
+----
+yarn serve
+----
+
+=== Compiles and minifies for production
+
+[source]
+----
+yarn build
+----
+
+=== Lints and fixes files
+
+[source]
+----
+yarn lint
+----
+
+=== Customize configuration
+
+See https://cli.vuejs.org/config/[Configuration Reference].
