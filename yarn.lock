@@ -4667,7 +4667,7 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^1.0.3:
+interscript@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.0.5.tgz#075161274f67bdf1886e33b57e4d2d8ab21989e4"
   integrity sha512-DPHW+QzDzhLwgCttymlGI6oJmt8df7RWTMGGqSnUyvpTauEoxOmLxUUmkOsG4vQTIIBbEDk3iSZxYdEcd9TpvQ==
