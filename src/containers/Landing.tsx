@@ -1,5 +1,6 @@
 import React, { useState, useEffect/*, useRef*/ } from 'react'
-// import { useRouteData } from 'react-static'
+import { useRouteData } from 'react-static'
+import { ReadmeSection, RepoInfo } from 'types'
 import axios, { AxiosResponse } from 'axios'
 import styled from 'styled-components'
 import Loader from 'react-loader-spinner'
@@ -8,7 +9,8 @@ import samples from './samples.json'
 import bgn from './bgnpcgn.json'
 
 export default () => {
-  // const { foo } = useRouteData();
+  const { repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
+  useRouteData()
 
   const [sampleData, setSampleData] = useState([])
   const [bgnData, setBgnData] = useState([])
@@ -65,6 +67,23 @@ export default () => {
 
   return (
     <>
+      <SectionNav>
+        <SectionNavItem
+            key="gh"
+            href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
+          <strong>View on GitHub</strong>
+        </SectionNavItem>
+        <SectionNavItem
+            key="un-example"
+            href={`#un-example`}>
+          UN
+        </SectionNavItem>
+        <SectionNavItem
+            key="bgnpcgn-example"
+            href={`#bgnpcgn-example`}>
+          BGN/PCGB
+        </SectionNavItem>
+      </SectionNav>
       <SectionGrid>
         { isLoading &&
           <CenterLoader>
@@ -79,11 +98,10 @@ export default () => {
         { !isLoading &&
           <>
             <Section
-                key={'ex'}
-                id={'example'}
+                key={'un-example'}
+                id={'un-example'}
             >
-              <h2>{ `Romanization examples`}</h2>
-              <h3>{ `UN Poster examples`}</h3>
+              <h2>{ `UN Poster examples`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
                     <div style={{display: 'flex'}}>
                       <div style={{flex: 1}}>
@@ -121,10 +139,10 @@ export default () => {
                   </div>
             </Section>
             <Section
-                key={'bgn-pcgn'}
-                id={'bgn-pcgn'}
+                key={'bgnpcgn-example'}
+                id={'bgnpcgn-example'}
             >
-              <h3>{ `BGN/PCGN Poster examples`}</h3>
+              <h2>{ `BGN/PCGN Poster examples`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
                     <div style={{display: 'flex'}}>
                       <div style={{flex: 1}}>
@@ -169,35 +187,35 @@ export default () => {
 }
 
 
-// const SectionNav = styled.nav`
-//   margin: 2rem 2rem 1rem 2rem;
-//   text-align: center;
-//
-//   @media screen and (min-width: 900px) {
-//     text-align: unset;
-//     margin: 2rem 0 1rem 1rem;
-//   }
-// `
-//
-//
-// const SectionNavItem = styled.a`
-//   display: inline-block;
-//   margin-right: 1em;
-//
-//   white-space: nowrap;
-//
-//   &, &:link, &:visited {
-//     border-bottom: none;
-//   }
-//
-//   @media screen and (min-width: 900px) {
-//     &::before {
-//       content: "•";
-//       display: inline;
-//       margin: 0 1em 0 0;
-//     }
-//   }
-// `
+const SectionNav = styled.nav`
+  margin: 2rem 2rem 1rem 2rem;
+  text-align: center;
+
+  @media screen and (min-width: 900px) {
+    text-align: unset;
+    margin: 2rem 0 1rem 1rem;
+  }
+`
+
+
+const SectionNavItem = styled.a`
+  display: inline-block;
+  margin-right: 1em;
+
+  white-space: nowrap;
+
+  &, &:link, &:visited {
+    border-bottom: none;
+  }
+
+  @media screen and (min-width: 900px) {
+    &::before {
+      content: "•";
+      display: inline;
+      margin: 0 1em 0 0;
+    }
+  }
+`
 
 const Section = styled.article`
   a.anchor {

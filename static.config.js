@@ -1,5 +1,8 @@
 import path from 'path'
 
+const repoOwner = 'interscript';
+const repoName = 'interscript-js';
+
 export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
   getRoutes: async () => {
@@ -8,7 +11,10 @@ export default {
         path: '/',
         template: 'src/containers/Landing',
         getData: () => ({
-          foo: 'bar',
+          repoInfo: {
+            owner: repoOwner,
+            name: repoName,
+          },
         }),
       },
     ]
