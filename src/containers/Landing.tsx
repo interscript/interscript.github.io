@@ -3,15 +3,18 @@ import React, { useState, useEffect/*, useRef*/ } from 'react'
 import axios, { AxiosResponse } from 'axios'
 import styled from 'styled-components'
 import samples from './samples.json'
+import bgn from './bgnpcgn.json'
 
 export default () => {
   // const { foo } = useRouteData();
 
   const [sampleData, setSampleData] = useState([])
+  const [bgnData, setBgnData] = useState([])
 
   useEffect(() => {
     (async () => {
       const Opal = (window as any).Opal as any
+      const InterscriptMaps = (window as any).InterscriptMaps as any
       const data = await Promise.all(samples.map(async(s) => {
         const text = s.samples.join(',')
         const { systemName: system } = s
@@ -28,46 +31,113 @@ export default () => {
         return s;
       }))
       setSampleData(data)
+
+      const data1 = await Promise.all(bgn.map(async(s) => {
+        const text = s.samples.join(',')
+        const { systemName: system } = s
+        try {
+          if (InterscriptMaps[system] === null) {
+            const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+            const { data: json } = resp
+            Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          }
+          if (system && !!InterscriptMaps[system]) {
+            if (text) {
+              const result = Opal.Interscript.$transliterate(system, text).split(',');
+              return {...s, result }
+            }
+          } else {
+            return {...s, todo: true }
+          }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }))
+      setBgnData(data1)
+
     })()
   }, [])
 
   return (
     <>
-<SectionGrid>
+      <SectionGrid>
         <Section
             key={'ex'}
             id={'example'}
         >
           <h2>{ `Romanization examples`}</h2>
+          <h3>{ `UN Poster examples`}</h3>
           <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
                 <div style={{display: 'flex'}}>
                   <div style={{flex: 1}}>
-                    { sampleData.slice(0, sampleData.length/2).map(s => (
-                        <div>
-                        <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                        </p>
-                        <p>
-                          { s.samples.map((e: any, i: number) => (
-                              <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                          ))
-                          }
-                          <i>{s.systemName ? '' : ' (To be implemented)'}</i>
-                        </p>
+                    { sampleData.slice(0, sampleData.length/2).map((s,index) => (
+                        <div key={index}>
+                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                          </p>
+                          <p>
+                            { s.samples.map((e: any, i: number) => (
+                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                            ))
+                            }
+                            <i>{s.systemName ? '' : ' (To be implemented)'}</i>
+                          </p>
                         </div>
                       ))
                     }
                   </div>
                   <div style={{flex: 1}}>
-                    { sampleData.slice(sampleData.length/2, sampleData.length).map(s => (
-                        <div>
+                    { sampleData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
+                        <div key={index}>
                           <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
                           </p>
                           <p>
                             { s.samples.map((e: any, i: number) => (
-                                <span>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
                             ))
                             }
                             <i>{s.systemName ? '' : ' (To be implemented)'}</i>
+                          </p>
+                        </div>
+                      ))
+                    }
+                </div>
+              </div>
+        </Section>
+        <Section
+            key={'bgn-pcgn'}
+            id={'bgn-pcgn'}
+        >
+          <h3>{ `BGN/PCGN Poster examples`}</h3>
+          <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
+                <div style={{display: 'flex'}}>
+                  <div style={{flex: 1}}>
+                    { bgnData.slice(0, sampleData.length/2).map((s,index) => (
+                        <div key={index}>
+                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                          </p>
+                          <p>
+                            { s.samples.map((e: any, i: number) => (
+                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                            ))
+                            }
+                            <i>{ s.todo ? ' (To be implemented)' : '' }</i>
+                          </p>
+                        </div>
+                      ))
+                    }
+                  </div>
+                  <div style={{flex: 1}}>
+                    { bgnData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
+                        <div key={index}>
+                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                          </p>
+                          <p>
+                            { s.samples.map((e: any, i: number) => (
+                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                            ))
+                            }
+                            <i>{ s.todo ? ' (To be implemented)' : '' }</i>
                           </p>
                         </div>
                       ))
