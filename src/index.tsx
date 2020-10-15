@@ -4,6 +4,7 @@ import { AppContainer } from 'react-hot-loader'
 import 'interscript'
 
 import App from './App'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export default App
 
