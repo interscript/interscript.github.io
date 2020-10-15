@@ -2,6 +2,8 @@ import React, { useState, useEffect/*, useRef*/ } from 'react'
 // import { useRouteData } from 'react-static'
 import axios, { AxiosResponse } from 'axios'
 import styled from 'styled-components'
+import Loader from 'react-loader-spinner'
+
 import samples from './samples.json'
 import bgn from './bgnpcgn.json'
 
@@ -10,9 +12,11 @@ export default () => {
 
   const [sampleData, setSampleData] = useState([])
   const [bgnData, setBgnData] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true)
       const Opal = (window as any).Opal as any
       const InterscriptMaps = (window as any).InterscriptMaps as any
       const data = await Promise.all(samples.map(async(s) => {
@@ -55,96 +59,110 @@ export default () => {
         return s;
       }))
       setBgnData(data1)
-
+      setIsLoading(false)
     })()
   }, [])
 
   return (
     <>
       <SectionGrid>
-        <Section
-            key={'ex'}
-            id={'example'}
-        >
-          <h2>{ `Romanization examples`}</h2>
-          <h3>{ `UN Poster examples`}</h3>
-          <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
-                <div style={{display: 'flex'}}>
-                  <div style={{flex: 1}}>
-                    { sampleData.slice(0, sampleData.length/2).map((s,index) => (
-                        <div key={index}>
-                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                          </p>
-                          <p>
-                            { s.samples.map((e: any, i: number) => (
-                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                            ))
-                            }
-                            <i>{s.systemName ? '' : ' (To be implemented)'}</i>
-                          </p>
-                        </div>
-                      ))
-                    }
+        { isLoading &&
+          <CenterLoader>
+            <Loader
+              type="Grid"
+              color="#00BFFF"
+              height={80}
+              width={80}
+            />
+          </CenterLoader>
+        }
+        { !isLoading &&
+          <>
+            <Section
+                key={'ex'}
+                id={'example'}
+            >
+              <h2>{ `Romanization examples`}</h2>
+              <h3>{ `UN Poster examples`}</h3>
+              <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
+                    <div style={{display: 'flex'}}>
+                      <div style={{flex: 1}}>
+                        { sampleData.slice(0, sampleData.length/2).map((s,index) => (
+                            <div key={index}>
+                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                              </p>
+                              <p>
+                                { s.samples.map((e: any, i: number) => (
+                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                ))
+                                }
+                                <i>{s.systemName ? '' : ' (To be implemented)'}</i>
+                              </p>
+                            </div>
+                          ))
+                        }
+                      </div>
+                      <div style={{flex: 1}}>
+                        { sampleData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
+                            <div key={index}>
+                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                              </p>
+                              <p>
+                                { s.samples.map((e: any, i: number) => (
+                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                ))
+                                }
+                                <i>{s.systemName ? '' : ' (To be implemented)'}</i>
+                              </p>
+                            </div>
+                          ))
+                        }
+                    </div>
                   </div>
-                  <div style={{flex: 1}}>
-                    { sampleData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
-                        <div key={index}>
-                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                          </p>
-                          <p>
-                            { s.samples.map((e: any, i: number) => (
-                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                            ))
-                            }
-                            <i>{s.systemName ? '' : ' (To be implemented)'}</i>
-                          </p>
-                        </div>
-                      ))
-                    }
-                </div>
-              </div>
-        </Section>
-        <Section
-            key={'bgn-pcgn'}
-            id={'bgn-pcgn'}
-        >
-          <h3>{ `BGN/PCGN Poster examples`}</h3>
-          <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
-                <div style={{display: 'flex'}}>
-                  <div style={{flex: 1}}>
-                    { bgnData.slice(0, sampleData.length/2).map((s,index) => (
-                        <div key={index}>
-                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                          </p>
-                          <p>
-                            { s.samples.map((e: any, i: number) => (
-                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                            ))
-                            }
-                            <i>{ s.todo ? ' (To be implemented)' : '' }</i>
-                          </p>
-                        </div>
-                      ))
-                    }
+            </Section>
+            <Section
+                key={'bgn-pcgn'}
+                id={'bgn-pcgn'}
+            >
+              <h3>{ `BGN/PCGN Poster examples`}</h3>
+              <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
+                    <div style={{display: 'flex'}}>
+                      <div style={{flex: 1}}>
+                        { bgnData.slice(0, sampleData.length/2).map((s,index) => (
+                            <div key={index}>
+                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                              </p>
+                              <p>
+                                { s.samples.map((e: any, i: number) => (
+                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                ))
+                                }
+                                <i>{ s.todo ? ' (To be implemented)' : '' }</i>
+                              </p>
+                            </div>
+                          ))
+                        }
+                      </div>
+                      <div style={{flex: 1}}>
+                        { bgnData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
+                            <div key={index}>
+                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
+                              </p>
+                              <p>
+                                { s.samples.map((e: any, i: number) => (
+                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                ))
+                                }
+                                <i>{ s.todo ? ' (To be implemented)' : '' }</i>
+                              </p>
+                            </div>
+                          ))
+                        }
+                    </div>
                   </div>
-                  <div style={{flex: 1}}>
-                    { bgnData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
-                        <div key={index}>
-                          <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                          </p>
-                          <p>
-                            { s.samples.map((e: any, i: number) => (
-                                <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                            ))
-                            }
-                            <i>{ s.todo ? ' (To be implemented)' : '' }</i>
-                          </p>
-                        </div>
-                      ))
-                    }
-                </div>
-              </div>
-        </Section>
+            </Section>
+          </>
+        }
       </SectionGrid>
     </>
   )
@@ -224,5 +242,28 @@ const SectionGrid = styled.div`
     pre {
       margin: 0;
     }
+  }
+`
+const CenterLoader = styled.div`
+  position: fixed;
+  z-index: 999;
+  overflow: visible;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
   }
 `
