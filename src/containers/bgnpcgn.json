@@ -16,62 +16,6 @@
       "result": []
     },
     {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN Unified Agreement 2007",
-      "systemName": "bgnpcgn-bal-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-uzb-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-tuk-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-pus-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-psi-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-psh-Arab-Latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-prs-arab-latn-2007",
-      "samples": ["بَغْلان","پُوټَكَى"],
-      "result": []
-    },
-    {
-      "lang": "Afghanistan",
-      "isoName": "BGN/PCGN 2007",
-      "systemName": "bgnpcgn-glh-arab-latn-2007",
-      "samples": [],
-      "result": []
-    },
-    {
       "lang": "Armenian",
       "isoName": "BGN/PCGN 1981",
       "systemName": "bgnpcgn-arm-Armn-Latn-1981",
@@ -83,6 +27,13 @@
       "isoName": "BGN/PCGN 1993",
       "systemName": "bgnpcgn-aze-Cyrl-Latn-1993",
       "samples": ["Azərbaycan"],
+      "result": []
+    },
+    {
+      "lang": "Baluchi",
+      "isoName": "BGN/PCGN Unified Agreement 2007",
+      "systemName": "bgnpcgn-bal-Arab-Latn-2007",
+      "samples": ["بلۏچی‎"],
       "result": []
     },
     {
@@ -164,7 +115,7 @@
     },
     {
       "lang": "Dari",
-      "isoName": "BGN/PCGN oubi",
+      "isoName": "BGN/PCGN yaghoubi-2007",
       "systemName": "bgnpcgn-prs-Arab-Latn-yaghoubi",
       "samples": ["بَغْلَان"],
       "result": []
@@ -382,6 +333,45 @@
       "result": []
     },
     {
+      "lang": "Pashto",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-pus-Arab-Latn-2007",
+      "samples": [],
+      "result": []
+    },
+    {
+      "lang": "Northwest Pashayi",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-glh-arab-latn-2007",
+      "samples": ["افغانستان"],
+      "english": ["Afghanistan"],
+      "result": []
+    },
+    {
+      "lang": "Northeast Pashayi",
+      "isoName": "BGN/PCGN Unified Agreement 2007",
+      "systemName": "bgnpcgn-aee-Arab-Latn-2007",
+      "samples": ["افغانستان"],
+      "english": ["Afghanistan"],
+      "result": []
+    },
+    {
+      "lang": "Southwest Pashayi",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-psh-Arab-Latn-2007",
+      "samples": ["افغانستان"],
+      "english": ["Afghanistan"],
+      "result": []
+    },
+    {
+      "lang": "Southeast Pashayi",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-psi-Arab-Latn-2007",
+      "samples": ["افغانستان"],
+      "english": ["Afghanistan"],
+      "result": []
+    },
+    {
       "lang": "Persian",
       "isoName": "BGN/PCGN 1956",
       "systemName": "bgnpcgn-fas-Arab-Latn-1956",
@@ -454,6 +444,13 @@
       "result": []
     },
     {
+      "lang": "Turkmen",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-tuk-Arab-Latn-2007",
+      "samples": ["تۆرکمنچه‎"],
+      "result": []
+    },
+    {
       "lang": "Ukrainian",
       "isoName": "BGN/PCGN 1965",
       "systemName": "bgnpcgn-ukr-Cyrl-Latn-1965",
@@ -473,6 +470,13 @@
       "systemName": "bgnpcgn-uzb-Cyrl-Latn-1979",
       "samples": [],
       "result": []
+    },
+    {
+      "lang": "Uzbek",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-uzb-Arab-Latn-2007",
+      "samples": [],
+      "result": ["اۉزبېکچه‎"]
     },
     {
       "lang": "Urdu",
