@@ -201,21 +201,21 @@
       "lang": "Japanese",
       "isoName": "Japanese Kana Modified Hepburn 1930",
       "systemName": "bgnpcgn-jpn-Hrkt-Latn-1930",
-      "samples": ["にっぽん","とうきょ"],
+      "samples": ["にっぽん","とうきょう"],
       "result": []
     },
     {
       "lang": "Japanese",
       "isoName": "BGN/PCGN 1962",
       "systemName": "bgn-jpn-Hrkt-Latn-1962",
-      "samples": ["にっぽん","とうきょ"],
+      "samples": ["にっぽん","とうきょう"],
       "result": []
     },
     {
       "lang": "Japanese",
       "isoName": "BGN/PCGN 1976",
       "systemName": "bgnpcgn-jpn-Hrkt-Latn-1976",
-      "samples": ["にっぽん","とうきょ"],
+      "samples": ["にっぽん","とうきょう"],
       "result": []
     },
     {
