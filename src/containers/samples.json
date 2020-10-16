@@ -4,6 +4,7 @@
     "isoName": "UN 1967, I/17",
     "systemName": "un-amh-Ethi-Latn-2016",
     "samples": ["ኢትዮጵያ", "አዲስ አበባ"],
+    "english": ["Ethiopia"],
     "result": []
   },
   {
@@ -11,6 +12,7 @@
     "isoName": "UN 1972, II/8",
     "systemName": "un-ara-Arab-Latn-1972",
     "samples": ["جزيرة العرب"],
+    "english": ["Arabian Peninsula"],
     "result": []
   },
   {
@@ -18,6 +20,7 @@
     "isoName": "BGN/PCGN 1981",
     "systemName": "bgnpcgn-arm-Armn-Latn-1981",
     "samples": ["Հայաստան","Երևան"],
+    "english": ["Armenia"],
     "result": []
   },
   {
@@ -25,6 +28,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "",
     "samples": ["অসম", "দিছপুৰ"],
+    "english": ["Assam","Dispur"],
     "result": []
   },
   {
@@ -67,6 +71,7 @@
     "isoName": "national 1997",
     "systemName": "",
     "samples": ["འབྲུག་ཡུལ","ཐིམ་ཕུ"],
+    "english": ["Bhutan","Thimphu"],
     "result": []
   },
   {
@@ -74,6 +79,7 @@
     "isoName": "national 2002",
     "systemName": "ggg-kat-Geor-Latn-2002",
     "samples": ["საქართველო","თბილისი"],
+    "english": ["Georgia"],
     "result": []
   },
   {
@@ -81,6 +87,7 @@
     "isoName": "UN 1987, V/19",
     "systemName": "un-ell-Grek-Latn-1987-tl",
     "samples": ["Ελλάδα","Αθήνα"],
+    "english": ["Greece"],
     "result": []
   },
   {
@@ -95,6 +102,7 @@
     "isoName": "UN 1977, III/13; 2007, IX/9",
     "systemName": "icao-heb-Hebr-Latn-9303",
     "samples": ["מְדִינַת ישְרְאֶל"],
+    "english": ["State of Israel]"],
     "result": []
   },
   {
@@ -102,6 +110,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-hin-Deva-Latn-2016",
     "samples": ["भारत","दिल्ली"],
+    "english": ["India"],
     "result": []
   },
   {
@@ -109,6 +118,7 @@
     "isoName": "national: Kunrei-siki/Mod. Hepburn",
     "systemName": "mext-jpn-Hrkt-Latn-1954",
     "samples": ["日本","東京"],
+    "english": ["Japan"],
     "result": []
   },
   {
@@ -130,6 +140,7 @@
     "isoName": "UN 1972, II/10",
     "systemName": "",
     "samples": ["កមពុជ","ភនំេពញ"],
+    "english": ["Cambodia"],
     "result": []
   },
   {
@@ -151,6 +162,7 @@
     "isoName": "national 1966",
     "systemName": "",
     "samples": ["ລາວ","ວຽງຈັນ"],
+    "english": ["Laos"],
     "result": []
   },
   {
@@ -172,6 +184,7 @@
     "isoName": "national 1987",
     "systemName": "",
     "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
+    "english": ["Maldives"],
     "result": []
   },
   {
@@ -270,6 +283,7 @@
     "isoName": "UN 1967, I/14",
     "systemName": "",
     "samples": ["ไทย","กรุงเทพฯ"],
+    "english": ["","Bangkok"],
     "result": []
   },
   {
@@ -277,6 +291,7 @@
     "isoName": "BGN/PCGN 2007",
     "systemName": "",
     "samples": ["ኤርትራ","ኣስመራ"],
+    "english": ["Eritrea"],
     "result": []
   },
   {
