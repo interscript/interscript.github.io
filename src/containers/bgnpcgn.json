@@ -8,6 +8,14 @@
       "result": []
     },
     {
+      "lang": "Arabic",
+      "isoName": "BGN/PCGN 1956",
+      "systemName": "bgnpcgn-ara-Arab-Latn-1956",
+      "samples": ["قُرآن"],
+      "english": [],
+      "result": []
+    },
+    {
       "lang": "Afghanistan",
       "isoName": "BGN/PCGN Unified Agreement 2007",
       "systemName": "bgnpcgn-bal-Arab-Latn-2007",
@@ -71,6 +79,55 @@
       "result": []
     },
     {
+      "lang": "Azerbaijani",
+      "isoName": "BGN/PCGN 1993",
+      "systemName": "bgnpcgn-aze-Cyrl-Latn-1993",
+      "samples": ["Azərbaycan"],
+      "result": []
+    },
+    {
+      "lang": "Bashkir",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-bak-Cyrl-Latn-2007",
+      "samples": ["Васйылға"],
+      "result": []
+    },
+    {
+      "lang": "Belarusian",
+      "isoName": "BGN/PCGN 1979",
+      "systemName": "bgnpcgn-bel-Cyrl-Latn-1979",
+      "samples": ["Антон"],
+      "result": []
+    },
+    {
+      "lang": "Bulgarian",
+      "isoName": "BGN/PCGN 2006",
+      "systemName": "bgna-bul-Cyrl-Latn-2006",
+      "samples": ["нунатак Абрит"],
+      "result": []
+    },
+    {
+      "lang": "Bulgarian",
+      "isoName": "BGN/PCGN 2009",
+      "systemName": "bgna-bul-Cyrl-Latn-2009",
+      "samples": ["нунатак Абрит"],
+      "result": []
+    },
+    {
+      "lang": "Bulgarian",
+      "isoName": "BGN/PCGN 1952",
+      "systemName": "bgnpcgn-bul-Cyrl-Latn-1952",
+      "samples": ["нунатак Абрит"],
+      "result": []
+    },
+    {
+      "lang": "Bulgarian",
+      "isoName": "BGN/PCGN 2013",
+      "systemName": "bgnpcgn-bul-Cyrl-Latn-2013",
+      "samples": ["София"],
+      "result": []
+    },
+    {
       "lang": "Burmese",
       "isoName": "BGN/PCGN 1970",
       "systemName": "bgnpcgn-mya-Mymr-Latn-1970",
@@ -92,6 +149,27 @@
       "result": []
     },
     {
+      "lang": "Chinese",
+      "isoName": "BGN/PCGN 1979",
+      "systemName": "bgnpcgn-zho-Hans-Latn-1979",
+      "samples": ["中国","北京"],
+      "result": []
+    },
+    {
+      "lang": "Dari",
+      "isoName": "BGN/PCGN 2007",
+      "systemName": "bgnpcgn-prs-Arab-Latn-2007",
+      "samples": ["بَغْلان", "پُوټَكَى"],
+      "result": []
+    },
+    {
+      "lang": "Dari",
+      "isoName": "BGN/PCGN oubi",
+      "systemName": "bgnpcgn-prs-Arab-Latn-yaghoubi",
+      "samples": ["بَغْلَان"],
+      "result": []
+    },
+    {
       "lang": "Faroese",
       "isoName": "BGN/PCGN 1964",
       "systemName": "bgnpcgn-far-Latn-Latn-1964",
@@ -103,6 +181,34 @@
       "isoName": "BGN/PCGN 1968",
       "systemName": "bgnpcgn-fao-Latn-Latn-1968",
       "samples": ["føroyskt mál"],
+      "result": []
+    },
+    {
+      "lang": "Georgian",
+      "isoName": "BGN/PCGN 1981",
+      "systemName": "bgnpcgn-kat-Geor-Latn-1981",
+      "samples": ["ჰებუდი"],
+      "result": []
+    },
+    {
+      "lang": "Georgian",
+      "isoName": "BGN/PCGN 2009",
+      "systemName": "bgnpcgn-kat-Geor-Latn-2009",
+      "samples": ["თბილისი"],
+      "result": []
+    },
+    {
+      "lang": "Greek",
+      "isoName": "BGN/PCGN 1962",
+      "systemName": "bgnpcgn-ell-Grek-Latn-1962",
+      "samples": ["ΑΘΗΝΑ", "μπαμπάκι"],
+      "result": []
+    },
+    {
+      "lang": "Greek",
+      "isoName": "BGN/PCGN 1996",
+      "systemName": "bgnpcgn-ell-Grek-Latn-1996",
+      "samples": ["ΑΘΗΝΑ", "μπαμπάκι"],
       "result": []
     },
     {
@@ -148,6 +254,55 @@
       "result": []
     },
     {
+      "lang": "Japanese",
+      "isoName": "BGN/PCGN 1962",
+      "systemName": "bgn-jpn-Hrkt-Latn-1962",
+      "samples": ["日本","東京"],
+      "result": []
+    },
+    {
+      "lang": "Japanese",
+      "isoName": "BGN/PCGN 1976",
+      "systemName": "bgnpcgn-jpn-Hrkt-Latn-1976",
+      "samples": ["日本","東京"],
+      "result": []
+    },
+    {
+      "lang": "Korean",
+      "isoName": "BGN/PCGN 1943",
+      "systemName": "bgn-kor-Hang-Latn-1943",
+      "samples": ["평양","서울"],
+      "result": []
+    },
+    {
+      "lang": "Korean",
+      "isoName": "BGN/PCGN 1943",
+      "systemName": "bgn-kor-Kore-Latn-1943",
+      "samples": ["평양","서울"],
+      "result": []
+    },
+    {
+      "lang": "Korean",
+      "isoName": "BGN/PCGN 1945",
+      "systemName": "bgnpcgn-kor-Hang-Latn-kn-1945",
+      "samples": ["평양","용화"],
+      "result": []
+    },
+    {
+      "lang": "Korean",
+      "isoName": "BGN/PCGN 2011",
+      "systemName": "bgnpcgn-kor-Hang-Latn-rok-2011",
+      "samples": ["불국사","울산"],
+      "result": []
+    },
+    {
+      "lang": "Korean",
+      "isoName": "BGN/PCGN 2011",
+      "systemName": "bgnpcgn-kor-Kore-Latn-rok-2011",
+      "samples": ["佛國寺","蔚山"],
+      "result": []
+    },
+    {
       "lang": "Kazakh",
       "isoName": "BGN/PCGN 1979",
       "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
@@ -178,10 +333,38 @@
       "result": []
     },
     {
+      "lang": "Macedonian",
+      "isoName": "BGN/PCGN 1981",
+      "systemName": "bgnpcgn-mkd-Cyrl-Latn-1981",
+      "samples": ["Ѓол","Јусек Тепеси"],
+      "result": []
+    },
+    {
+      "lang": "Macedonian",
+      "isoName": "BGN/PCGN 2013",
+      "systemName": "bgnpcgn-mkd-Cyrl-Latn-2013",
+      "samples": ["Ѓенови Ливаѓе"],
+      "result": []
+    },
+    {
       "lang": "Moldovan",
       "isoName": "BGN/PCGN 2002",
       "systemName": "bgnpcgn-ron-Cyrl-Latn-2002",
       "samples": ["Лимба молдовеняскэ"],
+      "result": []
+    },
+    {
+      "lang": "Mongolian",
+      "isoName": "BGN/PCGN 1964",
+      "systemName": "bgnpcgn-mon-Cyrl-Latn-1964",
+      "samples": ["Эрдэнэт Сум"],
+      "result": []
+    },
+    {
+      "lang": "Nepali",
+      "isoName": "BGN/PCGN 2011",
+      "systemName": "bgnpcgn-nep-Deva-Latn-2011",
+      "samples": ["लेखन","मुद्रा"],
       "result": []
     },
     {
@@ -200,9 +383,25 @@
     },
     {
       "lang": "Persian",
+      "isoName": "BGN/PCGN 1956",
+      "systemName": "bgnpcgn-fas-Arab-Latn-1956",
+      "samples": ["ایران"],
+      "english": ["Iran"],
+      "result": []
+    },
+    {
+      "lang": "Persian",
       "isoName": "BGN/PCGN 1958",
       "systemName": "bgnpcgn-per-Arab-Latn-1958",
-      "samples": [],
+      "samples": ["ایران"],
+      "english": ["Iran"],
+      "result": []
+    },
+    {
+      "lang": "Russian",
+      "isoName": "BGN/PCGN 1947",
+      "systemName": "bgnpcgn-rus-Cyrl-Latn-1947",
+      "samples": ["ДЛИННОЕ ПОКРЫВАЛО"],
       "result": []
     },
     {
@@ -217,6 +416,13 @@
       "isoName": "BGN/PCGN 1962",
       "systemName": "bgnpcgn-ser-Cyrl-Latn-1962",
       "samples": [],
+      "result": []
+    },
+    {
+      "lang": "Serbian",
+      "isoName": "BGN/PCGN 2005",
+      "systemName": "bgnpcgn-srp-Cyrl-Latn-2005",
+      "samples": ["Шупља Стена"],
       "result": []
     },
     {
@@ -245,6 +451,20 @@
       "isoName": "BGN/PCGN Turkmen Cyrillic 1979",
       "systemName": "bgnpcgn-tuk-Cyrl-Latn-1979",
       "samples": [],
+      "result": []
+    },
+    {
+      "lang": "Ukrainian",
+      "isoName": "BGN/PCGN 1965",
+      "systemName": "bgnpcgn-ukr-Cyrl-Latn-1965",
+      "samples": ["Авдіївська Міськрада"],
+      "result": []
+    },
+    {
+      "lang": "Ukrainian",
+      "isoName": "BGN/PCGN 2019",
+      "systemName": "bgnpcgn-ukr-Cyrl-Latn-2019",
+      "samples": ["Алушта"],
       "result": []
     },
     {
