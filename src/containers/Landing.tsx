@@ -21,16 +21,17 @@ export default () => {
     (async () => {
       setIsLoading(true)
       const Opal = (window as any).Opal as any
+      await Opal.Interscript.$on_load()
       const InterscriptMaps = (window as any).InterscriptMaps as any
       const data = await Promise.all(samples.map(async(s) => {
-        const text = s.samples.join(',')
+        const text = s.samples.join("\n")
         const { systemName: system } = s
         if (!text || !system) return s
         try {
           const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
           const { data: json } = resp
           Opal.Interscript.$load_map_json(system, JSON.stringify(json))
-          const result = Opal.Interscript.$transliterate(system, text).split(',');
+          const result = Opal.Interscript.$transliterate(system, text).split("\n");
           return {...s, result }
         } catch (e) {
           console.log(e)
@@ -40,7 +41,7 @@ export default () => {
       setSampleData(data)
 
       const data1 = await Promise.all(bgn.map(async(s) => {
-        const text = s.samples.join(',')
+        const text = s.samples.join("\n")
         const { systemName: system } = s
         try {
           if (InterscriptMaps[system] === null) {
@@ -50,7 +51,7 @@ export default () => {
           }
           if (system && !!InterscriptMaps[system]) {
             if (text) {
-              const result = Opal.Interscript.$transliterate(system, text).split(',');
+              const result = Opal.Interscript.$transliterate(system, text).split("\n");
               return {...s, result }
             }
           } else {
