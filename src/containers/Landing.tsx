@@ -7,6 +7,7 @@ import Loader from 'react-loader-spinner'
 
 import samples from './samples.json'
 import bgn from './bgnpcgn.json'
+import { Example } from '../components/Example'
 
 export default () => {
   const { repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
@@ -111,7 +112,11 @@ export default () => {
                               </p>
                               <p>
                                 { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                    <span key={i}>
+                                      { `${e} ${s.result[i] ? s.result[i] : ''}` }
+                                      { s.english && !!s.english[i] && <Example samples={s.english[i]} /> }
+                                      { i+1 < s.samples.length && ', ' }
+                                    </span>
                                 ))
                                 }
                                 <i>{s.systemName ? '' : ' (To be implemented)'}</i>
@@ -127,7 +132,11 @@ export default () => {
                               </p>
                               <p>
                                 { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                    <span key={i}>
+                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
+                                      { s.english && !!s.english[i] && <Example samples={s.english[i]} /> }
+                                      { i+1 < s.samples.length && ', ' }
+                                    </span>
                                 ))
                                 }
                                 <i>{s.systemName ? '' : ' (To be implemented)'}</i>
@@ -152,8 +161,11 @@ export default () => {
                               </p>
                               <p>
                                 { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
-                                ))
+                                    <span key={i}>
+                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
+                                      { i+1 < s.samples.length && ', ' }
+                                    </span>
+                                  ))
                                 }
                                 <i>{ s.todo ? ' (To be implemented)' : '' }</i>
                               </p>
@@ -168,7 +180,10 @@ export default () => {
                               </p>
                               <p>
                                 { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>{ `${e} ${s.result[i] ? s.result[i] : ''} ` }</span>
+                                    <span key={i}>
+                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
+                                      { i+1 < s.samples.length && ', ' }
+                                    </span>
                                 ))
                                 }
                                 <i>{ s.todo ? ' (To be implemented)' : '' }</i>
