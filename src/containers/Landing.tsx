@@ -7,6 +7,7 @@ import Loader from 'react-loader-spinner'
 
 import samples from './samples.json'
 import bgn from './bgnpcgn.json'
+import alalc from './alalc.json'
 import { Poster } from 'components/Example'
 
 export default () => {
@@ -15,6 +16,7 @@ export default () => {
 
   const [sampleData, setSampleData] = useState([])
   const [bgnData, setBgnData] = useState([])
+  const [alalcData, setAlalcData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -26,6 +28,8 @@ export default () => {
       const mapcache = Opal.hash({});
       await Opal.Interscript.$on_load()
       const InterscriptMaps = (window as any).InterscriptMaps as any
+      */
+      /*
       const data = await Promise.all(samples.map(async(s) => {
         const text = s.samples.join("\n")
         const { systemName: system } = s
@@ -70,6 +74,32 @@ export default () => {
       */
       const data1 = bgn
       setBgnData(data1)
+      /*
+      const data2 = await Promise.all(alalc.map(async(s) => {
+        const text = s.samples.join("\n")
+        const { systemName: system } = s
+        try {
+          if (InterscriptMaps[system] === null) {
+            const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+            const { data: json } = resp
+            Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          }
+          if (system && !!InterscriptMaps[system]) {
+            if (text) {
+              const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+              return {...s, result }
+            }
+          } else {
+            return {...s, todo: true }
+          }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }))
+      */
+      const data2 = alalc
+      setAlalcData(data2)
       setIsLoading(false)
     })()
   }, [])
@@ -91,6 +121,11 @@ export default () => {
             key="bgnpcgn-example"
             href={`#bgnpcgn-example`}>
           BGN/PCGN
+        </SectionNavItem>
+        <SectionNavItem
+          key="alalc-example"
+          href={`#alalc-example`}>
+          ALA-LC
         </SectionNavItem>
       </SectionNav>
       <SectionGrid>
@@ -121,6 +156,14 @@ export default () => {
               <h2>{ `BGN/PCGN systems`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
               <Poster data={bgnData} />
+            </Section>
+            <Section
+                key={'alalc-example'}
+                id={'alalc-example'}
+            >
+                <h2>{ `ALA/LC systems`}</h2>
+                <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ALA-LC = American Library Association - Library of Congress)`}</i></p>
+                <Poster data={alalcData} />
             </Section>
           </>
         }
