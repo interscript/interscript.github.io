@@ -1,0 +1,465 @@
+[
+  {
+    "lang": "Amharic",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-amh-Ethi-Latn-1997",
+    "samples": [
+      "ኢትዮጵያ"
+    ],
+    "english": [
+      "Ethiopia"
+    ],
+    "result": [
+      "ʼiteyop̣eyā"
+    ]
+  },
+  {
+    "lang": "Amharic",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-amh-Ethi-Latn-2011",
+    "samples": [
+      "ኢትዮጵያ"
+    ],
+    "english": [
+      "Ethiopia"
+    ],
+    "result": [
+      "ʼiteyop̣eyā"
+    ]
+  },
+  {
+    "lang": "Arabic",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-ara-Arab-Latn-1997",
+    "samples": [
+      "وَضعْ"
+    ],
+    "result": [
+      "waḍ‘"
+    ]
+  },
+  {
+    "lang": "Assamese",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-asm-Deva-Latn-1997",
+    "samples": [
+      "অসমীয়া কবিতা"
+    ],
+    "result": [
+      "asamaīẏaā kabaitaā"
+    ]
+  },
+  {
+    "lang": "Assamese",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-asm-Deva-Latn-2012",
+    "samples": [
+      "অসমীয়া কবিতা"
+    ],
+    "result": [
+      "asamaīẏaā kabaitaā"
+    ]
+  },
+  {
+    "lang": "Azerbaijani",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-aze-Cyrl-Latn-1997",
+    "samples": [
+      "Азәрбајҹан дили"
+    ],
+    "result": [
+      "Azărbaı̐jan dili"
+    ]
+  },
+  {
+    "lang": "Belarusian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-bel-Cyrl-Latn-1997",
+    "samples": [
+      "Беларусь"
+    ],
+    "result": [
+      "Belarusʹ"
+    ]
+  },
+  {
+    "lang": "Bengali",
+    "isoName": "ALA/LC 2017",
+    "systemName": "alalc-ben-Beng-Latn-2017",
+    "samples": [
+      "র্ক"
+    ],
+    "result": [
+      "rka"
+    ]
+  },
+  {
+    "lang": "Bulgarian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-bul-Cyrl-Latn-1997",
+    "samples": [
+      "র্ক"
+    ],
+    "result": [
+      "র্ক"
+    ]
+  },
+  {
+    "lang": "Greek",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-ell-Grek-Latn-1997",
+    "samples": [
+      "ΑΘΗΝΑ"
+    ],
+    "result": [
+      "ATHĒNA"
+    ]
+  },
+  {
+    "lang": "Greek",
+    "isoName": "ALA/LC 2010",
+    "systemName": "alalc-ell-Grek-Latn-2010",
+    "samples": [
+      "ΑΘΗΝΑ"
+    ],
+    "result": [
+      "ATHĒNA"
+    ]
+  },
+  {
+    "lang": "Gujarati",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-guj-Gujr-Latn-1997",
+    "samples": [
+      "ગુજરાત"
+    ],
+    "english": [
+      "Gujarat"
+    ],
+    "result": [
+      "gujarāta"
+    ]
+  },
+  {
+    "lang": "Gujarati",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-guj-Gujr-Latn-2011",
+    "samples": [
+      "ગુજરાત"
+    ],
+    "english": [
+      "Gujarat"
+    ],
+    "result": [
+      "gujarāta"
+    ]
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-hin-Deva-Latn-1997",
+    "samples": [
+      "हम"
+    ],
+    "result": [
+      "hama"
+    ]
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-hin-Deva-Latn-2011",
+    "samples": [
+      "हम"
+    ],
+    "result": [
+      "hama"
+    ]
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-kat-Geok-Latn-1997",
+    "samples": [
+      "ႼႨႢႬႨ"
+    ],
+    "result": [
+      "CIGNI"
+    ]
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-kat-Geor-Latn-1997",
+    "samples": [
+      "ხაოფსე"
+    ],
+    "result": [
+      "xaopʻse"
+    ]
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-kor-Hang-Latn-1997",
+    "samples": [
+      "은하-리"
+    ],
+    "result": [
+      "Ŭnha-ri"
+    ]
+  },
+  {
+    "lang": "Malayalam",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-mal-Mlym-Latn-1997",
+    "samples": [
+      "മലയാളം"
+    ],
+    "result": [
+      "malayāḷaṃ"
+    ]
+  },
+  {
+    "lang": "Malayalam",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-mal-Mlym-Latn-2012",
+    "samples": [
+      "മലയാളം"
+    ],
+    "result": [
+      "malayāḷaṃ"
+    ]
+  },
+  {
+    "lang": "Marathi",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-mar-Deva-Latn-1997",
+    "samples": [
+      "बुधवारी"
+    ],
+    "result": [
+      "baudhavaāraī"
+    ]
+  },
+  {
+    "lang": "Marathi",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-mar-Deva-Latn-2011",
+    "samples": [
+      "बुधवारी"
+    ],
+    "result": [
+      "baudhavaāraī"
+    ]
+  },
+  {
+    "lang": "Macedonian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-mkd-Cyrl-Latn-1997",
+    "samples": [
+      "Општина Ердут"
+    ],
+    "result": [
+      "Opština Erdut"
+    ]
+  },
+  {
+    "lang": "Macedonian",
+    "isoName": "ALA/LC 2013",
+    "systemName": "alalc-mkd-Cyrl-Latn-2013",
+    "samples": [
+      "Општина Ердут"
+    ],
+    "result": [
+      "Opština Erdut"
+    ]
+  },
+  {
+    "lang": "Mongolian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-mon-Cyrl-Latn-1997",
+    "samples": [
+      "Эрдэнэт Сум"
+    ],
+    "result": [
+      "Êrdênêt Sum"
+    ]
+  },
+  {
+    "lang": "Punjabi",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-pan-Guru-Latn-1997",
+    "samples": [
+      "ਪੰਜਾਬ"
+    ],
+    "result": [
+      "pañjaāba"
+    ]
+  },
+  {
+    "lang": "Punjabi",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-pan-Guru-Latn-2011",
+    "samples": [
+      "ਪੰਜਾਬ"
+    ],
+    "result": [
+      "pañjaāba"
+    ]
+  },
+  {
+    "lang": "Persian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-per-Arab-Latn-1997",
+    "samples": [
+      "دَانَا"
+    ],
+    "result": [
+      "Dānā"
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-pli-Deva-Latn-2012",
+    "samples": [
+      "तेन खो पन"
+    ],
+    "result": [
+      "taena khao pana"
+    ]
+  },
+  {
+    "lang": "Prakrit languages",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-pra-Deva-Latn-2012",
+    "samples": [
+      "सृष्टिस्थितिविनाशानां शक्तिभूते सनातनि"
+    ],
+    "result": [
+      "saṛṣaṭaisathaitaivainaāśaānaāṃ śakataibhaūtae sanaātanai"
+    ]
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-rus-Cyrl-Latn-1997",
+    "samples": [
+      "Азов"
+    ],
+    "result": [
+      "Azov"
+    ]
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-rus-Cyrl-Latn-2012",
+    "samples": [
+      "Азов"
+    ],
+    "result": [
+      "Azov"
+    ]
+  },
+  {
+    "lang": "Sanskrit",
+    "isoName": "ALA/LC 2012",
+    "systemName": "alalc-san-Deva-Latn-2012",
+    "samples": [
+      "पूर्णमदः"
+    ],
+    "result": [
+      "paūraṇamadaḥ"
+    ]
+  },
+  {
+    "lang": "Sinhalese",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-sin-Sinh-Latn-1997",
+    "samples": [
+      "ශී‍්‍ර"
+    ],
+    "result": [
+      "śīra"
+    ]
+  },
+  {
+    "lang": "Sinhalese",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-sin-Sinh-Latn-2011",
+    "samples": [
+      "ශී‍්‍ර"
+    ],
+    "result": [
+      "śīra"
+    ]
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-srp-Cyrl-Latn-1997",
+    "samples": [
+      "Општина Ердут"
+    ],
+    "result": [
+      "Opština Erdut"
+    ]
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "ALA/LC 2013",
+    "systemName": "alalc-srp-Cyrl-Latn-2013",
+    "samples": [
+      "Шупља Стена"
+    ],
+    "result": [
+      "Šuplja Stena"
+    ]
+  },
+  {
+    "lang": "Tamil",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-tam-Taml-Latn-1997",
+    "samples": [
+      "அழிந்து"
+    ],
+    "result": [
+      "aḻintu"
+    ]
+  },
+  {
+    "lang": "Tamil",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-tam-Taml-Latn-2011",
+    "samples": [
+      "மலையாள"
+    ],
+    "result": [
+      "malaiyāḷa"
+    ]
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "ALA/LC 1997",
+    "systemName": "alalc-ukr-Cyrl-Latn-1997",
+    "samples": [
+      "Автономна"
+    ],
+    "result": [
+      "Avtonomna"
+    ]
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "ALA/LC 2011",
+    "systemName": "alalc-ukr-Cyrl-Latn-2011",
+    "samples": [
+      "Автономна"
+    ],
+    "result": [
+      "Avtonomna"
+    ]
+  }
+]

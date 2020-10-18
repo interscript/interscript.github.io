@@ -7,7 +7,9 @@ import Loader from 'react-loader-spinner'
 
 import samples from './samples.json'
 import bgn from './bgnpcgn.json'
-import { Example } from '../components/Example'
+import alalc from './alalc.json'
+import odni from './odni.json'
+import { Poster } from 'components/Example'
 
 export default () => {
   const { repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
@@ -15,17 +17,21 @@ export default () => {
 
   const [sampleData, setSampleData] = useState([])
   const [bgnData, setBgnData] = useState([])
+  const [alalcData, setAlalcData] = useState([])
+  const [odniData, setOdniData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     (async () => {
       setIsLoading(true)
       const data = samples
+
+      // const Opal = (window as any).Opal as any
+      // const mapcache = Opal.hash({});
+      // await Opal.Interscript.$on_load()
+      // const InterscriptMaps = (window as any).InterscriptMaps as any
+
       /*
-      const Opal = (window as any).Opal as any
-      const mapcache = Opal.hash({});
-      await Opal.Interscript.$on_load()
-      const InterscriptMaps = (window as any).InterscriptMaps as any
       const data = await Promise.all(samples.map(async(s) => {
         const text = s.samples.join("\n")
         const { systemName: system } = s
@@ -70,6 +76,59 @@ export default () => {
       */
       const data1 = bgn
       setBgnData(data1)
+      /*
+      const data2 = await Promise.all(alalc.map(async(s) => {
+        const text = s.samples.join("\n")
+        const { systemName: system } = s
+        try {
+          if (InterscriptMaps[system] === null) {
+            const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+            const { data: json } = resp
+            Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          }
+          if (system && !!InterscriptMaps[system]) {
+            if (text) {
+              const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+              return {...s, result }
+            }
+          } else {
+            return {...s, todo: true }
+          }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }))
+      */
+      const data2 = alalc
+      setAlalcData(data2)
+
+      // const data3 = await Promise.all(odni.map(async(s) => {
+      //   const text = s.samples.join("\n")
+      //   const { systemName: system } = s
+      //   try {
+      //     if (InterscriptMaps[system] === null) {
+      //       const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+      //       const { data: json } = resp
+      //       Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+      //     }
+      //     if (system && !!InterscriptMaps[system]) {
+      //       if (text) {
+      //         const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+      //         return {...s, result }
+      //       }
+      //     } else {
+      //       return {...s, todo: true }
+      //     }
+      //   } catch (e) {
+      //     console.log(e)
+      //   }
+      //   return s;
+      // }))
+      // setOdniData(data3)
+      const data3 = odni
+      setOdniData(data3)
+
       setIsLoading(false)
     })()
   }, [])
@@ -92,6 +151,16 @@ export default () => {
             href={`#bgnpcgn-example`}>
           BGN/PCGN
         </SectionNavItem>
+        <SectionNavItem
+          key="alalc-example"
+          href={`#alalc-example`}>
+          ALA-LC
+        </SectionNavItem>
+        <SectionNavItem
+          key="odni-example"
+          href={`#odni-example`}>
+          ODNI
+        </SectionNavItem>
       </SectionNav>
       <SectionGrid>
         { isLoading &&
@@ -112,48 +181,7 @@ export default () => {
             >
               <h2>{ `UN systems`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
-                    <div style={{display: 'flex'}}>
-                      <div style={{flex: 1}}>
-                        { sampleData.slice(0, sampleData.length/2).map((s,index) => (
-                            <div key={index}>
-                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                              </p>
-                              <p>
-                                { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>
-                                      { `${e} ${s.result[i] ? s.result[i] : ''}` }
-                                      { s.english && !!s.english[i] && <Example samples={s.english[i]} /> }
-                                      { i+1 < s.samples.length && ', ' }
-                                    </span>
-                                ))
-                                }
-                                <i>{s.systemName ? '' : ' (To be implemented)'}</i>
-                              </p>
-                            </div>
-                          ))
-                        }
-                      </div>
-                      <div style={{flex: 1}}>
-                        { sampleData.slice(sampleData.length/2, sampleData.length).map((s,index) => (
-                            <div key={index}>
-                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                              </p>
-                              <p>
-                                { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>
-                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
-                                      { s.english && !!s.english[i] && <Example samples={s.english[i]} /> }
-                                      { i+1 < s.samples.length && ', ' }
-                                    </span>
-                                ))
-                                }
-                                <i>{s.systemName ? '' : ' (To be implemented)'}</i>
-                              </p>
-                            </div>
-                          ))
-                        }
-                    </div>
-                  </div>
+              <Poster data={sampleData} />
             </Section>
             <Section
                 key={'bgnpcgn-example'}
@@ -161,47 +189,24 @@ export default () => {
             >
               <h2>{ `BGN/PCGN systems`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
-                    <div style={{display: 'flex'}}>
-                      <div style={{flex: 1}}>
-                        { bgnData.slice(0, bgnData.length/2).map((s,index) => (
-                            <div key={index}>
-                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                              </p>
-                              <p>
-                                { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>
-                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
-                                      { i+1 < s.samples.length && ', ' }
-                                    </span>
-                                  ))
-                                }
-                                <i>{ s.todo ? ' (To be implemented)' : '' }</i>
-                              </p>
-                            </div>
-                          ))
-                        }
-                      </div>
-                      <div style={{flex: 1}}>
-                        { bgnData.slice(bgnData.length/2, bgnData.length).map((s,index) => (
-                            <div key={index}>
-                              <p> <strong style={{color: '#002060'}}>{s.lang}</strong> [{s.isoName}]
-                              </p>
-                              <p>
-                                { s.samples.map((e: any, i: number) => (
-                                    <span key={i}>
-                                      { `${e} ${s.result[i] ? s.result[i] : ''} ` }
-                                      { i+1 < s.samples.length && ', ' }
-                                    </span>
-                                ))
-                                }
-                                <i>{ s.todo ? ' (To be implemented)' : '' }</i>
-                              </p>
-                            </div>
-                          ))
-                        }
-                    </div>
-                  </div>
+              <Poster data={bgnData} />
             </Section>
+            <Section
+                key={'alalc-example'}
+                id={'alalc-example'}
+            >
+                <h2>{ `ALA/LC systems`}</h2>
+                <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ALA-LC = American Library Association - Library of Congress)`}</i></p>
+                <Poster data={alalcData} />
+            </Section>
+              <Section
+                  key={'odni-example'}
+                  id={'odni-example'}
+              >
+                  <h2>{ `ODNI systems`}</h2>
+                  <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ODNI = Office of the Director of National Intelligence)`}</i></p>
+                  <Poster data={odniData} />
+              </Section>
           </>
         }
       </SectionGrid>
