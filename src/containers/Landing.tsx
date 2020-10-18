@@ -1,7 +1,7 @@
 import React, { useState, useEffect/*, useRef*/ } from 'react'
 import { useRouteData } from 'react-static'
 import { ReadmeSection, RepoInfo } from 'types'
-import axios, { AxiosResponse } from 'axios'
+// import axios, { AxiosResponse } from 'axios'
 import styled from 'styled-components'
 import Loader from 'react-loader-spinner'
 
@@ -20,7 +20,10 @@ export default () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true)
+      const data = samples
+      /*
       const Opal = (window as any).Opal as any
+      const mapcache = Opal.hash({});
       await Opal.Interscript.$on_load()
       const InterscriptMaps = (window as any).InterscriptMaps as any
       const data = await Promise.all(samples.map(async(s) => {
@@ -31,16 +34,17 @@ export default () => {
           const resp: AxiosResponse<any> = await axios.get
           (`/maps/${system}.json`)
           const { data: json } = resp
-          Opal.Interscript.$load_map_json(system, JSON.stringify(json))cgb
-          const result = Opal.Interscript.$transliterate(system, text).split("\n");
+          Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
           return {...s, result }
         } catch (e) {
           console.log(e)
         }
         return s;
       }))
+      */
       setSampleData(data)
-
+      /*
       const data1 = await Promise.all(bgn.map(async(s) => {
         const text = s.samples.join("\n")
         const { systemName: system } = s
@@ -52,7 +56,7 @@ export default () => {
           }
           if (system && !!InterscriptMaps[system]) {
             if (text) {
-              const result = Opal.Interscript.$transliterate(system, text).split("\n");
+              const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
               return {...s, result }
             }
           } else {
@@ -63,6 +67,8 @@ export default () => {
         }
         return s;
       }))
+      */
+      const data1 = bgn
       setBgnData(data1)
       setIsLoading(false)
     })()
