@@ -8,6 +8,7 @@ import Loader from 'react-loader-spinner'
 import samples from './samples.json'
 import bgn from './bgnpcgn.json'
 import alalc from './alalc.json'
+import odni from './odni.json'
 import { Poster } from 'components/Example'
 
 export default () => {
@@ -17,18 +18,19 @@ export default () => {
   const [sampleData, setSampleData] = useState([])
   const [bgnData, setBgnData] = useState([])
   const [alalcData, setAlalcData] = useState([])
+  const [odniData, setOdniData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     (async () => {
       setIsLoading(true)
       const data = samples
-      /*
-      const Opal = (window as any).Opal as any
-      const mapcache = Opal.hash({});
-      await Opal.Interscript.$on_load()
-      const InterscriptMaps = (window as any).InterscriptMaps as any
-      */
+
+      // const Opal = (window as any).Opal as any
+      // const mapcache = Opal.hash({});
+      // await Opal.Interscript.$on_load()
+      // const InterscriptMaps = (window as any).InterscriptMaps as any
+
       /*
       const data = await Promise.all(samples.map(async(s) => {
         const text = s.samples.join("\n")
@@ -100,6 +102,33 @@ export default () => {
       */
       const data2 = alalc
       setAlalcData(data2)
+
+      // const data3 = await Promise.all(odni.map(async(s) => {
+      //   const text = s.samples.join("\n")
+      //   const { systemName: system } = s
+      //   try {
+      //     if (InterscriptMaps[system] === null) {
+      //       const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+      //       const { data: json } = resp
+      //       Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+      //     }
+      //     if (system && !!InterscriptMaps[system]) {
+      //       if (text) {
+      //         const result = Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+      //         return {...s, result }
+      //       }
+      //     } else {
+      //       return {...s, todo: true }
+      //     }
+      //   } catch (e) {
+      //     console.log(e)
+      //   }
+      //   return s;
+      // }))
+      // setOdniData(data3)
+      const data3 = odni
+      setOdniData(data3)
+
       setIsLoading(false)
     })()
   }, [])
@@ -126,6 +155,11 @@ export default () => {
           key="alalc-example"
           href={`#alalc-example`}>
           ALA-LC
+        </SectionNavItem>
+        <SectionNavItem
+          key="odni-example"
+          href={`#odni-example`}>
+          ODNI
         </SectionNavItem>
       </SectionNav>
       <SectionGrid>
@@ -165,6 +199,14 @@ export default () => {
                 <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ALA-LC = American Library Association - Library of Congress)`}</i></p>
                 <Poster data={alalcData} />
             </Section>
+              <Section
+                  key={'odni-example'}
+                  id={'odni-example'}
+              >
+                  <h2>{ `ODNI systems`}</h2>
+                  <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ODNI = Office of the Director of National Intelligence)`}</i></p>
+                  <Poster data={odniData} />
+              </Section>
           </>
         }
       </SectionGrid>

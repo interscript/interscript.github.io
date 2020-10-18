@@ -1,0 +1,363 @@
+[
+  {
+    "lang": "Arabic",
+    "isoName": "ODNI 2004",
+    "systemName": "odni-ara-Arab-Latn-2004",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Arabic",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-ara-Arab-Latn-2015",
+    "samples": [
+      "مِصر"
+    ],
+    "result": [
+      "Misr"
+    ]
+  },
+  {
+    "lang": "Azerbaijani",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-aze-Cyrl-Latn-2015",
+    "samples": [
+      "Рашад Сады"
+    ],
+    "result": [
+      "Rashad Sady"
+    ]
+  },
+  {
+    "lang": "Belarusian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-bel-Cyrl-Latn-2015",
+    "samples": [
+      "Міхаіл"
+    ],
+    "result": [
+      "Mikhail"
+    ]
+  },
+  {
+    "lang": "Bulgarian",
+    "isoName": "ODNI 2005",
+    "systemName": "odni-bul-Cyrl-Latn-2005",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Bulgarian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-bul-Cyrl-Latn-2015",
+    "samples": [
+      "Добри Хрис"
+    ],
+    "result": [
+      "Dobri Khris"
+    ]
+  },
+  {
+    "lang": "Chechen Arabic",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-che-Arab-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Chechen Cyrillic",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-che-Cyrl-Latn-2015",
+    "samples": [
+      "Ильяс Ахма"
+    ],
+    "result": [
+      "Ilyas Akhma"
+    ]
+  },
+  {
+    "lang": "Chinese",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-zho-Hani-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kat-Geor-Latn-2015",
+    "samples": [
+      "ბაყაყი"
+    ],
+    "result": [
+      "baqaqi"
+    ]
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-hin-Deva-Latn-2015",
+    "samples": [
+      "हसन मोहम्म"
+    ],
+    "result": [
+      "hsn mohmm"
+    ]
+  },
+  {
+    "lang": "Kazakh",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kaz-Cyrl-Latn-2015",
+    "samples": [
+      "Бекзат Сат"
+    ],
+    "result": [
+      "Bekzat Sat"
+    ]
+  },
+  {
+    "lang": "Kyrgyz",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kir-Cyrl-Latn-2015",
+    "samples": [
+      "Гульжигит "
+    ],
+    "result": [
+      "Guljigit "
+    ]
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ODNI 2004",
+    "systemName": "odni-kor-Hang-Latn-2004",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kor-Hang-Latn-2015",
+    "samples": [
+      "김영수"
+    ],
+    "result": [
+      "Kim Yo’ng-su"
+    ]
+  },
+  {
+    "lang": "Kurdish",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kur-Arab-Latn-kurdish-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Kurdish",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kur-Arab-Latn-standard-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Kurdish",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kur-Arab-Latn-unique-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Kurdish",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kur-Cyrl-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Kurdish",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-kur-Latn-Latn-romanized-kurmanji-to-standard-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Macedonian",
+    "isoName": "ODNI 2005",
+    "systemName": "odni-mkd-Cyrl-Latn-2005",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Macedonian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-mkd-Cyrl-Latn-2015",
+    "samples": [
+      "Билјана"
+    ],
+    "result": [
+      "Biljana"
+    ]
+  },
+  {
+    "lang": "Persian",
+    "isoName": "ODNI 2004",
+    "systemName": "odni-per-Arab-Latn-2004",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Persian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-fas-Arab-Latn-2015",
+    "samples": [
+      "مُوسَى"
+    ],
+    "result": [
+      "musa"
+    ]
+  },
+  {
+    "lang": "Pashto",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-pus-Arab-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ODNI 2004",
+    "systemName": "odni-rus-Cyrl-Latn-2004",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-rus-Cyrl-Latn-2015",
+    "samples": [
+      "Ирина Иван"
+    ],
+    "result": [
+      "Irina Ivan"
+    ]
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "ODNI 2005",
+    "systemName": "odni-srp-Cyrl-Latn-2005",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-srp-Cyrl-Latn-2015",
+    "samples": [
+      "Гојко Мити"
+    ],
+    "result": [
+      "Gojko Miti"
+    ]
+  },
+  {
+    "lang": "Tajik",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-tgk-Cyrl-Latn-2015",
+    "samples": [
+      "Парвона Ҷа"
+    ],
+    "result": [
+      "Parvona Ja"
+    ]
+  },
+  {
+    "lang": "Tatar",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-tat-Cyrl-Latn-2015",
+    "samples": [
+      "Рустам Абд"
+    ],
+    "result": [
+      "Rustam Abd"
+    ]
+  },
+  {
+    "lang": "Turkmen",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-tuk-Cyrl-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Uyghur",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-uig-Arab-Latn-2015",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "ODNI 2005",
+    "systemName": "odni-ukr-Cyrl-Latn-2005",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-ukr-Cyrl-Latn-2015",
+    "samples": [
+      "Андрій"
+    ],
+    "result": [
+      "Andriy"
+    ]
+  },
+  {
+    "lang": "Urdu",
+    "isoName": "ODNI 2004",
+    "systemName": "odni-urd-Arab-Latn-2004",
+    "samples": [],
+    "result": [],
+    "todo": true
+  },
+  {
+    "lang": "Urdu",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-urd-Arab-Latn-2015",
+    "samples": [
+      "وشال ٹھاکر"
+    ],
+    "result": [
+      "ishal tsakr"
+    ]
+  },
+  {
+    "lang": "Uzbek",
+    "isoName": "ODNI 2015",
+    "systemName": "odni-uzb-Cyrl-Latn-2015",
+    "samples": [
+      "Фарход Тож"
+    ],
+    "result": [
+      "Farkhod Toj"
+    ]
+  }
+]
