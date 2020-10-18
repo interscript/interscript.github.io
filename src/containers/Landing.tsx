@@ -28,9 +28,10 @@ export default () => {
         const { systemName: system } = s
         if (!text || !system) return s
         try {
-          const resp: AxiosResponse<any> = await axios.get(`/maps/${system}.json`)
+          const resp: AxiosResponse<any> = await axios.get
+          (`/maps/${system}.json`)
           const { data: json } = resp
-          Opal.Interscript.$load_map_json(system, JSON.stringify(json))
+          Opal.Interscript.$load_map_json(system, JSON.stringify(json))cgb
           const result = Opal.Interscript.$transliterate(system, text).split("\n");
           return {...s, result }
         } catch (e) {
@@ -83,7 +84,7 @@ export default () => {
         <SectionNavItem
             key="bgnpcgn-example"
             href={`#bgnpcgn-example`}>
-          BGN/PCGB
+          BGN/PCGN
         </SectionNavItem>
       </SectionNav>
       <SectionGrid>
@@ -103,7 +104,7 @@ export default () => {
                 key={'un-example'}
                 id={'un-example'}
             >
-              <h2>{ `UN Poster examples`}</h2>
+              <h2>{ `UN systems`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
                     <div style={{display: 'flex'}}>
                       <div style={{flex: 1}}>
@@ -152,7 +153,7 @@ export default () => {
                 key={'bgnpcgn-example'}
                 id={'bgnpcgn-example'}
             >
-              <h2>{ `BGN/PCGN Poster examples`}</h2>
+              <h2>{ `BGN/PCGN systems`}</h2>
               <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i></p>
                     <div style={{display: 'flex'}}>
                       <div style={{flex: 1}}>
