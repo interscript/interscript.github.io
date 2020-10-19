@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Root, Routes } from 'react-static'
-import { Router } from '@reach/router'
+import { Link, Router } from '@reach/router'
 import { Helmet } from 'react-helmet'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import styled, { createGlobalStyle } from 'styled-components'
@@ -51,6 +51,19 @@ function App() {
         <LogoSymbol src={logo} alt="is" />
         <HeaderTitle />
       </LogoHeader>
+
+      <SectionNav>
+        <a
+            key="gh"
+            href={`https://github.com/interscript/interscript-js/`}>
+          <strong>View on GitHub</strong>
+        </a>
+        <Link to="/">Home</Link>
+        <Link to="/un">UN</Link>
+        <Link to="/bgnpcgn">BGN/PCGN</Link>
+        <Link to="/alalc">ALA-LC</Link>
+        <Link to="/odni">ODNI</Link>
+      </SectionNav>
 
       <MainContent>
         <React.Suspense fallback={<em>Loading...</em>}>
@@ -225,6 +238,34 @@ const MainContent = styled.main`
   @media screen and (min-width: 900px) {
     margin: 0 auto;
     width: 901px;
+  }
+`
+
+const SectionNav = styled.nav`
+  margin: 2rem 2rem 1rem 2rem;
+  text-align: center;
+
+  @media screen and (min-width: 900px) {
+    text-align: center;
+    margin: 2rem 0 1rem 1rem;
+  }
+  &>a {
+    display: inline-block;
+    margin-right: 1em;
+
+    white-space: nowrap;
+
+    &, &:link, &:visited {
+      border-bottom: none;
+    }
+
+    @media screen and (min-width: 900px) {
+      &::before {
+        content: "•";
+        display: inline;
+        margin: 0 1em 0 0;
+      }
+    }
   }
 `
 
