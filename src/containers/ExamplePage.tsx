@@ -1,23 +1,59 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Loader from 'react-loader-spinner'
+import { AxiosResponse } from 'axios'
+import { ScriptConversionExample } from '../../types'
 
 import { Poster } from 'components/Example'
 
 export const ExamplePage: React.FC<{ sampleName: string }
 >= ({ sampleName }) => {
-  const samples = require(`./${sampleName}.json`)
+  const samples = require(`../samples/${sampleName}.json`)
   const [sampleData, setSampleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     (async () => {
       setIsLoading(true)
-      const data = samples
-      setSampleData(data)
+
+      const Opal = (window as any).Opal as any
+      const mapcache = Opal.hash({});
+      await Opal.Interscript.$on_load()
+      //const InterscriptMaps = (window as any).InterscriptMaps as any
+
+      const translit = async (system: string, text: string) => {
+        await Opal.Interscript.$load_maps({
+          maps: system,
+          path: "/maps/",
+          processor: function(a: AxiosResponse) { return a.data }
+        });
+        return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+      }
+
+      const prepare = async (samples: ScriptConversionExample[], func: Function) => {
+        const data = await Promise.all(samples.map(async(s: ScriptConversionExample) => {
+          const text = s.samples.join("\n")
+          const { systemName: system } = s
+          if(!text || !system ||
+              !Opal.Interscript["$map_exist?"](system)) {
+            return s
+          }
+          try {
+            const result = await translit(system, text);
+            return {...s, result }
+          } catch (e) {
+            console.log(e)
+          }
+          return s;
+        }))
+
+        func(data)
+      }
+
+      await prepare(samples, setSampleData)
       setIsLoading(false)
     })()
-  })
+  }, [])
 
   return (
     <Section>
