@@ -1,24 +1,13 @@
-import React, { /*useState, useEffect, useRef*/ } from 'react'
-// import { useRouteData } from 'react-static'
-// import { ReadmeSection, RepoInfo } from 'types'
-// import axios, { AxiosResponse } from 'axios'
+import React from 'react'
 import styled from 'styled-components'
 
 import UN from '../pages/un'
 
 export default () => {
-  // const { repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
-  // useRouteData()
-
-  // useEffect(() => {
-
   return (
     <>
       <SectionGrid>
-        <Section
-            key={'un-example'}
-            id={'un-example'}
-        >
+        <Section>
           <UN />
         </Section>
       </SectionGrid>
