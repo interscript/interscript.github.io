@@ -1,4 +1,4 @@
-import React, { /*useEffect, useRef*/ } from 'react'
+import React, { /*useState, useEffect, useRef*/ } from 'react'
 // import { useRouteData } from 'react-static'
 // import { ReadmeSection, RepoInfo } from 'types'
 // import axios, { AxiosResponse } from 'axios'
@@ -11,8 +11,6 @@ export default () => {
   // useRouteData()
 
   // useEffect(() => {
-
-  // }, [])
 
   return (
     <>
