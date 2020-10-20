@@ -11,14 +11,14 @@ import {
 } from '../scs'
 
 import { primaryColor } from '../App'
-import { getLanguageTitleFrom6392BorT } from 'components/isoLang'
+import { getLanguageTitleFrom6392BorT, getLanguageTitleFrom6393BorT } from 'components/isoLang'
 
 
 const API_ENDPOINT = 'https://api.interscript.com'
 
 
 export default () => {
-  const { readmeSections, repoInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo } =
+  const { readmeSections, repoInfo, mapsInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
   useRouteData()
 
   const [showDemo, setShowDemo] = useState(false)
@@ -33,6 +33,8 @@ export default () => {
       setShowDemo(true)
     }
   }, [])
+
+  const summary = Object.keys(mapsInfo.languages).map(alpha3 => `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]})`).sort().join(', ');
 
   return (
     <>
@@ -49,6 +51,12 @@ export default () => {
           <strong>View on GitHub</strong>
         </SectionNavItem>
       </SectionNav>
+
+      <SectionGrid>
+        <Section>
+          <p>{ `The live demo supports ${mapsInfo?.meta.total} transliteration systems.` } </p>
+        </Section>
+      </SectionGrid>
 
       <SectionGrid>
         {demoIsShowable
@@ -71,6 +79,21 @@ export default () => {
             dangerouslySetInnerHTML={{ __html: section.html }} />
         )}
       </SectionGrid>
+
+      <SectionGrid>
+        <Section>
+          <h2>{ `Statistics`}</h2>
+          <p>{ summary }</p>
+        </Section>
+      </SectionGrid>
+
+      <SectionGrid>
+        <Section>
+          <h2>{ `Copyright`}</h2>
+          <p>{ `Ribose© 2020. All rights reserved.`}</p>
+        </Section>
+      </SectionGrid>
+
     </>
   )
 }
@@ -82,6 +105,7 @@ const LiveDemo: React.FC<{}> = function () {
   const [result, setResult] = useState<string | null | undefined>(null)
   const [error, setError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
+  const [systemCodes, setSystemCodes] = useState<string[]>([])
 
   const sampleInputRef = useRef<HTMLTextAreaElement>(null)
 
@@ -92,6 +116,7 @@ const LiveDemo: React.FC<{}> = function () {
   useEffect(() => {
     setError(null)
     setSubmitted(false)
+
   }, [systemCode, sampleText])
 
   useEffect(() => {
@@ -99,6 +124,20 @@ const LiveDemo: React.FC<{}> = function () {
       sampleInputRef.current?.focus();
     }
   }, [systemCode])
+
+  useEffect(() => {
+    (async () => {
+      const resp: AxiosResponse<any> = await axios({
+        method: 'POST',
+        url: API_ENDPOINT,
+        data: '{systemCodes}',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setSystemCodes(resp.data?.data?.systemCodes || [])
+    })()
+  }, [])
 
   async function handleConvert() {
     if (systemCode !== null && sampleText.trim() !== '') {
@@ -135,7 +174,7 @@ const LiveDemo: React.FC<{}> = function () {
 
   return (
     <>
-      <SystemSelector onSelect={selectSystem} />
+      <SystemSelector onSelect={selectSystem} systemCodes={systemCodes} />
 
       <SampleAndResult>
 
