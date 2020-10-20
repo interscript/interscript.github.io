@@ -63,6 +63,7 @@ function App() {
         <Link to="/bgnpcgn">BGN/PCGN</Link>
         <Link to="/alalc">ALA-LC</Link>
         <Link to="/odni">ODNI</Link>
+        <Link to="/ogc11122">OGC 11-122r1</Link>
       </SectionNav>
 
       <MainContent>
