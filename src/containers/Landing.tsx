@@ -14,7 +14,7 @@ import { primaryColor } from '../App'
 import { getLanguageTitleFrom6392or3 } from 'components/isoLang'
 
 export default () => {
-  const { readmeSections, repoInfo, mapsInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
+  const { readmeSections, /* repoInfo, */ mapsInfo }: { readmeSections: ReadmeSection[], repoInfo: RepoInfo, mapsInfo: any } =
   useRouteData()
 
   const [showDemo, setShowDemo] = useState(false)
@@ -35,20 +35,6 @@ export default () => {
 
   return (
     <>
-     <SectionNav>
-        {readmeSections.map(section =>
-          <SectionNavItem
-            key={section.id}
-            href={`#${section.id}`}
-            dangerouslySetInnerHTML={{ __html: section.titleHTML }} />
-        )}
-        <SectionNavItem
-            key="gh"
-            href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
-          <strong>View on GitHub</strong>
-        </SectionNavItem>
-      </SectionNav>
-
       <SectionGrid>
         <Section>
           <p>{ `The live demo supports ${mapsInfo?.meta.total} transliteration systems.` } </p>
@@ -252,36 +238,36 @@ const ResultTextArea = styled(SampleTextArea)`
   cursor: default;
 `
 
-
-const SectionNav = styled.nav`
-  margin: 2rem 2rem 1rem 2rem;
-  text-align: center;
-
-  @media screen and (min-width: 900px) {
-    text-align: unset;
-    margin: 2rem 0 1rem 1rem;
-  }
-`
-
-
-const SectionNavItem = styled.a`
-  display: inline-block;
-  margin-right: 1em;
-
-  white-space: nowrap;
-
-  &, &:link, &:visited {
-    border-bottom: none;
-  }
-
-  @media screen and (min-width: 900px) {
-    &::before {
-      content: "•";
-      display: inline;
-      margin: 0 1em 0 0;
-    }
-  }
-`
+//
+// const SectionNav = styled.nav`
+//   margin: 2rem 2rem 1rem 2rem;
+//   text-align: center;
+//
+//   @media screen and (min-width: 900px) {
+//     text-align: unset;
+//     margin: 2rem 0 1rem 1rem;
+//   }
+// `
+//
+//
+// const SectionNavItem = styled.a`
+//   display: inline-block;
+//   margin-right: 1em;
+//
+//   white-space: nowrap;
+//
+//   &, &:link, &:visited {
+//     border-bottom: none;
+//   }
+//
+//   @media screen and (min-width: 900px) {
+//     &::before {
+//       content: "•";
+//       display: inline;
+//       margin: 0 1em 0 0;
+//     }
+//   }
+// `
 
 const Section = styled.article`
   a.anchor {
