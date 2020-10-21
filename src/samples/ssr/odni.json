@@ -1,14 +1,6 @@
 [
   {
     "lang": "Arabic",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-ara-Arab-Latn-2004",
-    "samples": [],
-    "result": [],
-    "todo": true
-  },
-  {
-    "lang": "Arabic",
     "isoName": "ODNI 2015",
     "systemName": "odni-ara-Arab-Latn-2015",
     "samples": [
@@ -39,14 +31,6 @@
     "result": [
       "Mikhail"
     ]
-  },
-  {
-    "lang": "Bulgarian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-bul-Cyrl-Latn-2005",
-    "samples": [],
-    "result": [],
-    "todo": true
   },
   {
     "lang": "Bulgarian",
@@ -132,14 +116,6 @@
   },
   {
     "lang": "Korean",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-kor-Hang-Latn-2004",
-    "samples": [],
-    "result": [],
-    "todo": true
-  },
-  {
-    "lang": "Korean",
     "isoName": "ODNI 2015",
     "systemName": "odni-kor-Hang-Latn-2015",
     "samples": [
@@ -150,7 +126,7 @@
     ]
   },
   {
-    "lang": "Kurdish",
+    "lang": "Kurdish [Arab->Latn]",
     "isoName": "ODNI 2015",
     "systemName": "odni-kur-Arab-Latn-kurdish-2015",
     "samples": [],
@@ -158,7 +134,7 @@
     "todo": true
   },
   {
-    "lang": "Kurdish",
+    "lang": "Kurdish (Standard) [Arab->Latn]",
     "isoName": "ODNI 2015",
     "systemName": "odni-kur-Arab-Latn-standard-2015",
     "samples": [],
@@ -166,7 +142,7 @@
     "todo": true
   },
   {
-    "lang": "Kurdish",
+    "lang": "Kurdish (Unique) [Arab->Latn]",
     "isoName": "ODNI 2015",
     "systemName": "odni-kur-Arab-Latn-unique-2015",
     "samples": [],
@@ -174,7 +150,7 @@
     "todo": true
   },
   {
-    "lang": "Kurdish",
+    "lang": "Kurdish [Cyrl->Latn]",
     "isoName": "ODNI 2015",
     "systemName": "odni-kur-Cyrl-Latn-2015",
     "samples": [],
@@ -182,17 +158,9 @@
     "todo": true
   },
   {
-    "lang": "Kurdish",
+    "lang": "Kurdish (Romanized Kurmanji to Standard) [Latn->Latn]",
     "isoName": "ODNI 2015",
     "systemName": "odni-kur-Latn-Latn-romanized-kurmanji-to-standard-2015",
-    "samples": [],
-    "result": [],
-    "todo": true
-  },
-  {
-    "lang": "Macedonian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-mkd-Cyrl-Latn-2005",
     "samples": [],
     "result": [],
     "todo": true
@@ -207,14 +175,6 @@
     "result": [
       "Biljana"
     ]
-  },
-  {
-    "lang": "Persian",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-per-Arab-Latn-2004",
-    "samples": [],
-    "result": [],
-    "todo": true
   },
   {
     "lang": "Persian",
@@ -237,14 +197,6 @@
   },
   {
     "lang": "Russian",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-rus-Cyrl-Latn-2004",
-    "samples": [],
-    "result": [],
-    "todo": true
-  },
-  {
-    "lang": "Russian",
     "isoName": "ODNI 2015",
     "systemName": "odni-rus-Cyrl-Latn-2015",
     "samples": [
@@ -253,14 +205,6 @@
     "result": [
       "Irina Ivan"
     ]
-  },
-  {
-    "lang": "Serbian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-srp-Cyrl-Latn-2005",
-    "samples": [],
-    "result": [],
-    "todo": true
   },
   {
     "lang": "Serbian",
@@ -313,14 +257,6 @@
   },
   {
     "lang": "Ukrainian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-ukr-Cyrl-Latn-2005",
-    "samples": [],
-    "result": [],
-    "todo": true
-  },
-  {
-    "lang": "Ukrainian",
     "isoName": "ODNI 2015",
     "systemName": "odni-ukr-Cyrl-Latn-2015",
     "samples": [
@@ -329,14 +265,6 @@
     "result": [
       "Andriy"
     ]
-  },
-  {
-    "lang": "Urdu",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-urd-Arab-Latn-2004",
-    "samples": [],
-    "result": [],
-    "todo": true
   },
   {
     "lang": "Urdu",
