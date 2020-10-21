@@ -1,13 +1,6 @@
 [
   {
     "lang": "Arabic",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-ara-Arab-Latn-2004",
-    "samples": [],
-    "result": []
-  },
-  {
-    "lang": "Arabic",
     "isoName": "ODNI 2015",
     "systemName": "odni-ara-Arab-Latn-2015",
     "samples": [
@@ -31,13 +24,6 @@
     "samples": [
       "Міхаіл"
     ],
-    "result": []
-  },
-  {
-    "lang": "Bulgarian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-bul-Cyrl-Latn-2005",
-    "samples": [],
     "result": []
   },
   {
@@ -110,13 +96,6 @@
   },
   {
     "lang": "Korean",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-kor-Hang-Latn-2004",
-    "samples": [],
-    "result": []
-  },
-  {
-    "lang": "Korean",
     "isoName": "ODNI 2015",
     "systemName": "odni-kor-Hang-Latn-2015",
     "samples": [
@@ -161,25 +140,11 @@
   },
   {
     "lang": "Macedonian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-mkd-Cyrl-Latn-2005",
-    "samples": [],
-    "result": []
-  },
-  {
-    "lang": "Macedonian",
     "isoName": "ODNI 2015",
     "systemName": "odni-mkd-Cyrl-Latn-2015",
     "samples": [
       "Билјана"
     ],
-    "result": []
-  },
-  {
-    "lang": "Persian",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-per-Arab-Latn-2004",
-    "samples": [],
     "result": []
   },
   {
@@ -200,25 +165,11 @@
   },
   {
     "lang": "Russian",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-rus-Cyrl-Latn-2004",
-    "samples": [],
-    "result": []
-  },
-  {
-    "lang": "Russian",
     "isoName": "ODNI 2015",
     "systemName": "odni-rus-Cyrl-Latn-2015",
     "samples": [
       "Ирина Иван"
     ],
-    "result": []
-  },
-  {
-    "lang": "Serbian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-srp-Cyrl-Latn-2005",
-    "samples": [],
     "result": []
   },
   {
@@ -264,25 +215,11 @@
   },
   {
     "lang": "Ukrainian",
-    "isoName": "ODNI 2005",
-    "systemName": "odni-ukr-Cyrl-Latn-2005",
-    "samples": [],
-    "result": []
-  },
-  {
-    "lang": "Ukrainian",
     "isoName": "ODNI 2015",
     "systemName": "odni-ukr-Cyrl-Latn-2015",
     "samples": [
       "Андрій"
     ],
-    "result": []
-  },
-  {
-    "lang": "Urdu",
-    "isoName": "ODNI 2004",
-    "systemName": "odni-urd-Arab-Latn-2004",
-    "samples": [],
     "result": []
   },
   {
