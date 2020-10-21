@@ -53,11 +53,6 @@ function App() {
       </LogoHeader>
 
       <SectionNav>
-        <a
-            key="gh"
-            href={`https://github.com/interscript/interscript-js/`}>
-          <strong>View on GitHub</strong>
-        </a>
         <Link to="/">Home</Link>
         <Link to="/un">UN</Link>
         <Link to="/bgnpcgn">BGN/PCGN</Link>
