@@ -51,7 +51,6 @@ export default {
 
     const readme = cheerio.load(readmeResp.data);
     const sectionHeaders = readme('h2');
-    console.log(sectionHeaders)
     const readmeSections = [];
 
     for (const idx of Object.keys(sectionHeaders)) {

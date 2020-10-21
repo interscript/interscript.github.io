@@ -52,14 +52,14 @@ function App() {
         <HeaderTitle />
       </LogoHeader>
 
-      <SectionNav>
-        <Link to="/">Home</Link>
-        <Link to="/un">UN</Link>
-        <Link to="/bgnpcgn">BGN/PCGN</Link>
-        <Link to="/alalc">ALA-LC</Link>
-        <Link to="/odni">ODNI</Link>
-        <Link to="/ogc11122">OGC 11-122r1</Link>
-      </SectionNav>
+      <TopNav>
+        <Link to="/" className="nav-item">Home</Link>
+        <Link to="/un" className="nav-item">UN</Link>
+        <Link to="/bgnpcgn" className="nav-item">BGN/PCGN</Link>
+        <Link to="/alalc" className="nav-item">ALA-LC</Link>
+        <Link to="/odni" className="nav-item">ODNI</Link>
+        <Link to="/ogc11122" className="nav-item">OGC 11-122r1</Link>
+      </TopNav>
 
       <MainContent>
         <React.Suspense fallback={<em>Loading...</em>}>
@@ -237,7 +237,7 @@ const MainContent = styled.main`
   }
 `
 
-const SectionNav = styled.nav`
+const TopNav = styled.nav`
   margin: 2rem 2rem 1rem 2rem;
   text-align: center;
 
@@ -245,7 +245,7 @@ const SectionNav = styled.nav`
     text-align: center;
     margin: 2rem 0 1rem 1rem;
   }
-  &>a {
+  .nav-item {
     display: inline-block;
     margin-right: 1em;
 
@@ -257,9 +257,12 @@ const SectionNav = styled.nav`
 
     @media screen and (min-width: 900px) {
       &::before {
-        content: "•";
+        content: "|";
         display: inline;
         margin: 0 1em 0 0;
+      }
+      &:first-child::before {
+        content: none;
       }
     }
   }
