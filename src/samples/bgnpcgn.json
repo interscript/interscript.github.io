@@ -329,7 +329,7 @@
       "lang": "Pashto",
       "isoName": "BGN/PCGN 1968",
       "systemName": "bgnpcgn-pus-Arab-Latn-1968",
-      "samples": [],
+      "samples": ["کَابُل"],
       "result": []
     },
     {
@@ -374,7 +374,7 @@
     {
       "lang": "Persian",
       "isoName": "BGN/PCGN 1956",
-      "systemName": "bgnpcgn-fas-Arab-Latn-1956",
+      "systemName": "",
       "samples": ["ایران"],
       "english": ["Iran"],
       "result": []
@@ -383,7 +383,7 @@
       "lang": "Persian",
       "isoName": "BGN/PCGN 1958",
       "systemName": "bgnpcgn-per-Arab-Latn-1958",
-      "samples": ["ایران"],
+      "samples": ["اِیران"],
       "english": ["Iran"],
       "result": []
     },
