@@ -20,13 +20,13 @@
         "isoName": "UN 1972, II/8",
         "systemName": "un-ara-Arab-Latn-1972",
         "samples": [
-            "جزيرة العرب"
+            "جَزيرة العَرَب"
         ],
         "english": [
             "Arabian Peninsula"
         ],
         "result": [
-            "Jzyrat al ‘Rb"
+            "Jazyrat al ‘Arab"
         ]
     },
     {
@@ -382,11 +382,11 @@
         "systemName": "bgnpcgn-prs-Arab-Latn-2007",
         "samples": [
             "افغانستان",
-            "کابل"
+            "کابُل"
         ],
         "result": [
-            "āfghānstān",
-            "kābl"
+            "āfghānistān",
+            "kābul"
         ]
     },
     {
@@ -395,7 +395,7 @@
         "systemName": "",
         "samples": [
             "تھران",
-            "ايران"
+            "اِيران"
         ],
         "result": []
     },
