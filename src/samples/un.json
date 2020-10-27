@@ -11,7 +11,7 @@
     "lang": "Arabic",
     "isoName": "UN 1972, II/8",
     "systemName": "un-ara-Arab-Latn-1972",
-    "samples": ["جزيرة العرب"],
+    "samples": ["جَزيرة العَرَب"],
     "english": ["Arabian Peninsula"],
     "result": []
   },
@@ -219,14 +219,14 @@
     "lang": "Pashto",
     "isoName": "BGN/PCGN 1968",
     "systemName": "bgnpcgn-prs-Arab-Latn-2007",
-    "samples": ["افغانستان","کابل"],
+    "samples": ["افغانِستان","کابُل"],
     "result": []
   },
   {
     "lang": "Persian",
     "isoName": "UN 1967, I/13",
     "systemName": "",
-    "samples": ["تھران","ايران"],
+    "samples": ["تھران","اِيران"],
     "result": []
   },
   {
