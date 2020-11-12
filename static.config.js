@@ -4,6 +4,12 @@ import cheerio from 'cheerio'
 import { Octokit } from '@octokit/rest'
 import 'interscript'
 
+import alalcSamples from './src/samples/alalc.json';
+import bgnpcgnSamples from './src/samples/bgnpcgn.json';
+import odniSamples from './src/samples/odni.json';
+import ogc11122Samples from './src/samples/ogc11122.json';
+import unSamples from './src/samples/un.json';
+
 const repoOwner = 'interscript';
 const repoName = 'interscript-js';
 
@@ -92,20 +98,16 @@ export default {
         return s;
       }));
 
-    const alalc = await evaluate(require('./src/samples/alalc.json'))
-    console.log(alalc);
+    let alalc, bgnpcgn, odni, ogc11122, un;
 
-    const bgnpcgn = await evaluate(require('./src/samples/bgnpcgn.json'))
-    console.log(bgnpcgn);
-
-    const odni = await evaluate(require('./src/samples/odni.json'))
-    console.log(odni);
-
-    const ogc11122 = await evaluate(require('./src/samples/ogc11122.json'))
-    console.log(ogc11122);
-
-    const un = await evaluate(require('./src/samples/un.json'))
-    console.log(un);
+    if (process.env.NODE_ENV !== 'development') {
+      console.log('transliterates all samples on build process...');
+      alalc = await evaluate(alalcSamples);
+      bgnpcgn = await evaluate(bgnpcgnSamples);
+      odni = await evaluate(odniSamples);
+      ogc11122 = await evaluate(ogc11122Samples);
+      un = await evaluate(unSamples);
+    }
 
     return [
       {
@@ -124,35 +126,35 @@ export default {
         path: 'alalc',
         template: 'src/pages/alalc.tsx',
         getData: () => ({
-          samples: alalc,
+          samples: alalc || alalcSamples,
         }),
       },
       {
         path: 'bgnpcgn',
         template: 'src/pages/bgnpcgn.tsx',
         getData: () => ({
-          samples: bgnpcgn,
+          samples: bgnpcgn || bgnpcgnSamples,
         }),
       },
       {
         path: 'odni',
         template: 'src/pages/odni.tsx',
         getData: () => ({
-          samples: odni,
+          samples: odni || odniSamples,
         }),
       },
       {
         path: 'ogc11122',
         template: 'src/pages/ogc11122.tsx',
         getData: () => ({
-          samples: ogc11122,
+          samples: ogc11122 || ogc11122Samples,
         }),
       },
       {
         path: 'un',
         template: 'src/pages/un.tsx',
         getData: () => ({
-          samples: un,
+          samples: un || unSamples,
         }),
       },
     ]
