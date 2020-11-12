@@ -6,55 +6,56 @@ import { ScriptConversionExample } from '../../types'
 
 import { Poster } from 'components/Example'
 
-export const ExamplePage: React.FC<{ sampleName: string }
->= ({ sampleName }) => {
-  const samples = require(`../samples/${sampleName}.json`)
+import { primaryColor } from '../App'
+
+export const ExamplePage: React.FC<{ samples: ScriptConversionExample[] }
+>= ({ samples }) => {
   const [sampleData, setSampleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    (async () => {
-      setIsLoading(true)
-
-      const Opal = (window as any).Opal as any
-      const mapcache = Opal.hash({});
-      await Opal.Interscript.$on_load()
-      //const InterscriptMaps = (window as any).InterscriptMaps as any
-
-      const translit = async (system: string, text: string) => {
-        await Opal.Interscript.$load_maps({
-          maps: system,
-          path: "/maps/",
-          processor: function(a: AxiosResponse) { return a.data }
-        });
-        return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
-      }
-
-      const prepare = async (samples: ScriptConversionExample[], func: Function) => {
-        const data = await Promise.all(samples.map(async(s: ScriptConversionExample) => {
-          const text = s.samples.join("\n")
-          const { systemName: system } = s
-          if(!text || !system ||
-              !Opal.Interscript["$map_exist?"](system)) {
-            return s
-          }
-          try {
-            const result = await translit(system, text);
-            return {...s, result }
-          } catch (e) {
-            console.log(e)
-          }
-          return s;
-        }))
-
-        func(data)
-      }
-
-      await prepare(samples, setSampleData)
-      setIsLoading(false)
-    })()
+    setSampleData(samples)
   }, [])
 
+  async function handleForceUpdate() {
+    setIsLoading(true)
+
+    const Opal = (window as any).Opal as any
+    const mapcache = Opal.hash({});
+    await Opal.Interscript.$on_load()
+
+    const translit = async (system: string, text: string) => {
+      await Opal.Interscript.$load_maps({
+        maps: system,
+        path: "/maps/",
+        processor: function(a: AxiosResponse) { return a.data }
+      });
+      return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+    }
+
+    const prepare = async (samples: ScriptConversionExample[], func: Function) => {
+      const data = await Promise.all(samples.map(async(s: ScriptConversionExample) => {
+        const text = s.samples.join("\n")
+        const { systemName: system } = s
+        if(!text || !system ||
+            !Opal.Interscript["$map_exist?"](system)) {
+          return s
+        }
+        try {
+          const result = await translit(system, text);
+          return {...s, result }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }))
+
+      func(data)
+    }
+
+    await prepare(samples, setSampleData)
+    setIsLoading(false)
+  }
   return (
     <Section>
       { isLoading &&
@@ -68,7 +69,12 @@ export const ExamplePage: React.FC<{ sampleName: string }
         </CenterLoader>
       }
       { !isLoading &&
-          <Poster data={sampleData} />
+          <>
+            <ButtonLayout>
+              <ForceUpdateButton onClick={handleForceUpdate}>On Site</ForceUpdateButton>
+            </ButtonLayout>
+            <Poster data={sampleData} />
+          </>
       }
     </Section>
   )
@@ -112,4 +118,17 @@ const CenterLoader = styled.div`
     height: 100%;
     background-color: rgba(255,255,255,0.5);
   }
+`
+const ButtonLayout = styled.div`
+  text-align: right;
+`
+const ForceUpdateButton = styled.button`
+  flex-shrink: 0;
+  margin: 0 .5rem;
+  padding: .5rem 1rem;
+  border: 0;
+  font-size: 100%;
+  cursor: pointer;
+  color: white;
+  background: ${`#${primaryColor}`};
 `
