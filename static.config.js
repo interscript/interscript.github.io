@@ -2,6 +2,7 @@ import path from 'path'
 import cheerio from 'cheerio'
 
 import { Octokit } from '@octokit/rest'
+import 'interscript'
 
 const repoOwner = 'interscript';
 const repoName = 'interscript-js';
@@ -63,6 +64,49 @@ export default {
       }
     }
 
+    // SSR
+    const Opal = global.Opal;
+    const mapcache = Opal.hash({});
+    await Opal.Interscript.$on_load()
+
+    const translit = async (system, text) => {
+      await Opal.Interscript.$on_load_maps({maps: system});
+
+      return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
+    }
+
+    const evaluate = (samples) =>
+      Promise.all(samples.map(async(s) => {
+        const text = s.samples.join("\n")
+        const { systemName: system } = s
+        if(!text || !system ||
+            !Opal.Interscript["$map_exist?"](system)) {
+          return s
+        }
+        try {
+          const result = await translit(system, text);
+          return {...s, result }
+        } catch (e) {
+          console.log(e)
+        }
+        return s;
+      }));
+
+    const alalc = await evaluate(require('./src/samples/alalc.json'))
+    console.log(alalc);
+
+    const bgnpcgn = await evaluate(require('./src/samples/bgnpcgn.json'))
+    console.log(bgnpcgn);
+
+    const odni = await evaluate(require('./src/samples/odni.json'))
+    console.log(odni);
+
+    const ogc11122 = await evaluate(require('./src/samples/ogc11122.json'))
+    console.log(ogc11122);
+
+    const un = await evaluate(require('./src/samples/un.json'))
+    console.log(un);
+
     return [
       {
         path: '/',
@@ -74,6 +118,41 @@ export default {
             name: repoName,
           },
           mapsInfo,
+        }),
+      },
+      {
+        path: 'alalc',
+        template: 'src/pages/alalc.tsx',
+        getData: () => ({
+          samples: alalc,
+        }),
+      },
+      {
+        path: 'bgnpcgn',
+        template: 'src/pages/bgnpcgn.tsx',
+        getData: () => ({
+          samples: bgnpcgn,
+        }),
+      },
+      {
+        path: 'odni',
+        template: 'src/pages/odni.tsx',
+        getData: () => ({
+          samples: odni,
+        }),
+      },
+      {
+        path: 'ogc11122',
+        template: 'src/pages/ogc11122.tsx',
+        getData: () => ({
+          samples: ogc11122,
+        }),
+      },
+      {
+        path: 'un',
+        template: 'src/pages/un.tsx',
+        getData: () => ({
+          samples: un,
         }),
       },
     ]
