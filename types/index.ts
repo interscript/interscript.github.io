@@ -12,6 +12,7 @@ export interface RepoInfo {
 export interface ScriptConversionExample {
   lang: string,
   isoName: string,
+  year?: number
   systemName: string,
   samples: string[],
   english?: string[],

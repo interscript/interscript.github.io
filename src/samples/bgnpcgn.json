@@ -2,6 +2,7 @@
     {
       "lang": "Amharic",
       "isoName": "BGN/PCGN 1967",
+      "year": 1967,
       "systemName": "bgnpcgn-amh-Ethi-Latn-1967",
       "samples": ["ኢትዮጵያ", "አዲስ አበባ"],
       "english": ["Ethiopia", "Addis Ababa"],
@@ -10,6 +11,7 @@
     {
       "lang": "Arabic",
       "isoName": "BGN/PCGN 1956",
+      "year": 1956,
       "systemName": "bgnpcgn-ara-Arab-Latn-1956",
       "samples": ["قُرآن"],
       "english": [],
@@ -18,6 +20,7 @@
     {
       "lang": "Armenian",
       "isoName": "BGN/PCGN 1981",
+      "year": 1981,
       "systemName": "bgnpcgn-arm-Armn-Latn-1981",
       "samples": ["Հայաստան","Երևան"],
       "result": []
@@ -25,6 +28,7 @@
     {
       "lang": "Azerbaijani",
       "isoName": "BGN/PCGN 1993",
+      "year": 1993,
       "systemName": "bgnpcgn-aze-Cyrl-Latn-1993",
       "samples": ["Azərbaycan"],
       "result": []
@@ -32,6 +36,7 @@
     {
       "lang": "Baluchi",
       "isoName": "BGN/PCGN Unified Agreement 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-bal-Arab-Latn-2007",
       "samples": ["بلۏچی‎"],
       "result": []
@@ -39,6 +44,7 @@
     {
       "lang": "Bashkir",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-bak-Cyrl-Latn-2007",
       "samples": ["Васйылға"],
       "result": []
@@ -46,6 +52,7 @@
     {
       "lang": "Belarusian",
       "isoName": "BGN/PCGN 1979",
+      "year": 1979,
       "systemName": "bgnpcgn-bel-Cyrl-Latn-1979",
       "samples": ["Антон"],
       "result": []
@@ -53,6 +60,7 @@
     {
       "lang": "Bulgarian",
       "isoName": "BGN/PCGN 2006",
+      "year": 2006,
       "systemName": "bgna-bul-Cyrl-Latn-2006",
       "samples": ["нунатак Абрит"],
       "result": []
@@ -60,6 +68,7 @@
     {
       "lang": "Bulgarian",
       "isoName": "BGN/PCGN 2009",
+      "year": 2009,
       "systemName": "bgna-bul-Cyrl-Latn-2009",
       "samples": ["нунатак Абрит"],
       "result": []
@@ -67,6 +76,7 @@
     {
       "lang": "Bulgarian",
       "isoName": "BGN/PCGN 1952",
+      "year": 1952,
       "systemName": "bgnpcgn-bul-Cyrl-Latn-1952",
       "samples": ["нунатак Абрит"],
       "result": []
@@ -74,6 +84,7 @@
     {
       "lang": "Bulgarian",
       "isoName": "BGN/PCGN 2013",
+      "year": 2013,
       "systemName": "bgnpcgn-bul-Cyrl-Latn-2013",
       "samples": ["София"],
       "result": []
@@ -81,6 +92,7 @@
     {
       "lang": "Burmese",
       "isoName": "BGN/PCGN 1970",
+      "year": 1970,
       "systemName": "bgnpcgn-mya-Mymr-Latn-1970",
       "samples": [],
       "result": []
@@ -88,6 +100,7 @@
     {
       "lang": "Chechen",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-che-Cyrl-Latn-2007",
       "samples": ["нохчий, noxçiy"],
       "result": []
@@ -95,6 +108,7 @@
     {
       "lang": "Chinese",
       "isoName": "BGN/PCGN (1964, 1943)",
+      "year": 1964,
       "systemName": "bgnpcgn-zho-Hani-Latn-1964",
       "samples": ["中国","北京"],
       "result": []
@@ -102,6 +116,7 @@
     {
       "lang": "Chinese",
       "isoName": "BGN/PCGN 1979",
+      "year": 1979,
       "systemName": "bgnpcgn-zho-Hans-Latn-1979",
       "samples": ["中国","北京"],
       "result": []
@@ -109,34 +124,39 @@
     {
       "lang": "Dari",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-prs-Arab-Latn-2007",
       "samples": ["بَغْلان", "پُوټَكَى"],
       "result": []
     },
     {
-      "lang": "Dari",
+      "lang": "Dari yaghoubi",
       "isoName": "BGN/PCGN yaghoubi-2007",
+      "year": 2007,
       "systemName": "bgnpcgn-prs-Arab-Latn-yaghoubi",
       "samples": ["بَغْلَان"],
       "result": []
     },
     {
       "lang": "Faroese",
-      "isoName": "BGN/PCGN 1964",
-      "systemName": "bgnpcgn-far-Latn-Latn-1964",
+      "isoName": "BGN/PCGN 1968",
+      "year": 1968,
+      "systemName": "bgnpcgn-fao-Latn-Latn-1968",
       "samples": ["føroyskt mál"],
       "result": []
     },
     {
-      "lang": "Faroese",
-      "isoName": "BGN/PCGN 1968",
-      "systemName": "bgnpcgn-fao-Latn-Latn-1968",
+      "lang": "Fataleka",
+      "isoName": "BGN/PCGN 1964",
+      "year": 1964,
+      "systemName": "bgnpcgn-far-Latn-Latn-1964",
       "samples": ["føroyskt mál"],
       "result": []
     },
     {
       "lang": "Georgian",
       "isoName": "BGN/PCGN 1981",
+      "year": 1981,
       "systemName": "bgnpcgn-kat-Geor-Latn-1981",
       "samples": ["ჰებუდი"],
       "result": []
@@ -144,6 +164,7 @@
     {
       "lang": "Georgian",
       "isoName": "BGN/PCGN 2009",
+      "year": 2009,
       "systemName": "bgnpcgn-kat-Geor-Latn-2009",
       "samples": ["თბილისი"],
       "result": []
@@ -151,6 +172,7 @@
     {
       "lang": "Greek",
       "isoName": "BGN/PCGN 1962",
+      "year": 1962,
       "systemName": "bgnpcgn-ell-Grek-Latn-1962",
       "samples": ["ΑΘΗΝΑ", "μπαμπάκι"],
       "result": []
@@ -158,6 +180,7 @@
     {
       "lang": "Greek",
       "isoName": "BGN/PCGN 1996",
+      "year": 1996,
       "systemName": "bgnpcgn-ell-Grek-Latn-1996",
       "samples": ["ΑΘΗΝΑ", "μπαμπάκι"],
       "result": []
@@ -165,6 +188,7 @@
     {
       "lang": "German",
       "isoName": "BGN/PCGN 1986",
+      "year": 1986,
       "systemName": "bgnpcgn-deu-Latn-Latn-1986",
       "samples": [],
       "result": []
@@ -172,6 +196,7 @@
     {
       "lang": "Hebrew",
       "isoName": "BGN/PCGN 1962",
+      "year": 1962,
       "systemName": "bgnpcgn-heb-Hebr-Latn-1962",
       "samples": ["מְדִינַת ישְרְאֶל"],
       "result": []
@@ -179,6 +204,7 @@
     {
       "lang": "Hebrew",
       "isoName": "BGN/PCGN Amended 2018",
+      "year": 2018,
       "systemName": "bgnpcgn-heb-Hebr-Latn-2018",
       "samples": ["מְדִינַת ישְרְאֶל"],
       "result": []
@@ -186,6 +212,7 @@
     {
       "lang": "Icelandic",
       "isoName": "BGN/PCGN (1964, 1947)",
+      "year": 1964,
       "systemName": "bgnpcgn-isl-Latn-Latn-1964",
       "samples": ["íslenska"],
       "result": []
@@ -193,6 +220,7 @@
     {
       "lang": "Icelandic",
       "isoName": "BGN/PCGN 1968",
+      "year": 1968,
       "systemName": "bgnpcgn-isl-Latn-Latn-1968",
       "samples": ["íslenska"],
       "result": []
@@ -200,6 +228,7 @@
     {
       "lang": "Japanese",
       "isoName": "Japanese Kana Modified Hepburn 1930",
+      "year": 1930,
       "systemName": "bgnpcgn-jpn-Hrkt-Latn-1930",
       "samples": ["にっぽん","とうきょ"],
       "result": []
@@ -207,6 +236,7 @@
     {
       "lang": "Japanese",
       "isoName": "BGN/PCGN 1962",
+      "year": 1962,
       "systemName": "bgn-jpn-Hrkt-Latn-1962",
       "samples": ["にっぽん","とうきょ"],
       "result": []
@@ -214,13 +244,15 @@
     {
       "lang": "Japanese",
       "isoName": "BGN/PCGN 1976",
+      "year": 1976,
       "systemName": "bgnpcgn-jpn-Hrkt-Latn-1976",
       "samples": ["にっぽん","とうきょ"],
       "result": []
     },
     {
-      "lang": "Korean",
+      "lang": "Korean(Hang)",
       "isoName": "BGN/PCGN 1943",
+      "year": 1943,
       "systemName": "bgn-kor-Hang-Latn-1943",
       "samples": ["평양","서울"],
       "result": []
@@ -228,20 +260,23 @@
     {
       "lang": "Korean",
       "isoName": "BGN/PCGN 1943",
+      "year": 1943,
       "systemName": "bgn-kor-Kore-Latn-1943",
       "samples": ["평양","서울"],
       "result": []
     },
     {
-      "lang": "Korean",
+      "lang": "Korean(Hang)",
       "isoName": "BGN/PCGN 1945",
+      "year": 1945,
       "systemName": "bgnpcgn-kor-Hang-Latn-kn-1945",
       "samples": ["평양","용화"],
       "result": []
     },
     {
-      "lang": "Korean",
+      "lang": "Korean(Hang)",
       "isoName": "BGN/PCGN 2011",
+      "year": 2011,
       "systemName": "bgnpcgn-kor-Hang-Latn-rok-2011",
       "samples": ["불국사","울산"],
       "result": []
@@ -249,6 +284,7 @@
     {
       "lang": "Korean",
       "isoName": "BGN/PCGN 2011",
+      "year": 2011,
       "systemName": "bgnpcgn-kor-Kore-Latn-rok-2011",
       "samples": ["佛國寺","蔚山"],
       "result": []
@@ -256,6 +292,7 @@
     {
       "lang": "Kazakh",
       "isoName": "BGN/PCGN 1979",
+      "year": 1979,
       "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
       "samples": ["қазақ тілі"],
       "result": []
@@ -263,6 +300,7 @@
     {
       "lang": "Kyrgyz",
       "isoName": "BGN/PCGN 1979",
+      "year": 1979,
       "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
       "samples": ["Кыргызча"],
       "english": ["Kyrgyz"],
@@ -271,6 +309,7 @@
     {
       "lang": "Lao",
       "isoName": "BGN/PCGN 1966",
+      "year": 1966,
       "systemName": "bgnpcgn-lao-Laoo-Latn-1966",
       "samples": ["ປະເທດລາວ","ວຽງຈັນ"],
       "english": ["Laos", "Vientiane"],
@@ -279,6 +318,7 @@
     {
       "lang": "Maldivian",
       "isoName": "BGN/PCGN 1972",
+      "year": 1972,
       "systemName": "bgnpcgn-div-Thaa-Latn-1972",
       "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
       "result": []
@@ -286,6 +326,7 @@
     {
       "lang": "Macedonian",
       "isoName": "BGN/PCGN 1981",
+      "year": 1981,
       "systemName": "bgnpcgn-mkd-Cyrl-Latn-1981",
       "samples": ["Ѓол","Јусек Тепеси"],
       "result": []
@@ -293,6 +334,7 @@
     {
       "lang": "Macedonian",
       "isoName": "BGN/PCGN 2013",
+      "year": 2013,
       "systemName": "bgnpcgn-mkd-Cyrl-Latn-2013",
       "samples": ["Ѓенови Ливаѓе"],
       "result": []
@@ -300,6 +342,7 @@
     {
       "lang": "Moldovan",
       "isoName": "BGN/PCGN 2002",
+      "year": 2002,
       "systemName": "bgnpcgn-ron-Cyrl-Latn-2002",
       "samples": ["Лимба молдовеняскэ"],
       "result": []
@@ -307,6 +350,7 @@
     {
       "lang": "Mongolian",
       "isoName": "BGN/PCGN 1964",
+      "year": 1964,
       "systemName": "bgnpcgn-mon-Cyrl-Latn-1964",
       "samples": ["Эрдэнэт Сум"],
       "result": []
@@ -314,6 +358,7 @@
     {
       "lang": "Nepali",
       "isoName": "BGN/PCGN 2011",
+      "year": 2011,
       "systemName": "bgnpcgn-nep-Deva-Latn-2011",
       "samples": ["लेखन","मुद्रा"],
       "result": []
@@ -321,6 +366,7 @@
     {
       "lang": "Northern Sami",
       "isoName": "BGN/PCGN 1984",
+      "year": 1984,
       "systemName": "bgnpcgn-sme-Latn-Latn-1984",
       "samples": [],
       "result": []
@@ -328,6 +374,7 @@
     {
       "lang": "Pashto",
       "isoName": "BGN/PCGN 1968",
+      "year": 1968,
       "systemName": "bgnpcgn-pus-Arab-Latn-1968",
       "samples": ["کَابُل"],
       "result": []
@@ -335,6 +382,7 @@
     {
       "lang": "Pashto",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-pus-Arab-Latn-2007",
       "samples": [],
       "result": []
@@ -342,6 +390,7 @@
     {
       "lang": "Northwest Pashayi",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-glh-arab-latn-2007",
       "samples": ["افغانستان"],
       "english": ["Afghanistan"],
@@ -350,6 +399,7 @@
     {
       "lang": "Northeast Pashayi",
       "isoName": "BGN/PCGN Unified Agreement 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-aee-Arab-Latn-2007",
       "samples": ["افغانستان"],
       "english": ["Afghanistan"],
@@ -358,6 +408,7 @@
     {
       "lang": "Southwest Pashayi",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-psh-Arab-Latn-2007",
       "samples": ["افغانستان"],
       "english": ["Afghanistan"],
@@ -366,6 +417,7 @@
     {
       "lang": "Southeast Pashayi",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-psi-Arab-Latn-2007",
       "samples": ["افغانستان"],
       "english": ["Afghanistan"],
@@ -374,6 +426,7 @@
     {
       "lang": "Persian",
       "isoName": "BGN/PCGN 1956",
+      "year": 1956,
       "systemName": "",
       "samples": ["ایران"],
       "english": ["Iran"],
@@ -382,6 +435,7 @@
     {
       "lang": "Persian",
       "isoName": "BGN/PCGN 1958",
+      "year": 1958,
       "systemName": "bgnpcgn-per-Arab-Latn-1958",
       "samples": ["اِیران"],
       "english": ["Iran"],
@@ -390,6 +444,7 @@
     {
       "lang": "Russian",
       "isoName": "BGN/PCGN 1947",
+      "year": 1947,
       "systemName": "bgnpcgn-rus-Cyrl-Latn-1947",
       "samples": ["ДЛИННОЕ ПОКРЫВАЛО"],
       "result": []
@@ -397,6 +452,7 @@
     {
       "lang": "Rusyn",
       "isoName": "BGN/PCGN 2016",
+      "year": 2016,
       "systemName": "bgnpcgn-rue-Cyrl-Latn-2016",
       "samples": [],
       "result": []
@@ -404,6 +460,7 @@
     {
       "lang": "Serbian",
       "isoName": "BGN/PCGN 1962",
+      "year": 1962,
       "systemName": "bgnpcgn-ser-Cyrl-Latn-1962",
       "samples": [],
       "result": []
@@ -411,6 +468,7 @@
     {
       "lang": "Serbian",
       "isoName": "BGN/PCGN 2005",
+      "year": 2005,
       "systemName": "bgnpcgn-srp-Cyrl-Latn-2005",
       "samples": ["Шупља Стена"],
       "result": []
@@ -418,6 +476,7 @@
     {
       "lang": "Tajik",
       "isoName": "BGN/PCGN 1994",
+      "year": 1994,
       "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
       "samples": [],
       "result": []
@@ -425,6 +484,7 @@
     {
       "lang": "Tatar",
       "isoName": "BGN/PCGN 2005",
+      "year": 2005,
       "systemName": "bgnpcgn-tat-Cyrl-Latn-2005",
       "samples": [],
       "result": []
@@ -432,6 +492,7 @@
     {
       "lang": "Tigrinya",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-tir-Ethi-Latn-2007",
       "samples": [],
       "result": []
@@ -439,6 +500,7 @@
     {
       "lang": "Turkmen",
       "isoName": "BGN/PCGN Turkmen Cyrillic 1979",
+      "year": 1979,
       "systemName": "bgnpcgn-tuk-Cyrl-Latn-1979",
       "samples": [],
       "result": []
@@ -446,6 +508,7 @@
     {
       "lang": "Turkmen",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-tuk-Arab-Latn-2007",
       "samples": ["تۆرکمنچه‎"],
       "result": []
@@ -453,6 +516,7 @@
     {
       "lang": "Ukrainian",
       "isoName": "BGN/PCGN 1965",
+      "year": 1965,
       "systemName": "bgnpcgn-ukr-Cyrl-Latn-1965",
       "samples": ["Авдіївська Міськрада"],
       "result": []
@@ -460,6 +524,7 @@
     {
       "lang": "Ukrainian",
       "isoName": "BGN/PCGN 2019",
+      "year": 2019,
       "systemName": "bgnpcgn-ukr-Cyrl-Latn-2019",
       "samples": ["Алушта"],
       "result": []
@@ -467,13 +532,15 @@
     {
       "lang": "Uzbek Cyrillic",
       "isoName": "BGN/PCGN (1979)",
+      "year": 1979,
       "systemName": "bgnpcgn-uzb-Cyrl-Latn-1979",
       "samples": [],
       "result": []
     },
     {
-      "lang": "Uzbek",
+      "lang": "Uzbek Arabic",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-uzb-Arab-Latn-2007",
       "samples": [],
       "result": ["اۉزبېکچه‎"]
@@ -481,6 +548,7 @@
     {
       "lang": "Urdu",
       "isoName": "BGN/PCGN 2007",
+      "year": 2007,
       "systemName": "bgnpcgn-urd-Arab-Latn-2007",
       "samples": [],
       "result": []
