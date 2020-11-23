@@ -24,7 +24,7 @@ export const Sample: React.FC<{
   return (
     <div>
       <p>
-        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{s.isoName + ' '}
+        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{aggr ? 'BGN/PCGN ' : s.isoName + ' '}
         {
           aggr &&
           years.map((id, index) => (
