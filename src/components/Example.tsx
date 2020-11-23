@@ -1,5 +1,11 @@
-import React from 'react'
-import { ScriptConversionExample } from "types/index";
+import React, { useState } from 'react'
+import { ScriptConversionExample } from "types/index"
+import { ScriptConversionSystem } from "../scs"
+import styled from 'styled-components'
+
+interface ScriptConversionView extends ScriptConversionExample {
+  scs?: ScriptConversionSystem
+}
 
 export const English: React.FC<{
   samples: any
@@ -12,12 +18,22 @@ export const English: React.FC<{
 }
 
 export const Sample: React.FC<{
-  data: ScriptConversionExample
-}> = function ({ data: s }) {
+  data: ScriptConversionExample, years?: number[], setYear?: Function
+}> = function ({ data: s, years = null, setYear=null }) {
+  const aggr:boolean = years && years.length > 1
   return (
     <div>
       <p>
-        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{s.isoName}]
+        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{aggr ? 'BGN/PCGN ' : s.isoName + ' '}
+        {
+          aggr &&
+          years.map((id, index) => (
+              <YearNavItem href='javascript:void(0)' onClick={() => setYear(index)}
+                           key={index}
+              >{id} </YearNavItem>
+            )
+          )
+        }]
       </p>
       <p>
         {s.samples.map((e: string, i: number) => (
@@ -34,22 +50,81 @@ export const Sample: React.FC<{
   )
 }
 
+export const AggrSample: React.FC<{
+  data: ScriptConversionView[]
+}> = function ({ data}) {
+  const [sel, setSel] = useState(0)
+  const ids = data.map(e => e.year).sort((a,b) => (b - a))
+  const findDataByIndex = () => data.find(e => e.year === ids[sel])
+
+  return (
+    <div>
+      {
+        ids.length > 1
+          ? <Sample data={findDataByIndex()} years={ids} setYear={setSel}/>
+          : ids.length === 1 ? <Sample data={data[0]} /> : null
+      }
+    </div>
+  )
+}
+
+// const YearNav = styled.nav`
+//   margin-bottom: -1rem;
+// `
+
+const YearNavItem = styled.a`
+  cursor: pointer;
+  
+  &, &:link, &:visited {
+    border-bottom: none;
+  }
+  
+  &:active, &:visited, &:hover, &:focus {
+    font-weight: bolder;
+  }
+  margin-right: 0.25rem;
+  // border-bottom: none !important;
+`
+
+
 export const Poster: React.FC<{
-  data: ScriptConversionExample[]
-}> = function ({ data }) {
+  data: ScriptConversionExample[], aggregate?: boolean
+}> = function ({ data, aggregate= false }) {
+
+  const groupByLang = () => (
+    data.reduce((r: any, a: ScriptConversionExample) => {
+      r[a.lang] = r[a.lang] || [];
+      r[a.lang].push(a)
+      return r;
+    }, Object.create(null))
+  )
+
+  let left, right
+  if (aggregate) {
+    const result: any = groupByLang()
+    const langs: string[] = Object.keys(result)
+    const genSample = (lang: string, i: number) =>
+        (
+          <AggrSample data={result[lang]} key={i}/>
+        )
+    left = langs.slice(0, langs.length / 2).map(genSample)
+    right = langs.slice(langs.length / 2, langs.length).map(genSample)
+  } else {
+    const genSample = (s: ScriptConversionExample, index: number) =>
+      (
+        <Sample data={s} key={index}/>
+      )
+    left = data.slice(0, data.length / 2).map(genSample)
+    right = data.slice(data.length / 2, data.length).map(genSample)
+  }
+
   return (
     <div style={{ display: 'flex' }}>
       <div style={{ flex: 1 }}>
-        {data.slice(0, data.length / 2).map((s: ScriptConversionExample, i: number) => (
-          <Sample data={s} key={i} />
-        ))
-        }
+        { left }
       </div>
       <div style={{ flex: 1 }}>
-        {data.slice(data.length / 2, data.length).map((s: ScriptConversionExample, i: number) => (
-          <Sample data={s} key={i} />
-        ))
-        }
+        { right }
       </div>
     </div>
   )

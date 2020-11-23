@@ -8,8 +8,8 @@ import { Poster } from 'components/Example'
 
 import { primaryColor } from '../App'
 
-export const ExamplePage: React.FC<{ samples: ScriptConversionExample[] }
->= ({ samples }) => {
+export const ExamplePage: React.FC<{ samples: ScriptConversionExample[], aggregate?: boolean }
+>= ({ samples, aggregate= false }) => {
   const [sampleData, setSampleData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
@@ -73,7 +73,7 @@ export const ExamplePage: React.FC<{ samples: ScriptConversionExample[] }
             <ButtonLayout>
               <ForceUpdateButton onClick={handleForceUpdate}>On Site</ForceUpdateButton>
             </ButtonLayout>
-            <Poster data={sampleData} />
+            <Poster data={sampleData} aggregate={aggregate}/>
           </>
       }
     </Section>
