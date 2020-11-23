@@ -18,23 +18,23 @@ export const English: React.FC<{
 }
 
 export const Sample: React.FC<{
-  data: ScriptConversionExample, years?: number[], setYear?: Function
-}> = function ({ data: s, years = null, setYear=null }) {
+  data: ScriptConversionExample, years?: number[], setYear?: Function, selected?: number
+}> = function ({ data: s, years = null, setYear=null, selected= 0 }) {
   const aggr:boolean = years && years.length > 1
   return (
     <div>
-      <p>
-        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{aggr ? 'BGN/PCGN ' : s.isoName + ' '}
+      <SampleTitle>
+        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{aggr ? 'BGN/PCGN ' : s.isoName}
         {
           aggr &&
           years.map((id, index) => (
               <YearNavItem href='javascript:void(0)' onClick={() => setYear(index)}
-                           key={index}
-              >{id} </YearNavItem>
+                           key={index} style={{fontWeight: index === selected ? 'bolder' : null}}
+              >{id}</YearNavItem>
             )
           )
         }]
-      </p>
+      </SampleTitle>
       <p>
         {s.samples.map((e: string, i: number) => (
           <span key={i}>
@@ -61,7 +61,7 @@ export const AggrSample: React.FC<{
     <div>
       {
         ids.length > 1
-          ? <Sample data={findDataByIndex()} years={ids} setYear={setSel}/>
+          ? <Sample data={findDataByIndex()} years={ids} setYear={setSel} selected={sel} />
           : ids.length === 1 ? <Sample data={data[0]} /> : null
       }
     </div>
@@ -71,7 +71,11 @@ export const AggrSample: React.FC<{
 // const YearNav = styled.nav`
 //   margin-bottom: -1rem;
 // `
-
+const SampleTitle = styled.p`
+  & > a:last-child {
+    margin-right: 0;  
+  }
+`
 const YearNavItem = styled.a`
   cursor: pointer;
   
@@ -82,10 +86,8 @@ const YearNavItem = styled.a`
   &:active, &:visited, &:hover, &:focus {
     font-weight: bolder;
   }
-  margin-right: 0.25rem;
-  // border-bottom: none !important;
+  margin-right: 0.25rem;  
 `
-
 
 export const Poster: React.FC<{
   data: ScriptConversionExample[], aggregate?: boolean
