@@ -142,19 +142,6 @@
   },
   {
     "lang": "Bulgarian",
-    "isoName": "BGN/PCGN 2013",
-    "year": 2013,
-    "systemName": "bgnpcgn-bul-Cyrl-Latn-2013",
-    "samples": [
-      "София"
-    ],
-    "english": [
-      "Sofia"
-    ],
-    "result": []
-  },
-  {
-    "lang": "Bulgarian",
     "isoName": "BGN/PCGN 1952",
     "year": 1952,
     "systemName": "bgnpcgn-bul-Cyrl-Latn-1952",
@@ -173,6 +160,9 @@
     "systemName": "bgnpcgn-bul-Cyrl-Latn-2013",
     "samples": [
       "София"
+    ],
+    "english": [
+      "Sofia"
     ],
     "result": []
   },
@@ -866,7 +856,7 @@
     "lang": "Uzbek Cyrillic",
     "isoName": "BGN/PCGN 2000",
     "year": 2000,
-    "systemName": "bgnpcgn-uzb-Arab-Latn-2000",
+    "systemName": "bgnpcgn-uzb-Cyrl-Latn-2000",
     "samples": [
       "Ўзбек ёзуви"
     ],
