@@ -29,6 +29,10 @@ export const Sample: React.FC<{
   if (aggr && authority) {
     isoName = authority + ' '
   }
+
+  if (authority === 'OGC' || s.ogc11122) {
+    isoName = s.ogc11122 + ' '
+  }
   return (
     <div>
       <SampleTitle>
