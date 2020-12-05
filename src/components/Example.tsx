@@ -31,7 +31,7 @@ export const Sample: React.FC<{
   }
 
   if (authority === 'OGC' || s.ogc11122) {
-    isoName = s.ogc11122 + ' '
+    isoName = s.ogc11122
   }
   return (
     <div>
