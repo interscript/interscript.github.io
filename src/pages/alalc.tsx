@@ -11,7 +11,7 @@ export default () => {
     <>
       <h2>{`ALA/LC systems`}</h2>
       <p><i>{ `Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ALA-LC = American Library Association - Library of Congress)`}</i></p>
-      <ExamplePage samples={samples}/>
+      <ExamplePage samples={samples} aggregate={true} authority="ALA/LC"/>
     </>
   )
 }
