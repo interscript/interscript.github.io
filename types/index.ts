@@ -14,6 +14,7 @@ export interface ScriptConversionExample {
   isoName: string,
   year?: number
   systemName: string,
+  ogc11122?:string,
   samples: string[],
   english?: string[],
   result: string[]
