@@ -18,13 +18,21 @@ export const English: React.FC<{
 }
 
 export const Sample: React.FC<{
-  data: ScriptConversionExample, years?: number[], setYear?: Function, selected?: number
-}> = function ({ data: s, years = null, setYear=null, selected= 0 }) {
+  data: ScriptConversionExample,
+  years?: number[],
+  authority?: string,
+  setYear?: Function,
+  selected?: number
+}> = function ({ data: s, years, authority, setYear, selected = 0 }) {
   const aggr:boolean = years && years.length > 1
+  let isoName = s.isoName
+  if (aggr && authority) {
+    isoName = authority + ' '
+  }
   return (
     <div>
       <SampleTitle>
-        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{aggr ? 'BGN/PCGN ' : s.isoName}
+        <strong style={{ color: '#002060' }}>{s.lang}</strong> [{isoName}
         {
           aggr &&
           years.map((id, index) => (
@@ -51,8 +59,9 @@ export const Sample: React.FC<{
 }
 
 export const AggrSample: React.FC<{
-  data: ScriptConversionView[]
-}> = function ({ data}) {
+  data: ScriptConversionView[],
+  authority: string
+}> = function ({ data, authority}) {
   const [sel, setSel] = useState(0)
   const ids = data.map(e => e.year).sort((a,b) => (b - a))
   const findDataByIndex = () => data.find(e => e.year === ids[sel])
@@ -61,7 +70,11 @@ export const AggrSample: React.FC<{
     <div>
       {
         ids.length > 1
-          ? <Sample data={findDataByIndex()} years={ids} setYear={setSel} selected={sel} />
+          ? <Sample data={findDataByIndex()}
+                    years={ids}
+                    authority={authority}
+                    setYear={setSel}
+                    selected={sel} />
           : ids.length === 1 ? <Sample data={data[0]} /> : null
       }
     </div>
@@ -73,25 +86,27 @@ export const AggrSample: React.FC<{
 // `
 const SampleTitle = styled.p`
   & > a:last-child {
-    margin-right: 0;  
+    margin-right: 0;
   }
 `
 const YearNavItem = styled.a`
   cursor: pointer;
-  
+
   &, &:link, &:visited {
     border-bottom: none;
   }
-  
+
   &:active, &:visited, &:hover, &:focus {
     font-weight: bolder;
   }
-  margin-right: 0.25rem;  
+  margin-right: 0.25rem;
 `
 
 export const Poster: React.FC<{
-  data: ScriptConversionExample[], aggregate?: boolean
-}> = function ({ data, aggregate= false }) {
+  data: ScriptConversionExample[],
+  authority: string,
+  aggregate?: boolean
+}> = function ({ data, authority, aggregate= false }) {
 
   const groupByLang = () => (
     data.reduce((r: any, a: ScriptConversionExample) => {
@@ -107,7 +122,7 @@ export const Poster: React.FC<{
     const langs: string[] = Object.keys(result)
     const genSample = (lang: string, i: number) =>
         (
-          <AggrSample data={result[lang]} key={i}/>
+          <AggrSample data={result[lang]} authority={authority} key={i}/>
         )
     left = langs.slice(0, langs.length / 2).map(genSample)
     right = langs.slice(langs.length / 2, langs.length).map(genSample)
