@@ -131,7 +131,7 @@
   {
     "lang": "Kazakh",
     "isoName": "BGN/PCGN 1979",
-    "systemName": "",
+    "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
     "samples": ["Қазақстан","Астана"],
     "result": []
   },
