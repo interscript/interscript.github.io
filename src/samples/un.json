@@ -146,7 +146,7 @@
   {
     "lang": "Kirghiz",
     "isoName": "BGN/PCGN 1979",
-    "systemName": "",
+    "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
     "samples": ["Кыргызстан","Бишкек"],
     "result": []
   },
