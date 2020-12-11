@@ -182,8 +182,8 @@
   {
     "lang": "Maldivian",
     "isoName": "national 1987",
-    "systemName": "",
-    "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
+    "systemName": "mv-div-Thaa-Latn-1987",
+    "samples": ["ދިވެހި ރާއްޖެ", "މާލެ"],
     "english": ["Maldives"],
     "result": []
   },
