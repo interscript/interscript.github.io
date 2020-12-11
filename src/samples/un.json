@@ -260,7 +260,7 @@
   {
     "lang": "Tajik",
     "isoName": "BGN/PCGN 1994",
-    "systemName": "",
+    "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
     "samples": ["Тоҷикистон","Душанбе"],
     "result": []
   },
