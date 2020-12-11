@@ -304,8 +304,8 @@
   {
     "lang": "Urdu",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
-    "samples": ["اسلام آباد","پاکستان"],
+    "systemName": "un-urd-Arab-Latn-1972",
+    "samples": ["پاکستان","اسلام آباد"],
     "result": []
   }
 ]
