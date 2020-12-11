@@ -225,8 +225,8 @@
   {
     "lang": "Persian",
     "isoName": "UN 1967, I/13",
-    "systemName": "",
-    "samples": ["تھران","اِيران"],
+    "systemName": "un-prs-Arab-Latn-1967",
+    "samples": ["اِيران", "تهران"],
     "result": []
   },
   {
