@@ -3,7 +3,11 @@ import { ScriptConversionExample } from 'types/index'
 import { ScriptConversionSystem } from '../scs'
 import styled from 'styled-components'
 
-const cap = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1)
+const cap = (str: string): string =>
+  str
+    .split(' ')
+    .map((e) => e.charAt(0).toUpperCase() + e.slice(1))
+    .join(' ')
 interface ScriptConversionView extends ScriptConversionExample {
   scs?: ScriptConversionSystem
 }

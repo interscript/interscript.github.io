@@ -131,7 +131,7 @@
   {
     "lang": "Kazakh",
     "isoName": "BGN/PCGN 1979",
-    "systemName": "",
+    "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
     "samples": ["Қазақстан","Астана"],
     "result": []
   },
@@ -146,7 +146,7 @@
   {
     "lang": "Kirghiz",
     "isoName": "BGN/PCGN 1979",
-    "systemName": "",
+    "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
     "samples": ["Кыргызстан","Бишкек"],
     "result": []
   },
@@ -182,8 +182,8 @@
   {
     "lang": "Maldivian",
     "isoName": "national 1987",
-    "systemName": "",
-    "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
+    "systemName": "mv-div-Thaa-Latn-1987",
+    "samples": ["ދިވެހި ރާއްޖެ", "މާލެ"],
     "english": ["Maldives"],
     "result": []
   },
@@ -225,8 +225,8 @@
   {
     "lang": "Persian",
     "isoName": "UN 1967, I/13",
-    "systemName": "",
-    "samples": ["تھران","اِيران"],
+    "systemName": "un-prs-Arab-Latn-1967",
+    "samples": ["اِيران", "تهران"],
     "result": []
   },
   {
@@ -260,7 +260,7 @@
   {
     "lang": "Tajik",
     "isoName": "BGN/PCGN 1994",
-    "systemName": "",
+    "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
     "samples": ["Тоҷикистон","Душанбе"],
     "result": []
   },
@@ -297,15 +297,15 @@
   {
     "lang": "Ukrainian",
     "isoName": "national 2007",
-    "systemName": "",
+    "systemName": "un-ukr-Cyrl-Latn-1998",
     "samples": ["Україна","Київ"],
     "result": []
   },
   {
     "lang": "Urdu",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
-    "samples": ["اسلام آباد","پاکستان"],
+    "systemName": "un-urd-Arab-Latn-1972",
+    "samples": ["پاکستان","اسلام آباد"],
     "result": []
   }
 ]

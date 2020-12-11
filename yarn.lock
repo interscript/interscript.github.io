@@ -4674,10 +4674,10 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.1.3.tgz#c22897d4bc6a28a40f10dfc79916f74a4901c947"
-  integrity sha512-o5mxA+tEDbtGLVbNriuOPtQtLthIWTZ896rw1UOrmNiLnspyz6h8Fcl5bds28/ijikmlTde+yczOb8vK5yWzfQ==
+interscript@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-1.1.4.tgz#094834fc1747b3ac8cc0eeeecdbadb9392d29988"
+  integrity sha512-5vxE+Az9bWl18yC5Y0YAvqBZPyz3f4Et+Eufc+2aFfERDUbTgsIhanLcr0AN8tCw+edkIumiACBLEVNiOw+3gw==
 
 intersection-observer@^0.7.0:
   version "0.7.0"
