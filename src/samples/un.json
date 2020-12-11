@@ -297,7 +297,7 @@
   {
     "lang": "Ukrainian",
     "isoName": "national 2007",
-    "systemName": "",
+    "systemName": "un-ukr-Cyrl-Latn-1998",
     "samples": ["Україна","Київ"],
     "result": []
   },
