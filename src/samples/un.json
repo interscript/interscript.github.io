@@ -226,7 +226,7 @@
     "lang": "Persian",
     "isoName": "UN 1967, I/13",
     "systemName": "un-prs-Arab-Latn-1967",
-    "samples": ["اِيران", "تهران"],
+    "samples": ["اِيران", "تِهران"],
     "result": []
   },
   {
@@ -305,7 +305,7 @@
     "lang": "Urdu",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-urd-Arab-Latn-1972",
-    "samples": ["پاکستان","اسلام آباد"],
+    "samples": ["پاکِستَان","اِسلام آبَاد"],
     "result": []
   }
 ]
