@@ -26,7 +26,7 @@
   {
     "lang": "Assamese",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-asm-Beng-Latn-1972",
     "samples": ["অসম", "দিছপুৰ"],
     "english": ["Assam","Dispur"],
     "result": []
@@ -93,7 +93,7 @@
   {
     "lang": "Gujarati",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-guj-Gujr-Latn-1972",
     "samples": ["જરાત","ગાંધીનગર"],
     "result": []
   },
@@ -175,7 +175,7 @@
   {
     "lang": "Malayalam",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-mal-Mlym-Latn-1972",
     "samples": ["കേരളം","തിരുവനന്തപുരം"],
     "result": []
   },
@@ -232,7 +232,7 @@
   {
     "lang": "Punjabi",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-pan-Guru-Latn-1972",
     "samples": ["ਪੰਜਾਬ","ਚੰ ਡੀਗੜ"],
     "result": []
   },
@@ -267,14 +267,14 @@
   {
     "lang": "Tamil",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-tam-Taml-Latn-1972",
     "samples": ["தமிழ்நாடு","இலங்கை"],
     "result": []
   },
   {
     "lang": "Telugu",
     "isoName": "UN 1972, II/11; 1977, III/12",
-    "systemName": "",
+    "systemName": "un-tel-Telu-Latn-1972",
     "samples": ["ఆధ్రా ప్రదేశ్", "హైదరాబాదు"],
     "result": []
   },
