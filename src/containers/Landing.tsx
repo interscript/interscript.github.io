@@ -119,13 +119,13 @@ const LiveDemo: React.FC<{}> = function () {
     }
 
     ;(async () => {
-      let test: string
+      let test: string | null
       if (systemCode !== null) {
         test = await getTestExample(systemCode)
-      } else {
-        test = ''
+        if (test !== null) {
+          setSampleText(test)
+        }
       }
-      setSampleText(test)
     })()
   }, [systemCode])
 
@@ -148,7 +148,9 @@ const LiveDemo: React.FC<{}> = function () {
       },
     })
 
-    return JSON.parse(Opal.global.InterscriptMaps[system])?.tests[0]?.source
+    const map = JSON.parse(Opal.global.InterscriptMaps[system])
+
+    return map.tests && map.tests.length > 0 ? map.tests[0].source : null
   }
 
   async function handleConvert() {
