@@ -1,104 +1,107 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import Loader from 'react-loader-spinner'
-import { AxiosResponse } from 'axios'
-import { ScriptConversionExample } from '../../types'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import Loader from "react-loader-spinner";
+import { ScriptConversionExample } from "../../types";
 
-import { Poster } from 'components/Example'
+import { Poster } from "components/Example";
 
-import { primaryColor } from '../App'
+import { primaryColor } from "../App";
+import Interscript from "interscript";
 
 export const ExamplePage: React.FC<{
-   samples: ScriptConversionExample[],
-   authority?: string,
-   aggregate?: boolean }
->= ({ samples, authority, aggregate= false }) => {
-  const [sampleData, setSampleData] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  samples: ScriptConversionExample[];
+  authority?: string;
+  aggregate?: boolean;
+}> = ({ samples, authority, aggregate = false }) => {
+  const [sampleData, setSampleData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setSampleData(samples)
-  }, [])
+    setSampleData(samples);
+  }, []);
 
   async function handleForceUpdate() {
-    setIsLoading(true)
-
-    const Opal = (window as any).Opal as any
-    const mapcache = Opal.hash({});
-    await Opal.Interscript.$on_load()
+    setIsLoading(true);
 
     const translit = async (system: string, text: string) => {
-      await Opal.Interscript.$load_maps({
+      await Interscript.load_map({
         maps: system,
-        path: "/maps/",
-        processor: function(a: AxiosResponse) { return a.data }
       });
-      return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
-    }
+      return Interscript.transliterate(system, text).split("\n");
+    };
 
-    const prepare = async (samples: ScriptConversionExample[], func: Function) => {
-      const data = await Promise.all(samples.map(async(s: ScriptConversionExample) => {
-        const text = s.samples.join("\n")
-        const { systemName: system } = s
-        if(!text || !system ||
-            !Opal.Interscript["$map_exist?"](system)) {
-          return s
-        }
-        try {
-          const result = await translit(system, text);
-          return {...s, result }
-        } catch (e) {
-          console.log(e)
-        }
-        return s;
-      }))
+    const prepare = async (
+      samples: ScriptConversionExample[],
+      func: Function
+    ) => {
+      const data = await Promise.all(
+        samples.map(async (s: ScriptConversionExample) => {
+          const text = s.samples.join("\n");
+          const { systemName: system } = s;
+          if (!text || !system || !Interscript.map_exist(system)) {
+            return s;
+          }
+          try {
+            const result = await translit(system, text);
+            return { ...s, result };
+          } catch (e) {
+            console.log(e);
+          }
+          return s;
+        })
+      );
 
-      func(data)
-    }
+      func(data);
+    };
 
-    await prepare(samples, setSampleData)
-    setIsLoading(false)
+    await prepare(samples, setSampleData);
+    setIsLoading(false);
   }
   return (
     <Section>
-      { isLoading &&
+      {isLoading && (
         <CenterLoader>
-          <Loader
-            type="Grid"
-            color="#00BFFF"
-            height={80}
-            width={80}
-          />
+          <Loader type='Grid' color='#00BFFF' height={80} width={80} />
         </CenterLoader>
-      }
-      { !isLoading &&
-          <>
-            <ButtonLayout>
-              <ForceUpdateButton onClick={handleForceUpdate}>On Site</ForceUpdateButton>
-            </ButtonLayout>
-            <Poster data={sampleData} aggregate={aggregate} authority={authority}/>
-          </>
-      }
+      )}
+      {!isLoading && (
+        <>
+          <ButtonLayout>
+            <ForceUpdateButton onClick={handleForceUpdate}>
+              On Site
+            </ForceUpdateButton>
+          </ButtonLayout>
+          <Poster
+            data={sampleData}
+            aggregate={aggregate}
+            authority={authority}
+          />
+        </>
+      )}
     </Section>
-  )
-}
+  );
+};
 
-export default ExamplePage
+export default ExamplePage;
 
 const Section = styled.article`
   a.anchor {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
 
-    &, &:link, &:visited {
+    &,
+    &:link,
+    &:visited {
       border: none;
     }
   }
-  a[rel*=noopener] {
-    &, &:link, &:visited {
+  a[rel*="noopener"] {
+    &,
+    &:link,
+    &:visited {
       border: none;
     }
   }
-`
+`;
 const CenterLoader = styled.div`
   position: fixed;
   z-index: 999;
@@ -112,26 +115,26 @@ const CenterLoader = styled.div`
   height: 50px;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
   }
-`
+`;
 const ButtonLayout = styled.div`
   text-align: right;
-`
+`;
 const ForceUpdateButton = styled.button`
   flex-shrink: 0;
-  margin: 0 .5rem;
-  padding: .5rem 1rem;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
   border: 0;
   font-size: 100%;
   cursor: pointer;
   color: white;
   background: ${`#${primaryColor}`};
-`
+`;

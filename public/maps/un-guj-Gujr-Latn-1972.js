@@ -1,0 +1,45 @@
+var map = function(Interscript) {Interscript.define_map("un-guj-Gujr-Latn-1972", function(Interscript, map) {
+map.dependencies = [];
+map.aliases.gurj_chars_1 = "ા";
+map.aliases_re.gurj_chars_1 = "[ાિીુૂૃૅેૈૉોૌ્]";
+map.stages.main = function(s) {
+s = Interscript.gsub(s, "ક(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "k");
+s = Interscript.gsub(s, "ખ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "kh");
+s = Interscript.gsub(s, "ગ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "g");
+s = Interscript.gsub(s, "ઘ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "gh");
+s = Interscript.gsub(s, "ઙ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ṅ");
+s = Interscript.gsub(s, "ચ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ch");
+s = Interscript.gsub(s, "છ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "chh");
+s = Interscript.gsub(s, "જ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "j");
+s = Interscript.gsub(s, "ઝ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "jh");
+s = Interscript.gsub(s, "ઞ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ñ");
+s = Interscript.gsub(s, "ટ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ṭ");
+s = Interscript.gsub(s, "ઠ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ṭh");
+s = Interscript.gsub(s, "ડ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ḍ");
+s = Interscript.gsub(s, "ઢ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ḍh");
+s = Interscript.gsub(s, "ણ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ṇ");
+s = Interscript.gsub(s, "ત(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "t");
+s = Interscript.gsub(s, "થ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "th");
+s = Interscript.gsub(s, "દ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "d");
+s = Interscript.gsub(s, "ધ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "dh");
+s = Interscript.gsub(s, "ન(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "n");
+s = Interscript.gsub(s, "પ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "p");
+s = Interscript.gsub(s, "ફ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "f");
+s = Interscript.gsub(s, "બ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "b");
+s = Interscript.gsub(s, "ભ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "bh");
+s = Interscript.gsub(s, "મ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "m");
+s = Interscript.gsub(s, "ય(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "y");
+s = Interscript.gsub(s, "ર(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "r");
+s = Interscript.gsub(s, "લ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "l");
+s = Interscript.gsub(s, "વ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "v");
+s = Interscript.gsub(s, "શ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "sh");
+s = Interscript.gsub(s, "ષ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ṣh");
+s = Interscript.gsub(s, "સ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "s");
+s = Interscript.gsub(s, "હ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "h");
+s = Interscript.gsub(s, "ળ(?="+Interscript.get_alias_re("un-guj-Gujr-Latn-1972", "gurj_chars_1")+")", "ḷ");
+s = Interscript.parallel_replace_tree(s, map.cache.PTREE_2544502524430616811);
+s = Interscript.functions.compose(s, {});
+return s;
+};
+map.cache.PTREE_2544502524430616811 = {"2693":{"":"a"},"2694":{"":"ā"},"2695":{"":"i"},"2696":{"":"ī"},"2697":{"":"u"},"2698":{"":"ū"},"2699":{"":"ṛ"},"2701":{"":"e"},"2703":{"":"ĕ"},"2704":{"":"ai"},"2705":{"":"o"},"2707":{"":"ŏ"},"2708":{"":"au"},"2750":{"":"ā"},"2751":{"":"i"},"2752":{"":"ī"},"2753":{"":"u"},"2754":{"":"ū"},"2755":{"":"ṛ"},"2757":{"":"e"},"2759":{"":"ĕ"},"2760":{"":"ai"},"2761":{"":"o"},"2763":{"":"ŏ"},"2764":{"":"au"},"2691":{"":"ḥ"},"2690":{"":"ṁ"},"2689":{"":"m̐"},"2765":{"":""},"2709":{"":"ka"},"2710":{"":"kha"},"2711":{"":"ga"},"2712":{"":"gha"},"2713":{"":"ṅa"},"2714":{"":"cha"},"2715":{"":"chha"},"2716":{"":"ja"},"2717":{"":"jha"},"2718":{"":"ña"},"2719":{"":"ṭa"},"2720":{"":"ṭha"},"2721":{"":"ḍa"},"2722":{"":"ḍha"},"2723":{"":"ṇa"},"2724":{"":"ta"},"2725":{"":"tha"},"2726":{"":"da"},"2727":{"":"dha"},"2728":{"":"na"},"2730":{"":"pa"},"2731":{"":"fa"},"2732":{"":"ba"},"2733":{"":"bha"},"2734":{"":"ma"},"2735":{"":"ya"},"2736":{"":"ra"},"2738":{"":"la"},"2741":{"":"va"},"2742":{"":"sha"},"2743":{"":"ṣha"},"2744":{"":"sa"},"2745":{"":"ha"},"2739":{"":"ḷa"},"2790":{"":"0"},"2791":{"":"1"},"2792":{"":"2"},"2793":{"":"3"},"2794":{"":"4"},"2795":{"":"5"},"2796":{"":"6"},"2797":{"":"7"},"2798":{"":"8"},"2799":{"":"9"},"2748":{"":""},"2404":{"":"."},"2509":{"":""},"8205":{"":""}};
+});};if (typeof module !== 'undefined') { module.exports = map; }else if (typeof Interscript !== 'undefined') { map(Interscript); }else { throw "We couldn't dispatch Interscript from a map!"; }

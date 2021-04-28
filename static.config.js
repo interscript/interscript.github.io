@@ -1,69 +1,61 @@
-import path from 'path'
-import cheerio from 'cheerio'
+import path from "path";
+import cheerio from "cheerio";
 
-import { Octokit } from '@octokit/rest'
-import 'interscript'
+import { Octokit } from "@octokit/rest";
+import Interscript from "interscript";
 
-import alalcSamples from './src/samples/alalc.json';
-import bgnpcgnSamples from './src/samples/bgnpcgn.json';
-import odniSamples from './src/samples/odni.json';
-import ogc11122Samples from './src/samples/ogc11122.json';
-import unSamples from './src/samples/un.json';
+import alalcSamples from "./src/samples/alalc.json";
+import bgnpcgnSamples from "./src/samples/bgnpcgn.json";
+import odniSamples from "./src/samples/odni.json";
+import ogc11122Samples from "./src/samples/ogc11122.json";
+import unSamples from "./src/samples/un.json";
 
-const repoOwner = 'interscript';
-const repoName = 'interscript-js';
+const repoOwner = "interscript";
+const repoName = "interscript";
 
 const octokit = new Octokit(); // auth: process.env.GH_TOKEN }
 
 export default {
-  entry: path.join(__dirname, 'src', 'index.tsx'),
+  entry: path.join(__dirname, "src", "index.tsx"),
   getRoutes: async () => {
-    const readmeResp = await octokit.request('GET /repos/{owner}/{repo}/readme', {
-      owner: repoOwner,
-      repo: repoName,
-      mediaType: {
-        format: 'html',
-      },
-    });
+    const readmeResp = await octokit.request(
+      "GET /repos/{owner}/{repo}/readme",
+      {
+        owner: repoOwner,
+        repo: repoName,
+        mediaType: {
+          format: "html",
+        },
+      }
+    );
 
-    const { data: [{commit}] } = await octokit.repos.listCommits({
-      owner: repoOwner,
-      repo: repoName,
-      sha: 'master',
-      per_page: 1
-    });
-
-    const { data: { tree } } = await octokit.git.getTree({
-      owner: repoOwner,
-      repo: repoName,
-      tree_sha: commit.tree.sha,
-      recursive: "1"
-    });
-
+    await Interscript.load_map_list();
+    const maps = Interscript.map_list();
     const mapsInfo = {};
-    const maps = tree.filter(obj => !!obj.path.match(/maps\/[a-zA-Z0-9\-]+.json/))
-                      .map(x => x.path.split('/')[1].split('.')[0]);
     mapsInfo.languages = {};
-    maps.forEach(systemCode => {
-      const alpha3 = systemCode.split('-')[1]
+    maps.forEach((systemCode) => {
+      const alpha3 = systemCode.split("-")[1];
       if (mapsInfo.languages[alpha3]) {
-        mapsInfo.languages[alpha3] ++;
+        mapsInfo.languages[alpha3]++;
       } else {
         mapsInfo.languages[alpha3] = 1;
       }
     });
-    mapsInfo['meta'] = {
+    mapsInfo["meta"] = {
       total: Object.keys(maps).length,
     };
+    mapsInfo["data"] = maps;
 
     const readme = cheerio.load(readmeResp.data);
-    const sectionHeaders = readme('h2');
+    const sectionHeaders = readme("h2");
     const readmeSections = [];
 
     for (const idx of Object.keys(sectionHeaders)) {
       const sectionEl = sectionHeaders[idx].parent;
       if (sectionEl) {
-        const section/*: ReadmeSection */ = prepareReadmeSection(cheerio.load(sectionEl));
+        const section /*: ReadmeSection */ = prepareReadmeSection(
+          cheerio.load(sectionEl)
+        );
         if (section) {
           readmeSections.push(section);
         }
@@ -71,37 +63,35 @@ export default {
     }
 
     // SSR
-    const Opal = global.Opal;
-    const mapcache = Opal.hash({});
-    await Opal.Interscript.$on_load()
-
+    await Interscript.load_map_list();
     const translit = async (system, text) => {
-      await Opal.Interscript.$on_load_maps({maps: system});
+      await Interscript.load_map(system);
 
-      return Opal.Interscript.$transliterate(system, text, mapcache).split("\n");
-    }
+      return Interscript.transliterate(system, text).split("\n");
+    };
 
     const evaluate = (samples) =>
-      Promise.all(samples.map(async(s) => {
-        const text = s.samples.join("\n")
-        const { systemName: system } = s
-        if(!text || !system ||
-            !Opal.Interscript["$map_exist?"](system)) {
-          return s
-        }
-        try {
-          const result = await translit(system, text);
-          return {...s, result }
-        } catch (e) {
-          console.log(e)
-        }
-        return s;
-      }));
+      Promise.all(
+        samples.map(async (s) => {
+          const text = s.samples.join("\n");
+          const { systemName: system } = s;
+          if (!text || !system || !Interscript.map_exist(system)) {
+            return s;
+          }
+          try {
+            const result = await translit(system, text);
+            return { ...s, result };
+          } catch (e) {
+            console.log(e);
+          }
+          return s;
+        })
+      );
 
     let alalc, bgnpcgn, odni, ogc11122, un;
 
-    if (process.env.NODE_ENV !== 'development') {
-      console.log('transliterates all samples on build process...');
+    if (process.env.NODE_ENV === "development") {
+      console.log("transliterates all samples on build process...");
       alalc = await evaluate(alalcSamples);
       bgnpcgn = await evaluate(bgnpcgnSamples);
       odni = await evaluate(odniSamples);
@@ -111,8 +101,8 @@ export default {
 
     return [
       {
-        path: '/',
-        template: 'src/containers/Landing',
+        path: "/",
+        template: "src/containers/Landing",
         getData: () => ({
           readmeSections,
           repoInfo: {
@@ -123,58 +113,58 @@ export default {
         }),
       },
       {
-        path: 'alalc',
-        template: 'src/pages/alalc.tsx',
+        path: "alalc",
+        template: "src/pages/alalc.tsx",
         getData: () => ({
           samples: alalc || alalcSamples,
         }),
       },
       {
-        path: 'bgnpcgn',
-        template: 'src/pages/bgnpcgn.tsx',
+        path: "bgnpcgn",
+        template: "src/pages/bgnpcgn.tsx",
         getData: () => ({
           samples: bgnpcgn || bgnpcgnSamples,
         }),
       },
       {
-        path: 'odni',
-        template: 'src/pages/odni.tsx',
+        path: "odni",
+        template: "src/pages/odni.tsx",
         getData: () => ({
           samples: odni || odniSamples,
         }),
       },
       {
-        path: 'ogc11122',
-        template: 'src/pages/ogc11122.tsx',
+        path: "ogc11122",
+        template: "src/pages/ogc11122.tsx",
         getData: () => ({
           samples: ogc11122 || ogc11122Samples,
         }),
       },
       {
-        path: 'un',
-        template: 'src/pages/un.tsx',
+        path: "un",
+        template: "src/pages/un.tsx",
         getData: () => ({
           samples: un || unSamples,
         }),
       },
-    ]
+    ];
   },
   plugins: [
-    'react-static-plugin-typescript',
+    "react-static-plugin-typescript",
     [
-      require.resolve('react-static-plugin-source-filesystem'),
+      require.resolve("react-static-plugin-source-filesystem"),
       {
-        location: path.resolve('./src/pages'),
+        location: path.resolve("./src/pages"),
       },
     ],
-    require.resolve('react-static-plugin-reach-router'),
-    require.resolve('react-static-plugin-styled-components'),
-    require.resolve('react-static-plugin-sitemap'),
+    require.resolve("react-static-plugin-reach-router"),
+    require.resolve("react-static-plugin-styled-components"),
+    require.resolve("react-static-plugin-sitemap"),
   ],
-}
+};
 
-function prepareReadmeSection(cheerioEl)/*: ReadmeSection | undefined */ {
-  const ghSectionID = cheerioEl('h2').attr('id');
+function prepareReadmeSection(cheerioEl) /*: ReadmeSection | undefined */ {
+  const ghSectionID = cheerioEl("h2").attr("id");
 
   if (!ghSectionID) {
     // If this section’s top-level H2 doesn’t have an ID, don’t process it.
@@ -188,44 +178,62 @@ function prepareReadmeSection(cheerioEl)/*: ReadmeSection | undefined */ {
     return;
   }
 
-  const sectionTitle = cheerioEl('h2').clone().removeAttr('id');
-  sectionTitle.find('a.anchor').remove();
+  const sectionTitle = cheerioEl("h2").clone().removeAttr("id");
+  sectionTitle.find("a.anchor").remove();
 
   // GitHub’s anchors have user-content- prefix in their IDs (but not in hrefs)
-  const sectionID = ghSectionID.replace('user-content-', '');
+  const sectionID = ghSectionID.replace("user-content-", "");
 
-  cheerioEl('*[id]').get().map(el => {
-    if (el.attribs.id) {
-      el.attribs.id = el.attribs.id.replace('user-content-', '');
-    }
-  });
+  cheerioEl("*[id]")
+    .get()
+    .map((el) => {
+      if (el.attribs.id) {
+        el.attribs.id = el.attribs.id.replace("user-content-", "");
+      }
+    });
 
   // Remove ID from headings and their anchors, add it to section wrappers instead.
   // For top-level section wrapper, ID is expected to be added externally.
-  cheerioEl('a.anchor[id]').get().map(el => {
-    delete el.attribs.id;
-  });
-  cheerioEl('h2[id], h3[id], h4[id], h5[id], h6[id]').get().map(el => {
-    const id = el.attribs.id;
-    if (el.parent.type === 'tag' && el.parent.name === 'div') {
-      el.parent.attribs.id = id;
-    }
-    delete el.attribs.id;
-  });
+  cheerioEl("a.anchor[id]")
+    .get()
+    .map((el) => {
+      delete el.attribs.id;
+    });
+  cheerioEl("h2[id], h3[id], h4[id], h5[id], h6[id]")
+    .get()
+    .map((el) => {
+      const id = el.attribs.id;
+      if (el.parent.type === "tag" && el.parent.name === "div") {
+        el.parent.attribs.id = id;
+      }
+      delete el.attribs.id;
+    });
 
   // Make relative in-repo links work
-  cheerioEl('a:not([href^="http"])').get().map(el => {
-    if (el.type === 'tag' && el.name === 'img' && el.attribs.href?.indexOf('http') !== 0) {
-      el.attribs.href = `https://github.com/${repoOwner}/${repoName}/blob/master/${el.attribs.href}`;
-    }
-  });
+  cheerioEl('a:not([href^="http"])')
+    .get()
+    .map((el) => {
+      if (
+        el.type === "tag" &&
+        el.name === "img" &&
+        el.attribs.href?.indexOf("http") !== 0
+      ) {
+        el.attribs.href = `https://github.com/${repoOwner}/${repoName}/blob/master/${el.attribs.href}`;
+      }
+    });
 
   // Make relative in-repo image sources work
-  cheerioEl('img:not([src^="http"])').get().map(el => {
-    if (el.type === 'tag' && el.name === 'img' && el.attribs.src?.indexOf('http') !== 0) {
-      el.attribs.src = `https://github.com/${repoOwner}/${repoName}/raw/master/${el.attribs.src}`;
-    }
-  });
+  cheerioEl('img:not([src^="http"])')
+    .get()
+    .map((el) => {
+      if (
+        el.type === "tag" &&
+        el.name === "img" &&
+        el.attribs.src?.indexOf("http") !== 0
+      ) {
+        el.attribs.src = `https://github.com/${repoOwner}/${repoName}/raw/master/${el.attribs.src}`;
+      }
+    });
 
   return {
     id: sectionID,
