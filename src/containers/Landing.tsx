@@ -1,37 +1,38 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { useRouteData } from 'react-static'
-import { ReadmeSection, RepoInfo } from 'types'
-import { AxiosResponse } from 'axios'
-import styled from 'styled-components'
-import { SystemSelector } from '../components/SystemSelector'
+import React, { useState, useEffect, useRef } from "react";
+import { useRouteData } from "react-static";
+import { ReadmeSection, RepoInfo } from "types";
+// import { AxiosResponse } from "axios";
+import styled from "styled-components";
+import { SystemSelector } from "../components/SystemSelector";
+import { ScriptConversionSystem, systemToCode } from "../scs";
 
-import { ScriptConversionSystem, systemToCode } from '../scs'
-
-import { primaryColor } from '../App'
-import { getLanguageTitleFrom6392or3 } from 'components/isoLang'
+import { primaryColor } from "../App";
+import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+import Interscript from "interscript";
 
 export default () => {
   const {
     readmeSections,
     /* repoInfo, */ mapsInfo,
   }: {
-    readmeSections: ReadmeSection[]
-    repoInfo: RepoInfo
-    mapsInfo: any
-  } = useRouteData()
+    readmeSections: ReadmeSection[];
+    repoInfo: RepoInfo;
+    mapsInfo: any;
+  } = useRouteData();
+  console.log(mapsInfo);
 
-  const [showDemo, setShowDemo] = useState(false)
-  const [demoIsShowable, setDemoIsShowable] = useState(false)
+  const [showDemo, setShowDemo] = useState(false);
+  const [demoIsShowable, setDemoIsShowable] = useState(false);
 
   useEffect(() => {
     // Ensures interactive elements are not included in static HTML
-    setDemoIsShowable(true)
+    setDemoIsShowable(true);
 
     // Show demo by default only on wide viewports
     if (window.innerWidth >= 900) {
-      setShowDemo(true)
+      setShowDemo(true);
     }
-  }, [])
+  }, []);
 
   const summary = Object.keys(mapsInfo.languages)
     .map(
@@ -39,14 +40,14 @@ export default () => {
         `${getLanguageTitleFrom6392or3(alpha3)} (${mapsInfo.languages[alpha3]})`
     )
     .sort()
-    .join(', ')
+    .join(", ");
 
   return (
     <>
       <SectionGrid>
         <Section>
           <p>
-            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{' '}
+            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{" "}
           </p>
         </Section>
       </SectionGrid>
@@ -59,10 +60,10 @@ export default () => {
                 href='javascript: void 0;'
                 onClick={() => setShowDemo(!showDemo)}
               >
-                {showDemo ? 'Hide live demo' : 'Try it live'}
+                {showDemo ? "Hide live demo" : "Try it live"}
               </a>
             </h2>
-            {showDemo ? <LiveDemo /> : null}
+            {showDemo ? <LiveDemo maps={mapsInfo.data} /> : null}
           </Section>
         ) : null}
 
@@ -89,114 +90,91 @@ export default () => {
         </Section>
       </SectionGrid>
     </>
-  )
-}
+  );
+};
 
-const LiveDemo: React.FC<{}> = function () {
-  const [sampleText, setSampleText] = useState<string>('')
+const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
+  const [sampleText, setSampleText] = useState<string>("");
   const [
     selectedSystem,
     selectSystem,
-  ] = useState<ScriptConversionSystem | null>(null)
-  const [result, setResult] = useState<string | null | undefined>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [submitted, setSubmitted] = useState(false)
-  const [systemCodes, setSystemCodes] = useState<string[]>([])
+  ] = useState<ScriptConversionSystem | null>(null);
+  const [result, setResult] = useState<string | null | undefined>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [systemCodes /*setSystemCodes*/] = useState<string[]>(maps || []);
 
-  const sampleInputRef = useRef<HTMLTextAreaElement>(null)
+  const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
   const systemCode: string | null =
-    selectedSystem !== null ? systemToCode(selectedSystem) : null
+    selectedSystem !== null ? systemToCode(selectedSystem) : null;
 
   useEffect(() => {
-    setError(null)
-    setSubmitted(false)
-  }, [systemCode, sampleText])
+    setError(null);
+    setSubmitted(false);
+  }, [systemCode, sampleText]);
 
   useEffect(() => {
     if (systemCode) {
-      sampleInputRef.current?.focus()
+      sampleInputRef.current?.focus();
     }
 
-    ;(async () => {
-      let test: string | null
+    (async () => {
+      let test: string | null;
       if (systemCode !== null) {
-        test = await getTestExample(systemCode)
+        test = await getTestExample(systemCode);
         if (test !== null) {
-          setSampleText(test)
+          setSampleText(test);
         }
       }
-    })()
-  }, [systemCode])
+    })();
+  }, [systemCode]);
 
   useEffect(() => {
-    ;(async () => {
-      const InterscriptMaps: any = (window as any).InterscriptMaps
-      setSystemCodes(Object.keys(InterscriptMaps) || [])
-    })()
-  }, [])
+    (async () => {
+      try {
+        // await Interscript.load_map_list();
+        // setSystemCodes(maps);
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  }, []);
 
-  async function getTestExample(system: string) {
-    const Opal = (window as any).Opal as any
-    await Opal.Interscript.$on_load()
+  async function getTestExample(system: string): Promise<string | null> {
+    await Interscript.load_map(system);
+    //Todo: find a solution to get sample data as the map files no longer include test data
 
-    await Opal.Interscript.$load_maps({
-      maps: system,
-      path: '/maps/',
-      processor: function (a: AxiosResponse) {
-        return a.data
-      },
-    })
-
-    const map = JSON.parse(Opal.global.InterscriptMaps[system])
-
-    return map.tests && map.tests.length > 0 ? map.tests[0].source : null
+    return null;
   }
 
   async function handleConvert() {
-    if (systemCode !== null && sampleText.trim() !== '') {
-      let resp: string
+    if (systemCode !== null && sampleText.trim() !== "") {
+      let resp: string;
 
-      setError(null)
-      setResult(undefined)
-      setSubmitted(true)
-
-      const Opal = (window as any).Opal as any
-      const mapcache = Opal.hash({})
-      await Opal.Interscript.$on_load()
-
-      const translit = async (system: string, text: string) => {
-        await Opal.Interscript.$load_maps({
-          maps: system,
-          path: '/maps/',
-          processor: function (a: AxiosResponse) {
-            return a.data
-          },
-        })
-        return Opal.Interscript.$transliterate(system, text, mapcache).split(
-          '\n'
-        )
-      }
+      setError(null);
+      setResult(undefined);
+      setSubmitted(true);
 
       try {
-        resp = await translit(systemCode, sampleText)
+        resp = Interscript.transliterate(systemCode, sampleText);
       } catch (e) {
-        setResult(null)
-        setSubmitted(false)
-        setError('Sorry, an error occurred :(')
+        setResult(null);
+        setSubmitted(false);
+        setError("Sorry, an error occurred :(");
       }
-      setResult(resp || 'No result returned, please check your sample!')
+      setResult(resp || "No result returned, please check your sample!");
     }
   }
 
-  let placeholder: string
+  let placeholder: string;
   if (selectedSystem?.lang) {
     placeholder = `Enter something in ${
       getLanguageTitleFrom6392or3(selectedSystem.lang) ||
-      'selected writing system'
-    }…`
+      "selected writing system"
+    }…`;
   } else {
-    placeholder = 'Enter something…'
+    placeholder = "Enter something…";
   }
 
   return (
@@ -210,7 +188,7 @@ const LiveDemo: React.FC<{}> = function () {
           placeholder={placeholder}
           style={{
             boxShadow:
-              sampleText.trim() === '' && systemCode !== null
+              sampleText.trim() === "" && systemCode !== null
                 ? `#${primaryColor} 0 0 0px .5rem`
                 : undefined,
           }}
@@ -222,7 +200,7 @@ const LiveDemo: React.FC<{}> = function () {
           disabled={
             submitted === true ||
             systemCode === null ||
-            sampleText.trim() === ''
+            sampleText.trim() === ""
           }
         >
           Convert &rarr;
@@ -230,10 +208,10 @@ const LiveDemo: React.FC<{}> = function () {
 
         <ResultTextArea
           placeholder={
-            selectedSystem === null ? 'Select a system above' : undefined
+            selectedSystem === null ? "Select a system above" : undefined
           }
           disabled
-          value={result === undefined ? 'Loading…' : result || error || ''}
+          value={result === undefined ? "Loading…" : result || error || ""}
         />
       </SampleAndResult>
 
@@ -246,8 +224,8 @@ const LiveDemo: React.FC<{}> = function () {
         </p>
       ) : null}
     </>
-  )
-}
+  );
+};
 
 const ConvertButton = styled.button`
   flex-shrink: 0;
@@ -256,11 +234,11 @@ const ConvertButton = styled.button`
   border: 0;
   font-size: 100%;
 
-  color: ${(props) => (props.disabled ? 'silver' : `white`)};
+  color: ${(props) => (props.disabled ? "silver" : `white`)};
 
   background: ${(props) =>
-    props.disabled ? 'whiteSmoke' : `#${primaryColor}`};
-`
+    props.disabled ? "whiteSmoke" : `#${primaryColor}`};
+`;
 
 const SampleAndResult = styled.div`
   margin-top: 1rem;
@@ -281,7 +259,7 @@ const SampleAndResult = styled.div`
       width: unset;
     }
   }
-`
+`;
 
 const SampleTextArea = styled.textarea`
   font-size: 100%;
@@ -291,11 +269,11 @@ const SampleTextArea = styled.textarea`
   border: 0;
   z-index: 2;
   display: block;
-`
+`;
 
 const ResultTextArea = styled(SampleTextArea)`
   cursor: default;
-`
+`;
 
 //
 // const SectionNav = styled.nav`
@@ -338,14 +316,14 @@ const Section = styled.article`
       border: none;
     }
   }
-  a[rel*='noopener'] {
+  a[rel*="noopener"] {
     &,
     &:link,
     &:visited {
       border: none;
     }
   }
-`
+`;
 
 const GITHUB_HIGHLIGHT_THEME = `
   /*!
@@ -477,7 +455,7 @@ const GITHUB_HIGHLIGHT_THEME = `
     text-decoration: underline;
     color: #032f62;
   }
-`
+`;
 
 const SectionGrid = styled.div`
   overflow: hidden;
@@ -487,8 +465,8 @@ const SectionGrid = styled.div`
   code {
     font-size: 14px;
     background: whiteSmoke;
-    font-family: 'Iosevka Term SS01', 'Iosevka Term', Iosevka,
-      system-ui-monospaced, Menlo, 'Courier New', monospace;
+    font-family: "Iosevka Term SS01", "Iosevka Term", Iosevka,
+      system-ui-monospaced, Menlo, "Courier New", monospace;
   }
 
   pre {
@@ -508,4 +486,4 @@ const SectionGrid = styled.div`
       margin: 0;
     }
   }
-`
+`;
