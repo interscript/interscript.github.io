@@ -1,0 +1,19 @@
+var map = function(Interscript) {Interscript.define_map("var-kor", function(Interscript, map) {
+map.dependencies = [];
+map.aliases.hangul = "가";
+map.aliases_re.hangul = "[가-힯]";
+map.aliases.jamo_leading_cons = "ᄀ";
+map.aliases_re.jamo_leading_cons = "(?:[ᄀ-ᅞ]|[ꥠ-ꥼ])";
+map.aliases.jamo_vowel = "ᅡ";
+map.aliases_re.jamo_vowel = "(?:[ᅡ-ᆧ]|[ힰ-ퟆ])";
+map.aliases.jamo_trailing_cons = "ᆨ";
+map.aliases_re.jamo_trailing_cons = "(?:[ᆨ-ᇿ]|[ퟋ-ퟻ])";
+map.aliases.jamo = Interscript.get_alias("var-kor", "jamo_leading_cons");
+map.aliases_re.jamo = "(?:"+Interscript.get_alias_re("var-kor", "jamo_leading_cons")+"|"+Interscript.get_alias_re("var-kor", "jamo_vowel")+"|"+Interscript.get_alias_re("var-kor", "jamo_trailing_cons")+")";
+map.aliases.hangul_or_jamo = Interscript.get_alias("var-kor", "hangul");
+map.aliases_re.hangul_or_jamo = "(?:"+Interscript.get_alias_re("var-kor", "hangul")+"|"+Interscript.get_alias_re("var-kor", "jamo")+")";
+map.aliases.double_cons_jamo = "ᄁ";
+map.aliases_re.double_cons_jamo = "[ᄁᄄᄈᄍᄊ]";
+map.aliases.aspirated_cons_jamo = "ᄏ";
+map.aliases_re.aspirated_cons_jamo = "[ᄏᄐᄑᄎ]";
+});};if (typeof module !== 'undefined') { module.exports = map; }else if (typeof Interscript !== 'undefined') { map(Interscript); }else { throw "We couldn't dispatch Interscript from a map!"; }

@@ -1,0 +1,48 @@
+var map = function(Interscript) {Interscript.define_map("un-mal-Mlym-Latn-1972", function(Interscript, map) {
+map.dependencies = [];
+map.aliases.mlym_chars_1 = "ാ";
+map.aliases_re.mlym_chars_1 = "[ാിീുൂൃെേൈൊോൌ്]";
+map.stages.main = function(s) {
+s = Interscript.gsub(s, "ക(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "k");
+s = Interscript.gsub(s, "ഖ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "kh");
+s = Interscript.gsub(s, "ഗ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "g");
+s = Interscript.gsub(s, "ഘ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "gh");
+s = Interscript.gsub(s, "ങ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṅ");
+s = Interscript.gsub(s, "ച(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ch");
+s = Interscript.gsub(s, "ഛ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "chh");
+s = Interscript.gsub(s, "ജ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "j");
+s = Interscript.gsub(s, "ഝ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "jh");
+s = Interscript.gsub(s, "ഞ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ñ");
+s = Interscript.gsub(s, "ട(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṭ");
+s = Interscript.gsub(s, "ഠ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṭh");
+s = Interscript.gsub(s, "ഡ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ḍ");
+s = Interscript.gsub(s, "ഢ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ḍh");
+s = Interscript.gsub(s, "ണ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṇ");
+s = Interscript.gsub(s, "ത(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "t");
+s = Interscript.gsub(s, "ഥ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "th");
+s = Interscript.gsub(s, "ദ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "d");
+s = Interscript.gsub(s, "ധ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "dh");
+s = Interscript.gsub(s, "ന(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "n");
+s = Interscript.gsub(s, "പ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "p");
+s = Interscript.gsub(s, "ഫ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ph");
+s = Interscript.gsub(s, "ബ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "b");
+s = Interscript.gsub(s, "ഭ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "bh");
+s = Interscript.gsub(s, "മ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "m");
+s = Interscript.gsub(s, "യ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "y");
+s = Interscript.gsub(s, "ര(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "r");
+s = Interscript.gsub(s, "ല(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "l");
+s = Interscript.gsub(s, "വ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "v");
+s = Interscript.gsub(s, "ശ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "sh");
+s = Interscript.gsub(s, "ഷ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṣh");
+s = Interscript.gsub(s, "സ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "s");
+s = Interscript.gsub(s, "ഹ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "h");
+s = Interscript.gsub(s, "ള(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ḷ");
+s = Interscript.gsub(s, "ഴ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ḻ");
+s = Interscript.gsub(s, "റ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "ṟ");
+s = Interscript.gsub(s, "ക്ഷ(?="+Interscript.get_alias_re("un-mal-Mlym-Latn-1972", "mlym_chars_1")+")", "kṣh");
+s = Interscript.parallel_replace_tree(s, map.cache.PTREE_2813010723227502536);
+s = Interscript.functions.compose(s, {});
+return s;
+};
+map.cache.PTREE_2813010723227502536 = {"3333":{"":"a"},"3334":{"":"ā"},"3335":{"":"i"},"3336":{"":"ī"},"3337":{"":"u"},"3338":{"":"ū"},"3339":{"":"ṛ"},"3342":{"":"ĕ"},"3343":{"":"e"},"3344":{"":"ai"},"3346":{"":"ŏ"},"3347":{"":"o"},"3348":{"":"au"},"3390":{"":"ā"},"3391":{"":"i"},"3392":{"":"ī"},"3393":{"":"u"},"3394":{"":"ū"},"3395":{"":"ṛ"},"3398":{"":"ĕ"},"3399":{"":"e"},"3400":{"":"ai"},"3402":{"":"ŏ"},"3403":{"":"o"},"3404":{"":"au"},"3331":{"":"ḥ"},"3330":{"":"ṃ"},"3405":{"":""},"3349":{"":"ka","3405":{"3383":{"":"kṣha"}}},"3350":{"":"kha"},"3351":{"":"ga"},"3352":{"":"gha"},"3353":{"":"ṅa"},"3354":{"":"cha"},"3355":{"":"chha"},"3356":{"":"ja"},"3357":{"":"jha"},"3358":{"":"ña"},"3359":{"":"ṭa"},"3360":{"":"ṭha"},"3361":{"":"ḍa"},"3362":{"":"ḍha"},"3363":{"":"ṇa"},"3364":{"":"ta"},"3365":{"":"tha"},"3366":{"":"da"},"3367":{"":"dha"},"3368":{"":"na"},"3370":{"":"pa"},"3371":{"":"pha"},"3372":{"":"ba"},"3373":{"":"bha"},"3374":{"":"ma"},"3375":{"":"ya"},"3376":{"":"ra"},"3378":{"":"la"},"3381":{"":"va"},"3382":{"":"sha"},"3383":{"":"ṣha"},"3384":{"":"sa","3405":{"":"s"}},"3385":{"":"ha"},"3379":{"":"ḷa"},"3380":{"":"ḻa"},"3377":{"":"ṟa","3405":{"3377":{"":"ṭ̈"}}},"2381":{"":""},"2364":{"":""},"3415":{"":""},"8205":{"":""},"8204":{"":""},"3430":{"":"0"},"3431":{"":"1"},"3432":{"":"2"},"3433":{"":"3"},"3434":{"":"4"},"3435":{"":"5"},"3436":{"":"6"},"3437":{"":"7"},"3438":{"":"8"},"3439":{"":"9"},"3440":{"":"10"},"3441":{"":"100"},"3442":{"":"1000"},"3455":{"":"k"},"3450":{"":"ṇ"},"3451":{"":"n"},"3453":{"":"l"},"3454":{"":"ḷ"},"3452":{"":"r"}};
+});};if (typeof module !== 'undefined') { module.exports = map; }else if (typeof Interscript !== 'undefined') { map(Interscript); }else { throw "We couldn't dispatch Interscript from a map!"; }
