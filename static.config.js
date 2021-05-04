@@ -90,7 +90,7 @@ export default {
 
     let alalc, bgnpcgn, odni, ogc11122, un;
 
-    if (process.env.NODE_ENV === "development") {
+    if (process.env.NODE_ENV === "production") {
       console.log("transliterates all samples on build process...");
       alalc = await evaluate(alalcSamples);
       bgnpcgn = await evaluate(bgnpcgnSamples);
