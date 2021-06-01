@@ -118,6 +118,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
   }, []);
 
   async function getTestExample(system: string): Promise<string | null> {
+    Interscript.map_path = "/maps/";
     await Interscript.load_map(system);
     //Todo: find a solution to get sample data as the map files no longer include test data
 
