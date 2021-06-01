@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
+import React from "react";
+import ReactDOM from "react-dom";
+import { AppContainer } from "react-hot-loader";
 
-import App from './App'
+import App from "./App";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-export default App
+export default App;
 
-if (typeof document !== 'undefined') {
-  const target = document.getElementById('root')
+if (typeof document !== "undefined") {
+  const target = document.getElementById("root");
 
   const renderMethod = target.hasChildNodes()
     ? ReactDOM.hydrate
-    : ReactDOM.render
+    : ReactDOM.render;
 
   const render = (Comp: Function) => {
     renderMethod(
@@ -19,14 +20,14 @@ if (typeof document !== 'undefined') {
         <Comp />
       </AppContainer>,
       target
-    )
-  }
+    );
+  };
 
-  render(App)
+  render(App);
 
   if (module && module.hot) {
-    module.hot.accept('./App', () => {
-      render(App)
-    })
+    module.hot.accept("./App", () => {
+      render(App);
+    });
   }
 }

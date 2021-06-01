@@ -34,12 +34,19 @@ export function systemFromCode(code: string): ScriptConversionSystem {
     throw new Error("Invalid ISCS code")
   }
 
+  // system code has a couple parts for `id` field
+  // for instance, "iso-kor-Hang-Latn-1996-method1"
+  let ids = []
+  for (let i = 4; i < parts.length; i ++) {
+    ids.push(parts[i])
+  }
+
   return {
     authority: parts[0],
     lang: parts[1],
     source,
     target,
-    id: parts[4],
+    id: ids.join('-'), // parts[4],
   }
 }
 
