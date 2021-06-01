@@ -1,0 +1,46 @@
+var map = function(Interscript) {Interscript.define_map("un-sin-Sinh-Latn-1972", function(Interscript, map) {
+map.dependencies = [];
+map.aliases.sinh_chars_1 = "ා";
+map.aliases_re.sinh_chars_1 = "[ාැෑිීුූෘෲෙේෛොෝෞ්]";
+map.stages.main = function(s) {
+s = Interscript.gsub(s, "ක(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "k");
+s = Interscript.gsub(s, "ඛ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "kh");
+s = Interscript.gsub(s, "ග(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "g");
+s = Interscript.gsub(s, "ඝ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "gh");
+s = Interscript.gsub(s, "ඞ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ṅ");
+s = Interscript.gsub(s, "ච(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ch");
+s = Interscript.gsub(s, "ඡ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "chh");
+s = Interscript.gsub(s, "ජ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "j");
+s = Interscript.gsub(s, "ඣ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "jh");
+s = Interscript.gsub(s, "ඤ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ñ");
+s = Interscript.gsub(s, "ට(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ṭ");
+s = Interscript.gsub(s, "ඨ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ṭh");
+s = Interscript.gsub(s, "ඩ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ḍ");
+s = Interscript.gsub(s, "ඪ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ḍh");
+s = Interscript.gsub(s, "ණ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ṇ");
+s = Interscript.gsub(s, "ත(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "t");
+s = Interscript.gsub(s, "ථ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "th");
+s = Interscript.gsub(s, "ද(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "d");
+s = Interscript.gsub(s, "ධ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "dh");
+s = Interscript.gsub(s, "න(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "n");
+s = Interscript.gsub(s, "ප(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "p");
+s = Interscript.gsub(s, "ඵ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ph");
+s = Interscript.gsub(s, "බ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "b");
+s = Interscript.gsub(s, "භ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "bh");
+s = Interscript.gsub(s, "ම(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "m");
+s = Interscript.gsub(s, "ය(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "y");
+s = Interscript.gsub(s, "ර(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "r");
+s = Interscript.gsub(s, "ල(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "l");
+s = Interscript.gsub(s, "ව(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "v");
+s = Interscript.gsub(s, "ශ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "sh");
+s = Interscript.gsub(s, "ෂ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ṣh");
+s = Interscript.gsub(s, "ස(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "s");
+s = Interscript.gsub(s, "හ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "h");
+s = Interscript.gsub(s, "ෆ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "f");
+s = Interscript.gsub(s, "ළ(?="+Interscript.get_alias_re("un-sin-Sinh-Latn-1972", "sinh_chars_1")+")", "ḷ");
+s = Interscript.parallel_replace_tree(s, map.cache.PTREE_2694952630767613643);
+s = Interscript.functions.compose(s, {});
+return s;
+};
+map.cache.PTREE_2694952630767613643 = {"3461":{"":"a"},"3462":{"":"ā"},"3463":{"":"æ̆"},"3464":{"":"æ"},"3465":{"":"i"},"3466":{"":"ī"},"3467":{"":"u"},"3468":{"":"ū"},"3469":{"":"ṛ"},"3470":{"":"ṝ"},"3473":{"":"ĕ"},"3474":{"":"e"},"3475":{"":"ai"},"3476":{"":"ŏ"},"3477":{"":"o"},"3478":{"":"au"},"3535":{"":"ā"},"3536":{"":"æ̆"},"3537":{"":"æ"},"3538":{"":"i"},"3539":{"":"ī"},"3540":{"":"u"},"3542":{"":"ū"},"3544":{"":"ṛ"},"3570":{"":"ṝ"},"3545":{"":"ĕ"},"3546":{"":"e"},"3547":{"":"ai"},"3548":{"":"ŏ"},"3549":{"":"o"},"3550":{"":"au"},"3459":{"":"ḥ"},"3458":{"":"ṁ"},"3530":{"":""},"3482":{"":"ka"},"3483":{"":"kha"},"3484":{"":"ga"},"3485":{"":"gha"},"3486":{"":"ṅa"},"3488":{"":"cha"},"3489":{"":"chha"},"3490":{"":"ja"},"3491":{"":"jha"},"3492":{"":"ña"},"3495":{"":"ṭa"},"3496":{"":"ṭha"},"3497":{"":"ḍa"},"3498":{"":"ḍha"},"3499":{"":"ṇa"},"3501":{"":"ta"},"3502":{"":"tha"},"3503":{"":"da"},"3504":{"":"dha"},"3505":{"":"na"},"3508":{"":"pa"},"3509":{"":"pha"},"3510":{"":"ba"},"3511":{"":"bha"},"3512":{"":"ma"},"3514":{"":"ya"},"3515":{"":"ra"},"3517":{"":"la"},"3520":{"":"va"},"3521":{"":"sha"},"3522":{"":"ṣha"},"3523":{"":"sa"},"3524":{"":"ha"},"3526":{"":"fa"},"3525":{"":"ḷa"},"3558":{"":"0"},"3559":{"":"1"},"3560":{"":"2"},"3561":{"":"3"},"3562":{"":"4"},"3563":{"":"5"},"3564":{"":"6"},"3565":{"":"7"},"3566":{"":"8"},"3567":{"":"9"},"8205":{"":""},"8204":{"":""}};
+});};if (typeof module !== 'undefined') { module.exports = map; }else if (typeof Interscript !== 'undefined') { map(Interscript); }else { throw "We couldn't dispatch Interscript from a map!"; }

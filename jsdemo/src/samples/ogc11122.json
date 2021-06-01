@@ -1,0 +1,796 @@
+[
+    {
+        "lang": "Amharic",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-amh-Ethi-Latn-1997",
+        "ogc11122": "amh_Ethi2Latn_ALA_1997",
+        "samples": [
+            "የዜግነት ክብር "
+        ],
+        "result": []
+    },
+    {
+        "lang": "Amharic",
+        "isoName": "OGC 1967",
+        "systemName": "bgnpcgn-amh-Ethi-Latn-1967",
+        "ogc11122": "amh_Ethi2Latn_BGN_1967",
+        "samples": [
+            "የዜግነት ክብር "
+        ],
+        "result": []
+    },
+    {
+        "lang": "Arabic",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-ara-Arab-Latn-1997",
+        "ogc11122": "ara_Arab2Latn_ALA_1997",
+        "samples": [
+            "وَضعْ"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Arabic",
+        "isoName": "OGC 1956",
+        "systemName": "bgnpcgn-ara-Arab-Latn-1956",
+        "ogc11122": "ara_Arab2Latn_BGN_1956",
+        "samples": [
+            "قُرآن"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Arabic",
+        "isoName": "OGC 2002",
+        "systemName": "",
+        "ogc11122": "ara_Arab2Latn_BUC_2002",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Arabic",
+        "isoName": "OGC 1973",
+        "systemName": "",
+        "ogc11122": "ara_Arab2Latn_IGN_1973",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Arabic",
+        "isoName": "OGC 1996",
+        "systemName": "",
+        "ogc11122": "ara_Arab2Latn_RJGC_1996",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Armenian",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "hye_Armn2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Armenian",
+        "isoName": "OGC 1981",
+        "systemName": "",
+        "ogc11122": "hye_Armn2Latn_BGN_1981",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Azerbaijani",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-aze-Cyrl-Latn-1997",
+        "ogc11122": "aze_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Азәрбајҹан"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Azerbaijani",
+        "isoName": "OGC 1991",
+        "systemName": "",
+        "ogc11122": "aze_Cyrl2Latn_GAZ_1991",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Belarusian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-bel-Cyrl-Latn-1997",
+        "ogc11122": "bel_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Беларусь"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Belarusian",
+        "isoName": "OGC 1979",
+        "systemName": "bgnpcgn-bel-Cyrl-Latn-1979",
+        "ogc11122": "bel_Cyrl2Latn_BGN_1979",
+        "samples": [
+            "Антон"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Belarusian",
+        "isoName": "OGC 1992",
+        "systemName": "",
+        "ogc11122": "bel_Cyrl2Latn_GBO_1992",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Belarusian",
+        "isoName": "OGC 1998",
+        "systemName": "by-bel-Cyrl-Latn-1998",
+        "ogc11122": "bel_Cyrl2Latn_GBO_1998",
+        "samples": [
+            "Аршанскi"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Bulgarian",
+        "isoName": "OGC 1952",
+        "systemName": "bgnpcgn-bul-Cyrl-Latn-1952",
+        "ogc11122": "bul_Cyrl2Latn_BGN_1952",
+        "samples": [
+            "София"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Bulgarian",
+        "isoName": "OGC 2013",
+        "systemName": "bgnpcgn-bul-Cyrl-Latn-2013",
+        "ogc11122": "bul_Cyrl2Latn_BGN_2013",
+        "samples": [
+            "София"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Central Khmer",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "khm_Khmr2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Central Khmer",
+        "isoName": "OGC 1959",
+        "systemName": "",
+        "ogc11122": "khm_Khmr2Latn_SGK_1959",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Chechen",
+        "isoName": "OGC 2007",
+        "systemName": "",
+        "ogc11122": "che_Cyrl2Latn_BGN_2007",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Chinese",
+        "isoName": "OGC 2002",
+        "systemName": "acadsin-zho-Hani-Latn-2002",
+        "ogc11122": "zho_Hani2Latn_AcadSin_2002",
+        "samples": [
+            "阜康"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Chinese",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "zho_Hani2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Chinese",
+        "isoName": "OGC 1979",
+        "systemName": "sac-zho-Hans-Latn-1979",
+        "ogc11122": "zho_Hani2Latn_GCH_1979",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Chinese",
+        "isoName": "OGC 1979",
+        "systemName": "var-zho-Hani-Latn-wd-1979",
+        "ogc11122": "zho_Hani2Latn_WDG_1979",
+        "samples": [
+            "西南"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Dari",
+        "isoName": "OGC 2007",
+        "systemName": "bgnpcgn-prs-Arab-Latn-2007",
+        "ogc11122": "uas_Arab2Latn_BGN_2007",
+        "samples": [
+            "بَغْلان"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Divehi; Dhivehi; Maldivian",
+        "isoName": "OGC 1988",
+        "systemName": "",
+        "ogc11122": "div_Thaa2Latn_GMV_1988",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Dzongkha",
+        "isoName": "OGC 1994",
+        "systemName": "",
+        "ogc11122": "dzo_Tibt2Latn_GBT_1994",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Faroese",
+        "isoName": "OGC 1968",
+        "systemName": "",
+        "ogc11122": "fao_Latn2Latn_BGN_1968",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Georgian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-kat-Geor-Latn-1997",
+        "ogc11122": "kat_Geor2Latn_ALA_1997",
+        "samples": [
+            "ხაოფსე"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Georgian",
+        "isoName": "OGC 1981",
+        "systemName": "bgnpcgn-kat-Geor-Latn-1981",
+        "ogc11122": "kat_Geor2Latn_BGN_1981",
+        "samples": [
+            "ჰებუდი"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Georgian",
+        "isoName": "OGC 2002",
+        "systemName": "ggg-kat-Geor-Latn-2002",
+        "ogc11122": "kat_Geor2Latn_GGG_2002",
+        "samples": [
+            "თბილისი"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Greek, Modern (1453-)",
+        "isoName": "OGC 1962",
+        "systemName": "bgnpcgn-ell-Grek-Latn-1962",
+        "ogc11122": "ell_Grek2Latn_BGN_1962",
+        "samples": [
+            "Ένα πράμα "
+        ],
+        "result": []
+    },
+    {
+        "lang": "Greek, Modern (1453-)",
+        "isoName": "OGC 1996",
+        "systemName": "bgnpcgn-ell-Grek-Latn-1996",
+        "ogc11122": "ell_Grek2Latn_ELOT743_1996",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Hebrew",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "heb_Hebr2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Hebrew",
+        "isoName": "OGC 2018",
+        "systemName": "",
+        "ogc11122": "heb_Hebr2Latn_BGN_2018",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Hebrew",
+        "isoName": "OGC 1962",
+        "systemName": "",
+        "ogc11122": "heb_Hebr2Latn_HAS_1962",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Hindi",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-hin-Deva-Latn-1997",
+        "ogc11122": "hin_Deva2Latn_ALA_1997",
+        "samples": [
+            "हम"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Japanese",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "jpn_Hrkt2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Japanese",
+        "isoName": "OGC 1930",
+        "systemName": "",
+        "ogc11122": "jpn_Hrkt2Latn_BGN_1930",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Japanese",
+        "isoName": "OGC 1954",
+        "systemName": "",
+        "ogc11122": "jpn_Hrkt2Latn_GJP_1954",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Javanese",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "jav_Java2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Kazakh",
+        "isoName": "OGC 1979",
+        "systemName": "",
+        "ogc11122": "kaz_Cyrl2Latn_BGN_1979",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Kirghiz; Kyrgyz",
+        "isoName": "OGC 1979",
+        "systemName": "",
+        "ogc11122": "kir_Cyrl2Latn_BGN_1979",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Korean",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-kor-Hang-Latn-1997",
+        "ogc11122": "kor_Hang2Latn_ALA_1997",
+        "samples": [
+            "은하-리"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Korean",
+        "isoName": "OGC 2000",
+        "systemName": "moct-kor-Hang-Latn-2000",
+        "ogc11122": "kor_Hang2Latn_MOCT_2000",
+        "samples": [
+            "불국사"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Korean",
+        "isoName": "OGC 1943",
+        "systemName": "bgn-kor-Hang-Latn-1943",
+        "ogc11122": "kor_Hang2Latn_MR_1939",
+        "samples": [
+            "서울"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Kurdish",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "kur_Arab2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Kurdish",
+        "isoName": "OGC 1931",
+        "systemName": "",
+        "ogc11122": "kur_Arab2Latn_BGN_1931",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Kurdish",
+        "isoName": "OGC 1931",
+        "systemName": "",
+        "ogc11122": "kur_Arab2Latn_EDMONDS_1931",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Lao",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "lao_Laoo2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Lao",
+        "isoName": "OGC 1966",
+        "systemName": "",
+        "ogc11122": "lao_Laoo2Latn_CNT_1966",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Macedonian",
+        "isoName": "OGC 1981",
+        "systemName": "bgnpcgn-mkd-Cyrl-Latn-1981",
+        "ogc11122": "mkd_Cyrl2Latn_BGN_1981",
+        "samples": [
+            "Ѓол"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Macedonian",
+        "isoName": "OGC 2013",
+        "systemName": "",
+        "ogc11122": "mkd_Cyrl2Latn_BGN_2013",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Mongolian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-mon-Cyrl-Latn-1997",
+        "ogc11122": "mon_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Эрдэнэт Су"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Mongolian",
+        "isoName": "OGC 1964",
+        "systemName": "bgnpcgn-mon-Cyrl-Latn-1964",
+        "ogc11122": "mon_Cyrl2Latn_BGN_1964",
+        "samples": [
+            "Эрдэнэт Су"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Nepali",
+        "isoName": "OGC 1970",
+        "systemName": "",
+        "ogc11122": "nep_Mymr2Latn_BGN_1970",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Oriya",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "ori_Orya2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Panjabi; Punjabi",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-pan-Guru-Latn-1997",
+        "ogc11122": "pan_Deva2Latn_ALA_1997",
+        "samples": [
+            "ਪੰਜਾਬ 'ਚ ਵ"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Persian",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "fas_Arab2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Persian",
+        "isoName": "OGC 1959",
+        "systemName": "",
+        "ogc11122": "fas_Arab2Latn_AMMI_1959",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Persian",
+        "isoName": "OGC 1956",
+        "systemName": "bgnpcgn-fas-Arab-Latn-1956",
+        "ogc11122": "fas_Arab2Latn_BGN_1958",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Persian",
+        "isoName": "OGC 2004",
+        "systemName": "",
+        "ogc11122": "fas_Arab2Latn_NCO_2004",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Persian",
+        "isoName": "OGC 2004",
+        "systemName": "",
+        "ogc11122": "fas_Arab2Latn_ODNI_2004",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Pushto; Pashto",
+        "isoName": "OGC 1968",
+        "systemName": "",
+        "ogc11122": "pus_Arab2Latn_BGN_1968",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Russian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-rus-Cyrl-Latn-1997",
+        "ogc11122": "rus_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Азов"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Russian",
+        "isoName": "OGC 1947",
+        "systemName": "bgnpcgn-rus-Cyrl-Latn-1947",
+        "ogc11122": "rus_Cyrl2Latn_BGN_1947",
+        "samples": [
+            "Выборы деп"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Russian",
+        "isoName": "OGC 1983",
+        "systemName": "gost-rus-Cyrl-Latn-16876-71-1983",
+        "ogc11122": "rus_Cyrl2Latn_GOST_1983",
+        "samples": [
+            "Анапа"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Russian",
+        "isoName": "OGC 2004",
+        "systemName": "",
+        "ogc11122": "rus_Cyrl2Latn_ODNI_2004",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Rusyn",
+        "isoName": "OGC 2016",
+        "systemName": "bgnpcgn-rue-Cyrl-Latn-2016",
+        "ogc11122": "rue_Cyrl2Latn_BGN_2016",
+        "samples": [
+            "русиньскый"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Serbian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-srp-Cyrl-Latn-1997",
+        "ogc11122": "srp_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Општина Ер"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Serbian",
+        "isoName": "OGC 2005",
+        "systemName": "bgnpcgn-srp-Cyrl-Latn-2005",
+        "ogc11122": "srp_Cyrl2Latn_BGN_2005",
+        "samples": [
+            "Шупља Стен"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Serbian",
+        "isoName": "OGC 2005",
+        "systemName": "",
+        "ogc11122": "srp_Cyrl2Latn_ODNI_2005",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Tajik",
+        "isoName": "OGC 1994",
+        "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
+        "ogc11122": "tgk_Cyrl2Latn_BGN_1994",
+        "samples": [
+            "Тамоми ода"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Thai",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "tha_Thai2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Thai",
+        "isoName": "OGC 1968",
+        "systemName": "royin-tha-Thai-Latn-1968",
+        "ogc11122": "tha_Thai2Latn_RIT_1968",
+        "samples": [
+            "สะพาน"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Thai",
+        "isoName": "OGC 1999",
+        "systemName": "royin-tha-Thai-Latn-1999",
+        "ogc11122": "tir_Thai2Latn_RIT_2000",
+        "samples": [
+            "ภาษาไทย"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Tibetan",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "bod_Tibt2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Tigrinya",
+        "isoName": "OGC 1997",
+        "systemName": "",
+        "ogc11122": "tir_Ethi2Latn_ALA_1997",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Tigrinya",
+        "isoName": "OGC 2007",
+        "systemName": "",
+        "ogc11122": "tir_Ethi2Latn_BGN_2007",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Turkmen",
+        "isoName": "OGC 1979",
+        "systemName": "",
+        "ogc11122": "tuk_Cyrl2Latn_BGN_1979",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Uighur; Uyghur",
+        "isoName": "OGC 2001",
+        "systemName": "",
+        "ogc11122": "uig_Arab2Latn_UCIS_2001",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Uighur; Uyghur",
+        "isoName": "OGC 1959",
+        "systemName": "",
+        "ogc11122": "uig_Arab2Latn_XLSC_1959",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Ukrainian",
+        "isoName": "OGC 1997",
+        "systemName": "alalc-ukr-Cyrl-Latn-1997",
+        "ogc11122": "ukr_Cyrl2Latn_ALA_1997",
+        "samples": [
+            "Автономна "
+        ],
+        "result": []
+    },
+    {
+        "lang": "Ukrainian",
+        "isoName": "OGC 1965",
+        "systemName": "bgnpcgn-ukr-Cyrl-Latn-1965",
+        "ogc11122": "ukr_Cyrl2Latn_BGN_1965",
+        "samples": [
+            "Авдіївська"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Ukrainian",
+        "isoName": "OGC 2019",
+        "systemName": "",
+        "ogc11122": "ukr_Cyrl2Latn_BGN_2019",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Ukrainian",
+        "isoName": "OGC 1996",
+        "systemName": "ua-ukr-Cyrl-Latn-1996",
+        "ogc11122": "ukr_Cyrl2Latn_GUP_1996",
+        "samples": [
+            "Алушта"
+        ],
+        "result": []
+    },
+    {
+        "lang": "Ukrainian",
+        "isoName": "OGC 2005",
+        "systemName": "",
+        "ogc11122": "ukr_Cyrl2Latn_ODNI_2005",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Urdu",
+        "isoName": "OGC 2007",
+        "systemName": "",
+        "ogc11122": "urd_Arab2Latn_BGN_2007",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Urdu",
+        "isoName": "OGC HUN_",
+        "systemName": "",
+        "ogc11122": "urd_Arab2Latn_HUN_",
+        "samples": [],
+        "result": []
+    },
+    {
+        "lang": "Uzbek",
+        "isoName": "OGC 1979",
+        "systemName": "",
+        "ogc11122": "uzb_Cyrl2Latn_BGN_1979",
+        "samples": [],
+        "result": []
+    }
+]

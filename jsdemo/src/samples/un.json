@@ -1,0 +1,311 @@
+[
+  {
+    "lang": "Amharic",
+    "isoName": "UN 1967, I/17",
+    "systemName": "un-amh-Ethi-Latn-2016",
+    "samples": ["ኢትዮጵያ", "አዲስ አበባ"],
+    "english": ["Ethiopia"],
+    "result": []
+  },
+  {
+    "lang": "Arabic",
+    "isoName": "UN 1972, II/8",
+    "systemName": "un-ara-Arab-Latn-1972",
+    "samples": ["جَزيرة العَرَب"],
+    "english": ["Arabian Peninsula"],
+    "result": []
+  },
+  {
+    "lang": "Armenian",
+    "isoName": "BGN/PCGN 1981",
+    "systemName": "bgnpcgn-arm-Armn-Latn-1981",
+    "samples": ["Հայաստան","Երևան"],
+    "english": ["Armenia"],
+    "result": []
+  },
+  {
+    "lang": "Assamese",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-asm-Beng-Latn-1972",
+    "samples": ["অসম", "দিছপুৰ"],
+    "english": ["Assam","Dispur"],
+    "result": []
+  },
+  {
+    "lang": "Bengali",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-ben-Beng-Latn-2016",
+    "samples": ["বাংলাদেশ","ঢাকা"],
+    "result": []
+  },
+  {
+    "lang": "Bulgarian",
+    "isoName": "UN 1977, III/10",
+    "systemName": "",
+    "samples": ["Република България"],
+    "result": []
+  },
+  {
+    "lang": "Burmese",
+    "isoName": "BGN/PCGN 1970",
+    "systemName": "",
+    "samples": ["ြမန်မာ","ရန်ကုန်"],
+    "result": []
+  },
+  {
+    "lang": "Byelorussian",
+    "isoName": "national 2007",
+    "systemName": "by-bel-Cyrl-Latn-2007",
+    "samples": ["Беларусь","Минск"],
+    "result": []
+  },
+  {
+    "lang": "Chinese",
+    "isoName": "UN 1977, III/8",
+    "systemName": "bgnpcgn-zho-Hans-Latn-1979",
+    "samples": ["中国","北京"],
+    "result": []
+  },
+  {
+    "lang": "Dzongkha",
+    "isoName": "national 1997",
+    "systemName": "",
+    "samples": ["འབྲུག་ཡུལ","ཐིམ་ཕུ"],
+    "english": ["Bhutan","Thimphu"],
+    "result": []
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "national 2002",
+    "systemName": "ggg-kat-Geor-Latn-2002",
+    "samples": ["საქართველო","თბილისი"],
+    "english": ["Georgia"],
+    "result": []
+  },
+  {
+    "lang": "Greek",
+    "isoName": "UN 1987, V/19",
+    "systemName": "un-ell-Grek-Latn-1987-tl",
+    "samples": ["Ελλάδα","Αθήνα"],
+    "english": ["Greece"],
+    "result": []
+  },
+  {
+    "lang": "Gujarati",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-guj-Gujr-Latn-1972",
+    "samples": ["જરાત","ગાંધીનગર"],
+    "result": []
+  },
+  {
+    "lang": "Hebrew",
+    "isoName": "UN 1977, III/13; 2007, IX/9",
+    "systemName": "icao-heb-Hebr-Latn-9303",
+    "samples": ["מְדִינַת ישְרְאֶל"],
+    "english": ["State of Israel]"],
+    "result": []
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-hin-Deva-Latn-2016",
+    "samples": ["भारत","दिल्ली"],
+    "english": ["India"],
+    "result": []
+  },
+  {
+    "lang": "Japanese",
+    "isoName": "national: Kunrei-siki/Mod. Hepburn",
+    "systemName": "mext-jpn-Hrkt-Latn-1954",
+    "samples": ["にっぽん","とうきょ"],
+    "english": ["Japan"],
+    "result": []
+  },
+  {
+    "lang": "Kannada",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-kan-Kana-Latn-2016",
+    "samples": ["ಕರ್ಣಾಟಕ", "ಬೆಂಗಳೂರು"],
+    "result": []
+  },
+  {
+    "lang": "Kazakh",
+    "isoName": "BGN/PCGN 1979",
+    "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
+    "samples": ["Қазақстан","Астана"],
+    "result": []
+  },
+  {
+    "lang": "Khmer",
+    "isoName": "UN 1972, II/10",
+    "systemName": "",
+    "samples": ["កមពុជ","ភនំេពញ"],
+    "english": ["Cambodia"],
+    "result": []
+  },
+  {
+    "lang": "Kirghiz",
+    "isoName": "BGN/PCGN 1979",
+    "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
+    "samples": ["Кыргызстан","Бишкек"],
+    "result": []
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ISO/TR 11941:1996",
+    "systemName": "iso-kor-Hang-Latn-1996-method1",
+    "samples": ["평양","서울"],
+    "result": []
+  },
+  {
+    "lang": "Lao",
+    "isoName": "national 1966",
+    "systemName": "",
+    "samples": ["ລາວ","ວຽງຈັນ"],
+    "english": ["Laos"],
+    "result": []
+  },
+  {
+    "lang": "Macedonian Cyrillic",
+    "isoName": "UN 1977, III/11",
+    "systemName": "",
+    "samples": ["Скопје","Битола"],
+    "result": []
+  },
+  {
+    "lang": "Malayalam",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-mal-Mlym-Latn-1972",
+    "samples": ["കേരളം","തിരുവനന്തപുരം"],
+    "result": []
+  },
+  {
+    "lang": "Maldivian",
+    "isoName": "national 1987",
+    "systemName": "mv-div-Thaa-Latn-1987",
+    "samples": ["ދިވެހި ރާއްޖެ", "މާލެ"],
+    "english": ["Maldives"],
+    "result": []
+  },
+  {
+    "lang": "Marathi",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-mar-Deva-Latn-2016",
+    "samples": ["महारा","मुंबई"],
+    "result": []
+  },
+  {
+    "lang": "Mongolian (Cyrillic)",
+    "isoName": "BGN/PCGN 1964",
+    "systemName": "bgnpcgn-mon-Cyrl-Latn-1964",
+    "samples": ["Монгол улс","Улаанбаатар"],
+    "result": []
+  },
+  {
+    "lang": "Nepalese",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-nep-Deva-Latn-1972",
+    "samples": ["नेपाल","काठमाडौँ"],
+    "result": []
+  },
+  {
+    "lang": "Oriya",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-ori-Orya-Latn-1972",
+    "samples": ["ଓଡ଼ିଶା","ଭୁବନେଶ୍ୱର"],
+    "result": []
+  },
+  {
+    "lang": "Pashto",
+    "isoName": "BGN/PCGN 1968",
+    "systemName": "bgnpcgn-prs-Arab-Latn-2007",
+    "samples": ["افغانِستان","کابُل"],
+    "result": []
+  },
+  {
+    "lang": "Persian",
+    "isoName": "UN 1967, I/13",
+    "systemName": "un-prs-Arab-Latn-1967",
+    "samples": ["اِيران", "تِهران"],
+    "result": []
+  },
+  {
+    "lang": "Punjabi",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-pan-Guru-Latn-1972",
+    "samples": ["ਪੰਜਾਬ","ਚੰ ਡੀਗੜ"],
+    "result": []
+  },
+  {
+    "lang": "Russian",
+    "isoName": "UN 1987, V/18",
+    "systemName": "un-rus-Cyrl-Latn-1987",
+    "samples": ["Россия","Москва"],
+    "result": []
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "UN 1977, III/11; 2002, VIII/14",
+    "systemName": "",
+    "samples": ["Србија","Београд"],
+    "result": []
+  },
+  {
+    "lang": "Sinhalese",
+    "isoName": "provisional 1972",
+    "systemName": "un-sin-Sinh-Latn-1972",
+    "samples": ["ශ්\u200Dරී ලංකා", "කොළඹ"],
+    "result": []
+  },
+  {
+    "lang": "Tajik",
+    "isoName": "BGN/PCGN 1994",
+    "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
+    "samples": ["Тоҷикистон","Душанбе"],
+    "result": []
+  },
+  {
+    "lang": "Tamil",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-tam-Taml-Latn-1972",
+    "samples": ["தமிழ்நாடு","இலங்கை"],
+    "result": []
+  },
+  {
+    "lang": "Telugu",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-tel-Telu-Latn-1972",
+    "samples": ["ఆధ్రా ప్రదేశ్", "హైదరాబాదు"],
+    "result": []
+  },
+  {
+    "lang": "Thai",
+    "isoName": "UN 1967, I/14",
+    "systemName": "",
+    "samples": ["ไทย","กรุงเทพฯ"],
+    "english": ["","Bangkok"],
+    "result": []
+  },
+  {
+    "lang": "Tigrinya",
+    "isoName": "BGN/PCGN 2007",
+    "systemName": "",
+    "samples": ["ኤርትራ","ኣስመራ"],
+    "english": ["Eritrea"],
+    "result": []
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "national 2007",
+    "systemName": "un-ukr-Cyrl-Latn-1998",
+    "samples": ["Україна","Київ"],
+    "result": []
+  },
+  {
+    "lang": "Urdu",
+    "isoName": "UN 1972, II/11; 1977, III/12",
+    "systemName": "un-urd-Arab-Latn-1972",
+    "samples": ["پاکِستَان","اِسلام آبَاد"],
+    "result": []
+  }
+]
