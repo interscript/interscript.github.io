@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import { Root, Routes } from 'react-static'
-import { Router } from '@reach/router'
-import { Helmet } from 'react-helmet'
-import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-import styled, { createGlobalStyle } from 'styled-components'
-import logo from 'assets/symbol.svg'
+import React, { useState } from "react";
+import { Root, Routes } from "react-static";
+import { /*Link,*/ Router } from "@reach/router";
+import { Helmet } from "react-helmet";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import styled, { createGlobalStyle } from "styled-components";
+import logo from "assets/symbol.svg";
 
-
-export const primaryColor = '008075'
-
+export const primaryColor = "008075";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,9 +14,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family:
-      'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue',
-      Helvetica, 'Lucida Grande', Arial, sans-serif;
+    font-family: 'HelveticaNeue-Regular', 'Helvetica Neue Regular', 'Helvetica Neue',
+    Helvetica, 'Lucida Grande', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4;
@@ -31,13 +28,11 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: #${primaryColor};
   }
-`
-
+`;
 
 function App() {
   return (
     <Root>
-
       <GlobalStyle />
 
       <Helmet>
@@ -59,62 +54,67 @@ function App() {
           </Router>
         </React.Suspense>
       </MainContent>
-
     </Root>
-  )
+  );
 }
 
-const HeaderTitle: React.FC<{}> = function() {
-  const [showCompact, setShowCompact] = useState(false)
+const HeaderTitle: React.FC<{}> = function () {
+  const [showCompact, setShowCompact] = useState(false);
 
   useScrollPosition(({ currPos }) => {
-    const logoHeight = 140
-    const headerPadding = 20
-    setShowCompact(currPos.y < (0 - logoHeight + headerPadding))
-  })
+    const logoHeight = 140;
+    const headerPadding = 20;
+    setShowCompact(currPos.y < 0 - logoHeight + headerPadding);
+  });
 
   return (
     <>
       <ProjectTitleLarge>
-        <h1 className="title"><b>Inter</b>script</h1>
+        <h1 className="title">
+          <b>Inter</b>script
+        </h1>
         <p className="tagline">
-          Interoperable<br />
+          Interoperable
+          <br />
           script&nbsp;conversion&nbsp;systems
         </p>
       </ProjectTitleLarge>
 
-      {showCompact
-        ? <ProjectTitleSmallWithLogo role="presentation">
-            <h1 className="title"><b>Inter</b>script</h1>
-            <LogoSymbolSmall src={logo} role="presentation" />
-            <p className="tagline">
-              Interoperable<br />
-              script&nbsp;conversion&nbsp;systems
-            </p>
-          </ProjectTitleSmallWithLogo>
-        : null}
+      {showCompact ? (
+        <ProjectTitleSmallWithLogo role="presentation">
+          <h1 className="title">
+            <b>Inter</b>script
+          </h1>
+          <LogoSymbolSmall src={logo} role="presentation" />
+          <p className="tagline">
+            Interoperable
+            <br />
+            script&nbsp;conversion&nbsp;systems
+          </p>
+        </ProjectTitleSmallWithLogo>
+      ) : null}
     </>
-  )
-}
+  );
+};
 
 const LogoHeader = styled.header`
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
   z-index: 2;
-`
+`;
 
 const LogoSymbol = styled.img`
   height: 100px;
   width: 100px;
   margin: 20px;
-`
+`;
 
 const LogoSymbolSmall = styled(LogoSymbol)`
   height: 50px;
   width: 50px;
   margin: 0;
-`
+`;
 
 const ProjectTitle = styled.div`
   display: flex;
@@ -124,32 +124,31 @@ const ProjectTitle = styled.div`
     font-size: 42px;
     line-height: 1;
 
-    font-family:
-      'HelveticaNeue-Thin', 'Helvetica Neue Thin', 'Helvetica Neue',
-      Helvetica, Arial, 'Lucida Grande', sans-serif;
+    font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue",
+      Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: 200;
 
     b {
-      font-family:
-        'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue',
-        Helvetica, Arial, 'Lucida Grande', sans-serif;
+      font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue",
+        Helvetica, Arial, "Lucida Grande", sans-serif;
       font-weight: 700;
     }
   }
-`
+`;
 
 const ProjectTitleLarge = styled(ProjectTitle)`
   flex-flow: column nowrap;
 
-  .tagline, .title {
+  .tagline,
+  .title {
     text-align: center;
     margin: 0;
     padding: 0;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
   }
 
   .tagline {
-    margin-top: .5em;
+    margin-top: 0.5em;
     line-height: 1.1;
   }
 
@@ -159,16 +158,16 @@ const ProjectTitleLarge = styled(ProjectTitle)`
     .tagline {
       text-align: right;
       margin: 0;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
 
     .title {
       text-align: left;
       margin: 0;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
-`
+`;
 
 const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
   flex-flow: row-reverse nowrap;
@@ -187,27 +186,27 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
   .tagline {
     text-align: right;
     margin: 0;
-    margin-right: .75rem;
+    margin-right: 0.75rem;
     display: none;
   }
 
   .title {
     text-align: left;
     margin: 0;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 
   @media screen and (min-width: 900px) {
     left: unset;
     right: unset;
     transform: scale(0.9);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 
     .tagline {
       display: block;
     }
   }
-`
+`;
 
 const MainContent = styled.main`
   ul {
@@ -226,6 +225,6 @@ const MainContent = styled.main`
     margin: 0 auto;
     width: 901px;
   }
-`
+`;
 
-export default App
+export default App;

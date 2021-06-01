@@ -13,3 +13,7 @@ export function getLanguageTitleFrom6393BorT(code: string): string | null {
     i.iso6392T === code || i.iso6392B === code || i.iso6393 === code
   )?.name
 }
+
+export function getLanguageTitleFrom6392or3(code: string): string | null {
+  return getLanguageTitleFrom6392BorT(code) || getLanguageTitleFrom6393BorT(code)
+}

@@ -57,11 +57,12 @@ export const ExamplePage: React.FC<{
     await prepare(samples, setSampleData);
     setIsLoading(false);
   }
+
   return (
     <Section>
       {isLoading && (
         <CenterLoader>
-          <Loader type='Grid' color='#00BFFF' height={80} width={80} />
+          <Loader type="Grid" color="#00BFFF" height={80} width={80} />
         </CenterLoader>
       )}
       {!isLoading && (
@@ -94,6 +95,7 @@ const Section = styled.article`
       border: none;
     }
   }
+
   a[rel*="noopener"] {
     &,
     &:link,

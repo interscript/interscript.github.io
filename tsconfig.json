@@ -24,5 +24,5 @@
     },
     "lib": ["dom", "es2015", "es2016"]
   },
-  "exclude": ["artifacts/**/*", "dist/**/*", "public/**/*", "node_modules"]
+  "exclude": ["artifacts/**/*", "dist/**/*", "public/**/*", "node_modules", "jsdemo"]
 }
