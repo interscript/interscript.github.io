@@ -63,7 +63,7 @@ export default () => {
           <strong>View on GitHub</strong>
         </SectionNavItem>
         <SectionNavItem key="js" href="/js">
-          <strong>JS</strong>
+          <strong>See JS demo</strong>
         </SectionNavItem>
       </SectionNav>
 
