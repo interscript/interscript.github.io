@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import Loader from "react-loader-spinner";
-import { ScriptConversionExample } from "../../types";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
+import { ScriptConversionExample } from '../../types';
 
-import { Poster } from "components/Example";
+import { Poster } from 'components/Example';
 
-import { primaryColor } from "../App";
-import Interscript from "interscript";
+import { primaryColor } from '../App';
+import Interscript from 'interscript';
 
 export const ExamplePage: React.FC<{
   samples: ScriptConversionExample[];
@@ -23,11 +23,12 @@ export const ExamplePage: React.FC<{
   async function handleForceUpdate() {
     setIsLoading(true);
 
+    Interscript.map_path = '/maps/';
+    await Interscript.load_map_list();
+
     const translit = async (system: string, text: string) => {
-      await Interscript.load_map({
-        maps: system,
-      });
-      return Interscript.transliterate(system, text).split("\n");
+      await Interscript.load_map(system);
+      return Interscript.transliterate(system, text).split('\n');
     };
 
     const prepare = async (
@@ -36,7 +37,7 @@ export const ExamplePage: React.FC<{
     ) => {
       const data = await Promise.all(
         samples.map(async (s: ScriptConversionExample) => {
-          const text = s.samples.join("\n");
+          const text = s.samples.join('\n');
           const { systemName: system } = s;
           if (!text || !system || !Interscript.map_exist(system)) {
             return s;
@@ -62,7 +63,7 @@ export const ExamplePage: React.FC<{
     <Section>
       {isLoading && (
         <CenterLoader>
-          <Loader type="Grid" color="#00BFFF" height={80} width={80} />
+          <Loader type='Grid' color='#00BFFF' height={80} width={80} />
         </CenterLoader>
       )}
       {!isLoading && (
@@ -96,7 +97,7 @@ const Section = styled.article`
     }
   }
 
-  a[rel*="noopener"] {
+  a[rel*='noopener'] {
     &,
     &:link,
     &:visited {
@@ -117,7 +118,7 @@ const CenterLoader = styled.div`
   height: 50px;
 
   &:before {
-    content: "";
+    content: '';
     display: block;
     position: fixed;
     top: 0;
