@@ -58,8 +58,6 @@ export const ExamplePage: React.FC<{
     setIsLoading(false);
   }
 
-  const hideForceUpdateButton = true; // Todo fix force re-evaluate samples
-
   return (
     <Section>
       {isLoading && (
@@ -70,11 +68,9 @@ export const ExamplePage: React.FC<{
       {!isLoading && (
         <>
           <ButtonLayout>
-            { !hideForceUpdateButton &&
-              <ForceUpdateButton onClick={handleForceUpdate}>
-                On Site
-              </ForceUpdateButton>
-            }
+            <ForceUpdateButton onClick={handleForceUpdate}>
+              On Site
+            </ForceUpdateButton>
           </ButtonLayout>
           <Poster
             data={sampleData}
