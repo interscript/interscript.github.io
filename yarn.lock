@@ -4611,10 +4611,10 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.0.4.tgz#70a2a078854e61537a52d9c44ee1a65d205e999e"
-  integrity sha512-GGlZPw5f2rj7wX3EiJ1ahANwl5mpfMwAx5Off8KTyoBMvTRcMfjasarOCjzZWro6AVfPCzPSfha+3F/4wo1Ogg==
+interscript@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.0.5.tgz#051785b762787812df725762c3131ea7677ba0b2"
+  integrity sha512-jzGsylPE87JVdBhR+9vLZzNDJvfQPU/9S1ATJUTb4qVHOOkrSDnAAK4j6mY49jyWhsIRJbjF4mnE+2oq11cs+A==
   dependencies:
     xregexp "^5.0.1"
 
