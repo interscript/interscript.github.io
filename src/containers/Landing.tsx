@@ -13,7 +13,8 @@ import {
   getLanguageTitleFrom6393BorT,
 } from "components/isoLang";
 
-const API_ENDPOINT = "https://api.interscript.com";
+const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
+// const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
   const {
