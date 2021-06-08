@@ -1,0 +1,12 @@
+= Interscript official website: interscript.org
+
+image:https://github.com/interscript/interscript.org/workflows/deploy/badge.svg["Build Status", link="https://github.com/interscript/interscript.org/actions?workflow=deploy"]
+
+== Introduction
+
+This is the official website for the Interscript project,
+located at https://www.interscript.org.
+
+== License
+
+Copyright Ribose.
