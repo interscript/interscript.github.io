@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 import cheerio from 'cheerio';
 
@@ -119,7 +120,7 @@ export default {
         getData: () => ({
           mapsInfo,
         }),
-      },      
+      },
       {
         path: 'js/alalc',
         template: 'src/pages/alalc.tsx',
@@ -154,6 +155,24 @@ export default {
         getData: () => ({
           samples: un || unSamples,
         }),
+      },
+      {
+        path: 'system',
+        template: 'src/pages/system.tsx',
+        getData: async () => ({
+          mapsInfo,
+        }),
+        children: (mapsInfo.data || []).map((system) => ({
+          path: `${system}`,
+          template: 'src/containers/systemView.tsx',
+          getData: async () => ({
+            system,
+            htmlData: fs.readFileSync(
+              `./public/visualizations/${system}.html`,
+              'utf8'
+            ),
+          }),
+        })),
       },
     ];
   },

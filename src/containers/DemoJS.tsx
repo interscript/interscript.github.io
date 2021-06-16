@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useRouteData } from "react-static";
+import React, { useState, useEffect, useRef } from 'react';
+import { useRouteData } from 'react-static';
 // import { AxiosResponse } from "axios";
-import styled from "styled-components";
-import TopNav from "components/TopNav";
-import { SystemSelector } from "components/SystemSelector";
-import { ScriptConversionSystem, systemToCode } from "../scs";
+import styled from 'styled-components';
+import TopNav from 'components/TopNav';
+import { SystemSelector } from 'components/SystemSelector';
+import { ScriptConversionSystem, systemToCode } from '../scs';
 
-import { primaryColor } from "../App";
-import { getLanguageTitleFrom6392or3 } from "components/isoLang";
-import Interscript from "interscript";
+import { primaryColor } from '../App';
+import { getLanguageTitleFrom6392or3 } from 'components/isoLang';
+import Interscript from 'interscript';
 
 export default () => {
   const {
@@ -16,7 +16,6 @@ export default () => {
   }: {
     mapsInfo: any;
   } = useRouteData();
-  console.log(mapsInfo);
 
   const [demoIsShowable, setDemoIsShowable] = useState(false);
 
@@ -31,7 +30,7 @@ export default () => {
         `${getLanguageTitleFrom6392or3(alpha3)} (${mapsInfo.languages[alpha3]})`
     )
     .sort()
-    .join(", ");
+    .join(', ');
 
   return (
     <>
@@ -40,7 +39,7 @@ export default () => {
       <SectionGrid>
         <Section>
           <p>
-            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{" "}
+            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{' '}
           </p>
         </Section>
       </SectionGrid>
@@ -72,7 +71,7 @@ export default () => {
 };
 
 const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
-  const [sampleText, setSampleText] = useState<string>("");
+  const [sampleText, setSampleText] = useState<string>('');
   const [selectedSystem, selectSystem] =
     useState<ScriptConversionSystem | null>(null);
   const [result, setResult] = useState<string | null | undefined>(null);
@@ -118,7 +117,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
   }, []);
 
   async function getTestExample(system: string): Promise<string | null> {
-    Interscript.map_path = "/maps/";
+    Interscript.map_path = '/maps/';
     await Interscript.load_map(system);
     //Todo: find a solution to get sample data as the map files no longer include test data
 
@@ -126,7 +125,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
   }
 
   async function handleConvert() {
-    if (systemCode !== null && sampleText.trim() !== "") {
+    if (systemCode !== null && sampleText.trim() !== '') {
       let resp: string;
 
       setError(null);
@@ -138,9 +137,9 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
       } catch (e) {
         setResult(null);
         setSubmitted(false);
-        setError("Sorry, an error occurred :(");
+        setError('Sorry, an error occurred :(');
       }
-      setResult(resp || "No result returned, please check your sample!");
+      setResult(resp || 'No result returned, please check your sample!');
     }
   }
 
@@ -148,10 +147,10 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
   if (selectedSystem?.lang) {
     placeholder = `Enter something in ${
       getLanguageTitleFrom6392or3(selectedSystem.lang) ||
-      "selected writing system"
+      'selected writing system'
     }…`;
   } else {
-    placeholder = "Enter something…";
+    placeholder = 'Enter something…';
   }
 
   return (
@@ -165,7 +164,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
           placeholder={placeholder}
           style={{
             boxShadow:
-              sampleText.trim() === "" && systemCode !== null
+              sampleText.trim() === '' && systemCode !== null
                 ? `#${primaryColor} 0 0 0px .5rem`
                 : undefined,
           }}
@@ -177,7 +176,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
           disabled={
             submitted === true ||
             systemCode === null ||
-            sampleText.trim() === ""
+            sampleText.trim() === ''
           }
         >
           Convert &rarr;
@@ -185,10 +184,10 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
 
         <ResultTextArea
           placeholder={
-            selectedSystem === null ? "Select a system above" : undefined
+            selectedSystem === null ? 'Select a system above' : undefined
           }
           disabled
-          value={result === undefined ? "Loading…" : result || error || ""}
+          value={result === undefined ? 'Loading…' : result || error || ''}
         />
       </SampleAndResult>
 
@@ -211,10 +210,10 @@ const ConvertButton = styled.button`
   border: 0;
   font-size: 100%;
 
-  color: ${(props) => (props.disabled ? "silver" : `white`)};
+  color: ${(props) => (props.disabled ? 'silver' : `white`)};
 
   background: ${(props) =>
-    props.disabled ? "whiteSmoke" : `#${primaryColor}`};
+    props.disabled ? 'whiteSmoke' : `#${primaryColor}`};
 `;
 
 const SampleAndResult = styled.div`
@@ -263,7 +262,7 @@ const Section = styled.article`
     }
   }
 
-  a[rel*="noopener"] {
+  a[rel*='noopener'] {
     &,
     &:link,
     &:visited {
@@ -275,6 +274,4 @@ const Section = styled.article`
 const SectionGrid = styled.div`
   overflow: hidden;
   padding: 0 1rem;
-
 `;
-

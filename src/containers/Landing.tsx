@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useRouteData } from "react-static";
-import { ReadmeSection, RepoInfo } from "types";
-import axios, { AxiosResponse } from "axios";
-import styled from "styled-components";
-import { SystemSelector } from "components/SystemSelector";
+import React, { useState, useEffect, useRef } from 'react';
+import { useRouteData } from 'react-static';
+import { ReadmeSection, RepoInfo } from 'types';
+import axios, { AxiosResponse } from 'axios';
+import styled from 'styled-components';
+import { SystemSelector } from 'components/SystemSelector';
 
-import { ScriptConversionSystem, systemToCode } from "../scs";
+import { ScriptConversionSystem, systemToCode } from '../scs';
 
-import { primaryColor } from "../App";
+import { primaryColor } from '../App';
 import {
   getLanguageTitleFrom6392BorT,
   getLanguageTitleFrom6393BorT,
-} from "components/isoLang";
+} from 'components/isoLang';
 
-const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
+const API_ENDPOINT = 'https://api.interscript.org'; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
@@ -45,7 +45,7 @@ export default () => {
         })`
     )
     .sort()
-    .join(", ");
+    .join(', ');
 
   return (
     <>
@@ -58,20 +58,23 @@ export default () => {
           />
         ))}
         <SectionNavItem
-          key="gh"
+          key='gh'
           href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}
         >
           <strong>View on GitHub</strong>
         </SectionNavItem>
-        <SectionNavItem key="js" href="/js">
+        <SectionNavItem key='js' href='/js'>
           <strong>See JS demo</strong>
+        </SectionNavItem>
+        <SectionNavItem key='system-list' href='/system'>
+          <strong>System List</strong>
         </SectionNavItem>
       </SectionNav>
 
       <SectionGrid>
         <Section>
           <p>
-            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{" "}
+            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{' '}
           </p>
         </Section>
       </SectionGrid>
@@ -81,10 +84,10 @@ export default () => {
           <Section>
             <h2>
               <a
-                href="javascript: void 0;"
+                href='javascript: void 0;'
                 onClick={() => setShowDemo(!showDemo)}
               >
-                {showDemo ? "Hide live demo" : "Try it live"}
+                {showDemo ? 'Hide live demo' : 'Try it live'}
               </a>
             </h2>
             {showDemo ? <LiveDemo /> : null}
@@ -118,7 +121,7 @@ export default () => {
 };
 
 const LiveDemo: React.FC<{}> = function () {
-  const [sampleText, setSampleText] = useState<string>("");
+  const [sampleText, setSampleText] = useState<string>('');
   const [selectedSystem, selectSystem] =
     useState<ScriptConversionSystem | null>(null);
   const [result, setResult] = useState<string | null | undefined>(null);
@@ -145,11 +148,11 @@ const LiveDemo: React.FC<{}> = function () {
   useEffect(() => {
     (async () => {
       const resp: AxiosResponse<any> = await axios({
-        method: "POST",
+        method: 'POST',
         url: API_ENDPOINT,
-        data: "{systemCodes}",
+        data: '{systemCodes}',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
       setSystemCodes(resp.data?.data?.systemCodes || []);
@@ -157,7 +160,7 @@ const LiveDemo: React.FC<{}> = function () {
   }, []);
 
   async function handleConvert() {
-    if (systemCode !== null && sampleText.trim() !== "") {
+    if (systemCode !== null && sampleText.trim() !== '') {
       let resp: AxiosResponse<any>;
 
       setError(null);
@@ -166,21 +169,21 @@ const LiveDemo: React.FC<{}> = function () {
 
       try {
         resp = await axios({
-          method: "POST",
+          method: 'POST',
           url: API_ENDPOINT,
           data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
         });
       } catch (e) {
         setResult(null);
         setSubmitted(false);
-        setError("Sorry, an error occurred :(");
+        setError('Sorry, an error occurred :(');
       }
       setResult(
         resp.data?.data?.transliterate ||
-          "No result returned, please check your sample!"
+          'No result returned, please check your sample!'
       );
     }
   }
@@ -189,10 +192,10 @@ const LiveDemo: React.FC<{}> = function () {
   if (selectedSystem?.lang) {
     placeholder = `Enter something in ${
       getLanguageTitleFrom6392BorT(selectedSystem.lang) ||
-      "selected writing system"
+      'selected writing system'
     }…`;
   } else {
-    placeholder = "Enter something…";
+    placeholder = 'Enter something…';
   }
 
   return (
@@ -206,7 +209,7 @@ const LiveDemo: React.FC<{}> = function () {
           placeholder={placeholder}
           style={{
             boxShadow:
-              sampleText.trim() === "" && systemCode !== null
+              sampleText.trim() === '' && systemCode !== null
                 ? `#${primaryColor} 0 0 0px .5rem`
                 : undefined,
           }}
@@ -218,7 +221,7 @@ const LiveDemo: React.FC<{}> = function () {
           disabled={
             submitted === true ||
             systemCode === null ||
-            sampleText.trim() === ""
+            sampleText.trim() === ''
           }
         >
           Convert &rarr;
@@ -226,10 +229,10 @@ const LiveDemo: React.FC<{}> = function () {
 
         <ResultTextArea
           placeholder={
-            selectedSystem === null ? "Select a system above" : undefined
+            selectedSystem === null ? 'Select a system above' : undefined
           }
           disabled
-          value={result === undefined ? "Loading…" : result || error || ""}
+          value={result === undefined ? 'Loading…' : result || error || ''}
         />
       </SampleAndResult>
 
@@ -252,10 +255,10 @@ const ConvertButton = styled.button`
   border: 0;
   font-size: 100%;
 
-  color: ${(props) => (props.disabled ? "silver" : `white`)};
+  color: ${(props) => (props.disabled ? 'silver' : `white`)};
 
   background: ${(props) =>
-    props.disabled ? "whiteSmoke" : `#${primaryColor}`};
+    props.disabled ? 'whiteSmoke' : `#${primaryColor}`};
 `;
 
 const SampleAndResult = styled.div`
@@ -317,7 +320,7 @@ const SectionNavItem = styled.a`
 
   @media screen and (min-width: 900px) {
     &::before {
-      content: "•";
+      content: '•';
       display: inline;
       margin: 0 1em 0 0;
     }
@@ -335,7 +338,7 @@ const Section = styled.article`
     }
   }
 
-  a[rel*="noopener"] {
+  a[rel*='noopener'] {
     &,
     &:link,
     &:visited {
@@ -484,8 +487,8 @@ const SectionGrid = styled.div`
   code {
     font-size: 14px;
     background: whiteSmoke;
-    font-family: "Iosevka Term SS01", "Iosevka Term", Iosevka,
-      system-ui-monospaced, Menlo, "Courier New", monospace;
+    font-family: 'Iosevka Term SS01', 'Iosevka Term', Iosevka,
+      system-ui-monospaced, Menlo, 'Courier New', monospace;
   }
 
   pre {
