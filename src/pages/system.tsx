@@ -53,7 +53,10 @@ const SystemList = () => {
     return option.source;
   }).filter(uniq);
 
-  console.log(authorities);
+  const destinationScripts = options.map((option: ScriptConversionSystem) => {
+    return option.target;
+  }).filter(uniq);
+
   const handleSearch = (search: Filters) => {
     setCurrentFilter({
       authorityID: search.authorityID,
@@ -87,6 +90,8 @@ const SystemList = () => {
         <FilterBar 
           authorities={authorities} 
           languages={languages}
+          sources={sourceScripts}
+          destination={destinationScripts}
           onSearch={(search: Filters) => handleSearch(search)} 
         />
       </SearchHeader>
