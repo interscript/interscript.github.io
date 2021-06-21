@@ -20,7 +20,6 @@ export interface FilterBarProps {
 
 export function FilterBar(props: FilterBarProps) {
     const { onSearch, authorities, languages } = props;
-
     const setKeyword = (keyword: string) => {
         console.log(keyword);
     }
@@ -32,6 +31,13 @@ export function FilterBar(props: FilterBarProps) {
                 value={'authorityID'}
             >
                 <option value="" disabled selected>Select Authority</option>
+                {
+                    authorities.map((authority) => {
+                        return (
+                            <option value={authority}>{authority}</option>
+                        )
+                    })
+                }
             </Select>
 
             <Select

@@ -3,7 +3,12 @@ import { useRouteData } from 'react-static';
 import { Link } from '@reach/router';
 import styled from 'styled-components';
 import { FilterBar, Filters } from '../components/FilterBar';
+import { ScriptConversionSystem, systemFromCode } from '../scs';
 
+
+function uniq(item: string, pos: number, self: string) {
+  return self.indexOf(item) == pos;
+}
 
 const SearchHeader = styled.div`
   display: flex;
@@ -29,10 +34,26 @@ const SystemList = () => {
     authorityID: null,
     language: 'en',
     sourceScript: '',
+    destinationScript: '',
     created: '',
   });
-  console.log('mapsInfo', mapsInfo);
 
+  const options = mapsInfo.data.map((entry: string) => {
+    return systemFromCode(entry);
+  });
+  const authorities = options.map((option: ScriptConversionSystem) => {
+    return option.authority;
+  }).filter(uniq);
+
+  const languages = options.map((option: ScriptConversionSystem) => {
+    return option.authority;
+  }).filter(uniq);
+
+  const sourceScripts = options.map((option: ScriptConversionSystem) => {
+    return option.source;
+  }).filter(uniq);
+
+  console.log(authorities);
   const handleSearch = (search: Filters) => {
     setCurrentFilter({
       authorityID: search.authorityID,
@@ -40,6 +61,7 @@ const SystemList = () => {
       sourceScript: search.sourceScript,
       keyword: search.keyword,
       language: search.language,
+      destinationScript: search.destinationString
     });
   }
 
@@ -63,8 +85,8 @@ const SystemList = () => {
         <span>System List: {list.length}</span>
         {/* FilterBar */}
         <FilterBar 
-          authorities={['author1', 'author2']} 
-          languages={['pl','en']}
+          authorities={authorities} 
+          languages={languages}
           onSearch={(search: Filters) => handleSearch(search)} 
         />
       </SearchHeader>
