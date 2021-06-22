@@ -25,6 +25,7 @@ const Heading = styled.h1`
 `;
 
 const SystemList = () => {
+  const [filter, setFilter] = useState('');
   const {
     mapsInfo,
   }: {
