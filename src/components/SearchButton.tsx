@@ -19,4 +19,5 @@ export const SearchButton = styled.button`
   transition: background-color 0.4s ease;
   -webkit-border-radius: 0 4px 4px 0;
   border-radius: 0 4px 4px 0;
+  cursor: pointer;
 `;

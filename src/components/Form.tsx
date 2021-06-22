@@ -10,4 +10,6 @@ export const Form = styled.form`
     border-radius: 4px;
     display:flex;
     flex-direction: space-between;
+    width: 100%;
+    margin-top: 20px;
 `;

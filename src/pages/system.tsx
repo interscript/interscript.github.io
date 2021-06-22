@@ -12,9 +12,10 @@ function uniq(item: string, pos: number, self: string) {
 
 const SearchHeader = styled.div`
   display: flex;
-  width: 100%;
+  width: 881px;
   margin-bottom: 48px;
   place-content: space-between;
+  align-items: center;
   margin-top: 24px;
   flex-direction: column;
 `;
@@ -29,13 +30,12 @@ const SystemList = () => {
   }: {
     mapsInfo: any;
   } = useRouteData();
-  const [ currentFilter, setCurrentFilter ] = useState({
+  const [currentFilter, setCurrentFilter] = useState({
     keyword: '',
-    authorityID: null,
-    language: 'en',
+    authorityID: '',
+    language: '',
     sourceScript: '',
     destinationScript: '',
-    created: '',
   });
 
   const options = mapsInfo.data.map((entry: string) => {
@@ -46,7 +46,7 @@ const SystemList = () => {
   }).filter(uniq);
 
   const languages = options.map((option: ScriptConversionSystem) => {
-    return option.authority;
+    return option.lang;
   }).filter(uniq);
 
   const sourceScripts = options.map((option: ScriptConversionSystem) => {
@@ -57,10 +57,10 @@ const SystemList = () => {
     return option.target;
   }).filter(uniq);
 
+
   const handleSearch = (search: Filters) => {
     setCurrentFilter({
       authorityID: search.authorityID,
-      created: search.creationDate,
       sourceScript: search.sourceScript,
       keyword: search.keyword,
       language: search.language,
@@ -71,7 +71,12 @@ const SystemList = () => {
   const list: string[] = mapsInfo.data
     .sort()
     .filter((x: string) => {
-      return !currentFilter.keyword || x.includes(currentFilter.keyword);
+      const pass = x.includes(currentFilter.keyword) &&
+        (currentFilter.authorityID.length === 0 || systemFromCode(x).authority === currentFilter.authorityID) &&
+        (currentFilter.destinationScript.length === 0 || systemFromCode(x).target == currentFilter.destinationScript) &&
+        (currentFilter.language.length === 0 || systemFromCode(x).lang == currentFilter.language) &&
+        (currentFilter.sourceScript.length === 0 || systemFromCode(x).source == currentFilter.sourceScript)
+      return pass;
     })
     .map((system: string) => (
       <li>
@@ -87,12 +92,12 @@ const SystemList = () => {
       <SearchHeader>
         <span>System List: {list.length}</span>
         {/* FilterBar */}
-        <FilterBar 
-          authorities={authorities} 
+        <FilterBar
+          authorities={authorities}
           languages={languages}
           sources={sourceScripts}
-          destination={destinationScripts}
-          onSearch={(search: Filters) => handleSearch(search)} 
+          destinations={destinationScripts}
+          onSearch={(search: Filters) => handleSearch(search)}
         />
       </SearchHeader>
       <ul>{list}</ul>
