@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { FilterBar, Filters } from '../components/FilterBar';
 import { ScriptConversionSystem, systemFromCode } from '../scs';
 
-
 function uniq(item: string, pos: number, self: string) {
   return self.indexOf(item) == pos;
 }
@@ -42,22 +41,29 @@ const SystemList = () => {
   const options = mapsInfo.data.map((entry: string) => {
     return systemFromCode(entry);
   });
-  const authorities = options.map((option: ScriptConversionSystem) => {
-    return option.authority;
-  }).filter(uniq);
+  const authorities = options
+    .map((option: ScriptConversionSystem) => {
+      return option.authority;
+    })
+    .filter(uniq);
 
-  const languages = options.map((option: ScriptConversionSystem) => {
-    return option.lang;
-  }).filter(uniq);
+  const languages = options
+    .map((option: ScriptConversionSystem) => {
+      return option.lang;
+    })
+    .filter(uniq);
 
-  const sourceScripts = options.map((option: ScriptConversionSystem) => {
-    return option.source;
-  }).filter(uniq);
+  const sourceScripts = options
+    .map((option: ScriptConversionSystem) => {
+      return option.source;
+    })
+    .filter(uniq);
 
-  const destinationScripts = options.map((option: ScriptConversionSystem) => {
-    return option.target;
-  }).filter(uniq);
-
+  const destinationScripts = options
+    .map((option: ScriptConversionSystem) => {
+      return option.target;
+    })
+    .filter(uniq);
 
   const handleSearch = (search: Filters) => {
     setCurrentFilter({
@@ -65,18 +71,23 @@ const SystemList = () => {
       sourceScript: search.sourceScript,
       keyword: search.keyword,
       language: search.language,
-      destinationScript: search.destinationString
+      destinationScript: search.destinationString,
     });
-  }
+  };
 
   const list: string[] = mapsInfo.data
     .sort()
     .filter((x: string) => {
-      const pass = x.includes(currentFilter.keyword) &&
-        (currentFilter.authorityID.length === 0 || systemFromCode(x).authority === currentFilter.authorityID) &&
-        (currentFilter.destinationScript.length === 0 || systemFromCode(x).target == currentFilter.destinationScript) &&
-        (currentFilter.language.length === 0 || systemFromCode(x).lang == currentFilter.language) &&
-        (currentFilter.sourceScript.length === 0 || systemFromCode(x).source == currentFilter.sourceScript)
+      const pass =
+        x.includes(currentFilter.keyword) &&
+        (currentFilter.authorityID.length === 0 ||
+          systemFromCode(x).authority === currentFilter.authorityID) &&
+        (currentFilter.destinationScript.length === 0 ||
+          systemFromCode(x).target == currentFilter.destinationScript) &&
+        (currentFilter.language.length === 0 ||
+          systemFromCode(x).lang == currentFilter.language) &&
+        (currentFilter.sourceScript.length === 0 ||
+          systemFromCode(x).source == currentFilter.sourceScript);
       return pass;
     })
     .map((system: string) => (
