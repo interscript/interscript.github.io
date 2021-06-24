@@ -51,7 +51,7 @@ export function HeaderMenu() {
                 {readmeSections.map((section) => (
                     <SectionNavItem
                         key={section.id}
-                        href={`#${section.id}`}
+                        href={`/#${section.id}`}
                         dangerouslySetInnerHTML={{ __html: section.titleHTML }}
                     />
                 ))}

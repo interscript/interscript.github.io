@@ -18,13 +18,14 @@ import { HeaderMenu } from '../components/HeaderMenu';
 const API_ENDPOINT = 'https://api.interscript.org'; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://api.interscript.com";
 
-export default () => {
+export default (props: any) => {
   const {
     readmeSections,
     repoInfo,
     mapsInfo,
   }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
     useRouteData();
+  const { location } = props;
 
   const [showDemo, setShowDemo] = useState(false);
   const [demoIsShowable, setDemoIsShowable] = useState(false);
@@ -38,6 +39,12 @@ export default () => {
       setShowDemo(true);
     }
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      document.getElementById(window.location.hash.replace('#','')).scrollIntoView();
+    }, 1500);
+  }, [])
 
   const summary = Object.keys(mapsInfo.languages)
     .map(
