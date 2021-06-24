@@ -160,12 +160,23 @@ export default {
         path: 'system',
         template: 'src/pages/system.tsx',
         getData: async () => ({
+          readmeSections,
           mapsInfo,
+          repoInfo: {
+            owner: repoOwner,
+            name: repoName,
+          },
         }),
         children: (mapsInfo.data || []).map((system) => ({
           path: `${system}`,
           template: 'src/containers/systemView.tsx',
           getData: async () => ({
+            readmeSections,
+            mapsInfo,
+            repoInfo: {
+              owner: repoOwner,
+              name: repoName,
+            },
             system,
             htmlData: fs.readFileSync(
               `./public/visualizations/${system}.html`,

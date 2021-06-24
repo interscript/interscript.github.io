@@ -4,6 +4,7 @@ import { Link } from '@reach/router';
 import styled from 'styled-components';
 import { FilterBar, Filters } from '../components/FilterBar';
 import { ScriptConversionSystem, systemFromCode } from '../scs';
+import { HeaderMenu } from '../components/HeaderMenu';
 
 function uniq(item: string, pos: number, self: string) {
   return self.indexOf(item) == pos;
@@ -101,7 +102,10 @@ const SystemList = () => {
   return (
     <div>
       <Link to='/'>Home</Link>
+      <HeaderMenu />
+
       <SearchHeader>
+
         <span>System List: {list.length}</span>
         {/* FilterBar */}
         <FilterBar

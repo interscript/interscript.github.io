@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouteData } from 'react-static';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
+import { HeaderMenu } from '../components/HeaderMenu';
 
 export default () => {
   const {
@@ -16,6 +17,7 @@ export default () => {
   return (
     <React.Fragment>
       <Link to='/system/'>Back to List</Link>
+      <HeaderMenu />
       <SystemView dangerouslySetInnerHTML={{ __html: htmlData }} />
     </React.Fragment>
   );
