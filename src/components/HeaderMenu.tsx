@@ -38,7 +38,6 @@ const SectionNav = styled.nav`
 
 
 export function HeaderMenu() {
-    let hasHomeButton = true;
     const {
         readmeSections,
         repoInfo,
