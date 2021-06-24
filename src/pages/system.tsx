@@ -101,7 +101,6 @@ const SystemList = () => {
 
   return (
     <div>
-      <Link to='/'>Home</Link>
       <HeaderMenu />
 
       <SearchHeader>

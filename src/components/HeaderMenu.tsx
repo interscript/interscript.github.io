@@ -38,6 +38,7 @@ const SectionNav = styled.nav`
 
 
 export function HeaderMenu() {
+    let hasHomeButton = true;
     const {
         readmeSections,
         repoInfo,
@@ -48,6 +49,8 @@ export function HeaderMenu() {
     return (
         <>
             <SectionNav>
+
+                { window.location.pathname !== '/' && <SectionNavItem key="home" href="/">Home</SectionNavItem> }
                 {readmeSections.map((section) => (
                     <SectionNavItem
                         key={section.id}

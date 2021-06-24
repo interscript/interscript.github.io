@@ -16,7 +16,6 @@ export default () => {
   console.log(system);
   return (
     <React.Fragment>
-      <Link to='/system/'>Back to List</Link>
       <HeaderMenu />
       <SystemView dangerouslySetInnerHTML={{ __html: htmlData }} />
     </React.Fragment>
