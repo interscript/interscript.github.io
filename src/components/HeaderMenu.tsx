@@ -25,7 +25,6 @@ const SectionNavItem = styled.span`
   }
 `;
 
-
 const SectionNav = styled.nav`
   margin: 2rem 2rem 1rem 2rem;
   text-align: center;
@@ -36,7 +35,6 @@ const SectionNav = styled.nav`
     margin: 2rem 0 1rem 1rem;
   }
 `;
-
 
 export function HeaderMenu() {
   const {
@@ -49,37 +47,32 @@ export function HeaderMenu() {
   return (
     <>
       <SectionNav>
-
-        <Link to="/"><SectionNavItem key="home">Home</SectionNavItem></Link>
+        <Link to='/'>
+          <SectionNavItem key='home'>Home</SectionNavItem>
+        </Link>
         {readmeSections.map((section) => (
-          <Link
-            key={section.id}
-            to={`/#${section.id}`}
-          >
-            <SectionNavItem dangerouslySetInnerHTML={{ __html: section.titleHTML }}
+          <Link key={section.id} to={`/#${section.id}`}>
+            <SectionNavItem
+              dangerouslySetInnerHTML={{ __html: section.titleHTML }}
             />
           </Link>
         ))}
-        <SectionNavItem
-          key='gh'>
+        <SectionNavItem key='gh'>
           <a href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
-
             <strong>View on GitHub</strong>
           </a>
         </SectionNavItem>
-        <Link key='js' to="/js">
-          <SectionNavItem >
+        <Link key='js' to='/js'>
+          <SectionNavItem>
             <strong>See JS demo</strong>
           </SectionNavItem>
         </Link>
-        <Link
-          to="/system">
+        <Link to='/systems'>
           <SectionNavItem key='system-list'>
             <strong>System List</strong>
           </SectionNavItem>
         </Link>
       </SectionNav>
-
     </>
   );
-};
+}

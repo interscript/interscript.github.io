@@ -28,7 +28,9 @@ const SystemList = () => {
   const [filter, setFilter] = useState('');
   const {
     mapsInfo,
+    metadata
   }: {
+    metadata: any;
     mapsInfo: any;
   } = useRouteData();
   const [currentFilter, setCurrentFilter] = useState({
@@ -93,8 +95,8 @@ const SystemList = () => {
     })
     .map((system: string) => (
       <li>
-        <Link to={`/system/${system}`} key={system}>
-          {system}
+        <Link to={`/systems/${system}`} key={system}>
+          {metadata[system].data.name} ({metadata[system].data.source_script} {'=>'} {metadata[system].data.destination_script}) {system}
         </Link>
       </li>
     ));
