@@ -77,7 +77,6 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
   const [result, setResult] = useState<string | null | undefined>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [systemCodes /*setSystemCodes*/] = useState<string[]>(maps || []);
 
   const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -155,7 +154,7 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
 
   return (
     <>
-      <SystemSelector onSelect={selectSystem} systemCodes={systemCodes} />
+      <SystemSelector onSelect={selectSystem} systemCodes={maps} />
 
       <SampleAndResult>
         <SampleTextArea

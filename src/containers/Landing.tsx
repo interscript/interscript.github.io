@@ -18,39 +18,26 @@ import { HeaderMenu } from '../components/HeaderMenu';
 const API_ENDPOINT = 'https://api.interscript.org'; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://api.interscript.com";
 
-export default (props: any) => {
+export default () => {
   const {
     readmeSections,
-    repoInfo,
     mapsInfo,
   }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
     useRouteData();
-  const { location } = props;
 
-  const [showDemo, setShowDemo] = useState(false);
-  const [demoIsShowable, setDemoIsShowable] = useState(false);
+  const [showDemo, setShowDemo] = useState(true);
+  const [demoIsShowable, setDemoIsShowable] = useState(true);
 
   useEffect(() => {
-    // Ensures interactive elements are not included in static HTML
-    setDemoIsShowable(true);
-
-    // Show demo by default only on wide viewports
-    if (window.innerWidth >= 900) {
-      setShowDemo(true);
+    if (document.getElementById(window.location.hash.replace('#', ''))) {
+      document.getElementById(window.location.hash.replace('#', '')).scrollIntoView();
     }
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      document.getElementById(window.location.hash.replace('#','')).scrollIntoView();
-    }, 1500);
   }, [])
 
   const summary = Object.keys(mapsInfo.languages)
     .map(
       (alpha3) =>
-        `${getLanguageTitleFrom6393BorT(alpha3)} (${
-          mapsInfo.languages[alpha3]
+        `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]
         })`
     )
     .sort()
@@ -109,13 +96,16 @@ export default (props: any) => {
 };
 
 const LiveDemo: React.FC<{}> = function () {
+  const {
+    mapsInfo,
+  }: { mapsInfo: any } =
+    useRouteData();
   const [sampleText, setSampleText] = useState<string>('');
   const [selectedSystem, selectSystem] =
     useState<ScriptConversionSystem | null>(null);
   const [result, setResult] = useState<string | null | undefined>(null);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [systemCodes, setSystemCodes] = useState<string[]>([]);
 
   const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -132,20 +122,6 @@ const LiveDemo: React.FC<{}> = function () {
       sampleInputRef.current?.focus();
     }
   }, [systemCode]);
-
-  useEffect(() => {
-    (async () => {
-      const resp: AxiosResponse<any> = await axios({
-        method: 'POST',
-        url: API_ENDPOINT,
-        data: '{systemCodes}',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      setSystemCodes(resp.data?.data?.systemCodes || []);
-    })();
-  }, []);
 
   async function handleConvert() {
     if (systemCode !== null && sampleText.trim() !== '') {
@@ -171,24 +147,23 @@ const LiveDemo: React.FC<{}> = function () {
       }
       setResult(
         resp.data?.data?.transliterate ||
-          'No result returned, please check your sample!'
+        'No result returned, please check your sample!'
       );
     }
   }
 
   let placeholder: string;
   if (selectedSystem?.lang) {
-    placeholder = `Enter something in ${
-      getLanguageTitleFrom6392BorT(selectedSystem.lang) ||
+    placeholder = `Enter something in ${getLanguageTitleFrom6392BorT(selectedSystem.lang) ||
       'selected writing system'
-    }…`;
+      }…`;
   } else {
     placeholder = 'Enter something…';
   }
 
   return (
     <>
-      <SystemSelector onSelect={selectSystem} systemCodes={systemCodes} />
+      <SystemSelector onSelect={selectSystem} systemCodes={mapsInfo.data} />
 
       <SampleAndResult>
         <SampleTextArea

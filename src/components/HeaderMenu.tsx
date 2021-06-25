@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { Link } from '@reach/router';
+import React from 'react';
 import { useRouteData } from 'react-static';
 import styled from 'styled-components';
 import { ReadmeSection, RepoInfo } from 'types';
-import { GITHUB_HIGHLIGHT_THEME } from './GithubHightlightTheme';
 
-const SectionNavItem = styled.a`
+const SectionNavItem = styled.span`
   display: inline-block;
   margin-right: 1em;
 
@@ -25,52 +25,54 @@ const SectionNavItem = styled.a`
   }
 `;
 
-
 const SectionNav = styled.nav`
   margin: 2rem 2rem 1rem 2rem;
   text-align: center;
-
+  outline: none;
+  text-decoration: none;
   @media screen and (min-width: 900px) {
     text-align: unset;
     margin: 2rem 0 1rem 1rem;
   }
 `;
 
-
 export function HeaderMenu() {
-    const {
-        readmeSections,
-        repoInfo,
-        mapsInfo,
-    }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
-        useRouteData();
+  const {
+    readmeSections,
+    repoInfo,
+    mapsInfo,
+  }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
+    useRouteData();
 
-    return (
-        <>
-            <SectionNav>
-
-                { window.location.pathname !== '/' && <SectionNavItem key="home" href="/">Home</SectionNavItem> }
-                {readmeSections.map((section) => (
-                    <SectionNavItem
-                        key={section.id}
-                        href={`/#${section.id}`}
-                        dangerouslySetInnerHTML={{ __html: section.titleHTML }}
-                    />
-                ))}
-                <SectionNavItem
-                    key='gh'
-                    href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}
-                >
-                    <strong>View on GitHub</strong>
-                </SectionNavItem>
-                <SectionNavItem key='js' href='/js'>
-                    <strong>See JS demo</strong>
-                </SectionNavItem>
-                <SectionNavItem key='system-list' href='/systems'>
-                    <strong>System List</strong>
-                </SectionNavItem>
-            </SectionNav>
-
-        </>
-    );
-};
+  return (
+    <>
+      <SectionNav>
+        <Link to='/'>
+          <SectionNavItem key='home'>Home</SectionNavItem>
+        </Link>
+        {readmeSections.map((section) => (
+          <Link key={section.id} to={`/#${section.id}`}>
+            <SectionNavItem
+              dangerouslySetInnerHTML={{ __html: section.titleHTML }}
+            />
+          </Link>
+        ))}
+        <SectionNavItem key='gh'>
+          <a href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
+            <strong>View on GitHub</strong>
+          </a>
+        </SectionNavItem>
+        <Link key='js' to='/js'>
+          <SectionNavItem>
+            <strong>See JS demo</strong>
+          </SectionNavItem>
+        </Link>
+        <Link to='/systems'>
+          <SectionNavItem key='system-list'>
+            <strong>System List</strong>
+          </SectionNavItem>
+        </Link>
+      </SectionNav>
+    </>
+  );
+}
