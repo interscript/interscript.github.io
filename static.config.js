@@ -159,7 +159,7 @@ export default {
       },
       {
         path: 'systems',
-        template: 'src/pages/system.tsx',
+        template: 'src/pages/systems.tsx',
         getData: async () => ({
           readmeSections,
           mapsInfo,
