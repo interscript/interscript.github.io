@@ -73,7 +73,7 @@ export function HeaderMenu() {
           </SectionNavItem>
         </Link>
         <Link
-          to="/systems">
+          to="/system">
           <SectionNavItem key='system-list'>
             <strong>System List</strong>
           </SectionNavItem>
