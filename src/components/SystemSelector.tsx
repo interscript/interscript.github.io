@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import iso15924_data from "@riboseinc/iso-15924/index-by-code.json";
 import { primaryColor } from "../App";
@@ -29,37 +29,29 @@ export const SystemSelector: React.FC<{
     Partial<ScriptConversionSystem>
   >({});
 
-  // All supported systems, based on initial API response
-  // const [supportedSystems, setSupportedSystems] = useState<
-  //   ScriptConversionSystem[]
-  // >([]);
-
-  // Systems available based on selected transliteration options
-  // (when all options are selected, this list contains only one item)
-  // const [availableSystems, setAvailableSystems] = useState<
-  //   ScriptConversionSystem[]
-  // >([]);
-
-  // useEffect(() => {
-  //   const systems: ScriptConversionSystem[] = systemCodes.map(systemFromCode);
-  //   setSupportedSystems([...systems]);
-  // }, [systemCodes]);
-  const supportedSystems = systemCodes.map(systemFromCode);
-  const availableSystems = supportedSystems.filter(
-    (ss) =>
-      (systemSpec.lang !== undefined
-        ? ss.lang === systemSpec.lang
-        : true) &&
-      (systemSpec.source !== undefined
-        ? ss.source === systemSpec.source
-        : true) &&
-      (systemSpec.target !== undefined
-        ? ss.target === systemSpec.target
-        : true) &&
-      (systemSpec.authority !== undefined
-        ? ss.authority === systemSpec.authority
-        : true) &&
-      (systemSpec.id !== undefined ? ss.id === systemSpec.id : true)
+  const supportedSystems = useMemo(
+    () => systemCodes.map(systemFromCode),
+    [systemCodes]
+  );
+  const availableSystems = useMemo(
+    () =>
+      supportedSystems.filter(
+        (ss) =>
+          (systemSpec.lang !== undefined
+            ? ss.lang === systemSpec.lang
+            : true) &&
+          (systemSpec.source !== undefined
+            ? ss.source === systemSpec.source
+            : true) &&
+          (systemSpec.target !== undefined
+            ? ss.target === systemSpec.target
+            : true) &&
+          (systemSpec.authority !== undefined
+            ? ss.authority === systemSpec.authority
+            : true) &&
+          (systemSpec.id !== undefined ? ss.id === systemSpec.id : true)
+      ),
+    [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]
   );
   const langCodes = getSortedUniqueValues(supportedSystems, "lang");
   const sourceSystemCodes = getSortedUniqueValues(supportedSystems, "source");
@@ -74,7 +66,6 @@ export const SystemSelector: React.FC<{
     ),
     "id"
   );
-  
 
   useEffect(() => {
     if (supportedSystems.length > 0) {
@@ -408,7 +399,6 @@ const SystemPropertyChoiceList = styled.ul`
   }
 `;
 
-
 const SystemPropertyChoice = styled.li`
   margin: 0;
   padding: 0;
@@ -421,8 +411,7 @@ const SystemPropertyChoice = styled.li`
   }
 `;
 
-
 const SystemPropertyChoiceInput = styled.input`
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   flex-shrink: 0;
 `;
