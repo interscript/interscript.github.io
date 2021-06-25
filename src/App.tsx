@@ -217,10 +217,6 @@ const MainContent = styled.main`
     margin-left: 1.25em;
   }
 
-  a {
-    border-bottom: 1px dotted #008075;
-  }
-
   @media screen and (min-width: 900px) {
     margin: 0 auto;
     width: 901px;
