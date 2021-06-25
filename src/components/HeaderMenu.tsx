@@ -66,7 +66,7 @@ export function HeaderMenu() {
                 <SectionNavItem key='js' href='/js'>
                     <strong>See JS demo</strong>
                 </SectionNavItem>
-                <SectionNavItem key='system-list' href='/system'>
+                <SectionNavItem key='system-list' href='/systems'>
                     <strong>System List</strong>
                 </SectionNavItem>
             </SectionNav>
