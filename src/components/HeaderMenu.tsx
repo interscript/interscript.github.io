@@ -50,7 +50,7 @@ export function HeaderMenu() {
     <>
       <SectionNav>
 
-        {window.location.pathname !== '/' && <Link to="/"><SectionNavItem key="home">Home</SectionNavItem></Link>}
+        <Link to="/"><SectionNavItem key="home">Home</SectionNavItem></Link>
         {readmeSections.map((section) => (
           <Link
             key={section.id}
