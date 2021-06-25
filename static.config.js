@@ -10,6 +10,7 @@ import bgnpcgnSamples from './src/samples/bgnpcgn.json';
 import odniSamples from './src/samples/odni.json';
 import ogc11122Samples from './src/samples/ogc11122.json';
 import unSamples from './src/samples/un.json';
+import metadata from './src/samples/metadata.json';
 
 // import { ReadmeSection } from './types'
 
@@ -157,11 +158,12 @@ export default {
         }),
       },
       {
-        path: 'system',
+        path: 'systems',
         template: 'src/pages/system.tsx',
         getData: async () => ({
           readmeSections,
           mapsInfo,
+          metadata,
           repoInfo: {
             owner: repoOwner,
             name: repoName,
