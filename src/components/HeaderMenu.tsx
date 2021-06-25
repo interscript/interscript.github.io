@@ -1,11 +1,10 @@
 import { Link } from '@reach/router';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useRouteData } from 'react-static';
 import styled from 'styled-components';
 import { ReadmeSection, RepoInfo } from 'types';
-import { GITHUB_HIGHLIGHT_THEME } from './GithubHightlightTheme';
 
-const SectionNavItem = styled.a`
+const SectionNavItem = styled.span`
   display: inline-block;
   margin-right: 1em;
 
@@ -51,7 +50,7 @@ export function HeaderMenu() {
     <>
       <SectionNav>
 
-        {window.location.pathname !== '/' && <Link to="/"><SectionNavItem key="home" href="/">Home</SectionNavItem></Link>}
+        {window.location.pathname !== '/' && <Link to="/"><SectionNavItem key="home">Home</SectionNavItem></Link>}
         {readmeSections.map((section) => (
           <Link
             key={section.id}
@@ -62,14 +61,17 @@ export function HeaderMenu() {
           </Link>
         ))}
         <SectionNavItem
-          key='gh'
-          href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}
-        >
-          <strong>View on GitHub</strong>
+          key='gh'>
+          <a href={`https://github.com/${repoInfo.owner}/${repoInfo.name}/`}>
+
+            <strong>View on GitHub</strong>
+          </a>
         </SectionNavItem>
-        <SectionNavItem key='js' href='/js'>
-          <strong>See JS demo</strong>
-        </SectionNavItem>
+        <Link key='js' to="/js">
+          <SectionNavItem >
+            <strong>See JS demo</strong>
+          </SectionNavItem>
+        </Link>
         <Link
           to="/systems">
           <SectionNavItem key='system-list'>
