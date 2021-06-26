@@ -20,6 +20,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-loader-spinner": "^3.1.14",
+    "react-simple-tree-menu": "^1.1.18",
     "react-static": "^7.2.0",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sitemap": "^7.2.0",

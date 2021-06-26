@@ -3,6 +3,31 @@ import { useRouteData } from 'react-static';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
 import { HeaderMenu } from '../components/HeaderMenu';
+import '../../node_modules/react-simple-tree-menu/dist/main.css';
+import TreeMenu, { defaultChildren, ItemComponent } from 'react-simple-tree-menu';
+
+const treeData = [
+  {
+    key: 'first-level-node-1',
+    label: 'Node 1 at the first level',
+    nodes: [
+      {
+        key: 'second-level-node-1',
+        label: 'Node 1 at the second level',
+        nodes: [
+          {
+            key: 'third-level-node-1',
+            label: 'Last node of the branch',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    key: 'first-level-node-2',
+    label: 'Node 2 at the first level',
+  },
+];
 
 export default () => {
   const {
@@ -17,7 +42,15 @@ export default () => {
   return (
     <React.Fragment>
       <HeaderMenu />
-      <SystemView dangerouslySetInnerHTML={{ __html: htmlData }} />
+      {/* Add TreeView */}
+      <TreeMenu data={treeData}>
+        {({ search, items }) => (
+          <div>
+            {defaultChildren({ search, items })}
+          </div>
+        )}
+      </TreeMenu>
+      {/* <SystemView dangerouslySetInnerHTML={{ __html: htmlData }} /> */}
     </React.Fragment>
   );
 };
