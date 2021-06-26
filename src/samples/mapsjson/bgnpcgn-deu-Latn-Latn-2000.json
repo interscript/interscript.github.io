@@ -1,0 +1,295 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": 2000,
+      "language": "iso-639-2:deu",
+      "source_script": "Latn",
+      "destination_script": "Latn",
+      "name": "BGN/PCGN German 2000 Roman-Script Spelling Convention Agreement",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/693794/ROMAN-SCRIPT_SPELLING_CONVENTIONS.pdf",
+      "creation_date": 2000,
+      "notes": [
+        "The special letter β, known as eszett, [Unicode: 03B2] is a standard letter of the German alphabet and occurs\nonly in word-medial and word-final positions. It is a lowercase letter only, and when a word and/or a name is\nwritten entirely in uppercase letters, it is always rendered as SS. As a result of the orthographic reform of\nGerman, implemented in August 1998, the β is now rendered ss if it follows a short vowel, but it is still used\nif it follows a long vowel or a diphthong. In those instances where β cannot be reproduced, the digraph ss\nmay be substituted for it. For alphabetization and sorting purposes, β should be treated as ss.\n",
+        "In those instances when the vowel letters ä [Unicode: 00E4], ö [Unicode: 00F6], and ü [Unicode: 00FC]\ncannot be reproduced, the alternate spellings ae, oe, and ue may be substituted.\n"
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "Dein weiβes Fleisch erregt mich so",
+        "Dein weisses Fleisch erregt mich so"
+      ],
+      [
+        "GROβSTÄDTE",
+        "GROSSSTAEDTE"
+      ],
+      [
+        "Göttingen",
+        "Goettingen"
+      ],
+      [
+        "Gütersloh",
+        "Guetersloh"
+      ],
+      [
+        "Mährisch-Ostrau",
+        "Maehrisch-Ostrau"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": null,
+      "full_name": "posix",
+      "import": true
+    }
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "β"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureGroup",
+                "data": {
+                  "class": "Interscript::Node::Item::Alias",
+                  "name": "upper",
+                  "map": null
+                }
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "SS"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureRef",
+                "id": 1
+              }
+            ]
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "nil (bug)"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ä"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureGroup",
+                "data": {
+                  "class": "Interscript::Node::Item::Alias",
+                  "name": "upper",
+                  "map": null
+                }
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "AE"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureRef",
+                "id": 1
+              }
+            ]
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "nil (bug)"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ö"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureGroup",
+                "data": {
+                  "class": "Interscript::Node::Item::Alias",
+                  "name": "upper",
+                  "map": null
+                }
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "OE"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureRef",
+                "id": 1
+              }
+            ]
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "nil (bug)"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ü"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureGroup",
+                "data": {
+                  "class": "Interscript::Node::Item::Alias",
+                  "name": "upper",
+                  "map": null
+                }
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "UE"
+              },
+              {
+                "class": "Interscript::Node::Item::CaptureRef",
+                "id": 1
+              }
+            ]
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "nil (bug)"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ä"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ae"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ö"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Oe"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ü"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ue"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ä"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ae"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ö"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "oe"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ü"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ue"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "β"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ss"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

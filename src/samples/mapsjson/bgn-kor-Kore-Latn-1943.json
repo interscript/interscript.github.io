@@ -1,0 +1,110 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgn",
+      "id": 1943,
+      "language": "iso-639-2:kor",
+      "source_script": "Kore",
+      "destination_script": "Latn",
+      "name": "BGN Agreement -- Korean McCune-Reischauer System (1943)",
+      "url": null,
+      "creation_date": 1943,
+      "adoption_date": null,
+      "description": null,
+      "notes": null
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "서울",
+        "Sŏul"
+      ],
+      [
+        "平壤",
+        "P’yŏngyang"
+      ],
+      [
+        "釜山",
+        "Pusan"
+      ],
+      [
+        "大邱",
+        "Taegu"
+      ],
+      [
+        "慶尚南道",
+        "Kyŏngsangnamdo"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "korehang",
+      "full_name": "var-kor-Kore-Hang-2013",
+      "import": false
+    },
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "hanglatn",
+      "full_name": "bgn-kor-Hang-Latn-1943",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "korehang": {
+      "class": "Interscript::Node::Dependency",
+      "name": "korehang",
+      "full_name": "var-kor-Kore-Hang-2013",
+      "import": false
+    },
+    "hanglatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "hanglatn",
+      "full_name": "bgn-kor-Hang-Latn-1943",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "korehang"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "hanglatn"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Funcall",
+          "name": "compose",
+          "kwargs": {
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Funcall",
+          "name": "title_case",
+          "kwargs": {
+          }
+        }
+      ]
+    }
+  }
+}

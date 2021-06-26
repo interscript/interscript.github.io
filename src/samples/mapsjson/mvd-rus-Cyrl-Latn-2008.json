@@ -1,0 +1,951 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "mvd",
+      "id": 2008,
+      "language": "iso-639-2:rus",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "8/19678 On approval of the Instructions for transliteration of surnames and proper names of citizens of the Republic of Belarus when their personal data is included in the population register",
+      "url": "https://www.icao.int/publications/pages/publication.aspx?docnum=9303",
+      "creation_date": 2008,
+      "notes": [
+        "check notes from mvd-bel-Cyrl-Latn-2008"
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "Ева",
+        "Eva"
+      ],
+      [
+        "Васiльева",
+        "Vasiĺeva"
+      ],
+      [
+        "Адъютантов",
+        "Adjutantov"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "translit": {
+      "class": "Interscript::Node::Stage",
+      "name": "translit",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ь"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "́"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ЗзЛлНнСсЦц"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ʹ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "́"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ЗзЛлНнСсЦц"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "’Ъъ"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ю"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ju"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "’Ъъ"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "ю"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ju"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "’Ъъ"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Я"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ja"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "’Ъъ"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "я"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ja"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "А"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "A"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Б"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "B"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "В"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "V"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Г"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "G"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Д"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "D"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Е"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "E"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ё"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "E"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ж"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Zh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "З"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "І"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "I"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Й"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "J"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "К"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "K"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Л"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "L"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "М"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "M"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Н"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "N"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "О"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "O"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "П"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "P"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Р"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "R"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "С"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "S"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Т"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "T"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "У"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "U"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "\\U040E"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "W"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ф"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "F"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Х"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Kh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ц"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ts"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ч"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ш"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Щ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Shch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ъ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "J"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ы"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ь"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Э"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "E"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ю"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Iu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Я"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ia"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "а"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "б"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "b"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "в"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "v"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "г"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "g"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "д"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "е"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ё"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ж"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "з"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "і"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "й"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "к"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "k"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "л"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "м"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "н"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "о"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "п"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "p"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "р"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "с"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "т"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "у"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ў"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "w"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ф"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "f"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "х"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ц"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ts"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ч"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ш"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "щ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ъ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ы"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ь"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "э"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ю"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "iu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "я"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ia"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "translit",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Funcall",
+          "name": "compose",
+          "kwargs": {
+          }
+        }
+      ]
+    }
+  }
+}

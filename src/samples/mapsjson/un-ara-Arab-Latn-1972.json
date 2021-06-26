@@ -1,0 +1,466 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "ungegn",
+      "id": 1972,
+      "language": "iso-639-2:ara",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ROMANIZATION OF ARABIC -- UNGEGN 1972 System",
+      "url": "http://www.eki.ee/wgrs/obs_rom_vers/rom1_ar_v4_0.pdf",
+      "creation_date": 1972,
+      "confirmation_date": "2018-06",
+      "description": "The United Nations recommended romanization\nsystem was approved in 1972 (resolution II/8),\nbased on the system adopted by Arabic experts at\nthe conference held at Beirut in 1971 with the\npractical amendments carried out and agreed upon\nby the representatives of the Arabic-speaking\ncountries at their conference. The table was\npublished in volume II of the conference report1\n. In the UN resolution it was specifically\npointed out that the system was recommended \"for\nthe romanization of the geographical names within\nthose Arabic-speaking countries where this system\nis officially acknowledged\". It cannot be\ndefinitely ascertained which of the\nArabicspeaking countries have adopted this system\nofficially, especially since 2007 when there are\nefforts by the Arabic Division to promote a\nmodification of the UN system (ADEGN\nromanization, see the section on other\nromanization systems below), with varying\nsuccess2 . Judging by the use of names in\ninternational cartographic products which rely\nmostly on national sources it appears that the UN\nsystem or its modification is more or less\ncurrent in Iraq, Kuwait, Libya, Saudi Arabia3 ,\nUnited Arab Emirates and Yemen, there and in some\nother countries the system is often used without\ndiacritical marks. For the geographical names of\nthe Syrian Arab Republic international maps\nfavour the UN system while the local usage seems\nto prefer a French-oriented romanization. Also in\nEgypt and Sudan there exist local romanization\nschemes or practices side by side with the UN\nsystem. The geographical names of Algeria,\nDjibouti, Mauritania, Morocco and Tunisia are\ngenerally rendered in the traditional manner\nwhich conforms to the principles of the French\northography. Resolution 7 of the Seventh UN\nConference on the Standardization of Geographical\nNames (1998) recommended that \"the League of Arab\nStates should, through its specialized\nstructures, continue its efforts to organize a\nconference with a view to considering the\ndifficulties encountered in applying the amended\nBeirut system of 1972 for the romanization of\nArabic script, and submit, as soon as possible, a\nsolution to the United Nations Group of Experts\non Geographical Names\". At the Eighth UN\nConference on the Standardization of Geographical\nNames (2002), the Arabic Division of the UN Group\nof Experts announced that it had finalised\nproposed modifications to the UN recommended\nromanization system. These proposals would be\nsubmitted to the League of Arab States for\napproval. Arabic is written from right to left.\nThe Arabic script usually omits vowel points and\ndiacritical marks from writing which makes it\ndifficult to obtain uniform results in the\nromanization of Arabic. It is essential to\nidentify correctly the words which appear in any\nparticular name and to know the standard Arabic-\nscript spelling including proper pointing. One\nmust also take into account dialectal and\nidiosyncratic deviations. The romanization is\ngenerally reversible though there are some\nambiguous letter sequences (dh, kh, sh, th) which\nmay also point to combinations of Arabic\ncharacters in addition to the respective single\ncharacters.\n",
+      "notes": [
+        "The previous UN 1972 System had the following differences:\nthe character (ظ) was romanized as z̧ instead of d͟h;\nح, ص, ض the cedilla (¸) was used instead of sub-macron (_) in all characters with sub-macrons.  - |\nWhen the definite article al precedes a word beginning with one of the \"sun letters\" (t,\nth, d, dh, r, z, s, sh, ş, ḑ, ţ, z, l, n ̧ ) the l of the definite article is assimilated with the first\nconsonant of the word: ash-Sh الشارقة āriqah.\n"
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "مِصر",
+        "Mişr"
+      ],
+      [
+        "قَطَر",
+        "Qaţar"
+      ],
+      [
+        "الجُمهُورِيَّة العِراقِيَّة",
+        "Al Jumhūrīyah al ‘Irāqīyah"
+      ],
+      [
+        "جُمهُورِيَّة مِصر العَرَبِيَّة",
+        "Jumhūrīyat Mişr al ‘Arabīyah"
+      ],
+      [
+        "الرِيَاض",
+        "Ar Riyāḑ"
+      ],
+      [
+        "الشارِقة",
+        "Ash Shāriqah"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "arablatn",
+      "full_name": "un-ara-Arab-Latn-2017",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "arablatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "arablatn",
+      "full_name": "un-ara-Arab-Latn-2017",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الص"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "aş ş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الض"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "aḑ ḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الط"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "aţ ţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "حّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḩḩ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "صّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "şş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ضّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḑḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "طّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ţţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ظّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z̧z̧"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ح"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḩ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺣ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḩ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺤ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḩ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺢ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḩ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ص"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺻ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺼ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺺ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ş"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ض"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺿ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻀ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﺾ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḑ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ط"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻃ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻄ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻂ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ţ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ظ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z̧"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻇ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z̧"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻈ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z̧"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﻆ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z̧"
+              }
+            }
+          ]
+        },
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "arablatn"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": " Aş Ş"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": " aş Ş"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": " Aḑ Ḑ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": " aḑ Ḑ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": " Aţ Ţ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": " aţ Ţ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Funcall",
+          "name": "compose",
+          "kwargs": {
+          }
+        }
+      ]
+    }
+  }
+}

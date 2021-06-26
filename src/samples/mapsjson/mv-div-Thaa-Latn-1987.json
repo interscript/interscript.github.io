@@ -1,0 +1,1290 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "mv",
+      "id": 1987,
+      "language": "iso-639-2:div",
+      "source_script": "Thaa",
+      "destination_script": "Latn",
+      "name": "Maldivian (Divehi) Maldivian Government 1987 system",
+      "url": "https://www.eki.ee/wgrs/rom2_dv.htm",
+      "creation_date": 1887,
+      "description": "In 1987 the Maldivian government adopted a system for the romanization of Maldivian. It was also approved by the BGN and the PCGN in 1988.\nMaldivian is written from right to left. Vowels are marked as diacritical marks accompanying a consonant character.\n",
+      "notes": [
+        "The character އ is not romanized. If it bears a vowel character, that vowel character alone is romanized, e.g. އިރުގައި irugai.",
+        "Characters އް and ށް word-finally and before a digraph are romanized h, e.g. ވޭވަށް Veyvah, ކެރެއްދޫ Kerehdhoo. In other cases, when އް and ށް are used, the romanized value of the following consonant character is doubled, e.g. ބައްޓެށް batteh, ކަޅެހުއްޓާ Kalhehuttaa.",
+        "The character ނ is romanized n’ if used without any vowel or auxiliary sign. For example kan’du (ކަނޑު).",
+        "The character އ is Not romanized but see note 1",
+        "Character ތް is romanized iy, e.g. ޒިޔާރަތްފުށި Ziyaaraiyfushi."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "އެނބޫދޫ",
+        "en’boodhoo"
+      ],
+      [
+        "ކަޅެހުއްޓާ",
+        "kalhehuttaa"
+      ],
+      [
+        "ކެރެށްދޫ",
+        "kerehdhoo"
+      ],
+      [
+        "ވޭވައް",
+        "veyvah"
+      ],
+      [
+        "ކަނޑުފުށި",
+        "kan’dufushi"
+      ],
+      [
+        "ޒިޔާރަތްފުށި",
+        "ziyaaraiyfushi"
+      ],
+      [
+        "ރައްކާތެރިކުރުމާއި",
+        "rakkaatherikurumaai"
+      ],
+      [
+        "ދަރިވަރެއްގެވެސް",
+        "dharivareggeves"
+      ],
+      [
+        "ދަރިވަރުންނާއި",
+        "dharivarun’n’aai"
+      ],
+      [
+        "ރަށްރަށުގައި",
+        "rarrashugai"
+      ],
+      [
+        "ޑިޕާޓްމަންޓުން",
+        "dipaatman’tun’"
+      ],
+      [
+        "ހޯދިފައިނުވާ",
+        "hoadhifain’uvaa"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ހ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ށ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "n"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ނ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "r"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ރ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "b"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ބ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޅ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "k"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ކ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "v"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ވ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "m"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "މ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "f"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ފ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ދ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ތ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "l"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ލ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "g"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ގ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޏ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "s"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ސ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "d"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޑ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "j"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޖ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޗ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "z"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޒ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "t"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޓ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "p"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޕ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "y"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޔ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ހ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ށ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "n"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ނ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "r"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ރ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "b"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ބ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޅ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "k"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ކ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "v"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ވ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "m"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "މ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "f"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ފ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ދ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ތ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "l"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ލ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "g"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ގ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޏ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "s"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ސ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "d"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޑ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "j"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޖ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޗ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "z"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޒ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "t"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޓ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "p"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޕ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "y"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ޔ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "އް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ށް"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "h"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ނ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "n’"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "="
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "ަާިީުޫެޭޮޯް"
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ތ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "iy"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ް"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ަ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ާ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "aa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ި"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ީ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ee"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ު"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޫ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "oo"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ެ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޭ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ey"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޮ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޯ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "oa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ް"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ހ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "h"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ށ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ނ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ރ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ބ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "b"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޅ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ކ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "k"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "އ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ވ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "v"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "މ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ފ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "f"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ދ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ތ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "th"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ލ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ގ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "g"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޏ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gn"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ސ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޑ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޖ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޗ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޒ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޓ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޕ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "p"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ޔ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

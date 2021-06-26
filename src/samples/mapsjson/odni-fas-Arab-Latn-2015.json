@@ -1,0 +1,1603 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "odni",
+      "id": 2015,
+      "language": "iso-639-2:fas",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ODNI Persian Farsi Dari Personal Names 2015 System, ICS-630-01 Annex J",
+      "url": "https://github.com/interscript/ics-630-01/blob/master/reference-docs/ANNEX%20J%20-%20Persian-Farsi_Dari_Personal_Names_FLTS_2018_Revision%20(U).pdf",
+      "creation_date": 2015,
+      "confirmation_date": "2015-11",
+      "description": "This system is the Intelligence Community (IC) standard for\nthe transliteration of Persian (Farsi)\nand Dari names that is applied to all final written reports\nand products for IC consumers. It is not\nintended to eliminate variations of a name that can\ncontribute forensic information. Rather, it is\nto provide an IC standard Romanized (English)\ntransliteration from Persian (Farsi) and Dari that\ncan then be linked to forensic information in ways that\nwill help identify the referent of the\nname.\n\nIn cases where an individual’s name has already been\ntransliterated in a variant spelling, the IC\nStandard spelling should appear first, followed by the\nvariant spelling(s) in parentheses at the\nfirst usage. In addition, if the original Perso-Arabic\nscript spelling is known, that spelling should\nalso appear in parentheses following the name, if possible,\nfollowing best practices of the issuing\norganization and taking into consideration information\nsystem capabilities. This convention is\ndesigned to ensure that vital forensic information is not\nlost while maintaining consistency.\n\nFor names of individuals who are not part of the Persian-(\nFarsi) or Dari-speaking community,\nbut whose names are encountered in Farsi or Dari, use the\nrelevant IC transliteration standard for\nnames from that language (e.g., Mikhail, Yitzhak, Abu-\nMurtada). Spell names of individuals\nfrom languages that are written in Roman letters as they\nare spelled in those languages (e.g.,\nGeorge Clooney, Jorge Garcia, Georges Pompidou).\nIn the case of active senior government officials in the\nonline CIA World Factbook and the\nonline directory of Chiefs of State and Cabinet Members of\nForeign Governments, the spellings\ngiven in these online reference works should be used in\nplace of the IC Standard, with the IC\nStandard included as a variant in parentheses at the first\nusage. For any individual who has at one\ntime been listed in the Factbook or Chiefs of State\ndirectory but who no longer appears in those\nresources (i.e., is no longer a government official), the\nIC Standard spelling should appear first,\nwith the spelling, if known, as it previously appeared in\nthose resources listed within parentheses\nat the first usage (e.g., former president Mahmud\nAhmadinezhad (Ahmadi-Nejad).\n\nThe primary goal is to produce a consistent Romanized\ntranscription of names that is specifically\nreadable to the English-speaking non-specialist. The system\nuses the 26 letters of the standard\n(English) Roman alphabet plus the apostrophe and hyphen.\nSome ambiguities in the Romanized\nform will occur without the use of diacritics. However,\nwithin the context of a report, where\nadditional information about the individual is provided,\nthe referent will be clearly identified.\nThis system will be used in conjunction with online tools,\nname dictionaries, and lists containing\nconventional spellings of names of well-known individuals.\n",
+      "notes": [
+        "Alef maqsura (final yeh pronounced as a long “a”) should\nbe written “a” as in “Musa.”\n",
+        "Digraphs: No distinction is drawn between digraphs such\nas sh and single contiguous letters\n(e.g., s followed by h).\n",
+        "Long/short vowels: There is no distinction made between\nlong and short a. E.g., Farzad (the\nfirst a is short, the second long).\n",
+        "Diphthongs: The diphthong such as in the name Hosein is\nwritten ei. Following the\npredominant lack of pronunciation of the ow diphthong in\nFarsi, this diphthong will not be\nrepresented (Khosro, not Khosrow).\n",
+        "Apostrophe: The apostrophe is used in three cases: 1) to\nrepresent a name-internal or terminal\nhamzeh or ein (Mo’men, Ghane’), 2) to represent the first\nyeh (ی (in a double yeh (یی (\nconstruction (since رضایی is simply an orthographic variant\nof رضائی – both are rendered\nReza’i), and 3) to represent the alef (ا (in the special\ncase of a name ending in ای ه) e.g.,\nBadreh’i, Ganjeh’i). Name-initially, however, neither\nhamzeh nor ein are indicated in\ntransliteration (Abdorrahman, not 'Abdorrahman).\n",
+        "Double consonants: Double consonants represented by the\ntashdid are shown by doubling the\nRoman letter: Mo'azzami, Tavakkoli, Sajjad. Exceptions: Ein\nand consonants represented by\nRoman digraphs (e.g., sh, ch) are not doubled (Mobasher,\nnot Mobashsher). Double letters\nare only used for tashdid (Hosein, not Hossein) or to\nreflect “sun-letter” assimilation (see\nbelow). Special care should be taken when possible to\ndiscriminate between doubled and\nnon-doubled letters in names that are otherwise\nindistinguishable in their transliterated forms:\nHasan (حسن (vs. Hassan (حسان(\n",
+        "Hyphens: A hyphen will be used for compound\nlast names to connect major name elements (e.g., Raja’i-\nKhorasani, Tabataba’i-Shirazi, Soleimani-Meimandi). No\nspaces are to be used for last names to reduce ambiguity (\nwith the exception of certain Arabic-origin constructions\nas specified below). Hyphens are not used to attach minor\nelements and suffixes/prefixes, or to show ezafeh\nconstructions in or between names (Shahrbabak, not Shahr-e\nBabak). It should be understood that when a full compound\nlast name is available, the second major element is\ntypically omitted for normal use, while the first major\nelement of the last name is preferred. It is thus\nrecommended as a best practice for reporting that both of\nthese names, if known, be included at the first instance,\nand only the family name be used thereafter in the report (\nunless it is known that a specific individual is commonly\nknown otherwise). E.g., “Mohammad Mahmudi-Tehrani (\nhereafter Mahmudi).”\n",
+        "Compound first names will be written as distinct words:\nAli Reza (not Alireza or Ali-Reza);\nMohammad Hosein (not Mohammadhosein or Mohammad-Hosein),\nwith the exception of cases identified below.\n",
+        "Arabic-origin names that incorporate the word “Allah” are\ntransliterated as one word, with the letter ‘o’ replacing the\nalef in Allah (Azizollah, Rahimollah).\n",
+        "Name-internal Arabic definite article \"al\" (‫)ال‬: Common\nin many names borrowed\nfrom Arabic, the transliteration should follow the Arabic\nrules for “sun letter” assimilation in spoken form and\nreflect the nominative case. That is: Abdorrahman, not Abd-\nal-Rahman. (The Arabic sun letters are: ‫ت‬،‫ث‬،‫د‬،‫ذ‬،\n‫ر‬، ‫ز‬،‫س‬،‫ش‬،‫ص‬،‫ض‬،‫ط‬،‫ظ‬،‫ل‬،‫ن‬ . These correspond with\nd, l, n, r, s, sh, t, and z.) Note that the moon letters (\ni.e., all other Arabic letters) are not assimilated (e.g.,\nAbdolhasan, Abolfazl). Note also that the “Abdollah” and\n“Abdol + attribute of Allah” names are written as a single\nword, as are other names that contain the definite article:\nShamsoddin (not Shams-al-Din), Nezamoddin, etc.\n",
+        "Name-initial Arabic definite article \"al\" (‫)ال‬: For\nArabic-origin names starting with the definite article “al” (‫)\nال‬, follow the Arabic standard of al-Sisi (‫)الصیصی‬ (not\nAlsisi or Assisi) and forego sun-letter assimilation.\n",
+        "Arabic \"family marker\" of Al (‫)آل‬: For Arabic-origin\nnames starting with the \"family marker\" of Al (‫)آل‬,\nfollow the Arabic standard of Al Davud (‫داود‬ ‫)آل‬ (not\nAldavud or Aledavud).\n",
+        "Kunyas: In the rather rare case where\na Persian uses a kunya (a name for an adult normally\nderived from his or her eldest child, and sometimes\nemployed as a nom de guerre), this name will be rendered\nwith a space separating the two elements (Abu Hosein, Abu\nGhasem). Note that this does not apply when the person's\ngiven or family name was derived from a predecessor's\nkunya. In these cases, the leading element should be\ntreated as a prefix as indicated below (Abuhosein[i],\nAbughasem[i]).\n",
+        "Persian names of non-Persian origin that are\nno longer considered foreign by Farsi speakers (commonly of\nArabic or Hebrew origin) follow this IC transliteration\nstandard for Persian. E.g., Yusef (not Joseph), Davud (not\nDavid), Reza (not Rida), Abutorab (not Abu-Turab),\nAbolfazl (not Abu-al-Fadl). However, in the uncommon event\nthe name of an Iranian with a non-Persian name appears in\nFarsi (possibly as a result of mixed parentage), it is\nspelled according to the standard Western tradition or the\nappropriate IC standard: James, Georges, Pedro, Jiang.\n"
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "مُوسَى",
+        "musa"
+      ],
+      [
+        "مُؤمِن",
+        "mo’men"
+      ],
+      [
+        "رِضايي",
+        "reza’i"
+      ],
+      [
+        "مُبَشِّر",
+        "mobasher"
+      ],
+      [
+        "حَسَّان",
+        "hassan"
+      ],
+      [
+        "حَسَن",
+        "hasan"
+      ],
+      [
+        "صَفَّار",
+        "saffar"
+      ],
+      [
+        "صَفَر",
+        "safar"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "space",
+                "map": null
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              },
+              "after": {
+                "class": "Interscript::Node::Item::String",
+                "data": "آبَاد"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ﷲ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Allah"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "space",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "اللَّه"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ollah"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ْ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ٙ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ê"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "َيْ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ay"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ىٰ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "á"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ٴ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "-e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ٔ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "-e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ة"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "eh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ئ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ؤ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "أ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "إ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ال"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "al "
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "آل"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Al "
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الت"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "at t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الث"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "as s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الد"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ad d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الذ"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "az z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الر"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ar r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الز"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "az z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الس"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "as s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الش"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ash sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الص"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "as s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الض"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "az z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الط"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "at t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الظ"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "az z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الل"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "al l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "الن"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "an n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "آ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "َ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ا"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              },
+              "before": {
+                "class": "Interscript::Node::Item::String",
+                "data": "َ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ا"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              },
+              "not_before": {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "اَ"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "اُ"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "اِ"
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ُ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ُو"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِي"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِی"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِيَّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "iy"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِیَّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "iy"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ِي"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "iy"
+              },
+              "after": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "َ"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "u064f"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "بّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bb"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "تّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tt"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ثّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ss"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "جّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jj"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "حّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "خّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "دّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dd"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ذّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zz"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "رّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rr"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "زّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zz"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "سّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ss"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "شّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "صّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ss"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ضّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zz"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "طّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tt"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ظّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zz"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "غّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "فّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ff"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "قّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "كّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kk"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "لّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ll"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "مّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mm"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "نّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nn"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "هّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "وّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "vv"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "يّ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "yy"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ء"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              },
+              "before": {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ء"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "َى"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ى"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "يي"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "یی"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "اي"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::Group",
+                "children": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ای"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::Alias",
+                    "name": "boundary",
+                    "map": null
+                  }
+                ]
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "’i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ب"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "b"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "پ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "p"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ت"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ث"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ج"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "چ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ح"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "h"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "خ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "د"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ذ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ر"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ز"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ژ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "zh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "س"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ش"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ص"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ض"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ط"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ظ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ع"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "‘"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ع"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              },
+              "before": {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "غ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ف"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "f"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ق"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gh"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ك"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "k"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "گ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "g"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ل"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "م"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ن"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ه"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "h"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "و"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "v"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ي"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ى"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ې"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ē"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ۍ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "êy"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

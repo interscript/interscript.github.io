@@ -1,0 +1,557 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgn",
+      "id": 1962,
+      "language": "iso-639-2:jpn",
+      "source_script": "Hrkt",
+      "destination_script": "Latn",
+      "name": "BGN (Modified Hepburn) System",
+      "url": null,
+      "creation_date": 1930,
+      "adoption_date": 1962,
+      "description": "The BGN (Modified Hepburn) System for the transliteration of Japanese\nhas been in use by the Board on Geographic Names since about 1930 and\nhas been extensively employed in the systematic standardsization of\nthousands of geographic names of Japan in romanized form.\n",
+      "notes": "\n1. The \"tsu\" forms (ツ/つ) are also used to indicate a double consonant and\nare generally (but not alwyas) written in smaller script or type\nslightly to the right of or below the regular line. These characters\nare trasnliterated as k before k; s before s or sh; t before t, ts, or\nch; and p before p. Occasionally, when a \"ku\" (ク/く) or \"ki\" (キ/き) form\nprecedes k, the u in ku or the i in ki is dropped.\n\n2. The transliterations in parentheses are used in specific cases when\nthe kana symbol is known to be so pronounced.\n\n3. The transliteration m is used before b, p, and m.\n\n4. This letter has been added for the use in transliterating foreign\nwords.\n\n5. The asterisk (*) indicates standard combined forms. Those combined\nforms not so marked are rarely used.\n\n----\n\nImplementation Notes:\n\na. Despite the mentioning of the term \"Modified Hepburn\" in the\nspecification, the handling of ん/ン in this standard is different from\nModified Hepburn. It follows the Traditional Hepburn in that the\nletter m is used before b, m, p.\n\nb. This document includes obsolete (pre-reform) combinations.\nPre-reform combinations will clash with modern Japanese transliteration.\n\nc. There is no discussion on how cross-morpheme vowel sounds should be\nhandled.\n\nd. There is no mentioning of separation mark between n and another vowel.\n\ne. Everything not explicitly stated in the specification will be\nassumed to be inherited from var-jpn-Hrkt-Latn-hepburn-1954.\n\nf. Obsolete combinations can be handled by post rules, and are\nincluded for the sake of completeness only. They have been commented\nout, since they are rarely used and follow different rules than modern\nJapanese.\n"
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "しんばし",
+        "shimbashi"
+      ],
+      [
+        "とうきょう",
+        "tōkyō"
+      ],
+      [
+        "しんじゅく",
+        "shinjuku"
+      ],
+      [
+        "かんおう",
+        "kan’ō"
+      ],
+      [
+        "かのう",
+        "kanō"
+      ],
+      [
+        "きんゆう",
+        "kin’yū"
+      ],
+      [
+        "とうきょう",
+        "tōkyō"
+      ],
+      [
+        "かごっま",
+        "kagomma"
+      ],
+      [
+        "ぽっぽっや",
+        "poppoyya"
+      ],
+      [
+        "てっら",
+        "terra"
+      ],
+      [
+        "にゃっほー",
+        "nyahhō"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "hrktlatn",
+      "full_name": "var-jpn-Hrkt-Latn-hepburn-1954",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "hrktlatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "hrktlatn",
+      "full_name": "var-jpn-Hrkt-Latn-hepburn-1954",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "んン"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "m"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ばびぶべぼまみむめもぱぴぷぺぽバビブベボマミムメモパピプペポ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "け"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ke"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ga"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ka"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ko"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ケ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ke"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ga\""
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ka"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ko"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ヶ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ga"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ka"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ko"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "は"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ha"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "wa"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ひ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "hi"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "i"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ふ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "fu"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "u"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "o"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "へ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "he"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "e"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ほ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ho"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "o"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ハ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ha"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "wa"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ヒ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "hi"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "i"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "フ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "fu"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "u"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "o"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ヘ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "he"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "e"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ホ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::Any",
+                "type": "Array",
+                "data": [
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "ho"
+                  },
+                  {
+                    "class": "Interscript::Node::Item::String",
+                    "data": "o"
+                  }
+                ]
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ゐ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ゑ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ヰ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ヱ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "くわ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "くわう"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kō"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ぐわ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ぐわう"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gō"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "クワ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "クワウ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kō"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "グワ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "グワウ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gō"
+              }
+            }
+          ]
+        },
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "hrktlatn"
+          }
+        }
+      ]
+    }
+  }
+}

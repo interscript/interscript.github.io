@@ -1,0 +1,4079 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "un",
+      "id": 2016,
+      "language": "iso-639-2:ben",
+      "source_script": "Beng",
+      "destination_script": "Latn",
+      "name": "Bengali Romanization, Version 4.0",
+      "url": "http://www.eki.ee/wgrs/rom1_bn.htm",
+      "creation_date": 2016,
+      "description": "The United Nations recommended system was approved in 1972 (II/11)\nand amended in 1977 (III/12), based on a report prepared by D. N.\nSharma. The tables and their corrections were published in volume II of\nthe conference reports1,2.\n\nThere is no evidence of the use of the system either in Bangladesh,\nin India or in international cartographic products. The resolution\nIV/17 (1982) recommended association, inter alia, with Bangladesh, in\ncarrying out further studies on the system.\n\nBengali (Bānglā) uses an alphasyllabic script whereby each character\nrepresents a syllable rather than one sound. Vowels and diphthongs are\nmarked in two ways: as independent characters (used syllable-initially)\nand in an abbreviated form, to denote vowels after consonants. The\nromanization table is unambiguous but the user would have to recognize\nmany ligatures not given in the original table. The system is mostly\nreversible but there exist some ambiguities in the romanization of\nvowels (independent vs. abbreviated characters) and consonants\n(ligatures vs. character sequences).\n\nOther systems of romanization\n\nFor differences between the UN system and the ISO transliteration\nstandard ISO 15919: 2001 see the section on the romanization of Hindi.\n\nReferences\n\nSecond United Nations Conference on the Standardization of\nGeographical Names. London, 10–31 May 1972. Vol. II. Technical papers.\nUnited Nations. New York 1974, pp. 139–140.\n\nThird United Nations Conference on the Standardization of\nGeographical Names. Athens, 17 August – 7 September 1977. Vol. II,\nTechnical papers, pp. 393 etc.\n",
+      "notes": [
+        "In the romanization system below character variations and the table of ligatures have been added.\n\nI. Independent vowel characters\n\n1\tঅ\ta\n2\tআ\tā\n3\tই\ti\n4\tঈ\tī\n5\tউ\tu\n6\tঊ\tū\n7\tঋ\tṛ\n8\tএ\te\n9\tঐ\tai\n10\tও\to\n11\tঔ\tau\n",
+        "Where two Roman equivalents are given, the second (in brackets) is used for recording the pronunciation of place-names while the first form is for general use.",
+        "In the table only word-initial character variants are shown. Depending on the position in the word many variants of the characters are used as well as some ligatures. These features are not covered here.",
+        "For technical reasons the characters of the Mongolian script are turned 90˚ anti-clockwise."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "র্ক",
+        "rka"
+      ],
+      [
+        "গ্র",
+        "gra"
+      ],
+      [
+        "ত্য",
+        "tya"
+      ],
+      [
+        "আমার সোনার বাংলা, আমি তোমায় ভালোবাসি।\nচিরদিন তোমার আকাশ, তোমার বাতাস, আমার প্রাণে বাজায় বাঁশি॥\nও মা, ফাগুনে তোর আমের বনে ঘ্রাণে পাগল করে, মরি হায়, হায় রে—\nও মা, অঘ্রাণে তোর ভরা ক্ষেতে আমি কী দেখেছি মধুর হাসি॥\n\nকী শোভা, কী ছায়া গো, কী স্নেহ, কী মায়া গো—\nকী আঁচল বিছায়েছ বটের মূলে, নদীর কূলে কূলে।\nমা, তোর মুখের বাণী আমার কানে লাগে সুধার মতো,\nমরি হায়, হায় রে—\nমা, তোর বদনখানি মলিন হলে, ও মা, আমি নয়নজলে ভাসি॥",
+        "āmaāra saonaāra baāṁlaā, āmai taomaāj̱aA় bhaālaobaāsai।\nchairadaina taomaāra ākaāsha, taomaāra baātaāsa, āmaāra praāṇae baājaāj̱aA় baām̐shai॥\no maā, phaāgaunae taora āmaera banae ghraāṇae paāgala karae, marai haāj̱aA়, haāj̱aA় rae—\no maā, aghraāṇae taora bharaā kṣhaetae āmai kaī daekhaechhai madhaura haāsai॥\n\nkaī shaobhaā, kaī chhaāj̱aA়ā gao, kaī snaeha, kaī maāj̱aA়ā gao—\nkaī ām̐chala baichhaāj̱aA়echha baṭaera maūlae, nadaīra kaūlae kaūlae।\nmaā, taora maukhaera baāṇaī āmaāra kaānae laāgae saudhaāra matao,\nmarai haāj̱aA়, haāj̱aA় rae—\nmaā, taora badanakhaānai malaina halae, o maā, āmai naj̱aA়najalae bhaāsai॥"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "অ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "আ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ā"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ই"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঈ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ī"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "উ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ū"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঋ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṛ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "এ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঐ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ai"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ও"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঔ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "au"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "া"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ā"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ি"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ী"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ī"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ূ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ū"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৃ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṛ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ে"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৈ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ai"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ো"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৌ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "au"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "রু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ru"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্তু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্তু"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "stu"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "রূ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rū"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হৃ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hṛ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ং"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṁ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঁ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m̐"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঃ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḥ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "্‌"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৎ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "খ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঘ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "cha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ছ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "chha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ja"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঞ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ña"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঠ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঢ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "থ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "da"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "na"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ভ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j̱aA"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "la"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড়"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṙa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঢ়"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṙha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "য়"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣhna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣhma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣhva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্স"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ksa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gda"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gdha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঘ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ghra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্চ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "chcha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্ছ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "chchha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্ছ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "chchhva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্ঞ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "chña"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্জ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jja"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্জ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jjva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্ঝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jjha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্ঞ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jña"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঞ্চ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ñcha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঞ্ছ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ñchha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঞ্জ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ñja"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঞ্ঝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ñjha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড্ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ঠ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇṭha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ত্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ttva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্থ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ttha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dda"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্দ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ddva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ddha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ধ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ddhva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ভ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dbha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ঠ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nṭha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ত্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্থ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nda"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্দ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ppa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ফ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "phra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্জ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bja"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bda"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bdha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ভ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mpa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ভ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mbha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ভ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mbhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্চ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shcha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ছ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shchha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "shva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ট্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhṭra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ঠ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhṭha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ঞ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhña"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhpa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣhpha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ska"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ক্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "skra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্খ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "skha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ট্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṭra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ত্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ktra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ্ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ক্ষ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "kṣma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "খ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "khaj̱a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "খ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "khra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্‌ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ধ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gdhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ধ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gdhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ন্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gnya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "gya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "গ্র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "grya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঘ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ghna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঘ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ghya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্‌ক্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅkata"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ক্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅkaya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ক্ষ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅkṣa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্খ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅkha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্গ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅgaya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ঘ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅgha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ঘ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅghya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ঘ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅghra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঙ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṅma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্ছ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "cchra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "cva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "চ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "cya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "জ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "jra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ট্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṭra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ড়্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঢ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ঢ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḍhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ঠ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇṭhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ড্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇḍya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ড্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇḍra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ঢ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇḍha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ণ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṇya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৎক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ত্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ttya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্ম্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tmya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ত্র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "trya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৎল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ৎস"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "tsa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "থ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "thva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "থ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "thya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "থ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "thra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ঘ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dgha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্ভ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dbhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "দ্র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "draya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dhna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dhva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dhma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ধ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "dya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ট্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nṭra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ড্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nḍra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ত্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ত্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntaya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ত্র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ntraya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্থ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nthra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্দ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্দ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ধ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্ধ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ndhra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ন্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "nya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "pya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "praya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "প্স"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "psa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ফ্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "phla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ব্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ভ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bhva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ভ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "bhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্প্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mpra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mpha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্ব্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mvra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ম্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "mya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "য্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j̱aya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ক"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rka"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ক্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rkya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্গ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rgya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ঘ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rghya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্চ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rchya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্জ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rjya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ণ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rṇya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ত্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rtya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্থ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rthya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ব্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rvya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ম্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rmya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্শ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rshya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ষ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rṣhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্হ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্খ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rkha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্গ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rgra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ঘ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rgha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্চ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rcha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ছ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rchha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্জ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rja"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ঝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rjha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ড"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rḍa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ত"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rta"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ত্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rtra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্থ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rtha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্দ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rda"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্দ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rdva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্দ্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rdra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ধ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rdha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ধ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rdhba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ন"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rna"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rpa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rpha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ভ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rbha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্শ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rsha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্শ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rshba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ষ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rṣha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্স"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rsa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্হ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "র্ঢ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "rḍhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ক্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lkaya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্গ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lga"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lpa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্‌ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lpha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lpha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lba"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্‌ভ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lbha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ল্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "lya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "শ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ক্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣkra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ট্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣṭya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ঠ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣṭhya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্প্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣpra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্ম"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣma"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ষ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ṣya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ট"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sṭa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ট্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sṭra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ত্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "stva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ত্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "stṣya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ত্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "stra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্থ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "stha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্থ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sthya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্প"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "spa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্প্র"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "spra"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্প্‌ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "spala"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ফ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "spha"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sya"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "স্ল"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "sla"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্ণ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hṇa"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্ব"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hva"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "হ্য"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "hya"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

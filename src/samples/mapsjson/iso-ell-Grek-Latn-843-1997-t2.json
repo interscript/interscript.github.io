@@ -1,0 +1,137 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": 1997,
+      "language": "iso-639-2:ell",
+      "source_script": "Grek",
+      "destination_script": "Latn",
+      "name": "ISO 843:1997 Information and documentation — Conversion of Greek characters into Latin characters",
+      "url": "https://www.iso.org/standard/5215.html",
+      "creation_date": 1997,
+      "description": "Establishes a system for the transliteration and/or transcription\nof Greek characters into Latin characters. This system applies to\nthe characters of the Greek script, independent of the period in\nwhich it is or was used, i.e. scripts from all periods of Classic\nor Modern Greek. Replaces ISO/R 843.\n",
+      "notes": [
+        {
+          "Transliteration of Greek into Latin": "Type 2, Clause 3 Table 2"
+        },
+        "Introduced casing to digamma, yot, and lunate sigma. (Casing was late introduction to character sets for those characters)"
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n",
+        "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "greklatn",
+      "full_name": "elot-ell-Grek-Latn-743-1982-ts",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "greklatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "greklatn",
+      "full_name": "elot-ell-Grek-Latn-743-1982-ts",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "greklatn"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ϝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "W"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ϝ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "w"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ϲ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ϲ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "S"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ϳ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ϳ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

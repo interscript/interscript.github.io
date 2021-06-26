@@ -1,0 +1,470 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "un",
+      "id": "general-2013",
+      "language": "iso-639-2:mon",
+      "source_script": "Mong",
+      "destination_script": "Latn",
+      "name": "Mongolian Romanization in China, Version 4.0 (general)",
+      "url": "http://www.eki.ee/wgrs/rom1_mnc.htm",
+      "creation_date": "2013-09",
+      "description": "The United Nations resolution III/8 in 1977 recognized the Scheme for\na Chinese Phonetic Alphabet (Pinyin) as China’s official Roman alphabet\nscheme and recommended the alphabet as the international system for the\nromanization of Chinese geographical names. In China Mongolian\ngeographical names are transcribed directly from the Mongolian script\ninto Pinyin. The scheme was published in Toponymic Guidelines for Map\nand Other Editors: China, 1982.\n\nThe system is used in China and in international cartographic\nproducts.\n\nMongolian uses a vertical script. Transcription of Mongolian names is\nmade from their proper pronunciation based on the written form of the\nMongolian language and Qahar vernacular, with Zhenglan as its\nrepresentative pronunciation. Due to the complex nature of the script\nthe romanization scheme is not reversible, e.g. the name of the city\nHohhot is written ᠬᠥᠬᠡᠬᠣᠲᠠ but may be transliterated as kökeqota.\n",
+      "notes": [
+        "The long and short Mongolian vowels are not distinguished in the spelling for general use, but in recording the pronunciation of place-names, the long vowel is represented by duplication.",
+        "Where two Roman equivalents are given, the second (in brackets) is used for recording the pronunciation of place-names while the first form is for general use.",
+        "In the table only word-initial character variants are shown. Depending on the position in the word many variants of the characters are used as well as some ligatures. These features are not covered here.",
+        "For technical reasons the characters of the Mongolian script are turned 90˚ anti-clockwise."
+      ],
+      "implementation_notes": [
+        "A separated final form of vowels a or e is common, and can appear at the end of a word, word stem, or suffix. This form requires a final-shaped preceding consonant and an inter-word gap in between. The vowels themselves appear as ᠎ᠠ, and with consonants as ‍ᠬ᠎ᠠ q‑a, ‍ᠷ᠎ᠠ r‑a/r‑e, etc. This gap can be transliterated with a hyphen. In digital typesetting, these forms are triggered by inserting a U+180E ᠎ MONGOLIAN VOWEL SEPARATOR (HTML &#6158; · MVS) between the consonant and vowel.",
+        "All case suffixes, as well as any plural suffixes consisting of one or two syllables are likewise separated by a preceding and hyphen-transliterated gap. In digital typesetting, this gap is represented by a U+202F   NARROW NO-BREAK SPACE (HTML &#8239; · NNBSP). A maximum of two case suffixes can be added to a stem. Single-letter vowel suffixes appear with the final-shaped forms of a/e, i, or u/ü, as in ᠭᠠᠵᠠᠷ ᠠ γaǰar‑a 'to the country' and ᠡᠳᠦᠷ ᠡ edür‑e 'on the day', or ᠤᠯᠤᠰ ᠢ ulus‑i 'the state' etc. Multi-letter suffixes most often start with an initial- (consonants), medial- (vowels), or variant-shaped form."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "ᠣᠷᠳᠣᠰ ᠬᠣᠲᠠ",
+        "ordos hota"
+      ],
+      [
+        "ᠪᠠᠶᠠᠨᠨᠠᠭᠤᠷ ᠬᠣᠲᠠ",
+        "bayannagur hota"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠣᠲᠠ",
+        "ulaganhota"
+      ],
+      [
+        "ᠬᠣᠣᠯᠢᠠ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "hoolia goul hota"
+      ],
+      [
+        "ᠡᠷᠢᠶᠡᠨ ᠬᠣᠲᠠ",
+        "eriyen hota"
+      ],
+      [
+        "ᠷᠠᠰᠢᠶᠠᠨ ᠬᠣᠲᠠ",
+        "rasiyan hota"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "bagarin baragun hosigu"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "bagarin jegun hosigu"
+      ],
+      [
+        "ᠲᠦᠩᠯᠢᠶᠣᠤ ᠬᠣᠲᠠ",
+        "tungliyou hota"
+      ],
+      [
+        "ᠰᠢᠯᠢ ᠶᠢᠨ ᠬᠣᠲᠠ",
+        "sili-yin hota"
+      ],
+      [
+        "ᠬᠣᠷᠢᠨ ᠭᠡᠷ ᠰᠢᠶᠠᠨ",
+        "horin ger siyan"
+      ],
+      [
+        "ᠤᠳᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "uda togorig"
+      ],
+      [
+        "ᠦᠬᠠᠢ ᠬᠣᠲᠠ",
+        "uhai hota"
+      ],
+      [
+        "ᠬᠠᠶᠢᠨᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayinan togorig"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayirub-un tohoi togorig"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ",
+        "ulaganqab hota"
+      ],
+      [
+        "ᠵᠢᠨᠢᠩ ᠲᠣᠭᠣᠷᠢᠭ",
+        "jining togorig"
+      ],
+      [
+        "ᠹᠸᠩᠵᠸᠡ ᠬᠣᠲᠠ",
+        "fwngjwe hota"
+      ],
+      [
+        "ᠵᠦᠸᠧᠽᠢ ᠰᠢᠶᠠᠨ",
+        "juwezi siyan"
+      ],
+      [
+        "ᠬᠤᠸᠠᠳᠧ ᠰᠢᠶᠠᠨ",
+        "huwade siyan"
+      ],
+      [
+        "ᠱᠠᠩᠳᠤ ᠰᠢᠶᠠᠨ",
+        "xangdu siyan"
+      ],
+      [
+        "ᠰᠢᠩᠾᠧ ᠰᠢᠶᠠᠨ",
+        "singhe siyan"
+      ],
+      [
+        "ᠯᠢᠶᠠᠩᠴᠠᠩ ᠰᠢᠶᠠᠨ",
+        "liyangqang siyan"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragun garun emunedu hosigu"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragun garun dumdadu hosigu"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragun garun hoyitu hosigu"
+      ],
+      [
+        "ᠳᠥᠷᠪᠡᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dorbed hosigu"
+      ],
+      [
+        "ᠪᠤᠭᠤᠲᠤ ᠬᠣᠲᠠ",
+        "bugutu hota"
+      ],
+      [
+        "ᠬᠥᠨᠳᠡᠯᠡᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hondelen togorig"
+      ],
+      [
+        "ᠳᠦᠩᠾᠧ ᠲᠣᠭᠣᠷᠢᠭ",
+        "dunghe togorig"
+      ],
+      [
+        "ᠴᠢᠩᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "qingxan togorig"
+      ],
+      [
+        "ᠰᠢᠭᠤᠶᠢᠲᠤ ᠲᠣᠭᠣᠷᠢᠭ",
+        "siguyitu togorig"
+      ],
+      [
+        "ᠵᠢᠦ ᠶᠤᠸᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "jiu yuwan togorig"
+      ],
+      [
+        "ᠭᠦᠶᠠᠩ ᠰᠢᠶᠠᠨ",
+        "guyang siyan"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tumed jegun hosigu"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tumed baragun hosigu"
+      ],
+      [
+        "ᠳᠠᠷᠬᠠᠨ ᠮᠤᠤᠮᠢᠩᠭ᠋ᠠᠨ ᠬᠣᠯᠪᠣᠭᠠᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "darhan muumingg᠋an holbogatu hosigu"
+      ],
+      [
+        "ᠬᠡᠰᠢᠭᠲᠡᠨ ᠬᠣᠰᠢᠭᠤ",
+        "hesigten hosigu"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e bargu jegun hosigu"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e bargu baragun hosigu"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠬᠣᠰᠢᠭᠤ",
+        "otog hosigu"
+      ],
+      [
+        "ᠳ᠋ᠦᠩᠱᠧᠩ ᠲᠣᠭᠣᠷᠢᠭ",
+        "d᠋ungxeng togorig"
+      ],
+      [
+        "ᠳᠠᠯᠠᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dalad hosigu"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨᠭᠠᠷ ᠬᠣᠰᠢᠭᠤ",
+        "jegungar hosigu"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "otog-un emunedu hosigu"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "hanggin hosigu"
+      ],
+      [
+        "ᠦᠦᠰᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "uusin hosigu"
+      ],
+      [
+        "ᠡᠵᠢᠨ ᠬᠣᠷᠣᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "ejin horog-a hosigu"
+      ],
+      [
+        "ᠵᠠᠯᠠᠨ ᠠᠢ᠌ᠯ ᠬᠣᠲᠠ",
+        "jalan ai᠌l hota"
+      ],
+      [
+        "ᠶᠠᠭᠰᠢ ᠬᠣᠲᠠ",
+        "yagsi hota"
+      ],
+      [
+        "ᠮᠠᠨᠵᠤᠤᠷ ᠬᠣᠲᠠ",
+        "manjuur hota"
+      ],
+      [
+        "ᠬᠠᠶᠢᠯᠠᠷ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayilar togorig"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "horqin togorig"
+      ],
+      [
+        "ᠺᠠᠶᠢᠯᠦ ᠰᠢᠶᠠᠨ",
+        "kayilu siyan"
+      ],
+      [
+        "ᠬᠦᠷᠢᠶ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "huriy-e hosigu"
+      ],
+      [
+        "ᠨᠠᠢᠮᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "naiman hosigu"
+      ],
+      [
+        "ᠵᠠᠷᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "jarud hosigu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "horqin baragun garun dumdadu hosigu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "horqin jegun garun dumdadu hosigu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "horqin jegun garun hoyitu hosigu"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠠᠳᠠ ᠬᠣᠲᠠ",
+        "ulaganhada hota"
+      ],
+      [
+        "ᠰᠡᠷᠡᠴᠢ",
+        "sereqi"
+      ],
+      [
+        "ᠭᠡᠭᠡᠨ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "gegen goul hota"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaxa jegun hosigu"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaxa baragun hosigu"
+      ],
+      [
+        "ᠡᠵᠡᠨ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "ejen-e hosigu"
+      ],
+      [
+        "ᠬᠥᠪᠡᠭᠡᠲᠦ ᠰᠢᠷ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "hobegetu sir-a hosigu"
+      ],
+      [
+        "ᠦᠶᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "uyuwan siyan"
+      ],
+      [
+        "ᠦᠴᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "uquwan siyan"
+      ],
+      [
+        "ᠲᠦᠴᠢᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "tuqiuwan siyan"
+      ],
+      [
+        "ᠨᠢᠩᠴᠧᠩ ᠰᠢᠶᠠᠨ",
+        "ningqeng siyan"
+      ],
+      [
+        "ᠯᠢᠨᠰᠢ ᠰᠢᠶᠠᠨ",
+        "linsi siyan"
+      ],
+      [
+        "ᠯᠢᠨᠾᠧ ᠲᠣᠭᠣᠷᠢᠭ",
+        "linhe togorig"
+      ],
+      [
+        "ᠬᠠᠷᠠᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "haraqin hosigu"
+      ],
+      [
+        "ᠳ᠋ᠧᠩᠺᠧᠦ ᠰᠢᠶᠠᠨ",
+        "d᠋engkeu siyan"
+      ],
+      [
+        "ᠠᠤᠬᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "auhan hosigu"
+      ],
+      [
+        "ᠴᠢᠩ ᠱᠦᠢ ᠾᠧ ᠰᠢᠶᠠᠨ",
+        "qing xui he siyan"
+      ],
+      [
+        "ᠬᠣᠳᠣᠩ ᠠᠷᠠᠳ ᠤᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hodong arad-un togorig"
+      ],
+      [
+        "ᠰᠠᠶᠢᠬᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sayihan togorig"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠬᠣᠲᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sin-e hota togorig"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayirub-un tohoi togorig"
+      ],
+      [
+        "ᠰᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sung xan togorig"
+      ],
+      [
+        "ᠬᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hung xan togorig"
+      ],
+      [
+        "ᠠᠷᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "arun hosigu"
+      ],
+      [
+        "ᠶᠤᠸᠠᠨ ᠪᠣᠣ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "yuwan boo xan togorig"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠪᠡᠭᠡᠲᠦ ᠴᠠᠭᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "silugun hobegetu qagan hosigu"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠬᠡ ᠬᠣᠰᠢᠭᠤ",
+        "silugun hohe hosigu"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "urad-un dumdadu hosigu"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "urad-un emunedu hosigu"
+      ],
+      [
+        "ᠲᠣᠭᠲᠠᠬᠤ ᠰᠢᠶᠠᠨ",
+        "togtahu siyan"
+      ],
+      [
+        "ᠲᠠᠶᠢᠫᠤᠰᠧ ᠬᠣᠰᠢᠭᠤ",
+        "tayipuse hosigu"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "soned jegun hosigu"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "soned baragun hosigu"
+      ],
+      [
+        "ᠣᠩᠨᠢᠭᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "ongnigud hosigu"
+      ],
+      [
+        "ᠵᠠᠯᠠᠢᠳ ᠬᠣᠰᠢᠭᠤ",
+        "jalaid hosigu"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "hanggin hoyitu hosigu"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨ ᠤᠵᠤᠮᠤᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "jegun ujumuqin hosigu"
+      ],
+      [
+        "ᠠᠷᠤ ᠬᠣᠷᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "aru horqin hosigu"
+      ],
+      [
+        "ᠠᠪᠠᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "abag-a hosigu"
+      ],
+      [
+        "ᠪᠤᠷᠢᠶᠠᠳ",
+        "buriyad"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ",
+        "ulaganbagatur"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "monglatn",
+      "full_name": "sasm-mon-Mong-Latn-general-1978",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "monglatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "monglatn",
+      "full_name": "sasm-mon-Mong-Latn-general-1978",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "monglatn"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "sasm",
+      "id": "phonetic-1978",
+      "language": "iso-639-2:mon",
+      "source_script": "Mong",
+      "destination_script": "Latn",
+      "name": "Transliteration of Place Names in Minority Languages in Chinese Pinyin (Mongolian, phonetic)",
+      "url": "http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/12/20150112161436994.pdf",
+      "creation_date": "1976-06",
+      "description": "Article 1\n\nThe main purpose of the transliteration method of Chinese pinyin\nletter transliteration of place names in minority languages:\n\n(1) As a standard for spelling place names in minority languages ​​\nwith Chinese phonetic alphabet;\n(2) As a phonetic tool for surveying and recording ethnic place\nnames in map surveying and mapping work;\n(3) As the main basis for the pronunciation and selection of place\nnames in ethnic minority languages ​​in Chinese character\ntransliteration;\n(4) Provide convenient conditions for the unified compilation of my\ncountry's place-name information and index in alphabetical order.\n\nArticle 2\n\nThe transliteration method is limited to the 26 letters in the\n\"Hanyu Pinyin Plan\", two letters with additional symbols and a\nsound-proof symbol. In order to make the transcription and phonetic\nmore accurate, the syllable structure can not be restricted by the\nsyllable form of Mandarin Chinese. Soundproof symbols can be used\nin various occasions that are easy to be confused. When recording,\nadditional symbols can be added to specific letters to represent\nspecial sounds.\n\nThe transliteration and transliteration of ethnic minority scripts\nin Latin script shall be based on the script. Letters with the same\nor similar pronunciation and usage as in the \"Hanyu Pinyin Plan\"\nshall be written according to them; different or dissimilar letters\nshall be transcribed separately. If the text does not use Latin\nletters, the corresponding Chinese phonetic letters shall be used\naccording to the pronunciation of the text. If there is no text,\naccording to the general voice mark.\n\nArticle 3\n\nSpecial place names are handled with reference to the following\nmethods:\n\n(1) If the commonly used Chinese name is partly transliterated and\npartly translated, the transliteration part is spelled according to\nthe transliteration method, and the free translation part is\nspelled according to the pronunciation of the Chinese character.\n\n(2) If the commonly used Chinese character translation is a section\ntranslation, the actual situation may be considered. Some are\ntransliterated according to the full name of the original name, and\nsome are spelled according to the Hanyu pronunciation of the\nsection translation.\n\n(3) If the translated name of a Chinese character originally came\nfrom a minority language, but later became a Chinese form and has\nbeen commonly used, it can be spelled according to the\npronunciation of the Chinese character, including the original name\ntransliterated if necessary.\n\n(4) Other special circumstances shall be dealt with according to\nspecific discretion.\n",
+      "original_description": "第一条\n\n少数民族语地名汉语拼音字母音译转写法的主要用途：\n\n（1） 作为用汉语拼音字母拼写少数民族语地名的标准；\n（2）作为地图测绘工作中调査记录少数民族语地名的记音工具；\n（3） 作为汉字音译少数民族语地名定音和选字的主要依据；\n（4）为按照字母颐序统一编排我国地名资料和索引提供便利条件。\n\n第二条\n\n音译转写法限用《汉语拼音方案》中的26个字母，两个有附加符号的字母和一\n个隔音符号，为了使转写和记音比较准确，音节结构可以不受汉语普通话音节\n形式的限制，隔音符号可以在各种\n容易混淆的场合应用，记音的时候附加符号可以加在特定的字母上面代表特殊\n语音。\n\n\n少数民族文字用拉丁字母的，音译转写以其文字为依据。跟《汉语拼音方案》\n中读音和用法相同或相近的字母，一律照写；不同或不相近的字母分别规定转\n写方式，文字不用拉丁字母的，根据文字的读音采用相应的汉语拼音字母表示\n。没有文字的，根据通用语音标记。\n\n第三条\n\n特殊的地名参照下列办法处理：\n\n\n(1）惯用的汉字译名如果是一部分音译，一部分意译，其音译部分根据音译转\n写法拼写，意译部分按照汉字读音拼写。\n\n\n(2）惯用的汉字译名如果是节译，可以斟酌具体体情况，有的按照原名全称音\n译转写，有的按照节译的汉宇读音拼写。\n\n(3) 汉字译名如果原先来自少数民族语，后来变成汉语形式并且已经通用，可以按\n照汉字读音拼写，必要时括注音译转写的原名。\n\n(4) 其他特殊情况具体斟酌处理。\n",
+      "notes": [
+        "The transliteration of Mongolian place names is based on the customary pronunciation combining written and spoken languages.",
+        "The length of Mongolian vowels are generally spelled regardless of their spelling. Long vowels in place names are represented by double letters.",
+        "The Chinese phonetic alphabets transliterated by transliteration are juxtaposed with or without symbols and adjuncts. Normally, the spelling letters are without symbols, and the place names are recorded by the acronym."
+      ],
+      "original_notes": "(1) 蒙古语地名的音译转写，以书面语和口语通用相结合的习惯读法为依据。 (2) 蒙古语元音的长短，一般拼写不分，地名记音中长元音用双字母表示。 (3) 音译转写的汉语拼音字母有无符和加符并列的，一般拼写用无符字母，地名记音用加符宇母。",
+      "implementation_notes": [
+        "A separated final form of vowels a or e is common, and can appear at the end of a word, word stem, or suffix. This form requires a final-shaped preceding consonant and an inter-word gap in between. The vowels themselves appear as ᠎ᠠ, and with consonants as ‍ᠬ᠎ᠠ q‑a, ‍ᠷ᠎ᠠ r‑a/r‑e, etc. This gap can be transliterated with a hyphen. In digital typesetting, these forms are triggered by inserting a U+180E ᠎ MONGOLIAN VOWEL SEPARATOR (HTML &#6158; · MVS) between the consonant and vowel.",
+        "All case suffixes, as well as any plural suffixes consisting of one or two syllables are likewise separated by a preceding and hyphen-transliterated gap. In digital typesetting, this gap is represented by a U+202F   NARROW NO-BREAK SPACE (HTML &#8239; · NNBSP). A maximum of two case suffixes can be added to a stem. Single-letter vowel suffixes appear with the final-shaped forms of a/e, i, or u/ü, as in ᠭᠠᠵᠠᠷ ᠠ γaǰar‑a 'to the country' and ᠡᠳᠦᠷ ᠡ edür‑e 'on the day', or ᠤᠯᠤᠰ ᠢ ulus‑i 'the state' etc. Multi-letter suffixes most often start with an initial- (consonants), medial- (vowels), or variant-shaped form."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "ᠣᠷᠳᠣᠰ ᠬᠣᠲᠠ",
+        "ôrdôs hôta"
+      ],
+      [
+        "ᠪᠠᠶᠠᠨᠨᠠᠭᠤᠷ ᠬᠣᠲᠠ",
+        "bayannagûr hôta"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠣᠲᠠ",
+        "ûlaganhôta"
+      ],
+      [
+        "ᠬᠣᠣᠯᠢᠠ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "hôôlia gôûl hôta"
+      ],
+      [
+        "ᠡᠷᠢᠶᠡᠨ ᠬᠣᠲᠠ",
+        "eriyen hôta"
+      ],
+      [
+        "ᠷᠠᠰᠢᠶᠠᠨ ᠬᠣᠲᠠ",
+        "rasiyan hôta"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "bagarin baragûn hôsigû"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "bagarin jegun hôsigû"
+      ],
+      [
+        "ᠲᠦᠩᠯᠢᠶᠣᠤ ᠬᠣᠲᠠ",
+        "tungliyôû hôta"
+      ],
+      [
+        "ᠰᠢᠯᠢ ᠶᠢᠨ ᠬᠣᠲᠠ",
+        "sili-yin hôta"
+      ],
+      [
+        "ᠬᠣᠷᠢᠨ ᠭᠡᠷ ᠰᠢᠶᠠᠨ",
+        "hôrin ger siyan"
+      ],
+      [
+        "ᠤᠳᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "ûda tôgôrig"
+      ],
+      [
+        "ᠦᠬᠠᠢ ᠬᠣᠲᠠ",
+        "uhai hôta"
+      ],
+      [
+        "ᠬᠠᠶᠢᠨᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayinan tôgôrig"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayirûb-ûn tôhôi tôgôrig"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ",
+        "ûlaganqab hôta"
+      ],
+      [
+        "ᠵᠢᠨᠢᠩ ᠲᠣᠭᠣᠷᠢᠭ",
+        "jining tôgôrig"
+      ],
+      [
+        "ᠹᠸᠩᠵᠸᠡ ᠬᠣᠲᠠ",
+        "fwngjwe hôta"
+      ],
+      [
+        "ᠵᠦᠸᠧᠽᠢ ᠰᠢᠶᠠᠨ",
+        "juwezi siyan"
+      ],
+      [
+        "ᠬᠤᠸᠠᠳᠧ ᠰᠢᠶᠠᠨ",
+        "hûwade siyan"
+      ],
+      [
+        "ᠱᠠᠩᠳᠤ ᠰᠢᠶᠠᠨ",
+        "xangdû siyan"
+      ],
+      [
+        "ᠰᠢᠩᠾᠧ ᠰᠢᠶᠠᠨ",
+        "singhe siyan"
+      ],
+      [
+        "ᠯᠢᠶᠠᠩᠴᠠᠩ ᠰᠢᠶᠠᠨ",
+        "liyangqang siyan"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragûn garûn emunedu hôsigû"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragûn garûn dûmdadû hôsigû"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "qahar baragûn garûn hôyitû hôsigû"
+      ],
+      [
+        "ᠳᠥᠷᠪᠡᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dorbed hôsigû"
+      ],
+      [
+        "ᠪᠤᠭᠤᠲᠤ ᠬᠣᠲᠠ",
+        "bûgûtû hôta"
+      ],
+      [
+        "ᠬᠥᠨᠳᠡᠯᠡᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hondelen tôgôrig"
+      ],
+      [
+        "ᠳᠦᠩᠾᠧ ᠲᠣᠭᠣᠷᠢᠭ",
+        "dunghe tôgôrig"
+      ],
+      [
+        "ᠴᠢᠩᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "qingxan tôgôrig"
+      ],
+      [
+        "ᠰᠢᠭᠤᠶᠢᠲᠤ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sigûyitû tôgôrig"
+      ],
+      [
+        "ᠵᠢᠦ ᠶᠤᠸᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "jiu yûwan tôgôrig"
+      ],
+      [
+        "ᠭᠦᠶᠠᠩ ᠰᠢᠶᠠᠨ",
+        "guyang siyan"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tumed jegun hôsigû"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tumed baragûn hôsigû"
+      ],
+      [
+        "ᠳᠠᠷᠬᠠᠨ ᠮᠤᠤᠮᠢᠩᠭ᠋ᠠᠨ ᠬᠣᠯᠪᠣᠭᠠᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "darhan mûûmingg᠋an hôlbôgatû hôsigû"
+      ],
+      [
+        "ᠬᠡᠰᠢᠭᠲᠡᠨ ᠬᠣᠰᠢᠭᠤ",
+        "hesigten hôsigû"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e bargû jegun hôsigû"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e bargû baragûn hôsigû"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠬᠣᠰᠢᠭᠤ",
+        "ôtôg hôsigû"
+      ],
+      [
+        "ᠳ᠋ᠦᠩᠱᠧᠩ ᠲᠣᠭᠣᠷᠢᠭ",
+        "d᠋ungxeng tôgôrig"
+      ],
+      [
+        "ᠳᠠᠯᠠᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dalad hôsigû"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨᠭᠠᠷ ᠬᠣᠰᠢᠭᠤ",
+        "jegungar hôsigû"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "ôtôg-ûn emunedu hôsigû"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "hanggin hôsigû"
+      ],
+      [
+        "ᠦᠦᠰᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "uusin hôsigû"
+      ],
+      [
+        "ᠡᠵᠢᠨ ᠬᠣᠷᠣᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "ejin hôrôg-a hôsigû"
+      ],
+      [
+        "ᠵᠠᠯᠠᠨ ᠠᠢ᠌ᠯ ᠬᠣᠲᠠ",
+        "jalan ai᠌l hôta"
+      ],
+      [
+        "ᠶᠠᠭᠰᠢ ᠬᠣᠲᠠ",
+        "yagsi hôta"
+      ],
+      [
+        "ᠮᠠᠨᠵᠤᠤᠷ ᠬᠣᠲᠠ",
+        "manjûûr hôta"
+      ],
+      [
+        "ᠬᠠᠶᠢᠯᠠᠷ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayilar tôgôrig"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hôrqin tôgôrig"
+      ],
+      [
+        "ᠺᠠᠶᠢᠯᠦ ᠰᠢᠶᠠᠨ",
+        "kayilu siyan"
+      ],
+      [
+        "ᠬᠦᠷᠢᠶ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "huriy-e hôsigû"
+      ],
+      [
+        "ᠨᠠᠢᠮᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "naiman hôsigû"
+      ],
+      [
+        "ᠵᠠᠷᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "jarûd hôsigû"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "hôrqin baragûn garûn dûmdadû hôsigû"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "hôrqin jegun garûn dûmdadû hôsigû"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "hôrqin jegun garûn hôyitû hôsigû"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠠᠳᠠ ᠬᠣᠲᠠ",
+        "ûlaganhada hôta"
+      ],
+      [
+        "ᠰᠡᠷᠡᠴᠢ",
+        "sereqi"
+      ],
+      [
+        "ᠭᠡᠭᠡᠨ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "gegen gôûl hôta"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaxa jegun hôsigû"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaxa baragûn hôsigû"
+      ],
+      [
+        "ᠡᠵᠡᠨ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "ejen-e hôsigû"
+      ],
+      [
+        "ᠬᠥᠪᠡᠭᠡᠲᠦ ᠰᠢᠷ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "hobegetu sir-a hôsigû"
+      ],
+      [
+        "ᠦᠶᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "uyûwan siyan"
+      ],
+      [
+        "ᠦᠴᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "uqûwan siyan"
+      ],
+      [
+        "ᠲᠦᠴᠢᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "tuqiûwan siyan"
+      ],
+      [
+        "ᠨᠢᠩᠴᠧᠩ ᠰᠢᠶᠠᠨ",
+        "ningqeng siyan"
+      ],
+      [
+        "ᠯᠢᠨᠰᠢ ᠰᠢᠶᠠᠨ",
+        "linsi siyan"
+      ],
+      [
+        "ᠯᠢᠨᠾᠧ ᠲᠣᠭᠣᠷᠢᠭ",
+        "linhe tôgôrig"
+      ],
+      [
+        "ᠬᠠᠷᠠᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "haraqin hôsigû"
+      ],
+      [
+        "ᠳ᠋ᠧᠩᠺᠧᠦ ᠰᠢᠶᠠᠨ",
+        "d᠋engkeu siyan"
+      ],
+      [
+        "ᠠᠤᠬᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "aûhan hôsigû"
+      ],
+      [
+        "ᠴᠢᠩ ᠱᠦᠢ ᠾᠧ ᠰᠢᠶᠠᠨ",
+        "qing xui he siyan"
+      ],
+      [
+        "ᠬᠣᠳᠣᠩ ᠠᠷᠠᠳ ᠤᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hôdông arad-ûn tôgôrig"
+      ],
+      [
+        "ᠰᠠᠶᠢᠬᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sayihan tôgôrig"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠬᠣᠲᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sin-e hôta tôgôrig"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hayirûb-ûn tôhôi tôgôrig"
+      ],
+      [
+        "ᠰᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sung xan tôgôrig"
+      ],
+      [
+        "ᠬᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "hung xan tôgôrig"
+      ],
+      [
+        "ᠠᠷᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "arûn hôsigû"
+      ],
+      [
+        "ᠶᠤᠸᠠᠨ ᠪᠣᠣ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "yûwan bôô xan tôgôrig"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠪᠡᠭᠡᠲᠦ ᠴᠠᠭᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "silûgûn hobegetu qagan hôsigû"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠬᠡ ᠬᠣᠰᠢᠭᠤ",
+        "silûgûn hohe hôsigû"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "ûrad-ûn dûmdadû hôsigû"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "ûrad-ûn emunedu hôsigû"
+      ],
+      [
+        "ᠲᠣᠭᠲᠠᠬᠤ ᠰᠢᠶᠠᠨ",
+        "tôgtahû siyan"
+      ],
+      [
+        "ᠲᠠᠶᠢᠫᠤᠰᠧ ᠬᠣᠰᠢᠭᠤ",
+        "tayipûse hôsigû"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "soned jegun hôsigû"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "soned baragûn hôsigû"
+      ],
+      [
+        "ᠣᠩᠨᠢᠭᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "ôngnigûd hôsigû"
+      ],
+      [
+        "ᠵᠠᠯᠠᠢᠳ ᠬᠣᠰᠢᠭᠤ",
+        "jalaid hôsigû"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "hanggin hôyitû hôsigû"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨ ᠤᠵᠤᠮᠤᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "jegun ûjûmûqin hôsigû"
+      ],
+      [
+        "ᠠᠷᠤ ᠬᠣᠷᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "arû hôrqin hôsigû"
+      ],
+      [
+        "ᠠᠪᠠᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "abag-a hôsigû"
+      ],
+      [
+        "ᠪᠤᠷᠢᠶᠠᠳ",
+        "bûriyad"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ",
+        "ûlaganbagatûr"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "monglatn",
+      "full_name": "sasm-mon-Mong-Latn-general-1978",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "monglatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "monglatn",
+      "full_name": "sasm-mon-Mong-Latn-general-1978",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠣ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ô"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠤ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "û"
+              }
+            }
+          ]
+        },
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "monglatn"
+          }
+        }
+      ]
+    }
+  }
+}

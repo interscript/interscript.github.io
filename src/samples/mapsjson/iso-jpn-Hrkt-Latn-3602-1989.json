@@ -1,0 +1,164 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "3602-1989",
+      "language": "iso-639-2:jpn",
+      "source_script": "Hrkt",
+      "destination_script": "Latn",
+      "name": "ISO 3602:1989 Documentation — Romanization of Japanese (kana script)",
+      "url": "https://www.iso.org/standard/9029.html",
+      "creation_date": 1989,
+      "adoption_date": 1989,
+      "description": "Establishes a system for the romanization of the present-day\nJapanese written language. Unrestricted application for the system\nrequires that the romanizer possess a detailed knowledge of the\nlanguage in its present-day written form.\n",
+      "notes": null
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "かんおう",
+        "kan’ô"
+      ],
+      [
+        "かのう",
+        "kanô"
+      ],
+      [
+        "きんゆう",
+        "kin’yû"
+      ],
+      [
+        "とうきょう",
+        "tôkyô"
+      ],
+      [
+        "がっ•こう",
+        "gakkô"
+      ],
+      [
+        "かごっま",
+        "kagomma"
+      ],
+      [
+        "ぽっぽっや",
+        "poppoyya"
+      ],
+      [
+        "てっら",
+        "terra"
+      ],
+      [
+        "にゃっほー",
+        "nyahhô"
+      ],
+      [
+        "ゴッホ",
+        "gohho"
+      ],
+      [
+        "おも•う",
+        "omou"
+      ],
+      [
+        "こうし",
+        "kôsi"
+      ],
+      [
+        "こう•し",
+        "kôsi"
+      ],
+      [
+        "こ•うし",
+        "kousi"
+      ],
+      [
+        "ぎゃあ",
+        "gyâ"
+      ]
+    ]
+  },
+  "dependencies": [
+    {
+      "class": "Interscript::Node::Dependency",
+      "name": "hrktlatn",
+      "full_name": "mext-jpn-Hrkt-Latn-1954",
+      "import": false
+    }
+  ],
+  "dep_aliases": {
+    "hrktlatn": {
+      "class": "Interscript::Node::Dependency",
+      "name": "hrktlatn",
+      "full_name": "mext-jpn-Hrkt-Latn-1954",
+      "import": false
+    }
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::CaptureGroup",
+                "data": {
+                  "class": "Interscript::Node::Item::Any",
+                  "type": "String",
+                  "data": "っッ"
+                }
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "•"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::CaptureRef",
+            "id": 1
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Run",
+          "stage": {
+            "class": "Interscript::Node::Item::Stage",
+            "name": "main",
+            "map": "hrktlatn"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "•"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": ""
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "'"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "’"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2809 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "elot",
+      "id": "1982-tl",
+      "language": "iso-639-2:ell",
+      "source_script": "Grek",
+      "destination_script": "Latn",
+      "name": "ELOT 743:1982 (transliteration)",
+      "url": null,
+      "creation_date": 1982,
+      "description": "ELOT 743:1982 transliteration table for Greek\n",
+      "notes": [
+        "This was the intended system in ELOT 743:1982 for transliteration, as is apparent from un-ell-Grek-Latn-1987-tl and iso-ell-Grek-Latn-843-1997-t2, and ELOT 743:2001, Annex B; but the reversible character diacritics are missing from the currently available document, and the document does not indicate what there was supposed to be.",
+        "\"Transliteration\" as used in this specification and its inheritors refers to reversible transliteration, as distinct from \"transcription\", which is a simpler transliteration and which is intended for default use."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n",
+        "Éna práma mónon me parakíni̱se ki eména na grápso̱ óti toúti̱n ti̱n patrída ti̱n échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai fto̱choí kai politikoí kai stratio̱tikoí kai oi pléon mikróteroi ánthro̱poi; ósoi ago̱nistí̱kamen, analógo̱s o katheís, échomen na zí̱somen edó̱. To loipón doulépsamen óloi mazí, na ti̱n fylámen ki óloi mazí kai na mi̱n légei oúte o dynatós «egó̱» oúte o adýnatos. Xérete póte na légei o katheís «egó̱»? Ótan ago̱nisteí mónos tou kai fkiásei í̱ chalásei, na légei «egó̱»; ótan ómo̱s ago̱nízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó̱». Kai eis to exí̱s na máthomen gnó̱si̱, an thélomen na fkiásomen cho̱rión, na zí̱somen óloi mazí.\n\nGiánni̱s Makrygiánni̱s.\n"
+      ],
+      [
+        "ΑΘΗΝΑ",
+        "ATHI̱NA"
+      ],
+      [
+        "μπαμπάκι",
+        "bampáki"
+      ],
+      [
+        "νταντά",
+        "ntantá"
+      ],
+      [
+        "γκέγκε",
+        "gkégke"
+      ],
+      [
+        "Γκαμπόν",
+        "Gkampón"
+      ],
+      [
+        "Μάγχη",
+        "Máṉchi̱"
+      ],
+      [
+        "κογξ",
+        "koṉx"
+      ],
+      [
+        "υιός",
+        "yiós"
+      ],
+      [
+        "Υιός",
+        "Yiós"
+      ],
+      [
+        "νεράντζι",
+        "nerántzi"
+      ],
+      [
+        "Γοίθιος",
+        "Goíthios"
+      ],
+      [
+        "μπέικον",
+        "béïkon"
+      ],
+      [
+        "μπέϊκον",
+        "béïkon"
+      ],
+      [
+        "βόλεϊ",
+        "vóleï"
+      ],
+      [
+        "αθεΐα",
+        "atheḯa"
+      ],
+      [
+        "Εϊγιαφιάτλαγιοκουτλ",
+        "Eïgiafiátlagiokoutl"
+      ],
+      [
+        "Εΐτζι",
+        "Eḯtzi"
+      ],
+      [
+        "Μυρτώο",
+        "Myrtó̱o"
+      ],
+      [
+        "αέρας",
+        "aéras"
+      ],
+      [
+        "γαυ γαυ",
+        "gaf̱ gaf̱"
+      ],
+      [
+        "Ταΰγετος",
+        "Taÿ́getos"
+      ],
+      [
+        "σπρέυ",
+        "spréy"
+      ],
+      [
+        "Αθήνα",
+        "Athí̱na"
+      ],
+      [
+        "Άγιον Όρος",
+        "Ágion Óros"
+      ],
+      [
+        "Άγραφα",
+        "Ágrafa"
+      ],
+      [
+        "Αγρίνιο",
+        "Agrínio"
+      ],
+      [
+        "Αίγινα",
+        "Aígina"
+      ],
+      [
+        "Αίγιο",
+        "Aígio"
+      ],
+      [
+        "Αλεξανδρούπολη",
+        "Alexandroúpoli̱"
+      ],
+      [
+        "Αλεποχώρι",
+        "Alepochó̱ri"
+      ],
+      [
+        "Αμοργός",
+        "Amorgós"
+      ],
+      [
+        "Άμφισσα",
+        "Ámfissa"
+      ],
+      [
+        "Αράχωβα",
+        "Arácho̱va"
+      ],
+      [
+        "Άργος",
+        "Árgos"
+      ],
+      [
+        "Αρκαδία",
+        "Arkadía"
+      ],
+      [
+        "Άρτα",
+        "Árta"
+      ],
+      [
+        "Βελούχι",
+        "Veloúchi"
+      ],
+      [
+        "Βέροια",
+        "Véroia"
+      ],
+      [
+        "Βοιωτία",
+        "Voio̱tía"
+      ],
+      [
+        "Βόλος",
+        "Vólos"
+      ],
+      [
+        "Βόνιτσα",
+        "Vónitsa"
+      ],
+      [
+        "Γαλαξίδι",
+        "Galaxídi"
+      ],
+      [
+        "Γαλάτσι",
+        "Galátsi"
+      ],
+      [
+        "Γιαννιτσά",
+        "Giannitsá"
+      ],
+      [
+        "Γλυφάδα",
+        "Glyfáda"
+      ],
+      [
+        "Γρανίτσα",
+        "Granítsa"
+      ],
+      [
+        "Γρεβενά",
+        "Grevená"
+      ],
+      [
+        "Γύθειο",
+        "Gýtheio"
+      ],
+      [
+        "Διόνυσος",
+        "Diónysos"
+      ],
+      [
+        "Δίστομο",
+        "Dístomo"
+      ],
+      [
+        "Δολιανά",
+        "Dolianá"
+      ],
+      [
+        "Δράμα",
+        "Dráma"
+      ],
+      [
+        "Δωδεκάνησα",
+        "Do̱dekáni̱sa"
+      ],
+      [
+        "Έδεσσα",
+        "Édessa"
+      ],
+      [
+        "Ελευσίνα",
+        "Elef̱sína"
+      ],
+      [
+        "Επίδαυρος",
+        "Epídav̱ros"
+      ],
+      [
+        "Επτάνησα",
+        "Eptáni̱sa"
+      ],
+      [
+        "Ερμούπολη",
+        "Ermoúpoli̱"
+      ],
+      [
+        "Εύβοια",
+        "Év̱voia"
+      ],
+      [
+        "Ζάκυνθος",
+        "Zákynthos"
+      ],
+      [
+        "Ήπειρος",
+        "Í̱peiros"
+      ],
+      [
+        "Ηράκλειο",
+        "I̱rákleio"
+      ],
+      [
+        "Θάσος",
+        "Thásos"
+      ],
+      [
+        "Θεσσαλονίκη",
+        "Thessaloníki̱"
+      ],
+      [
+        "Θεσσαλία",
+        "Thessalía"
+      ],
+      [
+        "Θεσπρωτία",
+        "Thespro̱tía"
+      ],
+      [
+        "Θήβα",
+        "Thí̱va"
+      ],
+      [
+        "Θράκη",
+        "Thráki̱"
+      ],
+      [
+        "Ιθάκη",
+        "Itháki̱"
+      ],
+      [
+        "Ίος",
+        "Íos"
+      ],
+      [
+        "Ιωάννινα",
+        "Io̱ánnina"
+      ],
+      [
+        "Καβάλα",
+        "Kavála"
+      ],
+      [
+        "Καλάβρυτα",
+        "Kalávryta"
+      ],
+      [
+        "Καλαμάτα",
+        "Kalamáta"
+      ],
+      [
+        "Καλαμπάκα",
+        "Kalampáka"
+      ],
+      [
+        "Καλύβια",
+        "Kalývia"
+      ],
+      [
+        "Κάλυμνος",
+        "Kálymnos"
+      ],
+      [
+        "Καρδίτσα",
+        "Kardítsa"
+      ],
+      [
+        "Καρπενήσι",
+        "Karpení̱si"
+      ],
+      [
+        "Κάρυστος",
+        "Kárystos"
+      ],
+      [
+        "Καστελλόριζο",
+        "Kastellórizo"
+      ],
+      [
+        "Καστοριά",
+        "Kastoriá"
+      ],
+      [
+        "Κατερίνη",
+        "Kateríni̱"
+      ],
+      [
+        "Κάτω Αχαΐα",
+        "Káto̱ Achaḯa"
+      ],
+      [
+        "Κερατέα",
+        "Keratéa"
+      ],
+      [
+        "Κέρκυρα",
+        "Kérkyra"
+      ],
+      [
+        "Κεφαλλονιά",
+        "Kefalloniá"
+      ],
+      [
+        "Κηφισιά",
+        "Ki̱fisiá"
+      ],
+      [
+        "Κιλκίς",
+        "Kilkís"
+      ],
+      [
+        "Κοζάνη",
+        "Kozáni̱"
+      ],
+      [
+        "Κολωνός",
+        "Kolo̱nós"
+      ],
+      [
+        "Κομοτηνή",
+        "Komoti̱ní̱"
+      ],
+      [
+        "Κόρινθος",
+        "Kórinthos"
+      ],
+      [
+        "Κορώνη",
+        "Koró̱ni̱"
+      ],
+      [
+        "Κρανίδι",
+        "Kranídi"
+      ],
+      [
+        "Κρέστενα",
+        "Kréstena"
+      ],
+      [
+        "Κρήτη",
+        "Krí̱ti̱"
+      ],
+      [
+        "Κύθηρα",
+        "Kýthi̱ra"
+      ],
+      [
+        "Κυκλάδες",
+        "Kykládes"
+      ],
+      [
+        "Κύμη",
+        "Kými̱"
+      ],
+      [
+        "Κυψέλη",
+        "Kypséli̱"
+      ],
+      [
+        "Κως",
+        "Ko̱s"
+      ],
+      [
+        "Λαγκαδάς",
+        "Lagkadás"
+      ],
+      [
+        "Λαμία",
+        "Lamía"
+      ],
+      [
+        "Λάρισα",
+        "Lárisa"
+      ],
+      [
+        "Λαύριο",
+        "Láv̱rio"
+      ],
+      [
+        "Λέρος",
+        "Léros"
+      ],
+      [
+        "Λέσβος",
+        "Lésvos"
+      ],
+      [
+        "Λευκάδα",
+        "Lef̱káda"
+      ],
+      [
+        "Λήμνος",
+        "Lí̱mnos"
+      ],
+      [
+        "Λιβαδειά",
+        "Livadeiá"
+      ],
+      [
+        "Μακεδονία",
+        "Makedonía"
+      ],
+      [
+        "Μάνη",
+        "Máni̱"
+      ],
+      [
+        "Μαραθώνας",
+        "Marathó̱nas"
+      ],
+      [
+        "Μαρκόπουλο",
+        "Markópoulo"
+      ],
+      [
+        "Μαρούσι",
+        "Maroúsi"
+      ],
+      [
+        "Μέγαρα",
+        "Mégara"
+      ],
+      [
+        "Μεσολόγγι",
+        "Mesolóṉgi"
+      ],
+      [
+        "Μεταξουργείο",
+        "Metaxourgeío"
+      ],
+      [
+        "Μέτσοβο",
+        "Métsovo"
+      ],
+      [
+        "Μήλος",
+        "Mí̱los"
+      ],
+      [
+        "Μύκονος",
+        "Mýkonos"
+      ],
+      [
+        "Μυστράς",
+        "Mystrás"
+      ],
+      [
+        "Μυτιλήνη",
+        "Mytilí̱ni̱"
+      ],
+      [
+        "Νάξος",
+        "Náxos"
+      ],
+      [
+        "Νάουσα",
+        "Náousa"
+      ],
+      [
+        "Ναύπακτος",
+        "Náf̱paktos"
+      ],
+      [
+        "Ναύπλιο",
+        "Náf̱plio"
+      ],
+      [
+        "Νέα Σμύρνη",
+        "Néa Smýrni̱"
+      ],
+      [
+        "Νίσυρος",
+        "Nísyros"
+      ],
+      [
+        "Ξάνθη",
+        "Xánthi̱"
+      ],
+      [
+        "Όλυμπος",
+        "Ólympos"
+      ],
+      [
+        "Παγκράτι",
+        "Pagkráti"
+      ],
+      [
+        "Παπάγου",
+        "Papágou"
+      ],
+      [
+        "Πάρος",
+        "Páros"
+      ],
+      [
+        "Πασαλιμάνι",
+        "Pasalimáni"
+      ],
+      [
+        "Πατήσια",
+        "Patí̱sia"
+      ],
+      [
+        "Πάτμος",
+        "Pátmos"
+      ],
+      [
+        "Πάτρα",
+        "Pátra"
+      ],
+      [
+        "Πειραιάς",
+        "Peiraiás"
+      ],
+      [
+        "Πελοπόννησος",
+        "Pelopónni̱sos"
+      ],
+      [
+        "Περιστέρι",
+        "Peristéri"
+      ],
+      [
+        "Πεύκη",
+        "Péf̱ki̱"
+      ],
+      [
+        "Πήλιο",
+        "Pí̱lio"
+      ],
+      [
+        "Πολύγυρος",
+        "Polýgyros"
+      ],
+      [
+        "Πόρος",
+        "Póros"
+      ],
+      [
+        "Πρέβεζα",
+        "Préveza"
+      ],
+      [
+        "Πτολεμαΐδα",
+        "Ptolemaḯda"
+      ],
+      [
+        "Πύλος",
+        "Pýlos"
+      ],
+      [
+        "Πύργος",
+        "Pýrgos"
+      ],
+      [
+        "Ρέθυμνο",
+        "Réthymno"
+      ],
+      [
+        "Ρόδος",
+        "Ródos"
+      ],
+      [
+        "Ρούμελη",
+        "Roúmeli̱"
+      ],
+      [
+        "Σαλαμίνα",
+        "Salamína"
+      ],
+      [
+        "Σαμοθράκη",
+        "Samothráki̱"
+      ],
+      [
+        "Σάμος",
+        "Sámos"
+      ],
+      [
+        "Σαντορίνη",
+        "Santoríni̱"
+      ],
+      [
+        "Σέρρες",
+        "Sérres"
+      ],
+      [
+        "Σίκινος",
+        "Síkinos"
+      ],
+      [
+        "Σίφνος",
+        "Sífnos"
+      ],
+      [
+        "Σκιάθος",
+        "Skiáthos"
+      ],
+      [
+        "Σκόπελος",
+        "Skópelos"
+      ],
+      [
+        "Σούλι",
+        "Soúli"
+      ],
+      [
+        "Σπάρτη",
+        "Spárti̱"
+      ],
+      [
+        "Στερεά Ελλάδα",
+        "Stereá Elláda"
+      ],
+      [
+        "Στύρα",
+        "Stýra"
+      ],
+      [
+        "Σύμη",
+        "Sými̱"
+      ],
+      [
+        "Σύρος",
+        "Sýros"
+      ],
+      [
+        "Σφακιά",
+        "Sfakiá"
+      ],
+      [
+        "Τήλος",
+        "Tí̱los"
+      ],
+      [
+        "Τήνος",
+        "Tí̱nos"
+      ],
+      [
+        "Τρίκαλα",
+        "Tríkala"
+      ],
+      [
+        "Τρίπολη",
+        "Trípoli̱"
+      ],
+      [
+        "Τσακωνιά",
+        "Tsako̱niá"
+      ],
+      [
+        "Ύδρα",
+        "Ýdra"
+      ],
+      [
+        "Φάληρο",
+        "Fáli̱ro"
+      ],
+      [
+        "Φλώρινα",
+        "Fló̱rina"
+      ],
+      [
+        "Φολέγανδρος",
+        "Folégandros"
+      ],
+      [
+        "Χάλκη",
+        "Chálki̱"
+      ],
+      [
+        "Χαλκίδα",
+        "Chalkída"
+      ],
+      [
+        "Χαλάνδρι",
+        "Chalándri"
+      ],
+      [
+        "Χαλκιδική",
+        "Chalkidikí̱"
+      ],
+      [
+        "Χανιά",
+        "Chaniá"
+      ],
+      [
+        "Χίος",
+        "Chíos"
+      ],
+      [
+        "Ψαρά",
+        "Psará"
+      ],
+      [
+        "Αβάνα",
+        "Avána"
+      ],
+      [
+        "Αγγλία",
+        "Aṉglía"
+      ],
+      [
+        "Αϊβαλί",
+        "Aïvalí"
+      ],
+      [
+        "Αλεξάνδρεια",
+        "Alexándreia"
+      ],
+      [
+        "Άμστερνταμ",
+        "Ámsterntam"
+      ],
+      [
+        "Βαυαρία",
+        "Vav̱aría"
+      ],
+      [
+        "Βενετία",
+        "Venetía"
+      ],
+      [
+        "Βερολίνο",
+        "Verolíno"
+      ],
+      [
+        "Βερόνα",
+        "Veróna"
+      ],
+      [
+        "Βιέννη",
+        "Viénni̱"
+      ],
+      [
+        "Γένοβα",
+        "Génova"
+      ],
+      [
+        "Δουβλίνο",
+        "Douvlíno"
+      ],
+      [
+        "Καλαβρία",
+        "Kalavría"
+      ],
+      [
+        "Καλιφόρνια",
+        "Kalifórnia"
+      ],
+      [
+        "Καύκασος",
+        "Káf̱kasos"
+      ],
+      [
+        "Κονγκό",
+        "Kongkó"
+      ],
+      [
+        "Κορσική",
+        "Korsikí̱"
+      ],
+      [
+        "Κουρδιστάν",
+        "Kourdistán"
+      ],
+      [
+        "Κωνσταντινούπολη",
+        "Ko̱nstantinoúpoli̱"
+      ],
+      [
+        "Κατεχόμενη Κύπρος",
+        "Katechómeni̱ Kýpros"
+      ],
+      [
+        "Λαπωνία",
+        "Lapo̱nía"
+      ],
+      [
+        "Λευκωσία",
+        "Lef̱ko̱sía"
+      ],
+      [
+        "Λιβόρνο",
+        "Livórno"
+      ],
+      [
+        "Λονδίνο",
+        "Londíno"
+      ],
+      [
+        "Λυών",
+        "Lyó̱n"
+      ],
+      [
+        "Μάλαγα",
+        "Málaga"
+      ],
+      [
+        "Μασσαλία",
+        "Massalía"
+      ],
+      [
+        "Μικρονησία",
+        "Mikroni̱sía"
+      ],
+      [
+        "Μιλάνο",
+        "Miláno"
+      ],
+      [
+        "Μόσχα",
+        "Móscha"
+      ],
+      [
+        "Μπολόνια",
+        "Bolónia"
+      ],
+      [
+        "Νάπολη",
+        "Nápoli̱"
+      ],
+      [
+        "Νταγκεστάν",
+        "Ntagkestán"
+      ],
+      [
+        "Νέα Υόρκη",
+        "Néa Yórki̱"
+      ],
+      [
+        "Οξφόρδη",
+        "Oxfórdi̱"
+      ],
+      [
+        "Ουαλία",
+        "Oualía"
+      ],
+      [
+        "Παρίσι",
+        "Parísi"
+      ],
+      [
+        "Πάφος",
+        "Páfos"
+      ],
+      [
+        "Πολυνησία",
+        "Polyni̱sía"
+      ],
+      [
+        "Ρώμη",
+        "Ró̱mi̱"
+      ],
+      [
+        "Σαμάρεια",
+        "Samáreia"
+      ],
+      [
+        "Σικελία",
+        "Sikelía"
+      ],
+      [
+        "Σκανδιναβία",
+        "Skandinavía"
+      ],
+      [
+        "Σκόπια",
+        "Skópia"
+      ],
+      [
+        "Σκωτία",
+        "Sko̱tía"
+      ],
+      [
+        "Σμύρνη",
+        "Smýrni̱"
+      ],
+      [
+        "Ταϊτή",
+        "Taïtí̱"
+      ],
+      [
+        "Ταταρστάν",
+        "Tatarstán"
+      ],
+      [
+        "Τζαμάικα",
+        "Tzamáika"
+      ],
+      [
+        "Τηλλυρία",
+        "Ti̱llyría"
+      ],
+      [
+        "Τιρόλο",
+        "Tirólo"
+      ],
+      [
+        "Τορίνο",
+        "Toríno"
+      ],
+      [
+        "Φανάρι",
+        "Fanári"
+      ],
+      [
+        "Φλωρεντία",
+        "Flo̱rentía"
+      ],
+      [
+        "Χαβάη",
+        "Chavái̱"
+      ],
+      [
+        "Χονγκ Κονγκ",
+        "Chongk Kongk"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "F̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "F̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "f̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "f̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "V̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "v̱"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΑαΕεΗη"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Áf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Áf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Áv̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "áf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "áf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "αύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "áv̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Éf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Éf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Év̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "éf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "éf̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "εύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "év̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Í̱f̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Í̱f̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Í̱v̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "í̱f̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "í̱f̱"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ηύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "í̱v̱"
+          },
+          "not_after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "θΘκΚξΞπΠσΣςτΤφΦχΧψΨ"
+              },
+              {
+                "class": "Interscript::Node::Item::Alias",
+                "name": "boundary",
+                "map": null
+              }
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "U"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "Οο"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "u"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "Οο"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ύ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ú"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "Οο"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Υ"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΆάΈέΉήΌό"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "υ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "y"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ΆάΈέΉήΌό"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Γ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ṉ"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ξΞχΧ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "γ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ṉ"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ξΞχΧ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Γ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "Γγ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Ṉg"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "γγ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ṉg"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Γ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "Κκ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Gk"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "γ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "Κκ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "gk"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "B"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "b"
+          },
+          "before": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "B"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "b"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "Mp"
+          },
+          "not_before": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Group",
+            "children": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "μ"
+              },
+              {
+                "class": "Interscript::Node::Item::Any",
+                "type": "String",
+                "data": "πΠ"
+              }
+            ]
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "mp"
+          },
+          "not_before": {
+            "class": "Interscript::Node::Item::Alias",
+            "name": "boundary",
+            "map": null
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": ";"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "?"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": ";"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "?"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "'"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ""
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ά"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Á"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Α"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "A"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Β"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "V"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Γ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "G"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Δ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "D"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ε"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "E"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ΕΪ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Eï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Εϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Eï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Έϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Éï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Έϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Éï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ζ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Η"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "I̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Θ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Th"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ι"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "I"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Κ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "K"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Λ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "L"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Μ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "M"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ν"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "N"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ξ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "X"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ο"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "O"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Π"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "P"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ρ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "R"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Σ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "S"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Τ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "T"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Υ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Φ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "F"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Χ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ψ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ps"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ω"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "O̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Έ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "É"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ή"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Í̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ί"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Í"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ό"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ó"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ύ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ý"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ώ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ó̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ϋ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ÿ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ά"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "á"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "α"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "β"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "v"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "γ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "g"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "δ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ε"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "εϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "eï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "έϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "éï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "έι"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "éï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ζ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "η"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "θ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "th"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ι"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "κ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "k"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "λ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "μ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ν"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ξ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "x"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ο"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "π"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "p"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ρ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "σ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ς"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "τ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "υ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "φ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "f"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "χ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ch"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ψ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ps"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ω"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "έ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "é"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ή"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "í̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ί"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "í"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ό"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ó"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ύ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ý"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ώ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ó̱"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ϊ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ï"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ϋ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ÿ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ΐ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ḯ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ΰ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ÿ́"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "·"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ";"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "·"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ";"
+              }
+            }
+          ]
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Th"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ch"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ps"
+              }
+            ]
+          },
+          "to": "upcase",
+          "before": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Range",
+            "data": [
+              "A",
+              "Z"
+            ]
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Array",
+            "data": [
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Th"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ch"
+              },
+              {
+                "class": "Interscript::Node::Item::String",
+                "data": "Ps"
+              }
+            ]
+          },
+          "to": "upcase",
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "Range",
+            "data": [
+              "A",
+              "Z"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

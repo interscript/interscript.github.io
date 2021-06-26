@@ -1,0 +1,857 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "var",
+      "id": "lessing",
+      "language": "iso-639-2:mon",
+      "source_script": "Mong",
+      "destination_script": "Latn",
+      "name": "Transliteration Systems for Uyghur-Mongolian or Vertical or Old Script",
+      "url": "https://collab.its.virginia.edu/wiki/tibetan-script/Transliteration%20Schemes%20for%20Mongolian%20Vertical%20Script.html",
+      "creation_date": null,
+      "description": "The only system for the Mongolian vertical script which is used commonly throughout\nMongolian studies worldwide is the Vladimirtsov-Mostaert system (V-M). The only\ndictionary using this system is in an appendix to Antoine Mostaert’s Dictionnaire\nordos. Thus the Harvard Journal of Asiatic Studies specifies, “please use the written\nMongolian appendix to Antoine Mostaert’s Dictionnaire ordos. However, the V-M system\nhas many difficult diacriticals and non-Latin characters that constitute a significant\nproblem for editors and thus is difficult to recommend.\n",
+      "notes": [
+        "A separated final form of vowels a or e is common, and can appear at the end of a word, word stem, or suffix. This form rexuires a final-shaped preceding consonant and an inter-word gap in between. The vowels themselves appear as ᠎ᠠ, and with consonants as ‍ᠬ᠎ᠠ q‑a, ‍ᠷ᠎ᠠ r‑a/r‑e, etc. This gap can be transliterated with a hyphen. In digital typesetting, these forms are triggered by inserting a U+180E ᠎ MONGOLIAN VOWEL SEPARATOR (HTML &#6158; · MVS) between the consonant and vowel.",
+        "All case suffixes, as well as any plural suffixes consisting of one or two syllables are likewise separated by a preceding and hyphen-transliterated gap. In digital typesetting, this gap is represented by a U+202F   NARROW NO-BREAK SPACE (HTML &#8239; · NNBSP). A maximum of two case suffixes can be added to a stem. Single-letter vowel suffixes appear with the final-shaped forms of a/e, i, or u/ü, as in ᠭᠠᠵᠠᠷ ᠠ γaǰar‑a 'to the country' and ᠡᠳᠦᠷ ᠡ edür‑e 'on the day', or ᠤᠯᠤᠰ ᠢ ulus‑i 'the state' etc. Multi-letter suffixes most often start with an initial- (consonants), medial- (vowels), or variant-shaped form."
+      ]
+    }
+  },
+  "tests": {
+    "class": "Interscript::Node::Tests",
+    "data": [
+      [
+        "ᠬᠥᠬᠡᠬᠣᠲᠠ",
+        "køkexota"
+      ],
+      [
+        "ᠣᠷᠳᠣᠰ ᠬᠣᠲᠠ",
+        "ordos xota"
+      ],
+      [
+        "ᠪᠠᠶᠠᠨᠨᠠᠭᠤᠷ ᠬᠣᠲᠠ",
+        "bajannaγur xota"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠣᠲᠠ",
+        "ulaγanxota"
+      ],
+      [
+        "ᠬᠣᠣᠯᠢᠠ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "xoolia γoul xota"
+      ],
+      [
+        "ᠡᠷᠢᠶᠡᠨ ᠬᠣᠲᠠ",
+        "erijen xota"
+      ],
+      [
+        "ᠷᠠᠰᠢᠶᠠᠨ ᠬᠣᠲᠠ",
+        "rasijan xota"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "baγarin baraγun xosiγu"
+      ],
+      [
+        "ᠪᠠᠭᠠᠷᠢᠨ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "baγarin zegyn xosiγu"
+      ],
+      [
+        "ᠲᠦᠩᠯᠢᠶᠣᠤ ᠬᠣᠲᠠ",
+        "tynglijou xota"
+      ],
+      [
+        "ᠰᠢᠯᠢ ᠶᠢᠨ ᠬᠣᠲᠠ",
+        "sili-jin xota"
+      ],
+      [
+        "ᠬᠣᠷᠢᠨ ᠭᠡᠷ ᠰᠢᠶᠠᠨ",
+        "xorin ger sijan"
+      ],
+      [
+        "ᠤᠳᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "uda toγoriγ"
+      ],
+      [
+        "ᠦᠬᠠᠢ ᠬᠣᠲᠠ",
+        "yxai xota"
+      ],
+      [
+        "ᠬᠠᠶᠢᠨᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xainan toγoriγ"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xairub-un toxoi toγoriγ"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ",
+        "ulaγancab xota"
+      ],
+      [
+        "ᠵᠢᠨᠢᠩ ᠲᠣᠭᠣᠷᠢᠭ",
+        "zining toγoriγ"
+      ],
+      [
+        "ᠹᠸᠩᠵᠸᠡ ᠬᠣᠲᠠ",
+        "fvngzve xota"
+      ],
+      [
+        "ᠱᠠᠩᠳᠤ ᠰᠢᠶᠠᠨ",
+        "šangdu sijan"
+      ],
+      [
+        "ᠯᠢᠶᠠᠩᠴᠠᠩ ᠰᠢᠶᠠᠨ",
+        "lijangcang sijan"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "caxar baraγun γarun emynedy xosiγu"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "caxar baraγun γarun dumdadu xosiγu"
+      ],
+      [
+        "ᠴᠠᠬᠠᠷ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "caxar baraγun γarun xoitu xosiγu"
+      ],
+      [
+        "ᠳᠥᠷᠪᠡᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dørbed xosiγu"
+      ],
+      [
+        "ᠪᠤᠭᠤᠲᠤ ᠬᠣᠲᠠ",
+        "buγutu xota"
+      ],
+      [
+        "ᠬᠥᠨᠳᠡᠯᠡᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "køndelen toγoriγ"
+      ],
+      [
+        "ᠴᠢᠩᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "cingšan toγoriγ"
+      ],
+      [
+        "ᠰᠢᠭᠤᠶᠢᠲᠤ ᠲᠣᠭᠣᠷᠢᠭ",
+        "siγuitu toγoriγ"
+      ],
+      [
+        "ᠵᠢᠦ ᠶᠤᠸᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "ziy juvan toγoriγ"
+      ],
+      [
+        "ᠭᠦᠶᠠᠩ ᠰᠢᠶᠠᠨ",
+        "gyjang sijan"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tymed zegyn xosiγu"
+      ],
+      [
+        "ᠲᠦᠮᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "tymed baraγun xosiγu"
+      ],
+      [
+        "ᠳᠠᠷᠬᠠᠨ ᠮᠤᠤᠮᠢᠩᠭ᠋ᠠᠨ ᠬᠣᠯᠪᠣᠭᠠᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "darxan muumingγ᠋an xolboγatu xosiγu"
+      ],
+      [
+        "ᠬᠡᠰᠢᠭᠲᠡᠨ ᠬᠣᠰᠢᠭᠤ",
+        "kesiγten xosiγu"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e barγu zegyn xosiγu"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "sin-e barγu baraγun xosiγu"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠬᠣᠰᠢᠭᠤ",
+        "otoγ xosiγu"
+      ],
+      [
+        "ᠳᠠᠯᠠᠳ ᠬᠣᠰᠢᠭᠤ",
+        "dalad xosiγu"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨᠭᠠᠷ ᠬᠣᠰᠢᠭᠤ",
+        "zegynγar xosiγu"
+      ],
+      [
+        "ᠣᠲᠣᠭ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "otoγ-un emynedy xosiγu"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "xanggin xosiγu"
+      ],
+      [
+        "ᠦᠦᠰᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "yysin xosiγu"
+      ],
+      [
+        "ᠡᠵᠢᠨ ᠬᠣᠷᠣᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "ezin xoroγ-a xosiγu"
+      ],
+      [
+        "ᠵᠠᠯᠠᠨ ᠠᠢ᠌ᠯ ᠬᠣᠲᠠ",
+        "zalan ai᠌l xota"
+      ],
+      [
+        "ᠶᠠᠭᠰᠢ ᠬᠣᠲᠠ",
+        "jaγsi xota"
+      ],
+      [
+        "ᠮᠠᠨᠵᠤᠤᠷ ᠬᠣᠲᠠ",
+        "manzuur xota"
+      ],
+      [
+        "ᠬᠠᠶᠢᠯᠠᠷ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xailar toγoriγ"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xorcin toγoriγ"
+      ],
+      [
+        "ᠺᠠᠶᠢᠯᠦ ᠰᠢᠶᠠᠨ",
+        "kaily sijan"
+      ],
+      [
+        "ᠬᠦᠷᠢᠶ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "kyrij-e xosiγu"
+      ],
+      [
+        "ᠨᠠᠢᠮᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "naiman xosiγu"
+      ],
+      [
+        "ᠵᠠᠷᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "zarud xosiγu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "xorcin baraγun γarun dumdadu xosiγu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "xorcin zegyn γarun dumdadu xosiγu"
+      ],
+      [
+        "ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "xorcin zegyn γarun xoitu xosiγu"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠬᠠᠳᠠ ᠬᠣᠲᠠ",
+        "ulaγanxada xota"
+      ],
+      [
+        "ᠰᠡᠷᠡᠴᠢ",
+        "sereci"
+      ],
+      [
+        "ᠭᠡᠭᠡᠨ ᠭᠣᠤᠯ ᠬᠣᠲᠠ",
+        "gegen γoul xota"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaša zegyn xosiγu"
+      ],
+      [
+        "ᠠᠯᠠᠱᠠ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "alaša baraγun xosiγu"
+      ],
+      [
+        "ᠡᠵᠡᠨ᠎ᠡ ᠬᠣᠰᠢᠭᠤ",
+        "ezen-e xosiγu"
+      ],
+      [
+        "ᠬᠥᠪᠡᠭᠡᠲᠦ ᠰᠢᠷ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "købegety sir-a xosiγu"
+      ],
+      [
+        "ᠦᠶᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "yjuvan sijan"
+      ],
+      [
+        "ᠦᠴᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "ycuvan sijan"
+      ],
+      [
+        "ᠲᠦᠴᠢᠤᠸᠠᠨ ᠰᠢᠶᠠᠨ",
+        "tyciuvan sijan"
+      ],
+      [
+        "ᠯᠢᠨᠰᠢ ᠰᠢᠶᠠᠨ",
+        "linsi sijan"
+      ],
+      [
+        "ᠬᠠᠷᠠᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "xaracin xosiγu"
+      ],
+      [
+        "ᠠᠤᠬᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "auxan xosiγu"
+      ],
+      [
+        "ᠬᠣᠳᠣᠩ ᠠᠷᠠᠳ ᠤᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xodong arad-un toγoriγ"
+      ],
+      [
+        "ᠰᠠᠶᠢᠬᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "saixan toγoriγ"
+      ],
+      [
+        "ᠰᠢᠨ᠎ᠡ ᠬᠣᠲᠠ ᠲᠣᠭᠣᠷᠢᠭ",
+        "sin-e xota toγoriγ"
+      ],
+      [
+        "ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ",
+        "xairub-un toxoi toγoriγ"
+      ],
+      [
+        "ᠰᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "syng šan toγoriγ"
+      ],
+      [
+        "ᠬᠦᠩ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "kyng šan toγoriγ"
+      ],
+      [
+        "ᠠᠷᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "arun xosiγu"
+      ],
+      [
+        "ᠶᠤᠸᠠᠨ ᠪᠣᠣ ᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ",
+        "juvan boo šan toγoriγ"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠪᠡᠭᠡᠲᠦ ᠴᠠᠭᠠᠨ ᠬᠣᠰᠢᠭᠤ",
+        "siluγun købegety caγan xosiγu"
+      ],
+      [
+        "ᠰᠢᠯᠤᠭᠤᠨ ᠬᠥᠬᠡ ᠬᠣᠰᠢᠭᠤ",
+        "siluγun køke xosiγu"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠳᠤᠮᠳᠠᠳᠤ ᠬᠣᠰᠢᠭᠤ",
+        "urad-un dumdadu xosiγu"
+      ],
+      [
+        "ᠤᠷᠠᠳ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ",
+        "urad-un emynedy xosiγu"
+      ],
+      [
+        "ᠲᠣᠭᠲᠠᠬᠤ ᠰᠢᠶᠠᠨ",
+        "toγtaxu sijan"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ",
+        "søned zegyn xosiγu"
+      ],
+      [
+        "ᠰᠥᠨᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ",
+        "søned baraγun xosiγu"
+      ],
+      [
+        "ᠣᠩᠨᠢᠭᠤᠳ ᠬᠣᠰᠢᠭᠤ",
+        "ongniγud xosiγu"
+      ],
+      [
+        "ᠵᠠᠯᠠᠢᠳ ᠬᠣᠰᠢᠭᠤ",
+        "zalaid xosiγu"
+      ],
+      [
+        "ᠬᠠᠩᠭᠢᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ",
+        "xanggin xoitu xosiγu"
+      ],
+      [
+        "ᠵᠡᠭᠦᠨ ᠤᠵᠤᠮᠤᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "zegyn uzumucin xosiγu"
+      ],
+      [
+        "ᠠᠷᠤ ᠬᠣᠷᠴᠢᠨ ᠬᠣᠰᠢᠭᠤ",
+        "aru xorcin xosiγu"
+      ],
+      [
+        "ᠠᠪᠠᠭ᠎ᠠ ᠬᠣᠰᠢᠭᠤ",
+        "abaγ-a xosiγu"
+      ],
+      [
+        "ᠪᠤᠷᠢᠶᠠᠳ",
+        "burijad"
+      ],
+      [
+        "ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ",
+        "ulaγanbaγatur"
+      ],
+      [
+        "ᠴᠢᠩᠭᠢᠰ ᠬᠠᠭᠠᠨ",
+        "cinggis xaγan"
+      ]
+    ]
+  },
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+  },
+  "stages": {
+    "main": {
+      "class": "Interscript::Node::Stage",
+      "name": "main",
+      "children": [
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠬ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "k"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ᠡᠢᠥᠦ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠭ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "g"
+          },
+          "after": {
+            "class": "Interscript::Node::Item::Any",
+            "type": "String",
+            "data": "ᠡᠢᠥᠦ"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠠᠶᠢ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ai"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠡᠶᠢ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ei"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠣᠶᠢ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "oi"
+          }
+        },
+        {
+          "class": "Interscript::Node::Rule::Sub",
+          "from": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ᠤᠶᠢ"
+          },
+          "to": {
+            "class": "Interscript::Node::Item::String",
+            "data": "ui"
+          }
+        },
+        {
+          "class": "Interscript::Node::Group::Parallel",
+          "children": [
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠠ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "a"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠡ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "e"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠢ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "i"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠣ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "o"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠤ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "u"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠥ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ø"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠦ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "y"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠨ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "n"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠩ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ng"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠬ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "x"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠭ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "γ"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠪ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "b"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠫ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "p"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠹ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "f"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠰ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "s"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠱ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "š"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠲ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "t"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠳ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "d"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠯ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "l"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠮ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "m"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠴ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "c"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠵ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "z"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠶ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "j"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠺ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "k"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠷ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "r"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠸ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "v"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "ᠾ"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "h"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "᠁"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "..."
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "᠂"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ","
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "᠃"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "."
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "᠄"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": ":"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": "᠎"
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "-"
+              }
+            },
+            {
+              "class": "Interscript::Node::Rule::Sub",
+              "from": {
+                "class": "Interscript::Node::Item::String",
+                "data": " "
+              },
+              "to": {
+                "class": "Interscript::Node::Item::String",
+                "data": "-"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "class": "Interscript::Node::Document",
+  "metadata": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+    }
+  },
+  "tests": null,
+  "dependencies": [
+
+  ],
+  "dep_aliases": {
+  },
+  "aliases": {
+    "bel_consonant": {
+      "class": "Interscript::Node::AliasDef",
+      "name": "bel_consonant",
+      "data": {
+        "class": "Interscript::Node::Item::Any",
+        "type": "String",
+        "data": "БбВвГгДдЖжЗзЙйКкЛлМмНнПпРрСсТтФфХхЦцЧчШш"
+      }
+    },
+    "cyrl_upper": {
+      "class": "Interscript::Node::AliasDef",
+      "name": "cyrl_upper",
+      "data": {
+        "class": "Interscript::Node::Item::Any",
+        "type": "String",
+        "data": "AБBГДЕЁЖЗИЙКЛМНОПРСТУЎФХЦЧШЩЪЫЬЭЮЯІ"
+      }
+    }
+  },
+  "stages": {
+  }
+}
