@@ -29,15 +29,35 @@ const treeData = [
   },
 ];
 
+// function transformTree(stagesTree) {
+//   let id = 0;
+//   const flattened = [];
+
+//   const expandBranch = (tree, parentId) => {
+//     tree.forEach(branch => {
+//       id++;
+//       flattened.push({
+//         id: id,
+        
+//       })
+//     })
+//   }
+// }
+
 export default () => {
   const {
     system,
     mapData,
   }: {
     system: string;
-    mapData: string;
+    mapData: any;
   } = useRouteData();
   console.log(system, mapData);
+  // const stagesTree = mapData.stages.main.children.map((stage) => {
+  //   return {
+  //     ke
+  //   }
+  // })
   return (
     <React.Fragment>
       <HeaderMenu />
