@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouteData } from 'react-static';
 import styled from 'styled-components';
 import { Link } from '@reach/router';
@@ -32,13 +32,12 @@ const treeData = [
 export default () => {
   const {
     system,
-    htmlData,
+    mapData,
   }: {
     system: string;
-    htmlData: string;
+    mapData: string;
   } = useRouteData();
-
-  console.log(system);
+  console.log(system, mapData);
   return (
     <React.Fragment>
       <HeaderMenu />
