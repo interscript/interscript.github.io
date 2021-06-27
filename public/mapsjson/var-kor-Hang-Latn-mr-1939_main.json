@@ -1,0 +1,2069 @@
+[
+  {
+    "type": "Run",
+    "doc": "var-kor-Hang-Hang-jamo",
+    "stage": "main"
+  },
+  {
+    "type": "Replace",
+    "from": "line start",
+    "to": "<ruby><kbd> </kbd><rt>0020</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "line end",
+    "to": "<ruby><kbd> </kbd><rt>0020</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆩ</kbd><rt>11a9</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆩ</kbd><rt>11a9</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆪ</kbd><rt>11aa</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆪ</kbd><rt>11aa</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆬ</kbd><rt>11ac</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆬ</kbd><rt>11ac</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆭ</kbd><rt>11ad</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆭ</kbd><rt>11ad</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆭ</kbd><rt>11ad</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆭ</kbd><rt>11ad</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆭ</kbd><rt>11ad</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆮ</kbd><rt>11ae</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>, <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>, <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>, <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>, <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>, <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>, <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>, <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>, <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>, <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>, <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>, <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>, <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>, <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>, <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>, <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>, <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>, <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆳ</kbd><rt>11b3</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆳ</kbd><rt>11b3</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆴ</kbd><rt>11b4</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆴ</kbd><rt>11b4</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆵ</kbd><rt>11b5</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆵ</kbd><rt>11b5</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>, <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>, <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆵ</kbd><rt>11b5</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆶ</kbd><rt>11b6</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆶ</kbd><rt>11b6</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆶ</kbd><rt>11b6</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆶ</kbd><rt>11b6</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆶ</kbd><rt>11b6</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆹ</kbd><rt>11b9</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆹ</kbd><rt>11b9</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆻ</kbd><rt>11bb</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆻ</kbd><rt>11bb</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆽ</kbd><rt>11bd</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆽ</kbd><rt>11bd</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆾ</kbd><rt>11be</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆾ</kbd><rt>11be</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆿ</kbd><rt>11bf</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆿ</kbd><rt>11bf</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇀ</kbd><rt>11c0</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇀ</kbd><rt>11c0</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇁ</kbd><rt>11c1</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇁ</kbd><rt>11c1</rt></ruby> + kor maybedash",
+    "to": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇂ</kbd><rt>11c2</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇂ</kbd><rt>11c2</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇂ</kbd><rt>11c2</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇂ</kbd><rt>11c2</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇂ</kbd><rt>11c2</rt></ruby> + kor maybedash",
+    "to": "<nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆮ</kbd><rt>11ae</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby><ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + <nobr>capture group (</nobr><ruby><kbd>-</kbd><rt>002d</rt></ruby>) + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>r</kbd><rt>0072</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "before: kor beforeterm, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>r</kbd><rt>0072</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1)",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: kor beforeterm, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: kor beforeterm"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆱ</kbd><rt>11b1</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby><ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby> + kor maybedash + <ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby> + <nobr>capture reference (</nobr>1) + <ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄀ</kbd><rt>1100</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄂ</kbd><rt>1102</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄃ</kbd><rt>1103</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄅ</kbd><rt>1105</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄆ</kbd><rt>1106</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄇ</kbd><rt>1107</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>, after: <ruby><kbd>ᅱ</kbd><rt>1171</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄉ</kbd><rt>1109</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄋ</kbd><rt>110b</rt></ruby>",
+    "to": "",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄌ</kbd><rt>110c</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄎ</kbd><rt>110e</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄏ</kbd><rt>110f</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>, after: <nobr>any (</nobr><ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>, <ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>, <ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>, <ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>, <ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>, <ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>, <ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄐ</kbd><rt>1110</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄑ</kbd><rt>1111</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄒ</kbd><rt>1112</rt></ruby>",
+    "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄁ</kbd><rt>1101</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄭ</kbd><rt>112d</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄄ</kbd><rt>1104</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄯ</kbd><rt>112f</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄈ</kbd><rt>1108</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄲ</kbd><rt>1132</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄊ</kbd><rt>110a</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄍ</kbd><rt>110d</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᄶ</kbd><rt>1136</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "before: <ruby><kbd> </kbd><rt>0020</rt></ruby>"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅡ</kbd><rt>1161</rt></ruby>",
+    "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅣ</kbd><rt>1163</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅥ</kbd><rt>1165</rt></ruby>",
+    "to": "<ruby><kbd>ŏ</kbd><rt>014f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅧ</kbd><rt>1167</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>ŏ</kbd><rt>014f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅩ</kbd><rt>1169</rt></ruby>",
+    "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅭ</kbd><rt>116d</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅮ</kbd><rt>116e</rt></ruby>",
+    "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅲ</kbd><rt>1172</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅳ</kbd><rt>1173</rt></ruby>",
+    "to": "<ruby><kbd>ŭ</kbd><rt>016d</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅵ</kbd><rt>1175</rt></ruby>",
+    "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅢ</kbd><rt>1162</rt></ruby>",
+    "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅤ</kbd><rt>1164</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅦ</kbd><rt>1166</rt></ruby>",
+    "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅨ</kbd><rt>1168</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅬ</kbd><rt>116c</rt></ruby>",
+    "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅱ</kbd><rt>1171</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅴ</kbd><rt>1174</rt></ruby>",
+    "to": "<ruby><kbd>ŭ</kbd><rt>016d</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅪ</kbd><rt>116a</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅯ</kbd><rt>116f</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>ŏ</kbd><rt>014f</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅫ</kbd><rt>116b</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᅰ</kbd><rt>1170</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆨ</kbd><rt>11a8</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆫ</kbd><rt>11ab</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆮ</kbd><rt>11ae</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆯ</kbd><rt>11af</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆷ</kbd><rt>11b7</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆸ</kbd><rt>11b8</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆺ</kbd><rt>11ba</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆼ</kbd><rt>11bc</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆽ</kbd><rt>11bd</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆾ</kbd><rt>11be</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆿ</kbd><rt>11bf</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇀ</kbd><rt>11c0</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᇁ</kbd><rt>11c1</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆰ</kbd><rt>11b0</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ᆲ</kbd><rt>11b2</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd> </kbd><rt>0020</rt></ruby>, <ruby><kbd>-</kbd><rt>002d</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<nobr>capture group (</nobr><nobr>any (</nobr><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>, <ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>’</kbd><rt>2019</rt></ruby>, <ruby><kbd>j</kbd><rt>006a</rt></ruby>, <ruby><kbd>s</kbd><rt>0073</rt></ruby>, <ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>s</kbd><rt>0073</rt></ruby>)) + <ruby><kbd>y</kbd><rt>0079</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "line start + <ruby><kbd> </kbd><rt>0020</rt></ruby>",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd> </kbd><rt>0020</rt></ruby> + line end",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Decompose",
+    "more": ""
+  }
+]

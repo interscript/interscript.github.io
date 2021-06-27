@@ -182,7 +182,7 @@ export default {
               },
               system,
               mapData: JSON.parse(fs.readFileSync(
-                `./public/mapsjson/${system}.json`,
+                `./public/mapsjson/${system}_main.json`,
                 'utf8'
               )),
             }),

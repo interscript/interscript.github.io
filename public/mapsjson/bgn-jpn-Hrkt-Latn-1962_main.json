@@ -1,0 +1,168 @@
+[
+  {
+    "type": "Replace",
+    "from": "<nobr>any (</nobr><ruby><kbd>ん</kbd><rt>3093</rt></ruby>, <ruby><kbd>ン</kbd><rt>30f3</rt></ruby>)",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ば</kbd><rt>3070</rt></ruby>, <ruby><kbd>び</kbd><rt>3073</rt></ruby>, <ruby><kbd>ぶ</kbd><rt>3076</rt></ruby>, <ruby><kbd>べ</kbd><rt>3079</rt></ruby>, <ruby><kbd>ぼ</kbd><rt>307c</rt></ruby>, <ruby><kbd>ま</kbd><rt>307e</rt></ruby>, <ruby><kbd>み</kbd><rt>307f</rt></ruby>, <ruby><kbd>む</kbd><rt>3080</rt></ruby>, <ruby><kbd>め</kbd><rt>3081</rt></ruby>, <ruby><kbd>も</kbd><rt>3082</rt></ruby>, <ruby><kbd>ぱ</kbd><rt>3071</rt></ruby>, <ruby><kbd>ぴ</kbd><rt>3074</rt></ruby>, <ruby><kbd>ぷ</kbd><rt>3077</rt></ruby>, <ruby><kbd>ぺ</kbd><rt>307a</rt></ruby>, <ruby><kbd>ぽ</kbd><rt>307d</rt></ruby>, <ruby><kbd>バ</kbd><rt>30d0</rt></ruby>, <ruby><kbd>ビ</kbd><rt>30d3</rt></ruby>, <ruby><kbd>ブ</kbd><rt>30d6</rt></ruby>, <ruby><kbd>ベ</kbd><rt>30d9</rt></ruby>, <ruby><kbd>ボ</kbd><rt>30dc</rt></ruby>, <ruby><kbd>マ</kbd><rt>30de</rt></ruby>, <ruby><kbd>ミ</kbd><rt>30df</rt></ruby>, <ruby><kbd>ム</kbd><rt>30e0</rt></ruby>, <ruby><kbd>メ</kbd><rt>30e1</rt></ruby>, <ruby><kbd>モ</kbd><rt>30e2</rt></ruby>, <ruby><kbd>パ</kbd><rt>30d1</rt></ruby>, <ruby><kbd>ピ</kbd><rt>30d4</rt></ruby>, <ruby><kbd>プ</kbd><rt>30d7</rt></ruby>, <ruby><kbd>ペ</kbd><rt>30da</rt></ruby>, <ruby><kbd>ポ</kbd><rt>30dd</rt></ruby>)"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>け</kbd><rt>3051</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>, <ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ケ</kbd><rt>30b1</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>, <ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>&quot;</kbd><rt>0022</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ヶ</kbd><rt>30f6</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>は</kbd><rt>306f</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ひ</kbd><rt>3072</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>, <ruby><kbd>i</kbd><rt>0069</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ふ</kbd><rt>3075</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>f</kbd><rt>0066</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>, <ruby><kbd>u</kbd><rt>0075</rt></ruby>, <ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>へ</kbd><rt>3078</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>, <ruby><kbd>e</kbd><rt>0065</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ほ</kbd><rt>307b</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>, <ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ハ</kbd><rt>30cf</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>, <ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ヒ</kbd><rt>30d2</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>, <ruby><kbd>i</kbd><rt>0069</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>フ</kbd><rt>30d5</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>f</kbd><rt>0066</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>, <ruby><kbd>u</kbd><rt>0075</rt></ruby>, <ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ヘ</kbd><rt>30d8</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>, <ruby><kbd>e</kbd><rt>0065</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ホ</kbd><rt>30db</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>, <ruby><kbd>o</kbd><rt>006f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ゐ</kbd><rt>3090</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ゑ</kbd><rt>3091</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ヰ</kbd><rt>30f0</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ヱ</kbd><rt>30f1</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>く</kbd><rt>304f</rt></ruby><ruby><kbd>わ</kbd><rt>308f</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>く</kbd><rt>304f</rt></ruby><ruby><kbd>わ</kbd><rt>308f</rt></ruby><ruby><kbd>う</kbd><rt>3046</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>ō</kbd><rt>014d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ぐ</kbd><rt>3050</rt></ruby><ruby><kbd>わ</kbd><rt>308f</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ぐ</kbd><rt>3050</rt></ruby><ruby><kbd>わ</kbd><rt>308f</rt></ruby><ruby><kbd>う</kbd><rt>3046</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>ō</kbd><rt>014d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ク</kbd><rt>30af</rt></ruby><ruby><kbd>ワ</kbd><rt>30ef</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ク</kbd><rt>30af</rt></ruby><ruby><kbd>ワ</kbd><rt>30ef</rt></ruby><ruby><kbd>ウ</kbd><rt>30a6</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>ō</kbd><rt>014d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>グ</kbd><rt>30b0</rt></ruby><ruby><kbd>ワ</kbd><rt>30ef</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>グ</kbd><rt>30b0</rt></ruby><ruby><kbd>ワ</kbd><rt>30ef</rt></ruby><ruby><kbd>ウ</kbd><rt>30a6</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>ō</kbd><rt>014d</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "var-jpn-Hrkt-Latn-hepburn-1954",
+    "stage": "main"
+  }
+]

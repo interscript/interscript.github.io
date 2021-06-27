@@ -1,0 +1,24 @@
+[
+  {
+    "type": "Run",
+    "doc": "iso-ben-Beng-Latn-15919-2001",
+    "stage": "main"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৰ</kbd><rt>09f0</rt></ruby>",
+        "to": "<ruby><kbd>v</kbd><rt>0076</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৱ</kbd><rt>09f1</rt></ruby>",
+        "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

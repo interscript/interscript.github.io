@@ -1,0 +1,41 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Þ</kbd><rt>00de</rt></ruby>",
+        "to": "<ruby><kbd>&lt;</kbd><rt>003c</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>&gt;</kbd><rt>003e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>þ</kbd><rt>00fe</rt></ruby>",
+        "to": "<ruby><kbd>&lt;</kbd><rt>003c</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>&gt;</kbd><rt>003e</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "bgnpcgn-isl-Latn-Latn-1964",
+    "stage": "main"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>&lt;</kbd><rt>003c</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>&gt;</kbd><rt>003e</rt></ruby>",
+        "to": "<ruby><kbd>Þ</kbd><rt>00de</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>&lt;</kbd><rt>003c</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>&gt;</kbd><rt>003e</rt></ruby>",
+        "to": "<ruby><kbd>þ</kbd><rt>00fe</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]
