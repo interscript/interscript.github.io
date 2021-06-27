@@ -180,6 +180,7 @@ export default {
                 owner: repoOwner,
                 name: repoName,
               },
+              metadata,
               system,
               mapData: JSON.parse(fs.readFileSync(
                 `./public/mapsjson/${system}_main.json`,

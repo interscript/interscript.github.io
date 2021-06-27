@@ -11,28 +11,6 @@ import TreeMenu, {
 import classNames from "classnames";
 import "./systemView.css";
 
-const treeData = [
-  {
-    key: "first-level-node-1",
-    label: "Node 1 at the first level",
-    nodes: [
-      {
-        key: "second-level-node-1",
-        label: "Node 1 at the second level",
-        nodes: [
-          {
-            key: "third-level-node-1",
-            label: "Last node of the branch",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "first-level-node-2",
-    label: "Node 2 at the first level",
-  },
-];
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
@@ -87,18 +65,17 @@ const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
     className={classNames(
       "rstm-tree-item",
       `rstm-tree-item-level${level}`,
-      { "rstm-tree-item--active": active },
+      { "rstm-tree-item--active": isOpen },
       { "rstm-tree-item--focused": focused }
     )}
     style={{
-      paddingLeft: `${
-        DEFAULT_PADDING + ICON_SIZE * (hasNodes ? 0 : 1) + level * LEVEL_SPACE
-      }rem`,
+      paddingLeft: `${DEFAULT_PADDING + ICON_SIZE * (hasNodes ? 0 : 1) + level * LEVEL_SPACE
+        }rem`,
       ...style,
     }}
     role="button"
     aria-pressed={active}
-    onClick={onClick}
+    onClick={toggleNode}
   >
     {hasNodes && (
       <div
@@ -124,45 +101,150 @@ export default () => {
   const {
     system,
     mapData,
+    metadata
   }: {
     system: string;
     mapData: any;
+    metadata: any;
   } = useRouteData();
-  console.log(system, mapData);
+  console.log(system, metadata[system]);
   const stagesTree = mapData.map(transformTree);
-  console.log(stagesTree);
   return (
     <React.Fragment>
       <HeaderMenu />
-      {/* Add TreeView */}
-      <TreeMenu data={stagesTree}>
-        {({ search, items }) => (
-          <ul>
-            {items.map(({ key, ...props }) => (
-              <>
-                <Item>
-                  <ItemComponent key={key} {...props}>
-                    {props.label === "Replace" && (
-                      <div className="system-views">
-                        <SystemView
-                          dangerouslySetInnerHTML={{
-                            __html: props.nodeData.from,
-                          }}
-                        />
-                      <SystemView
-                        dangerouslySetInnerHTML={{
-                          __html: props.nodeData.to,
-                        }}
-                      />
-                      </div>
-                    )}
-                  </ItemComponent>
-                </Item>
-              </>
-            ))}
-          </ul>
-        )}
-      </TreeMenu>
+      <div className="main-wrapper">
+        {/* 
+      Add TreeView */}
+        <div className="first-column">
+
+          <div className="label">
+            <span>
+              Authority ID
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.authority_id}
+            </span>
+          </div>
+
+          <div className="label">
+            <span>
+              Creation date
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.creation_date}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Description
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.description}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Destination script
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.description_script}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Standard ID
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.id}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Language
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.language}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Name
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.name}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Source script
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.source_script}
+            </span>
+          </div>
+          <div className="label">
+            <span>
+              Url
+            </span>
+          </div>
+          <div className="value">
+            <span>
+              {metadata[system].data.url}
+            </span>
+          </div>
+        </div>
+        <div className="second-column">
+          <TreeMenu data={stagesTree}>
+            {({ search, items }) => (
+              <ul className="tree">
+                {items.map(({ key, ...props }) => (
+                  <>
+                    <ItemComponent key={key} {...props}>
+                      {props.label === "Replace" && (
+                        <div className="system-views">
+                          <SystemView
+                            dangerouslySetInnerHTML={{
+                              __html: props.nodeData.from,
+                            }}
+                          /> {'->'}
+                          <SystemView
+                            dangerouslySetInnerHTML={{
+                              __html: props.nodeData.to,
+                            }}
+                          />
+                                                    {/* <SystemView
+                            dangerouslySetInnerHTML={{
+                              __html: props.nodeData.more,
+                            }}
+                          /> */}
+                        </div>
+                      )}
+                    </ItemComponent>
+                  </>
+                ))}
+              </ul>
+            )}
+          </TreeMenu>
+        </div>
+
+      </div>
+
     </React.Fragment>
   );
 };
