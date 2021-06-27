@@ -1,0 +1,8 @@
+li {
+    display: block;
+    height:100%;
+}
+.system-views {
+    display:flex;
+    flex-direction: row;
+}
