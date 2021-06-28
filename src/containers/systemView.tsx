@@ -29,7 +29,7 @@ function transformTree(stage: any): any {
   if (stage.children) {
     node.nodes = stage.children.slice(0, RULE_SHOW_LIMIT).map(transformTree);
   }
-  delete stage.children;
+  // delete stage.children;
   node.nodeData = stage;
 
   return node;
@@ -138,6 +138,7 @@ export default () => {
     metaDataMap: InterscriptMetaDataMap;
   } = useRouteData();
 
+  console.log(mapData);
   const stagesTree = mapData.map(transformTree);
   const systemMetaData: InterscriptMetaData = metaDataMap[system];
   console.log(system, systemMetaData);

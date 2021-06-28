@@ -120,7 +120,7 @@ export default {
         nonstandard: rubyData["nonstandard"]
       });
     const metaDataMap = Object.keys(metadata).reduce((metalist, k)=>{metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
-    console.log(metaDataMap);
+    // console.log(metaDataMap);
 
     return [
       {
