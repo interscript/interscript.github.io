@@ -11,6 +11,7 @@ import TreeMenu, {
 import classNames from "classnames";
 import "./systemView.css";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
@@ -95,7 +96,7 @@ const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
 const SYSTEM_METADATA = [
   {
     caption: "Authority ID",
-    field: "authority_id",
+    field: "authorityId",
   },
   {
     caption: "Standard ID",
@@ -107,11 +108,11 @@ const SYSTEM_METADATA = [
   },
   {
     caption: "Source Script",
-    field: "source_script",
+    field: "sourceScript",
   },
   {
     caption: "Destination Script",
-    field: "destination_script",
+    field: "destinationScript",
   },
   {
     caption: "Name",
@@ -130,28 +131,31 @@ export default () => {
   const {
     system,
     mapData,
-    metadata,
+    metaDataMap,
   }: {
     system: string;
     mapData: any;
-    metadata: any;
+    metaDataMap: InterscriptMetaDataMap;
   } = useRouteData();
-  console.log(system, metadata[system]);
-  const stagesTree = mapData.map(transformTree);
 
+  const stagesTree = mapData.map(transformTree);
+  const systemMetaData: InterscriptMetaData = metaDataMap[system];
+  console.log(system, systemMetaData);
+  
   const metaFieldDelegate = (type: string) => {
     switch (type) {
       case "url":
         return (
-          <a href={metadata[system].data[type]} target="_blank">
-            {metadata[system].data[type]}
+          <a href={systemMetaData.url} target="_blank">
+            {systemMetaData.url}
           </a>
         );
       case "language":
-        const code = metadata[system].data[type]?.split(":")[1];
+        const code = systemMetaData.language?.split(":")[1];
         return getLanguageTitleFrom6392or3(code);
       default:
-        return metadata[system].data[type] || "";
+        // @ts-ignore
+        return systemMetaData[type] || "";
     }
   };
 
@@ -171,8 +175,8 @@ export default () => {
       </SystemMetaInfo>
       <div className="main-wrapper">
         <div className="chart-header">
-          <Sub>{metadata[system].data.source_script}</Sub>
-          <Sub>{metadata[system].data.destination_script}</Sub>
+          <Sub>{systemMetaData.sourceScript}</Sub>
+          <Sub>{systemMetaData.destinationScript}</Sub>
           <Sub>{"Condition"}</Sub>
         </div>
         {/*
