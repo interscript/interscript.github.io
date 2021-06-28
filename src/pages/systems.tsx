@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { FilterBar, Filters } from '../components/FilterBar';
 import { ScriptConversionSystem, systemFromCode } from '../scs';
 import { HeaderMenu } from '../components/HeaderMenu';
+import { InterscriptMetaDataMap } from "../meta";
 
 function uniq(item: string, pos: number, self: string) {
   return self.indexOf(item) == pos;
@@ -28,10 +29,10 @@ const SystemList = () => {
   const [filter, setFilter] = useState('');
   const {
     mapsInfo,
-    metadata,
+    metaDataMap,
   }: {
-    metadata: any;
     mapsInfo: any;
+    metaDataMap: InterscriptMetaDataMap;
   } = useRouteData();
   const [currentFilter, setCurrentFilter] = useState({
     keyword: '',
@@ -96,8 +97,8 @@ const SystemList = () => {
     .map((system: string) => (
       <li key={system}>
         <Link to={`/systems/${system}`} key={system}>
-          {metadata[system].data.name} ({metadata[system].data.source_script}{' '}
-          {'=>'} {metadata[system].data.destination_script}) {system}
+          {metaDataMap[system].name} ({metaDataMap[system].sourceScript}{' '}
+          {'=>'} {metaDataMap[system].destinationScript}) {system}
         </Link>
       </li>
     ));

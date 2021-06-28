@@ -11,7 +11,6 @@ import odniSamples from './src/samples/odni.json';
 import ogc11122Samples from './src/samples/ogc11122.json';
 import unSamples from './src/samples/un.json';
 import metadata from './src/samples/metadata.json';
-
 // import { ReadmeSection } from './types'
 
 const repoOwner = 'interscript';
@@ -102,6 +101,27 @@ export default {
       un = await evaluate(unSamples);
     }
 
+    // const metaList = {}
+    // Object.keys(metadata).map((system) => metaList[system] = camelCaseMetadata(metadata[system].data))
+    const camelCaseMetadata = (rubyData) => (
+      {
+        authorityId: rubyData["authority_id"],
+        id: rubyData["id"],
+        language: rubyData["language"],
+        sourceScript: rubyData["source_script"],
+        destinationScript: rubyData["destination_script"],
+        name: rubyData["name"],
+        url: rubyData["url"],
+        creationDate: rubyData["creation_date"],
+        confirmationDate: rubyData["confirmation_date"],
+        adoptionDate: rubyData["adoption_date"],
+        description: rubyData["description"],
+        notes: rubyData["notes"],
+        nonstandard: rubyData["nonstandard"]
+      });
+    const metaDataMap = Object.keys(metadata).reduce((metalist, k)=>{metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
+    // console.log(metaDataMap);
+
     return [
       {
         path: '/',
@@ -163,7 +183,7 @@ export default {
         getData: async () => ({
           readmeSections,
           mapsInfo,
-          metadata,
+          metaDataMap,
           repoInfo: {
             owner: repoOwner,
             name: repoName,
@@ -180,7 +200,7 @@ export default {
                 owner: repoOwner,
                 name: repoName,
               },
-              metadata,
+              metaDataMap,
               system,
               mapData: JSON.parse(fs.readFileSync(
                 `./public/mapsjson/${system}_main.json`,
