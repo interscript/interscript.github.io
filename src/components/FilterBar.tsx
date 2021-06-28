@@ -45,6 +45,7 @@ export function FilterBar(props: FilterBarProps) {
   return (
     <Form onSubmit={(e) => handleSubmit(e)}>
       <Select
+        key='authority-select'
         value={authority}
         name='authority'
         onChange={(e: ChangeEvent<HTMLSelectElement>) => {
@@ -62,6 +63,7 @@ export function FilterBar(props: FilterBarProps) {
         })}
       </Select>
       <Select
+        key='language-select'
         value={language}
         name='language'
         onChange={(e: ChangeEvent<HTMLSelectElement>) => {
@@ -79,6 +81,7 @@ export function FilterBar(props: FilterBarProps) {
         })}
       </Select>
       <Select
+        key='source-script-select'
         value={sourceScript}
         name='source'
         onChange={(e: ChangeEvent<HTMLSelectElement>) => {
@@ -89,13 +92,14 @@ export function FilterBar(props: FilterBarProps) {
         <option value=''>Select Source</option>
         {sources.map((source) => {
           return (
-            <option key={sourceScript} value={source}>
+            <option key={source} value={source}>
               {WritingSystem(source as WritingSystemCode)}
             </option>
           );
         })}
       </Select>
       <Select
+        key='destination-script-select'
         name='destination'
         value={destinationScript}
         onChange={(e) => {

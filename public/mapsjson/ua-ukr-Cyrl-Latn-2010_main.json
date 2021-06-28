@@ -1,0 +1,72 @@
+[
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ґ</kbd><rt>0490</rt></ruby>",
+        "to": "<ruby><kbd>G</kbd><rt>0047</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ґ</kbd><rt>0491</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Щ</kbd><rt>0429</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>щ</kbd><rt>0449</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "to": "",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "ua-ukr-Cyrl-Latn-1996",
+    "stage": "main"
+  }
+]

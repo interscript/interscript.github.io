@@ -1,0 +1,11 @@
+[
+  {
+    "type": "Run",
+    "doc": "mvd-rus-Cyrl-Latn-2008",
+    "stage": "translit"
+  },
+  {
+    "type": "Compose",
+    "more": ""
+  }
+]

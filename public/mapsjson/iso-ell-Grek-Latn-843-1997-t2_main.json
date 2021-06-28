@@ -1,0 +1,48 @@
+[
+  {
+    "type": "Run",
+    "doc": "elot-ell-Grek-Latn-743-1982-ts",
+    "stage": "main"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ϝ</kbd><rt>03dc</rt></ruby>",
+        "to": "<ruby><kbd>W</kbd><rt>0057</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ϝ</kbd><rt>03dd</rt></ruby>",
+        "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ϲ</kbd><rt>03f2</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ϲ</kbd><rt>03f9</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ϳ</kbd><rt>03f3</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ϳ</kbd><rt>037f</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

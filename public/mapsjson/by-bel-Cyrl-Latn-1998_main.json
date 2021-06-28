@@ -1,0 +1,251 @@
+[
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Е</kbd><rt>0415</rt></ruby>",
+    "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby><ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>е</kbd><rt>0435</rt></ruby>",
+    "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Ё</kbd><rt>0401</rt></ruby>",
+    "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby><ruby><kbd>O</kbd><rt>004f</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ё</kbd><rt>0451</rt></ruby>",
+    "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Ю</kbd><rt>042e</rt></ruby>",
+    "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby><ruby><kbd>U</kbd><rt>0055</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ю</kbd><rt>044e</rt></ruby>",
+    "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Я</kbd><rt>042f</rt></ruby>",
+    "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby><ruby><kbd>A</kbd><rt>0041</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>я</kbd><rt>044f</rt></ruby>",
+    "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+    "more": "before: bel consonant"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>З</kbd><rt>0417</rt></ruby><ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>Ź</kbd><rt>0179</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>з</kbd><rt>0437</rt></ruby><ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>ź</kbd><rt>017a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Л</kbd><rt>041b</rt></ruby><ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>Ĺ</kbd><rt>0139</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>л</kbd><rt>043b</rt></ruby><ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>ĺ</kbd><rt>013a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>С</kbd><rt>0421</rt></ruby><ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>Ś</kbd><rt>015a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>с</kbd><rt>0441</rt></ruby><ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>ś</kbd><rt>015b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ц</kbd><rt>0426</rt></ruby><ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>Ć</kbd><rt>0106</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ц</kbd><rt>0446</rt></ruby><ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>ć</kbd><rt>0107</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Н</kbd><rt>041d</rt></ruby><ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>Ń</kbd><rt>0143</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>н</kbd><rt>043d</rt></ruby><ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>ń</kbd><rt>0144</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>І</kbd><rt>0406</rt></ruby>",
+        "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Г</kbd><rt>0413</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Е</kbd><rt>0415</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ё</kbd><rt>0401</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ў</kbd><rt>040e</rt></ruby>",
+        "to": "<ruby><kbd>Ŭ</kbd><rt>016c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Х</kbd><rt>0425</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Э</kbd><rt>042d</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ю</kbd><rt>042e</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Я</kbd><rt>042f</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>г</kbd><rt>0433</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>і</kbd><rt>0456</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>е</kbd><rt>0435</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ё</kbd><rt>0451</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ў</kbd><rt>045e</rt></ruby>",
+        "to": "<ruby><kbd>ŭ</kbd><rt>016d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>х</kbd><rt>0445</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>э</kbd><rt>044d</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ю</kbd><rt>044e</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>я</kbd><rt>044f</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+        "to": "",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "gost-rus-Cyrl-Latn-16876-71-1983",
+    "stage": "main"
+  }
+]

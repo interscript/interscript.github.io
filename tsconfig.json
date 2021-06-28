@@ -10,7 +10,7 @@
     "noImplicitAny": true,
     "noUnusedLocals": false,
     "resolveJsonModule": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,

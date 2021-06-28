@@ -1,0 +1,60 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ъ</kbd><rt>042a</rt></ruby>",
+        "to": "<ruby><kbd>”</kbd><rt>201d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ъ</kbd><rt>044a</rt></ruby>",
+        "to": "<ruby><kbd>”</kbd><rt>201d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ю</kbd><rt>042e</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ю</kbd><rt>044e</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Я</kbd><rt>042f</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>я</kbd><rt>044f</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "gost-rus-Cyrl-Latn-16876-71-1983",
+    "stage": "main"
+  }
+]

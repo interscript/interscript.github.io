@@ -169,23 +169,26 @@ export default {
             name: repoName,
           },
         }),
-        children: (mapsInfo.data || []).map((system) => ({
-          path: `${system}`,
-          template: 'src/containers/systemView.tsx',
-          getData: async () => ({
-            readmeSections,
-            mapsInfo,
-            repoInfo: {
-              owner: repoOwner,
-              name: repoName,
-            },
-            system,
-            htmlData: fs.readFileSync(
-              `./public/visualizations/${system}.html`,
-              'utf8'
-            ),
-          }),
-        })),
+        children: (mapsInfo.data || []).map((system) => {
+          return {
+            path: `${system}`,
+            template: 'src/containers/systemView.tsx',
+            getData: async () => ({
+              readmeSections,
+              mapsInfo,
+              repoInfo: {
+                owner: repoOwner,
+                name: repoName,
+              },
+              metadata,
+              system,
+              mapData: JSON.parse(fs.readFileSync(
+                `./public/mapsjson/${system}_main.json`,
+                'utf8'
+              )),
+            }),
+          }
+        }),
       },
     ];
   },

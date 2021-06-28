@@ -1,0 +1,11 @@
+[
+  {
+    "type": "Run",
+    "doc": "moct-kor-Hang-Latn-2000",
+    "stage": "main"
+  },
+  {
+    "type": "Title case",
+    "more": ""
+  }
+]

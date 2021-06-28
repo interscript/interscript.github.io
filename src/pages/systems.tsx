@@ -28,7 +28,7 @@ const SystemList = () => {
   const [filter, setFilter] = useState('');
   const {
     mapsInfo,
-    metadata
+    metadata,
   }: {
     metadata: any;
     mapsInfo: any;
@@ -94,9 +94,10 @@ const SystemList = () => {
       return pass;
     })
     .map((system: string) => (
-      <li>
+      <li key={system}>
         <Link to={`/systems/${system}`} key={system}>
-          {metadata[system].data.name} ({metadata[system].data.source_script} {'=>'} {metadata[system].data.destination_script}) {system}
+          {metadata[system].data.name} ({metadata[system].data.source_script}{' '}
+          {'=>'} {metadata[system].data.destination_script}) {system}
         </Link>
       </li>
     ));
@@ -106,7 +107,6 @@ const SystemList = () => {
       <HeaderMenu />
 
       <SearchHeader>
-
         <span>System List: {list.length}</span>
         {/* FilterBar */}
         <FilterBar

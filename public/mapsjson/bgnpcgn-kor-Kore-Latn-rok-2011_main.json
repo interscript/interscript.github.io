@@ -1,0 +1,12 @@
+[
+  {
+    "type": "Run",
+    "doc": "var-kor-Kore-Hang-2013",
+    "stage": "main"
+  },
+  {
+    "type": "Run",
+    "doc": "moct-kor-Hang-Latn-2000",
+    "stage": "main"
+  }
+]
