@@ -10,11 +10,12 @@ import TreeMenu, {
 } from "react-simple-tree-menu";
 import classNames from "classnames";
 import "./systemView.css";
-
+import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
 const LEVEL_SPACE = 1.75;
+const RULE_SHOW_LIMIT = 100;
 
 function transformTree(stage: any): any {
   let node: any = {
@@ -25,7 +26,7 @@ function transformTree(stage: any): any {
   };
 
   if (stage.children) {
-    node.nodes = stage.children.map(transformTree);
+    node.nodes = stage.children.slice(0, RULE_SHOW_LIMIT).map(transformTree);
   }
   delete stage.children;
   node.nodeData = stage;
@@ -59,7 +60,6 @@ const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
   closedIcon = "+",
   label = "unknown",
   children,
-  style = {},
 }) => (
   <li
     className={classNames(
@@ -68,11 +68,6 @@ const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
       { "rstm-tree-item--active": isOpen },
       { "rstm-tree-item--focused": focused }
     )}
-    style={{
-      paddingLeft: `${DEFAULT_PADDING + ICON_SIZE * (hasNodes ? 0 : 1) + level * LEVEL_SPACE
-        }rem`,
-      ...style,
-    }}
     role="button"
     aria-pressed={active}
     onClick={toggleNode}
@@ -92,16 +87,50 @@ const ItemComponent: React.FunctionComponent<TreeMenuItem> = ({
         />
       </div>
     )}
-    {label}
+    {label === "Replace" ? " " : label}
     {children}
   </li>
 );
 
+const SYSTEM_METADATA = [
+  {
+    caption: "Authority ID",
+    field: "authority_id",
+  },
+  {
+    caption: "Standard ID",
+    field: "id",
+  },
+  {
+    caption: "Language",
+    field: "language",
+  },
+  {
+    caption: "Source Script",
+    field: "source_script",
+  },
+  {
+    caption: "Destination Script",
+    field: "destination_script",
+  },
+  {
+    caption: "Name",
+    field: "name",
+  },
+  {
+    caption: "URL",
+    field: "url",
+  },
+  {
+    caption: "Description",
+    field: "description",
+  },
+];
 export default () => {
   const {
     system,
     mapData,
-    metadata
+    metadata,
   }: {
     system: string;
     mapData: any;
@@ -109,158 +138,131 @@ export default () => {
   } = useRouteData();
   console.log(system, metadata[system]);
   const stagesTree = mapData.map(transformTree);
+
+  const metaFieldDelegate = (type: string) => {
+    switch (type) {
+      case "url":
+        return (
+          <a href={metadata[system].data[type]} target="_blank">
+            {metadata[system].data[type]}
+          </a>
+        );
+      case "language":
+        const code = metadata[system].data[type]?.split(":")[1];
+        return getLanguageTitleFrom6392or3(code);
+      default:
+        return metadata[system].data[type] || "";
+    }
+  };
+
+  const metaInfo = SYSTEM_METADATA.map((info) => (
+    <tr key={info.field}>
+      <td>{info.caption}</td>
+      <td>{metaFieldDelegate(info.field)}</td>
+    </tr>
+  ));
+
   return (
     <React.Fragment>
       <HeaderMenu />
+      <h3>System Name: {system}</h3>
+      <SystemMetaInfo>
+        <tbody>{metaInfo}</tbody>
+      </SystemMetaInfo>
       <div className="main-wrapper">
-        {/* 
-      Add TreeView */}
-        <div className="first-column">
-
-          <div className="label">
-            <span>
-              Authority ID
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.authority_id}
-            </span>
-          </div>
-
-          <div className="label">
-            <span>
-              Creation date
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.creation_date}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Description
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.description}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Destination script
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.description_script}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Standard ID
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.id}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Language
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.language}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Name
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.name}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Source script
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.source_script}
-            </span>
-          </div>
-          <div className="label">
-            <span>
-              Url
-            </span>
-          </div>
-          <div className="value">
-            <span>
-              {metadata[system].data.url}
-            </span>
-          </div>
+        <div className="chart-header">
+          <Sub>{metadata[system].data.source_script}</Sub>
+          <Sub>{metadata[system].data.destination_script}</Sub>
+          <Sub>{"Condition"}</Sub>
         </div>
+        {/*
+      Add TreeView */}
         <div className="second-column">
           <TreeMenu data={stagesTree}>
             {({ search, items }) => (
               <ul className="tree">
                 {items.map(({ key, ...props }) => (
-                  <>
-                    <ItemComponent key={key} {...props}>
-                      {props.label === "Replace" && (
-                        <div className="system-views">
-                          <SystemView
-                            dangerouslySetInnerHTML={{
-                              __html: props.nodeData.from,
-                            }}
-                          /> {'->'}
-                          <SystemView
-                            dangerouslySetInnerHTML={{
-                              __html: props.nodeData.to,
-                            }}
-                          />
-                                                    {/* <SystemView
-                            dangerouslySetInnerHTML={{
-                              __html: props.nodeData.more,
-                            }}
-                          /> */}
-                        </div>
-                      )}
-                    </ItemComponent>
-                  </>
+                  <ItemComponent key={key} {...props}>
+                    {props.label === "Replace" && (
+                      <div className="system-views">
+                        <Sub
+                          dangerouslySetInnerHTML={{
+                            __html: props.nodeData.from,
+                          }}
+                        />
+                        <Sub
+                          dangerouslySetInnerHTML={{
+                            __html: props.nodeData.to,
+                          }}
+                        />
+                        <Sub
+                          dangerouslySetInnerHTML={{
+                            __html: props.nodeData.more,
+                          }}
+                        />
+                      </div>
+                    )}
+                    {props.label === "Run" && (
+                      <a
+                        href={`/systems/${props.nodeData.doc}`}
+                        target="_blank"
+                      >
+                        {" " + props.nodeData.doc}
+                      </a>
+                    )}
+                  </ItemComponent>
                 ))}
               </ul>
             )}
           </TreeMenu>
         </div>
-
       </div>
-
     </React.Fragment>
   );
 };
 
-const SystemView = styled.div`
-
+const Sub = styled.div`
   left: 5rem;
+  flex: 1;
   table,
   th,
   td {
     border: 1px solid;
     border-collapse: collapse;
   }
+  ruby {
+    font-weight: bold;
+    rt {
+      font-size: 9px;
+    }
+    kbd {
+      white-space: pre;
+    }
+    &::after {
+      content: " ";
+      white-space: pre;
+    }
+  }
+  text-align: center;
 `;
 
 const Item = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const SystemMetaInfo = styled.table`
+  border-collapse: collapse;
+  tr {
+    display: flex;
+    flex: row;
+    td {
+      flex: 1;
+      border: 1px solid;
+      padding: 1rem 0.75rem;
+    }
+    td:nth-child(2) {
+      flex: 2;
+    }
+  }
 `;
