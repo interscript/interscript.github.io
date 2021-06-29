@@ -48,9 +48,11 @@ async function loadDocs() {
         .replace(new RegExp('_', 'g'), ' ');
       const name = html.name.split('/')[html.name.split('/').length - 1].replace('.adoc', '');
       const filepath = `${path}/${name}.html`;
+
       docsList.push({
         template: filepath,
         label: label,
+        link: `${name}.html`
       });
       return new Promise(resolve => { return fs.writeFile(`${path}/${name}.html`, html.data, resolve) });
     })
@@ -176,7 +178,7 @@ export default {
     const metaDataMap = Object.keys(metadata).reduce((metalist, k) => { metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
     // console.log(metaDataMap);
 
-    return [
+    const routes = [
       {
         path: '/',
         template: 'src/containers/Landing',
@@ -236,6 +238,16 @@ export default {
         template: 'src/pages/docs.tsx',
         getData: async () => ({
           docsList
+        }),
+        children: (docsList || []).map((doc) => {
+          console.log(doc);
+          return {
+            path: `${doc.link}`,
+            template: 'src/pages/docsView.tsx',
+            getData: async (doc) => {
+              console.log('doc', doc);
+            }
+          }
         })
       },
       {
@@ -272,6 +284,8 @@ export default {
         }),
       },
     ];
+    console.log(routes);
+    return routes;
   },
   plugins: [
     'react-static-plugin-typescript',

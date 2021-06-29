@@ -11,8 +11,8 @@ export default () => {
     return (
         <>
             <SectionNav>
-                {docsList.map((doc: { label: string, template: string}, idx: number) => (
-                    <Link to={`/docs/${doc.template}`} key={idx}>
+                {docsList.map((doc: { label: string, template: string, link: string}, idx: number) => (
+                    <Link to={`/docs/${doc.link}`} key={idx}>
                         <SectionNavItem>
                             <strong>{doc.label}</strong>
                         </SectionNavItem>
