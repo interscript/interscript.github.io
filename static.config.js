@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs, { stat } from 'fs';
 import path from 'path';
 import cheerio from 'cheerio';
 
@@ -11,12 +11,64 @@ import odniSamples from './src/samples/odni.json';
 import ogc11122Samples from './src/samples/ogc11122.json';
 import unSamples from './src/samples/un.json';
 import metadata from './src/samples/metadata.json';
+import walk from 'walk';
+
 // import { ReadmeSection } from './types'
 
 const repoOwner = 'interscript';
 const repoName = 'interscript';
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN });
+const asciidoctor = require('asciidoctor')();
+
+const docsList = [];
+async function loadDocs() {
+  // read all files from docs
+  const scanAsciiDocs = async () => {
+    return new Promise((resolve, reject) => {
+      const files = [];
+      const walker = walk.walk('./docs', { followLinks: false });
+
+      walker.on('file', (root, stat, next) => {
+        files.push(root + '/' + stat.name);
+        next();
+      })
+
+      walker.on('end', function () {
+        resolve(files);
+      });
+    })
+  }
+  const saveHtmls = (htmlData) => {
+    const promises = [];
+    promises.push(htmlData.map((html) => {
+      const path = './public/docs';
+      const label = html.name.split('/')[html.name.split('/').length - 1]
+        .replace('.adoc', '')
+        .replace(new RegExp('_', 'g'), ' ');
+      const name = html.name.split('/')[html.name.split('/').length - 1].replace('.adoc', '');
+      const filepath = `${path}/${name}.html`;
+      docsList.push({
+        template: filepath,
+        label: label,
+      });
+      return new Promise(resolve => { return fs.writeFile(`${path}/${name}.html`, html.data, resolve) });
+    })
+    );
+    return Promise.all(promises);
+  }
+
+  scanAsciiDocs().then((files) => {
+    // convert them into htmls
+    const htmls = files.map((file) => {
+      return { name: file, data: asciidoctor.convert(fs.readFileSync(file)) };
+    })
+    // push htmls to public directory
+    return saveHtmls(htmls);
+
+  })
+
+}
 
 export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
@@ -31,7 +83,9 @@ export default {
         },
       }
     );
-
+    // load docs
+    await loadDocs();
+    // load maps
     await Interscript.load_map_list();
     const maps = Interscript.map_list();
     const mapsInfo = {};
@@ -119,7 +173,7 @@ export default {
         notes: rubyData["notes"],
         nonstandard: rubyData["nonstandard"]
       });
-    const metaDataMap = Object.keys(metadata).reduce((metalist, k)=>{metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
+    const metaDataMap = Object.keys(metadata).reduce((metalist, k) => { metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
     // console.log(metaDataMap);
 
     return [
@@ -176,6 +230,13 @@ export default {
         getData: () => ({
           samples: un || unSamples,
         }),
+      },
+      {
+        path: 'docs',
+        template: 'src/pages/docs.tsx',
+        getData: async () => ({
+          docsList
+        })
       },
       {
         path: 'systems',
