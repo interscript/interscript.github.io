@@ -1,8 +1,6 @@
 import { Link } from "@reach/router";
 import React from "react";
 import { useRouteData } from "react-static";
-import { SectionNav } from "../components/SectionNav";
-import { SectionNavItem } from "../components/SectionNavItem";
 import { CardBody, Tile, TilesContainer } from "../components/Tiles";
 
 export default (props: { docsList?: Array<{ label: string, template: string, link: string }> }) => {
@@ -20,7 +18,6 @@ export default (props: { docsList?: Array<{ label: string, template: string, lin
                             <CardBody>
                                 <header><h3>{doc.label}</h3></header>
                             </CardBody>
-
                         </Tile>
                     </Link>
                 ))}

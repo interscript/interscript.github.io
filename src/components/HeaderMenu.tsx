@@ -47,6 +47,11 @@ export function HeaderMenu() {
             <strong>Docs</strong>
           </SectionNavItem>
         </Link>
+        <Link to='/blog'>
+          <SectionNavItem key='blog'>
+            <strong>Blog</strong>
+          </SectionNavItem>
+        </Link>
       </SectionNav>
     </>
   );

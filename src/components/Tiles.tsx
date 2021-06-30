@@ -15,7 +15,7 @@ export const Tile = styled.a`
     margin-bottom: 15px;
     box-shadow: 0px 4px 12px rgb(0 0 0 / 8%);
     transition: box-shadow .17s ease, transform .17s ease;
-    padding: 30px 30px 16px 30px;
+    padding: 30px 30px 30px 30px;
     position: relative;
     background: white;
     display: flex;

@@ -4,7 +4,6 @@ import cheerio from 'cheerio';
 
 import { Octokit } from '@octokit/rest';
 import Interscript from 'interscript';
-
 import alalcSamples from './src/samples/alalc.json';
 import bgnpcgnSamples from './src/samples/bgnpcgn.json';
 import odniSamples from './src/samples/odni.json';
@@ -253,6 +252,14 @@ export default {
             })
           }
         })
+      },
+      {
+        path: 'blog',
+        template: 'src/pages/blog.tsx',
+        children: [{
+          path: 'blogPost',
+          template: 'src/pages/blogPost.tsx'
+        }]
       },
       {
         path: 'systems',
