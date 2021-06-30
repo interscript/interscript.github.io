@@ -2,10 +2,13 @@ import styled from 'styled-components';
 
 export const TilesContainer = styled.div`
     display: flex;
+    width: 100%;
+    flex-direction: column;
     flex-flow: row wrap;
-    justify-content: flex-start;
     margin-top: 30px;
 `
+
+
 
 export const Tile = styled.a`
     color: inherit;
@@ -22,6 +25,7 @@ export const Tile = styled.a`
     flex-flow: column nowrap;
     overflow: hidden;
     margin-right: 15px;
+    margin-top: 0;
 `
 
 export const CardBody = styled.div`
@@ -37,4 +41,9 @@ export const Footer = styled.div`
     margin-top: 14px;
     color: grey;
     font-size: 14px;
+    display: flex;
+    place-content: flex-end;
+`
+export const H3 = styled.h3`
+    margin-top: 0
 `

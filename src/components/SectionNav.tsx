@@ -6,7 +6,7 @@ export const SectionNav = styled.nav`
     outline: none;
     text-decoration: none;
     @media screen and (min-width: 900px) {
-    text-align: unset;
-    margin: 2rem 0 1rem 1rem;
+        text-align: unset;
+        margin: 2rem 0 1rem 1rem;
     }
 `;
