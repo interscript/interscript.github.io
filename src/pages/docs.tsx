@@ -3,24 +3,28 @@ import React from "react";
 import { useRouteData } from "react-static";
 import { SectionNav } from "../components/SectionNav";
 import { SectionNavItem } from "../components/SectionNavItem";
+import { CardBody, Tile, TilesContainer } from "../components/Tiles";
 
-export default (props: { docsList?: Array<{ label: string, template: string, link: string}> }) => {
+export default (props: { docsList?: Array<{ label: string, template: string, link: string }> }) => {
     let { docsList } = props;
     if (!docsList) {
-        docsList =  useRouteData().docsList;
+        docsList = useRouteData().docsList;
     }
     // map docsList.tsx
     return (
         <>
-            <SectionNav>
-                {docsList.map((doc: { label: string, template: string, link: string}, idx: number) => (
+            <TilesContainer>
+                {docsList.map((doc: { label: string, template: string, link: string }, idx: number) => (
                     <Link to={`/docs/${doc.link}`} key={idx}>
-                        <SectionNavItem>
-                            <strong>{doc.label}</strong>
-                        </SectionNavItem>
+                        <Tile>
+                            <CardBody>
+                                <header><h3>{doc.label}</h3></header>
+                            </CardBody>
+
+                        </Tile>
                     </Link>
                 ))}
-            </SectionNav>
+            </TilesContainer>
         </>
     )
 }
