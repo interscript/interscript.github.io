@@ -54,13 +54,15 @@ async function loadDocs() {
         label: label,
         link: `${name}.html`
       });
-      return new Promise(resolve => { return fs.writeFile(`${path}/${name}.html`, html.data, resolve) });
+      return new Promise(resolve => { 
+        return fs.writeFile(`${path}/${name}.html`, html.data, resolve) 
+      });
     })
     );
     return Promise.all(promises);
   }
 
-  scanAsciiDocs().then((files) => {
+  return scanAsciiDocs().then((files) => {
     // convert them into htmls
     const htmls = files.map((file) => {
       return { name: file, data: asciidoctor.convert(fs.readFileSync(file)) };
@@ -87,6 +89,7 @@ export default {
     );
     // load docs
     await loadDocs();
+    console.log(docsList);
     // load maps
     await Interscript.load_map_list();
     const maps = Interscript.map_list();
@@ -177,7 +180,7 @@ export default {
       });
     const metaDataMap = Object.keys(metadata).reduce((metalist, k) => { metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
     // console.log(metaDataMap);
-
+    
     const routes = [
       {
         path: '/',
@@ -240,13 +243,14 @@ export default {
           docsList
         }),
         children: (docsList || []).map((doc) => {
-          console.log(doc);
           return {
             path: `${doc.link}`,
             template: 'src/pages/docsView.tsx',
-            getData: async (doc) => {
-              console.log('doc', doc);
-            }
+            getData: async () => ({
+              doc,
+              docsList,
+              html: fs.readFileSync(doc.template, 'utf8')
+            })
           }
         })
       },
@@ -284,7 +288,7 @@ export default {
         }),
       },
     ];
-    console.log(routes);
+    
     return routes;
   },
   plugins: [

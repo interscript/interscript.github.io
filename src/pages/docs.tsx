@@ -4,9 +4,11 @@ import { useRouteData } from "react-static";
 import { SectionNav } from "../components/SectionNav";
 import { SectionNavItem } from "../components/SectionNavItem";
 
-export default () => {
-    const { docsList } = useRouteData();
-    console.log(docsList);
+export default (props: { docsList?: Array<{ label: string, template: string, link: string}> }) => {
+    let { docsList } = props;
+    if (!docsList) {
+        docsList =  useRouteData().docsList;
+    }
     // map docsList.tsx
     return (
         <>
