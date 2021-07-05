@@ -13,6 +13,7 @@
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@reach/router": "^1.2.1",
     "@riboseinc/iso-15924": "^1.20200424.0",
+    "adm-zip": "^0.5.5",
     "axios": "^0.19.0",
     "classnames": "^2.3.1",
     "interscript": "^2.0.5",
@@ -28,6 +29,7 @@
     "react-static-plugin-source-filesystem": "^7.2.0",
     "react-static-plugin-styled-components": "^7.3.0",
     "react-static-plugin-typescript": "^7.2.0",
+    "request": "^2.88.2",
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
