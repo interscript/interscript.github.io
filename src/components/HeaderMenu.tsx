@@ -1,40 +1,10 @@
 import { Link } from '@reach/router';
 import React from 'react';
 import { useRouteData } from 'react-static';
-import styled from 'styled-components';
 import { ReadmeSection, RepoInfo } from 'types';
+import { SectionNav } from './SectionNav';
+import { SectionNavItem } from './SectionNavItem';
 
-const SectionNavItem = styled.span`
-  display: inline-block;
-  margin-right: 1em;
-
-  white-space: nowrap;
-
-  &,
-  &:link,
-  &:visited {
-    border-bottom: none;
-  }
-
-  @media screen and (min-width: 900px) {
-    &::before {
-      content: '•';
-      display: inline;
-      margin: 0 1em 0 0;
-    }
-  }
-`;
-
-const SectionNav = styled.nav`
-  margin: 2rem 2rem 1rem 2rem;
-  text-align: center;
-  outline: none;
-  text-decoration: none;
-  @media screen and (min-width: 900px) {
-    text-align: unset;
-    margin: 2rem 0 1rem 1rem;
-  }
-`;
 
 export function HeaderMenu() {
   const {
@@ -70,6 +40,16 @@ export function HeaderMenu() {
         <Link to='/systems'>
           <SectionNavItem key='system-list'>
             <strong>System List</strong>
+          </SectionNavItem>
+        </Link>
+        <Link to='/docs'>
+          <SectionNavItem key='docs'>
+            <strong>Docs</strong>
+          </SectionNavItem>
+        </Link>
+        <Link to='/blog'>
+          <SectionNavItem key='blog'>
+            <strong>Blog</strong>
           </SectionNavItem>
         </Link>
       </SectionNav>

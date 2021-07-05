@@ -1,17 +1,15 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import classNames from "classnames";
+import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+import React, { ReactNode } from "react";
+import TreeMenu, {
+  TreeMenuItem
+} from "react-simple-tree-menu";
 import { useRouteData } from "react-static";
 import styled from "styled-components";
-import { Link } from "@reach/router";
-import { HeaderMenu } from "../components/HeaderMenu";
 import "../../node_modules/react-simple-tree-menu/dist/main.css";
-import TreeMenu, {
-  defaultChildren,
-  TreeMenuItem,
-} from "react-simple-tree-menu";
-import classNames from "classnames";
-import "./systemView.css";
-import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+import { HeaderMenu } from "../components/HeaderMenu";
 import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
+import "./systemView.css";
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
@@ -138,7 +136,6 @@ export default () => {
     metaDataMap: InterscriptMetaDataMap;
   } = useRouteData();
 
-  console.log(mapData);
   const stagesTree = mapData.map(transformTree);
   const systemMetaData: InterscriptMetaData = metaDataMap[system];
   console.log(system, systemMetaData);

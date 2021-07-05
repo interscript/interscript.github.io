@@ -11,6 +11,8 @@ import odniSamples from './src/samples/odni.json';
 import ogc11122Samples from './src/samples/ogc11122.json';
 import unSamples from './src/samples/un.json';
 import metadata from './src/samples/metadata.json';
+import { getListOfFileWithTypeInDir } from './walk';
+
 // import { ReadmeSection } from './types'
 
 const repoOwner = 'interscript';
@@ -32,6 +34,11 @@ export default {
       }
     );
 
+    // load docs and blogs
+    const docList = await getListOfFileWithTypeInDir('tmp/docs', '.html');
+    const blogList = await getListOfFileWithTypeInDir('tmp/posts', '.html');
+
+    // load maps
     await Interscript.load_map_list();
     const maps = Interscript.map_list();
     const mapsInfo = {};
@@ -103,26 +110,28 @@ export default {
 
     // const metaList = {}
     // Object.keys(metadata).map((system) => metaList[system] = camelCaseMetadata(metadata[system].data))
-    const camelCaseMetadata = (rubyData) => (
-      {
-        authorityId: rubyData["authority_id"],
-        id: rubyData["id"],
-        language: rubyData["language"],
-        sourceScript: rubyData["source_script"],
-        destinationScript: rubyData["destination_script"],
-        name: rubyData["name"],
-        url: rubyData["url"],
-        creationDate: rubyData["creation_date"],
-        confirmationDate: rubyData["confirmation_date"],
-        adoptionDate: rubyData["adoption_date"],
-        description: rubyData["description"],
-        notes: rubyData["notes"],
-        nonstandard: rubyData["nonstandard"]
-      });
-    const metaDataMap = Object.keys(metadata).reduce((metalist, k)=>{metalist[k] = camelCaseMetadata(metadata[k].data); return metalist; }, {})
+    const camelCaseMetadata = (rubyData) => ({
+      authorityId: rubyData['authority_id'],
+      id: rubyData['id'],
+      language: rubyData['language'],
+      sourceScript: rubyData['source_script'],
+      destinationScript: rubyData['destination_script'],
+      name: rubyData['name'],
+      url: rubyData['url'],
+      creationDate: rubyData['creation_date'],
+      confirmationDate: rubyData['confirmation_date'],
+      adoptionDate: rubyData['adoption_date'],
+      description: rubyData['description'],
+      notes: rubyData['notes'],
+      nonstandard: rubyData['nonstandard'],
+    });
+    const metaDataMap = Object.keys(metadata).reduce((metalist, k) => {
+      metalist[k] = camelCaseMetadata(metadata[k].data);
+      return metalist;
+    }, {});
     // console.log(metaDataMap);
 
-    return [
+    const routes = [
       {
         path: '/',
         template: 'src/containers/Landing',
@@ -178,6 +187,41 @@ export default {
         }),
       },
       {
+        path: 'blog',
+        template: 'src/pages/blog.tsx',
+        getData: async () => ({
+            blogList
+        }),
+        children: blogList.map((blogPost) => {
+            return {
+                path: blogPost.name,
+                template: 'src/pages/blogPost.tsx',
+                getData: () => ({
+                    blogList,
+                    blogPost,
+                    html: fs.readFileSync(blogPost.path, 'utf8')
+                })
+            }
+        })
+      },
+      {
+        path: 'docs',
+        template: 'src/pages/docs.tsx',
+        getData: async () => ({
+          docList,
+        }),
+        children: docList.map((doc) => {
+          return {
+            path: doc.name,
+            template: 'src/pages/docsView.tsx',
+            getData: async () => ({
+              docList,
+              html: fs.readFileSync(doc.path, 'utf8'),
+            }),
+          };
+        }),
+      },
+      {
         path: 'systems',
         template: 'src/pages/systems.tsx',
         getData: async () => ({
@@ -202,15 +246,16 @@ export default {
               },
               metaDataMap,
               system,
-              mapData: JSON.parse(fs.readFileSync(
-                `./public/mapsjson/${system}_main.json`,
-                'utf8'
-              )),
+              mapData: JSON.parse(
+                fs.readFileSync(`./public/mapsjson/${system}_main.json`, 'utf8')
+              ),
             }),
-          }
+          };
         }),
       },
     ];
+
+    return routes;
   },
   plugins: [
     'react-static-plugin-typescript',
