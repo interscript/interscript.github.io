@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { SectionNav } from '../components/SectionNav';
 import { Link } from '@reach/router';
 import { SectionNavItem } from '../components/SectionNavItem';
+import { DocFile } from "types/index";
 
 const Wrapper = styled.div`
     margin-top: 32px;
@@ -15,14 +16,14 @@ export default () => {
     return (
         <>
             <SectionNav>
-                {blogList.map((doc: { label: string, template: string, link: string }, idx: number) => (
-                    <Link to={`/blog/${doc.link}`} key={idx}>
+                {blogList && blogList.map((doc: DocFile, idx: number) => (
+                    <Link to={`/blog/${doc.name}`} key={idx}>
                         <SectionNavItem key="docs">
-                            <strong>{doc.label}</strong>
+                            <strong>{doc.title}</strong>
                         </SectionNavItem>
                     </Link>
                 ))}
             </SectionNav>
-            <Wrapper dangerouslySetInnerHTML={{ __html: html }}></Wrapper>
+            <Wrapper dangerouslySetInnerHTML={{ __html: html }}/>
         </>)
 }

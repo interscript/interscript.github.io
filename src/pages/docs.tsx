@@ -1,26 +1,27 @@
 import { Link } from "@reach/router";
-import React from "react";
+import React, { useMemo } from "react";
 import { useRouteData } from "react-static";
 import { CardBody, Tile, TilesContainer } from "../components/Tiles";
+import { DocFile } from "types/index";
 
-export default (props: { docsList?: Array<{ label: string, template: string, link: string }> }) => {
-    let { docsList } = props;
-    if (!docsList) {
-        docsList = useRouteData().docsList;
-    }
-    // map docsList.tsx
+export default () => {
+    const { docList } = useRouteData();
+    const children = useMemo(() => (docList || []).map((doc: DocFile, idx: number) => (
+      <Link to={`/docs/${doc.name}`} key={idx}>
+        <Tile>
+          <CardBody>
+            <header><h3>{doc.title}</h3></header>
+          </CardBody>
+        </Tile>
+      </Link>
+    )), [JSON.stringify(docList)]);
+
     return (
         <>
             <TilesContainer>
-                {docsList.map((doc: { label: string, template: string, link: string }, idx: number) => (
-                    <Link to={`/docs/${doc.link}`} key={idx}>
-                        <Tile>
-                            <CardBody>
-                                <header><h3>{doc.label}</h3></header>
-                            </CardBody>
-                        </Tile>
-                    </Link>
-                ))}
+                {
+                  children
+                }
             </TilesContainer>
         </>
     )

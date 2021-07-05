@@ -1160,6 +1160,11 @@
   resolved "https://registry.yarnpkg.com/@riboseinc/iso-15924/-/iso-15924-1.20200424.0.tgz#5697adb892dd8fa6b794ce77fd5fe048ce041f43"
   integrity sha512-u/60jvz0VIPw5xG8adidtA6Vfe7YN9Dzk/ZLxwZJAac1MQkG1sL7NRLgqO/R1E8oWt3QQ3y7iwaw1FCq9P2Gbw==
 
+"@root/walk@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@root/walk/-/walk-1.1.0.tgz#784d81e8b8d3fb3bedbb0e18952e4ea577e3796a"
+  integrity sha512-FfXPAta9u2dBuaXhPRawBcijNC9rmKVApmbi6lIZyg36VR/7L02ytxoY5K/14PJlHqiBUoYII73cTlekdKTUOw==
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -4010,11 +4015,6 @@ foreach@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/foreach/-/foreach-2.0.5.tgz#0bee005018aeb260d0a3af3ae658dd0136ec1b99"
   integrity sha1-C+4AUBiusmDQo6865ljdATbsG5k=
-
-foreachasync@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/foreachasync/-/foreachasync-3.0.0.tgz#5502987dc8714be3392097f32e0071c9dee07cf6"
-  integrity sha1-VQKYfchxS+M5IJfzLgBxyd7gfPY=
 
 fork-ts-checker-webpack-plugin@^1.5.0:
   version "1.6.0"
@@ -8508,13 +8508,6 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-
-walk@^2.3.14:
-  version "2.3.14"
-  resolved "https://registry.yarnpkg.com/walk/-/walk-2.3.14.tgz#60ec8631cfd23276ae1e7363ce11d626452e1ef3"
-  integrity sha512-5skcWAUmySj6hkBdH6B6+3ddMjVQYH5Qy9QGbPmN8kVmLteXk+yVXg+yfk1nbX30EYakahLrr8iPcCxJQSCBeg==
-  dependencies:
-    foreachasync "^3.0.0"
 
 warning@^4.0.3:
   version "4.0.3"
