@@ -8,7 +8,7 @@ may need to execute.
 The following is a set of steps one needs to make to do a release:
 
 [source,sh]
----
+----
 # We assume this is executed in the main Interscript repository root directory.
 # Adjust the V to reflect a correct version
 V="2.1.0a1"
@@ -34,4 +34,4 @@ pushd js; git push; git push --tags; popd
 pushd maps; git push; git push --tags; popd
 git push; git push --tags
 # Our new version is released!
----
+----
