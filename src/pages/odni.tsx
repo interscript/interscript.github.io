@@ -5,16 +5,16 @@ import TopNav from "components/TopNav";
 import { ScriptConversionExample } from "../../types";
 
 export default () => {
-  const { samples }: { samples: ScriptConversionExample[] } = useRouteData();
+    const { samples }: { samples: ScriptConversionExample[] } = useRouteData();
 
-  return (
-    <>
-      <TopNav />
-      <h2>{`ODNI systems`}</h2>
-      <p>
-        <i>{`Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ODNI = Office of the Director of National Intelligence)`}</i>
-      </p>
-      <ExamplePage samples={samples} authority="ODNI" />
-    </>
-  );
+    return (
+        <>
+            <TopNav />
+            <h2>{`ODNI systems`}</h2>
+            <p>
+                <i>{`Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ODNI = Office of the Director of National Intelligence)`}</i>
+            </p>
+            <ExamplePage samples={samples} authority="ODNI" />
+        </>
+    );
 };

@@ -8,26 +8,24 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 export default App;
 
 if (typeof document !== "undefined") {
-  const target = document.getElementById("root");
+    const target = document.getElementById("root");
 
-  const renderMethod = target.hasChildNodes()
-    ? ReactDOM.hydrate
-    : ReactDOM.render;
+    const renderMethod = target.hasChildNodes() ? ReactDOM.hydrate : ReactDOM.render;
 
-  const render = (Comp: Function) => {
-    renderMethod(
-      <AppContainer>
-        <Comp />
-      </AppContainer>,
-      target
-    );
-  };
+    const render = (Comp: Function) => {
+        renderMethod(
+            <AppContainer>
+                <Comp />
+            </AppContainer>,
+            target
+        );
+    };
 
-  render(App);
+    render(App);
 
-  if (module && module.hot) {
-    module.hot.accept("./App", () => {
-      render(App);
-    });
-  }
+    if (module && module.hot) {
+        module.hot.accept("./App", () => {
+            render(App);
+        });
+    }
 }
