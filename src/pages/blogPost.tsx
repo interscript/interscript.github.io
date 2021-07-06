@@ -5,10 +5,7 @@ import { SectionNav } from '../components/SectionNav';
 import { Link } from '@reach/router';
 import { SectionNavItem } from '../components/SectionNavItem';
 import { DocFile } from "types/index";
-
-const Wrapper = styled.div`
-    margin-top: 32px;
-`
+import { AdocStyleWrapper } from "components/AdocStyleWrapper";
 
 export default () => {
     const { blogList, html } = useRouteData();
@@ -24,6 +21,6 @@ export default () => {
                     </Link>
                 ))}
             </SectionNav>
-            <Wrapper dangerouslySetInnerHTML={{ __html: html }}/>
+            <AdocStyleWrapper dangerouslySetInnerHTML={{ __html: html }}/>
         </>)
 }
