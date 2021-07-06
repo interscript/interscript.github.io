@@ -132,6 +132,18 @@ export default {
       }
       const newRoutes = [
         {
+          path: "/",
+          template: "src/containers/Landing",
+          getData: () => ({
+              readmeSections,
+              repoInfo: {
+                  owner: repoOwner,
+                  name: repoName,
+              },
+              mapsInfo,
+          }),
+        },
+        {
           path: 'introduction',
           template: 'src/components/ReadmeSectionPage',
           getData: () => {
@@ -164,7 +176,7 @@ export default {
           }]
         }
       ]
-      
+
         const routes = [
             {
                 path: "/",
@@ -287,7 +299,7 @@ export default {
             },
         ];
 
-        return routes;
+        return newRoutes;
     },
     plugins: [
         "react-static-plugin-typescript",
