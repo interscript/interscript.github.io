@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
 
 const ASCIIDOC_DEFAULT_THEME = `
@@ -428,9 +428,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 
-`
+`;
 
 export const AdocStyleWrapper = styled.div`
     margin-top: 32px;
     ${ASCIIDOC_DEFAULT_THEME}
-`
+`;

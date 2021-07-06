@@ -1,282 +1,248 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useRouteData } from 'react-static';
-import { ReadmeSection, RepoInfo } from 'types';
-import axios, { AxiosResponse } from 'axios';
-import styled from 'styled-components';
-import { SystemSelector } from 'components/SystemSelector';
+import React, { useState, useEffect, useRef } from "react";
+import { useRouteData } from "react-static";
+import { ReadmeSection, RepoInfo } from "types";
+import axios, { AxiosResponse } from "axios";
+import styled from "styled-components";
+import { SystemSelector } from "components/SystemSelector";
 
-import { ScriptConversionSystem, systemToCode } from '../scs';
+import { ScriptConversionSystem, systemToCode } from "../scs";
 
-import { primaryColor } from '../App';
-import {
-  getLanguageTitleFrom6392BorT,
-  getLanguageTitleFrom6393BorT,
-} from 'components/isoLang';
+import { primaryColor } from "../App";
+import { getLanguageTitleFrom6392BorT, getLanguageTitleFrom6393BorT } from "components/isoLang";
 
-import { HeaderMenu } from '../components/HeaderMenu';
+import { HeaderMenu } from "../components/HeaderMenu";
 
-const API_ENDPOINT = 'https://api.interscript.org'; //for issue https://github.com/interscript/infrastructure/issues/17
+const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
-  const {
-    readmeSections,
-    mapsInfo,
-  }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
-    useRouteData();
+    const { readmeSections, mapsInfo }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
+        useRouteData();
 
-  const [showDemo, setShowDemo] = useState(true);
-  const [demoIsShowable, setDemoIsShowable] = useState(true);
+    const [showDemo, setShowDemo] = useState(true);
+    const [demoIsShowable, setDemoIsShowable] = useState(true);
 
-  useEffect(() => {
-    if (document.getElementById(window.location.hash.replace('#', ''))) {
-      document.getElementById(window.location.hash.replace('#', '')).scrollIntoView();
-    }
-  }, [])
+    useEffect(() => {
+        if (document.getElementById(window.location.hash.replace("#", ""))) {
+            document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
+        }
+    }, []);
 
-  const summary = Object.keys(mapsInfo.languages)
-    .map(
-      (alpha3) =>
-        `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]
-        })`
-    )
-    .sort()
-    .join(', ');
+    const summary = Object.keys(mapsInfo.languages)
+        .map((alpha3) => `${getLanguageTitleFrom6393BorT(alpha3)} (${mapsInfo.languages[alpha3]})`)
+        .sort()
+        .join(", ");
 
-  return (
-    <>
-      <HeaderMenu />
-      <SectionGrid>
-        <Section>
-          <p>
-            {`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`}{' '}
-          </p>
-        </Section>
-      </SectionGrid>
+    return (
+        <>
+            <HeaderMenu />
+            <SectionGrid>
+                <Section>
+                    <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
+                </Section>
+            </SectionGrid>
 
-      <SectionGrid>
-        {demoIsShowable ? (
-          <Section>
-            <h2>
-              <a
-                href='javascript: void 0;'
-                onClick={() => setShowDemo(!showDemo)}
-              >
-                {showDemo ? 'Hide live demo' : 'Try it live'}
-              </a>
-            </h2>
-            {showDemo ? <LiveDemo /> : null}
-          </Section>
-        ) : null}
+            <SectionGrid>
+                {demoIsShowable ? (
+                    <Section>
+                        <h2>
+                            <a href="javascript: void 0;" onClick={() => setShowDemo(!showDemo)}>
+                                {showDemo ? "Hide live demo" : "Try it live"}
+                            </a>
+                        </h2>
+                        {showDemo ? <LiveDemo /> : null}
+                    </Section>
+                ) : null}
 
-        {readmeSections.map((section) => (
-          <Section
-            key={section.id}
-            id={section.id}
-            dangerouslySetInnerHTML={{ __html: section.html }}
-          />
-        ))}
-      </SectionGrid>
+                {readmeSections.map((section) => (
+                    <Section key={section.id} id={section.id} dangerouslySetInnerHTML={{ __html: section.html }} />
+                ))}
+            </SectionGrid>
 
-      <SectionGrid>
-        <Section>
-          <h2>{`Statistics`}</h2>
-          <p>{summary}</p>
-        </Section>
-      </SectionGrid>
+            <SectionGrid>
+                <Section>
+                    <h2>{`Statistics`}</h2>
+                    <p>{summary}</p>
+                </Section>
+            </SectionGrid>
 
-      <SectionGrid>
-        <Section>
-          <h2>{`Copyright`}</h2>
-          <p>{`Ribose© 2020. All rights reserved.`}</p>
-        </Section>
-      </SectionGrid>
-    </>
-  );
+            <SectionGrid>
+                <Section>
+                    <h2>{`Copyright`}</h2>
+                    <p>{`Ribose© 2020. All rights reserved.`}</p>
+                </Section>
+            </SectionGrid>
+        </>
+    );
 };
 
 const LiveDemo: React.FC<{}> = function () {
-  const {
-    mapsInfo,
-  }: { mapsInfo: any } =
-    useRouteData();
-  const [sampleText, setSampleText] = useState<string>('');
-  const [selectedSystem, selectSystem] =
-    useState<ScriptConversionSystem | null>(null);
-  const [result, setResult] = useState<string | null | undefined>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+    const { mapsInfo }: { mapsInfo: any } = useRouteData();
+    const [sampleText, setSampleText] = useState<string>("");
+    const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
+    const [result, setResult] = useState<string | null | undefined>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [submitted, setSubmitted] = useState(false);
 
-  const sampleInputRef = useRef<HTMLTextAreaElement>(null);
+    const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
-  const systemCode: string | null =
-    selectedSystem !== null ? systemToCode(selectedSystem) : null;
+    const systemCode: string | null = selectedSystem !== null ? systemToCode(selectedSystem) : null;
 
-  useEffect(() => {
-    setError(null);
-    setSubmitted(false);
-  }, [systemCode, sampleText]);
-
-  useEffect(() => {
-    if (systemCode) {
-      sampleInputRef.current?.focus();
-    }
-  }, [systemCode]);
-
-  async function handleConvert() {
-    if (systemCode !== null && sampleText.trim() !== '') {
-      let resp: AxiosResponse<any>;
-
-      setError(null);
-      setResult(undefined);
-      setSubmitted(true);
-
-      try {
-        resp = await axios({
-          method: 'POST',
-          url: API_ENDPOINT,
-          data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-      } catch (e) {
-        setResult(null);
+    useEffect(() => {
+        setError(null);
         setSubmitted(false);
-        setError('Sorry, an error occurred :(');
-      }
-      setResult(
-        resp.data?.data?.transliterate ||
-        'No result returned, please check your sample!'
-      );
+    }, [systemCode, sampleText]);
+
+    useEffect(() => {
+        if (systemCode) {
+            sampleInputRef.current?.focus();
+        }
+    }, [systemCode]);
+
+    async function handleConvert() {
+        if (systemCode !== null && sampleText.trim() !== "") {
+            let resp: AxiosResponse<any>;
+
+            setError(null);
+            setResult(undefined);
+            setSubmitted(true);
+
+            try {
+                resp = await axios({
+                    method: "POST",
+                    url: API_ENDPOINT,
+                    data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+            } catch (e) {
+                setResult(null);
+                setSubmitted(false);
+                setError("Sorry, an error occurred :(");
+            }
+            setResult(resp.data?.data?.transliterate || "No result returned, please check your sample!");
+        }
     }
-  }
 
-  let placeholder: string;
-  if (selectedSystem?.lang) {
-    placeholder = `Enter something in ${getLanguageTitleFrom6392BorT(selectedSystem.lang) ||
-      'selected writing system'
-      }…`;
-  } else {
-    placeholder = 'Enter something…';
-  }
+    let placeholder: string;
+    if (selectedSystem?.lang) {
+        placeholder = `Enter something in ${
+            getLanguageTitleFrom6392BorT(selectedSystem.lang) || "selected writing system"
+        }…`;
+    } else {
+        placeholder = "Enter something…";
+    }
 
-  return (
-    <>
-      <SystemSelector onSelect={selectSystem} systemCodes={mapsInfo.data} />
+    return (
+        <>
+            <SystemSelector onSelect={selectSystem} systemCodes={mapsInfo.data} />
 
-      <SampleAndResult>
-        <SampleTextArea
-          ref={sampleInputRef}
-          value={sampleText}
-          placeholder={placeholder}
-          style={{
-            boxShadow:
-              sampleText.trim() === '' && systemCode !== null
-                ? `#${primaryColor} 0 0 0px .5rem`
-                : undefined,
-          }}
-          onChange={(evt) => setSampleText(evt.currentTarget.value)}
-        />
+            <SampleAndResult>
+                <SampleTextArea
+                    ref={sampleInputRef}
+                    value={sampleText}
+                    placeholder={placeholder}
+                    style={{
+                        boxShadow:
+                            sampleText.trim() === "" && systemCode !== null
+                                ? `#${primaryColor} 0 0 0px .5rem`
+                                : undefined,
+                    }}
+                    onChange={(evt) => setSampleText(evt.currentTarget.value)}
+                />
 
-        <ConvertButton
-          onClick={handleConvert}
-          disabled={
-            submitted === true ||
-            systemCode === null ||
-            sampleText.trim() === ''
-          }
-        >
-          Convert &rarr;
-        </ConvertButton>
+                <ConvertButton
+                    onClick={handleConvert}
+                    disabled={submitted === true || systemCode === null || sampleText.trim() === ""}
+                >
+                    Convert &rarr;
+                </ConvertButton>
 
-        <ResultTextArea
-          placeholder={
-            selectedSystem === null ? 'Select a system above' : undefined
-          }
-          disabled
-          value={result === undefined ? 'Loading…' : result || error || ''}
-        />
-      </SampleAndResult>
+                <ResultTextArea
+                    placeholder={selectedSystem === null ? "Select a system above" : undefined}
+                    disabled
+                    value={result === undefined ? "Loading…" : result || error || ""}
+                />
+            </SampleAndResult>
 
-      {systemCode !== null ? (
-        <p>
-          <small>
-            Selected script conversion system code:&emsp;
-            <code>{systemCode}</code>
-          </small>
-        </p>
-      ) : null}
-    </>
-  );
+            {systemCode !== null ? (
+                <p>
+                    <small>
+                        Selected script conversion system code:&emsp;
+                        <code>{systemCode}</code>
+                    </small>
+                </p>
+            ) : null}
+        </>
+    );
 };
 
 const ConvertButton = styled.button`
-  flex-shrink: 0;
-  margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 0;
-  font-size: 100%;
+    flex-shrink: 0;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    font-size: 100%;
 
-  color: ${(props) => (props.disabled ? 'silver' : `white`)};
+    color: ${(props) => (props.disabled ? "silver" : `white`)};
 
-  background: ${(props) =>
-    props.disabled ? 'whiteSmoke' : `#${primaryColor}`};
+    background: ${(props) => (props.disabled ? "whiteSmoke" : `#${primaryColor}`)};
 `;
 
 const SampleAndResult = styled.div`
-  margin-top: 1rem;
-
-  > :first-child,
-  > :last-child {
-    width: 100%;
-  }
-
-  @media screen and (min-width: 900px) {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: flex-start;
+    margin-top: 1rem;
 
     > :first-child,
     > :last-child {
-      flex: 1;
-      width: unset;
+        width: 100%;
     }
-  }
+
+    @media screen and (min-width: 900px) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+
+        > :first-child,
+        > :last-child {
+            flex: 1;
+            width: unset;
+        }
+    }
 `;
 
 const SampleTextArea = styled.textarea`
-  font-size: 100%;
-  padding: 0.5rem;
-  margin: 0;
-  background: whiteSmoke;
-  border: 0;
-  z-index: 2;
-  display: block;
+    font-size: 100%;
+    padding: 0.5rem;
+    margin: 0;
+    background: whiteSmoke;
+    border: 0;
+    z-index: 2;
+    display: block;
 `;
 
 const ResultTextArea = styled(SampleTextArea)`
-  cursor: default;
+    cursor: default;
 `;
 
 const Section = styled.article`
-  a.anchor {
-    margin-right: 0.5rem;
+    a.anchor {
+        margin-right: 0.5rem;
 
-    &,
-    &:link,
-    &:visited {
-      border: none;
+        &,
+        &:link,
+        &:visited {
+            border: none;
+        }
     }
-  }
 
-  a[rel*='noopener'] {
-    &,
-    &:link,
-    &:visited {
-      border: none;
+    a[rel*="noopener"] {
+        &,
+        &:link,
+        &:visited {
+            border: none;
+        }
     }
-  }
 `;
 
 const GITHUB_HIGHLIGHT_THEME = `
@@ -412,32 +378,31 @@ const GITHUB_HIGHLIGHT_THEME = `
 `;
 
 const SectionGrid = styled.div`
-  overflow: hidden;
-  padding: 0 1rem;
+    overflow: hidden;
+    padding: 0 1rem;
 
-  pre,
-  code {
-    font-size: 14px;
-    background: whiteSmoke;
-    font-family: 'Iosevka Term SS01', 'Iosevka Term', Iosevka,
-      system-ui-monospaced, Menlo, 'Courier New', monospace;
-  }
-
-  pre {
-    overflow-x: auto;
-    padding: 0.75rem 1rem;
-    margin: 0 -1rem;
-
-    ${GITHUB_HIGHLIGHT_THEME}
-  }
-
-  code {
-    padding: 0.1em 0.5em;
-  }
-
-  @media screen and (min-width: 900px) {
-    pre {
-      margin: 0;
+    pre,
+    code {
+        font-size: 14px;
+        background: whiteSmoke;
+        font-family: "Iosevka Term SS01", "Iosevka Term", Iosevka, system-ui-monospaced, Menlo, "Courier New", monospace;
     }
-  }
+
+    pre {
+        overflow-x: auto;
+        padding: 0.75rem 1rem;
+        margin: 0 -1rem;
+
+        ${GITHUB_HIGHLIGHT_THEME}
+    }
+
+    code {
+        padding: 0.1em 0.5em;
+    }
+
+    @media screen and (min-width: 900px) {
+        pre {
+            margin: 0;
+        }
+    }
 `;
