@@ -10,7 +10,8 @@
     "adoc:docs": "asciidoctor docs/*.adoc -D tmp/docs/ -e",
     "adoc:posts": "asciidoctor posts/*.adoc -D tmp/posts/ -e",
     "export": "react-static export",
-    "serve": "serve dist -p 3000 -s"
+    "serve": "serve dist -p 3000 -s",
+    "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n"
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
@@ -47,8 +48,18 @@
     "@types/webpack-env": "^1.14.0",
     "asciidoctor": "^2.2.4",
     "cheerio": "^1.0.0-rc.3",
+    "prettier": "^2.3.1",
     "react-hot-loader": "^4.12.11",
     "serve": "^11.1.0",
     "typescript": "^3.5.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "singleQuote": false,
+    "printWidth": 120,
+    "semi": true,
+    "jsxSingleQuote": false,
+    "proseWrap": "preserve"
   }
 }

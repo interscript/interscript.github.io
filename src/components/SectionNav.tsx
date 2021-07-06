@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SectionNav = styled.nav`
     margin: 2rem 2rem 1rem 2rem;
