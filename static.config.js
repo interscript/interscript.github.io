@@ -72,6 +72,8 @@ export default {
       }
     }
 
+    console.log('readmeSections', readmeSections);
+
     // SSR
     const translit = async (system, text) => {
       await Interscript.load_map(system);
@@ -108,6 +110,7 @@ export default {
       un = await evaluate(unSamples);
     }
 
+
     // const metaList = {}
     // Object.keys(metadata).map((system) => metaList[system] = camelCaseMetadata(metadata[system].data))
     const camelCaseMetadata = (rubyData) => ({
@@ -130,6 +133,44 @@ export default {
       return metalist;
     }, {});
     // console.log(metaDataMap);
+
+    const findReadmeSection = (path) => {
+      return readmeSections.find((readmeSection) => readmeSection.id === path);
+    }
+    const newRoutes = [
+      {
+        path: 'introduction',
+        template: 'src/components/ReadmeSectionPage',
+        getData: () => {
+          return { section: findReadmeSection('introduction') }
+        }
+      },
+      {
+        path: 'demonstration',
+        template: 'src/components/ReadmeSectionPage',
+        getData: () => {
+          return { section: findReadmeSection('demonstration') }
+        }
+      },
+      {
+        path: 'statistics',
+        template: 'src/components/ReadmeSectionPage',
+        getData: () => {
+          return { section: findReadmeSection('statistics') }
+        }
+      },
+      {
+        path: 'featured-authorities',
+        template: 'src/components/ReadmeSectionParent',
+        children: [{
+          path: 'un',
+          template: 'src/components/ReadmeSectionPage',
+          getData: () => {
+            return { section: findReadmeSection('un') }
+          }
+        }]
+      }
+    ]
 
     const routes = [
       {
@@ -190,18 +231,18 @@ export default {
         path: 'blog',
         template: 'src/pages/blog.tsx',
         getData: async () => ({
-            blogList
+          blogList
         }),
         children: blogList.map((blogPost) => {
-            return {
-                path: blogPost.name,
-                template: 'src/pages/blogPost.tsx',
-                getData: () => ({
-                    blogList,
-                    blogPost,
-                    html: fs.readFileSync(blogPost.path, 'utf8')
-                })
-            }
+          return {
+            path: blogPost.name,
+            template: 'src/pages/blogPost.tsx',
+            getData: () => ({
+              blogList,
+              blogPost,
+              html: fs.readFileSync(blogPost.path, 'utf8')
+            })
+          }
         })
       },
       {
