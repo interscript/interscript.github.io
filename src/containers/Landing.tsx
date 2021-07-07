@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react";
 import { useRouteData } from "react-static";
 import styled from "styled-components";
 import { ReadmeSection, RepoInfo } from "types";
+import { HeaderHashlinksMenu } from "../components/HeaderHashlinksMenu";
 import { HeaderMenu } from "../components/HeaderMenu";
 import { LiveDemo } from "../components/LiveDemo";
 
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
-    const { readmeSections, mapsInfo }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } =
+    const { readmeSections, mapsInfo, subpages }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any, subpages: any[] } =
         useRouteData();
 
     const [showDemo, setShowDemo] = useState(true);
@@ -28,7 +29,20 @@ export default () => {
 
     return (
         <>
-            <HeaderMenu />
+            <HeaderHashlinksMenu subpages={subpages} anchors={[
+                {
+                    name: 'Introduction',
+                    path: readmeSections.find(x => x.id === 'introduction').id
+                },
+                {
+                    name: 'Demonstration',
+                    path: readmeSections.find(x => x.id === 'demonstration').id
+                },
+                {
+                    name: 'Statistics',
+                    path: 'statistics'
+                },
+            ]} />
             <SectionGrid>
                 <Section>
                     <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
@@ -36,17 +50,6 @@ export default () => {
             </SectionGrid>
 
             <SectionGrid>
-                {demoIsShowable ? (
-                    <Section>
-                        <h2>
-                            <a href="javascript: void 0;" onClick={() => setShowDemo(!showDemo)}>
-                                {showDemo ? "Hide live demo" : "Try it live"}
-                            </a>
-                        </h2>
-                        {showDemo ? <LiveDemo /> : null}
-                    </Section>
-                ) : null}
-
                 {readmeSections.map((section) => (
                     <Section key={section.id} id={section.id} dangerouslySetInnerHTML={{ __html: section.html }} />
                 ))}
@@ -54,8 +57,10 @@ export default () => {
 
             <SectionGrid>
                 <Section>
-                    <h2>{`Statistics`}</h2>
-                    <p>{summary}</p>
+                    <div id="statistics">
+                        <h2>{`Statistics`}</h2>
+                        <p>{summary}</p>
+                    </div>
                 </Section>
             </SectionGrid>
 
@@ -68,7 +73,7 @@ export default () => {
         </>
     );
 };
-
+// it's alread seems to be ok ;)
 const Section = styled.article`
     a.anchor {
         margin-right: 0.5rem;

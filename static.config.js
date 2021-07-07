@@ -130,12 +130,46 @@ export default {
     const findReadmeSection = (path) => {
       return readmeSections.find((readmeSection) => readmeSection.id === path);
     }
+
     const newRoutes = [
       {
         path: "/",
         template: "src/containers/Landing",
         getData: () => ({
-          readmeSections,
+          readmeSections: [
+            findReadmeSection('introduction'),
+            findReadmeSection('demonstration')
+          ],
+          subpages: [
+            {
+              name: 'Featured authorities',
+              path: 'featured-authorities'
+            },
+            {
+              name: 'Try: API',
+              path: 'try-api'
+            },
+            {
+              name: 'Try: JavaScript',
+              path: 'try-javascript'
+            },
+            {
+              name: 'Systems',
+              path: 'systems'
+            },
+            {
+              name: 'Integration',
+              path: 'integration'
+            },
+            {
+              name: 'Customizing and Contributing',
+              path: 'customizing-and-contributing'
+            },
+            {
+              name: 'About',
+              path: 'about'
+            }
+          ],
           repoInfo: {
             owner: repoOwner,
             name: repoName,
@@ -143,65 +177,66 @@ export default {
           mapsInfo,
         }),
       },
-      {
-        path: 'introduction',
-        template: 'src/components/ReadmeSectionPage.tsx',
-        getData: () => {
-          return { section: findReadmeSection('introduction') }
-        }
-      },
-      {
-        path: 'demonstration',
-        template: 'src/components/ReadmeSectionPage.tsx',
-        getData: () => {
-          return { section: findReadmeSection('demonstration') }
-        }
-      },
-      {
-        path: 'statistics',
-        template: 'src/components/ReadmeSectionPage.tsx',
-        getData: () => {
-          return { section: findReadmeSection('statistics') }
-        }
-      },
+      // here I need to refactor a little
       {
         path: 'featured-authorities',
-        template: 'src/components/ReadmeSectionParent.tsx',
+        template: "src/containers/DemoJS",
+        getData: () => ({
+          mapsInfo,
+        }),
         children: [
           {
-            path: 'un',
-            template: 'src/components/ReadmeSectionPage.tsx',
-            getData: () => {
-              return { section: findReadmeSection('un') }
-            }
+            path: "alalc",
+            template: "src/pages/alalc.tsx",
+            getData: () => ({
+              samples: alalc || alalcSamples,
+            }),
           },
           {
-            path: 'bgn-pc-gn',
-            template: 'src/components/ReadmeSectionPage.tsx',
-            getData: () => {
-              return {
-                section: findReadmeSection('bgn-pc-gn')
-              }
-            }
+            path: "bgnpcgn",
+            template: "src/pages/bgnpcgn.tsx",
+            getData: () => ({
+              samples: bgnpcgn || bgnpcgnSamples,
+            }),
           },
           {
-            path: 'ala-lc',
-            template: 'src/components/ReadmeSectionPage.tsx'
+            path: "odni",
+            template: "src/pages/odni.tsx",
+            getData: () => ({
+              samples: odni || odniSamples,
+            }),
           },
           {
-            path: 'odni',
-            template: 'src/components/ReadmeSectionPage'
+            path: "ogc11122",
+            template: "src/pages/ogc11122.tsx",
+            getData: () => ({
+              samples: ogc11122 || ogc11122Samples,
+            }),
           },
           {
-            path: 'ogc',
-            template: 'src/components/ReadmeSectionPage'
-          }
+            path: "un",
+            template: "src/pages/un.tsx",
+            getData: () => ({
+              samples: un || unSamples,
+            }),
+          },
         ]
       },
       {
         path: 'try-api',
-        template: 'src/components/ReadmeSectionParent'
-      }
+        template: 'src/components/LiveDemo.tsx',
+        getData: () => ({
+          mapsInfo,
+        }),
+      },
+      {
+        path: 'try-javascript',
+        template: 'src/components/JSDemo.tsx',
+        getData: () => ({
+          mapsInfo,
+        }),
+      },
+
     ]
 
     const routes = [
@@ -222,41 +257,6 @@ export default {
         template: "src/containers/DemoJS",
         getData: () => ({
           mapsInfo,
-        }),
-      },
-      {
-        path: "js/alalc",
-        template: "src/pages/alalc.tsx",
-        getData: () => ({
-          samples: alalc || alalcSamples,
-        }),
-      },
-      {
-        path: "js/bgnpcgn",
-        template: "src/pages/bgnpcgn.tsx",
-        getData: () => ({
-          samples: bgnpcgn || bgnpcgnSamples,
-        }),
-      },
-      {
-        path: "js/odni",
-        template: "src/pages/odni.tsx",
-        getData: () => ({
-          samples: odni || odniSamples,
-        }),
-      },
-      {
-        path: "js/ogc11122",
-        template: "src/pages/ogc11122.tsx",
-        getData: () => ({
-          samples: ogc11122 || ogc11122Samples,
-        }),
-      },
-      {
-        path: "js/un",
-        template: "src/pages/un.tsx",
-        getData: () => ({
-          samples: un || unSamples,
         }),
       },
       {
