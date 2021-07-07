@@ -9,7 +9,7 @@ import { SystemSelector } from "./SystemSelector";
 
 const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
 
-export const LiveDemo: React.FC<{}> = () => {
+export default () => {
     const { mapsInfo }: { mapsInfo: any } = useRouteData();
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);

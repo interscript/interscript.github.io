@@ -4,10 +4,7 @@ import React, { ReactNode } from "react";
 import TreeMenu, { TreeMenuItem } from "react-simple-tree-menu";
 import { useRouteData } from "react-static";
 import styled from "styled-components";
-import "../../node_modules/react-simple-tree-menu/dist/main.css";
-import { HeaderMenu } from "../components/HeaderMenu";
 import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
-import "./systemView.css";
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
@@ -152,7 +149,6 @@ export default () => {
 
     return (
         <React.Fragment>
-            <HeaderMenu />
             <h3>System Name: {system}</h3>
             <SystemMetaInfo>
                 <tbody>{metaInfo}</tbody>

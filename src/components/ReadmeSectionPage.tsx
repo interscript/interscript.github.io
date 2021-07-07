@@ -1,18 +1,28 @@
 import React from 'react';
 import { useRouteData } from "react-static";
 import { ReadmeSection } from "../../types";
-import { AdocStyleWrapper } from "./AdocStyleWrapper";
+import { HeaderHashlinksMenu } from './HeaderHashlinksMenu';
+import { Section, SectionGrid } from './Section';
 export default () => {
     const { sections } = useRouteData();
     console.log(sections);
     return (
-        <AdocStyleWrapper>
-            {/* TODO: generated HeaderHashlinksMenu */}
+        <>
+            <HeaderHashlinksMenu subpages={[]} anchors={sections.map((item: any) => {
+                return {
+                    path: item.id,
+                    name: item.titleHTML
+                }
+            })} />
+        <SectionGrid>
             {
                 sections.map((section: ReadmeSection) => {
-                    // <div id={section.id} dangerouslySetInnerHTML={{ __html: `<div>${section.html}</div>` }}></div>
+                    return (
+                        <Section id={section.id} dangerouslySetInnerHTML={{ __html: section.html }}></Section>
+                    )
                 })
             }
-        </AdocStyleWrapper>
+        </SectionGrid>
+        </>
     )
 }

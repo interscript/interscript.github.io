@@ -236,7 +236,46 @@ export default {
           mapsInfo,
         }),
       },
-
+      {
+        path: "systems",
+        template: "src/pages/systems.tsx",
+        getData: async () => ({
+          readmeSections,
+          mapsInfo,
+          metaDataMap,
+          repoInfo: {
+            owner: repoOwner,
+            name: repoName,
+          },
+        }),
+        children: (mapsInfo.data || []).map((system) => {
+          return {
+            path: `${system}`,
+            template: "src/containers/systemView.tsx",
+            getData: async () => ({
+              readmeSections,
+              mapsInfo,
+              repoInfo: {
+                owner: repoOwner,
+                name: repoName,
+              },
+              metaDataMap,
+              system,
+              mapData: JSON.parse(fs.readFileSync(`./public/mapsjson/${system}_main.json`, "utf8")),
+            }),
+          };
+        }),
+      },
+      {
+        path: 'integration',
+        template: 'src/components/ReadmeSectionPage.tsx',
+        getData: async() => ({
+          sections: [
+            findReadmeSection('integration-with-ruby-applications'),
+            findReadmeSection('usage')
+          ] 
+        })
+      }
     ]
 
     const routes = [
@@ -294,36 +333,7 @@ export default {
           };
         }),
       },
-      {
-        path: "systems",
-        template: "src/pages/systems.tsx",
-        getData: async () => ({
-          readmeSections,
-          mapsInfo,
-          metaDataMap,
-          repoInfo: {
-            owner: repoOwner,
-            name: repoName,
-          },
-        }),
-        children: (mapsInfo.data || []).map((system) => {
-          return {
-            path: `${system}`,
-            template: "src/containers/systemView.tsx",
-            getData: async () => ({
-              readmeSections,
-              mapsInfo,
-              repoInfo: {
-                owner: repoOwner,
-                name: repoName,
-              },
-              metaDataMap,
-              system,
-              mapData: JSON.parse(fs.readFileSync(`./public/mapsjson/${system}_main.json`, "utf8")),
-            }),
-          };
-        }),
-      },
+
     ];
 
     return newRoutes;
