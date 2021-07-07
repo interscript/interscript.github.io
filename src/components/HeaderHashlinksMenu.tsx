@@ -19,11 +19,19 @@ export function HeaderHashlinksMenu({ anchors, subpages }: { anchors: Hashlink[]
                 ))
             }
             {
-                subpages.map((page) => (
-                    <Link key={page.path} to={`/${page.path}`}>
-                        <SectionNavItem>{page.name}</SectionNavItem>
-                    </Link>
-                ))
+                subpages.map((page) => {
+                    return (
+                        page.path.includes('https') ? (
+                            <a href={page.path}><SectionNavItem>{page.name}</SectionNavItem></a>
+                        ) : (
+                            <Link key={page.path} to={`/${page.path}`}>
+                                <SectionNavItem>{page.name}</SectionNavItem>
+                            </Link>
+                        )
+                    )
+                }
+
+                )
             }
         </SectionNav>
     )

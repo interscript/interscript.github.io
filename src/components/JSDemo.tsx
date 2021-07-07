@@ -9,6 +9,7 @@ import { ScriptConversionSystem, systemToCode } from "../scs";
 import { primaryColor } from "../App";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import Interscript from "interscript";
+import { HeaderMenu } from "./HeaderMenu";
 
 export default () => {
     const {
@@ -31,6 +32,7 @@ export default () => {
 
     return (
         <>
+            <HeaderMenu />
             <SectionGrid>
                 <Section>
                     <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>

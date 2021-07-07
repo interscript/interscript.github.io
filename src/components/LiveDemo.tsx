@@ -4,6 +4,7 @@ import { useRouteData } from "react-static";
 import styled from "styled-components";
 import { primaryColor } from "../App";
 import { ScriptConversionSystem, systemToCode } from "../scs";
+import { HeaderMenu } from "./HeaderMenu";
 import { getLanguageTitleFrom6392BorT } from "./isoLang";
 import { SystemSelector } from "./SystemSelector";
 
@@ -69,6 +70,7 @@ export default () => {
 
     return (
         <>
+            <HeaderMenu />
             <SystemSelector onSelect={selectSystem} systemCodes={mapsInfo.data} />
 
             <SampleAndResult>

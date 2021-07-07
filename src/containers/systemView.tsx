@@ -4,6 +4,7 @@ import React, { ReactNode } from "react";
 import TreeMenu, { TreeMenuItem } from "react-simple-tree-menu";
 import { useRouteData } from "react-static";
 import styled from "styled-components";
+import { HeaderMenu } from "../components/HeaderMenu";
 import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
 
 const DEFAULT_PADDING = 0.75;
@@ -149,6 +150,7 @@ export default () => {
 
     return (
         <React.Fragment>
+            <HeaderMenu />
             <h3>System Name: {system}</h3>
             <SystemMetaInfo>
                 <tbody>{metaInfo}</tbody>

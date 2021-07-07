@@ -124,8 +124,6 @@ export default {
       metalist[k] = camelCaseMetadata(metadata[k].data);
       return metalist;
     }, {});
-    // console.log(metaDataMap);
-    console.log('readmeSections', readmeSections);
 
     const findReadmeSection = (path) => {
       return readmeSections.find((readmeSection) => readmeSection.id === path);
@@ -168,6 +166,14 @@ export default {
             {
               name: 'About',
               path: 'about'
+            },
+            {
+              name: 'Blog',
+              path: 'blog'
+            },
+            {
+              name: 'View on Github',
+              path: 'https://github.com/interscript/interscript/'
             }
           ],
           repoInfo: {
@@ -271,32 +277,11 @@ export default {
         template: 'src/components/ReadmeSectionPage.tsx',
         getData: async() => ({
           sections: [
-            findReadmeSection('integration-with-ruby-applications'),
-            findReadmeSection('usage')
+            findReadmeSection('installation'),
+            findReadmeSection('usage'),
+            findReadmeSection('integration-with-ruby-applications')
           ] 
         })
-      }
-    ]
-
-    const routes = [
-      {
-        path: "/",
-        template: "src/containers/Landing",
-        getData: () => ({
-          readmeSections,
-          repoInfo: {
-            owner: repoOwner,
-            name: repoName,
-          },
-          mapsInfo,
-        }),
-      },
-      {
-        path: "js",
-        template: "src/containers/DemoJS",
-        getData: () => ({
-          mapsInfo,
-        }),
       },
       {
         path: "blog",
@@ -317,12 +302,13 @@ export default {
         }),
       },
       {
-        path: "docs",
+        path: "customizing-and-contributing",
         template: "src/pages/docs.tsx",
         getData: async () => ({
           docList,
         }),
         children: docList.map((doc) => {
+          console.log(docList);
           return {
             path: doc.name,
             template: "src/pages/docsView.tsx",
@@ -333,8 +319,7 @@ export default {
           };
         }),
       },
-
-    ];
+    ]
 
     return newRoutes;
   },

@@ -14,15 +14,15 @@ export default () => {
                     name: item.titleHTML
                 }
             })} />
-        <SectionGrid>
-            {
-                sections.map((section: ReadmeSection) => {
-                    return (
-                        <Section id={section.id} dangerouslySetInnerHTML={{ __html: section.html }}></Section>
-                    )
-                })
-            }
-        </SectionGrid>
+            <SectionGrid>
+                {
+                    sections.map((section: ReadmeSection) => {
+                        return (
+                            <Section id={section.id} dangerouslySetInnerHTML={{ __html: section.html }}></Section>
+                        )
+                    })
+                }
+            </SectionGrid>
         </>
     )
 }

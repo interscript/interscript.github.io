@@ -7,9 +7,6 @@ export default () => (
         <Link to="/" className="nav-item">
             Home
         </Link>
-        <Link to="featured-authorities" className="nav-item">
-            Back
-        </Link>
         <Link to="featured-authorities/un" className="nav-item">
             UN
         </Link>
