@@ -5,10 +5,9 @@ import { HeaderHashlinksMenu } from './HeaderHashlinksMenu';
 import { Section, SectionGrid } from './Section';
 export default () => {
     const { sections } = useRouteData();
-    console.log(sections);
     return (
         <>
-            <HeaderHashlinksMenu subpages={[]} anchors={sections.map((item: any) => {
+            <HeaderHashlinksMenu subpages={[]} showHome={true} anchors={sections.map((item: any) => {
                 return {
                     path: item.id,
                     name: item.titleHTML

@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "assets/symbol.svg";
-import "../node_modules/react-simple-tree-menu/dist/main.css";
 
 export const primaryColor = "008075";
 

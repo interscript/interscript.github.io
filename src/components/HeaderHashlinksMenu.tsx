@@ -2,6 +2,7 @@ import { Link } from "@reach/router";
 import React from "react";
 import { SectionNav } from "./SectionNav";
 import { SectionNavAnchorItem, SectionNavItem } from "./SectionNavItem";
+import styled from "styled-components";
 
 export interface Hashlink {
     name: string;
@@ -9,9 +10,16 @@ export interface Hashlink {
 }
 
 
-export function HeaderHashlinksMenu({ anchors, subpages }: { anchors: Hashlink[], subpages: Hashlink[] }) {
+export function HeaderHashlinksMenu({ anchors, subpages, showHome }: { anchors: Hashlink[], subpages: Hashlink[], showHome?: boolean }) {
     return (
         <SectionNav>
+            {showHome && (
+                <Link to="/">
+                    <HomeButton>&laquo; Home</HomeButton>
+                </Link>
+
+            )}
+                
             {
                 anchors.map((item, index) => (
                     <SectionNavAnchorItem href={`#${item.path}`}><strong>{item.name}</strong>
@@ -36,3 +44,7 @@ export function HeaderHashlinksMenu({ anchors, subpages }: { anchors: Hashlink[]
         </SectionNav>
     )
 }
+
+const HomeButton = styled.span`
+    margin-right:12px
+`

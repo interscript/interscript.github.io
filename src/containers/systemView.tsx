@@ -6,6 +6,8 @@ import { useRouteData } from "react-static";
 import styled from "styled-components";
 import { HeaderMenu } from "../components/HeaderMenu";
 import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
+import "../../node_modules/react-simple-tree-menu/dist/main.css";
+import "./systemView.css";
 
 const DEFAULT_PADDING = 0.75;
 const ICON_SIZE = 2;
@@ -122,7 +124,6 @@ export default () => {
 
     const stagesTree = mapData.map(transformTree);
     const systemMetaData: InterscriptMetaData = metaDataMap[system];
-    console.log(system, systemMetaData);
 
     const metaFieldDelegate = (type: string) => {
         switch (type) {

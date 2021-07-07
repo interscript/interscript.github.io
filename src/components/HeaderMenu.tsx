@@ -8,7 +8,7 @@ export function HeaderMenu() {
         <>
             <SectionNav>
                 <Link to="/">
-                    <SectionNavItem key="home">Home</SectionNavItem>
+                    <span>&laquo; Home</span>
                 </Link>
             </SectionNav>
         </>

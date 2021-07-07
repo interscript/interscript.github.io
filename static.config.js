@@ -308,7 +308,6 @@ export default {
           docList,
         }),
         children: docList.map((doc) => {
-          console.log(docList);
           return {
             path: doc.name,
             template: "src/pages/docsView.tsx",
