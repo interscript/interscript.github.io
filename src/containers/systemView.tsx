@@ -7,11 +7,10 @@ import styled from "styled-components";
 import { HeaderMenu } from "../components/HeaderMenu";
 import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
 import "../../node_modules/react-simple-tree-menu/dist/main.css";
-import "./systemView.css";
 
-const DEFAULT_PADDING = 0.75;
-const ICON_SIZE = 2;
-const LEVEL_SPACE = 1.75;
+// const DEFAULT_PADDING = 0.75;
+// const ICON_SIZE = 2;
+// const LEVEL_SPACE = 1.75;
 const RULE_SHOW_LIMIT = 100;
 
 function transformTree(stage: any): any {
@@ -150,7 +149,7 @@ export default () => {
     ));
 
     return (
-        <React.Fragment>
+        <SystemView>
             <HeaderMenu />
             <h3>System Name: {system}</h3>
             <SystemMetaInfo>
@@ -201,7 +200,7 @@ export default () => {
                     </TreeMenu>
                 </div>
             </div>
-        </React.Fragment>
+        </SystemView>
     );
 };
 
@@ -248,5 +247,80 @@ const SystemMetaInfo = styled.table`
         td:nth-child(2) {
             flex: 2;
         }
+    }
+`;
+
+const SystemView = styled.div`
+    li {
+        display: block;
+        height: 100%;
+    }
+    .system-views {
+        display: flex;
+        flex-direction: row;
+    }
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        /* width: 100%; */
+        width: 90vw;
+        position: absolute;
+        left: 5vw;
+        margin-top: 3rem;
+        padding-bottom: 10rem;
+        border: 1px solid;
+    }
+    .first-column {
+        margin-top: 1em;
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+    }
+    .second-column {
+        display: flex;
+        width: 100%;
+    }
+
+    .second-column > div {
+        width: 100%;
+    }
+    .label {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    .value {
+        padding-left: 24px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .rstm-tree-item--active {
+        background-color: #135b55 !important;
+    }
+    .rstm-tree-item:hover {
+        box-shadow: 0 0 5px 0 #222;
+        z-index: 999;
+    }
+    .tree {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .rstm-tree-item {
+        transition: all 0.5s ease;
+    }
+
+    .chart-header {
+        display: flex;
+        flex-direction: row;
+        font-size: 1.5rem;
+        background: #008075;
+        padding: 0.725rem;
+        border-bottom: 1px solid;
+        color: #fff;
     }
 `;
