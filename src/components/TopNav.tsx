@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 export default () => (
     <TopNav>
+        <Link to="/" className="nav-item">
+            Home
+        </Link>
         <Link to="featured-authorities/un" className="nav-item">
             UN
         </Link>
