@@ -103,7 +103,6 @@ const SystemList = () => {
     return (
         <div>
             <HeaderMenu />
-
             <SearchHeader>
                 <span>System List: {list.length}</span>
                 {/* FilterBar */}

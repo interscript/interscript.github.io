@@ -124,14 +124,28 @@ export default {
             metalist[k] = camelCaseMetadata(metadata[k].data);
             return metalist;
         }, {});
-        // console.log(metaDataMap);
 
-        const routes = [
+        const findReadmeSection = (path) => {
+            return readmeSections.find((readmeSection) => readmeSection.id === path);
+        };
+
+        const renderADocSection = (name, path) => {
+            const header = `
+      <h2><a class="anchor" aria-hidden="true" href="#${path}"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"/></svg></a>${name}</h2>\n'
+      `;
+            return {
+                html: header + fs.readFileSync(`tmp/docs/${path}.html`, { encoding: "utf8" }),
+                titleHTML: name,
+                id: path.toLowerCase(),
+            };
+        };
+
+        return [
             {
                 path: "/",
                 template: "src/containers/Landing",
                 getData: () => ({
-                    readmeSections,
+                    readmeSections: [findReadmeSection("introduction"), findReadmeSection("demonstration")],
                     repoInfo: {
                         owner: repoOwner,
                         name: repoName,
@@ -139,81 +153,63 @@ export default {
                     mapsInfo,
                 }),
             },
+            // here I need to refactor a little
             {
-                path: "js",
-                template: "src/containers/DemoJS",
+                path: "featured-authorities",
+                template: "src/pages/un.tsx",
+                getData: () => ({
+                    samples: un || unSamples,
+                }),
+                children: [
+                    {
+                        path: "alalc",
+                        template: "src/pages/alalc.tsx",
+                        getData: () => ({
+                            samples: alalc || alalcSamples,
+                        }),
+                    },
+                    {
+                        path: "bgnpcgn",
+                        template: "src/pages/bgnpcgn.tsx",
+                        getData: () => ({
+                            samples: bgnpcgn || bgnpcgnSamples,
+                        }),
+                    },
+                    {
+                        path: "odni",
+                        template: "src/pages/odni.tsx",
+                        getData: () => ({
+                            samples: odni || odniSamples,
+                        }),
+                    },
+                    {
+                        path: "ogc11122",
+                        template: "src/pages/ogc11122.tsx",
+                        getData: () => ({
+                            samples: ogc11122 || ogc11122Samples,
+                        }),
+                    },
+                    {
+                        path: "un",
+                        template: "src/pages/un.tsx",
+                        getData: () => ({
+                            samples: un || unSamples,
+                        }),
+                    },
+                ],
+            },
+            {
+                path: "try-api",
+                template: "src/components/LiveDemo.tsx",
                 getData: () => ({
                     mapsInfo,
                 }),
             },
             {
-                path: "js/alalc",
-                template: "src/pages/alalc.tsx",
+                path: "try-javascript",
+                template: "src/components/JSDemo.tsx",
                 getData: () => ({
-                    samples: alalc || alalcSamples,
-                }),
-            },
-            {
-                path: "js/bgnpcgn",
-                template: "src/pages/bgnpcgn.tsx",
-                getData: () => ({
-                    samples: bgnpcgn || bgnpcgnSamples,
-                }),
-            },
-            {
-                path: "js/odni",
-                template: "src/pages/odni.tsx",
-                getData: () => ({
-                    samples: odni || odniSamples,
-                }),
-            },
-            {
-                path: "js/ogc11122",
-                template: "src/pages/ogc11122.tsx",
-                getData: () => ({
-                    samples: ogc11122 || ogc11122Samples,
-                }),
-            },
-            {
-                path: "js/un",
-                template: "src/pages/un.tsx",
-                getData: () => ({
-                    samples: un || unSamples,
-                }),
-            },
-            {
-                path: "blog",
-                template: "src/pages/blog.tsx",
-                getData: async () => ({
-                    blogList,
-                }),
-                children: blogList.map((blogPost) => {
-                    return {
-                        path: blogPost.name,
-                        template: "src/pages/blogPost.tsx",
-                        getData: () => ({
-                            blogList,
-                            blogPost,
-                            html: fs.readFileSync(blogPost.path, "utf8"),
-                        }),
-                    };
-                }),
-            },
-            {
-                path: "docs",
-                template: "src/pages/docs.tsx",
-                getData: async () => ({
-                    docList,
-                }),
-                children: docList.map((doc) => {
-                    return {
-                        path: doc.name,
-                        template: "src/pages/docsView.tsx",
-                        getData: async () => ({
-                            docList,
-                            html: fs.readFileSync(doc.path, "utf8"),
-                        }),
-                    };
+                    mapsInfo,
                 }),
             },
             {
@@ -246,9 +242,53 @@ export default {
                     };
                 }),
             },
+            {
+                path: "integration",
+                template: "src/components/ReadmeSectionPage.tsx",
+                getData: async () => ({
+                    sections: [
+                        findReadmeSection("installation"),
+                        findReadmeSection("usage"),
+                        renderADocSection("Integration with Ruby Applications", "Integration_with_Ruby_Applications"),
+                    ],
+                }),
+            },
+            {
+                path: "blog",
+                template: "src/pages/blog.tsx",
+                getData: async () => ({
+                    blogList,
+                }),
+                children: blogList.map((blogPost) => {
+                    return {
+                        path: blogPost.name,
+                        template: "src/pages/blogPost.tsx",
+                        getData: () => ({
+                            blogList,
+                            blogPost,
+                            html: fs.readFileSync(blogPost.path, "utf8"),
+                        }),
+                    };
+                }),
+            },
+            {
+                path: "customizing-and-contributing",
+                template: "src/pages/docs.tsx",
+                getData: async () => ({
+                    docList,
+                }),
+                children: docList.map((doc) => {
+                    return {
+                        path: doc.name,
+                        template: "src/pages/docsView.tsx",
+                        getData: async () => ({
+                            docList,
+                            html: fs.readFileSync(doc.path, "utf8"),
+                        }),
+                    };
+                }),
+            },
         ];
-
-        return routes;
     },
     plugins: [
         "react-static-plugin-typescript",

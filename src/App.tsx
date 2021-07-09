@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "assets/symbol.svg";
+import { MainNav } from "components/MainNav";
 
 export const primaryColor = "008075";
 
@@ -47,6 +48,9 @@ function App() {
                 <HeaderTitle />
             </LogoHeader>
 
+            <MainNavSection>
+                <MainNav />
+            </MainNavSection>
             <MainContent>
                 <React.Suspense fallback={<em>Loading...</em>}>
                     <Router>
@@ -208,6 +212,12 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
     }
 `;
 
+const MainNavSection = styled.nav`
+    @media screen and (min-width: 900px) {
+        margin: 0 auto;
+        width: 901px;
+    }
+`;
 const MainContent = styled.main`
     ul {
         padding-left: 1.25em;

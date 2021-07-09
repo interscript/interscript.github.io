@@ -10,7 +10,7 @@ import { AdocStyleWrapper } from "components/AdocStyleWrapper";
 export default () => {
     const { html, docList } = useRouteData();
     const links = (docList || []).map((doc: DocFile, idx: number) => (
-        <Link to={`/docs/${doc.name}`} key={idx}>
+        <Link to={`/customizing-and-contributing/${doc.name}`} key={idx}>
             <SectionNavItem key="docs">
                 <strong>{doc.title}</strong>
             </SectionNavItem>
@@ -19,8 +19,15 @@ export default () => {
 
     return (
         <>
-            <SectionNav>{docList && links}</SectionNav>
+            <SectionNav>
+                <Link to="/">
+                    <HomeButton>&laquo; Home</HomeButton>
+                </Link>
+                <>{docList && links}</></SectionNav>
             <AdocStyleWrapper dangerouslySetInnerHTML={{ __html: html }} />
         </>
     );
 };
+const HomeButton = styled.span`
+    margin-right:12px
+`
