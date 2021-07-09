@@ -11,8 +11,10 @@ import { Section, SectionGrid } from "../components/Section";
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
-    const { readmeSections, mapsInfo, subpages }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any, subpages: any[] } =
-        useRouteData();
+    const {
+        readmeSections,
+        mapsInfo,
+    }: { readmeSections: ReadmeSection[]; repoInfo: RepoInfo; mapsInfo: any } = useRouteData();
 
     const [showDemo, setShowDemo] = useState(true);
     const [demoIsShowable, setDemoIsShowable] = useState(true);
@@ -30,8 +32,23 @@ export default () => {
 
     return (
         <>
-            <HeaderHashlinksMenu subpages={subpages} anchors={[]} />
-
+            <HeaderHashlinksMenu
+                subpages={[]}
+                anchors={[
+                    {
+                        name: "Introduction",
+                        path: readmeSections.find((x) => x.id === "introduction").id,
+                    },
+                    {
+                        name: "Demonstration",
+                        path: readmeSections.find((x) => x.id === "demonstration").id,
+                    },
+                    {
+                        name: "Statistics",
+                        path: "statistics",
+                    },
+                ]}
+            />
 
             <SectionGrid>
                 {readmeSections.map((section) => (
