@@ -12,6 +12,7 @@ export interface InterscriptMetaData {
     description?: string;
     notes?: string[];
     nonstandard?: any;
+    test: string[] | null;
 }
 
 export interface InterscriptMetaDataMap {

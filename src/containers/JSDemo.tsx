@@ -9,13 +9,21 @@ import { ScriptConversionSystem, systemToCode } from "../scs";
 import { primaryColor } from "../App";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import Interscript from "interscript";
-import { HeaderMenu } from "./HeaderMenu";
+import { HeaderMenu } from "components/HeaderMenu";
+import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
+
+// interface SampleData {
+//     source: string;
+//     result: string;
+// }
 
 export default () => {
     const {
         mapsInfo,
+        metaDataMap,
     }: {
         mapsInfo: any;
+        metaDataMap: InterscriptMetaDataMap;
     } = useRouteData();
 
     const [demoIsShowable, setDemoIsShowable] = useState(false);
@@ -25,10 +33,10 @@ export default () => {
         setDemoIsShowable(true);
     }, []);
 
-    const summary = Object.keys(mapsInfo.languages)
-        .map((alpha3) => `${getLanguageTitleFrom6392or3(alpha3)} (${mapsInfo.languages[alpha3]})`)
-        .sort()
-        .join(", ");
+    // const sampleData = Object.entries(metaDataMap).reduce((m: any, [k, v]: [string, InterscriptMetaData]) => {
+    //     m[k] = { test: v.test && v.test[0] };
+    //     return m;
+    // }, {});
 
     return (
         <>
@@ -43,7 +51,7 @@ export default () => {
                 {demoIsShowable ? (
                     <Section>
                         <h2>Try it live - Javascript Version</h2>
-                        <LiveDemo maps={mapsInfo.data} />
+                        <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} />
                     </Section>
                 ) : null}
             </SectionGrid>
@@ -51,7 +59,7 @@ export default () => {
     );
 };
 
-const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
+const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
@@ -97,9 +105,8 @@ const LiveDemo: React.FC<{ maps: string[] }> = function ({ maps }) {
     async function getTestExample(system: string): Promise<string | null> {
         Interscript.map_path = "/maps/";
         await Interscript.load_map(system);
-        //Todo: find a solution to get sample data as the map files no longer include test data
 
-        return null;
+        return metaData[system].test && metaData[system].test[0];
     }
 
     async function handleConvert() {

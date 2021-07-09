@@ -122,6 +122,7 @@ export default {
         });
         const metaDataMap = Object.keys(metadata).reduce((metalist, k) => {
             metalist[k] = camelCaseMetadata(metadata[k].data);
+            metalist[k]["test"] = metadata[k]["test"];
             return metalist;
         }, {});
 
@@ -207,9 +208,10 @@ export default {
             },
             {
                 path: "try-javascript",
-                template: "src/components/JSDemo.tsx",
+                template: "src/containers/JSDemo.tsx",
                 getData: () => ({
                     mapsInfo,
+                    metaDataMap,
                 }),
             },
             {
