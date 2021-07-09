@@ -192,9 +192,9 @@ export default {
       // here I need to refactor a little
       {
         path: 'featured-authorities',
-        template: "src/containers/DemoJS",
+        template: "src/pages/un.tsx",
         getData: () => ({
-          mapsInfo,
+          samples: un || unSamples,
         }),
         children: [
           {
