@@ -30,25 +30,8 @@ export default () => {
 
     return (
         <>
-            <HeaderHashlinksMenu subpages={subpages} anchors={[
-                {
-                    name: 'Introduction',
-                    path: readmeSections.find(x => x.id === 'introduction').id
-                },
-                {
-                    name: 'Demonstration',
-                    path: readmeSections.find(x => x.id === 'demonstration').id
-                },
-                {
-                    name: 'Statistics',
-                    path: 'statistics'
-                },
-            ]} />
-            <SectionGrid>
-                <Section>
-                    <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
-                </Section>
-            </SectionGrid>
+            <HeaderHashlinksMenu subpages={subpages} anchors={[]} />
+
 
             <SectionGrid>
                 {readmeSections.map((section) => (
