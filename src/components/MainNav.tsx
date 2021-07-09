@@ -2,6 +2,7 @@ import { SectionNav } from "components/SectionNav";
 import { Link } from "@reach/router";
 import { SectionNavAnchorItem, SectionNavItem } from "components/SectionNavItem";
 import React from "react";
+import styled from "styled-components";
 
 const MAIN_MENU_ITEMS = [
     {
@@ -51,12 +52,34 @@ export const MainNav = () => {
     const mainMenuItems = MAIN_MENU_ITEMS.map((item, index) =>
         !item.external ? (
             <Link key={`${index}--${item.name}`} to={item.path}>
-                <SectionNavItem>{item.name}</SectionNavItem>
+                <MainNavItem>{item.name}</MainNavItem>
             </Link>
         ) : (
-            <SectionNavAnchorItem href={item.path}>{item.name}</SectionNavAnchorItem>
+            <MainNavAnchorItem href={item.path}>{item.name}</MainNavAnchorItem>
         )
     );
 
-    return <SectionNav>{mainMenuItems}</SectionNav>;
+    return <MainNavWrapper>{mainMenuItems}</MainNavWrapper>;
 };
+
+export const MainNavItem = styled(SectionNavItem)`
+    @media screen and (min-width: 900px) {
+        &::before {
+            content: "|";
+            display: inline;
+            margin: 0 1em 0 0;
+        }
+    }
+`;
+
+export const MainNavAnchorItem = styled(SectionNavAnchorItem)`
+    @media screen and (min-width: 900px) {
+        &::before {
+            content: "|";
+            display: inline;
+            margin: 0 1em 0 0;
+        }
+    }
+`;
+
+export const MainNavWrapper = styled(SectionNav)``;
