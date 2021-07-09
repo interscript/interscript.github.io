@@ -12,7 +12,7 @@ export const Statistics: React.FC<{ mapsInfo: any }> = function ({ mapsInfo }) {
         .sort((a, b) => a.languageTitle.localeCompare(b.languageTitle));
 
     const list = data.map((lang) => (
-        <CItem>
+        <CItem key={lang.code}>
             <span>{lang.languageTitle}</span>
             <span>
                 <strong>{lang.count}</strong>
