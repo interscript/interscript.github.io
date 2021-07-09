@@ -1,17 +1,15 @@
 import axios, { AxiosResponse } from "axios";
-import React, { useState, useEffect, useRef } from "react";
-import { useRouteData } from "react-static";
-import styled from "styled-components";
-import { primaryColor } from "../App";
+import React, { useEffect, useRef, useState } from "react";
+import { InterscriptMetaDataMap } from "../meta";
 import { ScriptConversionSystem, systemToCode } from "../scs";
-import { HeaderMenu } from "./HeaderMenu";
-import { getLanguageTitleFrom6392BorT } from "./isoLang";
+import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import { SystemSelector } from "./SystemSelector";
+import { primaryColor } from "../App";
+import styled from "styled-components";
 
 const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
 
-export default () => {
-    const { mapsInfo }: { mapsInfo: any } = useRouteData();
+const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
@@ -55,14 +53,14 @@ export default () => {
                 setSubmitted(false);
                 setError("Sorry, an error occurred :(");
             }
-            setResult(resp.data?.data?.transliterate || "No result returned, please check your sample!");
+            setResult(resp?.data?.data?.transliterate || "No result returned, please check your sample!");
         }
     }
 
     let placeholder: string;
     if (selectedSystem?.lang) {
         placeholder = `Enter something in ${
-            getLanguageTitleFrom6392BorT(selectedSystem.lang) || "selected writing system"
+            getLanguageTitleFrom6392or3(selectedSystem.lang) || "selected writing system"
         }…`;
     } else {
         placeholder = "Enter something…";
@@ -70,8 +68,7 @@ export default () => {
 
     return (
         <>
-            <HeaderMenu />
-            <SystemSelector onSelect={selectSystem} systemCodes={mapsInfo.data} />
+            <SystemSelector onSelect={selectSystem} systemCodes={maps} />
 
             <SampleAndResult>
                 <SampleTextArea
@@ -109,7 +106,6 @@ export default () => {
                     </small>
                 </p>
             ) : null}
-        {/* test */}
         </>
     );
 };
@@ -160,3 +156,5 @@ const SampleTextArea = styled.textarea`
 const ResultTextArea = styled(SampleTextArea)`
     cursor: default;
 `;
+
+export default LiveDemo;

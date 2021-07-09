@@ -201,14 +201,13 @@ export default {
             },
             {
                 path: "try-api",
-                template: "src/components/LiveDemo.tsx",
                 getData: () => ({
                     mapsInfo,
+                    metaDataMap,
                 }),
             },
             {
-                path: "try-javascript",
-                template: "src/containers/JSDemo.tsx",
+                path: "try-js",
                 getData: () => ({
                     mapsInfo,
                     metaDataMap,

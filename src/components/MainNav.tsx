@@ -20,7 +20,7 @@ const MAIN_MENU_ITEMS = [
     },
     {
         name: "Try: JavaScript",
-        path: "/try-javascript",
+        path: "/try-js",
     },
     {
         name: "Systems",

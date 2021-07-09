@@ -1,63 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useRouteData } from "react-static";
-// import { AxiosResponse } from "axios";
-import styled from "styled-components";
-import TopNav from "components/TopNav";
-import { SystemSelector } from "components/SystemSelector";
-import { ScriptConversionSystem, systemToCode } from "../scs";
-
-import { primaryColor } from "../App";
-import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import Interscript from "interscript";
-import { HeaderMenu } from "components/HeaderMenu";
-import { InterscriptMetaData, InterscriptMetaDataMap } from "../meta";
-
-// interface SampleData {
-//     source: string;
-//     result: string;
-// }
-
-export default () => {
-    const {
-        mapsInfo,
-        metaDataMap,
-    }: {
-        mapsInfo: any;
-        metaDataMap: InterscriptMetaDataMap;
-    } = useRouteData();
-
-    const [demoIsShowable, setDemoIsShowable] = useState(false);
-
-    useEffect(() => {
-        // Ensures interactive elements are not included in static HTML
-        setDemoIsShowable(true);
-    }, []);
-
-    // const sampleData = Object.entries(metaDataMap).reduce((m: any, [k, v]: [string, InterscriptMetaData]) => {
-    //     m[k] = { test: v.test && v.test[0] };
-    //     return m;
-    // }, {});
-
-    return (
-        <>
-            <HeaderMenu />
-            <SectionGrid>
-                <Section>
-                    <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
-                </Section>
-            </SectionGrid>
-
-            <SectionGrid>
-                {demoIsShowable ? (
-                    <Section>
-                        <h2>Try it live - Javascript Version</h2>
-                        <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} />
-                    </Section>
-                ) : null}
-            </SectionGrid>
-        </>
-    );
-};
+import React, { useEffect, useRef, useState } from "react";
+import { InterscriptMetaDataMap } from "../meta";
+import { ScriptConversionSystem, systemToCode } from "../scs";
+import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+import { SystemSelector } from "./SystemSelector";
+import { primaryColor } from "../App";
+import styled from "styled-components";
 
 const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
     const [sampleText, setSampleText] = useState<string>("");
@@ -80,15 +28,13 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
             sampleInputRef.current?.focus();
         }
 
-        (async () => {
-            let test: string | null;
-            if (systemCode !== null) {
-                test = await getTestExample(systemCode);
-                if (test !== null) {
-                    setSampleText(test);
-                }
+        let test: string | null;
+        if (systemCode !== null) {
+            test = getTestExample(systemCode);
+            if (test !== null) {
+                setSampleText(test);
             }
-        })();
+        }
     }, [systemCode]);
 
     useEffect(() => {
@@ -102,10 +48,7 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
         })();
     }, []);
 
-    async function getTestExample(system: string): Promise<string | null> {
-        Interscript.map_path = "/maps/";
-        await Interscript.load_map(system);
-
+    function getTestExample(system: string): string | null {
         return metaData[system].test && metaData[system].test[0];
     }
 
@@ -118,6 +61,8 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
             setSubmitted(true);
 
             try {
+                Interscript.map_path = "/maps/";
+                await Interscript.load_map(systemCode);
                 resp = Interscript.transliterate(systemCode, sampleText);
             } catch (e) {
                 setResult(null);
@@ -228,27 +173,4 @@ const ResultTextArea = styled(SampleTextArea)`
     cursor: default;
 `;
 
-const Section = styled.article`
-    a.anchor {
-        margin-right: 0.5rem;
-
-        &,
-        &:link,
-        &:visited {
-            border: none;
-        }
-    }
-
-    a[rel*="noopener"] {
-        &,
-        &:link,
-        &:visited {
-            border: none;
-        }
-    }
-`;
-
-const SectionGrid = styled.div`
-    overflow: hidden;
-    padding: 0 1rem;
-`;
+export default LiveDemo;
