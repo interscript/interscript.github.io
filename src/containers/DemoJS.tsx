@@ -35,21 +35,6 @@ export default () => {
 
             <SectionGrid>
                 <Section>
-                    <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
-                </Section>
-            </SectionGrid>
-
-            <SectionGrid>
-                {demoIsShowable ? (
-                    <Section>
-                        <h2>Try it live - Javascript Version</h2>
-                        <LiveDemo maps={mapsInfo.data} />
-                    </Section>
-                ) : null}
-            </SectionGrid>
-
-            <SectionGrid>
-                <Section>
                     <h2>{`Statistics`}</h2>
                     <p>{summary}</p>
                 </Section>

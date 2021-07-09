@@ -47,20 +47,6 @@ export default () => {
                     </Section>
                 ) : null}
             </SectionGrid>
-
-            <SectionGrid>
-                <Section>
-                    <h2>{`Statistics`}</h2>
-                    <p>{summary}</p>
-                </Section>
-            </SectionGrid>
-
-            <SectionGrid>
-                <Section>
-                    <h2>{`Copyright`}</h2>
-                    <p>{`Ribose© 2021. All rights reserved.`}</p>
-                </Section>
-            </SectionGrid>
         </>
     );
 };
