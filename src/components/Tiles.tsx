@@ -8,7 +8,7 @@ export const TilesContainer = styled.div`
     margin-top: 30px;
 `;
 
-export const Tile = styled.a`
+export const Tile = styled.div`
     color: inherit;
     text-decoration: none;
     box-sizing: border-box;

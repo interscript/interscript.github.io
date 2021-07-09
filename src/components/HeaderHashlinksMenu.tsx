@@ -9,42 +9,43 @@ export interface Hashlink {
     path: string;
 }
 
-
-export function HeaderHashlinksMenu({ anchors, subpages, showHome }: { anchors: Hashlink[], subpages: Hashlink[], showHome?: boolean }) {
+export function HeaderHashlinksMenu({
+    anchors,
+    subpages,
+    showHome,
+}: {
+    anchors: Hashlink[];
+    subpages: Hashlink[];
+    showHome?: boolean;
+}) {
     return (
         <SectionNav>
             {showHome && (
                 <Link to="/">
                     <HomeButton>&laquo; Home</HomeButton>
                 </Link>
-
             )}
-                
-            {
-                anchors.map((item, index) => (
-                    <SectionNavAnchorItem href={`#${item.path}`}><strong>{item.name}</strong>
-                    </SectionNavAnchorItem>
-                ))
-            }
-            {
-                subpages.map((page) => {
-                    return (
-                        page.path.includes('https') ? (
-                            <a href={page.path}><SectionNavItem>{page.name}</SectionNavItem></a>
-                        ) : (
-                            <Link key={page.path} to={`/${page.path}`}>
-                                <SectionNavItem>{page.name}</SectionNavItem>
-                            </Link>
-                        )
-                    )
-                }
 
-                )
-            }
+            {anchors.map((item) => (
+                <SectionNavAnchorItem key={item.path} href={`#${item.path}`}>
+                    <strong>{item.name}</strong>
+                </SectionNavAnchorItem>
+            ))}
+            {subpages.map((page) => {
+                return page.path.includes("https") ? (
+                    <a href={page.path}>
+                        <SectionNavItem key={page.path}>{page.name}</SectionNavItem>
+                    </a>
+                ) : (
+                    <Link key={page.path} to={`/${page.path}`}>
+                        <SectionNavItem>{page.name}</SectionNavItem>
+                    </Link>
+                );
+            })}
         </SectionNav>
-    )
+    );
 }
 
 const HomeButton = styled.span`
-    margin-right:12px
-`
+    margin-right: 12px;
+`;

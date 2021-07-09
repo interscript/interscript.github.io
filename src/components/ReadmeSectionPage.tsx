@@ -1,27 +1,29 @@
-import React from 'react';
+import React from "react";
 import { useRouteData } from "react-static";
 import { ReadmeSection } from "../../types";
-import { HeaderHashlinksMenu } from './HeaderHashlinksMenu';
-import { Section, SectionGrid } from './Section';
+import { HeaderHashlinksMenu } from "./HeaderHashlinksMenu";
+import { Section, SectionGrid } from "./Section";
 export default () => {
     const { sections } = useRouteData();
     return (
         <>
-            <HeaderHashlinksMenu subpages={[]} showHome={true} anchors={sections.map((item: any) => {
-                return {
-                    path: item.id,
-                    name: item.titleHTML
-                }
-            })} />
+            <HeaderHashlinksMenu
+                subpages={[]}
+                showHome={true}
+                anchors={sections.map((item: any) => {
+                    return {
+                        path: item.id,
+                        name: item.titleHTML,
+                    };
+                })}
+            />
             <SectionGrid>
-                {
-                    sections.map((section: ReadmeSection) => {
-                        return (
-                            <Section id={section.id} dangerouslySetInnerHTML={{ __html: section.html }}></Section>
-                        )
-                    })
-                }
+                {sections.map((section: ReadmeSection) => {
+                    return (
+                        <Section key={section.id} id={section.id} dangerouslySetInnerHTML={{ __html: section.html }} />
+                    );
+                })}
             </SectionGrid>
         </>
-    )
-}
+    );
+};

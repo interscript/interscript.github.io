@@ -1,8 +1,9 @@
 import { SectionNav } from "components/SectionNav";
 import { Link } from "@reach/router";
 import { SectionNavAnchorItem, SectionNavItem } from "components/SectionNavItem";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useLocation } from "@reach/router";
 
 const MAIN_MENU_ITEMS = [
     {
@@ -49,13 +50,34 @@ const MAIN_MENU_ITEMS = [
 ];
 
 export const MainNav = () => {
-    const mainMenuItems = MAIN_MENU_ITEMS.map((item, index) =>
+    const [currentMenu, setCurrentMenu] = useState(MAIN_MENU_ITEMS[0].path);
+    const location = useLocation();
+
+    useEffect(() => {
+        setCurrentMenu(location.pathname);
+    }, []);
+
+    const mainMenuItems = MAIN_MENU_ITEMS.map((item) =>
         !item.external ? (
-            <Link key={`${index}--${item.name}`} to={item.path}>
-                <MainNavItem>{item.name}</MainNavItem>
+            <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => {
+                    setCurrentMenu(item.path);
+                }}
+            >
+                {item.path === currentMenu ? (
+                    <MainNavItem>
+                        <strong>{item.name}</strong>
+                    </MainNavItem>
+                ) : (
+                    <MainNavItem>{item.name}</MainNavItem>
+                )}
             </Link>
         ) : (
-            <MainNavAnchorItem href={item.path}>{item.name}</MainNavAnchorItem>
+            <MainNavAnchorItem key={item.path} href={item.path}>
+                {item.name}
+            </MainNavAnchorItem>
         )
     );
 
