@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import Interscript from "interscript";
 import React, { useEffect, useRef, useState } from "react";
 import { InterscriptMetaDataMap } from "../meta";
 import { ScriptConversionSystem, systemToCode } from "../scs";
@@ -9,7 +10,13 @@ import styled from "styled-components";
 
 const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
 
-const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
+type DemoType = "RUBY" | "JAVASCRIPT";
+
+const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; demoType?: DemoType }> = function ({
+    maps,
+    metaData,
+    demoType = "JAVASCRIPT",
+}) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
@@ -19,6 +26,9 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
     const systemCode: string | null = selectedSystem !== null ? systemToCode(selectedSystem) : null;
+    const api: boolean = demoType === "RUBY";
+
+    console.log(demoType);
 
     useEffect(() => {
         setError(null);
@@ -29,31 +39,62 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
         if (systemCode) {
             sampleInputRef.current?.focus();
         }
+
+        let test: string | null;
+        if (systemCode !== null) {
+            test = getTestExample(systemCode);
+            if (test !== null) {
+                setSampleText(test);
+            }
+        }
     }, [systemCode]);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                // await Interscript.load_map_list();
+                // setSystemCodes(maps);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    }, []);
+
+    function getTestExample(system: string): string | null {
+        return metaData[system].test && metaData[system].test[0];
+    }
 
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
-            let resp: AxiosResponse<any>;
-
             setError(null);
             setResult(undefined);
             setSubmitted(true);
 
+            let respApi: AxiosResponse<any>;
+            let resp: string;
             try {
-                resp = await axios({
-                    method: "POST",
-                    url: API_ENDPOINT,
-                    data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+                if (api) {
+                    respApi = await axios({
+                        method: "POST",
+                        url: API_ENDPOINT,
+                        data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                    });
+                } else {
+                    Interscript.map_path = "/maps/";
+                    await Interscript.load_map(systemCode);
+                    resp = Interscript.transliterate(systemCode, sampleText);
+                }
             } catch (e) {
                 setResult(null);
                 setSubmitted(false);
                 setError("Sorry, an error occurred :(");
             }
-            setResult(resp?.data?.data?.transliterate || "No result returned, please check your sample!");
+            setResult(
+                (api ? respApi?.data?.data?.transliterate : resp) || "No result returned, please check your sample!"
+            );
         }
     }
 

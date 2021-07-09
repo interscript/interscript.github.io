@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouteData } from "react-static";
 import { HeaderMenu } from "components/HeaderMenu";
 import { InterscriptMetaDataMap } from "../meta";
 import { Section, SectionGrid } from "components/Section";
-import LiveDemo from "components/LiveDemoJS";
+import LiveDemo from "components/LiveDemo";
 
 export default () => {
     const {

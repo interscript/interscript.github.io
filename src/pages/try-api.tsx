@@ -34,7 +34,7 @@ export default () => {
                 {demoIsShowable ? (
                     <Section>
                         <h2>Try it live - Ruby Version</h2>
-                        <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} />
+                        <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} demoType="RUBY" />
                     </Section>
                 ) : null}
             </SectionGrid>
