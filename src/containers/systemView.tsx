@@ -221,6 +221,9 @@ const Sub = styled.div`
         kbd {
             white-space: pre;
         }
+        @supports (-webkit-appearance:none) {
+            margin-right:10px;
+        }
         &::after {
             content: " ";
             white-space: pre;

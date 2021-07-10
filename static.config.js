@@ -21,6 +21,9 @@ const repoName = "interscript";
 const octokit = new Octokit({ auth: process.env.GH_TOKEN });
 
 export default {
+    devServer: {
+      host: '0.0.0.0'
+    },
     entry: path.join(__dirname, "src", "index.tsx"),
     getRoutes: async () => {
         const readmeResp = await octokit.request("GET /repos/{owner}/{repo}/readme", {
