@@ -13,4 +13,5 @@ export const Select = styled.select`
     -webkit-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
     text-overflow: ellipsis;
+    -webkit-appearance:none;
 `;
