@@ -4,8 +4,7 @@ import cheerio from 'cheerio';
 
 import {Octokit} from '@octokit/rest';
 import Interscript from 'interscript';
-import AdmZip from 'adm-zip';
-import request from 'request';
+
 
 import alalcSamples from './src/samples/alalc.json';
 import bgnpcgnSamples from './src/samples/bgnpcgn.json';
@@ -14,42 +13,11 @@ import ogc11122Samples from './src/samples/ogc11122.json';
 import unSamples from './src/samples/un.json';
 import metadata from './src/samples/metadata.json';
 // import { ReadmeSection } from './types'
-
+import { downloadZip } from './scripts/downloadJsons';
 const repoOwner = 'interscript';
 const repoName = 'interscript';
 
 const octokit = new Octokit({auth: process.env.GH_TOKEN});
-
-const visJsonUrl = 'https://nightly.link/interscript/interscript/workflows/rake/master/vis_json.zip';
-const metadataUrl = 'https://nightly.link/interscript/interscript/workflows/rake/master/metadata.zip';
-const visJsonsPath = './public/vis_json';
-const metadataJsonsPath = './public/metadata_json'
-async function downloadZip(inputUrl, outputPath) {
-    // read all files from docs
-    return new Promise((resolve, reject) => {
-        request.get({url: inputUrl, encoding: null}, (err, res, body) => {
-            if (err) {
-                reject(err);
-                throw new Error(err);
-            }
-
-            const zip = new AdmZip(body);
-            const zipEntries = zip.getEntries();
-            const promises = [];
-            zipEntries.map((entry) => {
-                const body = zip.readAsText(entry, 'utf8');
-                return fs.writeFile(outputPath + `/${entry.entryName}`, body, (err) => {
-                    if (err) {
-                        reject(err);
-                    }
-                    resolve();
-                });
-            });
-
-            return Promise.all(promises);
-        });
-    });
-}
 
 
 export default {
@@ -66,8 +34,6 @@ export default {
             }
         );
 
-        await downloadZip(visJsonUrl, visJsonsPath);
-        await downloadZip(metadataUrl, metadataJsonsPath);
         const metadata = JSON.parse(fs.readFileSync(
             `./public/metadata_json/metadata.json`,
             'utf8'
