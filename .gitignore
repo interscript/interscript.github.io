@@ -4,5 +4,6 @@ node_modules
 dist
 yarn-error.log
 .idea
+public/docs/**
 ./public/metadata_json
 ./public/vis_json

@@ -6,6 +6,7 @@ on:
     - master
     - staging
   repository_dispatch:
+    types: [ 'interscript/interscript' ]
 
 jobs:
   build:
@@ -23,8 +24,10 @@ jobs:
       - name: Install NPM dependencies
         run: |
           yarn install
+          yarn global add asciidoctor
       - name: Build site
         run: |
+          yarn adoc
           yarn build
 
       - name: Deploy to AWS

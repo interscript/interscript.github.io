@@ -19,3 +19,9 @@ export interface ScriptConversionExample {
   english?: string[],
   result: string[]
 }
+
+export interface DocFile {
+  name: string;
+  title: string;
+  path:string;
+}
