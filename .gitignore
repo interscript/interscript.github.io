@@ -5,3 +5,5 @@ dist
 yarn-error.log
 .idea
 public/docs/**
+map/*
+!map/.gitkeep

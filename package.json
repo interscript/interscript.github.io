@@ -6,12 +6,14 @@
     "stage": "react-static build --staging",
     "build": "react-static build",
     "bundle": "react-static bundle",
-    "adoc": "yarn run adoc:docs && yarn run adoc:posts",
+    "adoc": "npm-run-all adoc:docs adoc:posts",
     "adoc:docs": "asciidoctor docs/*.adoc -D tmp/docs/ -e",
     "adoc:posts": "asciidoctor posts/*.adoc -D tmp/posts/ -e",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
-    "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n"
+    "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n",
+    "map": "node ./scripts/downloadMapData.js",
+    "make": "npm-run-all map build"
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
@@ -46,10 +48,14 @@
     "@types/react-loader-spinner": "^3.1.1",
     "@types/styled-components": "^5.1.2",
     "@types/webpack-env": "^1.14.0",
+    "adm-zip": "^0.5.5",
     "asciidoctor": "^2.2.4",
     "cheerio": "^1.0.0-rc.3",
+    "fs-extra": "^10.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.3.1",
     "react-hot-loader": "^4.12.11",
+    "request": "^2.88.2",
     "serve": "^11.1.0",
     "typescript": "^3.5.3"
   },
