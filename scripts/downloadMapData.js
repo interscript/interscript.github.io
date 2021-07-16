@@ -1,14 +1,13 @@
 const AdmZip = require("adm-zip");
 const request = require("request");
-const fs = require("fs");
+const fs = require("fs-extra");
+const path = require("path");
 
 const visJsonUrl = "https://github.com/interscript/interscript/releases/latest/download/vis_json.zip";
 const metadataUrl = "https://github.com/interscript/interscript/releases/latest/download/metadata.json.zip";
-const visJsonsPath = "./public/";
-const metadataJsonsPath = "./";
+const basePath = "./map";
 
-async function downloadZip(inputUrl, outputPath) {
-    // read all files from docs
+async function downloadZip(inputUrl) {
     return new Promise((resolve, reject) => {
         request.get({ url: inputUrl, encoding: null }, (err, res, body) => {
             if (err) {
@@ -18,10 +17,10 @@ async function downloadZip(inputUrl, outputPath) {
 
             const zip = new AdmZip(body);
             const zipEntries = zip.getEntries();
-            const promises = [];
-            zipEntries.map((entry) => {
+            const promises = zipEntries.map((entry) => {
                 const body = zip.readAsText(entry, "utf8");
-                return fs.writeFile(outputPath + `/${entry.entryName}`, body, (err) => {
+                const targetPath = path.join(basePath, entry.entryName);
+                return fs.outputJson(path.normalize(targetPath), body, (err) => {
                     if (err) {
                         reject(err);
                     }
@@ -33,18 +32,10 @@ async function downloadZip(inputUrl, outputPath) {
         });
     });
 }
-const createDirs = (paths) => {
-    paths.forEach((path) => {
-        if (!fs.existsSync(path)) {
-            fs.mkdirSync(path);
-        }
-    });
-};
-createDirs([visJsonsPath, metadataJsonsPath]);
-downloadZip(visJsonUrl, visJsonsPath)
-    .then(() => {
-        return downloadZip(metadataUrl, metadataJsonsPath);
-    })
-    .then(() => {
-        console.log("done");
-    });
+
+(async function () {
+    console.log(`Downloading map data and extracting to ${basePath}...`);
+    await downloadZip(visJsonUrl);
+    await downloadZip(metadataUrl);
+    console.log("Successfully Done");
+})();

@@ -12,7 +12,7 @@
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
     "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n",
-    "jsons": "node ./scripts/downloadJsons"
+    "map": "node ./scripts/downloadMapData.js"
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
@@ -50,6 +50,7 @@
     "adm-zip": "^0.5.5",
     "asciidoctor": "^2.2.4",
     "cheerio": "^1.0.0-rc.3",
+    "fs-extra": "^10.0.0",
     "prettier": "^2.3.1",
     "react-hot-loader": "^4.12.11",
     "request": "^2.88.2",
