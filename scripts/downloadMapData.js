@@ -20,7 +20,7 @@ async function downloadZip(inputUrl) {
             const promises = zipEntries.map((entry) => {
                 const body = zip.readAsText(entry, "utf8");
                 const targetPath = path.join(basePath, entry.entryName);
-                return fs.outputJson(path.normalize(targetPath), body, (err) => {
+                return fs.outputFile(path.normalize(targetPath), body, (err) => {
                     if (err) {
                         reject(err);
                     }
