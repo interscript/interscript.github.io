@@ -1,0 +1,713 @@
+[
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ক</kbd><rt>0995</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>খ</kbd><rt>0996</rt></ruby>",
+    "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>গ</kbd><rt>0997</rt></ruby>",
+    "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঘ</kbd><rt>0998</rt></ruby>",
+    "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঙ</kbd><rt>0999</rt></ruby>",
+    "to": "<ruby><kbd>ṅ</kbd><rt>1e45</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>চ</kbd><rt>099a</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ছ</kbd><rt>099b</rt></ruby>",
+    "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>জ</kbd><rt>099c</rt></ruby>",
+    "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঝ</kbd><rt>099d</rt></ruby>",
+    "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঞ</kbd><rt>099e</rt></ruby>",
+    "to": "<ruby><kbd>ñ</kbd><rt>00f1</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ট</kbd><rt>099f</rt></ruby>",
+    "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঠ</kbd><rt>09a0</rt></ruby>",
+    "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ড</kbd><rt>09a1</rt></ruby>",
+    "to": "<ruby><kbd>ḍ</kbd><rt>1e0d</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ড়</kbd><rt>09dc</rt></ruby>",
+    "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঢ</kbd><rt>09a2</rt></ruby>",
+    "to": "<ruby><kbd>ḍ</kbd><rt>1e0d</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঢ়</kbd><rt>09dd</rt></ruby>",
+    "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ণ</kbd><rt>09a3</rt></ruby>",
+    "to": "<ruby><kbd>ṇ</kbd><rt>1e47</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ত</kbd><rt>09a4</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ৎ</kbd><rt>09ce</rt></ruby>",
+    "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>থ</kbd><rt>09a5</rt></ruby>",
+    "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>দ</kbd><rt>09a6</rt></ruby>",
+    "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ধ</kbd><rt>09a7</rt></ruby>",
+    "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ন</kbd><rt>09a8</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>প</kbd><rt>09aa</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ফ</kbd><rt>09ab</rt></ruby>",
+    "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ব</kbd><rt>09ac</rt></ruby>",
+    "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ভ</kbd><rt>09ad</rt></ruby>",
+    "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ম</kbd><rt>09ae</rt></ruby>",
+    "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>য</kbd><rt>09af</rt></ruby><ruby><kbd>়</kbd><rt>09bc</rt></ruby>",
+    "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>য</kbd><rt>09af</rt></ruby>",
+    "to": "<ruby><kbd>ẏ</kbd><rt>1e8f</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>য়</kbd><rt>09df</rt></ruby>",
+    "to": "<ruby><kbd>ẏ</kbd><rt>1e8f</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ৰ</kbd><rt>09f0</rt></ruby>",
+    "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ল</kbd><rt>09b2</rt></ruby>",
+    "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ৱ</kbd><rt>09f1</rt></ruby>",
+    "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>শ</kbd><rt>09b6</rt></ruby>",
+    "to": "<ruby><kbd>ś</kbd><rt>015b</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ষ</kbd><rt>09b7</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>স</kbd><rt>09b8</rt></ruby>",
+    "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>হ</kbd><rt>09b9</rt></ruby>",
+    "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+    "more": "after: deva chars 1"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>ঁ</kbd><rt>0981</rt></ruby>",
+    "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>̇</kbd><rt>0307</rt></ruby>",
+    "more": "after: <nobr>any (</nobr><ruby><kbd>ক</kbd><rt>0995</rt></ruby>, <ruby><kbd>খ</kbd><rt>0996</rt></ruby>, <ruby><kbd>গ</kbd><rt>0997</rt></ruby>, <ruby><kbd>ঘ</kbd><rt>0998</rt></ruby>, <ruby><kbd>ঙ</kbd><rt>0999</rt></ruby>, <ruby><kbd>চ</kbd><rt>099a</rt></ruby>, <ruby><kbd>ছ</kbd><rt>099b</rt></ruby>, <ruby><kbd>জ</kbd><rt>099c</rt></ruby>, <ruby><kbd>ঝ</kbd><rt>099d</rt></ruby>, <ruby><kbd>ঞ</kbd><rt>099e</rt></ruby>, <ruby><kbd>ট</kbd><rt>099f</rt></ruby>, <ruby><kbd>ঠ</kbd><rt>09a0</rt></ruby>, <ruby><kbd>ড</kbd><rt>09a1</rt></ruby>, <ruby><kbd>ড়</kbd><rt>09dc</rt></ruby>, <ruby><kbd>ঢ</kbd><rt>09a2</rt></ruby>, <ruby><kbd>ঢ়</kbd><rt>09dd</rt></ruby>, <ruby><kbd>ণ</kbd><rt>09a3</rt></ruby>, <ruby><kbd>ত</kbd><rt>09a4</rt></ruby>, <ruby><kbd>ৎ</kbd><rt>09ce</rt></ruby>, <ruby><kbd>থ</kbd><rt>09a5</rt></ruby>, <ruby><kbd>দ</kbd><rt>09a6</rt></ruby>, <ruby><kbd>ধ</kbd><rt>09a7</rt></ruby>, <ruby><kbd>ন</kbd><rt>09a8</rt></ruby>)"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>অ</kbd><rt>0985</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>আ</kbd><rt>0986</rt></ruby>",
+        "to": "<ruby><kbd>ā</kbd><rt>0101</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ই</kbd><rt>0987</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঈ</kbd><rt>0988</rt></ruby>",
+        "to": "<ruby><kbd>ī</kbd><rt>012b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>উ</kbd><rt>0989</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঊ</kbd><rt>098a</rt></ruby>",
+        "to": "<ruby><kbd>ū</kbd><rt>016b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঋ</kbd><rt>098b</rt></ruby>",
+        "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৠ</kbd><rt>09e0</rt></ruby>",
+        "to": "<ruby><kbd>ṝ</kbd><rt>1e5d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঌ</kbd><rt>098c</rt></ruby>",
+        "to": "<ruby><kbd>ḹ</kbd><rt>1e39</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>এ</kbd><rt>098f</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঐ</kbd><rt>0990</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ও</kbd><rt>0993</rt></ruby>",
+        "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঔ</kbd><rt>0994</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ক</kbd><rt>0995</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>খ</kbd><rt>0996</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>গ</kbd><rt>0997</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঘ</kbd><rt>0998</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঙ</kbd><rt>0999</rt></ruby>",
+        "to": "<ruby><kbd>ṅ</kbd><rt>1e45</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>চ</kbd><rt>099a</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ছ</kbd><rt>099b</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>জ</kbd><rt>099c</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঝ</kbd><rt>099d</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঞ</kbd><rt>099e</rt></ruby>",
+        "to": "<ruby><kbd>ñ</kbd><rt>00f1</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ট</kbd><rt>099f</rt></ruby>",
+        "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঠ</kbd><rt>09a0</rt></ruby>",
+        "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ড</kbd><rt>09a1</rt></ruby>",
+        "to": "<ruby><kbd>ḍ</kbd><rt>1e0d</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ড়</kbd><rt>09dc</rt></ruby>",
+        "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঢ</kbd><rt>09a2</rt></ruby>",
+        "to": "<ruby><kbd>ḍ</kbd><rt>1e0d</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঢ়</kbd><rt>09dd</rt></ruby>",
+        "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ণ</kbd><rt>09a3</rt></ruby>",
+        "to": "<ruby><kbd>ṇ</kbd><rt>1e47</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ত</kbd><rt>09a4</rt></ruby>",
+        "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৎ</kbd><rt>09ce</rt></ruby>",
+        "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>থ</kbd><rt>09a5</rt></ruby>",
+        "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>দ</kbd><rt>09a6</rt></ruby>",
+        "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ধ</kbd><rt>09a7</rt></ruby>",
+        "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ন</kbd><rt>09a8</rt></ruby>",
+        "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>প</kbd><rt>09aa</rt></ruby>",
+        "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ফ</kbd><rt>09ab</rt></ruby>",
+        "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ব</kbd><rt>09ac</rt></ruby>",
+        "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ভ</kbd><rt>09ad</rt></ruby>",
+        "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ম</kbd><rt>09ae</rt></ruby>",
+        "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>য</kbd><rt>09af</rt></ruby><ruby><kbd>়</kbd><rt>09bc</rt></ruby>",
+        "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>য</kbd><rt>09af</rt></ruby>",
+        "to": "<ruby><kbd>ẏ</kbd><rt>1e8f</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>য়</kbd><rt>09df</rt></ruby>",
+        "to": "<ruby><kbd>ẏ</kbd><rt>1e8f</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৰ</kbd><rt>09f0</rt></ruby>",
+        "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ল</kbd><rt>09b2</rt></ruby>",
+        "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৱ</kbd><rt>09f1</rt></ruby>",
+        "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>শ</kbd><rt>09b6</rt></ruby>",
+        "to": "<ruby><kbd>ś</kbd><rt>015b</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ষ</kbd><rt>09b7</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>স</kbd><rt>09b8</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>হ</kbd><rt>09b9</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ং</kbd><rt>0982</rt></ruby>",
+        "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby><ruby><kbd>̣</kbd><rt>0323</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঃ</kbd><rt>0983</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby><ruby><kbd>̣</kbd><rt>0323</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ঁ</kbd><rt>0981</rt></ruby>",
+        "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby><ruby><kbd>̐</kbd><rt>0310</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ऽ</kbd><rt>093d</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>া</kbd><rt>09be</rt></ruby>",
+        "to": "<ruby><kbd>ā</kbd><rt>0101</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ি</kbd><rt>09bf</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ী</kbd><rt>09c0</rt></ruby>",
+        "to": "<ruby><kbd>ī</kbd><rt>012b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ু</kbd><rt>09c1</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ূ</kbd><rt>09c2</rt></ruby>",
+        "to": "<ruby><kbd>ū</kbd><rt>016b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৃ</kbd><rt>09c3</rt></ruby>",
+        "to": "<ruby><kbd>ṛ</kbd><rt>1e5b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ে</kbd><rt>09c7</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৈ</kbd><rt>09c8</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ো</kbd><rt>09cb</rt></ruby>",
+        "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ৌ</kbd><rt>09cc</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby><ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>।</kbd><rt>0964</rt></ruby>",
+        "to": "<ruby><kbd>.</kbd><rt>002e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>्</kbd><rt>094d</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>্</kbd><rt>09cd</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>১</kbd><rt>09e7</rt></ruby>",
+        "to": "<ruby><kbd>1</kbd><rt>0031</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>২</kbd><rt>09e8</rt></ruby>",
+        "to": "<ruby><kbd>2</kbd><rt>0032</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৩</kbd><rt>09e9</rt></ruby>",
+        "to": "<ruby><kbd>3</kbd><rt>0033</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৪</kbd><rt>09ea</rt></ruby>",
+        "to": "<ruby><kbd>4</kbd><rt>0034</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৫</kbd><rt>09eb</rt></ruby>",
+        "to": "<ruby><kbd>5</kbd><rt>0035</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৬</kbd><rt>09ec</rt></ruby>",
+        "to": "<ruby><kbd>6</kbd><rt>0036</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৭</kbd><rt>09ed</rt></ruby>",
+        "to": "<ruby><kbd>7</kbd><rt>0037</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৮</kbd><rt>09ee</rt></ruby>",
+        "to": "<ruby><kbd>8</kbd><rt>0038</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>৯</kbd><rt>09ef</rt></ruby>",
+        "to": "<ruby><kbd>9</kbd><rt>0039</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>০</kbd><rt>09e6</rt></ruby>",
+        "to": "<ruby><kbd>0</kbd><rt>0030</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Compose",
+    "more": ""
+  }
+]

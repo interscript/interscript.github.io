@@ -1,0 +1,25 @@
+[
+  {
+    "type": "Replace",
+    "from": "<nobr>capture group (</nobr><nobr>any (</nobr><ruby><kbd>っ</kbd><rt>3063</rt></ruby>, <ruby><kbd>ッ</kbd><rt>30c3</rt></ruby>)) + <ruby><kbd>•</kbd><rt>2022</rt></ruby>",
+    "to": "<nobr>capture reference (</nobr>1)",
+    "more": ""
+  },
+  {
+    "type": "Run",
+    "doc": "mext-jpn-Hrkt-Latn-1954",
+    "stage": "main"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>•</kbd><rt>2022</rt></ruby>",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+    "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "more": ""
+  }
+]

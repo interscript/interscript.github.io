@@ -1,0 +1,703 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>א</kbd><rt>05d0</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ב</kbd><rt>05d1</rt></ruby>",
+        "to": "<ruby><kbd>V</kbd><rt>0056</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ב</kbd><rt>05d1</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>B</kbd><rt>0042</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>בּ</kbd><rt>fb31</rt></ruby>",
+        "to": "<ruby><kbd>B</kbd><rt>0042</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ג</kbd><rt>05d2</rt></ruby>",
+        "to": "<ruby><kbd>G</kbd><rt>0047</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ג</kbd><rt>05d2</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>G</kbd><rt>0047</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>גּ</kbd><rt>fb32</rt></ruby>",
+        "to": "<ruby><kbd>G</kbd><rt>0047</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ג</kbd><rt>05d2</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ד</kbd><rt>05d3</rt></ruby>",
+        "to": "<ruby><kbd>D</kbd><rt>0044</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ד</kbd><rt>05d3</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>D</kbd><rt>0044</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>דּ</kbd><rt>fb33</rt></ruby>",
+        "to": "<ruby><kbd>D</kbd><rt>0044</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ד</kbd><rt>05d3</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>D</kbd><rt>0044</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ה</kbd><rt>05d4</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ה</kbd><rt>05d4</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>הּ</kbd><rt>fb34</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby>",
+        "to": "<ruby><kbd>V</kbd><rt>0056</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>V</kbd><rt>0056</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>V</kbd><rt>0056</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ז</kbd><rt>05d6</rt></ruby>",
+        "to": "<ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ז</kbd><rt>05d6</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>זּ</kbd><rt>fb36</rt></ruby>",
+        "to": "<ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ז</kbd><rt>05d6</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>Z</kbd><rt>005a</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ח</kbd><rt>05d7</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ט</kbd><rt>05d8</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ט</kbd><rt>05d8</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>טּ</kbd><rt>fb38</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>יּ</kbd><rt>fb39</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>כ</kbd><rt>05db</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>כ</kbd><rt>05db</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>כ</kbd><rt>05db</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>כּ</kbd><rt>fb3b</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ך</kbd><rt>05da</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ך</kbd><rt>05da</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ך</kbd><rt>05da</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ךּ</kbd><rt>fb3a</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ל</kbd><rt>05dc</rt></ruby>",
+        "to": "<ruby><kbd>L</kbd><rt>004c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ל</kbd><rt>05dc</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>L</kbd><rt>004c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>לּ</kbd><rt>fb3c</rt></ruby>",
+        "to": "<ruby><kbd>L</kbd><rt>004c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ם</kbd><rt>05dd</rt></ruby>",
+        "to": "<ruby><kbd>M</kbd><rt>004d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>מ</kbd><rt>05de</rt></ruby>",
+        "to": "<ruby><kbd>M</kbd><rt>004d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>מ</kbd><rt>05de</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>M</kbd><rt>004d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>מּ</kbd><rt>fb3e</rt></ruby>",
+        "to": "<ruby><kbd>M</kbd><rt>004d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ן</kbd><rt>05df</rt></ruby>",
+        "to": "<ruby><kbd>N</kbd><rt>004e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>נ</kbd><rt>05e0</rt></ruby>",
+        "to": "<ruby><kbd>N</kbd><rt>004e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>נ</kbd><rt>05e0</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>N</kbd><rt>004e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>נּ</kbd><rt>fb40</rt></ruby>",
+        "to": "<ruby><kbd>N</kbd><rt>004e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ס</kbd><rt>05e1</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ס</kbd><rt>05e1</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>סּ</kbd><rt>fb41</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ע</kbd><rt>05e2</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ף</kbd><rt>05e3</rt></ruby>",
+        "to": "<ruby><kbd>F</kbd><rt>0046</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ף</kbd><rt>05e3</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ףּ</kbd><rt>fb43</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>פ</kbd><rt>05e4</rt></ruby>",
+        "to": "<ruby><kbd>F</kbd><rt>0046</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>פ</kbd><rt>05e4</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>פּ</kbd><rt>fb44</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ץ</kbd><rt>05e5</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ץ</kbd><rt>05e5</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>S</kbd><rt>0053</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>צ</kbd><rt>05e6</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>צ</kbd><rt>05e6</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>צּ</kbd><rt>fb46</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>צ</kbd><rt>05e6</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>S</kbd><rt>0053</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ק</kbd><rt>05e7</rt></ruby>",
+        "to": "<ruby><kbd>Q</kbd><rt>0051</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ק</kbd><rt>05e7</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>Q</kbd><rt>0051</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>קּ</kbd><rt>fb47</rt></ruby>",
+        "to": "<ruby><kbd>Q</kbd><rt>0051</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ר</kbd><rt>05e8</rt></ruby>",
+        "to": "<ruby><kbd>R</kbd><rt>0052</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ר</kbd><rt>05e8</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>R</kbd><rt>0052</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>רּ</kbd><rt>fb48</rt></ruby>",
+        "to": "<ruby><kbd>R</kbd><rt>0052</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ש</kbd><rt>05e9</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ש</kbd><rt>05e9</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>שּ</kbd><rt>fb49</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ש</kbd><rt>05e9</rt></ruby><ruby><kbd>ׂ</kbd><rt>05c2</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>שׂ</kbd><rt>fb2b</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ש</kbd><rt>05e9</rt></ruby><ruby><kbd>ׁ</kbd><rt>05c1</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>שׁ</kbd><rt>fb2a</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby><ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ש</kbd><rt>05e9</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>ׂ</kbd><rt>05c2</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>שּׂ</kbd><rt>fb2d</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ת</kbd><rt>05ea</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ת</kbd><rt>05ea</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>תּ</kbd><rt>fb4a</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ת</kbd><rt>05ea</rt></ruby><ruby><kbd>׳</kbd><rt>05f3</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֱ</kbd><rt>05b1</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֲ</kbd><rt>05b2</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֳ</kbd><rt>05b3</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ִ</kbd><rt>05b4</rt></ruby>",
+        "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֵ</kbd><rt>05b5</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֶ</kbd><rt>05b6</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ַ</kbd><rt>05b7</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ָ</kbd><rt>05b8</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֹ</kbd><rt>05b9</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֻ</kbd><rt>05bb</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>וּ</kbd><rt>fb35</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֵ</kbd><rt>05b5</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֶ</kbd><rt>05b6</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ַ</kbd><rt>05b7</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ַ</kbd><rt>05b7</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ַ</kbd><rt>05b7</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ָ</kbd><rt>05b8</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ָ</kbd><rt>05b8</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ָ</kbd><rt>05b8</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ָ</kbd><rt>05b8</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֹ</kbd><rt>05b9</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֹ</kbd><rt>05b9</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֹ</kbd><rt>05b9</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֻ</kbd><rt>05bb</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֻ</kbd><rt>05bb</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ֻ</kbd><rt>05bb</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ו</kbd><rt>05d5</rt></ruby><ruby><kbd>ּ</kbd><rt>05bc</rt></ruby><ruby><kbd>י</kbd><rt>05d9</rt></ruby><ruby><kbd>ְ</kbd><rt>05b0</rt></ruby><ruby><kbd>‬</kbd><rt>202c</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby><ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

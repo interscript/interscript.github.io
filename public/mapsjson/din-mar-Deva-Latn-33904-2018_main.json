@@ -1,0 +1,24 @@
+[
+  {
+    "type": "Run",
+    "doc": "din-san-Deva-Latn-33904-2018",
+    "stage": "main"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ॲ</kbd><rt>0972</rt></ruby>",
+        "to": "<ruby><kbd>ê</kbd><rt>00ea</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ऑ</kbd><rt>0911</rt></ruby>",
+        "to": "<ruby><kbd>ô</kbd><rt>00f4</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

@@ -10,7 +10,7 @@ import bgnpcgnSamples from "./src/samples/bgnpcgn.json";
 import odniSamples from "./src/samples/odni.json";
 import ogc11122Samples from "./src/samples/ogc11122.json";
 import unSamples from "./src/samples/un.json";
-import metadata from "./map/metadata.json";
+import metadata from "./src/samples/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
 
 // import { ReadmeSection } from './types'
@@ -22,7 +22,7 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
 
 export default {
     devServer: {
-        host: "0.0.0.0",
+      host: '0.0.0.0'
     },
     entry: path.join(__dirname, "src", "index.tsx"),
     getRoutes: async () => {
@@ -241,7 +241,7 @@ export default {
                             },
                             metaDataMap,
                             system,
-                            mapData: JSON.parse(fs.readFileSync(`./map/vis_json/${system}_main.json`, "utf8")),
+                            mapData: JSON.parse(fs.readFileSync(`./public/mapsjson/${system}_main.json`, "utf8")),
                         }),
                     };
                 }),

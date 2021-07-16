@@ -1,0 +1,96 @@
+[
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Й</kbd><rt>0419</rt></ruby>",
+    "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>й</kbd><rt>0439</rt></ruby>",
+    "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+    "more": ""
+  },
+  {
+    "type": "Run",
+    "doc": "az-aze-Cyrl-Latn-1939",
+    "stage": "main"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ј</kbd><rt>0408</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Й</kbd><rt>0419</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ц</kbd><rt>0426</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Э</kbd><rt>042d</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ю</kbd><rt>042e</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Я</kbd><rt>042f</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ј</kbd><rt>0458</rt></ruby>",
+        "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>й</kbd><rt>0439</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ц</kbd><rt>0446</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>э</kbd><rt>044d</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ю</kbd><rt>044e</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>я</kbd><rt>044f</rt></ruby>",
+        "to": "",
+        "more": ""
+      }
+    ]
+  }
+]
