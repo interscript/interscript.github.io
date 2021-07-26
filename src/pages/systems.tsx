@@ -79,6 +79,14 @@ const SystemList = () => {
         });
     };
 
+    const formatName = (name: string): string => {
+        const MAX_LENGTH = 50;
+        if (name.length >= MAX_LENGTH) {
+            name = name.substring(0, MAX_LENGTH) + "...";
+        }
+
+        return name.toUpperCase();
+    };
     const list: string[] = mapsInfo.data
         .sort()
         .filter((x: string) => {
@@ -95,14 +103,14 @@ const SystemList = () => {
             <dl key={system}>
               <dt>
                 <Link to={`/systems/${system}`} key={system}>
-                  {system}
+                {`[${system}]`}
                 </Link>
                 {" "}({metaDataMap[system].sourceScript} {" to "}
                   {metaDataMap[system].destinationScript})
               </dt>
               <dd>
                 <Link to={`/systems/${system}`} key={system}>
-                  {metaDataMap[system].name}
+                  {formatName(metaDataMap[system].name)}
                 </Link>
               </dd>
           </dl>
