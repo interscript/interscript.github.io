@@ -150,7 +150,7 @@ Obviously, the sequences under consideration are:
 Below, we illustrate the full architecture. LSTM was used instead of Attention
 for the RNN’s.
 
-image::../public/figs/encoder-decoder.png[Full Encoder-Decoder Architecture]
+image::../public/figs/encoderdecoder.png[Full Encoder-Decoder Architecture]
 
 Even though the authors discuss attention on an encoder/decoder model, they have
 not implemented it as above and so this could be a straightforward architecture
