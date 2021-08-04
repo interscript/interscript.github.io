@@ -9,8 +9,10 @@ vocalization, which is a task that only advanced Arabic speakers successfully
 manage.
 
 This blog explains how we have learned to do it with an advanced research
-architectures before porting it into production in _Ruby_ and _Javascript_
-and built the https://github.com/interscript/rababa[rababa] library.
+architectures before porting it into production in _Ruby_ and _Javascript_.
+
+The https://github.com/interscript/rababa[rababa] is the result of this work and 
+a well documented, open source library that everyone could use.
 
 === Arabic within the landscape of languages
 
