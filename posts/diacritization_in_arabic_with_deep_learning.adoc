@@ -174,7 +174,7 @@ Obviously, the sequences under consideration are:
 Below, we illustrate the full architecture. LSTM was used instead of Attention
 for the RNN’s.
 
-image::../public/figs/encoderdecoder.png[Full Encoder-Decoder Architecture]
+image::/figs/encoderdecoder.png[Full Encoder-Decoder Architecture]
 
 Even though the authors discuss attention on an encoder/decoder model, they have
 not implemented it as above, so this could be a straightforward architecture to
@@ -192,7 +192,7 @@ The architecture is the core of the NNets and a modified version of feed-forward
 networks with a gating mechanism that allows for information flow and
 computation across multiple layers without attenuation.
 
-image::../public/figs/cbhg.png[CBHG Architecture]
+image::/figs/cbhg.png[CBHG Architecture]
 
 ==== Preprocessing
 
