@@ -9,7 +9,8 @@ vocalization, which is a task that only advanced Arabic speakers successfully
 manage.
 
 This blog explains how we have learned to do it with an advanced research
-architectures before porting it into production in _Ruby_ and _Javascript_.
+architectures before porting it into production in _Ruby_ and _Javascript_
+and built the https://github.com/interscript/rababa[rababa] library.
 
 === Arabic within the landscape of languages
 
@@ -278,7 +279,7 @@ resource-limited architectures.
 vector like `[1,1,1,1,...]` allowed to replicate results almost perfectly with
 ONNX.
 
-* That the batch size is fixed and derived from the initial PyTorch model.
+* that the batch size is fixed and derived from the initial PyTorch model.
 
 
 === Ruby
@@ -334,6 +335,7 @@ the following ideas to improve collision disambiguation:
 == Summary
 
 Starting from a review of the scientific literature, we could rapidly implement
+https://github.com/interscript/rababa[rababa],
 a brand new library porting cutting-edge research algorithms into production and
 JavaScript.
 
