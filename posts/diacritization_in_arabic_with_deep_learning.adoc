@@ -1,61 +1,69 @@
-== Diacritization in Arabic with Deep Learning
+= Diacritization in Arabic with Deep Learning
 
-=== Intro
+== Introduction
 
-Diacritization is the art of completing arabic scripts with the correct
-vocalization, which is a task that only advanced arabic speakers successfully
+=== General
+
+Diacritization is the art of completing Arabic scripts with the correct
+vocalization, which is a task that only advanced Arabic speakers successfully
 manage.
 
 This blog explains how we have learned to do it with an advanced research
 architectures before porting it into production in _Ruby_ and _Javascript_.
 
-==== Arabic within the Languages landscape
+=== Arabic within the landscape of languages
 
-Arabic is geographically spread across a broad band ranging from north Africa to
-Afghanistan and Pakistan and is intrinsically connected with the Islamic
-Civilisation.
+Arabic is used in a broad geographical area ranging from North Africa to
+Afghanistan and Pakistan, and is intrinsically connected with the Islamic
+civilization.
 
-Within the main languages classes, arabic finds itself within the so-called
+Within the main language classes, Arabic finds itself within the so-called
 Abjad writing system:
 
-* Alphabetical (English, Spanish, French, Roman, …)
-* *Abjad* (*Arabic*, Hebrew, Aramaic, …)
-* Logographic and syllabic (Mandarine,
-Japanese, …)
-* Abugida (Hindi, Thai, Khmer, Bhurmese, …)
+* Alphabetical (English, Spanish, French, Roman, ...)
+* *Abjad* (*Arabic*, Hebrew, Aramaic, ...)
+* Logographic and syllabic (Chinese, Japanese, ...)
+* Abugida (Hindi, Thai, Khmer, Bhurmese, ...)
 
-Characteristics of this group is in which each symbol or glyph stands for a
+Characteristics of the Abjad group is in which each symbol or glyph stands for a
 consonant, in effect leaving it to readers to infer or otherwise supply an
 appropriate vowel.
 
-==== What is Diacritization
+=== Role of diacritization
 
 As a result, in Arabic, a set of consonants can be pronounced in several ways as
 well as have multiple meanings. This ensure a great plasticity of the language
-and so native speaker are used to write it that way and to infer meanings and
-pronunciations from the context.
+and so native speakers are used to writing this way, and to allow inference of
+meanings and pronunciations from the context.
 
-Inversely, in Arabic, and unlike many other languages the vocalization can be
+Inversely, in Arabic, unlike many other languages, the vocalization can be
 exactly specified via diacritics: symbols added over or under the consonants as
 in colour, in the image below.
-image:../public/figs/Elements_of_Arabic_script_improved.png[Example of arabic with
-diacritization]
 
-Writing arabic with diacritics is useful for language learners. It has also some
-importance for instance in sacred literature and also for praying. As natural
-consequence, the Qur’an constitutes the purest reference for diacritization.
+image::figs/Elements_of_Arabic_script_improved.png[Example of Arabic with diacritization]
 
-===== Applications in Informatics?
+Writing Arabic with diacritics, called "`pointed Arabic`", is useful for
+language learners.
 
-It is also obviously useful and essential for resp. NLP or *text to speech* and
-obviously *transliteration*.
+As the diacritics provide direct instructions on pronunciation, pointed Arabic
+is also important in various use cases, for instance, in sacred literature and
+for praying. As a natural consequence, the Qur’an constitutes the purest
+reference for diacritization.
 
-===== Arabic Diacritics, ``Al Tashkīl'' تَشْكِيل
+=== Applications in informatics
+
+Pointed Arabic is obviously useful and essential for applications to NLP usage
+in *text-to-speech* and obviously *transliteration*.
+
+== Arabic Diacritics, "`Al Tashkīl`" تَشْكِيل
+
+=== Basic diacritics
 
 Below, a list and examples of the basic diacritics:
 
-image:/home/jair/WorK/UpWork/arabic-diacritization/blogs/PHONETIC-TRANSCRIPTION-FOR-ARABIC-DIACRITICS-USED-IN-QURAN-CORPUS.png[diacritics
-examples] Furthermore, diacritics have also possible combinations:
+image::figs/phonetics.png[Examples of Arabic diacritics]
+
+Furthermore, some Arabic diacritics can be combined as shown below:
 
 * Shaddah+Fatha
 * Shaddah+Kasra
@@ -63,89 +71,105 @@ examples] Furthermore, diacritics have also possible combinations:
 * Shaddah+Dammatan
 * Shaddah+Fathatah.
 
-===== Practical Examples
+=== Practical examples
 
-* فلسطين‎ reads FLSTIN and could be transliterated as Filasṭīn or in arabic
-after correct diacritization فِلَسْطِين.
-* an example of multiple meaning or *collision* is the following: قَطَر (Qatar -
-a country) قُطْر (Qotr - circle diameter) قَطْر (Qatr - rain)
+[example]
+"`فلسطين‎`" reads "`FLSTIN`" and could be transliterated as "`Filasṭīn`" or in
+Arabic after correct diacritization "`فِلَسْطِين`".
 
-===== Diacritization in Interscript
+The following example demonstrates the concept of *collisions*, which highlights
+the importance of context in transliteration for collision disambiguation.
+
+[example]
+"`قَطَر`" (Qatar - a country), "`قُطْر`" (Qotr - circle diameter),
+"`قَطْر`" (Qatr - rain).
+
+== Diacritization in Interscript
+
+=== General
 
 Interscript provides with mappings allowing to transliterate many languages into
-latine alphabet. In that context, abjad languages need to be processed via
-several steps:
+various writing systems.
 
-* *arabic text* => *diacritization* => *transliteration*
+In this context, Abjad languages need to be processed via several steps:
+
+* *Arabic text* => *diacritization* => *transliteration*
 
 === Diacritization with Deep Learning
 
 Correct diacritization requires an accurate understanding not only of the
-language morphemes and their declinaisons but also the language grammar.
+language morphemes and their variants but also the language grammar.
 
 Furthermore, given the possible multiple meanings available to a particular word
-in arabic (or collision), some understanding of the context is required!
+in Arabic (or collision), some understanding of the context is required!
 
-==== Approaches
+=== Approaches
 
 This hard problem has been approached in various ways with an evolution quite
 typical:
 
-1. Rules based approaches
-2. Machine learning based approaches
-3. Deep Learning approaches
+. Rule-based approaches
+. Machine Learning approaches
+. Deep Learning approaches
 
 For more details, we have reviewed the latest publications, tested the latest
 code bases and summarised the latest research ideas
-https://github.com/interscript/rababa/blob/master/docs/research-arabic-diacritization-06-2021.adoc[here].
+https://github.com/interscript/rababa/blob/master/docs/research-Arabic-diacritization-06-2021.adoc[here].
 
-=== Production Requirements
+
+== Production requirements
 
 In our technology choice, we obviously want to use the best research library or
 architecture.
 
 However, we need to be able to:
 
-* run the code quickly on standard CPU’s
-* run code from javascript, which is achieved here with the following workflow:
-  1. Implementation and training of neural networks with pytorch
-  2. Conversion pytorch –> ONNX
-  3. Load ONNX model from ruby
-  4. Conversion ruby –> javascript, as documented in
-https://github.com/interscript/interscript.org/blob/master/posts/WebAssembly_and_advanced_regular_expressions_with_Opal.adoc[interscript
-blog]
-* size of the model < 200MB
-* and finally publish a usable and documented
-public library
+* run the inference step quickly on standard CPUs;
+* run the inference step from Javascript, which is achieved here with the
+  following workflow:
 
-=== Training & Results
+.. Implementation and training of neural networks with PyTorch;
+.. Convert PyTorch model –> ONNX model;
+.. Load ONNX model from Ruby;
+.. Convert Ruby –> Javascript (as documented in the
+https://github.com/interscript/interscript.org/blob/master/posts/WebAssembly_and_advanced_regular_expressions_with_Opal.adoc[interscript blog])
 
-==== Architecture
+* maintain the size of the model under 200MB; and
 
-After careful review and testing of the latest research libraries available, we
-have decided to use following
+* publish a public, usable and documented code library.
+
+
+== Training and results
+
+=== Architecture
+
+==== General
+
+After careful review and testing of the latest academic literature, we have
+decided to start with the
 https://github.com/almodhfer/Arabic_Diacritization[public code] linked to this
-recent publication: https://ieeexplore.ieee.org/document/9274427[Effective Deep
-Learning Models for AutomaticDiacritization of Arabic Text (01.2021)].
+recent publication:
 
-===== Encoder – Decoder + CBHG + LSTM
+* https://ieeexplore.ieee.org/document/9274427[Effective Deep Learning Models for Automatic Diacritization of Arabic Text (01.2021)] (abbreviated as ADAT here).
 
-The current library is built on slightly simplified version of the
+==== Encoder – Decoder + CBHG + LSTM
+
+The current library is built on a slightly simplified version of the
 https://arxiv.org/pdf/1703.10135.pdf[tacotron (04.2017)] initially developed for
-text to speech.
+text-to-speech.
 
 The choice of the variation with CBHG is motivated by its better results
 compared to other models tested and also its ability to produce fast
 predictions, which is important in production.
 
-===== Encoder - Decoder
+==== Encoder - Decoder
 
 This has been applied to various problems, like neural machine translation,
-image captioning, and text to speech synthesis.
+image captioning, and text-to-speech synthesis.
 
 Obviously, the sequences under consideration are:
 
-*arabic symbol sequence* –> *diacritics sequence*
+*Arabic symbol sequence* –> *diacritics sequence*
 
 Below, we illustrate the full architecture. LSTM was used instead of Attention
 for the RNN’s.
@@ -153,12 +177,16 @@ for the RNN’s.
 image::../public/figs/encoderdecoder.png[Full Encoder-Decoder Architecture]
 
 Even though the authors discuss attention on an encoder/decoder model, they have
-not implemented it as above and so this could be a straightforward architecture
-to build and test for us in the future.
+not implemented it as above, so this could be a straightforward architecture to
+build and test for us in the future.
 
-===== CBHG
+==== CBHG
 
-CBHG is standing for 1-D Convolution Bank + Highway network + Bidirectional GRU.
+CBHG stands for:
+
+* 1-D **C**onvolution **B**ank,
+* **H**ighway network,
+* **B**idirectional GRU.
 
 The architecture is the core of the NNets and a modified version of feed-forward
 networks with a gating mechanism that allows for information flow and
@@ -166,131 +194,155 @@ computation across multiple layers without attenuation.
 
 image::../public/figs/cbhg.png[CBHG Architecture]
 
-===== Preprocessing
+==== Preprocessing
 
-Preprocessing in the deep learning library consists in * Filtering the non
-arabic characters * Mappings to integers for the remaining characters *
-Embeddings
+Preprocessing in the deep learning library consists of:
 
-==== Datasets
+* Filtering out non-Arabic characters
+* Mappings the remaining characters to integers
+* Embeddings
 
-* Classical Arabic Corpus (CA Corpus): +
-The corpus is divided into training (94%, 2,333,825 sentences), test (5%,124,139
-sentences), and validation (1%, 24,827 sentences) sets.
-* Modern Standard Arabic Corpus (MSA Corpus): +
-MSA Corpus is simply: CA + MSA Corpuses
+=== Datasets
 
-==== System Evaluation and Performance
+* Classical Arabic Corpus (CA Corpus):
 
-The metrics used are standard for the problem of arabic diacritization:
+** The corpus is divided into training (94%, 2,333,825 sentences), test
+(5%,124,139 sentences), and validation (1%, 24,827 sentences) sets.
+
+* Modern Standard Arabic Corpus (MSA Corpus):
+
+** MSA Corpus is simply: CA + MSA Corpuses
+
+=== System Evaluation and Performance
+
+The metrics used are standard for the problem of Arabic diacritization:
 
 * Diacritization Error Rate *DER*:
-percentage of characters that were not correctly diacritized
-* Word Error Rate *WER*:
-  percentage of words that were not cor-rectly diacritized
-* with or without Case-Ending *CE*:
-  exclude or not seach word’s last character from error calculation since they mostly depend on
-grammatical rules.
+  percentage of characters that were not correctly diacritized
 
-===== Scores after Training
+* Word Error Rate *WER*:
+  percentage of words that were not correctly diacritized
+
+* with or without Case-Ending *CE*:
+  exclude or not search word’s last character from error calculation since they
+  mostly depend on grammatical rules.
+
+==== Scores after Training
 
 * *WER* and *DER* refer to without case ending metrics and are measured on the
 test https://github.com/AliOsm/arabic-text-diacritization[benchmarks]. After 10
-epochs, training on the above mentionned datasets, we obtained:
+epochs, training on the above mentioned datasets, we obtained:
 
-[cols=",,,,",options="header",]
+[cols="a,a,a,a,a",options="header"]
 |===
 | |WER |DER |WER* |DER*
-|*Our* |5.10 |1.24 |2.82 |0.87
-|https://arxiv.org/pdf/1703.10135.pdf[paper] |4.47 |1.14 |2.42 |0.85
+
+|*Our results* |5.10 |1.24 |2.82 |0.87
+|ADAT |4.47 |1.14 |2.42 |0.85
+
 |===
+
+(ADAT stands for results quoted in
+https://ieeexplore.ieee.org/document/9274427[Effective Deep Learning Models for Automatic Diacritization of Arabic Text (01.2021)])
 
 Even though we could not reproduce exactly the results advertised in the
 article, our scores are comparably very good and within the range of the best
-results in 2020–2021.
+results up till 2021-08.
 
-=== Towards Production
+// Tacotron paper: https://arxiv.org/pdf/1703.10135.pdf[Tacotron]
 
-==== Python
+== Towards production
 
-Even though the research library was written in python and was overtaken, we had
-to build new features and components, among other adding the ability to
-diacritize simple strings or files.
+=== In Python
 
-* After training, the pytorch model was
+Even though the original research library was written in Python, we had to build
+new features and components, among other adding the ability to diacritize simple
+strings or text files.
+
+* After training, the resulting PyTorch model is
 https://github.com/secryst/rababa-models/releases[released] and can be run.
 
-==== ONNX
 
-We converted our pytorch model to ONNX models. This is down via a python script
-and we have found:
+=== As ONNX models
 
-* useful to keep the sequence length flexible as a parameter
-of the model. Reducing that length allows to reduce the memory required as well
-enhance the NNets computation speed. It makes it possible to perform
-diaccritization on small architectures.
-* that passing sparse parameters would
-lead to some imprecisions, but that a vector like [1,1,1,1,…] allowed to
-replicate results almost perfectly with ONNX.
-* That the batch size is fixed and
-derived from the initial pytorch model.
+We converted our PyTorch model to ONNX models.
 
-==== Ruby
+This is done via a Python script and we have found:
 
-* The text –pre/–postprocessings would need to be rewritten.
-* We used the library https://github.com/secryst/onnxruntime[onnxruntime] to
-load and integrate the onnx model.
-* The work is accessible via a ruby Gem.
+* useful to keep the sequence length flexible as a parameter of the model.
+Reducing that length allows to reduce the memory required as well enhance the
+NNets computation speed. It makes it possible to perform diacritization on
+resource-limited architectures.
 
-==== Further Improvements
+* that passing sparse parameters would lead to some imprecisions, but that a
+vector like `[1,1,1,1,...]` allowed to replicate results almost perfectly with
+ONNX.
 
-===== Handling Realistic Data, with multiple scripts/symbols
+* That the batch size is fixed and derived from the initial PyTorch model.
 
-NNets are specialised in dealing with arabic only in the research code. We kept
-it that way for practical reasons but facing real data, we needed to find a way
-to reconcile arabic diacritized text with its hybrid, original version:
 
-* original string:
-# گيله پسمير الجديد 34
-* diacritised string (with non arabic removed by the nnets preprocessing):
-   يَلِهُ سُمِيْرٌ الجَدِيدُ
-* reconcile strings: algorithm => # گيَلِهُ پسُمِيْرٌ الجَدِيدُ 34
+=== Ruby
 
-We wrote a simple ``reconciliation
-https://github.com/interscript/rababa/blob/master/lib/rababa/reconcile.rb[algorithm]''
-for doing that precise job.
+* The text pre- and post-processing steps have to be rewritten.
+* We used the Ruby https://github.com/secryst/onnxruntime[onnxruntime] to
+  load and integrate the ONNX model.
+* The work is accessible via a Ruby gem.
 
-===== Scoring and Benchmarking Processes
+== Further improvements
 
-* Even though diacritization can be scored independently on test dataset, we
-have added own practical datasets.
-* As mentionned above, in interscript, diacritization is a transformation taking
-place before transliteration. We have introduced various distance metrics to
-assess the full transliteration process quality on various datasets.
+=== Handling realistic data, with multiple scripts/symbols
 
-===== Dealing with Collisions
+In the original research paper, the trained NNets are specialised in dealing
+only with Arabic.
 
-As we mentionned, an arabic script can have various diacritizations and
-meanings. This problem is left to the Deep Learning model to solve.
+When facing real data, we needed to find a way to reconcile diacritized Arabic
+text with the hybrid, original text. We call this process "`reconciliation`".
 
-We understand however that a practical implementation might require special
-treatment of collisions, and have experimented with but left to future works
-various ideas:
-* PoS tagging
-* Search within a Names and Geonames database
+* original string: `# گيله پسمير الجديد 34`
 
-=== Afterwords
+* diacritised string (with non Arabic removed by the NNets preprocessing):
+   `يَلِهُ سُمِيْرٌ الجَدِيدُ`
 
-Starting from a
-review of the scientific literature, we could rapidly implement a brand new
-library porting research algorithms into production and javascript.
+* reconcile strings: algorithm => `# گيَلِهُ پسُمِيْرٌ الجَدِيدُ 34`
 
-Solving such a complex problem and port it to a completely different production
-environement was only possible thanks to the power of Deep Learning and an
-intensive team effort.
+The https://github.com/interscript/rababa/blob/master/lib/rababa/reconcile.rb[reconciliation algorithm]
+is implemented in Rababa.
 
-We could also rely on previous works like
+
+=== Scoring and benchmarking processes
+
+* Even though diacritization can be scored independently on the designated test
+dataset, we have added additional practical datasets.
+
+* As mentioned, in Interscript, the diacritization stage must take place before
+transliteration. We have introduced various distance metrics to assess the full
+transliteration process quality on various datasets.
+
+=== Collision disambiguation
+
+As mentioned above, an Arabic phrase can be applied various diacritics which
+lead to different meanings. This problem is left to the Deep Learning model to
+solve.
+
+We understand, however, that a practical implementation might require special
+treatment of collisions, and have experimented but we leave to future works
+the following ideas to improve collision disambiguation:
+
+* parts-of-speech tagging
+* search within a Names and Geonames database
+
+== Summary
+
+Starting from a review of the scientific literature, we could rapidly implement
+a brand new library porting cutting-edge research algorithms into production and
+JavaScript.
+
+Solving such a complex problem and porting it to a completely different
+production environment was only possible thanks to the power of deep learning
+and an intensive team effort.
+
+This work was made possible by existing libraries, including
 https://github.com/ankane/onnxruntime[onnxruntime],
 https://github.com/interscript/opal-webassembly[opal webassembly],
-https://github.com/interscript/opal-onigmo[opal onigmo] and obviously
-https://github.com/almodhfer/Arabic_Diacritization[almodhfer].
+https://github.com/interscript/opal-onigmo[opal onigmo] and of course
+https://github.com/almodhfer/Arabic_Diacritization[almodhfer's Arabic Diacritization software].
