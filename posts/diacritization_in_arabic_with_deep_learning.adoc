@@ -40,7 +40,7 @@ Inversely, in Arabic, unlike many other languages, the vocalization can be
 exactly specified via diacritics: symbols added over or under the consonants as
 in colour, in the image below.
 
-image::figs/Elements_of_Arabic_script_improved.png[Example of Arabic with diacritization]
+image::/figs/Elements_of_Arabic_script_improved.png[Example of Arabic with diacritization]
 
 Writing Arabic with diacritics, called "`pointed Arabic`", is useful for
 language learners.
@@ -61,7 +61,7 @@ in *text-to-speech* and obviously *transliteration*.
 
 Below, a list and examples of the basic diacritics:
 
-image::figs/phonetics.png[Examples of Arabic diacritics]
+image::/figs/phonetics.png[Examples of Arabic diacritics]
 
 Furthermore, some Arabic diacritics can be combined as shown below:
 
