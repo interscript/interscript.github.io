@@ -11,8 +11,9 @@ manage.
 This blog explains how we have learned to do it with an advanced research
 architectures before porting it into production in _Ruby_ and _Javascript_.
 
-The https://github.com/interscript/rababa[rababa] is the result of this work and 
-a well documented, open source library that everyone could use.
+The https://github.com/interscript/rababa[Rababa] library (with Python and Ruby
+versions) is the result of this work and a well-documented, open source library
+that everyone could use.
 
 === Arabic within the landscape of languages
 
@@ -58,11 +59,11 @@ reference for diacritization.
 Pointed Arabic is obviously useful and essential for applications to NLP usage
 in *text-to-speech* and obviously *transliteration*.
 
-== Arabic Diacritics, "`Al Tashkīl`" تَشْكِيل
+== Arabic diacritics: "`Al Tashkīl`" تَشْكِيل
 
 === Basic diacritics
 
-Below, a list and examples of the basic diacritics:
+Here's a list with examples of basic Arabic diacritics:
 
 image::/figs/phonetics.png[Examples of Arabic diacritics]
 
@@ -127,15 +128,15 @@ architecture.
 
 However, we need to be able to:
 
-* run the inference step quickly on standard CPUs;
+* run the inference step quickly on standard CPUs (i.e. without GPUs);
 * run the inference step from Javascript, which is achieved here with the
   following workflow:
 
 .. Implementation and training of neural networks with PyTorch;
 .. Convert PyTorch model –> ONNX model;
 .. Load ONNX model from Ruby;
-.. Convert Ruby –> Javascript (as documented in the
-https://github.com/interscript/interscript.org/blob/master/posts/WebAssembly_and_advanced_regular_expressions_with_Opal.adoc[interscript blog])
+.. Convert Ruby –> Javascript (as documented in our
+https://github.com/interscript/interscript.org/blob/master/posts/WebAssembly_and_advanced_regular_expressions_with_Opal.adoc[post about Opal])
 
 * maintain the size of the model under 200MB; and
 
@@ -332,14 +333,14 @@ treatment of collisions, and have experimented but we leave to future works
 the following ideas to improve collision disambiguation:
 
 * parts-of-speech tagging
-* search within a Names and Geonames database
+* search within a "`personal names`" and "`geonames`" database
 
 == Summary
 
 Starting from a review of the scientific literature, we could rapidly implement
-https://github.com/interscript/rababa[rababa],
-a brand new library porting cutting-edge research algorithms into production and
-JavaScript.
+the https://github.com/interscript/rababa[Rababa] library in Ruby and Python, a
+brand new library porting cutting-edge research algorithms into production --
+and soon for JavaScript.
 
 Solving such a complex problem and porting it to a completely different
 production environment was only possible thanks to the power of deep learning
