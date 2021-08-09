@@ -92,12 +92,20 @@ const SystemList = () => {
             return pass;
         })
         .map((system: string) => (
-            <li key={system}>
+            <dl key={system}>
+              <dt>
                 <Link to={`/systems/${system}`} key={system}>
-                    {metaDataMap[system].name} ({metaDataMap[system].sourceScript} {"=>"}{" "}
-                    {metaDataMap[system].destinationScript}) {system}
+                  {system}
                 </Link>
-            </li>
+                {" "}({metaDataMap[system].sourceScript} {" to "}
+                  {metaDataMap[system].destinationScript})
+              </dt>
+              <dd>
+                <Link to={`/systems/${system}`} key={system}>
+                  {metaDataMap[system].name}
+                </Link>
+              </dd>
+          </dl>
         ));
 
     return (
