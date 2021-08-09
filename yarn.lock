@@ -4912,10 +4912,10 @@ internal-ip@^4.3.0:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
 
-interscript@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.0.5.tgz#051785b762787812df725762c3131ea7677ba0b2"
-  integrity sha512-jzGsylPE87JVdBhR+9vLZzNDJvfQPU/9S1ATJUTb4qVHOOkrSDnAAK4j6mY49jyWhsIRJbjF4mnE+2oq11cs+A==
+interscript@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.2.1.tgz#98625d4be95e3f5f900dd877345b47bd9ea36611"
+  integrity sha512-M/8gCK9cHOnnKiilCfdSKdFiDt41eaFFxBy7Rj1i0rYyvHeJlVygM0NyI/ubbHFq0/lVhiSde5qtkxj+6gDssw==
   dependencies:
     xregexp "^5.0.1"
 
