@@ -41,7 +41,7 @@
   {
     "lang": "Bulgarian",
     "isoName": "UN 1977, III/10",
-    "systemName": "",
+    "systemName": "un-bul-Cyrl-Latn-1977",
     "samples": ["Република България"],
     "result": []
   },
@@ -168,7 +168,7 @@
   {
     "lang": "Macedonian Cyrillic",
     "isoName": "UN 1977, III/11",
-    "systemName": "",
+    "systemName": "un-mkd-Cyrl-Latn-1977",
     "samples": ["Скопје","Битола"],
     "result": []
   },
@@ -246,7 +246,7 @@
   {
     "lang": "Serbian",
     "isoName": "UN 1977, III/11; 2002, VIII/14",
-    "systemName": "",
+    "systemName": "un-srp-Cyrl-Latn-1997",
     "samples": ["Србија","Београд"],
     "result": []
   },
@@ -289,7 +289,7 @@
   {
     "lang": "Tigrinya",
     "isoName": "BGN/PCGN 2007",
-    "systemName": "",
+    "systemName": "bgnpcgn-tir-Ethi-Latn-2007",
     "samples": ["ኤርትራ","ኣስመራ"],
     "english": ["Eritrea"],
     "result": []
