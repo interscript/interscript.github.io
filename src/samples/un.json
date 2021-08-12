@@ -44,7 +44,7 @@
     "isoName": "UN 1977, III/10",
     "systemName": "un-bul-Cyrl-Latn-1977",
     "samples": ["Република България"],
-    "english": ["Republika Bǎlgariya"],
+    "english": ["Republic of Bulgaria"],
     "result": []
   },
   {
@@ -140,7 +140,7 @@
     "isoName": "BGN/PCGN 1979",
     "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
     "samples": ["Қазақстан","Астана"],
-    "english": ["Kazakhstan","Nur-Sultan"],
+    "english": ["Kazakhstan","Astana"],
     "result": []
   },
   {
@@ -332,7 +332,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-urd-Arab-Latn-1972",
     "samples": ["پاکِستَان","اِسلام آبَاد"],
-    "english": ["Islamabad","Pakistan"],
+    "english": ["Pakistan","Islamabad"],
     "result": []
   }
 ]
