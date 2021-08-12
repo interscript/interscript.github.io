@@ -4,7 +4,7 @@
     "isoName": "UN 1967, I/17",
     "systemName": "un-amh-Ethi-Latn-2016",
     "samples": ["ኢትዮጵያ", "አዲስ አበባ"],
-    "english": ["Ethiopia"],
+    "english": ["Ethiopia","Addis Ababa"],
     "result": []
   },
   {
@@ -20,7 +20,7 @@
     "isoName": "BGN/PCGN 1981",
     "systemName": "bgnpcgn-arm-Armn-Latn-1981",
     "samples": ["Հայաստան","Երևան"],
-    "english": ["Armenia"],
+    "english": ["Armenia","Yerevan"],
     "result": []
   },
   {
@@ -36,6 +36,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-ben-Beng-Latn-2016",
     "samples": ["বাংলাদেশ","ঢাকা"],
+    "english": ["Bangladesh","Dhaka"],
     "result": []
   },
   {
@@ -43,13 +44,15 @@
     "isoName": "UN 1977, III/10",
     "systemName": "un-bul-Cyrl-Latn-1977",
     "samples": ["Република България"],
+    "english": ["Republika Bǎlgariya"],
     "result": []
   },
   {
     "lang": "Burmese",
     "isoName": "BGN/PCGN 1970",
     "systemName": "",
-    "samples": ["ြမန်မာ","ရန်ကုန်"],
+    "samples": ["မြန်မာ","ရန်ကုန်"],
+    "english": ["Burma","Yangon"],
     "result": []
   },
   {
@@ -57,6 +60,7 @@
     "isoName": "national 2007",
     "systemName": "by-bel-Cyrl-Latn-2007",
     "samples": ["Беларусь","Минск"],
+    "english": ["Belarus","Minsk"],
     "result": []
   },
   {
@@ -64,6 +68,7 @@
     "isoName": "UN 1977, III/8",
     "systemName": "bgnpcgn-zho-Hans-Latn-1979",
     "samples": ["中国","北京"],
+    "english": ["China","Beijing"],
     "result": []
   },
   {
@@ -79,7 +84,7 @@
     "isoName": "national 2002",
     "systemName": "ggg-kat-Geor-Latn-2002",
     "samples": ["საქართველო","თბილისი"],
-    "english": ["Georgia"],
+    "english": ["Georgia","Tbilisi"],
     "result": []
   },
   {
@@ -87,14 +92,15 @@
     "isoName": "UN 1987, V/19",
     "systemName": "un-ell-Grek-Latn-1987-tl",
     "samples": ["Ελλάδα","Αθήνα"],
-    "english": ["Greece"],
+    "english": ["Greece","Athens"],
     "result": []
   },
   {
     "lang": "Gujarati",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-guj-Gujr-Latn-1972",
-    "samples": ["જરાત","ગાંધીનગર"],
+    "samples": ["જરાતી","ગાંધીનગર"],
+    "english": ["Greece","Gandhinagar"],
     "result": []
   },
   {
@@ -110,7 +116,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-hin-Deva-Latn-2016",
     "samples": ["भारत","दिल्ली"],
-    "english": ["India"],
+    "english": ["India","Delhi"],
     "result": []
   },
   {
@@ -118,14 +124,15 @@
     "isoName": "national: Kunrei-siki/Mod. Hepburn",
     "systemName": "mext-jpn-Hrkt-Latn-1954",
     "samples": ["にっぽん","とうきょ"],
-    "english": ["Japan"],
+    "english": ["Japan","Tokyo"],
     "result": []
   },
   {
     "lang": "Kannada",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-kan-Kana-Latn-2016",
-    "samples": ["ಕರ್ಣಾಟಕ", "ಬೆಂಗಳೂರು"],
+    "samples": ["ಕರ್ನಾಟಕ", "ಬೆಂಗಳೂರು"],
+    "english": ["Karnataka","Bengaluru"],
     "result": []
   },
   {
@@ -133,14 +140,15 @@
     "isoName": "BGN/PCGN 1979",
     "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
     "samples": ["Қазақстан","Астана"],
+    "english": ["Kazakhstan","Nur-Sultan"],
     "result": []
   },
   {
     "lang": "Khmer",
     "isoName": "UN 1972, II/10",
     "systemName": "",
-    "samples": ["កមពុជ","ភនំេពញ"],
-    "english": ["Cambodia"],
+    "samples": ["កមពុជ","ភ្នំពេញ"],
+    "english": ["Cambodia","Phnom Penh"],
     "result": []
   },
   {
@@ -148,6 +156,7 @@
     "isoName": "BGN/PCGN 1979",
     "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
     "samples": ["Кыргызстан","Бишкек"],
+    "english": ["Kyrgyzstan","Bishkek"],
     "result": []
   },
   {
@@ -155,6 +164,7 @@
     "isoName": "ISO/TR 11941:1996",
     "systemName": "iso-kor-Hang-Latn-1996-method1",
     "samples": ["평양","서울"],
+    "english": ["Pyongyang","Seoul"],
     "result": []
   },
   {
@@ -162,7 +172,7 @@
     "isoName": "national 1966",
     "systemName": "",
     "samples": ["ລາວ","ວຽງຈັນ"],
-    "english": ["Laos"],
+    "english": ["Laos","Vientiane"],
     "result": []
   },
   {
@@ -170,6 +180,7 @@
     "isoName": "UN 1977, III/11",
     "systemName": "un-mkd-Cyrl-Latn-1977",
     "samples": ["Скопје","Битола"],
+    "english": ["Skopje","Bitola"],
     "result": []
   },
   {
@@ -177,21 +188,23 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-mal-Mlym-Latn-1972",
     "samples": ["കേരളം","തിരുവനന്തപുരം"],
+    "english": ["Kerala","Thiruvananthapuram"],
     "result": []
   },
   {
     "lang": "Maldivian",
     "isoName": "national 1987",
     "systemName": "mv-div-Thaa-Latn-1987",
-    "samples": ["ދިވެހި ރާއްޖެ", "މާލެ"],
-    "english": ["Maldives"],
+    "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
+    "english": ["Malé","Maldives"],
     "result": []
   },
   {
     "lang": "Marathi",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-mar-Deva-Latn-2016",
-    "samples": ["महारा","मुंबई"],
+    "samples": ["महाराष्ट्र","मुंबई"],
+    "english": ["Maharashtra","Mumbai"],
     "result": []
   },
   {
@@ -199,6 +212,7 @@
     "isoName": "BGN/PCGN 1964",
     "systemName": "bgnpcgn-mon-Cyrl-Latn-1964",
     "samples": ["Монгол улс","Улаанбаатар"],
+    "english": ["Mongolia","Ulaanbaatar"],
     "result": []
   },
   {
@@ -206,6 +220,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-nep-Deva-Latn-1972",
     "samples": ["नेपाल","काठमाडौँ"],
+    "english": ["Nepal","Kathmandu"],
     "result": []
   },
   {
@@ -213,6 +228,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-ori-Orya-Latn-1972",
     "samples": ["ଓଡ଼ିଶା","ଭୁବନେଶ୍ୱର"],
+    "english": ["Odisha","Bhubaneswar"],
     "result": []
   },
   {
@@ -220,6 +236,7 @@
     "isoName": "BGN/PCGN 1968",
     "systemName": "bgnpcgn-prs-Arab-Latn-2007",
     "samples": ["افغانِستان","کابُل"],
+    "english": ["Kabul","Afghanistan"],
     "result": []
   },
   {
@@ -227,13 +244,15 @@
     "isoName": "UN 1967, I/13",
     "systemName": "un-prs-Arab-Latn-1967",
     "samples": ["اِيران", "تِهران"],
+    "english": ["Tehran","Iran"],
     "result": []
   },
   {
     "lang": "Punjabi",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-pan-Guru-Latn-1972",
-    "samples": ["ਪੰਜਾਬ","ਚੰ ਡੀਗੜ"],
+    "samples": ["ਪੰਜਾਬ","ਚੰਡੀਗੜ੍ਹ"],
+    "english": ["Punjab","Chandigarh"],
     "result": []
   },
   {
@@ -241,6 +260,7 @@
     "isoName": "UN 1987, V/18",
     "systemName": "un-rus-Cyrl-Latn-1987",
     "samples": ["Россия","Москва"],
+    "english": ["Russia","Moscow"],
     "result": []
   },
   {
@@ -248,13 +268,15 @@
     "isoName": "UN 1977, III/11; 2002, VIII/14",
     "systemName": "un-srp-Cyrl-Latn-1997",
     "samples": ["Србија","Београд"],
+    "english": ["Serbia","Belgrade"],
     "result": []
   },
   {
     "lang": "Sinhalese",
     "isoName": "provisional 1972",
     "systemName": "un-sin-Sinh-Latn-1972",
-    "samples": ["ශ්\u200Dරී ලංකා", "කොළඹ"],
+    "samples": ["ශ්‍රී ලංකා", "කොළඹ"],
+    "english": ["Sri Lanka","Colombo"],
     "result": []
   },
   {
@@ -262,6 +284,7 @@
     "isoName": "BGN/PCGN 1994",
     "systemName": "bgnpcgn-tgk-Cyrl-Latn-1994",
     "samples": ["Тоҷикистон","Душанбе"],
+    "english": ["Tajikistan","Dushanbe"],
     "result": []
   },
   {
@@ -269,13 +292,15 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-tam-Taml-Latn-1972",
     "samples": ["தமிழ்நாடு","இலங்கை"],
+    "english": ["Tamil Nadu","Sri Lanka"],
     "result": []
   },
   {
     "lang": "Telugu",
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-tel-Telu-Latn-1972",
-    "samples": ["ఆధ్రా ప్రదేశ్", "హైదరాబాదు"],
+    "samples": ["ఆంధ్ర ప్రదేశ్", "హైదరాబాదు"],
+    "english": ["Andhra Pradesh","Hyderabad"],
     "result": []
   },
   {
@@ -283,7 +308,7 @@
     "isoName": "UN 1967, I/14",
     "systemName": "",
     "samples": ["ไทย","กรุงเทพฯ"],
-    "english": ["","Bangkok"],
+    "english": ["Thailand","Bangkok"],
     "result": []
   },
   {
@@ -291,7 +316,7 @@
     "isoName": "BGN/PCGN 2007",
     "systemName": "bgnpcgn-tir-Ethi-Latn-2007",
     "samples": ["ኤርትራ","ኣስመራ"],
-    "english": ["Eritrea"],
+    "english": ["Eritrea","Asmara"],
     "result": []
   },
   {
@@ -299,6 +324,7 @@
     "isoName": "national 2007",
     "systemName": "un-ukr-Cyrl-Latn-1998",
     "samples": ["Україна","Київ"],
+    "english": ["Ukraine","Kyiv"],
     "result": []
   },
   {
@@ -306,6 +332,7 @@
     "isoName": "UN 1972, II/11; 1977, III/12",
     "systemName": "un-urd-Arab-Latn-1972",
     "samples": ["پاکِستَان","اِسلام آبَاد"],
+    "english": ["Islamabad","Pakistan"],
     "result": []
   }
 ]
