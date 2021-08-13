@@ -108,7 +108,7 @@
     "isoName": "UN 1977, III/13; 2007, IX/9",
     "systemName": "icao-heb-Hebr-Latn-9303",
     "samples": ["מְדִינַת ישְרְאֶל"],
-    "english": ["State of Israel]"],
+    "english": ["State of Israel"],
     "result": []
   },
   {
@@ -196,7 +196,7 @@
     "isoName": "national 1987",
     "systemName": "mv-div-Thaa-Latn-1987",
     "samples": ["ދިވެހިރާއްޖެ", "މާލެ"],
-    "english": ["Republic of Maldives","Malé"],
+    "english": ["Maldives","Malé"],
     "result": []
   },
   {
@@ -236,7 +236,7 @@
     "isoName": "BGN/PCGN 1968",
     "systemName": "bgnpcgn-prs-Arab-Latn-2007",
     "samples": ["افغانِستان","کابُل"],
-    "english": ["Kabul","Afghanistan"],
+    "english": ["Afghanistan","Kabul"],
     "result": []
   },
   {
@@ -244,7 +244,7 @@
     "isoName": "UN 1967, I/13",
     "systemName": "un-prs-Arab-Latn-1967",
     "samples": ["اِيران", "تِهران"],
-    "english": ["Tehran","Iran"],
+    "english": ["Iran","Tehran"],
     "result": []
   },
   {
