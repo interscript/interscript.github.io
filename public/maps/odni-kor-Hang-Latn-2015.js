@@ -10,8 +10,8 @@ s = Interscript.gsub(s, ""+Interscript.aliases.line_start+"((?:독고|동방|등
 s = Interscript.gsub(s, ""+Interscript.aliases.line_start+"("+Interscript.get_alias_re("unicode", "unicode_hangul")+")("+Interscript.get_alias_re("unicode", "unicode_hangul")+""+Interscript.get_alias_re("unicode", "unicode_hangul")+")"+Interscript.aliases.line_end+"", "$1"+" "+"$2");
 s = Interscript.gsub(s, "(?:"+Interscript.aliases.line_start+"\ |\ "+Interscript.aliases.line_end+")", "");
 s = Interscript.transliterate("var-kor-Hang-Hang-jamo", s, "main");
-s = Interscript.parallel_replace_tree(s, map.cache.PTREE_1052748373781051464);
-s = Interscript.parallel_replace_tree(s, map.cache.PTREE_1052748373781051464);
+s = Interscript.parallel_replace_tree(s, map.cache.PTREE_4188853160827037553);
+s = Interscript.parallel_replace_tree(s, map.cache.PTREE_4188853160827037553);
 s = Interscript.gsub(s, "ᆩ", "kk");
 s = Interscript.gsub(s, "ᆪ", "ks");
 s = Interscript.gsub(s, "ᆬ", "nch");
@@ -88,5 +88,5 @@ s = Interscript.gsub(s, ""+Interscript.aliases.line_start+"i", "yi");
 s = Interscript.functions.title_case(s, {});
 return s;
 };
-map.cache.PTREE_1052748373781051464 = {};
+map.cache.PTREE_4188853160827037553 = {};
 });};if (typeof module !== 'undefined') { module.exports = map; }else if (typeof Interscript !== 'undefined') { map(Interscript); }else { throw "We couldn't dispatch Interscript from a map!"; }
