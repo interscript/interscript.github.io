@@ -4,6 +4,7 @@ node_modules
 dist
 yarn-error.log
 .idea
-public/docs/**
+public/maps/**
+!public/maps/.gitkeep
 map/*
 !map/.gitkeep

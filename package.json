@@ -12,8 +12,9 @@
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
     "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n",
-    "map": "node ./scripts/downloadMapData.js",
-    "make": "npm-run-all map build"
+    "map": "node bin/downloadMapData.js",
+    "make": "npm-run-all public_map map build",
+    "public_map": "./bin/update_public_maps.sh"
   },
   "dependencies": {
     "@n8tb1t/use-scroll-position": "^1.0.43",
