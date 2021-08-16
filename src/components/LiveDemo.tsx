@@ -65,6 +65,23 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         return metaData[system].test && metaData[system].test[+reverse];
     }
 
+    function reverseName(name: string): string {
+        let newname: string[] = (name || "noname").split("-");
+        if (newname.length >= 4) {
+            const tmp: string = newname[3];
+            newname[3] = newname[2];
+            newname[2] = tmp;
+        }
+        let newnameStr: string = newname.join("-");
+        if (newnameStr === name) {
+            newnameStr = newnameStr.replace("-reverse", "");
+        }
+        if (newnameStr === name) {
+            newnameStr = newnameStr + "-reverse";
+        }
+        return newnameStr;
+    }
+
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
             setError(null);
@@ -74,23 +91,20 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
             let respApi: AxiosResponse<any>;
             let resp: string;
             try {
+                const systemName = reverse ? reverseName(systemCode) : systemCode;
                 if (api) {
                     respApi = await axios({
                         method: "POST",
                         url: API_ENDPOINT,
-                        data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
+                        data: `{transliterate(systemCode: \"${systemName}\", input: \"${sampleText}\")}`,
                         headers: {
                             "Content-Type": "application/json",
                         },
                     });
                 } else {
                     Interscript.map_path = "/maps/";
-                    await Interscript.load_map(systemCode);
-                    if (reverse) {
-                        resp = Interscript.transliterate(systemCode, sampleText); //Todo: Fix it
-                    } else {
-                        resp = Interscript.transliterate(systemCode, sampleText);
-                    }
+                    await Interscript.load_map(systemName);
+                    resp = Interscript.transliterate(systemName, sampleText);
                 }
             } catch (e) {
                 setResult(null);
