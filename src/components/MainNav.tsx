@@ -47,6 +47,10 @@ const MAIN_MENU_ITEMS = [
         path: "https://github.com/interscript/interscript/",
         external: true,
     },
+    {
+        name: "System Detection",
+        path: "/detect",
+    },
 ];
 
 export const MainNav = () => {
