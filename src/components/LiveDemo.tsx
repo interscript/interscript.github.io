@@ -22,6 +22,7 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     const [result, setResult] = useState<string | null | undefined>(null);
     const [error, setError] = useState<string | null>(null);
     const [submitted, setSubmitted] = useState(false);
+    const [reverse, setReverse] = useState<boolean>(false);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -47,7 +48,7 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                 setSampleText(test);
             }
         }
-    }, [systemCode]);
+    }, [systemCode, reverse]);
 
     useEffect(() => {
         (async () => {
@@ -61,7 +62,24 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     }, []);
 
     function getTestExample(system: string): string | null {
-        return metaData[system].test && metaData[system].test[0];
+        return metaData[system].test && metaData[system].test[+reverse];
+    }
+
+    function reverseName(name: string): string {
+        let newname: string[] = (name || "noname").split("-");
+        if (newname.length >= 4) {
+            const tmp: string = newname[3];
+            newname[3] = newname[2];
+            newname[2] = tmp;
+        }
+        let newnameStr: string = newname.join("-");
+        if (newnameStr === name) {
+            newnameStr = newnameStr.replace("-reverse", "");
+        }
+        if (newnameStr === name) {
+            newnameStr = newnameStr + "-reverse";
+        }
+        return newnameStr;
     }
 
     async function handleConvert() {
@@ -73,19 +91,20 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
             let respApi: AxiosResponse<any>;
             let resp: string;
             try {
+                const systemName = reverse ? reverseName(systemCode) : systemCode;
                 if (api) {
                     respApi = await axios({
                         method: "POST",
                         url: API_ENDPOINT,
-                        data: `{transliterate(systemCode: \"${systemCode}\", input: \"${sampleText}\")}`,
+                        data: `{transliterate(systemCode: \"${systemName}\", input: \"${sampleText}\")}`,
                         headers: {
                             "Content-Type": "application/json",
                         },
                     });
                 } else {
                     Interscript.map_path = "/maps/";
-                    await Interscript.load_map(systemCode);
-                    resp = Interscript.transliterate(systemCode, sampleText);
+                    await Interscript.load_map(systemName);
+                    resp = Interscript.transliterate(systemName, sampleText);
                 }
             } catch (e) {
                 setResult(null);
@@ -110,7 +129,6 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     return (
         <>
             <SystemSelector onSelect={selectSystem} systemCodes={maps} />
-
             <SampleAndResult>
                 <SampleTextArea
                     ref={sampleInputRef}
@@ -124,21 +142,20 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                     }}
                     onChange={(evt) => setSampleText(evt.currentTarget.value)}
                 />
-
                 <ConvertButton
                     onClick={handleConvert}
                     disabled={submitted === true || systemCode === null || sampleText.trim() === ""}
                 >
                     Convert &rarr;
                 </ConvertButton>
-
                 <ResultTextArea
                     placeholder={selectedSystem === null ? "Select a system above" : undefined}
                     disabled
                     value={result === undefined ? "Loading…" : result || error || ""}
                 />
             </SampleAndResult>
-
+            <input type="checkbox" checked={reverse} onChange={(e) => setReverse(e.target.checked)} />
+            Reverse
             {systemCode !== null ? (
                 <p>
                     <small>
@@ -147,6 +164,7 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                     </small>
                 </p>
             ) : null}
+            <p style={{ height: "10rem" }}></p>
         </>
     );
 };
