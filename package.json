@@ -23,7 +23,7 @@
     "@root/walk": "^1.1.0",
     "axios": "^0.19.0",
     "classnames": "^2.3.1",
-    "interscript": "^2.3.0",
+    "interscript": "^2.3.1",
     "iso-639-2": "^2.0.0",
     "iso-639-3": "^2.1.0",
     "react": "^16.9.0",
