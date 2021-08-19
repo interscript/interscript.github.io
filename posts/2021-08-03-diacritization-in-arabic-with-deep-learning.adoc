@@ -1,3 +1,15 @@
+---
+title: Diacritization in Arabic with Deep Learning
+date: 2021-08-03
+author:
+  - name: Jair Wuilloud
+    social_links:
+      - https://github.com/gilgameshjw
+
+excerpt: >-
+  The Interscript approach of Arabic transcription starts with diacriticization,
+  which requires cutting edge deep learning techniques.
+---
 = Diacritization in Arabic with Deep Learning
 
 == Introduction
