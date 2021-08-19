@@ -1,6 +1,6 @@
 = Diacritization in Arabic with Deep Learning
-Ronald Tse
-v1.0, 2021-08-30
+Jair Wuilloud
+v1.0, 2021-08-03
 :doctype: book
 :docinfo:
 
