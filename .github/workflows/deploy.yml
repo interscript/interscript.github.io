@@ -27,8 +27,7 @@ jobs:
           yarn global add asciidoctor
       - name: Build site
         run: |
-          yarn adoc
-          yarn make
+          yarn adoc make
 
       - name: Deploy to AWS
         env:
