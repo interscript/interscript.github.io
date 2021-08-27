@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { Link } from "@reach/router";
 import axios, { AxiosPromise } from "axios";
 import styled from "styled-components";
 import { primaryColor } from "../App";
@@ -54,17 +55,57 @@ export default () => {
 
     return (
         <div>
-            <h1> Rababa Test </h1>
+            <h1> Rababa for Arabic diacriticization </h1>
+            <div>
+            <p>
+              <Link to="https://en.wikipedia.org/wiki/Arabic_diacritics">
+                Diacritization
+              </Link> {" "}
+              is the art of completing Arabic scripts with the
+              correct vocalization, which is a task that only advanced Arabic
+              speakers successfully manage.
+            </p>
+            <p>
+              <a href="https://github.com/interscript/rababa">Rababa</a> is an
+              open source, openly-licensed library available on both Python and
+              Ruby that utilizes advanced neural network architectures for the
+              diacriticization of {" "}
+              <Link to="https://en.wikipedia.org/wiki/Abjad">
+                Abjad scripts
+              </Link> {" "}
+              like Arabic and Hebrew.
+              Moreover, the trained models are also openly-licensed and their
+              source datasets are also open sourced.
+            </p>
+            <p>
+              <Link to="https://github.com/secryst/rababa-models">
+                Trained Rababa models
+              </Link> {" "}
+              are available in both PyTorch and ONNX formats, which allows for
+              platform-independent execution of the library.
+            </p>
+            <p>
+              More details about the development and origin of Rababa can be
+              found on our {" "}
+              <Link to={`/blog/diacritization_in_arabic_with_deep_learning`}>
+                Rababa blog post
+              </Link>.
+            </p>
+            <p>
+              <Link to="https://github.com/interscript/rababa">Rababa</Link> is
+              available on GitHub.
+            </p>
+            </div>
             <SampleAndResult>
                 <SampleTextArea
-                    placeholder={"Input source text"}
-                    style={{
-                        boxShadow: source.trim() === "" ? `#${primaryColor} 0 0 0px .5rem` : undefined,
-                    }}
-                    onChange={(evt) => setSource(evt.currentTarget.value)}
+                  placeholder={"علامة التشكيل"}
+                  style={{
+                      boxShadow: source.trim() === "" ? `#${primaryColor} 0 0 0px .5rem` : undefined,
+                  }}
+                  onChange={(evt) => setSource(evt.currentTarget.value)}
                 />
-                <ConvertButton onClick={transliterate} value="Convert" disabled={loading || source.trim() === ""}>
-                    Convert
+                <ConvertButton onClick={transliterate} value="Add diacritics" disabled={loading || source.trim() === ""}>
+                  Add diacritics
                 </ConvertButton>
                 <ResultTextArea disabled value={getResultText()} />
             </SampleAndResult>
