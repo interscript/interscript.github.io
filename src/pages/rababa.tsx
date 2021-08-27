@@ -3,7 +3,8 @@ import axios, { AxiosPromise } from "axios";
 import styled from "styled-components";
 import { primaryColor } from "../App";
 
-const API_URI = "https://api.interscript.org";
+const API_URI = "https://api.interscript.org/prod";
+// const API_URI = "https://staging-api.interscript.org/staging";
 
 export default () => {
     const [source, setSource] = useState<string>("");
