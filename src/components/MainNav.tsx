@@ -52,7 +52,7 @@ const MAIN_MENU_ITEMS = [
         path: "/detect",
     },
     {
-        name: "Rababa Diacriticization",
+        name: "Arabic Diacriticization",
         path: "/rababa",
     },
 ];

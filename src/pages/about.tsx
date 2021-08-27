@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import { HeaderMenu } from "../components/HeaderMenu";
 
 export default () => (
@@ -7,21 +8,32 @@ export default () => (
     <div>Interscript has been supported by:
         <ul>
             <li>
-
-                Professor Lyubomir Ivanov (Bulgarian Academy of Sciences)
+              Professor Lyubomir Ivanov {" "}
+              (of the <Link to="https://www.bas.bg">Bulgarian Academy of Sciences</Link>)
             </li>
             <li>
-
-                BGN https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names
+              <Link to="https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names">
+                US Board on Geographic Names (BGN)
+              </Link>
             </li>
             <li>
-                OGC <a href="https://www.ogc.org">https://www.ogc.org</a>
+              <Link to="https://www.ogc.org">
+                Open Geospatial Consortium (OGC)
+              </Link>
             </li>
             <li>
-                CalConnect <a href="https://www.calconnect.org">https://www.calconnect.org</a>
+              <Link to="https://www.calconnect.org">
+                CalConnect
+              </Link>
             </li>
             <li>
-                UNGEGN (<a href="https://unstats.un.org/unsd/ungegn/">https://unstats.un.org/unsd/ungegn/</a>) Working Group on Romanization Systems (<a href="http://www.eki.ee/wgrs/">http://www.eki.ee/wgrs/</a>)
+              The <Link to="http://www.eki.ee/wgrs/">
+                Working Group on Romanization Systems
+              </Link>
+              {" "} of the {" "}
+              <Link to="https://unstats.un.org/unsd/ungegn/">
+                United Nations Group of Experts on Geographical Names
+              </Link>
             </li>
         </ul>
     </div>
