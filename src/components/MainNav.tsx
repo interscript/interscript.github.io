@@ -51,6 +51,10 @@ const MAIN_MENU_ITEMS = [
         name: "System Detection",
         path: "/detect",
     },
+    {
+        name: "Rababa",
+        path: "/rababa",
+    },
 ];
 
 export const MainNav = () => {
