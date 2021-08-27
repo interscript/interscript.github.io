@@ -1,7 +1,7 @@
 [
   {
     "lang": "Amharic",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-amh-Ethi-Latn-1997",
     "samples": [
@@ -14,7 +14,7 @@
   },
   {
     "lang": "Amharic",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-amh-Ethi-Latn-2011",
     "samples": [
@@ -27,7 +27,7 @@
   },
   {
     "lang": "Arabic",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-ara-Arab-Latn-1997",
     "samples": [
@@ -37,7 +37,7 @@
   },
   {
     "lang": "Arabic",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-ara-Arab-Latn-2012",
     "samples": [
@@ -47,7 +47,7 @@
   },
   {
     "lang": "Armenian",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -56,7 +56,7 @@
   },
   {
     "lang": "Assamese",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-asm-Deva-Latn-1997",
     "samples": [
@@ -66,7 +66,7 @@
   },
   {
     "lang": "Assamese",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-asm-Deva-Latn-2012",
     "samples": [
@@ -76,7 +76,7 @@
   },
   {
     "lang": "Azerbaijani",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-aze-Cyrl-Latn-1997",
     "samples": [
@@ -86,7 +86,7 @@
   },
   {
     "lang": "Azerbaijani",
-    "isoName": "ALA/LC 2017",
+    "isoName": "ALA-LC 2017",
     "year": 2017,
     "systemName": "alalc-aze-Cyrl-Latn-2017",
     "samples": [
@@ -96,7 +96,7 @@
   },
   {
     "lang": "Balinese",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -105,7 +105,7 @@
   },
   {
     "lang": "Batak",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -114,7 +114,7 @@
   },
   {
     "lang": "Belarusian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-bel-Cyrl-Latn-1997",
     "samples": [
@@ -124,7 +124,7 @@
   },
   {
     "lang": "Belarusian",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-bel-Cyrl-Latn-2012",
     "samples": [
@@ -134,7 +134,7 @@
   },
   {
     "lang": "Bengali",
-    "isoName": "ALA/LC 2017",
+    "isoName": "ALA-LC 2017",
     "year": 2017,
     "systemName": "alalc-ben-Beng-Latn-2017",
     "samples": [
@@ -144,7 +144,7 @@
   },
   {
     "lang": "Bulgarian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-bul-Cyrl-Latn-1997",
     "samples": [
@@ -154,7 +154,7 @@
   },
   {
     "lang": "Bulgarian",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "alalc-bul-Cyrl-Latn-2013",
     "samples": [
@@ -164,7 +164,7 @@
   },
   {
     "lang": "Burmese",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -173,7 +173,7 @@
   },
   {
     "lang": "Cham",
-    "isoName": "ALA/LC 2015",
+    "isoName": "ALA-LC 2015",
     "year": 2015,
     "systemName": "",
     "samples": [
@@ -182,7 +182,7 @@
   },
   {
     "lang": "Cherokee",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -191,7 +191,7 @@
   },
   {
     "lang": "Chinese",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -200,7 +200,7 @@
   },
   {
     "lang": "Church Slavic",
-    "isoName": "ALA/LC 2011 rev",
+    "isoName": "ALA-LC 2011 rev",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -209,7 +209,7 @@
   },
   {
     "lang": "Coptic",
-    "isoName": "ALA/LC 2014",
+    "isoName": "ALA-LC 2014",
     "year": 2014,
     "systemName": "",
     "samples": [
@@ -218,7 +218,7 @@
   },
   {
     "lang": "Deseret",
-    "isoName": "ALA/LC 2016",
+    "isoName": "ALA-LC 2016",
     "year": 2016,
     "systemName": "",
     "samples": [
@@ -227,7 +227,7 @@
   },
   {
     "lang": "Divehi",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-div-Thaa-Latn-1997",
     "samples": [
@@ -237,7 +237,7 @@
   },
   {
     "lang": "Divehi",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-div-Thaa-Latn-2012",
     "samples": [
@@ -247,7 +247,7 @@
   },
   {
     "lang": "Georgian (Khutsuri)",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-kat-Geok-Latn-1997",
     "samples": [
@@ -257,7 +257,7 @@
   },
   {
     "lang": "Georgian (Khutsuri)",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 1997,
     "systemName": "alalc-kat-Geok-Latn-2011",
     "samples": [
@@ -267,7 +267,7 @@
   },
   {
     "lang": "Georgian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-kat-Geor-Latn-1997",
     "samples": [
@@ -277,7 +277,7 @@
   },
   {
     "lang": "Georgian",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-kat-Geor-Latn-2011",
     "samples": [
@@ -287,7 +287,7 @@
   },
   {
     "lang": "Greek",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-ell-Grek-Latn-1997",
     "samples": [
@@ -297,7 +297,7 @@
   },
   {
     "lang": "Greek",
-    "isoName": "ALA/LC 2010",
+    "isoName": "ALA-LC 2010",
     "year": 2010,
     "systemName": "alalc-ell-Grek-Latn-2010",
     "samples": [
@@ -307,7 +307,7 @@
   },
   {
     "lang": "Gujarati",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-guj-Gujr-Latn-1997",
     "samples": [
@@ -320,7 +320,7 @@
   },
   {
     "lang": "Gujarati",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-guj-Gujr-Latn-2011",
     "samples": [
@@ -333,7 +333,7 @@
   },
   {
     "lang": "Hebrew and Yiddish",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -344,7 +344,7 @@
   },
   {
     "lang": "Hindi",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-hin-Deva-Latn-1997",
     "samples": [
@@ -354,7 +354,7 @@
   },
   {
     "lang": "Hindi",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-hin-Deva-Latn-2011",
     "samples": [
@@ -364,7 +364,7 @@
   },
   {
     "lang": "Inuktitut",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -373,7 +373,7 @@
   },
   {
     "lang": "Japanese",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -382,7 +382,7 @@
   },
   {
     "lang": "Javanese, Sundanese,and Madurese",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -391,7 +391,7 @@
   },
   {
     "lang": "Jawi-Pegon",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -400,7 +400,7 @@
   },
   {
     "lang": "Judeo-Arabic",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -409,7 +409,7 @@
   },
   {
     "lang": "Kannada",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -418,7 +418,7 @@
   },
   {
     "lang": "Kashmiri",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -427,7 +427,7 @@
   },
   {
     "lang": "Kazakh",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -436,7 +436,7 @@
   },
   {
     "lang": "Khmer",
-    "isoName": "ALA/LC 2012 rev",
+    "isoName": "ALA-LC 2012 rev",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -445,7 +445,7 @@
   },
   {
     "lang": "Korean",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-kor-Hang-Latn-1997",
     "samples": [
@@ -455,7 +455,7 @@
   },
   {
     "lang": "Korean",
-    "isoName": "ALA/LC 2009",
+    "isoName": "ALA-LC 2009",
     "year": 2009,
     "systemName": "alalc-kor-Hang-Latn-2009",
     "samples": [
@@ -466,7 +466,7 @@
   },
   {
     "lang": "Kurdish",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -475,7 +475,7 @@
   },
   {
     "lang": "Ladino",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -484,7 +484,7 @@
   },
   {
     "lang": "Lao",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -493,7 +493,7 @@
   },
   {
     "lang": "Lepcha",
-    "isoName": "ALA/LC 2012 rev",
+    "isoName": "ALA-LC 2012 rev",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -502,7 +502,7 @@
   },
   {
     "lang": "Limbu",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -511,7 +511,7 @@
   },
   {
     "lang": "Macedonian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-mkd-Cyrl-Latn-1997",
     "samples": [
@@ -521,7 +521,7 @@
   },
   {
     "lang": "Macedonian",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "alalc-mkd-Cyrl-Latn-2013",
     "samples": [
@@ -531,7 +531,7 @@
   },
   {
     "lang": "Malayalam",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-mal-Mlym-Latn-1997",
     "samples": [
@@ -541,7 +541,7 @@
   },
   {
     "lang": "Malayalam",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-mal-Mlym-Latn-2012",
     "samples": [
@@ -551,7 +551,7 @@
   },
   {
     "lang": "Manchu",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -560,7 +560,7 @@
   },
   {
     "lang": "Mande languages (in N'ko script)",
-    "isoName": "ALA/LC 2015",
+    "isoName": "ALA-LC 2015",
     "year": 2015,
     "systemName": "",
     "samples": [
@@ -569,7 +569,7 @@
   },
   {
     "lang": "Marathi",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-mar-Deva-Latn-1997",
     "samples": [
@@ -579,7 +579,7 @@
   },
   {
     "lang": "Marathi",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-mar-Deva-Latn-2011",
     "samples": [
@@ -589,7 +589,7 @@
   },
   {
     "lang": "Mongolian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-mon-Cyrl-Latn-1997",
     "samples": [
@@ -599,7 +599,7 @@
   },
   {
     "lang": "Moplah",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -608,7 +608,7 @@
   },
   {
     "lang": "Moroccan Tamazight",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -617,7 +617,7 @@
   },
   {
     "lang": "Non-Slavic Languages (in Cyrillic Script)",
-    "isoName": "ALA/LC 2017",
+    "isoName": "ALA-LC 2017",
     "year": 2017,
     "systemName": "",
     "samples": [
@@ -626,7 +626,7 @@
   },
   {
     "lang": "Oriya",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-ori-Orya-Latn-1997",
     "samples": [
@@ -636,7 +636,7 @@
   },
   {
     "lang": "Oriya",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-ori-Orya-Latn-2011",
     "samples": [
@@ -646,7 +646,7 @@
   },
   {
     "lang": "Ottoman Turkish",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -655,7 +655,7 @@
   },
   {
     "lang": "Pali",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-pli-Deva-Latn-2012",
     "samples": [
@@ -665,7 +665,7 @@
   },
   {
     "lang": "Panjabi",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-pan-Guru-Latn-1997",
     "samples": [
@@ -675,7 +675,7 @@
   },
   {
     "lang": "Panjabi",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-pan-Guru-Latn-2011",
     "samples": [
@@ -685,7 +685,7 @@
   },
   {
     "lang": "Persian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-per-Arab-Latn-1997",
     "samples": [
@@ -695,7 +695,7 @@
   },
   {
     "lang": "Persian",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-per-Arab-Latn-2012",
     "samples": [
@@ -705,7 +705,7 @@
   },
   {
     "lang": "Prakrit languages",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-pra-Deva-Latn-2012",
     "samples": [
@@ -715,7 +715,7 @@
   },
   {
     "lang": "Pushto",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "",
     "samples": [
@@ -724,7 +724,7 @@
   },
   {
     "lang": "Romanian (in Cyrillic)",
-    "isoName": "ALA/LC 2014",
+    "isoName": "ALA-LC 2014",
     "year": 2014,
     "systemName": "",
     "samples": [
@@ -733,7 +733,7 @@
   },
   {
     "lang": "Russian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-rus-Cyrl-Latn-1997",
     "samples": [
@@ -743,7 +743,7 @@
   },
   {
     "lang": "Russian",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-rus-Cyrl-Latn-2012",
     "samples": [
@@ -753,7 +753,7 @@
   },
   {
     "lang": "Rusyn, Carpatho-Rusyn",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "",
     "samples": [
@@ -762,7 +762,7 @@
   },
   {
     "lang": "Sanskrit",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "alalc-san-Deva-Latn-2012",
     "samples": [
@@ -772,7 +772,7 @@
   },
   {
     "lang": "Santali",
-    "isoName": "ALA/LC 2012 rev",
+    "isoName": "ALA-LC 2012 rev",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -781,7 +781,7 @@
   },
   {
     "lang": "Serbian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-srp-Cyrl-Latn-1997",
     "samples": [
@@ -791,7 +791,7 @@
   },
   {
     "lang": "Serbian",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "alalc-srp-Cyrl-Latn-2013",
     "samples": [
@@ -801,7 +801,7 @@
   },
   {
     "lang": "Shan",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -810,7 +810,7 @@
   },
   {
     "lang": "Sindhi",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "",
     "samples": [
@@ -819,7 +819,7 @@
   },
   {
     "lang": "Sinhalese",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-sin-Sinh-Latn-1997",
     "samples": [
@@ -829,7 +829,7 @@
   },
   {
     "lang": "Sinhalese",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-sin-Sinh-Latn-2011",
     "samples": [
@@ -839,7 +839,7 @@
   },
   {
     "lang": "Syriac",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -848,7 +848,7 @@
   },
   {
     "lang": "Tamashek",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "",
     "samples": [
@@ -857,7 +857,7 @@
   },
   {
     "lang": "Tamil",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-tam-Taml-Latn-1997",
     "samples": [
@@ -867,7 +867,7 @@
   },
   {
     "lang": "Tamil",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-tam-Taml-Latn-2011",
     "samples": [
@@ -877,7 +877,7 @@
   },
   {
     "lang": "Telugu",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-tel-Telu-Latn-1997",
     "samples": [
@@ -887,7 +887,7 @@
   },
   {
     "lang": "Telugu",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-tel-Telu-Latn-2011",
     "samples": [
@@ -897,7 +897,7 @@
   },
   {
     "lang": "Thai",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -906,7 +906,7 @@
   },
   {
     "lang": "Tibetan",
-    "isoName": "ALA/LC 2015",
+    "isoName": "ALA-LC 2015",
     "year": 2015,
     "systemName": "",
     "samples": [
@@ -915,7 +915,7 @@
   },
   {
     "lang": "Tigrinya",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "",
     "samples": [
@@ -924,7 +924,7 @@
   },
   {
     "lang": "Tod-Oirat-Old Kalmyk",
-    "isoName": "ALA/LC 2012",
+    "isoName": "ALA-LC 2012",
     "year": 2012,
     "systemName": "",
     "samples": [
@@ -933,7 +933,7 @@
   },
   {
     "lang": "Uighur",
-    "isoName": "ALA/LC 2015",
+    "isoName": "ALA-LC 2015",
     "year": 2015,
     "systemName": "",
     "samples": [
@@ -942,7 +942,7 @@
   },
   {
     "lang": "Ukrainian",
-    "isoName": "ALA/LC 1997",
+    "isoName": "ALA-LC 1997",
     "year": 1997,
     "systemName": "alalc-ukr-Cyrl-Latn-1997",
     "samples": [
@@ -952,7 +952,7 @@
   },
   {
     "lang": "Ukrainian",
-    "isoName": "ALA/LC 2011",
+    "isoName": "ALA-LC 2011",
     "year": 2011,
     "systemName": "alalc-ukr-Cyrl-Latn-2011",
     "samples": [
@@ -962,7 +962,7 @@
   },
   {
     "lang": "Urdu",
-    "isoName": "ALA/LC 2013",
+    "isoName": "ALA-LC 2013",
     "year": 2013,
     "systemName": "",
     "samples": [
@@ -971,7 +971,7 @@
   },
   {
     "lang": "Uzbek",
-    "isoName": "ALA/LC 2017",
+    "isoName": "ALA-LC 2017",
     "year": 2017,
     "systemName": "",
     "samples": [
@@ -980,7 +980,7 @@
   },
   {
     "lang": "Vai",
-    "isoName": "ALA/LC 2011 rev",
+    "isoName": "ALA-LC 2011 rev",
     "year": 2011,
     "systemName": "",
     "samples": [

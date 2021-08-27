@@ -98,7 +98,7 @@ export default {
         let alalc, bgnpcgn, odni, ogc11122, un;
 
         if (process.env.NODE_ENV === "production") {
-            console.log("transliterates all samples on build process...");
+            console.log("Dynamically convert all samples...");
             alalc = await evaluate(alalcSamples);
             bgnpcgn = await evaluate(bgnpcgnSamples);
             odni = await evaluate(odniSamples);
@@ -247,7 +247,7 @@ export default {
                 }),
             },
             {
-                path: "integration",
+                path: "integrate",
                 template: "src/components/ReadmeSectionPage.tsx",
                 getData: async () => ({
                     sections: [
@@ -276,7 +276,7 @@ export default {
                 }),
             },
             {
-                path: "customizing-and-contributing",
+                path: "develop",
                 template: "src/pages/docs.tsx",
                 getData: async () => ({
                     docList,

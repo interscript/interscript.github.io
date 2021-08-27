@@ -10,23 +10,31 @@ export default () => {
     return (
         <>
             <TopNav />
-
-            <h2>{`BGN/PCGN systems`}</h2>
+            <h2>{`BGN/PCGN Romanization systems`}</h2>
             <p>
-                <i>{`Each title of a language or a writing system is followed by a note on the appropriate romanization system used (UN = United Nations, BGN/PCGN = US Board on Geographic Names and Permanent Committee on Geographical Names for British Official Use)`}</i>
+              The <a href="https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names">U.S. Board on Geographic Names</a>
+              {` and the `}
+              <a href="https://www.gov.uk/government/groups/the-permanent-committee-on-geographical-names">Permanent Committee on Geographical Names</a>
+              {` jointly maintain the set of `}
+              "<a href="https://www.gov.uk/government/publications/romanization-systems">BGN/PCGN   romanization systems</a>",
+              a set of script conversion systems widely relied upon for
+              geographic name script conversions.
+            </p>
+            <p>
+              Systems listed here are ordered according to the "Introduction to Romanization Systems and Roman
+              script spelling conventions (updated 25 September 2020)" document, available at{" "}
+              <a href="https://geonames.nga.mil/gns/html/romanization.html" target="_blank">
+                  BGN{" "}
+              </a>
+              and{" "}
+              <a href="https://www.gov.uk/government/publications/romanization-systems" target="_blank">
+                  PCGN
+              </a>
+              .
             </p>
             <p>
                 <i>
-                    The systems listed here are ordered according to the "Introduction to Romanization Systems and Roman
-                    script spelling conventions (updated 25 September 2020)" document, available at{" "}
-                    <a href="https://geonames.nga.mil/gns/html/romanization.html" target="_blank">
-                        BGN{" "}
-                    </a>
-                    and{" "}
-                    <a href="https://www.gov.uk/government/publications/romanization-systems" target="_blank">
-                        PCGN
-                    </a>
-                    .
+                  NOTE: The title of a language or a writing system is followed by a note on the Romanization system used.
                 </i>
             </p>
             <ExamplePage samples={samples} aggregate={true} authority="BGN/PCGN" />

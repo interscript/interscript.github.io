@@ -10,7 +10,7 @@ import { AdocStyleWrapper } from "components/AdocStyleWrapper";
 export default () => {
     const { html, docList } = useRouteData();
     const links = (docList || []).map((doc: DocFile, idx: number) => (
-        <Link to={`/customizing-and-contributing/${doc.name}`} key={idx}>
+        <Link to={`/develop/${doc.name}`} key={idx}>
             <SectionNavItem key="docs">
                 <strong>{doc.title}</strong>
             </SectionNavItem>

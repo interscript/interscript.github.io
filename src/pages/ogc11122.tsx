@@ -11,19 +11,22 @@ export default () => {
         <>
             <TopNav />
 
-            <h2>{`OGC 11-122 r1 systems`}</h2>
+            <h2>{`OGC systems`}</h2>
             <p>
-                <i>{`Each title of a language or a writing system is followed by a note on the appropriate romanization system used (OGC = Open Geospatial Consortium)`}</i>
+              The <a href="https://www.ogc.org/">Open Geospatial Consortium (OGC)</a>
+              {" published "}
+              <a href="https://portal.ogc.org/files/?artifact_id=46964">OGC Best Practice 11-122r1</a> {" "}
+              "Gazetteer Service - Application Profile of the Web Feature Service".
+              Its "Annex E: Transliteration domains" provides a list of
+              script conversion systems that can be used with the Web Feature Service.
             </p>
             <p>
-                <i>
-                    The systems listed here are ordered according to the "OGC 11-122r1 Gazetteer Service - Application
-                    Profile of the Web Feature Service Best Practice (1.0)" document, available &nbsp;
-                    <a href="https://www.ogc.org/standards/wfs" target="_blank">
-                        here
-                    </a>
-                    .
-                </i>
+              <i>
+                Systems listed are ordered as represented in Annex E of the {" "}
+                <a href="https://www.ogc.org/standards/wfs" target="_blank">
+                  OGC 11-122r1 Best Practice document
+                </a>.
+              </i>
             </p>
             <ExamplePage samples={samples} />
         </>

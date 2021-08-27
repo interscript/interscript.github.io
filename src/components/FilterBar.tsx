@@ -88,7 +88,7 @@ export function FilterBar(props: FilterBarProps) {
                     handleSubmit(e);
                 }}
             >
-                <option value="">Select Source</option>
+                <option value="">Select Source Script</option>
                 {sources.map((source) => {
                     return (
                         <option key={source} value={source}>
@@ -106,7 +106,7 @@ export function FilterBar(props: FilterBarProps) {
                     handleSubmit(e);
                 }}
             >
-                <option value="">Select Destination</option>
+                <option value="">Select Destination Script</option>
                 {destinations.map((dest) => {
                     return (
                         <option key={dest} value={dest}>

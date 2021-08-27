@@ -82,7 +82,7 @@ const SYSTEM_METADATA = [
         field: "authorityId",
     },
     {
-        caption: "Standard ID",
+        caption: "System ID",
         field: "id",
     },
     {

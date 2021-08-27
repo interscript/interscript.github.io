@@ -58,9 +58,9 @@ export default () => {
             <h1> Rababa for Arabic diacriticization </h1>
             <div>
             <p>
-              <Link to="https://en.wikipedia.org/wiki/Arabic_diacritics">
+              <a href="https://en.wikipedia.org/wiki/Arabic_diacritics">
                 Diacritization
-              </Link> {" "}
+              </a> {" "}
               is the art of completing Arabic scripts with the
               correct vocalization, which is a task that only advanced Arabic
               speakers successfully manage.
@@ -70,17 +70,17 @@ export default () => {
               open source, openly-licensed library available on both Python and
               Ruby that utilizes advanced neural network architectures for the
               diacriticization of {" "}
-              <Link to="https://en.wikipedia.org/wiki/Abjad">
+              <a href="https://en.wikipedia.org/wiki/Abjad">
                 Abjad scripts
-              </Link> {" "}
+              </a> {" "}
               like Arabic and Hebrew.
               Moreover, the trained models are also openly-licensed and their
               source datasets are also open sourced.
             </p>
             <p>
-              <Link to="https://github.com/secryst/rababa-models">
+              <a href="https://github.com/secryst/rababa-models">
                 Trained Rababa models
-              </Link> {" "}
+              </a> {" "}
               are available in both PyTorch and ONNX formats, which allows for
               platform-independent execution of the library.
             </p>
@@ -92,7 +92,7 @@ export default () => {
               </Link>.
             </p>
             <p>
-              <Link to="https://github.com/interscript/rababa">Rababa</Link> is
+              <a href="https://github.com/interscript/rababa">Rababa</a> is
               available on GitHub.
             </p>
             </div>

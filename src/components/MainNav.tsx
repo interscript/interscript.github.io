@@ -6,55 +6,55 @@ import styled from "styled-components";
 import { useLocation } from "@reach/router";
 
 const MAIN_MENU_ITEMS = [
-    {
-        name: "Home",
-        path: "/",
-    },
-    {
-        name: "Featured Authorities",
-        path: "/featured-authorities",
-    },
-    {
-        name: "Try: API",
-        path: "/try-api",
-    },
-    {
-        name: "Try: JavaScript",
-        path: "/try-js",
-    },
-    {
-        name: "Systems",
-        path: "/systems",
-    },
-    {
-        name: "Integration",
-        path: "/integration",
-    },
-    {
-        name: "Customizing and Contributing",
-        path: "/customizing-and-contributing",
-    },
-    {
-        name: "About",
-        path: "/about",
-    },
-    {
-        name: "Blog",
-        path: "/blog",
-    },
-    {
-        name: "View on Github",
-        path: "https://github.com/interscript/interscript/",
-        external: true,
-    },
-    {
-        name: "System Detection",
-        path: "/detect",
-    },
-    {
-        name: "Arabic Diacriticization",
-        path: "/rababa",
-    },
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Featured authorities",
+    path: "/featured-authorities",
+  },
+  {
+    name: "Systems",
+    path: "/systems",
+  },
+  {
+    name: "Integrate",
+    path: "/integrate",
+  },
+  {
+    name: "Develop",
+    path: "/develop",
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Convert using API",
+    path: "/try-api",
+  },
+  {
+    name: "Convert using JS",
+    path: "/try-js",
+  },
+  {
+    name: "Detect systems",
+    path: "/detect",
+  },
+  {
+    name: "Diacriticize scripts",
+    path: "/rababa",
+  },
+  {
+    name: "Source on GitHub",
+    path: "https://github.com/interscript/interscript/",
+      external: true,
+  },
 ];
 
 export const MainNav = () => {

@@ -11,21 +11,31 @@ export default () => {
         <>
             <TopNav />
 
-            <h2>{`ALA/LC systems`}</h2>
+            <h2>{`ALA-LC Romanization Tables`}</h2>
             <p>
-                <i>{`Each title of a language or a writing system is followed by a note on the appropriate romanization system used (ALA-LC = American Library Association - Library of Congress)`}</i>
+              The <a href="https://www.ala.org">American Library Association</a>
+              {` and the `} <a href="https://www.loc.gov">Library of Congress</a>
+              {` jointly maintain the set of `}
+              "<a href="https://www.loc.gov/catdir/cpso/roman.html">ALA-LC Romanization Tables</a>",
+              a set of Romanization systems covering many languages.
+              These systems are commonly used in libraries and bibliographic data
+              worldwide.
+            </p>
+            <p>
+              Systems listed here follow the same order in the presentation of
+              the original
+              <a href="https://www.loc.gov/catdir/cpso/roman.html" target="_blank">
+                  {" "}
+                  ALA-LC Romanization Tables{" "}
+              </a>
+              page.
             </p>
             <p>
                 <i>
-                    The systems listed here are ordered according to the
-                    <a href="https://www.loc.gov/catdir/cpso/roman.html" target="_blank">
-                        {" "}
-                        ALA-LC Romanization Tables{" "}
-                    </a>
-                    page
+                  NOTE: The title of a language or a writing system is followed by a note on the Romanization system used.
                 </i>
             </p>
-            <ExamplePage samples={samples} aggregate={true} authority="ALA/LC" />
+            <ExamplePage samples={samples} aggregate={true} authority="ALA-LC" />
         </>
     );
 };

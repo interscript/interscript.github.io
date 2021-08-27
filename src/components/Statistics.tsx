@@ -24,7 +24,7 @@ export const Statistics: React.FC<{ mapsInfo: any }> = function ({ mapsInfo }) {
 };
 
 const CList = styled.ul`
-max-height: 400px;
+    max-height: 400px;
     display: flex;
     flex-flow: column;
     flex-wrap: wrap;

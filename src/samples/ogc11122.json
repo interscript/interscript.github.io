@@ -74,7 +74,7 @@
     {
         "lang": "Armenian",
         "isoName": "OGC 1981",
-        "systemName": "",
+        "systemName": "bgnpcgn-arm-Armn-Latn-1981",
         "ogc11122": "hye_Armn2Latn_BGN_1981",
         "samples": [],
         "result": []
@@ -174,7 +174,7 @@
     {
         "lang": "Chechen",
         "isoName": "OGC 2007",
-        "systemName": "",
+        "systemName": "bgnpcgn-che-Cyrl-Latn-2008",
         "ogc11122": "che_Cyrl2Latn_BGN_2007",
         "samples": [],
         "result": []
@@ -228,7 +228,7 @@
     {
         "lang": "Divehi; Dhivehi; Maldivian",
         "isoName": "OGC 1988",
-        "systemName": "",
+        "systemName": "bgnpcgn-div-Thaa-Latn-1988",
         "ogc11122": "div_Thaa2Latn_GMV_1988",
         "samples": [],
         "result": []
@@ -342,7 +342,7 @@
     {
         "lang": "Japanese",
         "isoName": "OGC 1930",
-        "systemName": "",
+        "systemName": "bgnpcgn-jpn-Hrkt-Latn-1930",
         "ogc11122": "jpn_Hrkt2Latn_BGN_1930",
         "samples": [],
         "result": []
@@ -366,7 +366,7 @@
     {
         "lang": "Kazakh",
         "isoName": "OGC 1979",
-        "systemName": "",
+        "systemName": "bgnpcgn-kaz-Cyrl-Latn-1979",
         "ogc11122": "kaz_Cyrl2Latn_BGN_1979",
         "samples": [],
         "result": []
@@ -374,7 +374,7 @@
     {
         "lang": "Kirghiz; Kyrgyz",
         "isoName": "OGC 1979",
-        "systemName": "",
+        "systemName": "bgnpcgn-kir-Cyrl-Latn-1979",
         "ogc11122": "kir_Cyrl2Latn_BGN_1979",
         "samples": [],
         "result": []
@@ -462,7 +462,7 @@
     {
         "lang": "Macedonian",
         "isoName": "OGC 2013",
-        "systemName": "",
+        "systemName": "bgnpcgn-mkd-Cyrl-Latn-2013",
         "ogc11122": "mkd_Cyrl2Latn_BGN_2013",
         "samples": [],
         "result": []
@@ -556,7 +556,7 @@
     {
         "lang": "Pushto; Pashto",
         "isoName": "OGC 1968",
-        "systemName": "",
+        "systemName": "bgnpcgn-pus-Arab-Latn-1968",
         "ogc11122": "pus_Arab2Latn_BGN_1968",
         "samples": [],
         "result": []
@@ -694,7 +694,7 @@
     {
         "lang": "Tigrinya",
         "isoName": "OGC 2007",
-        "systemName": "",
+        "systemName": "bgnpcgn-tir-Ethi-Latn-2007",
         "ogc11122": "tir_Ethi2Latn_BGN_2007",
         "samples": [],
         "result": []
@@ -702,7 +702,7 @@
     {
         "lang": "Turkmen",
         "isoName": "OGC 1979",
-        "systemName": "",
+        "systemName": "bgnpcgn-tuk-Cyrl-Latn-1979",
         "ogc11122": "tuk_Cyrl2Latn_BGN_1979",
         "samples": [],
         "result": []
@@ -746,7 +746,7 @@
     {
         "lang": "Ukrainian",
         "isoName": "OGC 2019",
-        "systemName": "",
+        "systemName": "bgnpcgn-ukr-Cyrl-Latn-2019",
         "ogc11122": "ukr_Cyrl2Latn_BGN_2019",
         "samples": [],
         "result": []
@@ -772,7 +772,7 @@
     {
         "lang": "Urdu",
         "isoName": "OGC 2007",
-        "systemName": "",
+        "systemName": "bgnpcgn-urd-Arab-Latn-2007",
         "ogc11122": "urd_Arab2Latn_BGN_2007",
         "samples": [],
         "result": []
@@ -788,7 +788,7 @@
     {
         "lang": "Uzbek",
         "isoName": "OGC 1979",
-        "systemName": "",
+        "systemName": "bgnpcgn-uzb-Cyrl-Latn-1979",
         "ogc11122": "uzb_Cyrl2Latn_BGN_1979",
         "samples": [],
         "result": []

@@ -120,7 +120,8 @@ const SystemList = () => {
         <div>
             <HeaderMenu />
             <SearchHeader>
-                <span>System List: {list.length}</span>
+                <span>Script conversion systems supported: {list.length}</span>
+                <p>{`Use the filters below to find your system.`}</p>
                 {/* FilterBar */}
                 <FilterBar
                     authorities={authorities}

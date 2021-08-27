@@ -66,7 +66,9 @@ export const ExamplePage: React.FC<{
             {!isLoading && (
                 <>
                     <ButtonLayout>
-                        <ForceUpdateButton onClick={handleForceUpdate}>On Site</ForceUpdateButton>
+                        <ForceUpdateButton onClick={handleForceUpdate}>
+                          Regenerate converted scripts now
+                        </ForceUpdateButton>
                     </ButtonLayout>
                     <Poster data={sampleData} aggregate={aggregate} authority={authority} />
                 </>

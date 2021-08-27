@@ -26,7 +26,8 @@ export default () => {
             <HeaderMenu />
             <SectionGrid>
                 <Section>
-                    <p>{`The live demo supports ${mapsInfo?.meta.total} transliteration systems.`} </p>
+                    <p>{`Interscript provides ${mapsInfo?.meta.total} script conversion systems via its Ruby API.`}</p>
+                    <p>{`Try it out!`}</p>
                 </Section>
             </SectionGrid>
 
