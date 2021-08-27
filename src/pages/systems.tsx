@@ -120,8 +120,11 @@ const SystemList = () => {
         <div>
             <HeaderMenu />
             <SearchHeader>
-                <span>Script conversion systems supported: {list.length}</span>
-                <p>{`Use the filters below to find your system.`}</p>
+                <ul>
+                  <li>{`Use the filters below to find your system`}</li>
+                  <li>{`Click on a system to view mapping and process details`}</li>
+                  <li>Script conversion systems supported: {list.length}</li>
+                </ul>
                 {/* FilterBar */}
                 <FilterBar
                     authorities={authorities}
