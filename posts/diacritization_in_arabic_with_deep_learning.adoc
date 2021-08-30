@@ -118,7 +118,7 @@ typical:
 
 For more details, we have reviewed the latest publications, tested the latest
 code bases and summarised the latest research ideas
-https://github.com/interscript/rababa/blob/master/docs/research-Arabic-diacritization-06-2021.adoc[here].
+https://github.com/interscript/rababa/blob/main/docs/research-arabic-diacritization-06-2021.adoc[here].
 
 
 == Production requirements
@@ -136,7 +136,7 @@ However, we need to be able to:
 .. Convert PyTorch model –> ONNX model;
 .. Load ONNX model from Ruby;
 .. Convert Ruby –> Javascript (as documented in our
-https://github.com/interscript/interscript.org/blob/master/posts/WebAssembly_and_advanced_regular_expressions_with_Opal.adoc[post about Opal])
+link:/blog/WebAssembly_and_advanced_regular_expressions_with_Opal[post about Opal])
 
 * maintain the size of the model under 200MB; and
 
@@ -173,7 +173,7 @@ image captioning, and text-to-speech synthesis.
 
 Obviously, the sequences under consideration are:
 
-*Arabic symbol sequence* –> *diacritics sequence*
+*Arabic symbol sequence* => *diacritics sequence*
 
 Below, we illustrate the full architecture. LSTM was used instead of Attention
 for the RNN’s.
