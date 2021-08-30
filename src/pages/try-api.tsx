@@ -26,15 +26,16 @@ export default () => {
             <HeaderMenu />
             <SectionGrid>
                 <Section>
-                    <p>{`Interscript provides ${mapsInfo?.meta.total} script conversion systems via its Ruby API.`}</p>
-                    <p>{`Try it out!`}</p>
+                    <p>{`Interscript provides ${mapsInfo?.meta.total} script conversion systems via its Ruby API from`}
+                    <a href="https://github.com/interscript/interscript-api">interscript-api</a>
+                    </p>
                 </Section>
             </SectionGrid>
 
             <SectionGrid>
                 {demoIsShowable ? (
                     <Section>
-                        <h2>Try it live - Ruby Version</h2>
+                        <h2>Try it live - interscript in Ruby</h2>
                         <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} demoType="RUBY" />
                     </Section>
                 ) : null}

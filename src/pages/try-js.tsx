@@ -26,15 +26,17 @@ export default () => {
             <HeaderMenu />
             <SectionGrid>
                 <Section>
-                  <p>{`Interscript provides ${mapsInfo?.meta.total} script conversion systems in JavaScript through interscript.js.`}</p>
-                  <p>{`Try it out!`}</p>
+                  <p>{`Interscript provides ${mapsInfo?.meta.total} script conversion systems in JavaScript through `}
+                  <a href="https://github.com/interscript/interscript-js">interscript.js</a>
+                  {"."}
+                  </p>
                 </Section>
             </SectionGrid>
 
             <SectionGrid>
                 {demoIsShowable ? (
                     <Section>
-                        <h2>Try it live - Javascript Version</h2>
+                        <h3>Try it live - interscript.js</h3>
                         <LiveDemo maps={mapsInfo.data} metaData={metaDataMap} />
                     </Section>
                 ) : null}

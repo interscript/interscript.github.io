@@ -8,7 +8,7 @@ export default () => (
     <div>
       <p>
         The Interscript project was first conceived in 2017 stemming
-        from the work at <a href="https://www.iso.org/standard/78143.html">ISO 24229 "Codes for script conversion systems"</a> of
+        from the work at <a href="https://www.iso.org/standard/78143.html">ISO 24229 "Codes for script conversion systems"</a> of {" "}
         <a href="https://www.iso.org/committee/48750.html">ISO/TC 46/WG 3</a>. {" "}
         The initial work was led by Ribose.
       </p>

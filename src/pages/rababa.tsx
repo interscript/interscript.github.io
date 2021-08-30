@@ -46,7 +46,7 @@ export default () => {
     };
 
     const getResultText = () => {
-        if (loading) return "Loading...";
+        if (loading) return "Processing...";
 
         if (!!error) return error;
 
@@ -89,15 +89,18 @@ export default () => {
               found on our {" "}
               <Link to={`/blog/diacritization_in_arabic_with_deep_learning`}>
                 Rababa blog post
-              </Link>.
-            </p>
-            <p>
+              </Link>. {" "}
               <a href="https://github.com/interscript/rababa">Rababa</a> is
               available on GitHub.
+            </p>
+            <p>
+              Enter unpointed Arabic text (or update the sample) and click
+              "Add diacritics" to obtain diacriticized Arabic.
             </p>
             </div>
             <SampleAndResult>
                 <SampleTextArea
+                  value={"علامة التشكيل"}
                   placeholder={"علامة التشكيل"}
                   style={{
                       boxShadow: source.trim() === "" ? `#${primaryColor} 0 0 0px .5rem` : undefined,
@@ -109,6 +112,7 @@ export default () => {
                 </ConvertButton>
                 <ResultTextArea disabled value={getResultText()} />
             </SampleAndResult>
+            <p></p>
         </div>
     );
 };
