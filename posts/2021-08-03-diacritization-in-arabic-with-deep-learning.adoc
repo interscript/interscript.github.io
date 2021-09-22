@@ -1,4 +1,8 @@
 = Diacritization in Arabic with Deep Learning
+Jair Wuilloud
+v1.0, 2021-08-03
+:doctype: book
+:docinfo:
 
 == Introduction
 
