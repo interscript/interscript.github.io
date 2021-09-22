@@ -38,6 +38,31 @@ export default {
         const docList = await getListOfFileWithTypeInDir("tmp/docs", ".html");
         const blogList = await getListOfFileWithTypeInDir("tmp/posts", ".html");
 
+        // analyse converted adoc html to extract document attributes
+        const ATTRIBUTE_MAP = [
+            {
+                refName: "author",
+                name: "author",
+            },
+            {
+                refName: "revdate",
+                name: "date",
+            },
+        ];
+        const getPostAttributes = (path) => {
+            const postHtml = fs.readFileSync(path, "utf8");
+            const $ = cheerio.load(postHtml);
+            const title = cheerio.text($("div#header h1"));
+
+            return ATTRIBUTE_MAP.reduce(
+                (ret, attr) => {
+                    ret[attr.name] = cheerio.text($(`div#header .details span#${attr.refName}`));
+                    return ret;
+                },
+                { title }
+            );
+        };
+
         // load maps
         await Interscript.load_map_list();
         const maps = Interscript.map_list();
@@ -261,7 +286,7 @@ export default {
                 path: "blog",
                 template: "src/pages/blog.tsx",
                 getData: async () => ({
-                    blogList,
+                    blogList: blogList.map((post) => ({ ...post, ...getPostAttributes(post.path) })),
                 }),
                 children: blogList.map((blogPost) => {
                     return {
@@ -270,7 +295,7 @@ export default {
                         getData: () => ({
                             blogList,
                             blogPost,
-                            html: fs.readFileSync(blogPost.path, "utf8"),
+                            html: cheerio.load(fs.readFileSync(blogPost.path, "utf8"))("div#content").html(),
                         }),
                     };
                 }),

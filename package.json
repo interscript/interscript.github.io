@@ -8,7 +8,7 @@
     "bundle": "react-static bundle",
     "adoc": "npm-run-all adoc:docs adoc:posts",
     "adoc:docs": "asciidoctor docs/*.adoc -D tmp/docs/ -e",
-    "adoc:posts": "asciidoctor posts/*.adoc -D tmp/posts/ -e",
+    "adoc:posts": "asciidoctor posts/*.adoc -D tmp/posts/",
     "export": "react-static export",
     "serve": "serve dist -p 3000 -s",
     "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n",

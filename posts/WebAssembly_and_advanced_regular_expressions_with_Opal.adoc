@@ -1,3 +1,9 @@
+= WebAssembly and advanced regular expressions with Opal
+Ronald Tse
+v1.0, 2021-07-06
+:doctype: book
+:docinfo:
+
 At https://github.com/riboseinc[Ribose Inc] we develop https://github.com/interscript/interscript[Interscript], an open source Ruby implementation of interoperable transliteration schemes from ALA-LC, BGN/PCGN, ICAO, ISO, UN (by UNGEGN) and many, many other script conversion system authorities. The goal of this project is to achieve interoperable transliteration schemes allowing quality comparisons.
 
 We decided to port our software to JavaScript using Opal (the Ruby to JavaScript compiler), so it can be also used in web browsers and Node environments. The problem is - Opal translates Ruby regular expressions (upon which we rely quite heavily) to JavaScript almost verbatim. This made our ported codebase incompatible on principle, so we searched for a better solution.
