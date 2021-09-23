@@ -40,6 +40,9 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@octokit/rest": "^18.0.3",
     "@types/node": "^12.7.2",
     "@types/reach__router": "^1.2",

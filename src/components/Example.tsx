@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { ScriptConversionExample } from "types/index";
 import { ScriptConversionSystem } from "../scs";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 const cap = (str: string): string =>
     str
@@ -44,22 +46,47 @@ export const Sample: React.FC<{
     if (authority === "OGC" || s.ogc11122) {
         isoName = s.ogc11122;
     }
+
+    const yearNavs = years?.map((id, index) => (
+        <YearNavItem
+            href="javascript:void(0)"
+            onClick={() => setYear(index)}
+            key={index}
+            style={{ fontWeight: index === selected ? "bolder" : null }}
+        >
+            {id}
+        </YearNavItem>
+    ));
+
+    const isSystemAvailable = () => !!s.systemName;
+    const hasResult = () => !!s.result.length;
+
+    const enableSystemExternalLink = () => (
+        <a href={`/systems/${s.systemName}`} target="_blank">
+            {/*<i className="fas fa-external-link-alt"></i>*/}
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </a>
+    );
+
+    const systemNote = () => {
+        if (isSystemAvailable() && hasResult()) {
+            return "";
+        }
+
+        if (!isSystemAvailable()) {
+            return " (To be implemented)";
+        }
+
+        if (!hasResult()) {
+            return " (Regenerate)";
+        }
+    };
+
     return (
         <div>
             <SampleTitle>
                 <strong style={{ color: "#002060" }}>{s.lang}</strong> [{isoName}
-                {aggr &&
-                    years.map((id, index) => (
-                        <YearNavItem
-                            href="javascript:void(0)"
-                            onClick={() => setYear(index)}
-                            key={index}
-                            style={{ fontWeight: index === selected ? "bolder" : null }}
-                        >
-                            {id}
-                        </YearNavItem>
-                    ))}
-                ]
+                {aggr && yearNavs}] {isSystemAvailable() && enableSystemExternalLink()}
             </SampleTitle>
             <p>
                 {s.samples.map((e: string, i: number) => (
@@ -69,7 +96,7 @@ export const Sample: React.FC<{
                         {i + 1 < s.samples.length && ", "}
                     </span>
                 ))}
-                <i>{s.result.length > 0 ? "" : " (To be implemented)"}</i>
+                <i>{systemNote()}</i>
             </p>
         </div>
     );
