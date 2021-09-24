@@ -1,0 +1,137 @@
+[
+  {
+    "lang": "Greek, Ancient (to 1453)",
+    "isoName": "DIN 31634:2011 Information und Dokumentation — Unschrift des griechischen Alphabets",
+    "systemName": "din-grc-Grek-Latn-31634-2011-t1",
+    "samples": [
+      "Ένα",
+      "Ἐμὲ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Hindi",
+    "systemName": "din-hin-Deva-Latn-33904-2018",
+    "samples": [
+      "गंभीर",
+      "कोरोना"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "DIN 32707:2010-01 Information und Dokumentation - Umschrift des georgischen Alphabets",
+    "systemName": "din-kat-Geor-Latn-32707-2010",
+    "samples": [
+      "ხაოფსე",
+      "ჭლოუ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Marathi",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Marathi",
+    "systemName": "din-mar-Deva-Latn-33904-2018",
+    "samples": [
+      "ठाणे",
+      "एकता"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Nepali",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Nepali",
+    "systemName": "din-nep-Deva-Latn-33904-2018",
+    "samples": [
+      "लेखन",
+      "मुद्रा"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Pali",
+    "systemName": "din-pli-Deva-Latn-33904-2018",
+    "samples": [
+      "तेन",
+      "तत्थ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Prakrit languages",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Prakit",
+    "systemName": "din-pra-Deva-Latn-33904-2018",
+    "samples": [
+      "सृष्टिस्थितिविनाशानां",
+      "गुणाश्रये"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Sanskrit",
+    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Sanskrit",
+    "systemName": "din-san-Deva-Latn-33904-2018",
+    "samples": [
+      "पुस्तक",
+      "बॅट"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Tamil",
+    "isoName": "DIN 33903:2016-02: Information und Dokumentation - Umschrift Tamil",
+    "systemName": "din-tam-Taml-Latn-33903-2016",
+    "samples": [
+      "கார்த்திகேயன்",
+      "௲"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  }
+]
