@@ -10,6 +10,7 @@ import bgnpcgnSamples from "./src/samples/bgnpcgn.json";
 import odniSamples from "./src/samples/odni.json";
 import ogc11122Samples from "./src/samples/ogc11122.json";
 import unSamples from "./src/samples/un.json";
+import isoSamples from "./src/samples/iso.json";
 import metadata from "./map/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
 
@@ -120,7 +121,7 @@ export default {
                 })
             );
 
-        let alalc, bgnpcgn, odni, ogc11122, un;
+        let alalc, bgnpcgn, odni, ogc11122, un, iso;
 
         if (process.env.NODE_ENV === "production") {
             console.log("Dynamically convert all samples...");
@@ -129,6 +130,7 @@ export default {
             odni = await evaluate(odniSamples);
             ogc11122 = await evaluate(ogc11122Samples);
             un = await evaluate(unSamples);
+            iso = await evaluate(isoSamples);
         }
 
         // const metaList = {}
@@ -218,6 +220,12 @@ export default {
                         path: "un",
                         getData: () => ({
                             samples: un || unSamples,
+                        }),
+                    },
+                    {
+                        path: "iso",
+                        getData: () => ({
+                            samples: iso || isoSamples,
                         }),
                     },
                 ],
