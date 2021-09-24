@@ -1,7 +1,7 @@
 [
   {
     "lang": "Greek, Ancient (to 1453)",
-    "isoName": "DIN 31634:2011 Information und Dokumentation — Unschrift des griechischen Alphabets",
+    "isoName": "DIN 31634:2011",
     "systemName": "din-grc-Grek-Latn-31634-2011-t1",
     "samples": [
       "Ένα",
@@ -16,7 +16,7 @@
   },
   {
     "lang": "Hindi",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Hindi",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-hin-Deva-Latn-33904-2018",
     "samples": [
       "गंभीर",
@@ -31,7 +31,7 @@
   },
   {
     "lang": "Georgian",
-    "isoName": "DIN 32707:2010-01 Information und Dokumentation - Umschrift des georgischen Alphabets",
+    "isoName": "DIN 32707:2010-01",
     "systemName": "din-kat-Geor-Latn-32707-2010",
     "samples": [
       "ხაოფსე",
@@ -46,7 +46,7 @@
   },
   {
     "lang": "Marathi",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Marathi",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-mar-Deva-Latn-33904-2018",
     "samples": [
       "ठाणे",
@@ -61,7 +61,7 @@
   },
   {
     "lang": "Nepali",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Nepali",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-nep-Deva-Latn-33904-2018",
     "samples": [
       "लेखन",
@@ -76,7 +76,7 @@
   },
   {
     "lang": "Pali",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Pali",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-pli-Deva-Latn-33904-2018",
     "samples": [
       "तेन",
@@ -91,7 +91,7 @@
   },
   {
     "lang": "Prakrit languages",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Prakit",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-pra-Deva-Latn-33904-2018",
     "samples": [
       "सृष्टिस्थितिविनाशानां",
@@ -106,7 +106,7 @@
   },
   {
     "lang": "Sanskrit",
-    "isoName": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Sanskrit",
+    "isoName": "DIN 33904:2018-10",
     "systemName": "din-san-Deva-Latn-33904-2018",
     "samples": [
       "पुस्तक",
@@ -121,7 +121,7 @@
   },
   {
     "lang": "Tamil",
-    "isoName": "DIN 33903:2016-02: Information und Dokumentation - Umschrift Tamil",
+    "isoName": "DIN 33903:2016-02:",
     "systemName": "din-tam-Taml-Latn-33903-2016",
     "samples": [
       "கார்த்திகேயன்",
