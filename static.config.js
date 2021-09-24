@@ -185,42 +185,37 @@ export default {
             // here I need to refactor a little
             {
                 path: "featured-authorities",
-                template: "src/pages/un.tsx",
+                template: "src/pages/featured-authorities/un.tsx",
                 getData: () => ({
                     samples: un || unSamples,
                 }),
                 children: [
                     {
                         path: "alalc",
-                        template: "src/pages/alalc.tsx",
                         getData: () => ({
                             samples: alalc || alalcSamples,
                         }),
                     },
                     {
                         path: "bgnpcgn",
-                        template: "src/pages/bgnpcgn.tsx",
                         getData: () => ({
                             samples: bgnpcgn || bgnpcgnSamples,
                         }),
                     },
                     {
                         path: "odni",
-                        template: "src/pages/odni.tsx",
                         getData: () => ({
                             samples: odni || odniSamples,
                         }),
                     },
                     {
                         path: "ogc11122",
-                        template: "src/pages/ogc11122.tsx",
                         getData: () => ({
                             samples: ogc11122 || ogc11122Samples,
                         }),
                     },
                     {
                         path: "un",
-                        template: "src/pages/un.tsx",
                         getData: () => ({
                             samples: un || unSamples,
                         }),
