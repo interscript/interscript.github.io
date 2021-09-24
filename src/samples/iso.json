@@ -1,0 +1,450 @@
+[
+  {
+    "lang": "Arabic",
+    "isoName": "ISO 233:1984 Documentation -- Transliteration of Arabic characters into Latin characters",
+    "systemName": "iso-ara-Arab-Latn-233-1984",
+    "samples": [
+      "مِصر",
+      "قَطَر"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Arabic",
+    "isoName": "ISO 233-2:1993 documentation -- Transliteration of Arabic characters into Latin characters",
+    "systemName": "iso-ara-Arab-Latn-233-2-1993",
+    "samples": [
+      "مِصر",
+      "قَطَر"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Assamese",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Assamese)",
+    "systemName": "iso-asm-Beng-Latn-15919-2001",
+    "samples": [
+      "অসমীয়া কবিতা",
+      "কবিৰ আজি জন্মদিন"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Bengali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Bengali)",
+    "systemName": "iso-ben-Beng-Latn-15919-2001",
+    "samples": [
+      "আগুয়েরোর হাঁটুর চোট",
+      "তঅস্ত্রোপচারের আশ্রয় নিতে হবে এ তারকাকে, তাই দলে জায়গা পাননি"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Greek, Modern (1453-)",
+    "isoName": "ISO 843:1997 Information and documentation -- Conversion of Greek characters into Latin characters (Table 1)",
+    "systemName": "iso-ell-Grek-Latn-843-1997-t1",
+    "samples": [
+      "Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n",
+      "ΑΘΗΝΑ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Greek, Modern (1453-)",
+    "isoName": "ISO 843:1997 Information and documentation -- Conversion of Greek characters into Latin characters (Table 2)",
+    "systemName": "iso-ell-Grek-Latn-843-1997-t2",
+    "samples": [
+      "Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Gujarati",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Gujarati)",
+    "systemName": "iso-guj-Gujr-Latn-15919-2001",
+    "samples": [
+      "અમિત શાહનો કોરોના રિપોર્ટ 2 ઓગસ્ટે પોઝિટિવ આવ્યો હતો, ત્યારથી તેમનું સ્વાસ્થ્ય સારું નથી",
+      "મેદાંતા હોસ્પિટલમાં તેમનો ઇલાજ ચાલી રહ્યો હતો"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Hindi",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Hindi)",
+    "systemName": "iso-hin-Deva-Latn-15919-2001",
+    "samples": [
+      "हम",
+      "मीन"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Indic languages",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Indic)",
+    "systemName": "iso-inc-Deva-Latn-15919-2001",
+    "samples": [
+      "उपमुख्यमंत्र्यांची 'मोठी' घोषणा; राज्यात केंद्राच्या कृषी व कामगार विधेयकाची अंमलबजावणी नाही",
+      "ग्वालियर बन रहा देश का नया जामताड़ा, ऑनलाइन ठगी के कई गिरोह का पर्दाफाश"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Japanese",
+    "isoName": "ISO 3602:1989 documentation -- Romanization of Japanese (kana script)",
+    "systemName": "iso-jpn-Hrkt-Latn-3602-1989",
+    "samples": [
+      "かんおう",
+      "かのう"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Kannada",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Kannada)",
+    "systemName": "iso-kan-Kana-Latn-15919-2001",
+    "samples": [
+      "ಈಗ ವೈರಲ್ ಆಗುತ್ತಿದೆ ಕಂಗನಾ ರಣಾವುತ್ ಹಳೇಯ ವಿಡಿಯೋ",
+      "ಸಂಕಷ್ಟ ಎದುರಾದರೆ ಬಿಎಸ್‌ವೈ ಬೆನ್ನಿಗೆ ಎಚ್‌ಡಿಕೆ ?"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Georgian",
+    "isoName": "ISO 9984:1996 Information and documentation -- Transliteration of Georgian characters into Latin characters",
+    "systemName": "iso-kat-Geor-Latn-9984-1996",
+    "samples": [
+      "ხაოფსე",
+      "ჭლოუ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ISO/TR 11941:1996 Information and documentation -- Transliteration of Korean script into Latin characters (Method 1)",
+    "systemName": "iso-kor-Hang-Latn-1996-method1",
+    "samples": [
+      "꽃이",
+      "강에"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Korean",
+    "isoName": "ISO/TR 11941:1996 Information and documentation -- Transliteration of Korean script into Latin characters (Method 2)",
+    "systemName": "iso-kor-Hang-Latn-1996-method2",
+    "samples": [
+      "꽃이",
+      "강에"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Malayalam",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Malayalam)",
+    "systemName": "iso-mal-Mlym-Latn-15919-2001",
+    "samples": [
+      "സ്വപ്നയ്ക്കൊപ്പം ഹോട്ടലിൽ മന്ത്രിപുത്രൻ, ചിത്രങ്ങൾ; ൪ കോടി കമ്മിഷനിലും പങ്കുപറ്റി",
+      "വിവാദങ്ങളിൽ മാപ്പില്ല, ആദ്യമായി ഐപിഎൽ കമന്ററിക്കില്ലാതെ മ‍ഞ്ജരേക്കര്‍; പുറത്ത് തന്നെ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Marathi",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Marathi)",
+    "systemName": "iso-mar-Deva-Latn-15919-2001",
+    "samples": [
+      "ठाणे - जिल्ह्यात बुधवारी एक हजार रुग्णांची वाढ, तर जणांच्या मृत्यूची नोंद",
+      "एकता कपूर पुन्हा अडकली वादात, वेबसीरिजमधल्या 'त्या' सीनमुळे जमावाची घरावर दगडफेक"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Nepali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Nepali)",
+    "systemName": "iso-nep-Deva-Latn-15919-2001",
+    "samples": [
+      "लेखन",
+      "मुद्रा"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Oriya",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Oriya)",
+    "systemName": "iso-ori-Orya-Latn-15919-2001",
+    "samples": [
+      "ସାମ୍ପ୍ରତିକ ବିଶ୍ବ ସ୍ଥିତାବସ୍ଥାକୁ ଚାଲେଞ୍ଜ୍‌ କରୁଥିବା ଦୁଇ ମୁଖ୍ୟ ପ୍ରତିଦ୍ବନ୍ଦ୍ବୀ ହେଉଛନ୍ତି ଚୀନ୍‌ ଓ ରୁଷ୍: ଇଂଲଣ୍ଡ୍‌ ଗୁଇନ୍ଦା ଅଧିକାରୀ",
+      "ଏଣିକି ଏହି ଗାଡ଼ି ଚଳାଇଲେ ପୁଲିସ କାଟି ପାରିବ ନାହିଁ ଫାଇନ୍"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Panjabi; Punjabi",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Panjabi)",
+    "systemName": "iso-pan-Guru-Latn-15919-2001",
+    "samples": [
+      "ਪੰਜਾਬ 'ਚ ਵਧ ਰਿਹਾ ਖ਼ੁਦਕੁਸ਼ੀਆਂ ਦਾ ਰੁਝਾਨ",
+      "ਲੱਖ ਤੋਂ ਪਾਰ ਪੁੱਜਾ ਸਰਗਰਮ ਕੇਸਾਂ ਦਾ ਅੰਕੜਾ, ਦਿੱਲੀ 'ਚ ਦੋ ਲੱਖ ਤੋਂ ਪਾਰ ਇਨਫੈਕਟਿਡ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Pali in Bengali)",
+    "systemName": "iso-pli-Beng-Latn-15919-2001",
+    "samples": [
+      "তেন সমযেন বুদ্ধো ভগৰা ৰেরঞ্জাযং ৰিহরতি নল়েরুপুচিমন্দমূলে মহতা ভিক্খুসঙ্ঘেন সদ্ধিং পঞ্চমত্তেহি ভিক্খুসতেহি",
+      "অস্সোসি খো ৰেরঞ্জো ব্রাহ্মণো"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Pali in Devanagari)",
+    "systemName": "iso-pli-Deva-Latn-15919-2001",
+    "samples": [
+      "तेन खो पन समयेन वेसालिया अविदूरे कलन्दगामो नाम अत्थि",
+      "तत्थ सुदिन्‍नो नाम कलन्दपुत्तो सेट्ठिपुत्तो होति"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Pali in Sinhala)",
+    "systemName": "iso-pli-Sinh-Latn-15919-2001",
+    "samples": [
+      "තෙන සමයෙන බුද්‌ධො භගවා වෙරඤ්‌ජායං විහරති නළෙරුපුචිමන්‌දමූලෙ මහතා භික්‌ඛුසඞ්‌ඝෙන සද්‌ධිං",
+      "පඤ්‌චමත්‌තෙහි භික්‌ඛුසතෙහි. අස්‌සොසි ඛො වෙරඤ්‌ජො බ්‍රාහ්‌මණො"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Pali",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Pali in Thai)",
+    "systemName": "iso-pli-Thai-Latn-15919-2001",
+    "samples": [
+      "โย กปฺปโกฏีหิปิ อปฺปเมยฺยํ;",
+      "ตตฺถ ตํ วณฺณยิสฺสํ วินยนฺติ วุตฺตตฺตา วินโย ตาว ววตฺถเปตพฺโพฯ เตเนตํ วุจฺจติ"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Prakrit languages",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Prakrit)",
+    "systemName": "iso-pra-Deva-Latn-15919-2001",
+    "samples": [
+      "सृष्टिस्थितिविनाशानां शक्तिभूते सनातनि",
+      "गुणाश्रये गुणमये नारायणि नमोऽस्तु ते"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Dari",
+    "isoName": "ISO 223-3:1999 Persian language -- Simplified transliteration",
+    "systemName": "iso-prs-Arab-Latn-233-3-1999",
+    "samples": [
+      "آذَر",
+      "سَم"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ISO 9:1995 Information and documentation -- Transliteration of Cyrillic characters into Latin characters -- Slavic and non-Slavic languages (Russian)",
+    "systemName": "iso-rus-Cyrl-Latn-9-1995",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Sanskrit",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Sanskrit)",
+    "systemName": "iso-san-Deva-Latn-15919-2001",
+    "samples": [
+      "पूर्णमदः पूर्णमिदं पूर्णात् पूर्ण्मुदच्यते",
+      "पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Tamil",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Tamil)",
+    "systemName": "iso-tam-Taml-Latn-15919-2001",
+    "samples": [
+      "கார்த்திகேயன்",
+      "௲"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Telugu",
+    "isoName": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Telugu)",
+    "systemName": "iso-tel-Telu-Latn-15919-2001",
+    "samples": [
+      "ఇప్పుడు ఇదే కోవలో టాలీవుడ్‌లో మరో మల్టీస్టారర్‌ రూపొందనుందని సినీ వర్గాల్లో వార్తలు వినిపిస్తున్నాయి",
+      "అంటే ఉంటాయి, అయితే అవి చాలా పెద్దవై ఉండాల్సిన అవసరం లేదు అంటున్నారు మమ్ముట్టి"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Thai",
+    "isoName": "ISO 11940:1998 Information and documentation -- Transliteration of Thai",
+    "systemName": "iso-tha-Thai-Latn-11940-1998",
+    "samples": [
+      "ภาษาไทย",
+      "เชียงใหม่"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  }
+]
