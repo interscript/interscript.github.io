@@ -1,0 +1,115 @@
+[
+  {
+    "lang": "Belarusian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Belorussian Cyrillic to Latin",
+    "systemName": "icao-bel-Cyrl-Latn-9303",
+    "samples": [
+      "Бабрыковіч",
+      "Міховіч"
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Bulgarian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Bulgarian Cyrillic to Latin",
+    "systemName": "icao-bul-Cyrl-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Persian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Persian Arabic to Latin",
+    "systemName": "icao-fas-Arab-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Hebrew",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Hebrew to Latin",
+    "systemName": "icao-heb-Hebr-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Macedonian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Macedonian Cyrillic to Latin",
+    "systemName": "icao-mkd-Cyrl-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Russian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Russian Cyrillic to Latin",
+    "systemName": "icao-rus-Cyrl-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Serbian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Serbian Cyrillic to Latin",
+    "systemName": "icao-srp-Cyrl-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  },
+  {
+    "lang": "Ukrainian",
+    "isoName": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Ukranian Cyrillic to Latin",
+    "systemName": "icao-ukr-Cyrl-Latn-9303",
+    "samples": [
+
+    ],
+    "english": [
+
+    ],
+    "result": [
+
+    ]
+  }
+]
