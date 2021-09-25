@@ -25,6 +25,9 @@ export default () => (
         <Link to="featured-authorities/din" className="nav-item">
             DIN
         </Link>
+        <Link to="featured-authorities/icao" className="nav-item">
+            ICAO
+        </Link>
     </TopNav>
 );
 

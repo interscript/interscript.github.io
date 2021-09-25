@@ -12,6 +12,7 @@ import ogc11122Samples from "./src/samples/ogc11122.json";
 import unSamples from "./src/samples/un.json";
 import isoSamples from "./src/samples/iso.json";
 import dinSamples from "./src/samples/din.json";
+import icaoSamples from "./src/samples/icao.json";
 import metadata from "./map/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
 
@@ -122,7 +123,7 @@ export default {
                 })
             );
 
-        let alalc, bgnpcgn, odni, ogc11122, un, iso, din;
+        let alalc, bgnpcgn, odni, ogc11122, un, iso, din, icao;
 
         if (process.env.NODE_ENV === "production") {
             console.log("Dynamically convert all samples...");
@@ -133,6 +134,7 @@ export default {
             un = await evaluate(unSamples);
             iso = await evaluate(isoSamples);
             din = await evaluate(dinSamples);
+            icao = await evaluate(icaoSamples);
         }
 
         // const metaList = {}
@@ -234,6 +236,12 @@ export default {
                         path: "din",
                         getData: () => ({
                             samples: din || dinSamples,
+                        }),
+                    },
+                    {
+                        path: "icao",
+                        getData: () => ({
+                            samples: icao || icaoSamples,
                         }),
                     },
                 ],
