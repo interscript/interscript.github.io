@@ -10,6 +10,7 @@ import bgnpcgnSamples from "./src/samples/bgnpcgn.json";
 import odniSamples from "./src/samples/odni.json";
 import ogc11122Samples from "./src/samples/ogc11122.json";
 import unSamples from "./src/samples/un.json";
+import isoSamples from "./src/samples/iso.json";
 import metadata from "./map/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
 
@@ -120,7 +121,7 @@ export default {
                 })
             );
 
-        let alalc, bgnpcgn, odni, ogc11122, un;
+        let alalc, bgnpcgn, odni, ogc11122, un, iso;
 
         if (process.env.NODE_ENV === "production") {
             console.log("Dynamically convert all samples...");
@@ -129,6 +130,7 @@ export default {
             odni = await evaluate(odniSamples);
             ogc11122 = await evaluate(ogc11122Samples);
             un = await evaluate(unSamples);
+            iso = await evaluate(isoSamples);
         }
 
         // const metaList = {}
@@ -185,44 +187,45 @@ export default {
             // here I need to refactor a little
             {
                 path: "featured-authorities",
-                template: "src/pages/un.tsx",
+                template: "src/pages/featured-authorities/un.tsx",
                 getData: () => ({
                     samples: un || unSamples,
                 }),
                 children: [
                     {
                         path: "alalc",
-                        template: "src/pages/alalc.tsx",
                         getData: () => ({
                             samples: alalc || alalcSamples,
                         }),
                     },
                     {
                         path: "bgnpcgn",
-                        template: "src/pages/bgnpcgn.tsx",
                         getData: () => ({
                             samples: bgnpcgn || bgnpcgnSamples,
                         }),
                     },
                     {
                         path: "odni",
-                        template: "src/pages/odni.tsx",
                         getData: () => ({
                             samples: odni || odniSamples,
                         }),
                     },
                     {
                         path: "ogc11122",
-                        template: "src/pages/ogc11122.tsx",
                         getData: () => ({
                             samples: ogc11122 || ogc11122Samples,
                         }),
                     },
                     {
                         path: "un",
-                        template: "src/pages/un.tsx",
                         getData: () => ({
                             samples: un || unSamples,
+                        }),
+                    },
+                    {
+                        path: "iso",
+                        getData: () => ({
+                            samples: iso || isoSamples,
                         }),
                     },
                 ],
