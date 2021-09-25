@@ -22,6 +22,9 @@ export default () => (
         <Link to="featured-authorities/iso" className="nav-item">
             ISO
         </Link>
+        <Link to="featured-authorities/din" className="nav-item">
+            DIN
+        </Link>
     </TopNav>
 );
 
