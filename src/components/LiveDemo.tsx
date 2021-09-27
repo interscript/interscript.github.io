@@ -12,6 +12,7 @@ const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.c
 // const API_ENDPOINT = "https://staging-api.interscript.org/staging";
 
 type DemoType = "RUBY" | "JAVASCRIPT";
+const ARABIC_LANG = "ara";
 
 const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; demoType?: DemoType }> = function ({
     maps,
@@ -24,6 +25,7 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     const [error, setError] = useState<string | null>(null);
     const [submitted, setSubmitted] = useState(false);
     const [reverse, setReverse] = useState<boolean>(false);
+    const [diacriticize, setDiacriticize] = useState<boolean>(false);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -83,6 +85,9 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         return newnameStr;
     }
 
+    const isArabic = selectedSystem?.lang === ARABIC_LANG;
+    const diacriticizable = isArabic && api;
+
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
             setError(null);
@@ -92,7 +97,13 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
             let respApi: AxiosResponse<any>;
             let resp: string;
             try {
-                const systemName = reverse ? reverseName(systemCode) : systemCode;
+                let systemName = reverse ? reverseName(systemCode) : systemCode;
+                if (diacriticize && diacriticizable) {
+                    systemName = !reverse
+                        ? `var-ara-Arab-Arab-rababa|${systemName}`
+                        : `${systemName}|var-ara-Arab-Arab-rababa-reverse`;
+                }
+
                 if (api) {
                     respApi = await axios({
                         method: "POST",
@@ -157,6 +168,12 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
             </SampleAndResult>
             <input type="checkbox" checked={reverse} onChange={(e) => setReverse(e.target.checked)} />
             Reverse
+            {diacriticizable && (
+                <div>
+                    <input type="checkbox" checked={diacriticize} onChange={(e) => setDiacriticize(e.target.checked)} />
+                    Diacriticize Arabic
+                </div>
+            )}
             {systemCode !== null ? (
                 <p>
                     <small>
