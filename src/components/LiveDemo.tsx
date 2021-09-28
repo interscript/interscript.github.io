@@ -8,7 +8,7 @@ import { SystemSelector } from "./SystemSelector";
 import { primaryColor } from "../App";
 import styled from "styled-components";
 
-const API_ENDPOINT = "https://api.interscript.org"; //for issue https://github.com/interscript/infrastructure/issues/17
+const API_ENDPOINT = "https://api.interscript.org/prod"; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://staging-api.interscript.org/staging";
 
 type DemoType = "RUBY" | "JAVASCRIPT";
