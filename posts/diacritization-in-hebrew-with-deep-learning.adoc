@@ -106,8 +106,10 @@ https://github.com/elazarg/hebrew_diacritized[Hebrew Diacritized]
 
 === System Evaluation and Performance
 
-decision accuracy *DEC*, character accuracy *CHA*,
-word accuracy *WOR*, vocalization accuracy *VOC*
+* *DEC*: decision accuracy
+* *CHA*: character accuracy
+* *WOR*: word accuracy
+* *VOC*: vocalization accuracy 
 
 ==== Scores after Training
 
