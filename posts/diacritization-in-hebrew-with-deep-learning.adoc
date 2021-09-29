@@ -111,6 +111,9 @@ word accuracy *WOR*, vocalization accuracy *VOC*
 
 ==== Scores after Training
 
+We refer to https://arxiv.org/pdf/2105.05209.pdf[paper], table 3 for
+our performance comparison below.
+
 [cols="a,a,a,a,a",options="header"]
 |===
 | |DEC |CHA |WOR |VOC

@@ -237,8 +237,7 @@ The metrics used are standard for the problem of Arabic diacritization:
 
 ==== Scores after Training
 
-We refer to https://arxiv.org/pdf/2105.05209.pdf[paper], table 3 for
-our performance comparison below.
+
 
 [cols="a,a,a,a,a",options="header"]
 |===
