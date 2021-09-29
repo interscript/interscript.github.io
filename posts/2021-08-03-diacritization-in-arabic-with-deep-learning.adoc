@@ -237,9 +237,8 @@ The metrics used are standard for the problem of Arabic diacritization:
 
 ==== Scores after Training
 
-* *WER* and *DER* refer to without case ending metrics and are measured on the
-test https://github.com/AliOsm/arabic-text-diacritization[benchmarks]. After 10
-epochs, training on the above mentioned datasets, we obtained:
+We refer to https://arxiv.org/pdf/2105.05209.pdf[paper], table 3 for
+our performance comparison below.
 
 [cols="a,a,a,a,a",options="header"]
 |===
