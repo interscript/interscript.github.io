@@ -7,31 +7,97 @@ may need to execute.
 
 The following is a set of steps one needs to make to do a release:
 
+=== Interscript-Ruby
+
 [source,sh]
 ---
-# We assume this is executed in the main Interscript repository root directory.
+# We assume this is executed in the main Interscript repository root directory (interscript-bootstrap).
 # Adjust the V to reflect a correct version
-V="2.1.0a1"
-# Adjust the B to reflect a correct branch name. For now, master. In the future we may decide on
+V="2.4.0a1"
+# Adjust the B to reflect a correct branch name. master, or eg. v2.4
+B="master"
+# Commit command
+COMMIT="git commit"
+# Ensure we are on the latest repository version
+pushd ruby; git checkout $B; git pull; git reset; popd
+# This is the point when you may want to run tests and ensure everything is correct.
+# Run the version update script
+ruby/bin/set_version $V ruby
+# Add the new version to the submodules, commit it and tag it
+pushd ruby; git add lib/interscript/version.rb; $COMMIT -m "Release v$V"; git tag "v$V"; popd
+# Push Ruby
+pushd ruby; git push; git push --tags; popd
+# Our new version is released!
+---
+
+=== Interscript-JS
+
+[source,sh]
+---
+# We assume this is executed in the main Interscript repository root directory (interscript-bootstrap).
+# Adjust the V to reflect a correct version
+V="2.4.0a1"
+# Adjust the B to reflect a correct branch name. master, or eg. v2.4
 # how to do stable branches.
 B="master"
 # Commit command
 COMMIT="git commit"
-# Ensure we are on the latest repository version and all subrepos are up to date as well.
-git checkout $B; git pull; git reset
+# Ensure we are on the latest repository version
 pushd js; git checkout $B; git pull; git reset; popd
+# This is the point when you may want to run tests and ensure everything is correct.
+# Run the version update script
+ruby/bin/set_version $V js
+# Add the new version to the submodules, commit it and tag it
+pushd js; git add package.json; $COMMIT -m "Release v$V"; git tag "v$V"; popd
+# Push JS
+pushd js; git push; git push --tags; popd
+# Our new version is released!
+---
+
+=== Interscript-Maps
+
+[source,sh]
+---
+# We assume this is executed in the main Interscript repository root directory (interscript-bootstrap).
+# Adjust the V to reflect a correct version
+V="2.4.0a1"
+# Adjust the B to reflect a correct branch name. master, or eg. v2.4
+B="master"
+# Commit command
+COMMIT="git commit"
+# Ensure we are on the latest repository version
 pushd maps; git checkout $B; git pull; git reset; popd
 # This is the point when you may want to run tests and ensure everything is correct.
 # Run the version update script
-pushd ruby; bundle exec rake version[$V]; popd
+ruby/bin/set_version $V maps
 # Add the new version to the submodules, commit it and tag it
-pushd js; git add package.json; $COMMIT -m "Release v$V"; git tag "v$V"; popd
 pushd maps; git add interscript-maps.gemspec; $COMMIT -m "Release v$V"; git tag "v$V"; popd
-# Add the new version and submodules to the main repo, commit it and tag it
-git add js maps ruby/lib/interscript/version.rb; $COMMIT -m "Release v$V"; git tag "v$V"
-# Push everything in the correct order
-pushd js; git push; git push --tags; popd
+# Push maps
 pushd maps; git push; git push --tags; popd
-git push; git push --tags
 # Our new version is released!
 ---
+
+== Releasing minor versions
+
+This part is in general hard and tricky. interscript depends on interscript-maps >~ IV.0a, where
+IV is a major.minor version of interscript, eg. 2.4. It is recommended to first release v2.4.0a1
+of all packages, possibly maps first, and when you confirm it to be working, release a version
+you wish to release.
+
+There is no issue for the patch releases, those are all independent.
+
+== Stable branches
+
+We now support branches to support different versions of Interscript together. Those branches are
+named like: v2.4. If a branch doesn't exist, we defer to master. Therefore, the latest version
+branch should not exist.
+
+To check out all components for a given stable branch, inside your checkout of interscript-bootstrap,
+execute eg.:
+
+./bootstrap.rb -v2.4
+
+To get master, execute just:
+
+./bootstrap.rb
+
