@@ -1,0 +1,128 @@
+= Diacritization in Hebrew with Deep Learning
+Jair Wuilloud
+v1.0, 2021-08-03
+:doctype: book
+:docinfo:
+
+== Introduction
+
+=== General
+
+Quite often and in modern texts,
+hebrew is written using the hebrew alphabet.
+The latter is just specifying the consonants with the
+wovels to be left to the reader to infer.
+Pointing or Niqqud is the hebraic system used to
+specify these wovels and is found in liturgic hebrew and
+in schools.
+
+
+
+After we have written a solution able to point arabic textes
+and ported it to production with our library
+https://github.com/interscript/rababa[Rababa], this blog is about our work in hebrew.
+
+
+=== Hebrew within the landscape of languages
+
+
+=== Role of diacritization
+
+For NLP and computerizing languages, it can be useful to enrich
+the hebrew alphabet with pointing.
+
+
+=== Applications in informatics
+
+Pointed Hebrew is obviously useful and essential for applications to NLP usage
+in *text-to-speech* and obviously *transliteration*.
+
+=== Practical examples
+
+== Diacritization in Interscript
+
+=== General
+
+Interscript provides with mappings allowing to transliterate many languages into
+various writing systems.
+
+In this context, Abjad languages need to be processed via several steps:
+
+* *Arabic text* => *diacritization* => *transliteration*
+
+=== Diacritization with Deep Learning
+
+Correct diacritization requires an accurate understanding not only of the
+language morphemes and their variants but also the language grammar.
+
+Furthermore, given the possible multiple meanings available to a particular word
+in Arabic (or collision), some understanding of the context is required!
+
+=== Approaches
+
+This hard problem has been approached in various ways with an evolution quite
+typical:
+
+. Rule-based approaches
+. Machine Learning approaches
+. Deep Learning approaches
+
+For more details, we have reviewed the latest publications, tested the latest
+code bases and summarised the latest research ideas
+https://github.com/interscript/rababa/blob/main/docs/research-arabic-diacritization-06-2021.adoc[here].
+
+
+=== Literature Review
+
+
+https://arxiv.org/pdf/2005.03312.pdf[Nakdan (2020)]
+
+https://arxiv.org/pdf/2105.05209.pdf[Nakdimon (2021)]
+
+
+== Training and results
+
+=== Architecture
+
+==== General
+Same as for arabic, excepted
+for the modelling of diacritics.
+
+==== NLP of Hebrew Diacritics
+
+Diacritics ==> Niqqud, Sin and Dagesh
+
+==== Modelling of Niqqud, Sin \& Dagesh
+
+
+=== Datasets
+https://github.com/elazarg/hebrew_diacritized[Hebrew Diacritized]
+
+=== Training Strategies
+
+==== Experiments with Datasets
+==== Hyperparams Tuning
+
+
+=== System Evaluation and Performance
+
+* *DEC*: decision accuracy
+* *CHA*: character accuracy
+* *WOR*: word accuracy
+* *VOC*: vocalization accuracy 
+
+==== Scores after Training
+
+We refer to https://arxiv.org/pdf/2105.05209.pdf[paper], table 3 for
+our performance comparison below.
+
+[cols="a,a,a,a,a",options="header"]
+|===
+| |DEC |CHA |WOR |VOC
+|*Rababa* |*99.63* |*99.33* |*97.58* | *98.18*
+|*Nakdan* |98.94|98.23|95.83 |  95.93
+|*Nakdimon* |97.37 |95.41 |87.21 |89.32
+|===
+
+Rababa is our best run, Nakdan is hybrid (nnets + rules + search),
+Nakdimon is nnets only.
