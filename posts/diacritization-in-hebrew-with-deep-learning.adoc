@@ -8,14 +8,6 @@ v1.0, 2021-08-03
 
 === General
 
-Quite often and in modern texts,
-hebrew is written using the hebrew alphabet.
-The latter is just specifying the consonants with the
-wovels to be left to the reader to infer.
-Pointing or Niqqud is the hebraic system used to
-specify these wovels and is found in liturgic hebrew and
-in schools.
-
 
 
 After we have written a solution able to point arabic textes
@@ -23,19 +15,50 @@ and ported it to production with our library
 https://github.com/interscript/rababa[Rababa], this blog is about our work in hebrew.
 
 
-=== Hebrew within the landscape of languages
-
 
 === Role of diacritization
 
-For NLP and computerizing languages, it can be useful to enrich
-the hebrew alphabet with pointing.
+Quite often and in modern texts,
+hebrew is written using the hebrew alphabet.
+This script just specifies the consonants, leaving the
+wovels to be left to the reader to infer.
+
+
+*Diacritization*, Pointing or Niqqud is the hebraic system used to
+specify these wovels and is found in liturgic hebrew and
+in schools.
+
+*Cantillation* is another set of symbols added to Hebrew texts within the
+religious context.  It indicates how hebrew should be chanted.
+Cantillation is not covered here.
 
 
 === Applications in informatics
 
-Pointed Hebrew is obviously useful and essential for applications to NLP usage
-in *text-to-speech* and obviously *transliteration*.
+Pointed Hebrew is obviously useful and essential for applications like
+ *text-to-speech* and *transliteration*.
+
+=== Niqqud
+
+The Niqqud is the set of symbols used to enrich Hebrew
+and specify the vocalization. We present here the classification used
+in the code https://github.com/elazarg/nakdimon/blob/master/hebrew.py[nakdimon hebrew]:
+
+* *NIQQUD* : SHVA,REDUCED_SEGOL,REDUCED_PATAKH,
+             REDUCED_KAMATZ,HIRIK,TZEIRE,SEGOL,
+             PATAKH,KAMATZ,HOLAM,KUBUTZ,SHURUK,METEG
+* *DAGESH* :  RAFE,DAGESH_LETTER,MAPPIQ
+* *SIN* : RAFE,SHIN_YEMANIT,SHIN_SMALIT
+
+The rationale of the above decomposition is that sin is present only on the sin letter
+of the alphabet. Dagesh is placed in the middle of the letters.
+Member of the Niqqud presents themselves as "pixels" on the top or bottom of
+the alphabets.
+
+Only one member of the above group can enrich a letter but a letter could be
+decorated with a member of NIQQUD and DAGESH classes.
+Therefore, the above decomposition allows to represent all the symbols
+in three space w
 
 === Practical examples
 
@@ -48,7 +71,7 @@ various writing systems.
 
 In this context, Abjad languages need to be processed via several steps:
 
-* *Arabic text* => *diacritization* => *transliteration*
+* *Hebraic text* => *diacritization* => *transliteration*
 
 === Diacritization with Deep Learning
 
@@ -56,7 +79,7 @@ Correct diacritization requires an accurate understanding not only of the
 language morphemes and their variants but also the language grammar.
 
 Furthermore, given the possible multiple meanings available to a particular word
-in Arabic (or collision), some understanding of the context is required!
+in Hebrew (or collision), some understanding of the context is required!
 
 === Approaches
 
@@ -74,11 +97,20 @@ https://github.com/interscript/rababa/blob/main/docs/research-arabic-diacritizat
 
 === Literature Review
 
-
+* *NAKDAN* :
 https://arxiv.org/pdf/2005.03312.pdf[Nakdan (2020)]
+A https://nakdanpro.dicta.org.il/[live system] based on 3 steps
+  combining engineered linguistic informationand a trained neural model:
+  1. Part of Speech Tagging
+  2. Filtering the possible diacritizations
+  3. Ranking the possible diacritizations for eachword, in context
 
+* *NAKDIMON* :
 https://arxiv.org/pdf/2105.05209.pdf[Nakdimon (2021)]
-
+Nakdimon is a lighter system attempting to achieve diacritization by
+using a more powerful Neural Network model only.
+The authors have also published a new data set, NLP code and metrics
+that we have largely overtaken in our work.
 
 == Training and results
 
@@ -88,20 +120,56 @@ https://arxiv.org/pdf/2105.05209.pdf[Nakdimon (2021)]
 Same as for arabic, excepted
 for the modelling of diacritics.
 
-==== NLP of Hebrew Diacritics
+==== NLP of Hebrew Diacritics & Architecture Changes
+We have provided a heuristic explanation of the
+decomposition of  Diacritics as: NIQQUD/SIN/DAGESH.
 
-Diacritics ==> Niqqud, Sin and Dagesh
+We also found much better results against a naive attempt where all the diacritics
+would cohexist within the same space.
 
 ==== Modelling of Niqqud, Sin \& Dagesh
 
+Compared to the architecture described in our previous blog,
+the simplest change was to just add 2 additional
+CBHG projections to the model and train the model
+backpropagating in a serial from NIQQUD/DAGESH/SIN losses
+(https://github.com/interscript/rababa/tree/hebrew[hebrew code]).
+
+
+
 
 === Datasets
+The original dataset was taken from
 https://github.com/elazarg/hebrew_diacritized[Hebrew Diacritized]
+
+The dataset contains a range of diacritized textes of multiple origins:
+ancient, religious, modern, poetry, ...
+
+The datasets needed some cleaning and we are going to publish
+those cleaned datasets very soon.
 
 === Training Strategies
 
+==== Code to run Experiments
+We have integrated the code with https://wandb.ai/[Wandb]
+to make it simpler to run extensive experiments and monitor/show
+ results in real time.
+
 ==== Experiments with Datasets
+The variaty and diacritization quality within the datasets allowed
+ to run multiple experiments.
+
+We found that to pre-training Rababa
+first with various datasets before using the modern
+hebrew corpus as target would slightly increase the results.
+
+This will discussed in more details very soon.
+
 ==== Hyperparams Tuning
+
+On the top of the datasets, various parameters can be fine tuned.
+
+We have tried and evaluated various combinations, which will also be discussed in more details very soon.
 
 
 === System Evaluation and Performance
@@ -109,7 +177,7 @@ https://github.com/elazarg/hebrew_diacritized[Hebrew Diacritized]
 * *DEC*: decision accuracy
 * *CHA*: character accuracy
 * *WOR*: word accuracy
-* *VOC*: vocalization accuracy 
+* *VOC*: vocalization accuracy
 
 ==== Scores after Training
 
@@ -126,3 +194,4 @@ our performance comparison below.
 
 Rababa is our best run, Nakdan is hybrid (nnets + rules + search),
 Nakdimon is nnets only.
+Beating, both elaborated systems by quite a margin is quite an achievement.
