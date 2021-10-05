@@ -11,7 +11,7 @@ export default () => {
         <>
             <TopNav />
 
-            <h2>{`OGC systems`}</h2>
+            <h2>{`OGC Web Feature Service transliteration systems`}</h2>
             <p>
                 The <a href="https://www.ogc.org/">Open Geospatial Consortium (OGC)</a>
                 {" published "}
@@ -28,6 +28,13 @@ export default () => {
                     .
                 </i>
             </p>
+            <p>
+              <i>
+                NOTE: The title of a language or a writing system is followed by
+                the corresponding OGC 11-122r1 code that describes the system.
+              </i>
+            </p>
+
             <ExamplePage samples={samples} />
         </>
     );

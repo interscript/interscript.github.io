@@ -13,14 +13,14 @@ export default () => (
         <Link to="featured-authorities/alalc" className="nav-item">
             ALA-LC
         </Link>
+        <Link to="featured-authorities/iso" className="nav-item">
+            ISO
+        </Link>
         <Link to="featured-authorities/odni" className="nav-item">
             ODNI
         </Link>
         <Link to="featured-authorities/ogc11122" className="nav-item">
-            OGC 11-122r1
-        </Link>
-        <Link to="featured-authorities/iso" className="nav-item">
-            ISO
+            OGC
         </Link>
         <Link to="featured-authorities/din" className="nav-item">
             DIN
