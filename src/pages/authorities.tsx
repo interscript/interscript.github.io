@@ -11,7 +11,7 @@ export default () => {
                 <code>{item.code.toUpperCase()}</code>
             </dt>
             <dd>
-                <code>{item.name.en}</code>
+                {item.name.en}
             </dd>
         </dl>
     ));
@@ -19,7 +19,7 @@ export default () => {
 
     return (
         <div>
-            <h2>{total} of authorities </h2>
+            <h2>Authorities ({total})</h2>
             <ul> {authorityData} </ul>
         </div>
     );
