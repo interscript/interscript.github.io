@@ -7,6 +7,42 @@ image:https://github.com/interscript/interscript.org/workflows/deploy/badge.svg[
 This is the official website for the Interscript project,
 located at https://www.interscript.org.
 
+== Development
+
+Node version : 14.13.1
+
+- Install packages
+
+```
+yarn install
+```
+
+- Download the map data (metadata.json, vis_json.zip)
+
+```
+yarn map
+```
+
+- Update public/maps from node_modules/interscript/src/maps/
+
+```
+yarn copy_maps
+```
+
+- Run web in development mode
+
+```
+yarn start
+```
+
+- Build (Recommend to run first this step before deployment on local )
+
+```
+yarn adoc
+yarn make
+yarn serve
+```
+
 == License
 
 Copyright Ribose.
