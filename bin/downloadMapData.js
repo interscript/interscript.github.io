@@ -3,8 +3,8 @@ const request = require("request");
 const fs = require("fs-extra");
 const path = require("path");
 
-const visJsonUrl = "https://github.com/interscript/interscript/releases/latest/download/vis_json.zip";
-const metadataUrl = "https://github.com/interscript/interscript/releases/latest/download/metadata.json.zip";
+const visJsonUrl = "https://github.com/interscript/interscript-ruby/releases/latest/download/vis_json.zip";
+const metadataUrl = "https://github.com/interscript/interscript-ruby/releases/latest/download/metadata.json.zip";
 const basePath = "./map";
 
 async function downloadZip(inputUrl) {
