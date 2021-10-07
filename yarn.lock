@@ -4978,10 +4978,10 @@ internal-slot@^1.0.3:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-interscript@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.3.1.tgz#6ba34b4060e99dae4e858349ae8a4e51bcd7602d"
-  integrity sha512-K+aEilz1dr/5yHygoCurjkVVGtJHX/OzG9iSEzPRwdOyPFTGmcnY1P2tg8tG8dhdAqcCnBA+sunhXN8JY7BdFA==
+interscript@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/interscript/-/interscript-2.4.1.tgz#a1cdb396087b72f1f75cd5ca44f4e6a2cca35233"
+  integrity sha512-opTyY2H5UzfxgOGhfSnFoIXmQxgmPWU6WWTSt0XaAcsyx2SmxIhqUZq5zQTGD+WUQvfETKRNXa1TYSEauu8FcA==
   dependencies:
     xregexp "^5.0.1"
 
