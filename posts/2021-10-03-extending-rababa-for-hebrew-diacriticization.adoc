@@ -1,4 +1,4 @@
-= Diacritization in Hebrew with Deep Learning
+= Extending Rababa for Hebrew Diacriticization
 Jair Wuilloud
 v1.0, 2021-10-03
 :doctype: book
