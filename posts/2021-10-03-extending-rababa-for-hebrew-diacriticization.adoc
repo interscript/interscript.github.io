@@ -12,12 +12,14 @@ https://github.com/interscript/rababa[Rababa] is an automated diacriticization
 library for Abjad scripts which was originally developed for pointing Arabic
 text.
 
-This is a technical blog about the excellent results we obtained when applying
+This is a technical blog about the excellent results obtained when applying
 the "`Rababa strategy and architecture`" to Hebrew.
 
-We explain how we have managed
-*to half the decision errors recorded on the automated diacritization*
-of Abjad scripts.
+We explain how we have managed to outperform on research benchmarks the only
+similar architecture using NNets only.
+
+
+
 
 
 === Role of diacritization
@@ -211,13 +213,13 @@ and confirmed that we can reproduce identical results using their test dataset.
 
 ==== Scores after training
 
-[cols="a,a,a,a,a,a",options="header"]
+[cols="a,a,a,a,a,a,a",options="header"]
 |===
-|           |DEC     |CHA     |WOR     |VOC     | 100 - DEC
+|           |DEC     |CHA     |WOR     |VOC     | 100 - DEC | 100 - WOR
 
-|*Nakdan*   |98.94   |98.23   |95.83   |95.93   | 1.06
-|*Nakdimon* |97.37   |95.41   |87.21   |89.32   | 2.63
-|*Rababa*   |*99.63* |*99.33* |*97.58* |*98.18* | *0.37*
+|*Nakdan*   |98.94   |98.23   |95.83   |95.93   | 1.06 | 4.17
+|*Nakdimon* |97.37   |95.41   |87.21   |89.32   | 2.63 | 12.79
+|*Rababa*   |*97.66* |*95.94* |*88.77* |*90.51* | *2.32* | *12.23*
 
 |===
 
@@ -228,27 +230,29 @@ In these results we compare the implementations of Nakdan which provided the
 best published results from a hybrid system (NNets + rules + search),
 Nakdimon which only uses NNets, against Rababa.
 
-The evidence of these values can be found in exploring the following
-https://wandb.ai/jair/Hebrew-diacritization-play/reports/Runs-result--VmlldzoxMDUyMzE0?accessToken=34s286jvk0j1ozwzn02mlrmfkvmlyc07en34dkeh7u7fx9cphuo2j8u8v4jn0fze[link].
-
+Our values can be replicated by running the
+tests code with our Rababa python library.
 
 == Discussion
 
 Not only we could adapt Rababa to the problem of Hebrew diacritization, but
 using the good work made on NLP, modelling and the datasets published by other
-team, we could surpass the benchmarks by aa substantial margin.
+team, we could surpass Nakdimon benchmarks by a small margin.
 
-We confirm that as mentioned in the 2021 Nakdimon paper, that the results of
+We confirm that as observed in the 2021 Nakdimon paper, that the results of
 Rababa could be improved by pre-training on ancient or religious datasets
 prior to targeting a smaller, modern one.
 
-While Rababa's decision accuracy error (100% - DER) of 0.37% is to be compared
-with the previous best accuracy error of 1.04% for hybrid systems in Hebrew, the
-corresponding performance using Rababa for Arabic diacritization using a similar
-metric (100% - DER*) is currently around 0.85%.
+// While Rababa's decision accuracy error (100% - DER) of 0.37% is to be compared
+// with the previous best accuracy error of 1.04% for hybrid systems in Hebrew, the
+// corresponding performance using Rababa for Arabic diacritization using a similar
+// metric (100% - DER*) is currently around 0.85%.
 
 == Summary
 
-Rababa produces a 65% improvement over the previous best automated
-diacritization of Hebrew, held by a hybrid system, thus
-*entering into a new domain for what deep learning can achieve with Abjad diacriticization.*
+As observed with the research test sets, Rababa implementation gives a slight improvement over the previous best automated
+technology: nakdimon.
+
+// Rababa produces a 65% improvement over the previous best automated
+// diacritization of Hebrew, held by a hybrid system, thus
+// *entering into a new domain for what deep learning can achieve with Abjad diacriticization.*
