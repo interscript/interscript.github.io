@@ -16,8 +16,6 @@ import icaoSamples from "./src/samples/icao.json";
 import metadata from "./map/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
 
-// import { ReadmeSection } from './types'
-
 const repoOwner = "interscript";
 const repoName = "interscript";
 
