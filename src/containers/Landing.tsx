@@ -4,10 +4,6 @@ import { HeaderHashlinksMenu } from "../components/HeaderHashlinksMenu";
 import { Section, SectionGrid } from "../components/Section";
 import { Statistics } from "../components/Statistics";
 // const API_ENDPOINT = "https://api.interscript.com";
-// @ts-ignore
-import MAIN_MENU_ITEMS from "../routes";
-import { Link } from "@reach/router";
-import { MainNavAnchorItem, MainNavItem } from "components/MainNav";
 
 export default () => {
     const { mapsInfo }: { mapsInfo: any } = useRouteData();
@@ -17,24 +13,6 @@ export default () => {
             document.getElementById(window.location.hash.replace("#", "")).scrollIntoView();
         }
     }, []);
-
-    const mainMenuItems = MAIN_MENU_ITEMS.map(
-        (item: any) =>
-            item.name !== "Home" &&
-            (!item.external ? (
-                <li key={item.path}>
-                    <Link key={item.path} to={item.path}>
-                        {item.name}
-                    </Link>
-                </li>
-            ) : (
-                <li key={item.path}>
-                    <a key={item.path} href={item.path}>
-                        {item.name}
-                    </a>
-                </li>
-            ))
-    );
 
     return (
         <>
@@ -75,12 +53,6 @@ export default () => {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </Section>
-                <Section>
-                    <div id="pages">
-                        <h2>{`Pages`}</h2>
-                        <ul>{mainMenuItems}</ul>
                     </div>
                 </Section>
                 <Section>
