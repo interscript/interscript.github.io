@@ -178,12 +178,18 @@ export default {
                 path: "/",
                 template: "src/containers/Landing",
                 getData: () => ({
-                    readmeSections: [findReadmeSection("introduction"), findReadmeSection("demonstration")],
                     repoInfo: {
                         owner: repoOwner,
                         name: repoName,
                     },
                     mapsInfo,
+                }),
+            },
+            {
+                path: "demonstration",
+                template: "src/components/ReadmeSectionPage.tsx",
+                getData: async () => ({
+                    sections: [findReadmeSection("demonstration")],
                 }),
             },
             // here I need to refactor a little
