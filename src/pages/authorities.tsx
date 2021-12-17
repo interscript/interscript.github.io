@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import authority_data from "../authority.json";
 
 // @ts-ignore
@@ -11,7 +12,7 @@ export default () => {
                 <code>{item.code.toUpperCase()}</code>
             </dt>
             <dd>
-                {item.name.en}
+                <Link to={`/authorities/${item.code}`}>{item.name.en}</Link>
             </dd>
         </dl>
     ));

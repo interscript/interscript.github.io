@@ -15,6 +15,7 @@ import dinSamples from "./src/samples/din.json";
 import icaoSamples from "./src/samples/icao.json";
 import metadata from "./map/metadata.json";
 import { getListOfFileWithTypeInDir } from "./walk";
+import authority_data from "./src/authority.json";
 
 const repoOwner = "interscript";
 const repoName = "interscript";
@@ -249,6 +250,20 @@ export default {
                         }),
                     },
                 ],
+            },
+            {
+                path: "authorities",
+                children: Object.keys(authority_data).map((authCode) => {
+                    return {
+                        path: `${authCode}`,
+                        template: "src/containers/authorityDetail.tsx",
+                        getData: () => ({
+                            authorityCode: authCode,
+                            mapsInfo,
+                            metaDataMap,
+                        }),
+                    };
+                }),
             },
             {
                 path: "try-api",
