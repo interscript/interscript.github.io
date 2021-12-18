@@ -42,5 +42,5 @@ export default () => {
                 </dd>
             </dl>
         ));
-    return <div>{list}</div>;
+    return <div>{list.length ? list : "No systems entered" }</div>;
 };
