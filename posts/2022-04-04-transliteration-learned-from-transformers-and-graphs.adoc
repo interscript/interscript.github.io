@@ -7,7 +7,7 @@ v1.0, 2022-04-0
 
 == Introduction
 
-=== General
+===== General
 
 We have built and demonstrated an innovative strategy allowing for the building
 of complex transliteration codes.
@@ -39,7 +39,7 @@ However, when no corpus is available as with farsi,
 
 ===== our Approach & Motivation
 
-Building our initial solution, we faced the following problems:
+Building our initial solution, we faced following problems:
 
  * Transliteration code based on highly
  in the https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[complex rules].
@@ -51,7 +51,7 @@ Building our initial solution, we faced the following problems:
 As a result, not only the code takes a considerable amount of time to be written,
   it has little flexibility for tweaks or redesigns.
 
-For these reasons, we are proposing an alternative approach consisting in:
+For these reasons, we have considered an alternative approach consisting in:
 
   * Empowering language experts in the process or designing complex rules and logics
   * Encapsulate both language expert and developer workflows
@@ -59,47 +59,70 @@ For these reasons, we are proposing an alternative approach consisting in:
    logic blocks
 
 
-=== Building code from graphs
+== Strategy
 
-===== Learning
-"Learning" logical graphs from data.
+===== Design of diagrams
+
+Experimenting with various approaches, for this project, we decided to work
+with https://www.lucidchart.com[lucidchart].
+Any technology allowing to create workflows would be an alternative.
+
+===== Building code from graphs
+
+Once exported into a computerisable format, the diagrams can be parsed and
+reconstructed as graphs.
+We wrote an original code in julia for doing this.
+
+
+Among the problems that we have to solve:
+
+ 0. Modelling of the logics components as Trees
+ 1. Modelling of data and computation "states"
+ 2. Jumps from one logic flow to another
+ 3. Handling of recursions
+
+In a nutshell, our architecture transform data "states" as they "flow"
+within the graphical, logical structure.
+Details can be found in the https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph/src[code].
+
+===== Implementation of Nodes/rules
+
+Node elements trigger state data as the latest arrives on one of them.
+Code can be found in the link above and more explanation are provided with in
+https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph[learn-graph code].
+
 
 ===== Assets
 
-Mappings
+As mentioned above, mappings are an essential part of the code.
+They where transformed into tables in the code.
 
-===== Code structure to handle flows and recursions
-
-* data flowing through logic
-* jumps between node and their trigger
-* Classes
-
-===== Lucidchart as Editor and format
-
-https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[model 1.0]
-and its https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.csv[csv export].
+@Mahdi origin og mapping
 
 
-=== Learning to transliterate with transformers
+
+
+== Learning to transliterate with transformers
 
 ===== Transformers
-blabla
 
 
 
-=== Porting python transformers to ruby
+== Porting python transformers to ruby
 
 ===== OnnxRuntime
 ===== Implementation of greedy decoding
 
 
 
-=== Discussion
+== Discussion
 
 ===== Feedback from developers
 
+
 ===== Feedback from Language specialist
 
+@Mahdi
 
 
 == Summary
