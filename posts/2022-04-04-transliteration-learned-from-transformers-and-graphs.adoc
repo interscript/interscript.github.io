@@ -97,21 +97,46 @@ https://github.com/interscript/transliteration-learner-from-graphs/tree/main/lea
 As mentioned above, mappings are an essential part of the code.
 They where transformed into tables in the code.
 
-@Mahdi origin og mapping
+@Mahdi origin of mapping
 
 
+===== Data creation and generation
+
+In a first step, we have gathered large amounts of data in farsi:
+* datasets
+
+@Mahdi
+In a second step, transliteration data was generated applying
+our transliteration, diagrams generated code onto the above datasets.
 
 
 == Learning to transliterate with transformers
 
 ===== Transformers
 
+Transformers is a modern neural network architecture
+(https://arxiv.org/abs/1706.03762[attention is all your need]) used on transduction problems
+such as langugage modelling and translation.
+They can be naturally  applied to the problem of learning to transliterate.
 
+Various libraries can be found online. We also experimented with various
+ approaches, characters or words based. The currently method is the later.
 
 == Porting python transformers to ruby
 
-===== OnnxRuntime
+===== Training and ONNX  conversion
+
+As for other projects, after training,  ONNX was used to port
+ trained neural networks onto a universal format.
+This work (training+ONNX export) can be found in
+ https://github.com/interscript/transliteration-learner-from-graphs/tree/main/python-nnets-torch[python script]
+
 ===== Implementation of greedy decoding
+
+In production, we found that various components (nnets) of the transformers
+had to be exported, such as generator, tokenizers, encoder and decoder.
+
+They had then to be combined in a correct fashion in our native ruby code. 
 
 
 
