@@ -9,38 +9,55 @@ v1.0, 2022-04-0
 
 === General
 
+We have built and demonstrated an innovative strategy allowing for the building
+of complex transliteration codes.
+
+We believe that not only our approach makes the work easier, for both developer and
+language specialist, but the linguist can easily
+(partially or completely) transform the existing solution with little or
+ no dependence on the developer.
+
+This was made possible by using data not only to train neural networks but also
+treating a linguist's diagrams/graphs as data source for our code.
+
+
 ===== Transliteration for Farsi
 
-
 Transliteration is the process of transforming a language into another script, transforming the letters such as to maintain the sounds.
-Languages are obviously subject to very complex rules making the above process quite complicated.
+For instance: "مزایایی" -> mazAyAyi.
+
+Languages are obviously subject to very complex rules and exceptions, making the above process quite complicated.
 It is especially the case if no corpora are available to train neural networks or other techniques on.
-No corpora are available with Farsi at the time of the creation of this library, and so we needed to build the transliteration strategy from scratch.
 
-===== Innovative Approach
+In languages where large transliteration corpora are abailable, algorithms
+or neural networks can be trained, as in the previous https://github.com/secryst[secryst] work.
 
-We present a novel approach to transliteration.
-Our solution is data based in original ways:
-Not only is transliteration learnt from multiple transliterations examples
-but also the code is learnt/built from diagrams (graphs) that language experts
-can design on their favourite chart technology.
+However, when no corpus is available as with farsi,
+ transliteration data has to be generated. This means in our case
+ build a transliteration code from scratch.
 
-Transliteration is approached this way because of
- the following problems:
 
- * Transliteration code based on highly complex sets of rules as
- in the https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[farsi case].
- * Language expert and developer's workflow are difficult to integrate as the developer
- is asked to encode complex rules he/she is likely to have little chances to comprehend.
- * As a result, not only the code takes a considerable amount of time to be written,
+===== our Approach & Motivation
+
+Building our initial solution, we faced the following problems:
+
+ * Transliteration code based on highly
+ in the https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[complex rules].
+ * Language expert and developer's workflow are quite different and
+   difficult to integrate.
+   For instance, as the developer is asked to encode complex rules he/she is
+   likely to have little chances to comprehend.
+
+As a result, not only the code takes a considerable amount of time to be written,
   it has little flexibility for tweaks or redesigns.
 
 For these reasons, we are proposing an alternative approach consisting in:
 
   * Empowering language experts in the process or designing complex rules and logics
-  * As a result, encapsulate and integrate both language expert and developer workflows
-  * Build a flexible and solution that can be visualised and changed with
-   with limited amount of work for developers
+  * Encapsulate both language expert and developer workflows
+  * Build a flexible solution that can be visualised and tweaked rearranging
+   logic blocks
+
 
 === Building code from graphs
 
