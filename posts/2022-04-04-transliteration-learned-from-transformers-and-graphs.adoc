@@ -115,7 +115,7 @@ our transliteration method, the diagrams-generated code, onto the above datasets
 ===== Transformers
 
 Transformers are a modern neural network architecture
-(https://arxiv.org/abs/1706.03762[attention is all your need]) used on transduction problems
+(https://arxiv.org/abs/1706.03762[attention is all you need]) used on transduction problems
 such as language modeling and translation.
 They can be naturally applied to the problem of learning to transliterate.
 
