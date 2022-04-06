@@ -298,10 +298,14 @@ into native ruby, without using more than very standard libraries (no torch-rb).
 We hope that the approach can be ported to the transliteration of
 other languages, where no transliteration data is available.
 
-We also think that the graphical approach and allowing for a good encapsulation
+After having demonstrated its application to a complex software implementation,
+we also think that the graphical approach and allowing for a good encapsulation
 of technical and specialist workflow can be very useful in many situations.
-We have demonstrated its application to a complex software and have accumulated
-expertise with this project that can be ported to other applications.
+
+Several new technologies suggest many ideas to scale up the approach, for instance
+https://copilot.github.com/[AI pair programmer].
+
+
 
 
 ==== Feedback from developer
