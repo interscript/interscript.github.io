@@ -9,8 +9,8 @@ v1.0, 2022-04-0
 
 ==== General
 
-We have built an innovative strategy allowing for efficient building
-of complex transliteration codes.
+We have built an innovative strategy allowing to graphically build
+complex transliteration codes.
 
 Our approach not only encapsulate developer's and linguist's workflows.
 It is allowing the linguist in the design of complex strategies while
@@ -159,6 +159,43 @@ algorithms. With this data, we have tried to cover all the cases our
 rules were designed to solve.
 
 
+==== Workflow Details for Linguist & Developer
+
+
+1. starting from a diagram the linguist can use a graphical editor to
+design various rules
+
+2. If a new node has to be created interact with a developer to implement it.
+
+3. Learn build code from graphs
+
+4. run test and benchmarks and review results and bugs
+
+5.  run single examples with an extensive debugging mode
+
+6. back to 1.
+
+
+Below, we show the code in full verbose, debug mode.
+The linguist can track the computation and help to identify bugs and inaccuracies.
+[source,sh]
+----
+> julia transliterateSingleString.jl --path-model resources/Model0.9.dat --farsi-text یویو --pos-tagging noun
+[ Info: ("brain name ::> ", "transliterator")
+[ Info: ("data::> ", Dict{String, Any}("brain" => "transliterator", "pos" => "Noun", "word" => "یویو", "pre_pos" => nothing, "state" => nothing))
+[ Info: ("node::> ", "change all instances of ي and ك in the text to ی and ک")
+[ Info: ("data::> ", Dict{String, Any}("brain" => "transliterator", "pos" => "Noun", "word" => "یویو", "pre_pos" => nothing, "state" => nothing))
+[ Info: ("node::> ", "is the word found in the db?")
+[ Info: ("response::> ", "yes")
+[ Info: ("data::> ", Dict{String, Any}("brain" => "transliterator", "data" => Dict{Any, Any}[Dict("الگوی تکیه" => "WS", "WrittenForm" => "یویو", "PhonologicalForm" => "yoyo", "Freq" => 1, "SynCatCode" => "N1")], "pos" => "Noun", "word" => "یویو", "pre_pos" => nothing, "state" => "yes"))
+[ Info: ("node::> ", "collision?")
+[ Info: ("response::> ", "no")
+[ Info: ("data::> ", Dict{String, Any}("brain" => "transliterator", "data" => Dict{Any, Any}[Dict("الگوی تکیه" => "WS", "WrittenForm" => "یویو", "PhonologicalForm" => "yoyo", "Freq" => 1, "SynCatCode" => "N1")], "pos" => "Noun", "word" => "یویو", "pre_pos" => nothing, "state" => "no"))
+[ Info: ("node::> ", "output its transliteration!")
+yoyo
+----
+
+
 == Learning to transliterate with transformers
 
 ==== Transformers
@@ -193,6 +230,9 @@ They had then to be combined correctly in our native ruby code.
 
 == Benchmarking
 
+
+==== Scores
+
 Our codes can be tested/bencharked with a test data set that we have designed.
 We are reporting ACCU as (word accuracy %).
 
@@ -219,7 +259,50 @@ However, the code does not not cover/fails with many sentence (50%).
 
 * *CODE Ruby* is the production code
 
-== Discussion
+The discrepency between the scores of *CODE 0.9* and *CODE Transfo*
+is caused, we think, by cases that *CODE 0.9* can not encode properly.
+Because the code outputs farsi characters when not knowing how to handle a
+characters sequence, 1/10 words are transliterated with some farsi in it.
+These had to be filtered out and therefore,
+ ~1/2 of the sentences could not be transliterated. We think that this impacted
+ the transliteration dataset quality.
+
+This also motivated the rewriting of a new version of *CODE 0.9*, which in
+ turn, because of its difficulty/challenge, led to an alternative approach.
+
+
+
+
+
+== Summary & Discussion
+
+For reasons explained in benchmarks and in the introduction,
+we found impractical and subefficient to build a transliteration
+code from a
+set of mappings and written rules.
+
+Thinking that the integration between software developer and
+linguist was the challenge, with difficulties for the latter to debug or
+implement himself tweaks or changes,
+we have tried to solve this issue by a graphical
+approach allowing a linguist to creates his own logic designs.
+We have built an innovative solution solving original problems.
+
+Transliteration is put into production after training of neural networks,
+allowing to bypass the usage of NLP libraries not available in ruby
+but also for a compact solution.
+
+In the final step, we found a lightweight way to export torch transformers
+into native ruby, without using more than very standard libraries (no torch-rb).
+
+We hope that the approach can be ported to the transliteration of
+other languages, where no transliteration data is available.
+
+We also think that the graphical approach and allowing for a good encapsulation
+of technical and specialist workflow can be very useful in many situations.
+We have demonstrated its application to a complex software and have accumulated
+expertise with this project that can be ported to other applications.
+
 
 ==== Feedback from developer
 
@@ -228,6 +311,3 @@ However, the code does not not cover/fails with many sentence (50%).
 ==== Feedback from Language specialist
 
 @Mahdi
-
-
-== Summary
