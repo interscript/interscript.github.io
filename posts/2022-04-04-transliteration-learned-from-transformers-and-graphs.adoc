@@ -12,50 +12,49 @@ v1.0, 2022-04-0
 We have built and demonstrated an innovative strategy allowing for the building
 of complex transliteration codes.
 
-We believe that not only our approach makes the work easier, for both developer and
-language specialist, but the linguist can easily
-(partially or completely) transform the existing solution with little or
+We believe that not only does our approach make the work easier for both developer and
+language specialist, but also the linguist can easily
+(partially or entirely) transform the existing solution with little or
  no dependence on the developer.
 
 This was made possible by using data not only to train neural networks but also
-treating a linguist's diagrams/graphs as data source for our code.
+treating a linguist's diagrams/graphs as a data source for our code.
 
 
 ===== Transliteration for Farsi
 
-Transliteration is the process of transforming a language into another script, transforming the letters such as to maintain the sounds.
+Transliteration is the process of transforming a language into another script, transforming the letters to maintain the sounds.
 For instance: "مزایایی" -> mazAyAyi.
 
-Languages are obviously subject to very complex rules and exceptions, making the above process quite complicated.
+Languages are subject to complex rules and exceptions, making the above process quite complicated.
 It is especially the case if no corpora are available to train neural networks or other techniques on.
 
-In languages where large transliteration corpora are abailable, algorithms
+In languages where large transliteration corpora are available, algorithms
 or neural networks can be trained, as in the previous https://github.com/secryst[secryst] work.
 
-However, when no corpus is available as with farsi,
- transliteration data has to be generated. This means in our case
- build a transliteration code from scratch.
+However, transliteration data has to be generated when no corpus is available, as with Farsi. This means that in our case
+ we needed to build a transliteration code from scratch.
 
 
 ===== our Approach & Motivation
 
-Building our initial solution, we faced following problems:
+Building our initial solution, we faced the following problems:
 
- * Transliteration code based on highly
+ * Transliteration code had to be written based on highly
  in the https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[complex rules].
- * Language expert and developer's workflow are quite different and
+ * Language expert and developer's workflows were quite different and
    difficult to integrate.
-   For instance, as the developer is asked to encode complex rules he/she is
-   likely to have little chances to comprehend.
+   For instance, the developer is asked to encode complex rules while he/she is
+   likely to have little chance to comprehend.
 
 As a result, not only the code takes a considerable amount of time to be written,
   it has little flexibility for tweaks or redesigns.
 
-For these reasons, we have considered an alternative approach consisting in:
+For these reasons, we considered an alternative approach consisting in:
 
-  * Empowering language experts in the process or designing complex rules and logics
-  * Encapsulate both language expert and developer workflows
-  * Build a flexible solution that can be visualised and tweaked rearranging
+  * Empowering language experts in the process of designing complex rules and logic
+  * Encapsulating both language expert and developer workflows
+  * Building a flexible solution that can be visualized and tweaked by rearranging
    logic blocks
 
 
@@ -63,80 +62,81 @@ For these reasons, we have considered an alternative approach consisting in:
 
 ===== Design of diagrams
 
-Experimenting with various approaches, for this project, we decided to work
+Experimenting with various approaches for this project, we decided to work
 with https://www.lucidchart.com[lucidchart].
-Any technology allowing to create workflows would be an alternative.
+Any technology allowing to create workflows could be an alternative.
 
 ===== Building code from graphs
 
-Once exported into a computerisable format, the diagrams can be parsed and
+Once exported into a computerizable format, the diagrams can be parsed and
 reconstructed as graphs.
-We wrote an original code in julia for doing this.
+We wrote an original code in Julia for doing this.
 
 
 Among the problems that we have to solve:
 
- 0. Modelling of the logics components as Trees
- 1. Modelling of data and computation "states"
+ 0. Modeling logic components as Trees
+ 1. Modeling computation "states"
  2. Jumps from one logic flow to another
- 3. Handling of recursions
+ 3. Handling recursions
 
-In a nutshell, our architecture transform data "states" as they "flow"
+In a nutshell, our architecture transforms data "states" as they "flow"
 within the graphical, logical structure.
 Details can be found in the https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph/src[code].
 
 ===== Implementation of Nodes/rules
 
 Node elements trigger state data as the latest arrives on one of them.
-Code can be found in the link above and more explanation are provided with in
+Code can be found in the link above, and more explanations are provided within
 https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph[learn-graph code].
 
 
 ===== Assets
 
 As mentioned above, mappings are an essential part of the code.
-They where transformed into tables in the code.
+They were transformed into tables in the code.
 
-@Mahdi origin of mapping
+===== Origin of mapping
 
+Based on the rules, words with different parts of speech were treated differently and broken down into smaller segments for which we had a transliteration in the database.
 
 ===== Data creation and generation
 
-In a first step, we have gathered large amounts of data in farsi:
-* datasets
+As a first step, we gathered large amounts of data in Farsi:
 
-@Mahdi
-In a second step, transliteration data was generated applying
-our transliteration, diagrams generated code onto the above datasets.
+The main database we used for transliteration in this project was a 50k-word database used previously in a Farsi text to speech project called Parskhan. It includes word roots and their frequency in conversations and affixes that can be attached to those roots. We had to edit that database on multiple occasions. Also, we found datasets to apply our transliteration method on to train neural networks. Most of that data was publicly available on Farsi text processing communities and Github repositories.
+
+As a second step, transliteration data was generated by applying
+our transliteration method, the diagrams-generated code, onto the above datasets.
 
 
 == Learning to transliterate with transformers
 
 ===== Transformers
 
-Transformers is a modern neural network architecture
+Transformers are a modern neural network architecture
 (https://arxiv.org/abs/1706.03762[attention is all your need]) used on transduction problems
-such as langugage modelling and translation.
-They can be naturally  applied to the problem of learning to transliterate.
+such as language modeling and translation.
+They can be naturally applied to the problem of learning to transliterate.
 
-Various libraries can be found online. We also experimented with various
- approaches, characters or words based. The currently method is the later.
+Various libraries can be found online. We also experimented with multiple
+ approaches, characters or words-based. The current method is the latter.
 
 == Porting python transformers to ruby
 
-===== Training and ONNX  conversion
+===== Training and ONNX conversion
 
-As for other projects, after training,  ONNX was used to port
+As for other projects, after training, ONNX was used to port
  trained neural networks onto a universal format.
-This work (training+ONNX export) can be found in
+This work (training+ ONNX export) can be found in
  https://github.com/interscript/transliteration-learner-from-graphs/tree/main/python-nnets-torch[python script]
 
 ===== Implementation of greedy decoding
 
-In production, we found that various components (nnets) of the transformers
-had to be exported, such as generator, tokenizers, encoder and decoder.
+In production, we found that various components (neural networks) of the transformers
+had to be exported, such as generator, tokenizers, encoder, and decoder.
 
-They had then to be combined in a correct fashion in our native ruby code. 
+They had then to be combined correctly in our native ruby code. 
 
 
 
