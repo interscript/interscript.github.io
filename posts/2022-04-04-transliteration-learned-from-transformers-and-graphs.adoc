@@ -38,7 +38,7 @@ Building our initial solution, we faced following problems:
  * Transliteration code had to implement highly
  https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[complex rules].
  * Language expert and developer's workflows were quite different and
-   difficult to integrate,
+   difficult to integrate.
    For instance, the developer is asked to encode complex rules while he/she is
    likely to have little chance to comprehend,
 
