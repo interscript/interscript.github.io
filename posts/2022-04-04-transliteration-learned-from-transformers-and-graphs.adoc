@@ -81,7 +81,8 @@ In a nutshell:
 ==== Design of diagrams
 
 Link for and example of a
- https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[diagram].
+ https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[diagram]
+ representing a strategy designed by Mahdi.
 
 Experimenting with various approaches for this project, we decided to work
 with https://www.lucidchart.com[lucidchart].
@@ -92,7 +93,6 @@ However, any technology allowing to create workflows could be an
 
 Once exported into a csv format, the diagrams can be computerized and
  modelled as trees, associating  rules to each node.
-We wrote an original code in Julia for doing this.
 
 
 Among the problems that had to be solved:
@@ -105,7 +105,8 @@ Among the problems that had to be solved:
 We are using a functional approach with the
 data "states" getting transformed as they "flow"
 within the graphical, logical structure.
-Details can be found in the https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph/src[code].
+Details can be found in the original
+ https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph/src[Julia code].
 
 ====  Nodes/Rules
 
@@ -121,6 +122,8 @@ For instance, in the https://github.com/interscript/transliteration-learner-from
 Our code can be found with more explanations here:
 https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph[learn-graph code].
 
+The current code has over 150 nodes and is a successful implementation of a
+complex solution!
 
 ==== Assets used & created
 
@@ -142,7 +145,7 @@ That database had to be edited in multiple occasions.
 
 ===== Data creation and generation
 
- Most of our datasets to
+Most of our datasets to
 apply our transliteration method on were publicly available from Farsi NLP
  communities and Github repositories.
 
@@ -186,7 +189,7 @@ design various rules
 
 
 Below, we show the code output in full verbose, debug mode.
-The linguist can track the computation and help to identify bugs and inaccuracies.
+The linguist can track the computation steps and help to identify bugs and inaccuracies.
 [source,sh]
 ----
 > julia transliterateSingleString.jl --path-model resources/Model0.9.dat --farsi-text یویو --pos-tagging noun
@@ -221,7 +224,7 @@ Various libraries can be found online. We also experimented with multiple
 Several resources are available online to
  https://jalammar.github.io/illustrated-transformer/[explain transformers].
 
-==== Porting python transformers to ruby
+// ==== Porting python transformers to ruby
 
 ==== Training and ONNX conversion
 
@@ -251,9 +254,9 @@ We are reporting ACCU as (word accuracy %):
 | |ACCU
 
 |*CODE 0.9* |96%
-|*CODE D* |--%
+|*CODE D* |in Progress%
 
-|*CODE Transfo* |60%
+|*CODE Transfo* |65%
 |*CODE Ruby* |60%
 
 |===
@@ -315,11 +318,11 @@ we also think that the graphical approach and allowing for a good encapsulation
 of technical and specialist workflow can be very useful in many situations.
 
 Several new technologies suggest many ideas to scale up the approach, for instance
-https://copilot.github.com/[AI pair programmer].
+https://copilot.github.com/[AI pair programmer] or .
 
 
 
-// == Next Steps 
+// == Next Steps
 
 
 
