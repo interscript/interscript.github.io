@@ -75,7 +75,7 @@ In a nutshell:
 
 3. *Production/Transliteration in Ruby*
   * torch NNets => export in ONNX
-  * code run in ruby
+  * code run in Ruby
 
 
 ==== Design of diagrams
@@ -226,7 +226,7 @@ Various libraries can be found online. We also experimented with multiple
 Several resources are available online to
  https://jalammar.github.io/illustrated-transformer/[explain transformers].
 
-// ==== Porting python transformers to ruby
+// ==== Porting python transformers to Ruby
 
 ==== Training and ONNX conversion
 
@@ -241,14 +241,14 @@ In production, we found that various components (neural networks) of the transfo
 had to be exported, such as generator, tokenizers, encoder, and decoder.
 
 They had then to be combined correctly in our native
-https://github.com/interscript/transliteration-learner-from-graphs/tree/main/lib[ruby code].
+https://github.com/interscript/transliteration-learner-from-graphs/tree/main/lib[Ruby code].
 
 == Benchmarking
 
 
 ==== Scores
 
-Our codes can be tested/benchmarked with a test data set that we have designed.
+Our codes can be tested/benchmarked with a test dataset that we have designed.
 We are reporting ACCU as (word accuracy %):
 
 [cols="a,a",options="header"]
@@ -301,15 +301,15 @@ Thinking that the integration between the software developer and
 linguist was one of the challenges, with difficulties for the
 former to develop some sort of intuition about a foreign language
 and the latter to debug or
-implement himself tweaks or changes,
+implement tweaks or changes himself,
 we have approached the problem with a graphical
 editor allowing a linguist to create his logic designs.
 
 Transliteration is put into production after training of neural networks,
-allowing to bypass the usage of NLP libraries not available in ruby
+allowing to bypass the usage of NLP libraries not available in Ruby
 but also for a compact solution.
 In the final step, we found a lightweight way to export torch transformers
-into native ruby, without using more than very standard libraries (no torch-rb).
+into native Ruby, without using more than very standard libraries (no torch-rb).
 
 We think that the approach or part of it can be ported to the transliteration of
 any other languages, also the ones where no transliteration data is available.
