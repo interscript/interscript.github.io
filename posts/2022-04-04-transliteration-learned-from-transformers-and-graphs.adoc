@@ -306,7 +306,6 @@ editor allowing a linguist to creates his own logic designs.
 Transliteration is put into production after training of neural networks,
 allowing to bypass the usage of NLP libraries not available in ruby
 but also for a compact solution.
-
 In the final step, we found a lightweight way to export torch transformers
 into native ruby, without using more than very standard libraries (no torch-rb).
 
