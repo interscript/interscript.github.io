@@ -80,7 +80,9 @@ In a nutshell:
 
 ==== Design of diagrams
 
-Link for an example of a
+To transliterate a text, we need to recognize parts of speech for words. We used hazm library to do that. Since this part is not complicated and most of the logic lies in the word-level processing, flowcharts indicate how to transliterate single words with defined parts of speech.
+
+Link to an example of a
  https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[diagram]
  representing a strategy designed by Mahdi.
 
