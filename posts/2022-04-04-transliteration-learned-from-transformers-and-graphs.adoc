@@ -9,21 +9,42 @@ v1.0, 2022-04-0
 
 ==== General
 
-In a context where no transliteration data is available, complex transliteration
-codes have to be written from scratch.
+Evaluating existing transliteration technologies for **Farsi**, we found the
+ alternative solutions doing little than just basic mappings, thus
+ not delivering a quality solution.
 
-We have built an innovative strategy allowing us to graphically build
-complex transliteration codes.
-This approach encapsulates developer's and linguist's workflows.
-It also allows the linguist to design and transform complex rules while
-allowing for re-usability and visualizations of the whole strategy.
+In order to improve this, if no good quality transliteration data
+ is available, there was *no alternative to write our own  transliteration code*.
 
-Our strategy is aggressively data-based:
-data is used not only to train neural networks but also,
-our transliteration code is generated with linguist's diagrams/graphs.
+This implies not only building a *highly complex solution*,
+modelling mappings,  solving multiple
+special cases and accounting for languages complexity, but also
+porting the solution into production, away many scientific and NLP tools
+necessary for an advanced design.
 
-The workflow has been successfully applied to Farsi, and we think it can-could be ported to and
-accelerate any other case where no large transliteration corpus is available.
+On the top of that, we have also experienced that *linguist and developer's
+had quite different focus and understanding*, which is not always easy to integrate,
+thus creating misunderstandings and efficiency losses.
+
+
+
+We decided to solve this challenge with an innovative strategy that
+ it is aggressively data based:
+
+*1.* The transliteration code is *designed by the linguist* via an graphical interface
+(and diagrams/graphs).
+
+*2.* transliteration code is then *built on transformers* (neural networks)
+trained as a translation pbm.
+
+
+This has been successfully applied to Farsi and we think
+*the workflow portable to any other languages* applying *1.* + *2.* where no large transliteration
+ corpus is available or just *2.*.
+
+Below, we present the approach in more details before reviewing our scores
+ and discussing it in the end of the document.
+
 
 ==== Transliteration for Farsi
 
@@ -33,7 +54,7 @@ For instance: "مزایایی" -> mazAyAyi.
 
 ==== Motivation behind the Approach
 
-Building our initial solution, we faced the following problems:
+Building our initial solution, we faced following problems:
 
  * Transliteration code had to implement highly
  https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/rules/rules.md[complex rules].
@@ -47,44 +68,47 @@ As a result, not only the code takes a considerable amount of time to be written
 
 For that reason, we have considered an alternative approach consisting in:
 
-  * Empowering language experts in the process of designing complex rules and logic
-  * Encapsulating both language expert and developer workflows
-  * Building a flexible solution that can be visualized and tweaked by rearranging
+  1. Empowering language experts in the process of designing complex rules and logic
+  2. Encapsulating both language expert and developer workflows
+  3. Building a flexible solution that can be visualized and tweaked by rearranging
    logic blocks
 
-Furthermore, as the production is done in javascript from Ruby code,
- essential libraries do not exist in Ruby and would need to be retro-engineered.
-Fortunately, neural networks can learn complex rules with access to
-large, high-quality datasets.
-We could, in part, rely there on some of the team's
- previous work https://github.com/secryst[secryst].
+Furthermore, as production is done in javascript from Ruby,
+ key libraries do not exist and would need to be fully retro-engineered.
+Fortunately, neural network can be used here to learn the necessary set of
+complex rules if generating large quality datasets with our code and datasets.
+For doing this, we could partially rely there on some of the team's
+ previous R&D work  https://github.com/secryst[secryst].
 
 
 == Strategy
 
 In a nutshell:
 
-1. *Transliteration design*
+1. *Transliteration design + code generation*
   * linguist designs code diagrams
   * nodes implemented by developer
-  * => code automatically generated/ "learnt" from above step
+  * code diagrams are exported (into CSV)
+  * => *transliteration code generated/"learnt"
+  from the diagram export*
 
 2. *Learning of transliteration with NNets*
-  * => transliteration dataset creation  with above code
-  * training of NNets
+  * transliteration dataset creation  with above code
+  * => *training of Transformers (Neural Network)*
 
 3. *Production/Transliteration in Ruby*
-  * torch NNets => export in ONNX
-  * code run in Ruby
+  * torch NNets exported in ONNX from python
+  * => *production code in ruby*
 
 
-==== Design of diagrams
+==== Design Transliteration logic with diagrams
 
-To transliterate a text, we need to recognize parts of speech for words. We used hazm library to do that. Since this part is not complicated and most of the logic lies in the word-level processing, flowcharts indicate how to transliterate single words with defined parts of speech.
+Our linguist worked out an extensive, original solution to
+combine various mappings, rules and transformations
+ (lemmatization, , stemming, PoS tagging, ...)
 
-Link to an example of a
- https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[diagram]
- representing a strategy designed by Mahdi.
+Better than many description, the full architecture is avaible online with a diagram:
+ https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[transliteration strategy].
 
 Experimenting with various approaches for this project, we decided to work
 with https://www.lucidchart.com[lucidchart].
@@ -93,26 +117,25 @@ However, any technology allowing to create workflows could be an
 
 ==== Building code from graphs
 
-Once exported into a CSV format, diagrams can be computerized and
- modeled as trees, associating rules to each node.
-
+Once exported into a csv format, the diagrams can be computerized and
+ modelled as trees, associating  rules to each node.
 
 Among the problems that had to be solved:
 
- 1. Modeling of logic components as Trees
- 2. Modeling of computation "states"
+ 1. Modelling of logic components as Trees
+ 2. Modelling of computation "states"
  3. Jumps from one logic flow to another
  4. Handling recursions
 
 We are using a functional approach with the
 data "states" getting transformed as they "flow"
-within the graphical, logical structure.
+within the graphical, logical structures.
 Details can be found in the original
  https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph/src[Julia code].
 
 ====  Nodes/Rules
 
-Nodes are associated with an action to be performed that is described in plain English.
+Nodes are associated to an action to be performed that is described in plain English.
 For instance, in the https://github.com/interscript/transliteration-learner-from-graphs/blob/main/learn-graph/resources/Model1.0.png[diagram] example:
 
 * node|> "output its transliteration!"
@@ -124,14 +147,16 @@ For instance, in the https://github.com/interscript/transliteration-learner-from
 Our code can be found with more explanations here:
 https://github.com/interscript/transliteration-learner-from-graphs/tree/main/learn-graph[learn-graph code].
 
-The current code has over 150 nodes and is a successful implementation of a
-complex solution!
+The current code is based on a design with over 150 nodes, dealing with main
+and  edge cases. This represents a very complex solution.
+
+
 
 ==== Assets used & created
 
 ===== Mappings
 
-As mentioned above, mappings are an essential part of the code.
+As mentioned above, mappings are an essential part of the workflow.
 They were transformed into tables in the code.
 Our rules combine NLP tags to break down words into
 smaller segments for which a transliteration is found in the database.
@@ -141,51 +166,53 @@ database used previously in a Farsi text to speech project called
 https://www.yasdl.com/tag/parskhan[Parskhan].
 It includes word roots and their frequency in conversations and affixes that
 can be attached to those roots.
-That database had to be edited on multiple occasions.
+That database had to be edited in multiple occasions.
 
 
 
-===== Data creation and generation
+===== Mappings, Data creation and generation
 
 Most of our datasets to
 apply our transliteration method on were publicly available from Farsi NLP
  communities and Github repositories.
 
-As a second step, transliteration data was generated by applying
-our diagrams-generated code onto the above datasets.
+As a second step, transliteration data was generated by applying to it
+our diagrams-generated code.
 
 We have also produced a small test dataset to benchmark various transliteration
-algorithms. We have tried to cover many cases our
-rules were designed to solve with this data.
+algorithms. With this data, we have tried to cover many  cases our
+rules were designed to solve.
 
 
-==== NLP in Farsi
+===== NLP in Farsi
 
-After some research, we decided to use https://github.com/sobhe/hazm[hazm library].
-It is available only in python, but we could use neural networks to bypass this issue
+After some research, we have selected the https://github.com/sobhe/hazm[hazm library].
+As already mentionned, it is available only in python but we could use neural networks to bypass this issue
  for production, as explained below.
 
 
 ==== Workflow Details for Linguist & Developer
 
 
-While the developer's job consists of the implementation of the above commands
-(searches in tables, comparing and concatenating strings, etc.),
+While the developer's job consists in the implementation of the above commands
+(searches in tables, comparing and concatenating strings, ...),
 the linguist can produce various nodes with commands
 and organize/re-organize them on the graphical editor.
 
-In more detail:
+In more details:
 
-1. starting from a diagram, the linguist can use a graphical editor to
-design various rules
+1. starting from a diagram the linguist can use a graphical editor to
+design various rules. In this process:
+  * new rules can be created
+  * existing rules and branches can be re-arranged
 
-2. If a new node has to be created, interact with a developer to implement it.
+2. If a new node has to be created interact with a developer to implement it.
 
-3. Learn to build code from graphs
+3. Learn build code from graphs
 
-4. run tests and benchmarks and review results and bugs
+4. run test and benchmarks and review results and bugs
 
-5. run single examples with an extensive debugging mode
+5.  run single examples with an extensive debugging mode
 
 6. back to 1.
 
@@ -209,10 +236,20 @@ The linguist can track the computation steps and help to identify bugs and inacc
 yoyo
 ----
 
+We also provide with a test to assess the strategy overall scores.
+The mismatches are outputted into a local directory for further analysis,
+ for instance with the above mode.
 
-== Learning to transliterate with transformers
+[source,sh]
+----
+> julia run.jl --path-model resources/Model5.dat --file-name test
+accuracy: 0.7019607843137254
+error summary in: tests/test_debug.csv
+----
 
-==== Transformers
+
+==== Learning to transliterate with transformers
+
 
 Transformers are a modern neural network architecture
 (https://arxiv.org/abs/1706.03762[attention is all you need]) used on transduction problems
@@ -226,14 +263,14 @@ Various libraries can be found online. We also experimented with multiple
 Several resources are available online to
  https://jalammar.github.io/illustrated-transformer/[explain transformers].
 
-// ==== Porting python transformers to Ruby
+// ==== Porting python transformers to ruby
 
 ==== Training and ONNX conversion
 
 As for other projects, after training, ONNX was used to port
  trained neural networks onto a universal format.
-This work (training+ ONNX export) can be found in
- https://github.com/interscript/transliteration-learner-from-graphs/tree/main/python-nnets-torch[python script].
+This work (training+ ONNX export) can be found in our
+ https://github.com/interscript/transliteration-learner-from-graphs/tree/main/python-nnets-torch[python scripts].
 
 ==== Implementation of greedy decoding
 
@@ -241,96 +278,115 @@ In production, we found that various components (neural networks) of the transfo
 had to be exported, such as generator, tokenizers, encoder, and decoder.
 
 They had then to be combined correctly in our native
-https://github.com/interscript/transliteration-learner-from-graphs/tree/main/lib[Ruby code].
+https://github.com/interscript/transliteration-learner-from-graphs/tree/main/lib[ruby code].
 
 == Benchmarking
 
 
 ==== Scores
 
-Our codes can be tested/benchmarked with a test dataset that we have designed.
-We are reporting ACCU as (word accuracy %):
+Our codes can be tested/benchmarked with a test data set that we have designed.
+We are reporting simple metrics *ACCU* as (word accuracy %):
 
 [cols="a,a",options="header"]
 |===
 | |ACCU
-
-|*CODE 0.9* |96%
-|*CODE D* |in Progress%
+|*CODE 0.9* |96%*
+|*CODE D* |70%
 
 |*CODE Transfo* |65%
-|*CODE Ruby* |60%
+|*CODE Ruby* |65%
+|*UROMAN* |5%
 
 |===
 
 * *CODE 0.9* is our first transliteration code.
-It has been optimized on our test set, and after quite some work,
+
+It has been optimized on our test set and after quite some work,
 could reach a very decent score.
-However, the code does not cover/fails with many sentences (50%).
+However, the code does not not cover/fails with many sentence (>50%),
+which is bad for training nnets because of the patterns loss.
 
-* *CODE D* is the code based on diagrams
-
-* *CODE Transfo* is the code trained with transformer
-
-* *CODE Ruby* is the final production code
-
-The discrepancy between the scores of *CODE 0.9* and *CODE Transfo*
-is caused, we think, by cases that *CODE 0.9* can not encode properly.
-Because the code outputs Farsi characters when not knowing how to handle a
-characters sequence, 1/10 words are transliterated with some Farsi in it.
-These had to be filtered out, and therefore,
- ~1/2 of the sentences could not be transliterated. We think that this impacted
- the transliteration dataset quality.
-
-This also motivated the rewriting of a new version of *CODE 0.9*, which, in
+Exactly this issue motivated the rewriting of a new
+version of *CODE 0.9*, which in
  turn, because of its difficulty/challenge, led to the alternative graphical
   approach featured in this blog.
 
+* *CODE D* is the code based on diagrams, it is our highlighted solution
 
+* *CODE Transfo* is the code trained with transformer
+
+* *CODE Ruby* is the final, production code
+
+* *UROMAN* is an alternative ressource we found https://github.com/isi-nlp/uroman[online]
+
+
+
+==== Notes on Performance
+
+Even though the code was built just overtaking an expert's diagram
+and despite the considerable amount of data passed around,
+we found *CODE D* ~2 times faster than the initial implementation.
+
+One reason is Julia, which can be several times faster than python, but probably
+also the bad implementation in *CODE 0.9*.
+
+We find this interesting to report as none of the many possible performance
+improvements were needed to transliterate
+~20 sentences / sec. on a small machine, which is
+fast enough to produce huge amount of transliteration data overnight.
 
 
 
 == Summary & Discussion
 
-For reasons explained in the benchmarks and the introduction,
-we found it impractical and sub-efficient to build a transliteration
+For reasons explained in benchmarks and in the introduction,
+we found impractical and sub-efficient to build a transliteration
 code from a
 set of mappings and written rules.
 
-Thinking that the integration between the software developer and
+Thinking that the integration between software developer and
 linguist was one of the challenges, with difficulties for the
 former to develop some sort of intuition about a foreign language
 and the latter to debug or
-implement tweaks or changes himself,
+implement himself tweaks or changes,
 we have approached the problem with a graphical
-editor allowing a linguist to create his logic designs.
+editor allowing a linguist to creates his own logic designs.
 
 Transliteration is put into production after training of neural networks,
-allowing to bypass the usage of NLP libraries not available in Ruby
+allowing to bypass the usage of NLP libraries not available in ruby
 but also for a compact solution.
+
 In the final step, we found a lightweight way to export torch transformers
-into native Ruby, without using more than very standard libraries (no torch-rb).
+into native ruby, without using more than very standard libraries (no torch-rb).
 
 We think that the approach or part of it can be ported to the transliteration of
 any other languages, also the ones where no transliteration data is available.
 
-After having demonstrated its application to complex software implementation,
+After having demonstrated its application to a complex software implementation,
 we also think that the graphical approach and allowing for a good encapsulation
 of technical and specialist workflow can be very useful in many situations.
 
-Several new technologies suggest many ideas to scale up the approach, for instance,
-https://copilot.github.com/[AI pair programmer].
+Several new technologies suggest many ideas to scale up the approach,
+for instance integrating other works https://github.com/seanpue/graphtransliterator[graph transliteration]
+or even in a near future technologies like https://copilot.github.com/[AI pair programmer].
 
 
-
-// == Next Steps
-
+==== Outlook
 
 
-// ==== Feedback from developer
+* We found that empowering a linguist to be able to
+design and visualise complex logics was by far more successful
+than a first attempt separating developer/linguist workflows.
+This possibly because the linguist could apply is understanding/intuition directly.
 
-//@Jair
 
-//==== Feedback from Language specialist
+* The solution (diagram to code) is very portable, visual, intuitive and
+creating less dependencies as software consists in simple code snippets/actions.
 
-//@Mahdi
+* Details could be improved for debugging, specifying types,
+ expected inputs/outputs and standards, for example at the editor level
+ (alternatives to lucidchart).
+
+Therefore, the Approach seems promising for other cases not necessarily confined
+to transliteration.
