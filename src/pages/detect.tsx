@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { primaryColor } from "../App";
 import { Link } from "@reach/router";
 
-const API_URI = "https://api.interscript.org";
+const API_URI = "https://api.interscript.org/prod";
 
 interface SystemRelevance {
     distance: number;
