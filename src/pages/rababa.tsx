@@ -100,12 +100,11 @@ export default () => {
             </div>
             <SampleAndResult>
                 <SampleTextArea
-                  value={"علامة التشكيل"}
+                  defaultValue={"علامة التشكيل"}
                   placeholder={"علامة التشكيل"}
                   style={{
                       boxShadow: source.trim() === "" ? `#${primaryColor} 0 0 0px .5rem` : undefined,
                   }}
-                  onChange={(evt) => setSource(evt.currentTarget.value)}
                 />
                 <ConvertButton onClick={transliterate} value="Add diacritics" disabled={loading || source.trim() === ""}>
                   Add diacritics
