@@ -8,7 +8,7 @@ const API_URI = "https://api.interscript.org/prod";
 // const API_URI = "https://staging-api.interscript.org/staging";
 
 export default () => {
-    const [source, setSource] = useState<string>("");
+    const [source, setSource] = useState<string>("علامة التشكيل");
     const [result, setResult] = useState<string>("");
     const [error, setError] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -105,6 +105,7 @@ export default () => {
                   style={{
                       boxShadow: source.trim() === "" ? `#${primaryColor} 0 0 0px .5rem` : undefined,
                   }}
+                  onChange={(evt) => setSource(evt.currentTarget.value)}
                 />
                 <ConvertButton onClick={transliterate} value="Add diacritics" disabled={loading || source.trim() === ""}>
                   Add diacritics
