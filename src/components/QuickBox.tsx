@@ -2,9 +2,9 @@ import axios, { AxiosResponse } from "axios";
 import Interscript from "interscript";
 import React, { useEffect, useRef, useState } from "react";
 import { InterscriptMetaDataMap } from "../meta";
-import { ScriptConversionSystem, systemToCode } from "../scs";
+import { ScriptConversionSystem, systemToCode, WritingSystemCode } from "../scs";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
-import { SystemSelector } from "./SystemSelector";
+import { SystemSelector2 } from "./SystemSelector2";
 import { primaryColor } from "../App";
 import styled from "styled-components";
 const { detectScript } = require("../lib.js");
@@ -27,6 +27,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     const [submitted, setSubmitted] = useState(false);
     const [reverse, setReverse] = useState<boolean>(false);
     const [diacriticize, setDiacriticize] = useState<boolean>(false);
+    const [sourceScript, setSourceScript] = useState<WritingSystemCode>(null);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -48,7 +49,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         let test: string | null;
         if (systemCode !== null) {
             test = getTestExample(systemCode);
-            if (test !== null) {
+            if (test !== null && sampleText === "") {
                 setSampleText(test);
             }
         }
@@ -105,7 +106,6 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                         : `${systemName}|var-ara-Arab-Arab-rababa-reverse`;
                 }
 
-                console.log(sampleText, " ", detectScript(sampleText));
                 if (api) {
                     respApi = await axios({
                         method: "POST",
@@ -131,6 +131,20 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         }
     }
 
+    const onChangeSource = (evt: React.ChangeEvent<HTMLTextAreaElement>): void => {
+        const newVal = evt.currentTarget.value;
+        setSampleText(newVal);
+        if (!!newVal) {
+            const sourceScript = detectScript(newVal);
+            if (!!sourceScript) {
+                setSourceScript(sourceScript);
+            }
+        } else {
+            console.log("source text empty");
+            setSourceScript(null);
+        }
+    };
+
     let placeholder: string;
     if (selectedSystem?.lang) {
         placeholder = `Enter something in ${
@@ -153,7 +167,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                                 ? `#${primaryColor} 0 0 0px .5rem`
                                 : undefined,
                     }}
-                    onChange={(evt) => setSampleText(evt.currentTarget.value)}
+                    onChange={onChangeSource}
                 />
                 <ConvertButton
                     onClick={handleConvert}
@@ -184,7 +198,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                     </small>
                 </p>
             ) : null}
-            <SystemSelector onSelect={selectSystem} systemCodes={maps} />
+            <SystemSelector2 onSelect={selectSystem} systemCodes={maps} sourceScript={sourceScript} />
         </>
     );
 };
