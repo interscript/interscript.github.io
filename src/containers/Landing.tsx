@@ -3,10 +3,18 @@ import { useRouteData } from "react-static";
 import { HeaderHashlinksMenu } from "../components/HeaderHashlinksMenu";
 import { Section, SectionGrid } from "../components/Section";
 import { Statistics } from "../components/Statistics";
+import QuickBox from "components/QuickBox";
+import { InterscriptMetaDataMap } from "../meta";
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
-    const { mapsInfo }: { mapsInfo: any } = useRouteData();
+    const {
+        mapsInfo,
+        metaDataMap,
+    }: {
+        mapsInfo: any;
+        metaDataMap: InterscriptMetaDataMap;
+    } = useRouteData();
 
     useEffect(() => {
         if (document.getElementById(window.location.hash.replace("#", ""))) {
@@ -16,6 +24,9 @@ export default () => {
 
     return (
         <>
+            <SectionGrid>
+                <QuickBox maps={mapsInfo.data} metaData={metaDataMap} />
+            </SectionGrid>
             <SectionGrid>
                 <Section>
                     <div id="introduction">
