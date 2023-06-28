@@ -32,20 +32,58 @@ export const SystemSelector2: React.FC<{
             ),
         [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]
     );
-    const langCodes = getSortedUniqueValues(supportedSystems, "lang");
-    const sourceSystemCodes = getSortedUniqueValues(supportedSystems, "source");
-    const targetSystemCodes = getSortedUniqueValues(supportedSystems, "target");
-    const authorityCodes = getSortedUniqueValues(supportedSystems, "authority");
-    const systemIDs = getSortedUniqueValues(
-        supportedSystems.filter(
-            (ss) => getSortedUniqueValues(availableSystems, "authority").indexOf(ss.authority) >= 0
-        ),
-        "id"
+
+    const sourceSystemCodes = getSortedUniqueValues(availableSystems, "source");
+    const langCodes = useMemo(
+        () =>
+            getSortedUniqueValues(
+                supportedSystems.filter((system) => system.source === systemSpec.source),
+                "lang"
+            ),
+        [systemSpec.source, JSON.stringify(supportedSystems)]
+    );
+    const targetSystemCodes = useMemo(
+        () =>
+            getSortedUniqueValues(
+                supportedSystems.filter(
+                    (system) => system.source === systemSpec.source && system.lang === systemSpec.lang
+                ),
+                "target"
+            ),
+        [systemSpec.source, systemSpec.lang, JSON.stringify(supportedSystems)]
+    );
+    const authorityCodes = useMemo(
+        () =>
+            getSortedUniqueValues(
+                supportedSystems.filter(
+                    (system) =>
+                        system.source === systemSpec.source &&
+                        system.lang === systemSpec.lang &&
+                        system.target === systemSpec.target
+                ),
+                "authority"
+            ),
+        [systemSpec.source, systemSpec.lang, systemSpec.target, JSON.stringify(supportedSystems)]
+    );
+
+    const systemIDs = useMemo(
+        () =>
+            getSortedUniqueValues(
+                supportedSystems.filter(
+                    (system) =>
+                        system.source === systemSpec.source &&
+                        system.lang === systemSpec.lang &&
+                        system.target === systemSpec.target &&
+                        system.authority === systemSpec.authority
+                ),
+                "id"
+            ),
+        [systemSpec.source, systemSpec.lang, systemSpec.target, systemSpec.authority, JSON.stringify(supportedSystems)]
     );
 
     useEffect(() => {
         if (supportedSystems.length > 0) {
-            autoSelectAll(availableSystems);
+            autoSelectAll();
         }
     }, [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]);
 
@@ -63,30 +101,25 @@ export const SystemSelector2: React.FC<{
         console.log(sourceScript);
     }, [sourceScript]);
 
-    function autoSelectAll(availableSystems: ScriptConversionSystem[]) {
-        if (getSortedUniqueValues(availableSystems, "target").length === 1) {
+    function autoSelectAll() {
+        if (targetSystemCodes.length > 0 && !systemSpec.target) {
             updateSystemSpec((spec) => ({
                 ...spec,
-                target: availableSystems[0].target,
+                target: targetSystemCodes[0],
             }));
         }
-        if (getSortedUniqueValues(availableSystems, "lang").length === 1) {
-            updateSystemSpec((spec) => ({ ...spec, lang: availableSystems[0].lang }));
+        if (langCodes.length > 0 && !systemSpec.lang) {
+            updateSystemSpec((spec) => ({ ...spec, lang: langCodes[0] }));
         }
-        if (getSortedUniqueValues(availableSystems, "source").length === 1) {
+
+        if (authorityCodes.length > 0 && !systemSpec.authority) {
             updateSystemSpec((spec) => ({
                 ...spec,
-                source: availableSystems[0].source,
+                authority: authorityCodes[0],
             }));
         }
-        if (getSortedUniqueValues(availableSystems, "authority").length === 1) {
-            updateSystemSpec((spec) => ({
-                ...spec,
-                authority: availableSystems[0].authority,
-            }));
-        }
-        if (systemSpec.authority !== undefined && getSortedUniqueValues(availableSystems, "id").length === 1) {
-            updateSystemSpec((spec) => ({ ...spec, id: availableSystems[0].id }));
+        if (systemSpec.authority !== undefined && systemIDs.length > 0 && !systemSpec.id) {
+            updateSystemSpec((spec) => ({ ...spec, id: systemIDs[0] }));
         }
     }
 
@@ -98,14 +131,11 @@ export const SystemSelector2: React.FC<{
                         <Choice
                             name={`source-${sourceSystemCode}`}
                             key={sourceSystemCode}
-                            available={availableSystems.filter((s) => s.source === sourceSystemCode).length > 0}
                             selected={systemSpec.source === sourceSystemCode}
-                            onForce={() => updateSystemSpec({ source: sourceSystemCode })}
                             onSelect={() =>
-                                updateSystemSpec((spec) => ({
-                                    ...spec,
+                                updateSystemSpec({
                                     source: sourceSystemCode,
-                                }))
+                                })
                             }
                         >
                             <WritingSystem code={sourceSystemCode} />
@@ -120,10 +150,16 @@ export const SystemSelector2: React.FC<{
                         <Choice
                             name={`lang-${langCode}`}
                             key={langCode}
-                            available={availableSystems.filter((s) => s.lang === langCode).length > 0}
                             selected={systemSpec.lang === langCode}
-                            onForce={() => updateSystemSpec({ lang: langCode })}
-                            onSelect={() => updateSystemSpec((spec) => ({ ...spec, lang: langCode }))}
+                            onSelect={() =>
+                                updateSystemSpec((spec) => ({
+                                    ...spec,
+                                    lang: langCode,
+                                    target: null,
+                                    authority: null,
+                                    id: null,
+                                }))
+                            }
                         >
                             <Lang code={langCode} />
                         </Choice>
@@ -137,13 +173,13 @@ export const SystemSelector2: React.FC<{
                         <Choice
                             name={`target-${targetSystemCode}`}
                             key={targetSystemCode}
-                            available={availableSystems.filter((s) => s.target === targetSystemCode).length > 0}
                             selected={systemSpec.target === targetSystemCode}
-                            onForce={() => updateSystemSpec({ target: targetSystemCode })}
                             onSelect={() =>
                                 updateSystemSpec((spec) => ({
                                     ...spec,
                                     target: targetSystemCode,
+                                    authority: null,
+                                    id: null,
                                 }))
                             }
                         >
@@ -162,13 +198,12 @@ export const SystemSelector2: React.FC<{
                         <Choice
                             name={`authority-${authorityCode}`}
                             key={authorityCode}
-                            available={availableSystems.filter((s) => s.authority === authorityCode).length > 0}
                             selected={systemSpec.authority === authorityCode}
-                            onForce={() => updateSystemSpec({ authority: authorityCode })}
                             onSelect={() =>
                                 updateSystemSpec((spec) => ({
                                     ...spec,
                                     authority: authorityCode,
+                                    id: null,
                                 }))
                             }
                         >
@@ -190,9 +225,7 @@ export const SystemSelector2: React.FC<{
                         <Choice
                             name={`id-${id}`}
                             key={id}
-                            available={availableSystems.filter((s) => s.id === id).length > 0}
                             selected={systemSpec.id === id}
-                            onForce={() => updateSystemSpec({ authority: systemSpec.authority, id })}
                             onSelect={() => updateSystemSpec((spec) => ({ ...spec, id }))}
                         >
                             {id}
@@ -206,21 +239,16 @@ export const SystemSelector2: React.FC<{
 
 const Choice: React.FC<{
     name: string;
-    available: boolean;
     selected: boolean;
     availableStyle?: React.CSSProperties;
     onSelect: () => void;
-    onForce?: () => void;
-}> = function ({ available, selected, name, onSelect, onForce, availableStyle, children }) {
-    const action = available ? onSelect : onForce;
+}> = function ({ selected, name, onSelect, availableStyle, children }) {
     const elID = `system-property-${name}`;
 
     return (
         <SystemPropertyChoice
             style={{
                 fontWeight: selected ? "bold" : "normal",
-                opacity: available ? 1 : 0.3,
-                cursor: !onForce && !available ? "not-allowed" : "unset",
                 ...(availableStyle || {}),
             }}
         >
@@ -229,9 +257,8 @@ const Choice: React.FC<{
                     type="radio"
                     name={name}
                     id={elID}
-                    disabled={!onForce && !available}
                     checked={selected}
-                    onChange={(evt) => (evt.currentTarget.checked ? action() : void 0)}
+                    onChange={(evt) => (evt.currentTarget.checked ? onSelect() : void 0)}
                 />
                 {children}
             </label>
