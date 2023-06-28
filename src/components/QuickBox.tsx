@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import Interscript from "interscript";
 import React, { useEffect, useRef, useState } from "react";
 import { InterscriptMetaDataMap } from "../meta";
-import { ScriptConversionSystem, systemToCode, WritingSystemCode } from "../scs";
+import { ScriptConversionSystem, systemToCode } from "../scs";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import { SystemSelector2 } from "./SystemSelector2";
 import { primaryColor } from "../App";
@@ -14,13 +14,12 @@ const { detectScriptObject } = require("../lib.js");
 const API_ENDPOINT = "https://api.interscript.org/prod";
 const ARABIC_LANG = "ara";
 
-const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
+const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> = function ({ maps}) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
     const [error, setError] = useState<string | null>(null);
     const [submitted, setSubmitted] = useState(false);
-    const [reverse, setReverse] = useState<boolean>(false);
     const [diacriticize, setDiacriticize] = useState<boolean>(false);
     const [autoDetectedScriptInfo, setAutoDetectedScriptInfo] = useState<ScriptDetectionData | null>(null);
 
@@ -35,20 +34,6 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
     }, [systemCode, sampleText]);
 
     useEffect(() => {
-        if (systemCode) {
-            sampleInputRef.current?.focus();
-        }
-
-        let test: string | null;
-        if (systemCode !== null) {
-            test = getTestExample(systemCode);
-            if (test !== null && sampleText === "") {
-                setSampleText(test);
-            }
-        }
-    }, [systemCode, reverse]);
-
-    useEffect(() => {
         (async () => {
             try {
                 // await Interscript.load_map_list();
@@ -58,27 +43,6 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
             }
         })();
     }, []);
-
-    function getTestExample(system: string): string | null {
-        return metaData[system].test && metaData[system].test[+reverse];
-    }
-
-    function reverseName(name: string): string {
-        let newname: string[] = (name || "noname").split("-");
-        if (newname.length >= 4) {
-            const tmp: string = newname[3];
-            newname[3] = newname[2];
-            newname[2] = tmp;
-        }
-        let newnameStr: string = newname.join("-");
-        if (newnameStr === name) {
-            newnameStr = newnameStr.replace("-reverse", "");
-        }
-        if (newnameStr === name) {
-            newnameStr = newnameStr + "-reverse";
-        }
-        return newnameStr;
-    }
 
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
@@ -90,12 +54,9 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
             let resp: string;
             const apiCall = diacriticize;
             try {
-                let systemName = reverse ? reverseName(systemCode) : systemCode;
+                let systemName = systemCode;
                 if (diacriticize) {
-                    systemName = !reverse
-                        ? `var-ara-Arab-Arab-rababa|${systemName}`
-                        : `${systemName}|var-ara-Arab-Arab-rababa-reverse`;
-
+                    systemName = `var-ara-Arab-Arab-rababa|${systemName}`;
                     respApi = await axios({
                         method: "POST",
                         url: API_ENDPOINT,
@@ -172,9 +133,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
                     value={result === undefined ? "Loading…" : result || error || ""}
                 />
             </SampleAndResult>
-            <p style={{ height: "1rem" }}></p>
-            <input type="checkbox" checked={reverse} onChange={(e) => setReverse(e.target.checked)} />
-            Reverse
+            <p style={{ height: "1rem" }} />
             {selectedSystem?.lang === ARABIC_LANG && (
                 <div>
                     <input type="checkbox" checked={diacriticize} onChange={(e) => setDiacriticize(e.target.checked)} />
