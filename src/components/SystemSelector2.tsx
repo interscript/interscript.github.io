@@ -4,6 +4,7 @@ import iso15924_data from "@riboseinc/iso-15924/index-by-code.json";
 import { primaryColor } from "../App";
 import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from "../scs";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+const { getTargetScriptByWeight } = require("../priority");
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
     const arr: T[K][] = Array.from(new Set(array.map((i) => i[key]))).filter((v) => v !== undefined);
@@ -107,12 +108,8 @@ export const SystemSelector2: React.FC<{
     }, [JSON.stringify(sourceSystemCodes)]);
 
     function autoSelectAll() {
-        if (targetSystemCodes.length > 0 && !systemSpec.target) {
-            updateSystemSpec((spec) => ({
-                ...spec,
-                target: targetSystemCodes[0],
-            }));
-        }
+        autoSelectForTargetScript();
+
         if (langCodes.length > 0 && !systemSpec.lang) {
             updateSystemSpec((spec) => ({ ...spec, lang: langCodes[0] }));
         }
@@ -125,6 +122,15 @@ export const SystemSelector2: React.FC<{
         }
         if (systemSpec.authority !== undefined && systemIDs.length > 0 && !systemSpec.id) {
             updateSystemSpec((spec) => ({ ...spec, id: systemIDs[0] }));
+        }
+    }
+
+    function autoSelectForTargetScript() {
+        if (targetSystemCodes.length > 0 && !systemSpec.target) {
+            updateSystemSpec((spec) => ({
+                ...spec,
+                target: getTargetScriptByWeight(targetSystemCodes),
+            }));
         }
     }
 
