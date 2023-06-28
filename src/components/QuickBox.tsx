@@ -9,17 +9,10 @@ import { primaryColor } from "../App";
 import styled from "styled-components";
 const { detectScript } = require("../lib.js");
 
-const API_ENDPOINT = "https://api.interscript.org/prod"; //for issue https://github.com/interscript/infrastructure/issues/17
-// const API_ENDPOINT = "https://staging-api.interscript.org/staging";
-
-type DemoType = "RUBY" | "JAVASCRIPT";
+const API_ENDPOINT = "https://api.interscript.org/prod";
 const ARABIC_LANG = "ara";
 
-const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; demoType?: DemoType }> = function ({
-    maps,
-    metaData,
-    demoType = "JAVASCRIPT",
-}) {
+const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> = function ({ maps, metaData }) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
@@ -28,17 +21,16 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
     const [reverse, setReverse] = useState<boolean>(false);
     const [diacriticize, setDiacriticize] = useState<boolean>(false);
     const [sourceScript, setSourceScript] = useState<WritingSystemCode>(null);
+    const [diacriticeNeed, setDiacriticeNeed] = useState<boolean>(false);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
     const systemCode: string | null = selectedSystem !== null ? systemToCode(selectedSystem) : null;
-    const api: boolean = demoType === "RUBY";
-
-    console.log(demoType);
 
     useEffect(() => {
         setError(null);
         setSubmitted(false);
+        setDiacriticize(diacriticeNeed);
     }, [systemCode, sampleText]);
 
     useEffect(() => {
@@ -87,9 +79,6 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         return newnameStr;
     }
 
-    const isArabic = selectedSystem?.lang === ARABIC_LANG;
-    const diacriticizable = isArabic && api;
-
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
             setError(null);
@@ -98,15 +87,14 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
 
             let respApi: AxiosResponse<any>;
             let resp: string;
+            const apiCall = diacriticize;
             try {
                 let systemName = reverse ? reverseName(systemCode) : systemCode;
-                if (diacriticize && diacriticizable) {
+                if (diacriticize) {
                     systemName = !reverse
                         ? `var-ara-Arab-Arab-rababa|${systemName}`
                         : `${systemName}|var-ara-Arab-Arab-rababa-reverse`;
-                }
 
-                if (api) {
                     respApi = await axios({
                         method: "POST",
                         url: API_ENDPOINT,
@@ -126,7 +114,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                 setError("Sorry, an error occurred :(");
             }
             setResult(
-                (api ? respApi?.data?.data?.transliterate : resp) || "No result returned, please check your sample!"
+                (apiCall ? respApi?.data?.data?.transliterate : resp) || "No result returned, please check your sample!"
             );
         }
     }
@@ -135,10 +123,11 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
         const newVal = evt.currentTarget.value;
         setSampleText(newVal);
         if (!!newVal) {
-            const sourceScript = detectScript(newVal);
-            if (!!sourceScript) {
-                setSourceScript(sourceScript);
-            }
+            const result = detectScript(newVal);
+            const [sourceScript, diac] = result.split("_");
+            console.log("==============Script Auto Detection==============\n\t", sourceScript);
+            setSourceScript(sourceScript);
+            setDiacriticeNeed(diac !== undefined);
         } else {
             console.log("source text empty");
             setSourceScript(null);
@@ -184,7 +173,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
             <p style={{ height: "1rem" }}></p>
             <input type="checkbox" checked={reverse} onChange={(e) => setReverse(e.target.checked)} />
             Reverse
-            {diacriticizable && (
+            {selectedSystem?.lang === ARABIC_LANG && (
                 <div>
                     <input type="checkbox" checked={diacriticize} onChange={(e) => setDiacriticize(e.target.checked)} />
                     Diacriticize Arabic
