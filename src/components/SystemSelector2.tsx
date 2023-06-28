@@ -33,13 +33,9 @@ export const SystemSelector2: React.FC<{
             ),
         [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]
     );
-    const sourceSystemCodes = useMemo(
-        () =>
-            !!availableSourceScripts
-                ? availableSourceScripts.sort()
-                : getSortedUniqueValues(availableSystems, "source"),
-        [JSON.stringify(availableSourceScripts)]
-    );
+    const sourceSystemCodes = useMemo(() => availableSourceScripts?.sort() || [], [
+        JSON.stringify(availableSourceScripts),
+    ]);
 
     const langCodes = useMemo(
         () =>
@@ -105,6 +101,8 @@ export const SystemSelector2: React.FC<{
     useEffect(() => {
         if (sourceSystemCodes?.length > 0) {
             updateSystemSpec({ source: sourceSystemCodes[0] });
+        } else {
+            updateSystemSpec({});
         }
     }, [JSON.stringify(sourceSystemCodes)]);
 
