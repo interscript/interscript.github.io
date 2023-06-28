@@ -7,7 +7,9 @@ import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 import { SystemSelector2 } from "./SystemSelector2";
 import { primaryColor } from "../App";
 import styled from "styled-components";
-const { detectScript } = require("../lib.js");
+import { ScriptDetectionData } from "../auto_detect";
+
+const { detectScriptObject } = require("../lib.js");
 
 const API_ENDPOINT = "https://api.interscript.org/prod";
 const ARABIC_LANG = "ara";
@@ -20,8 +22,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
     const [submitted, setSubmitted] = useState(false);
     const [reverse, setReverse] = useState<boolean>(false);
     const [diacriticize, setDiacriticize] = useState<boolean>(false);
-    const [sourceScript, setSourceScript] = useState<WritingSystemCode>(null);
-    const [diacriticeNeed, setDiacriticeNeed] = useState<boolean>(false);
+    const [autoDetectedScriptInfo, setAutoDetectedScriptInfo] = useState<ScriptDetectionData | null>(null);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -30,7 +31,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
     useEffect(() => {
         setError(null);
         setSubmitted(false);
-        setDiacriticize(diacriticeNeed);
+        setDiacriticize(autoDetectedScriptInfo?.diacritization_needed);
     }, [systemCode, sampleText]);
 
     useEffect(() => {
@@ -119,19 +120,20 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
         }
     }
 
+    function autoDetectScripts(inputStr: string) {
+        if (!!inputStr) {
+            const result = detectScriptObject(inputStr);
+            setAutoDetectedScriptInfo(result);
+            console.log("==============Script Auto Detection==============\n\t", result);
+        } else {
+            setAutoDetectedScriptInfo(null);
+        }
+    }
+
     const onChangeSource = (evt: React.ChangeEvent<HTMLTextAreaElement>): void => {
         const newVal = evt.currentTarget.value;
         setSampleText(newVal);
-        if (!!newVal) {
-            const result = detectScript(newVal);
-            const [sourceScript, diac] = result.split("_");
-            console.log("==============Script Auto Detection==============\n\t", sourceScript);
-            setSourceScript(sourceScript);
-            setDiacriticeNeed(diac !== undefined);
-        } else {
-            console.log("source text empty");
-            setSourceScript(null);
-        }
+        autoDetectScripts(newVal);
     };
 
     let placeholder: string;
@@ -187,7 +189,11 @@ const QuickBox: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap }> =
                     </small>
                 </p>
             ) : null}
-            <SystemSelector2 onSelect={selectSystem} systemCodes={maps} sourceScript={sourceScript} />
+            <SystemSelector2
+                onSelect={selectSystem}
+                systemCodes={maps}
+                availableSourceScripts={autoDetectedScriptInfo?.scripts}
+            />
         </>
     );
 };

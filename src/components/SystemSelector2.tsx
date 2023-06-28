@@ -15,7 +15,8 @@ export const SystemSelector2: React.FC<{
     onSelect: (system: ScriptConversionSystem | null) => void;
     systemCodes: string[];
     sourceScript?: WritingSystemCode;
-}> = function ({ onSelect, systemCodes, sourceScript }) {
+    availableSourceScripts?: Array<WritingSystemCode>;
+}> = function ({ onSelect, systemCodes, availableSourceScripts }) {
     // Selected transliteration options
     const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({});
 
@@ -32,8 +33,14 @@ export const SystemSelector2: React.FC<{
             ),
         [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]
     );
+    const sourceSystemCodes = useMemo(
+        () =>
+            !!availableSourceScripts
+                ? availableSourceScripts.sort()
+                : getSortedUniqueValues(availableSystems, "source"),
+        [JSON.stringify(availableSourceScripts)]
+    );
 
-    const sourceSystemCodes = getSortedUniqueValues(availableSystems, "source");
     const langCodes = useMemo(
         () =>
             getSortedUniqueValues(
@@ -96,10 +103,10 @@ export const SystemSelector2: React.FC<{
     }, [JSON.stringify(availableSystems)]);
 
     useEffect(() => {
-        updateSystemSpec({ source: sourceScript });
-        console.log("update system spec");
-        console.log(sourceScript);
-    }, [sourceScript]);
+        if (sourceSystemCodes?.length > 0) {
+            updateSystemSpec({ source: sourceSystemCodes[0] });
+        }
+    }, [JSON.stringify(sourceSystemCodes)]);
 
     function autoSelectAll() {
         if (targetSystemCodes.length > 0 && !systemSpec.target) {
