@@ -82,6 +82,35 @@ function detectScript(str) {
     return objMax(results);
 }
 
+function detectScriptObject(str) {
+    var result = detectScript(str);
+    var obj = { scripts: [result], diacritization_needed: false };
+    if (result == null) obj.scripts = [];
+
+    switch (result) {
+        case "Kore":
+            obj.scripts = ["Kore", "Hang"];
+            break;
+        case "Hrkt":
+            obj.scripts = ["Hrkt", "Kana"];
+            break;
+        case "Hani":
+            obj.scripts = ["Hans", "Hani", "Kore"];
+            break;
+        case "Hebr_UNDIACTR":
+            obj.scripts = ["Hebr"];
+            obj.diacritization_needed = true;
+            break;
+        case "Arab_UNDIACTR":
+            obj.scripts = ["Arab"];
+            obj.diacritization_needed = true;
+            break;
+    }
+
+    return obj;
+}
+
 module.exports = {
     detectScript,
+    detectScriptObject,
 };
