@@ -26,11 +26,11 @@ export const SystemSelector2: React.FC<{
         () =>
             supportedSystems.filter(
                 (ss) =>
-                    (systemSpec.lang !== undefined ? ss.lang === systemSpec.lang : true) &&
-                    (systemSpec.source !== undefined ? ss.source === systemSpec.source : true) &&
-                    (systemSpec.target !== undefined ? ss.target === systemSpec.target : true) &&
-                    (systemSpec.authority !== undefined ? ss.authority === systemSpec.authority : true) &&
-                    (systemSpec.id !== undefined ? ss.id === systemSpec.id : true)
+                    (!!systemSpec.lang ? ss.lang === systemSpec.lang : true) &&
+                    (!!systemSpec.source ? ss.source === systemSpec.source : true) &&
+                    (!!systemSpec.target ? ss.target === systemSpec.target : true) &&
+                    (!!systemSpec.authority ? ss.authority === systemSpec.authority : true) &&
+                    (!!systemSpec.id ? ss.id === systemSpec.id : true)
             ),
         [JSON.stringify(systemSpec), JSON.stringify(supportedSystems)]
     );
