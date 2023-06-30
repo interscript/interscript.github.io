@@ -88,6 +88,11 @@ export function detectLanguage(str, langList) {
         only = only.map((i) => i.replace("zho", "cmn"));
     }
 
+    // improvement for arabic
+    if (only.includes("ara")) {
+        only = only.map((i) => i.replace("ara", "arb"));
+    }
+
     const result = franc(str, { minLength: 3, only });
     if (result === "und") return undefined;
 
