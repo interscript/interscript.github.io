@@ -4,7 +4,9 @@ import iso15924_data from "@riboseinc/iso-15924/index-by-code.json";
 import { primaryColor } from "../App";
 import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from "../scs";
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
+
 const { getTargetScriptByWeight, getLatestSystem } = require("../priority");
+const { detectLanguage, detectAllLanguage } = require("../detect_lang.js");
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
     const arr: T[K][] = Array.from(new Set(array.map((i) => i[key]))).filter((v) => v !== undefined);
@@ -17,7 +19,8 @@ export const SystemSelector2: React.FC<{
     systemCodes: string[];
     sourceScript?: WritingSystemCode;
     availableSourceScripts?: Array<WritingSystemCode>;
-}> = function ({ onSelect, systemCodes, availableSourceScripts }) {
+    inputStr?: string;
+}> = function ({ onSelect, systemCodes, availableSourceScripts, inputStr }) {
     // Selected transliteration options
     const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({});
 
@@ -107,44 +110,56 @@ export const SystemSelector2: React.FC<{
         }
     }, [JSON.stringify(sourceSystemCodes)]);
 
+    useEffect(() => {
+        if (langCodes.length > 0) {
+            updateSystemSpec((spec) => ({ source: spec.source, lang: detectLang() || langCodes[0] }));
+        }
+    }, [inputStr]);
+
     function autoSelectAll() {
-        autoSelectLanguage();
-        autoSelectTargetScript();
-        autoSelectAuthority();
-        autoSelectId();
+        if (langCodes.length > 0 && !systemSpec.lang) autoSelectLanguage();
+        if (targetSystemCodes.length > 0 && !systemSpec.target) autoSelectTargetScript();
+        if (authorityCodes.length > 0 && !systemSpec.authority) autoSelectAuthority();
+        if (systemSpec.authority !== undefined && systemIDs.length > 0 && !systemSpec.id) {
+            autoSelectId();
+        }
     }
 
     function autoSelectLanguage() {
-        if (langCodes.length > 0 && !systemSpec.lang) {
-            updateSystemSpec((spec) => ({ ...spec, lang: langCodes[0] }));
+        updateSystemSpec((spec) => ({ ...spec, lang: detectLang() || langCodes[0] }));
+    }
+
+    function detectLang(): string {
+        let result: string = undefined;
+        if (!!inputStr && inputStr.trim() !== "") {
+            result = detectLanguage(inputStr, langCodes);
+            console.log("=====AUTO DETECTED LANG: ", langCodes, result);
+            if (!result) {
+                console.log("==RETRY==", detectAllLanguage(inputStr));
+            }
         }
+        return result;
     }
 
     function autoSelectTargetScript() {
-        if (targetSystemCodes.length > 0 && !systemSpec.target) {
-            updateSystemSpec((spec) => ({
-                ...spec,
-                target: getTargetScriptByWeight(targetSystemCodes),
-            }));
-        }
+        updateSystemSpec((spec) => ({
+            ...spec,
+            target: getTargetScriptByWeight(targetSystemCodes),
+        }));
     }
 
     function autoSelectAuthority() {
-        if (authorityCodes.length > 0 && !systemSpec.authority) {
-            updateSystemSpec((spec) => ({
-                ...spec,
-                authority: getLatestSystem(availableSystems)?.authority,
-            }));
-        }
+        updateSystemSpec((spec) => ({
+            ...spec,
+            authority: getLatestSystem(availableSystems)?.authority,
+        }));
     }
 
     function autoSelectId() {
-        if (systemSpec.authority !== undefined && systemIDs.length > 0 && !systemSpec.id) {
-            updateSystemSpec((spec) => ({
-                ...spec,
-                id: getLatestSystem(availableSystems)?.id,
-            }));
-        }
+        updateSystemSpec((spec) => ({
+            ...spec,
+            id: getLatestSystem(availableSystems)?.id,
+        }));
     }
 
     return (

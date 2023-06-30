@@ -9,12 +9,12 @@ import { primaryColor } from "../App";
 import styled from "styled-components";
 import { ScriptDetectionData } from "../auto_detect";
 
-const { detectScriptObject } = require("../lib.js");
+const { detectScriptObject } = require("../detect_script.js");
 
 const API_ENDPOINT = "https://api.interscript.org/prod";
 const ARABIC_LANG = "ara";
 
-const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> = function ({ maps}) {
+const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> = function ({ maps }) {
     const [sampleText, setSampleText] = useState<string>("");
     const [selectedSystem, selectSystem] = useState<ScriptConversionSystem | null>(null);
     const [result, setResult] = useState<string | null | undefined>(null);
@@ -32,17 +32,6 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
         setSubmitted(false);
         setDiacriticize(autoDetectedScriptInfo?.diacritization_needed);
     }, [systemCode, sampleText]);
-
-    useEffect(() => {
-        (async () => {
-            try {
-                // await Interscript.load_map_list();
-                // setSystemCodes(maps);
-            } catch (e) {
-                console.log(e);
-            }
-        })();
-    }, []);
 
     async function handleConvert() {
         if (systemCode !== null && sampleText.trim() !== "") {
@@ -82,10 +71,9 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
     }
 
     function autoDetectScripts(inputStr: string) {
-        if (!!inputStr) {
+        if (!!inputStr && inputStr.trim() !== "") {
             const result = detectScriptObject(inputStr);
             setAutoDetectedScriptInfo(result);
-            console.log("==============Script Auto Detection==============\n\t", result);
         } else {
             setAutoDetectedScriptInfo(null);
         }
@@ -152,6 +140,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
                 onSelect={selectSystem}
                 systemCodes={maps}
                 availableSourceScripts={autoDetectedScriptInfo?.scripts}
+                inputStr={sampleText}
             />
         </>
     );
