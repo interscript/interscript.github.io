@@ -6,7 +6,7 @@ import { systemFromCode, ScriptConversionSystem, WritingSystemCode } from "../sc
 import { getLanguageTitleFrom6392or3 } from "components/isoLang";
 
 const { getTargetScriptByWeight, getLatestSystem } = require("../priority");
-const { detectLanguage, detectAllLanguage } = require("../detect_lang.js");
+const { detectLanguage } = require("../detect_lang.js");
 
 function getSortedUniqueValues<T, K extends keyof T>(array: T[], key: K): T[K][] {
     const arr: T[K][] = Array.from(new Set(array.map((i) => i[key]))).filter((v) => v !== undefined);
@@ -114,7 +114,7 @@ export const SystemSelector2: React.FC<{
         if (langCodes.length > 0) {
             updateSystemSpec((spec) => ({ source: spec.source, lang: detectLang() || langCodes[0] }));
         }
-    }, [inputStr]);
+    }, [systemSpec.source, inputStr]);
 
     function autoSelectAll() {
         if (langCodes.length > 0 && !systemSpec.lang) autoSelectLanguage();
@@ -132,11 +132,11 @@ export const SystemSelector2: React.FC<{
     function detectLang(): string {
         let result: string = undefined;
         if (!!inputStr && inputStr.trim() !== "") {
-            result = detectLanguage(inputStr, langCodes);
-            console.log("=====AUTO DETECTED LANG: ", langCodes, result);
-            if (!result) {
-                console.log("==RETRY==", detectAllLanguage(inputStr));
-            }
+            const localLangCodes = getSortedUniqueValues(
+                supportedSystems.filter((system) => system.source === systemSpec.source),
+                "lang"
+            );
+            result = detectLanguage(inputStr, localLangCodes);
         }
         return result;
     }
