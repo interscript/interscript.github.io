@@ -24,7 +24,7 @@ jobs:
       - name: Install NPM dependencies
         run: |
           yarn install
-          yarn global add asciidoctor
+          yarn global add asciidoctor@^2.2.4
       - name: Build site
         run: |
           yarn adoc make

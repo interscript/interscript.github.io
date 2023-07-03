@@ -3,7 +3,7 @@ import iso15924_data from "@riboseinc/iso-15924/index-by-code.json";
 
 export type WritingSystemCode = keyof typeof iso15924_data;
 
-type LangCode = typeof iso639_2_data[number]["iso6392T"] & typeof iso639_2_data[number]["iso6392T"];
+type LangCode = typeof iso639_2_data[number]["iso6392B"] & typeof iso639_2_data[number]["iso6392T"];
 
 export interface ScriptConversionSystem {
     // ISO 639-2 3-letter code

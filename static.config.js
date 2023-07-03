@@ -184,6 +184,7 @@ export default {
                         name: repoName,
                     },
                     mapsInfo,
+                    metaDataMap,
                 }),
             },
             {
