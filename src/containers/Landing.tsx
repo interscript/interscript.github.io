@@ -25,6 +25,10 @@ export default () => {
     return (
         <>
             <SectionGrid>
+                <p dir="auto">
+                    Input text in the provided field for automatic detection of the most suitable transliteration map.
+                    Click "Convert" to initiate the transliteration process.
+                </p>
                 <QuickBox maps={mapsInfo.data} metaData={metaDataMap} />
             </SectionGrid>
             <SectionGrid>
