@@ -14,7 +14,7 @@
     "format": "prettier -w \"src/**/*.{js,tsx,ts}\" \"*.{js,ts}\"\n",
     "map": "node bin/downloadMapData.js",
     "make": "npm-run-all copy_maps map build",
-    "copy_maps": "./bin/update_public_maps.sh",
+    "copy_maps": "node bin/import_maps.js",
     "clean": "rm -rf tmp dist"
   },
   "dependencies": {
