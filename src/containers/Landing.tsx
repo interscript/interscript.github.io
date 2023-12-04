@@ -81,7 +81,7 @@ export default () => {
             <SectionGrid>
                 <Section>
                     <h2>{`Copyright`}</h2>
-                    <p>{`Ribose© 2018-2021. All rights reserved.`}</p>
+                    <p>{`Ribose© 2018-2023. All rights reserved.`}</p>
                 </Section>
             </SectionGrid>
         </>
