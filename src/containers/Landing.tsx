@@ -5,15 +5,18 @@ import { Section, SectionGrid } from "../components/Section";
 import { Statistics } from "../components/Statistics";
 import QuickBox from "components/QuickBox";
 import { InterscriptMetaDataMap } from "../meta";
+import { ReadmeSection } from "types/index";
 // const API_ENDPOINT = "https://api.interscript.com";
 
 export default () => {
     const {
         mapsInfo,
         metaDataMap,
+        sections,
     }: {
         mapsInfo: any;
         metaDataMap: InterscriptMetaDataMap;
+        sections: any;
     } = useRouteData();
 
     useEffect(() => {
@@ -70,6 +73,11 @@ export default () => {
                         </div>
                     </div>
                 </Section>
+                {sections.map((section: ReadmeSection) => {
+                    return (
+                        <Section key={section.id} id={section.id} dangerouslySetInnerHTML={{ __html: section.html }} />
+                    );
+                })}
                 <Section>
                     <div id="statistics">
                         <h2>{`Statistics`}</h2>
