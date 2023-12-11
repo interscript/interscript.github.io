@@ -185,12 +185,6 @@ export default {
                     },
                     mapsInfo,
                     metaDataMap,
-                }),
-            },
-            {
-                path: "demonstration",
-                template: "src/components/ReadmeSectionPage.tsx",
-                getData: async () => ({
                     sections: [findReadmeSection("demonstration")],
                 }),
             },

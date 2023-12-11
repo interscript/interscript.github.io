@@ -4,10 +4,6 @@ const MAIN_MENU_ITEMS = [
         path: "/",
     },
     {
-        name: "Demonstration",
-        path: "/demonstration",
-    },
-    {
         name: "Featured authorities",
         path: "/featured-authorities",
     },
