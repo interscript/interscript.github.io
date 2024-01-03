@@ -20,7 +20,8 @@ export const SystemSelector2: React.FC<{
     sourceScript?: WritingSystemCode;
     availableSourceScripts?: Array<WritingSystemCode>;
     inputStr?: string;
-}> = function ({ onSelect, systemCodes, availableSourceScripts, inputStr }) {
+    setLang?: (lang: string | null) => void;
+}> = function ({ onSelect, systemCodes, availableSourceScripts, inputStr, setLang }) {
     // Selected transliteration options
     const [systemSpec, updateSystemSpec] = useState<Partial<ScriptConversionSystem>>({});
 
@@ -114,6 +115,7 @@ export const SystemSelector2: React.FC<{
         if (langCodes.length > 0) {
             updateSystemSpec((spec) => ({ source: spec.source, lang: detectLang() || langCodes[0] }));
         }
+        setLang(detectLang());
     }, [systemSpec.source, inputStr]);
 
     function autoSelectAll() {
