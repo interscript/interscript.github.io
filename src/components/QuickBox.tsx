@@ -22,6 +22,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
     const [submitted, setSubmitted] = useState(false);
     const [diacriticize, setDiacriticize] = useState<boolean>(false);
     const [autoDetectedScriptInfo, setAutoDetectedScriptInfo] = useState<ScriptDetectionData | null>(null);
+    const [detectedLang, setDetectedLang] = useState<string | null>(null);
 
     const sampleInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -121,6 +122,13 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
                     value={result === undefined ? "Loading…" : result || error || ""}
                 />
             </SampleAndResult>
+            <small>
+                Detected:{" "}
+                <code>
+                    Script: {autoDetectedScriptInfo && autoDetectedScriptInfo.scripts[0]}, Language:
+                    {detectedLang && getLanguageTitleFrom6392or3(detectedLang)}
+                </code>
+            </small>
             <p style={{ height: "1rem" }} />
             {selectedSystem?.lang === ARABIC_LANG && (
                 <div>
@@ -141,6 +149,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
                 systemCodes={maps}
                 availableSourceScripts={autoDetectedScriptInfo?.scripts}
                 inputStr={sampleText}
+                setLang={setDetectedLang}
             />
         </>
     );
