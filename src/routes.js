@@ -20,8 +20,8 @@ const MAIN_MENU_ITEMS = [
         path: "/use",
     },
     {
-        name: "Develop",
-        path: "/develop",
+        name: "Create maps",
+        path: "/create-maps",
     },
     {
         name: "Blog",

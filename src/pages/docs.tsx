@@ -9,7 +9,7 @@ export default () => {
     const children = useMemo(
         () =>
             (docList || []).map((doc: DocFile, idx: number) => (
-                <Link to={`/develop/${doc.name}`} key={idx}>
+                <Link to={`/create-maps/${doc.name}`} key={idx}>
                     <Tile>
                         <CardBody>
                             <header>

@@ -14,7 +14,7 @@ import isoSamples from "./src/samples/iso.json";
 import dinSamples from "./src/samples/din.json";
 import icaoSamples from "./src/samples/icao.json";
 import metadata from "./map/metadata.json";
-import { getListOfFileWithTypeInDir } from "./walk";
+import { getListOfFileWithTypeInDir, getListOfFileWithTypeInDirWithFilter } from "./walk";
 import authority_data from "./src/authority.json";
 
 const repoOwner = "interscript";
@@ -46,7 +46,11 @@ export default {
         });
 
         // load docs and blogs
-        const docList = await getListOfFileWithTypeInDir("tmp/docs", ".html");
+        const docList = await getListOfFileWithTypeInDirWithFilter("tmp/docs", ".html", [
+            "Interscript_Map_Format.html",
+            "Maintainers.html",
+            "Map_Editing_Guide.html",
+        ]);
         const blogList = await getListOfFileWithTypeInDir("tmp/posts", ".html");
 
         // analyse converted adoc html to extract document attributes
@@ -370,7 +374,7 @@ export default {
                 }),
             },
             {
-                path: "develop",
+                path: "create-maps",
                 template: "src/pages/docs.tsx",
                 getData: async () => ({
                     docList,
