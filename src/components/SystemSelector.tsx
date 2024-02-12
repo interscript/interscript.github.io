@@ -321,11 +321,10 @@ const SystemPropertySelectorWrapper = styled.section`
 `;
 
 const SystemPropertyChoiceList = styled.ul`
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: stretch;
     list-style: none;
-    overflow: hidden;
+    height: 30vh;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     margin: 0;
 
