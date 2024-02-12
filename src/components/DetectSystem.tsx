@@ -66,33 +66,26 @@ export default () => {
 
     return (
         <div>
-            <h1> Detect script conversion systems used from existing text </h1>
+            <h2> Detect script conversion systems used from existing text </h2>
             <p>
-              When given a pair of transliterated text, often one would need to
-              know what exact script conversion system was used to create the
-              output.
+                When given a pair of transliterated text, often one would need to know what exact script conversion
+                system was used to create the output.
             </p>
             <p>
-              This has always been a tricky problem given the large number of
-              existing script conversion systems, some of which apply per
-              script and per language.
-              With Interscript's extensive set of script conversion systems,
-              this is no longer a challenge.
+                This has always been a tricky problem given the large number of existing script conversion systems, some
+                of which apply per script and per language. With Interscript's extensive set of script conversion
+                systems, this is no longer a challenge.
             </p>
             <p>
-              The system detection feature of Interscript outputs a list of
-              potential script conversion systems used for a given pair, sorted
-              by likelyhood as measured by the Levenshtein distance.
-              On this page, a maximum of 10 systems are returned.
+                The system detection feature of Interscript outputs a list of potential script conversion systems used
+                for a given pair, sorted by likelyhood as measured by the Levenshtein distance. On this page, a maximum
+                of 10 systems are returned.
             </p>
             <p>
-              Why would a text pair match more than one system? One might ask.
-              The reason is that many script conversion systems for the same
-              script and language will have similarities, and very often they
-              share the same conversion rules.
-              Note that even a match with zero distance does not provide 100%
-              confidence of the system used, as there could be multiple systems
-              that produce the same output given an input.
+                Why would a text pair match more than one system? One might ask. The reason is that many script
+                conversion systems for the same script and language will have similarities, and very often they share
+                the same conversion rules. Note that even a match with zero distance does not provide 100% confidence of
+                the system used, as there could be multiple systems that produce the same output given an input.
             </p>
 
             <SampleAndResult>

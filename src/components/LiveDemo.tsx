@@ -182,7 +182,6 @@ export const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataM
                     </small>
                 </p>
             ) : null}
-            <p style={{ height: "10rem" }}></p>
         </>
     );
 };

@@ -15,6 +15,7 @@ export const Convertor: React.FC<{
 
     return (
         <>
+            <h2>Try it live - {`interscript in ${CONVERTOR_TYPE_IN_BROWSER[demoTypeIndex].label}`}</h2>
             <p>
                 We have 2 demos for converting, which one is using Web API and the other one is Javascript.
                 <br />
@@ -51,7 +52,6 @@ export const Convertor: React.FC<{
                     {"."}
                 </p>
             )}
-            <h3>Try it live - {`interscript in ${CONVERTOR_TYPE_IN_BROWSER[demoTypeIndex].label}`}</h3>
             <LiveDemo
                 maps={mapsInfo.data}
                 metaData={metaDataMap}

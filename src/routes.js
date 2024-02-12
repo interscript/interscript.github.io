@@ -36,14 +36,6 @@ const MAIN_MENU_ITEMS = [
         path: "/about",
     },
     {
-        name: "Detect systems",
-        path: "/detect",
-    },
-    {
-        name: "Diacriticize scripts",
-        path: "/rababa",
-    },
-    {
         name: "Source on GitHub",
         path: "https://github.com/interscript/interscript/",
         external: true,
