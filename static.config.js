@@ -291,14 +291,7 @@ export default {
                 }),
             },
             {
-                path: "try-api",
-                getData: () => ({
-                    mapsInfo,
-                    metaDataMap,
-                }),
-            },
-            {
-                path: "try-js",
+                path: "demo",
                 getData: () => ({
                     mapsInfo,
                     metaDataMap,

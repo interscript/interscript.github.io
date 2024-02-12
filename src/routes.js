@@ -20,6 +20,10 @@ const MAIN_MENU_ITEMS = [
         path: "/use",
     },
     {
+        name: "Demo",
+        path: "/demo",
+    },
+    {
         name: "Create maps",
         path: "/create-maps",
     },
@@ -30,14 +34,6 @@ const MAIN_MENU_ITEMS = [
     {
         name: "About",
         path: "/about",
-    },
-    {
-        name: "Convert using API",
-        path: "/try-api",
-    },
-    {
-        name: "Convert using JS",
-        path: "/try-js",
     },
     {
         name: "Detect systems",
