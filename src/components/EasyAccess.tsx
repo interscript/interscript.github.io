@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { SectionNav } from "components/SectionNav";
 import { SectionNavAnchorItem } from "components/SectionNavItem";
+import { Link } from "@reach/router";
 
 export default () => {
     return (
@@ -9,7 +10,10 @@ export default () => {
             <EasyAccessWrapper>
                 <EasyAccessNav>
                     <span>
-                        <strong>Try it in a Browser</strong>!&nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong>
+                            <Link to={"/"}>Try Interscript!</Link>
+                        </strong>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                     </span>
                     <EasyAccessNavItem key="convert" href="/demo#convert">
                         Convert
@@ -36,6 +40,10 @@ const EasyAccessWrapper = styled.div`
 
     @media screen and (max-width: 1200px) {
         display: none;
+    }
+
+    a {
+        color: black;
     }
 `;
 
