@@ -18,3 +18,9 @@ export interface InterscriptMetaData {
 export interface InterscriptMetaDataMap {
     [key: string]: InterscriptMetaData;
 }
+
+export interface InterscriptMapsMetaInfo {
+    languages: { [key: string]: number };
+    meta: { total: number };
+    data?: string[];
+}

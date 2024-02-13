@@ -14,13 +14,14 @@ import isoSamples from "./src/samples/iso.json";
 import dinSamples from "./src/samples/din.json";
 import icaoSamples from "./src/samples/icao.json";
 import metadata from "./map/metadata.json";
-import { getListOfFileWithTypeInDir } from "./walk";
+import { getListOfFileWithTypeInDir, getListOfFileWithTypeInDirWithFilter } from "./walk";
 import authority_data from "./src/authority.json";
 
 const repoOwner = "interscript";
 const repoName = "interscript";
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN });
+const octokit1 = new Octokit({ auth: process.env.GH_TOKEN });
 
 export default {
     devServer: {
@@ -36,8 +37,20 @@ export default {
             },
         });
 
+        const readmeRespforJS = await octokit1.request("GET /repos/{owner}/{repo}/readme", {
+            owner: repoOwner,
+            repo: repoName + "-js",
+            mediaType: {
+                format: "html",
+            },
+        });
+
         // load docs and blogs
-        const docList = await getListOfFileWithTypeInDir("tmp/docs", ".html");
+        const docList = await getListOfFileWithTypeInDirWithFilter("tmp/docs", ".html", [
+            "Interscript_Map_Format.html",
+            "Maintainers.html",
+            "Map_Editing_Guide.html",
+        ]);
         const blogList = await getListOfFileWithTypeInDir("tmp/posts", ".html");
 
         // analyse converted adoc html to extract document attributes
@@ -84,8 +97,11 @@ export default {
         mapsInfo["data"] = maps;
 
         const readme = cheerio.load(readmeResp.data);
+        const readmeJS = cheerio.load(readmeRespforJS.data);
         const sectionHeaders = readme("h2");
         const readmeSections = [];
+        const sectionHeadersJS = readmeJS("h2");
+        const readmeSectionsJS = [];
 
         for (const idx of Object.keys(sectionHeaders)) {
             const sectionEl = sectionHeaders[idx].parent;
@@ -93,6 +109,16 @@ export default {
                 const section /*: ReadmeSection */ = prepareReadmeSection(cheerio.load(sectionEl));
                 if (section) {
                     readmeSections.push(section);
+                }
+            }
+        }
+
+        for (const idx of Object.keys(sectionHeadersJS)) {
+            const sectionEl = sectionHeadersJS[idx].parent;
+            if (sectionEl) {
+                const section /*: ReadmeSection */ = prepareReadmeSection(cheerio.load(sectionEl));
+                if (section) {
+                    readmeSectionsJS.push(section);
                 }
             }
         }
@@ -161,6 +187,10 @@ export default {
 
         const findReadmeSection = (path) => {
             return readmeSections.find((readmeSection) => readmeSection.id === path);
+        };
+
+        const findReadmeSectionJS = (path) => {
+            return readmeSectionsJS.find((readmeSection) => readmeSection.id === path);
         };
 
         const renderADocSection = (name, path) => {
@@ -261,14 +291,7 @@ export default {
                 }),
             },
             {
-                path: "try-api",
-                getData: () => ({
-                    mapsInfo,
-                    metaDataMap,
-                }),
-            },
-            {
-                path: "try-js",
+                path: "demo",
                 getData: () => ({
                     mapsInfo,
                     metaDataMap,
@@ -305,13 +328,23 @@ export default {
                 }),
             },
             {
-                path: "integrate",
-                template: "src/components/ReadmeSectionPage.tsx",
+                path: "usage",
+                template: "src/components/Usage.tsx",
                 getData: async () => ({
                     sections: [
-                        findReadmeSection("installation"),
-                        findReadmeSection("usage"),
-                        renderADocSection("Integration with Ruby Applications", "Integration_with_Ruby_Applications"),
+                        [
+                            findReadmeSection("installation"),
+                            findReadmeSection("usage"),
+                            renderADocSection(
+                                "Integration with Ruby Applications",
+                                "Integration_with_Ruby_Applications"
+                            ),
+                            renderADocSection("Usage with Rababa", "Usage_with_Rababa"),
+                            renderADocSection("Usage with Secryst", "Usage_with_Secryst"),
+                        ], // ruby
+                        [findReadmeSectionJS("integration"), findReadmeSectionJS("usage")], // js
+                        [], // python
+                        [], // webapi
                     ],
                 }),
             },
@@ -334,7 +367,7 @@ export default {
                 }),
             },
             {
-                path: "develop",
+                path: "create-maps",
                 template: "src/pages/docs.tsx",
                 getData: async () => ({
                     docList,

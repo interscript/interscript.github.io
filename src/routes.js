@@ -16,12 +16,16 @@ const MAIN_MENU_ITEMS = [
         path: "/systems",
     },
     {
-        name: "Integrate",
-        path: "/integrate",
+        name: "How to use",
+        path: "/usage",
     },
     {
-        name: "Develop",
-        path: "/develop",
+        name: "Demo",
+        path: "/demo",
+    },
+    {
+        name: "Create maps",
+        path: "/create-maps",
     },
     {
         name: "Blog",
@@ -30,22 +34,6 @@ const MAIN_MENU_ITEMS = [
     {
         name: "About",
         path: "/about",
-    },
-    {
-        name: "Convert using API",
-        path: "/try-api",
-    },
-    {
-        name: "Convert using JS",
-        path: "/try-js",
-    },
-    {
-        name: "Detect systems",
-        path: "/detect",
-    },
-    {
-        name: "Diacriticize scripts",
-        path: "/rababa",
     },
     {
         name: "Source on GitHub",

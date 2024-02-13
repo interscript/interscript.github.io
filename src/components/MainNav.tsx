@@ -18,21 +18,17 @@ export const MainNav = () => {
 
     const mainMenuItems = MAIN_MENU_ITEMS.map((item: any) =>
         !item.external ? (
-            <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => {
-                    setCurrentMenu(item.path);
-                }}
-            >
-                {item.path === currentMenu ? (
-                    <MainNavItem>
-                        <strong>{item.name}</strong>
-                    </MainNavItem>
-                ) : (
-                    <MainNavItem>{item.name}</MainNavItem>
-                )}
-            </Link>
+            <MainNavItem key={item.path}>
+                <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => {
+                        setCurrentMenu(item.path);
+                    }}
+                >
+                    {item.path === currentMenu ? <strong>{item.name}</strong> : item.name}
+                </Link>
+            </MainNavItem>
         ) : (
             <MainNavAnchorItem key={item.path} href={item.path}>
                 {item.name}
@@ -63,4 +59,10 @@ export const MainNavAnchorItem = styled(SectionNavAnchorItem)`
     }
 `;
 
-export const MainNavWrapper = styled(SectionNav)``;
+export const MainNavWrapper = styled(SectionNav)`
+    > span:first-child {
+        &::before {
+            content: none;
+        }
+    }
+`;

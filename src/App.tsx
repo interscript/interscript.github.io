@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Root, Routes } from "react-static";
-import { /*Link,*/ Router } from "@reach/router";
+import { Router } from "@reach/router";
 import { Helmet } from "react-helmet";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "assets/symbol.svg";
 import { MainNav } from "components/MainNav";
+import { SectionNavAnchorItem } from "components/SectionNavItem";
+import { SectionNav } from "components/SectionNav";
 
 export const primaryColor = "008075";
 
@@ -44,8 +46,15 @@ function App() {
             </Helmet>
 
             <LogoHeader>
-                <LogoSymbol src={logo} alt="is" />
-                <HeaderTitle />
+                <LogoSection>
+                    <LogoWrapper>
+                        <LogoSymbol src={logo} alt="is" />
+                    </LogoWrapper>
+                    <HeaderTitle />
+                </LogoSection>
+                <EasyAccessSection>
+                    <EasyAccess />
+                </EasyAccessSection>
             </LogoHeader>
 
             <MainNavSection>
@@ -95,8 +104,32 @@ const HeaderTitle: React.FC<{}> = function () {
                         <br />
                         script&nbsp;conversion&nbsp;systems
                     </p>
+                    <EasyAccess />
                 </ProjectTitleSmallWithLogo>
             ) : null}
+        </>
+    );
+};
+
+const EasyAccess: React.FC<{}> = function () {
+    return (
+        <>
+            <EasyAccessWrapper>
+                <EasyAccessNav>
+                    <span>
+                        <strong>Try it in a Browser</strong>!&nbsp;&nbsp;&nbsp;&nbsp;
+                    </span>
+                    <EasyAccessNavItem key="convert" href="/demo#convert">
+                        Convert
+                    </EasyAccessNavItem>
+                    <EasyAccessNavItem key="detect-script" href="/demo#detect-script">
+                        Detect Systems
+                    </EasyAccessNavItem>
+                    <EasyAccessNavItem key="rababa" href="/demo#rababa">
+                        Diacritize scripts
+                    </EasyAccessNavItem>
+                </EasyAccessNav>
+            </EasyAccessWrapper>
         </>
     );
 };
@@ -104,8 +137,47 @@ const HeaderTitle: React.FC<{}> = function () {
 const LogoHeader = styled.header`
     display: flex;
     align-items: center;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     z-index: 2;
+`;
+
+const LogoSection = styled.div`
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 50%;
+`;
+
+const LogoWrapper = styled.div`
+    display: flex;
+    flex-flow: row-reverse;
+`;
+
+const EasyAccessSection = styled.div`
+    display: flex;
+    flex: 50%;
+`;
+
+const EasyAccessWrapper = styled.div`
+    display: flex;
+    border: 3px dashed;
+    margin-left: 6.25rem;
+`;
+const EasyAccessNav = styled(SectionNav)`
+    a:first-of-type {
+        &::before {
+            content: none;
+        }
+    }
+`;
+
+const EasyAccessNavItem = styled(SectionNavAnchorItem)`
+    @media screen and (min-width: 900px) {
+        &::before {
+            content: "|";
+            display: inline;
+            margin: 0 1em 0 0;
+        }
+    }
 `;
 
 const LogoSymbol = styled.img`
@@ -201,8 +273,6 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
     }
 
     @media screen and (min-width: 900px) {
-        left: unset;
-        right: unset;
         transform: scale(0.9);
         border-radius: 0.5rem;
 

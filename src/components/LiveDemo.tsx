@@ -11,10 +11,10 @@ import styled from "styled-components";
 const API_ENDPOINT = "https://api.interscript.org/prod"; //for issue https://github.com/interscript/infrastructure/issues/17
 // const API_ENDPOINT = "https://staging-api.interscript.org/staging";
 
-type DemoType = "RUBY" | "JAVASCRIPT";
+export type DemoType = "RUBY" | "JAVASCRIPT";
 const ARABIC_LANG = "ara";
 
-const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; demoType?: DemoType }> = function ({
+export const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; demoType?: DemoType }> = function ({
     maps,
     metaData,
     demoType = "JAVASCRIPT",
@@ -182,7 +182,6 @@ const LiveDemo: React.FC<{ maps: string[]; metaData: InterscriptMetaDataMap; dem
                     </small>
                 </p>
             ) : null}
-            <p style={{ height: "10rem" }}></p>
         </>
     );
 };
