@@ -328,7 +328,7 @@ export default {
                 }),
             },
             {
-                path: "use",
+                path: "usage",
                 template: "src/components/Usage.tsx",
                 getData: async () => ({
                     sections: [
