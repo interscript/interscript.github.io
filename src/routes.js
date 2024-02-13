@@ -16,7 +16,7 @@ const MAIN_MENU_ITEMS = [
         path: "/systems",
     },
     {
-        name: "Use in your application",
+        name: "Use",
         path: "/use",
     },
     {

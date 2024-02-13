@@ -18,7 +18,7 @@ export const MainNav = () => {
 
     const mainMenuItems = MAIN_MENU_ITEMS.map((item: any) =>
         !item.external ? (
-            <MainNavItem>
+            <MainNavItem key={item.path}>
                 <Link
                     key={item.path}
                     to={item.path}
@@ -63,8 +63,6 @@ export const MainNavWrapper = styled(SectionNav)`
     > span:first-child {
         &::before {
             content: none;
-            display: inline;
-            margin: 0 1em 0 0;
         }
-    }s
+    }
 `;
