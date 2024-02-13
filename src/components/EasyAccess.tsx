@@ -29,8 +29,14 @@ export default () => {
 const EasyAccessWrapper = styled.div`
     display: flex;
     border: 3px solid #3e7e75;
-    margin-left: 6.25rem;
-    min-width: 550px;
+    @media screen and (min-width: 1200px) {
+        margin-left: 6.25rem;
+        min-width: 550px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
 `;
 
 const EasyAccessNav = styled(SectionNav)`
