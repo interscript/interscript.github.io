@@ -6,8 +6,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import styled, { createGlobalStyle } from "styled-components";
 import logo from "assets/symbol.svg";
 import { MainNav } from "components/MainNav";
-import { SectionNavAnchorItem } from "components/SectionNavItem";
-import { SectionNav } from "components/SectionNav";
+import EasyAccess from "components/EasyAccess";
 
 export const primaryColor = "008075";
 
@@ -46,15 +45,17 @@ function App() {
             </Helmet>
 
             <LogoHeader>
-                <LogoSection>
-                    <LogoWrapper>
-                        <LogoSymbol src={logo} alt="is" />
-                    </LogoWrapper>
-                    <HeaderTitle />
-                </LogoSection>
-                <EasyAccessSection>
-                    <EasyAccess />
-                </EasyAccessSection>
+                <HeaderCenter>
+                    <LogoSection>
+                        <LogoWrapper>
+                            <LogoSymbol src={logo} alt="is" />
+                        </LogoWrapper>
+                        <HeaderTitle />
+                    </LogoSection>
+                    <EasyAccessSection>
+                        <EasyAccess />
+                    </EasyAccessSection>
+                </HeaderCenter>
             </LogoHeader>
 
             <MainNavSection>
@@ -95,6 +96,7 @@ const HeaderTitle: React.FC<{}> = function () {
 
             {showCompact ? (
                 <ProjectTitleSmallWithLogo role="presentation">
+                    <EasyAccess />
                     <h1 className="title">
                         <b>Inter</b>script
                     </h1>
@@ -104,32 +106,8 @@ const HeaderTitle: React.FC<{}> = function () {
                         <br />
                         script&nbsp;conversion&nbsp;systems
                     </p>
-                    <EasyAccess />
                 </ProjectTitleSmallWithLogo>
             ) : null}
-        </>
-    );
-};
-
-const EasyAccess: React.FC<{}> = function () {
-    return (
-        <>
-            <EasyAccessWrapper>
-                <EasyAccessNav>
-                    <span>
-                        <strong>Try it in a Browser</strong>!&nbsp;&nbsp;&nbsp;&nbsp;
-                    </span>
-                    <EasyAccessNavItem key="convert" href="/demo#convert">
-                        Convert
-                    </EasyAccessNavItem>
-                    <EasyAccessNavItem key="detect-script" href="/demo#detect-script">
-                        Detect Systems
-                    </EasyAccessNavItem>
-                    <EasyAccessNavItem key="rababa" href="/demo#rababa">
-                        Diacritize scripts
-                    </EasyAccessNavItem>
-                </EasyAccessNav>
-            </EasyAccessWrapper>
         </>
     );
 };
@@ -137,14 +115,18 @@ const EasyAccess: React.FC<{}> = function () {
 const LogoHeader = styled.header`
     display: flex;
     align-items: center;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     z-index: 2;
+`;
+
+const HeaderCenter = styled.div`
+    display: flex;
+    flex-flow: row;
 `;
 
 const LogoSection = styled.div`
     display: flex;
     flex-flow: column nowrap;
-    flex: 50%;
 `;
 
 const LogoWrapper = styled.div`
@@ -154,30 +136,8 @@ const LogoWrapper = styled.div`
 
 const EasyAccessSection = styled.div`
     display: flex;
-    flex: 50%;
-`;
-
-const EasyAccessWrapper = styled.div`
-    display: flex;
-    border: 3px dashed;
-    margin-left: 6.25rem;
-`;
-const EasyAccessNav = styled(SectionNav)`
-    a:first-of-type {
-        &::before {
-            content: none;
-        }
-    }
-`;
-
-const EasyAccessNavItem = styled(SectionNavAnchorItem)`
-    @media screen and (min-width: 900px) {
-        &::before {
-            content: "|";
-            display: inline;
-            margin: 0 1em 0 0;
-        }
-    }
+    flex-flow: row;
+    align-items: center;
 `;
 
 const LogoSymbol = styled.img`

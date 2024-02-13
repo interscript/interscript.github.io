@@ -21,9 +21,11 @@ export default () => {
             />
             <SectionGrid>
                 <p>
-                    Interscript supports Ruby, Javascript, Python, and Web API which allows you to integrate with any
-                    language. <br />
-                    Please choose your programming language &nbsp;
+                    Interscript supports a number of programming languages. From the dropdown box select the one you are
+                    interested in.
+                </p>
+                <p>
+                    <label>Programming Language:</label>&nbsp;
                     <select
                         onChange={(evt: ChangeEvent<HTMLSelectElement>) => {
                             setSelected(evt.target.value);

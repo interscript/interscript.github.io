@@ -62,7 +62,9 @@ export const MainNavAnchorItem = styled(SectionNavAnchorItem)`
 export const MainNavWrapper = styled(SectionNav)`
     > span:first-child {
         &::before {
-            content: none;
+            content: "";
+            display: inline;
+            margin: 0 1em 0 0;
         }
     }
 `;
