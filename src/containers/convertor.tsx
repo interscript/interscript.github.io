@@ -17,9 +17,9 @@ export const Convertor: React.FC<{
         <>
             <h2>Try it live - {`interscript in ${CONVERTOR_TYPE_IN_BROWSER[demoTypeIndex].label}`}</h2>
             <p>
-                We have 2 demos for converting, which one is using Web API and the other one is Javascript.
+                Interscript demo can be ran remotely via API, or locally in your browser (JavaScript).
                 <br />
-                You can choose one &nbsp;
+                Select the interface you want to use: &nbsp;
                 <select
                     onChange={(evt: ChangeEvent<HTMLSelectElement>) => {
                         setDemoTypeIndex(evt.target.selectedIndex);
