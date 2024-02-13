@@ -109,6 +109,7 @@ const QuickBox: React.FC<{ maps: string[]; metaData?: InterscriptMetaDataMap }> 
                                 : undefined,
                     }}
                     onChange={onChangeSource}
+                    autoFocus
                 />
                 <ConvertButton
                     onClick={handleConvert}
