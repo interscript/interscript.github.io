@@ -104,6 +104,7 @@ const HeaderTitle: React.FC<{}> = function () {
                         <br />
                         script&nbsp;conversion&nbsp;systems
                     </p>
+                    <EasyAccess />
                 </ProjectTitleSmallWithLogo>
             ) : null}
         </>
@@ -272,8 +273,6 @@ const ProjectTitleSmallWithLogo = styled(ProjectTitle)`
     }
 
     @media screen and (min-width: 900px) {
-        left: unset;
-        right: unset;
         transform: scale(0.9);
         border-radius: 0.5rem;
 
