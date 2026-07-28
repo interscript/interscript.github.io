@@ -30,20 +30,21 @@ jobs:
       name: production
       url: https://www.interscript.org
     steps:
+      - uses: actions/checkout@v7
       - name: Use Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v7
         with:
-          node-version: '14.x'
-      - uses: actions/checkout@v2
+          node-version: '18'
+          cache: yarn
       - name: Install NPM dependencies
         run: |
-          yarn install
+          yarn install --frozen-lockfile
           yarn global add asciidoctor@^2.2.4
       - name: Build site
         run: |
           yarn adoc make
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -58,4 +59,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v5
