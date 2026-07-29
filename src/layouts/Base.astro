@@ -1,0 +1,81 @@
+---
+import "../styles/global.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "Interscript",
+  description = "Interoperable transliteration systems.",
+} = Astro.props
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/demo", label: "Demo" },
+  { href: "/maps", label: "Maps" },
+  { href: "/authorities", label: "Authorities" },
+  { href: "/docs", label: "Docs" },
+  { href: "/blog", label: "Blog" },
+  { href: "/about", label: "About" },
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-ink/10 px-6 py-4 sticky top-0 bg-paper/95 backdrop-blur-sm z-10">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between flex-wrap gap-4">
+        <a href="/" class="font-bold no-underline text-lg">Interscript</a>
+        <ul class="flex gap-6 text-sm flex-wrap">
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  "no-underline hover:text-accent transition-colors",
+                  Astro.url.pathname === item.href && "text-accent font-semibold",
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href="https://github.com/interscript"
+              rel="noreferrer"
+              class="no-underline hover:text-accent transition-colors"
+            >
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
+      <slot />
+    </main>
+
+    <footer class="border-t border-ink/10 px-6 py-6 text-sm">
+      <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-4 text-ink/60">
+        <span>© {new Date().getFullYear()} Ribose Inc. — BSD-2-Clause</span>
+        <nav class="flex gap-4">
+          <a href="https://github.com/interscript" rel="noreferrer" class="hover:text-ink">GitHub</a>
+          <a href="https://rubygems.org/gems/interscript" rel="noreferrer" class="hover:text-ink">RubyGems</a>
+          <a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer" class="hover:text-ink">npm</a>
+          <a href="/security" class="hover:text-ink">Security</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

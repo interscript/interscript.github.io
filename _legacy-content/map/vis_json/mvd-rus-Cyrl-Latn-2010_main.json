@@ -1,0 +1,18 @@
+[
+  {
+    "type": "Run",
+    "doc": "mvd-rus-Cyrl-Latn-2008",
+    "stage": "translit",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>́</kbd><rt>0301</rt></ruby>",
+    "to": "",
+    "more": ""
+  },
+  {
+    "type": "Compose",
+    "more": ""
+  }
+]

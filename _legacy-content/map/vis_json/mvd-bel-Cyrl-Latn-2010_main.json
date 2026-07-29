@@ -1,0 +1,49 @@
+[
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>Й</kbd><rt>0419</rt></ruby> + line end",
+    "to": "",
+    "more": "before: <nobr>any (</nobr><ruby><kbd>Е</kbd><rt>0415</rt></ruby>, <ruby><kbd>е</kbd><rt>0435</rt></ruby>, <ruby><kbd>Ё</kbd><rt>0401</rt></ruby>, <ruby><kbd>ё</kbd><rt>0451</rt></ruby>, <ruby><kbd>Ы</kbd><rt>042b</rt></ruby>, <ruby><kbd>ы</kbd><rt>044b</rt></ruby>, <ruby><kbd>Ю</kbd><rt>042e</rt></ruby>, <ruby><kbd>ю</kbd><rt>044e</rt></ruby>, <ruby><kbd>Я</kbd><rt>042f</rt></ruby>, <ruby><kbd>я</kbd><rt>044f</rt></ruby>)"
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>й</kbd><rt>0439</rt></ruby> + line end",
+    "to": "",
+    "more": "before: <nobr>any (</nobr><ruby><kbd>Е</kbd><rt>0415</rt></ruby>, <ruby><kbd>е</kbd><rt>0435</rt></ruby>, <ruby><kbd>Ё</kbd><rt>0401</rt></ruby>, <ruby><kbd>ё</kbd><rt>0451</rt></ruby>, <ruby><kbd>Ы</kbd><rt>042b</rt></ruby>, <ruby><kbd>ы</kbd><rt>044b</rt></ruby>, <ruby><kbd>Ю</kbd><rt>042e</rt></ruby>, <ruby><kbd>ю</kbd><rt>044e</rt></ruby>, <ruby><kbd>Я</kbd><rt>042f</rt></ruby>, <ruby><kbd>я</kbd><rt>044f</rt></ruby>)"
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Г</kbd><rt>0413</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>г</kbd><rt>0433</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ь</kbd><rt>042c</rt></ruby>",
+        "to": "",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ь</kbd><rt>044c</rt></ruby>",
+        "to": "",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Run",
+    "doc": "mvd-bel-Cyrl-Latn-2008",
+    "stage": "main",
+    "more": ""
+  }
+]

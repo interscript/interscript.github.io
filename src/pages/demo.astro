@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro"
+import MapExplorer from "../components/MapExplorer.vue"
+
+// Bundled sample maps — shipped as static JSON for SSR + client.
+// In production these come from the published interscript-maps-ir package.
+const systems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian (2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German (2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian (2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil (1972)" },
+]
+---
+
+<Base title="Live demo — Interscript" description="Try Interscript transliteration in your browser.">
+  <h1>Live demo</h1>
+  <p class="lead">
+    Pick a system, type text, get transliteration. Powered by
+    <code>interscript-ts</code> running entirely in your browser — no
+    server round-trip.
+  </p>
+
+  <MapExplorer client:load systems={systems} />
+
+  <section class="samples">
+    <h2>Try these inputs</h2>
+    <ul>
+      <li><code>Антон</code> → <code>Anton</code> (BGN/PCGN Ukrainian)</li>
+      <li><code>Tschüß!</code> → <code>Tschueß!</code> (BGN/PCGN German)</li>
+      <li><code>привет мир</code> → <code>privet mir</code> (ODNI Russian)</li>
+      <li><code>ኢትዮጵያ</code> → <code>ʼiteyop̣eyā</code> (ALA-LC Amharic)</li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .lead {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .samples {
+    margin-top: 3rem;
+  }
+  .samples ul {
+    list-style: none;
+    padding: 0;
+  }
+  .samples li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  code {
+    background: var(--surface);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.95em;
+  }
+</style>

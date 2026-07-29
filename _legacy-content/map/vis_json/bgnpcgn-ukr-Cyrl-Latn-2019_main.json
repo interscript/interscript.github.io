@@ -1,0 +1,19 @@
+[
+  {
+    "type": "Run",
+    "doc": "un-ukr-Cyrl-Latn-2012",
+    "stage": "main",
+    "more": ""
+  },
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>'</kbd><rt>0027</rt></ruby>",
+        "to": "",
+        "more": ""
+      }
+    ]
+  }
+]

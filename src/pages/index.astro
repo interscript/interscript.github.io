@@ -1,0 +1,168 @@
+---
+import Base from "../layouts/Base.astro"
+
+const stats = [
+  { label: "Transliteration systems", value: "300+" },
+  { label: "Source scripts", value: "30+" },
+  { label: "Authorities", value: "20+" },
+  { label: "Open source", value: "MIT/BSD" },
+]
+
+const features = [
+  {
+    title: "Multi-runtime",
+    body: "Ruby, TypeScript, and (legacy) JavaScript runtimes all consume the same map definitions.",
+    href: "/docs",
+  },
+  {
+    title: "Authority-backed",
+    body: "BGN/PCGN, ISO, UN, ALA-LC, ODNI, and many other romanization authorities.",
+    href: "/authorities",
+  },
+  {
+    title: "Live demo",
+    body: "Try real transliteration in your browser, powered by interscript-ts.",
+    href: "/demo",
+  },
+  {
+    title: "Open maps",
+    body: "Maps are checked into git and versioned with the gem. Audit any rule.",
+    href: "https://github.com/interscript/maps",
+  },
+]
+---
+
+<Base title="Interscript — Interoperable Script Conversion" description="Open-source transliteration for Ruby, TypeScript, and the web.">
+  <section class="hero">
+    <h1>Interoperable script conversion, in any runtime.</h1>
+    <p class="lead">
+      Interscript lets you transliterate text between scripts using
+      authority-backed systems (BGN/PCGN, ISO, UN, ALA-LC, …). One map
+      definition, runs in Ruby, TypeScript, and the browser.
+    </p>
+    <div class="cta">
+      <a href="/demo" class="btn primary">Try the demo</a>
+      <a href="/docs" class="btn">Read the docs</a>
+    </div>
+  </section>
+
+  <section class="stats">
+    {stats.map((s) => (
+      <div class="stat">
+        <div class="value">{s.value}</div>
+        <div class="label">{s.label}</div>
+      </div>
+    ))}
+  </section>
+
+  <section class="features">
+    {features.map((f) => (
+      <a class="feature" href={f.href}>
+        <h3>{f.title}</h3>
+        <p>{f.body}</p>
+      </a>
+    ))}
+  </section>
+
+  <section class="code">
+    <h2>Quick start</h2>
+    <pre><code>{`# Ruby
+gem install interscript
+interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 <<< "Антон"
+# => Anton
+
+# TypeScript / JavaScript
+npm install interscript-ts
+import { transliterate } from "interscript-ts"
+transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")  // "Anton"`}</code></pre>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 5rem 0 4rem;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 auto 1.5rem;
+    max-width: 18ch;
+  }
+  .lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 0 auto 2rem;
+  }
+  .cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat .value {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .stat .label {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 4rem 0;
+  }
+  .feature {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s;
+  }
+  .feature:hover {
+    border-color: var(--accent);
+  }
+  .feature h3 {
+    margin: 0 0 0.5rem;
+  }
+  .feature p {
+    margin: 0;
+    color: var(--muted);
+  }
+  .code {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .code pre {
+    overflow-x: auto;
+    margin: 0;
+  }
+</style>

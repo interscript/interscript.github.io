@@ -1,0 +1,56 @@
+---
+import Base from "../../layouts/Base.astro"
+import MapExplorer from "../../components/MapExplorer.vue"
+
+const sampleSystems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "Ukrainian (BGN/PCGN 2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "German (BGN/PCGN 2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "Russian (ODNI 2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "Amharic (ALA-LC 2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "Tamil (UN 1972)" },
+]
+---
+
+<Base title="Maps — Interscript" description="Browse and try Interscript transliteration maps.">
+  <h1>Maps explorer</h1>
+  <p class="lead">
+    Live map browser. Each map is a single <code>.imp</code> file in
+    <a href="https://github.com/interscript/maps">interscript/maps</a>;
+    the runtime compiles it to IR that runs in your browser via
+    <code>interscript-ts</code>.
+  </p>
+
+  <MapExplorer client:load systems={sampleSystems} />
+
+  <section class="catalogue">
+    <h2>Full catalogue</h2>
+    <p>
+      The complete catalogue of 300+ maps lives in
+      <a href="https://github.com/interscript/maps">the maps repository</a>.
+      Filter by authority, source script, or destination script.
+    </p>
+    <p>
+      A searchable index of every map (with metadata) is in development.
+      Until then, browse the <a href="/authorities">authorities page</a>
+      to see which authorities are covered.
+    </p>
+  </section>
+</Base>
+
+<style>
+  .lead {
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .catalogue {
+    margin-top: 3rem;
+  }
+  code {
+    background: var(--surface);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+  }
+  a {
+    color: var(--accent);
+  }
+</style>

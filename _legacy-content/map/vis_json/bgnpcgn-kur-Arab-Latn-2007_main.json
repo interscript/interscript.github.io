@@ -1,0 +1,367 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ِ</kbd><rt>0650</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ل</kbd><rt>0644</rt></ruby><ruby><kbd>ە</kbd><rt>06d5</rt></ruby>",
+        "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby><ruby><kbd> </kbd><rt>0020</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ب</kbd><rt>0628</rt></ruby><ruby><kbd>ە</kbd><rt>06d5</rt></ruby>",
+        "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby><ruby><kbd>e</kbd><rt>0065</rt></ruby><ruby><kbd> </kbd><rt>0020</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ء</kbd><rt>0621</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ؤ</kbd><rt>0624</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": "before: <nobr>any (</nobr><ruby><kbd>ء</kbd><rt>0621</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ب</kbd><rt>0628</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>پ</kbd><rt>067e</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ت</kbd><rt>062a</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ج</kbd><rt>062c</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>چ</kbd><rt>0686</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ح</kbd><rt>062d</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>خ</kbd><rt>062e</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>د</kbd><rt>062f</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ر</kbd><rt>0631</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڕ</kbd><rt>0695</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ز</kbd><rt>0632</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ژ</kbd><rt>0698</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>س</kbd><rt>0633</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ش</kbd><rt>0634</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ص</kbd><rt>0635</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ض</kbd><rt>0636</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ط</kbd><rt>0637</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ع</kbd><rt>0639</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>غ</kbd><rt>063a</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>́</kbd><rt>0341</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڨ</kbd><rt>06a8</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ق</kbd><rt>0642</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ک</kbd><rt>06a9</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ك</kbd><rt>0643</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>گ</kbd><rt>06af</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ل</kbd><rt>0644</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڵ</kbd><rt>06b5</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>م</kbd><rt>0645</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ن</kbd><rt>0646</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>و</kbd><rt>0648</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ه</kbd><rt>0647</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ي</kbd><rt>064a</rt></ruby>)"
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ي</kbd><rt>064a</rt></ruby>",
+        "to": "<ruby><kbd>î</kbd><rt>00ee</rt></ruby>",
+        "more": "before: <nobr>any (</nobr><ruby><kbd>ء</kbd><rt>0621</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ب</kbd><rt>0628</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>پ</kbd><rt>067e</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ت</kbd><rt>062a</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ج</kbd><rt>062c</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>چ</kbd><rt>0686</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ح</kbd><rt>062d</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>خ</kbd><rt>062e</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>د</kbd><rt>062f</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ر</kbd><rt>0631</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڕ</kbd><rt>0695</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ز</kbd><rt>0632</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ژ</kbd><rt>0698</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>س</kbd><rt>0633</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ش</kbd><rt>0634</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ص</kbd><rt>0635</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ض</kbd><rt>0636</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ط</kbd><rt>0637</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ع</kbd><rt>0639</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>غ</kbd><rt>063a</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>́</kbd><rt>0341</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڨ</kbd><rt>06a8</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ق</kbd><rt>0642</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ک</kbd><rt>06a9</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ك</kbd><rt>0643</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>گ</kbd><rt>06af</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ل</kbd><rt>0644</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ڵ</kbd><rt>06b5</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>م</kbd><rt>0645</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ن</kbd><rt>0646</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>و</kbd><rt>0648</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ه</kbd><rt>0647</rt></ruby>, <ruby><kbd>|</kbd><rt>007c</rt></ruby>, <ruby><kbd>ي</kbd><rt>064a</rt></ruby>)"
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ء</kbd><rt>0621</rt></ruby>",
+        "to": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ب</kbd><rt>0628</rt></ruby>",
+        "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>پ</kbd><rt>067e</rt></ruby>",
+        "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ت</kbd><rt>062a</rt></ruby>",
+        "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ج</kbd><rt>062c</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>چ</kbd><rt>0686</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>, <ruby><kbd>ç</kbd><rt>00e7</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ح</kbd><rt>062d</rt></ruby>",
+        "to": "<ruby><kbd>ḧ</kbd><rt>1e27</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>خ</kbd><rt>062e</rt></ruby>",
+        "to": "<ruby><kbd>x</kbd><rt>0078</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>د</kbd><rt>062f</rt></ruby>",
+        "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ر</kbd><rt>0631</rt></ruby>",
+        "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ڕ</kbd><rt>0695</rt></ruby>",
+        "to": "<ruby><kbd>ṟ</kbd><rt>1e5f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ز</kbd><rt>0632</rt></ruby>",
+        "to": "<ruby><kbd>z</kbd><rt>007a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ژ</kbd><rt>0698</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>س</kbd><rt>0633</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ش</kbd><rt>0634</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>s</kbd><rt>0073</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>, <ruby><kbd>ş</kbd><rt>015f</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ص</kbd><rt>0635</rt></ruby>",
+        "to": "<ruby><kbd>ṣ</kbd><rt>1e63</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ض</kbd><rt>0636</rt></ruby>",
+        "to": "<ruby><kbd>ḍ</kbd><rt>1e0d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ط</kbd><rt>0637</rt></ruby>",
+        "to": "<ruby><kbd>ṭ</kbd><rt>1e6d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ع</kbd><rt>0639</rt></ruby>",
+        "to": "<ruby><kbd>‘</kbd><rt>2018</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>غ</kbd><rt>063a</rt></ruby>",
+        "to": "<nobr>any (</nobr><ruby><kbd>g</kbd><rt>0067</rt></ruby><ruby><kbd>h</kbd><rt>0068</rt></ruby>, <ruby><kbd>ẍ</kbd><rt>1e8d</rt></ruby>)",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>́</kbd><rt>0341</rt></ruby>",
+        "to": "<ruby><kbd>f</kbd><rt>0066</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ڨ</kbd><rt>06a8</rt></ruby>",
+        "to": "<ruby><kbd>v</kbd><rt>0076</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ق</kbd><rt>0642</rt></ruby>",
+        "to": "<ruby><kbd>q</kbd><rt>0071</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ک</kbd><rt>06a9</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ك</kbd><rt>0643</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>گ</kbd><rt>06af</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ل</kbd><rt>0644</rt></ruby>",
+        "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ڵ</kbd><rt>06b5</rt></ruby>",
+        "to": "<ruby><kbd>ł</kbd><rt>0142</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>م</kbd><rt>0645</rt></ruby>",
+        "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ن</kbd><rt>0646</rt></ruby>",
+        "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ه</kbd><rt>0647</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ي</kbd><rt>064a</rt></ruby>",
+        "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ه</kbd><rt>0647</rt></ruby> + boundary",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ە</kbd><rt>06d5</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>ە</kbd><rt>06d5</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ا</kbd><rt>0627</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>ا</kbd><rt>0627</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ي</kbd><rt>064a</rt></ruby>",
+        "to": "<ruby><kbd>î</kbd><rt>00ee</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>ي</kbd><rt>064a</rt></ruby>",
+        "to": "<ruby><kbd>î</kbd><rt>00ee</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ێ</kbd><rt>06ce</rt></ruby>",
+        "to": "<ruby><kbd>ê</kbd><rt>00ea</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>ێ</kbd><rt>06ce</rt></ruby>",
+        "to": "<ruby><kbd>ê</kbd><rt>00ea</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>و</kbd><rt>0648</rt></ruby><ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>û</kbd><rt>00fb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>و</kbd><rt>0648</rt></ruby><ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>û</kbd><rt>00fb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ۆ</kbd><rt>06c6</rt></ruby>",
+        "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ئ</kbd><rt>0626</rt></ruby><ruby><kbd>ۆ</kbd><rt>06c6</rt></ruby>",
+        "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>و</kbd><rt>0648</rt></ruby>",
+        "to": "<ruby><kbd>ö</kbd><rt>00f6</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ۊ</kbd><rt>06ca</rt></ruby>",
+        "to": "<ruby><kbd>ü</kbd><rt>00fc</rt></ruby>",
+        "more": ""
+      }
+    ]
+  },
+  {
+    "type": "Replace",
+    "from": "<nobr>any (</nobr><ruby><kbd>a</kbd><rt>0061</rt></ruby> to <ruby><kbd>￿</kbd><rt>ffff</rt></ruby>)",
+    "to": "upcase",
+    "more": "before: boundary, <nobr>not before:</nobr> boundary + <nobr>any (</nobr><ruby><kbd>‘</kbd><rt>2018</rt></ruby>, <ruby><kbd>’</kbd><rt>2019</rt></ruby>, <ruby><kbd>'</kbd><rt>0027</rt></ruby>)"
+  }
+]

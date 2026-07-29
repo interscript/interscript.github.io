@@ -1,0 +1,34 @@
+---
+import Base from "../../layouts/Base.astro"
+---
+
+<Base title="Docs — Interscript">
+  <h1 class="mb-6 text-3xl font-bold">Documentation</h1>
+
+  <div class="prose">
+    <h2>Getting started</h2>
+    <p>
+      Interscript is available as a Ruby gem and (in development) a TypeScript
+      package. Choose your runtime:
+    </p>
+
+    <h3>Ruby</h3>
+    <pre class="rounded-md bg-ink/5 p-4"><code>gem install interscript
+interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 input.txt</code></pre>
+
+    <h3>TypeScript</h3>
+    <pre class="rounded-md bg-ink/5 p-4"><code>npm install interscript-ts</code></pre>
+
+    <h2>Map catalogues</h2>
+    <p>
+      Maps are versioned and tagged by authority. Browse the
+      <a href="/maps">map explorer</a> for a sample.
+    </p>
+
+    <h2>Architecture</h2>
+    <p>
+      See <a href="https://github.com/interscript/interscript">the monorepo</a>
+      for technical design.
+    </p>
+  </div>
+</Base>

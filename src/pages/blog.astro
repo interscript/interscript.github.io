@@ -1,0 +1,90 @@
+---
+import Base from "../layouts/Base.astro"
+
+const posts = [
+  {
+    slug: "webassembly-and-advanced-regular-expressions-with-opal",
+    date: "2021-06-26",
+    title: "WebAssembly and Advanced Regular Expressions with Opal",
+    summary:
+      "How we used Opal + Onigmo to bring Ruby's regex engine to the browser via WASM.",
+  },
+  {
+    slug: "diacritization-in-arabic-with-deep-learning",
+    date: "2021-08-03",
+    title: "Diacritization in Arabic with Deep Learning",
+    summary:
+      "The rababa project: neural-network-based Arabic diacritic restoration, integrated as an Interscript stage.",
+  },
+  {
+    slug: "extending-rababa-for-hebrew-diacriticization",
+    date: "2021-10-03",
+    title: "Extending Rababa for Hebrew Diacriticization",
+    summary:
+      "Generalising the rababa model architecture to handle Hebrew nakdan.",
+  },
+  {
+    slug: "transliteration-learned-from-transformers-and-graphs",
+    date: "2022-04-04",
+    title: "Transliteration Learned from Transformers and Graphs",
+    summary:
+      "Secryst: experimental learned transliteration via sequence-to-sequence models.",
+  },
+]
+---
+
+<Base title="Blog — Interscript" description="Articles on transliteration, the Interscript project, and adjacent topics.">
+  <h1>Blog</h1>
+  <p class="lead">Long-form articles on transliteration engineering and research.</p>
+
+  <ul class="post-list">
+    {posts.map((p) => (
+      <li>
+        <a href={`/blog/${p.slug}`}>
+          <span class="date">{p.date}</span>
+          <span class="title">{p.title}</span>
+          <span class="summary">{p.summary}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .lead {
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+  .post-list li {
+    border-bottom: 1px solid var(--border);
+  }
+  .post-list a {
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .post-list a:hover .title {
+    color: var(--accent);
+  }
+  .date {
+    display: block;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+  }
+  .title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.25rem 0 0.5rem;
+  }
+  .summary {
+    display: block;
+    color: var(--muted);
+  }
+</style>

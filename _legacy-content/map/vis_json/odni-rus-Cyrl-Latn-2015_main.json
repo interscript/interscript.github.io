@@ -1,0 +1,14 @@
+[
+  {
+    "type": "Run",
+    "doc": "bgnpcgn-rus-Cyrl-Latn-1947",
+    "stage": "main",
+    "more": ""
+  },
+  {
+    "type": "Replace",
+    "from": "<ruby><kbd>’</kbd><rt>2019</rt></ruby>",
+    "to": "none",
+    "more": ""
+  }
+]

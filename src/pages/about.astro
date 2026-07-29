@@ -1,0 +1,78 @@
+---
+import Base from "../layouts/Base.astro"
+---
+
+<Base title="About — Interscript" description="Background, mission, and team behind Interscript.">
+  <h1>About Interscript</h1>
+
+  <section>
+    <h2>Mission</h2>
+    <p>
+      Interscript exists to make transliteration between writing systems
+      <strong>interoperable</strong>. Where most romanization tools
+      implement one system or one authority, Interscript encodes the
+      complete corpus of major authority-backed systems (BGN/PCGN, ISO,
+      UN, ALA-LC, ODNI, ICAO, DIN, and others) using a single map format
+      that runs in any language runtime.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why it matters</h2>
+    <p>
+      Names, places, and historical records exist in dozens of scripts.
+      Whether you're a librarian cataloguing foreign-language works, a
+      government agency standardising romanisation, or a developer
+      building multilingual search, you need predictable, auditable
+      conversion. Interscript maps are checked into git, versioned, and
+      independently testable against the published authority documents.
+    </p>
+  </section>
+
+  <section>
+    <h2>History</h2>
+    <p>
+      Interscript was started at Ribose in 2019 as a Ruby library and
+      has since grown to include a TypeScript runtime, a research-grade
+      neural diacritizer (rababa), and a public reference site. The map
+      corpus now exceeds 300 systems.
+    </p>
+  </section>
+
+  <section>
+    <h2>Team</h2>
+    <p>
+      Interscript is an open-source project maintained by Ribose Inc.
+      and a community of contributors. Source code is on
+      <a href="https://github.com/interscript">GitHub</a>; issues and
+      pull requests are welcome.
+    </p>
+  </section>
+
+  <section>
+    <h2>Funding and partnerships</h2>
+    <p>
+      Development has been supported by Ribose Inc. and by the
+      <a href="https://www.nga.mil">U.S. National Geospatial-Intelligence
+      Agency</a> under agreement #NSG-2021-XXX. Content does not
+      necessarily reflect the position or policy of the U.S. Government.
+    </p>
+  </section>
+</Base>
+
+<style>
+  section {
+    margin: 2rem 0;
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    line-height: 1.7;
+    color: var(--text);
+  }
+  a {
+    color: var(--accent);
+  }
+</style>

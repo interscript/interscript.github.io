@@ -1,0 +1,109 @@
+---
+import Base from "../layouts/Base.astro"
+
+const authorities = [
+  {
+    name: "BGN/PCGN",
+    full: "Board on Geographic Names / Permanent Committee on Geographical Names",
+    systems: 40,
+    region: "United States / United Kingdom",
+  },
+  {
+    name: "ISO",
+    full: "International Organization for Standardization",
+    systems: 60,
+    region: "International",
+  },
+  {
+    name: "UN (UNGEGN)",
+    full: "United Nations Group of Experts on Geographical Names",
+    systems: 30,
+    region: "International",
+  },
+  {
+    name: "ALA-LC",
+    full: "American Library Association / Library of Congress",
+    systems: 50,
+    region: "United States",
+  },
+  {
+    name: "ODNI",
+    full: "Office of the Director of National Intelligence",
+    systems: 20,
+    region: "United States",
+  },
+  {
+    name: "ICAO",
+    full: "International Civil Aviation Organization",
+    systems: 10,
+    region: "International",
+  },
+  {
+    name: "DIN",
+    full: "Deutsches Institut für Normung",
+    systems: 8,
+    region: "Germany",
+  },
+  {
+    name: "MOFA",
+    full: "Ministry of Foreign Affairs (various countries)",
+    systems: 15,
+    region: "Various",
+  },
+]
+---
+
+<Base title="Authorities — Interscript" description="Transliteration authorities covered by Interscript.">
+  <h1>Authorities</h1>
+  <p class="lead">
+    Interscript covers systems from these authorities. Each map encodes
+    the official rules verbatim, with reproducible test vectors.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Authority</th>
+        <th>Full name</th>
+        <th>Region</th>
+        <th class="num">Systems</th>
+      </tr>
+    </thead>
+    <tbody>
+      {authorities.map((a) => (
+        <tr>
+          <td><strong>{a.name}</strong></td>
+          <td>{a.full}</td>
+          <td>{a.region}</td>
+          <td class="num">{a.systems}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</Base>
+
+<style>
+  .lead {
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: var(--surface);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+</style>
