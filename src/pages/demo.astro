@@ -2,59 +2,110 @@
 import Base from "../layouts/Base.astro"
 import MapExplorer from "../components/MapExplorer.vue"
 
-// Bundled sample maps — shipped as static JSON for SSR + client.
-// In production these come from the published interscript-maps-ir package.
 const systems = [
-  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian (2019)" },
-  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German (2000)" },
-  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian (2015)" },
-  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
-  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil (1972)" },
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian → Latin (2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German → Latin (2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian → Latin (2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic → Latin (2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil → Latin (1972)" },
+]
+
+const samples = [
+  { system: "BGN/PCGN Ukrainian", input: "Антон", output: "Anton" },
+  { system: "BGN/PCGN German", input: "Tschüß!", output: "Tschueß!" },
+  { system: "ODNI Russian", input: "привет мир", output: "privet mir" },
+  { system: "ALA-LC Amharic", input: "ኢትዮጵያ", output: "ʼiteyop̣eyā" },
+  { system: "UN Tamil", input: "தமிழ்", output: "tamil̮" },
 ]
 ---
 
-<Base title="Live demo — Interscript" description="Try Interscript transliteration in your browser.">
-  <h1>Live demo</h1>
-  <p class="lead">
-    Pick a system, type text, get transliteration. Powered by
-    <code>interscript-ts</code> running entirely in your browser — no
-    server round-trip.
-  </p>
+<Base title="Live demo — Interscript" description="Try Interscript transliteration in your browser, powered by interscript-ts.">
+  <section class="demo-hero">
+    <div class="container">
+      <p class="eyebrow">Live demo</p>
+      <h1>Type. Watch scripts change.</h1>
+      <p class="demo-deck">
+        Every keystroke runs the full Ruby-IR compiler pipeline in your
+        browser. No server round-trips, no analytics, no waiting.
+      </p>
+    </div>
+  </section>
 
-  <MapExplorer client:load systems={systems} />
+  <section class="container demo-main">
+    <MapExplorer client:load systems={systems} />
+  </section>
 
-  <section class="samples">
-    <h2>Try these inputs</h2>
-    <ul>
-      <li><code>Антон</code> → <code>Anton</code> (BGN/PCGN Ukrainian)</li>
-      <li><code>Tschüß!</code> → <code>Tschueß!</code> (BGN/PCGN German)</li>
-      <li><code>привет мир</code> → <code>privet mir</code> (ODNI Russian)</li>
-      <li><code>ኢትዮጵያ</code> → <code>ʼiteyop̣eyā</code> (ALA-LC Amharic)</li>
-    </ul>
+  <section class="container section-tight">
+    <header class="section-head">
+      <p class="eyebrow">Reference vectors</p>
+      <h2>What each system should produce.</h2>
+    </header>
+    <table class="reference-table">
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Input</th>
+          <th></th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        {samples.map((s) => (
+          <tr>
+            <td class="ref-name">{s.system}</td>
+            <td class="ref-input">{s.input}</td>
+            <td class="ref-arrow" aria-hidden="true">→</td>
+            <td class="ref-output">{s.output}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   </section>
 </Base>
 
 <style>
-  .lead {
-    color: var(--muted);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  .demo-hero {
+    padding-block: 4rem 2rem;
   }
-  .samples {
-    margin-top: 3rem;
+  .demo-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 1rem;
   }
-  .samples ul {
-    list-style: none;
-    padding: 0;
+  .demo-deck {
+    max-width: 50ch;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
   }
-  .samples li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
+  .demo-main {
+    margin-block: 2rem 4rem;
   }
-  code {
-    background: var(--surface);
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.95em;
+  .section-head h2 {
+    font-size: var(--text-h1);
+    margin: 0.5rem 0 1.5rem;
   }
+  .reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+  }
+  .reference-table th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .reference-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: middle;
+  }
+  .ref-name { color: var(--color-stone); font-family: var(--font-sans); font-size: 0.9375rem; }
+  .ref-input { color: var(--color-ink); }
+  .ref-arrow { color: var(--color-stone-light); font-family: var(--font-mono); font-size: 0.875rem; }
+  .ref-output { color: var(--color-ochre); font-style: italic; }
 </style>

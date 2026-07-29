@@ -12,20 +12,49 @@ function readHtml(path: string): string {
   return readFileSync(full, "utf8")
 }
 
+function readAllCss(): string {
+  const cssDir = resolve(DIST, "_astro")
+  if (!existsSync(cssDir)) return ""
+  return readdirSync(cssDir)
+    .filter((f) => f.endsWith(".css"))
+    .map((f) => readFileSync(resolve(cssDir, f), "utf8"))
+    .join("\n")
+}
+
+function allBuiltHtmlFiles(): string[] {
+  if (!existsSync(DIST)) return []
+  const topLevel = readdirSync(DIST)
+    .filter((f) => f.endsWith(".html"))
+    .map((f) => resolve(DIST, f))
+  const subdirs = readdirSync(DIST, { withFileTypes: true })
+    .filter((e) => e.isDirectory())
+    .flatMap((d) =>
+      readdirSync(resolve(DIST, d.name))
+        .filter((f) => f.endsWith(".html"))
+        .map((f) => resolve(DIST, d.name, f)),
+    )
+  return [...topLevel, ...subdirs]
+}
+
 describe("site build", () => {
   it("dist directory exists", () => {
     expect(existsSync(DIST)).toBe(true)
   })
 
-  it("renders expected pages", () => {
+  it("renders all expected pages", () => {
     const expected = [
       "index.html",
+      "404.html",
       "demo/index.html",
       "maps/index.html",
       "authorities/index.html",
       "blog/index.html",
-      "about/index.html",
       "docs/index.html",
+      "about/index.html",
+      "blog/2021-06-26-webassembly-and-advanced-regular-expressions-with-opal/index.html",
+      "blog/2022-04-04-transliteration-learned-from-transformers-and-graphs/index.html",
+      "docs/Interscript_Map_Format/index.html",
+      "docs/Map_Editing_Guide/index.html",
     ]
     for (const p of expected) {
       expect(existsSync(resolve(DIST, p))).toBe(true)
@@ -33,77 +62,229 @@ describe("site build", () => {
   })
 })
 
+describe("design system — palette (in compiled CSS)", () => {
+  const css = readAllCss()
+
+  it("uses warm parchment background", () => {
+    expect(css).toContain("f2ebdd")
+  })
+
+  it("uses ochre accent", () => {
+    expect(css).toContain("9c4221")
+  })
+
+  it("uses warm near-black ink", () => {
+    expect(css).toContain("0e0e0c")
+  })
+})
+
+describe("design system — typography (in compiled CSS)", () => {
+  const css = readAllCss()
+
+  it("loads Newsreader display font", () => {
+    expect(css.toLowerCase()).toContain("newsreader")
+  })
+
+  it("loads Inter body font", () => {
+    expect(css.toLowerCase()).toContain("inter")
+  })
+
+  it("loads JetBrains Mono", () => {
+    expect(css.toLowerCase()).toContain("jetbrains")
+  })
+})
+
+describe("partners and attribution", () => {
+  it("credits Ribose Inc. on every page footer", () => {
+    for (const file of allBuiltHtmlFiles()) {
+      const html = readFileSync(file, "utf8")
+      expect(html).toMatch(/Ribose Inc\./)
+    }
+  })
+
+  it("credits U.S. NGA as funder on every page footer", () => {
+    for (const file of allBuiltHtmlFiles()) {
+      const html = readFileSync(file, "utf8")
+      expect(html).toMatch(/National Geospatial-Intelligence Agency/i)
+    }
+  })
+
+  it("includes NGA disclaimer on every page footer", () => {
+    for (const file of allBuiltHtmlFiles()) {
+      const html = readFileSync(file, "utf8")
+      expect(html).toMatch(/does not necessarily reflect/i)
+    }
+  })
+
+  it("About page mentions Ribose incubation", () => {
+    const about = readHtml("about/index.html")
+    expect(about).toMatch(/started at Ribose/i)
+  })
+
+  it("About page mentions NGA cooperative agreement", () => {
+    const about = readHtml("about/index.html")
+    expect(about).toMatch(/NGA|NSG-2021/i)
+  })
+})
+
+describe("navigation", () => {
+  const navHrefs = ["/demo", "/maps", "/authorities", "/docs", "/blog", "/about"]
+
+  it("every page links to all primary destinations", () => {
+    const pages = allBuiltHtmlFiles()
+    expect(pages.length).toBeGreaterThan(0)
+    for (const page of pages) {
+      void statSync(page)
+      const html = readFileSync(page, "utf8")
+      for (const href of navHrefs) {
+        expect(html).toContain(`href="${href}"`)
+      }
+    }
+  })
+
+  it("GitHub pill is present on every page", () => {
+    for (const page of allBuiltHtmlFiles()) {
+      const html = readFileSync(page, "utf8")
+      expect(html).toMatch(/github\.com\/interscript/)
+    }
+  })
+})
+
 describe("home page", () => {
-  const html = readHtml("index.html")
+  const home = readHtml("index.html")
 
-  it("mentions Interscript", () => {
-    expect(html).toMatch(/Interscript/i)
+  it("has the morphing hero specimen (signature element)", () => {
+    expect(home).toMatch(/HeroMorph|astro-island/)
   })
 
-  it("links to demo and docs", () => {
-    expect(html).toMatch(/href="\/demo"/)
-    expect(html).toMatch(/href="\/docs"/)
+  it("renders the headline three beats", () => {
+    expect(home).toMatch(/One(\s|&nbsp;)+map/i)
+    expect(home).toMatch(/Every(\s|&nbsp;)+script/i)
+    expect(home).toMatch(/Any(\s|&nbsp;)+runtime/i)
   })
 
-  it("includes stats grid", () => {
-    expect(html).toMatch(/300\+/)
-    expect(html).toMatch(/Authorities/)
+  it("shows the four headline stats", () => {
+    expect(home).toContain("300+")
+    expect(home).toContain("Authorities")
+    expect(home).toContain("Scripts")
+    expect(home).toContain("BSD-2")
   })
 
-  it("includes quick-start code sample", () => {
-    expect(html).toMatch(/gem install interscript/)
-    expect(html).toMatch(/npm install interscript-ts/)
+  it("lists authority strip", () => {
+    for (const auth of ["BGN/PCGN", "ISO", "ALA-LC", "ODNI", "ICAO"]) {
+      expect(home).toContain(auth)
+    }
+  })
+
+  it("shows featured systems with byte-exact transformations", () => {
+    expect(home).toContain("Антон")
+    expect(home).toContain("Anton")
+    expect(home).toContain("Tschüß!")
+    expect(home).toContain("Tschueß!")
+    expect(home).toContain("привет мир")
+    expect(home).toContain("privet mir")
+    expect(home).toContain("ኢትዮጵያ")
+    expect(home).toContain("தமிழ்")
+  })
+
+  it("shows install command in CTA", () => {
+    expect(home).toContain("gem install interscript")
+    expect(home).toContain("npm install interscript-ts")
   })
 })
 
 describe("demo page", () => {
-  const html = readHtml("demo/index.html")
+  const demo = readHtml("demo/index.html")
 
   it("mentions interscript-ts", () => {
-    expect(html).toMatch(/interscript-ts/)
+    expect(demo).toMatch(/interscript-ts/)
   })
 
   it("includes the MapExplorer island", () => {
-    expect(html).toMatch(/MapExplorer|astro-island/)
+    expect(demo).toMatch(/MapExplorer|astro-island/)
   })
 
-  it("lists sample transliterations", () => {
-    expect(html).toContain("Anton")
-    expect(html).toContain("Tschueß")
+  it("has the reference-vectors table", () => {
+    expect(demo).toMatch(/Reference vectors/i)
   })
 })
 
 describe("authorities page", () => {
-  const html = readHtml("authorities/index.html")
+  const auth = readHtml("authorities/index.html")
 
-  it("lists known authorities", () => {
-    for (const auth of ["BGN/PCGN", "ISO", "ALA-LC", "ODNI", "ICAO"]) {
-      expect(html).toContain(auth)
+  it("lists authorities with system counts", () => {
+    for (const name of ["BGN/PCGN", "ISO", "ALA-LC", "ODNI", "ICAO", "UNGEGN", "DIN", "MOFA"]) {
+      expect(auth).toContain(name)
     }
   })
 })
 
-describe("nav across pages", () => {
-  it("every built page links to all top-nav destinations", () => {
-    const topLevel = readdirSync(DIST)
-      .filter((f) => f.endsWith(".html"))
-      .map((f) => resolve(DIST, f))
-    const subdirs = readdirSync(DIST, { withFileTypes: true })
-      .filter((e) => e.isDirectory())
-      .flatMap((d) =>
-        readdirSync(resolve(DIST, d.name))
-          .filter((f) => f.endsWith(".html"))
-          .map((f) => resolve(DIST, d.name, f)),
-      )
-    const allPages = [...topLevel, ...subdirs]
-    expect(allPages.length).toBeGreaterThan(0)
+describe("404 page", () => {
+  const html = readHtml("404.html")
 
-    for (const page of allPages) {
-      void statSync(page)
-      const html = readFileSync(page, "utf8")
-      for (const href of ["/demo", "/maps", "/authorities", "/docs", "/blog", "/about"]) {
-        expect(html).toContain(`href="${href}"`)
-      }
+  it("shows 404 prominently", () => {
+    expect(html).toMatch(/404/)
+  })
+
+  it("suggests navigational destinations", () => {
+    for (const target of ["/demo", "/maps", "/docs", "/blog"]) {
+      expect(html).toContain(`href="${target}"`)
     }
+  })
+})
+
+describe("blog", () => {
+  const blog = readHtml("blog/index.html")
+
+  it("lists the four published posts", () => {
+    expect(blog).toMatch(/WebAssembly.*Opal/i)
+    expect(blog).toMatch(/Diacritization.*Arabic/i)
+    expect(blog).toMatch(/Rababa.*Hebrew/i)
+    expect(blog).toMatch(/transliteration|transformers/i)
+  })
+
+  it("renders detail page for one post with full body", () => {
+    const post = readHtml(
+      "blog/2021-06-26-webassembly-and-advanced-regular-expressions-with-opal/index.html",
+    )
+    expect(post).toMatch(/WebAssembly/i)
+    expect(post.length).toBeGreaterThan(2000)
+  })
+})
+
+describe("docs", () => {
+  const docs = readHtml("docs/index.html")
+
+  it("lists the six docs", () => {
+    expect(docs).toMatch(/Integration.*Ruby/i)
+    expect(docs).toMatch(/Map Format/i)
+    expect(docs).toMatch(/Maintainers/i)
+    expect(docs).toMatch(/Map Editing/i)
+    expect(docs).toMatch(/Rababa/i)
+    expect(docs).toMatch(/Secryst/i)
+  })
+
+  it("renders a doc detail page with sidebar nav", () => {
+    const doc = readHtml("docs/Interscript_Map_Format/index.html")
+    expect(doc).toMatch(/Interscript Map Format/i)
+    expect(doc.length).toBeGreaterThan(2000)
+    expect(doc).toContain("Map_Editing_Guide")
+    expect(doc).toContain("Maintainers")
+    expect(doc).toContain("Usage_with_Rababa")
+  })
+})
+
+describe("about page", () => {
+  const about = readHtml("about/index.html")
+
+  it("explains mission", () => {
+    expect(about).toMatch(/Mission/)
+    expect(about).toMatch(/interoperable/i)
+  })
+
+  it("covers history, team, funding", () => {
+    expect(about).toMatch(/History/)
+    expect(about).toMatch(/Team/)
+    expect(about).toMatch(/Funding/)
   })
 })

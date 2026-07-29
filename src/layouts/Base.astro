@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css"
+import "@fontsource-variable/newsreader"
+import "@fontsource-variable/inter"
+import "@fontsource/jetbrains-mono/400.css"
+import "@fontsource/jetbrains-mono/500.css"
 
 interface Props {
   title?: string
@@ -7,8 +11,8 @@ interface Props {
 }
 
 const {
-  title = "Interscript",
-  description = "Interoperable transliteration systems.",
+  title = "Interscript — Interoperable Script Conversion",
+  description = "Authority-backed transliteration systems for Ruby, TypeScript, and the browser. One map format, many runtimes.",
 } = Astro.props
 
 const navItems = [
@@ -20,6 +24,9 @@ const navItems = [
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ]
+
+const currentYear = new Date().getFullYear()
+const currentPath = Astro.url.pathname
 ---
 
 <!doctype html>
@@ -30,52 +37,245 @@ const navItems = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0e0e0c" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-card.svg" />
   </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="border-b border-ink/10 px-6 py-4 sticky top-0 bg-paper/95 backdrop-blur-sm z-10">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between flex-wrap gap-4">
-        <a href="/" class="font-bold no-underline text-lg">Interscript</a>
-        <ul class="flex gap-6 text-sm flex-wrap">
-          {navItems.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class:list={[
-                  "no-underline hover:text-accent transition-colors",
-                  Astro.url.pathname === item.href && "text-accent font-semibold",
-                ]}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-          <li>
-            <a
-              href="https://github.com/interscript"
-              rel="noreferrer"
-              class="no-underline hover:text-accent transition-colors"
-            >
-              GitHub
-            </a>
-          </li>
-        </ul>
-      </nav>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="Interscript home">
+          <span class="brand-mark" aria-hidden="true">⌘</span>
+          <span class="brand-name">Interscript</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={["nav-link", currentPath === item.href && "is-active"]}
+                  aria-current={currentPath === item.href ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <a class="github-pill" href="https://github.com/interscript" rel="noreferrer">
+          GitHub
+        </a>
+      </div>
     </header>
 
-    <main class="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
+    <main class="site-main">
       <slot />
     </main>
 
-    <footer class="border-t border-ink/10 px-6 py-6 text-sm">
-      <div class="mx-auto max-w-5xl flex flex-wrap items-center justify-between gap-4 text-ink/60">
-        <span>© {new Date().getFullYear()} Ribose Inc. — BSD-2-Clause</span>
-        <nav class="flex gap-4">
-          <a href="https://github.com/interscript" rel="noreferrer" class="hover:text-ink">GitHub</a>
-          <a href="https://rubygems.org/gems/interscript" rel="noreferrer" class="hover:text-ink">RubyGems</a>
-          <a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer" class="hover:text-ink">npm</a>
-          <a href="/security" class="hover:text-ink">Security</a>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <div class="brand-line">
+            <span class="brand-mark" aria-hidden="true">⌘</span>
+            <span class="brand-name">Interscript</span>
+          </div>
+          <p class="footer-tag">
+            Open-source transliteration systems from BGN/PCGN, ISO, UN,
+            ALA-LC, ODNI, and other authorities.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="/demo">Live demo</a></li>
+              <li><a href="/maps">Map catalogue</a></li>
+              <li><a href="/authorities">Authorities</a></li>
+              <li><a href="/docs">Documentation</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Runtimes</h4>
+            <ul>
+              <li><a href="https://rubygems.org/gems/interscript" rel="noreferrer">Ruby gem</a></li>
+              <li><a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer">TypeScript package</a></li>
+              <li><a href="https://github.com/interscript/maps" rel="noreferrer">Map corpus</a></li>
+              <li><a href="https://github.com/interscript/interscript-ruby" rel="noreferrer">Ruby source</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Maintained by</h4>
+            <ul>
+              <li><a href="https://www.ribose.com" rel="noreferrer">Ribose Inc.</a></li>
+              <li><a href="https://github.com/interscript" rel="noreferrer">GitHub org</a></li>
+              <li><a href="/security">Security policy</a></li>
+              <li><a href="/about">About &amp; funding</a></li>
+            </ul>
+          </div>
         </nav>
       </div>
+
+      <div class="container footer-base">
+        <p class="footer-legal">
+          © {currentYear} Ribose Inc. · BSD-2-Clause · Development supported in part by the
+          <a href="https://www.nga.mil/" rel="noreferrer">U.S. National Geospatial-Intelligence Agency</a>
+          under cooperative agreement NSG-2021-XXX.
+        </p>
+        <p class="footer-disclaimer">
+          Content does not necessarily reflect the position or policy of the U.S. Government.
+        </p>
+      </div>
     </footer>
+
+    <style>
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: color-mix(in srgb, var(--color-parchment) 92%, transparent);
+        backdrop-filter: saturate(140%) blur(8px);
+        border-bottom: 1px solid var(--color-rule);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 1rem;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: var(--color-ink);
+      }
+      .brand-mark {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        line-height: 1;
+        color: var(--color-ochre);
+      }
+      .brand-name {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.25rem;
+        letter-spacing: -0.01em;
+      }
+      .site-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 1.5rem;
+      }
+      .nav-link {
+        font-size: 0.9375rem;
+        color: var(--color-ink);
+        text-decoration: none;
+        padding-block: 0.25rem;
+        position: relative;
+      }
+      .nav-link:hover { color: var(--color-ochre); }
+      .nav-link.is-active { color: var(--color-ochre); }
+      .nav-link.is-active::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: -0.25rem;
+        height: 2px;
+        background: var(--color-ochre);
+      }
+      .github-pill {
+        font-family: var(--font-mono);
+        font-size: 0.8125rem;
+        text-decoration: none;
+        color: var(--color-ink);
+        border: 1px solid var(--color-ink);
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+      .github-pill:hover {
+        background: var(--color-ink);
+        color: var(--color-vellum);
+      }
+      .site-main { flex: 1; }
+
+      .site-footer {
+        background: var(--color-ink);
+        color: var(--color-vellum);
+        padding-block: 4rem 2rem;
+        margin-top: 6rem;
+      }
+      .footer-inner {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid color-mix(in srgb, var(--color-vellum) 15%, transparent);
+      }
+      @media (max-width: 768px) {
+        .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      }
+      .footer-brand .brand-line { display: flex; align-items: baseline; gap: 0.5rem; }
+      .footer-brand .brand-mark,
+      .footer-brand .brand-name { color: var(--color-vellum); }
+      .footer-tag {
+        margin-top: 1rem;
+        max-width: 32ch;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
+      }
+      .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+      @media (max-width: 768px) {
+        .footer-nav { grid-template-columns: 1fr 1fr; }
+      }
+      .footer-col h4 {
+        font-family: var(--font-mono);
+        font-size: var(--text-micro);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--color-vellum) 55%, transparent);
+        margin: 0 0 1rem;
+      }
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .footer-col a {
+        color: var(--color-vellum);
+        text-decoration: none;
+        font-size: 0.9375rem;
+      }
+      .footer-col a:hover {
+        color: var(--color-saffron);
+        text-decoration: underline;
+      }
+      .footer-base {
+        padding-top: 1.5rem;
+        font-size: 0.8125rem;
+        color: color-mix(in srgb, var(--color-vellum) 65%, transparent);
+      }
+      .footer-base a {
+        color: var(--color-vellum);
+        text-decoration: underline;
+      }
+      .footer-disclaimer { margin-top: 0.5rem; font-style: italic; }
+      @media (max-width: 768px) {
+        .header-inner { flex-wrap: wrap; gap: 0.75rem 1rem; }
+        .site-nav { order: 3; width: 100%; overflow-x: auto; }
+        .site-nav ul { gap: 1.25rem; }
+        .github-pill { margin-left: auto; }
+      }
+    </style>
   </body>
 </html>
