@@ -7342,10 +7342,10 @@ react-static-plugin-typescript@^7.2.0:
     convert-tsconfig-paths-to-webpack-aliases "^0.9.2"
     fork-ts-checker-webpack-plugin "^6.0.4"
 
-react-static@^7.2.0:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-7.5.3.tgz#4262e95aabbee4fa7fec44d60c23458874fe99d7"
-  integrity sha512-coA9MuNPfN+8TyFj7aOycw2e5W9t+sSgFOUyK30oDrh2MWWWHLjY0I4V1puyCconC2arggfDE2GYXvqOTCGv9Q==
+react-static@^7.6.2:
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-7.6.2.tgz#f860473d5934736899231a1a65ae80f5e861ad47"
+  integrity sha512-JQACM+3GgF1vkUH6E6w1k0Qut6IbcfXjU37shGUWM9tIs3F9e/33saXK4G/uSl1kc8qjI+RekAQs/qyjMlUKlg==
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"
