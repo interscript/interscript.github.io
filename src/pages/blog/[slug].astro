@@ -1,0 +1,96 @@
+---
+import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+export function getStaticPaths() {
+  return renderAsciiDocDir("src/content/blog").map((p) => ({
+    params: { slug: p.id },
+  }))
+}
+
+const slug = Astro.params.slug
+const all = renderAsciiDocDir("src/content/blog")
+const post = all.find((p) => p.id === slug)
+
+if (!post) {
+  return Astro.redirect("/404")
+}
+
+const { data, body } = post
+---
+
+<Base title={`${data.title} — Interscript Blog`} description={data.summary}>
+  <article class="post">
+    <header>
+      <a href="/blog" class="back">← All posts</a>
+      <h1>{data.title}</h1>
+      <p class="meta">
+        <span class="date">{data.date}</span>
+        {data.author && <span class="author"> · by {data.author}</span>}
+      </p>
+    </header>
+
+    <div class="adoc-body" set:html={body} />
+
+    <footer>
+      <p>
+        Found a typo or want to improve this post?
+        <a href={`https://github.com/interscript/interscript.github.io/edit/main/src/content/blog/${slug}.adoc`}>
+          Edit on GitHub.
+        </a>
+      </p>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .post {
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  .back {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  header h1 {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+  .adoc-body :global(h2) {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+  .adoc-body :global(pre) {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  .adoc-body :global(code) {
+    background: var(--surface);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.95em;
+  }
+  .adoc-body :global(a) {
+    color: var(--accent);
+  }
+  .adoc-body :global(blockquote) {
+    border-left: 3px solid var(--border);
+    padding-left: 1rem;
+    color: var(--muted);
+    margin: 1rem 0;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+  }
+</style>

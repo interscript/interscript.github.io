@@ -1,0 +1,153 @@
+---
+import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+export function getStaticPaths() {
+  return renderAsciiDocDir("src/content/docs").map((d) => ({
+    params: { slug: d.id },
+  }))
+}
+
+const slug = Astro.params.slug
+const all = renderAsciiDocDir("src/content/docs")
+const doc = all.find((d) => d.id === slug)
+
+if (!doc) {
+  return Astro.redirect("/404")
+}
+
+const { data, body } = doc
+
+// Pretty-print title for the page <title>
+const pageTitle = `${data.title} — Interscript Docs`
+---
+
+<Base title={pageTitle} description={data.summary}>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Docs</h2>
+      <ul>
+        {all.map((d) => (
+          <li>
+            <a
+              href={`/docs/${d.id}`}
+              class:list={[d.id === slug && "active"]}
+            >{d.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <article class="doc">
+      <a href="/docs" class="back">← All docs</a>
+      <h1>{data.title}</h1>
+      {data.author && <p class="meta">by {data.author}</p>}
+
+      <div class="adoc-body" set:html={body} />
+
+      <footer>
+        <p>
+          <a href={`https://github.com/interscript/interscript.github.io/edit/main/src/content/docs/${slug}.adoc`}>
+            Edit this doc on GitHub →
+          </a>
+        </p>
+      </footer>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      order: 2;
+    }
+  }
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding-right: 1.5rem;
+  }
+  .sidebar h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-top: 0;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sidebar li {
+    padding: 0.25rem 0;
+  }
+  .sidebar a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .sidebar a:hover,
+  .sidebar a.active {
+    color: var(--accent);
+  }
+  .doc {
+    max-width: 42rem;
+  }
+  .back {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .doc h1 {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+  }
+  .meta {
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 0;
+  }
+  .adoc-body :global(h2) {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+  }
+  .adoc-body :global(pre) {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+  }
+  .adoc-body :global(code) {
+    background: var(--surface);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.95em;
+  }
+  .adoc-body :global(a) {
+    color: var(--accent);
+  }
+  .adoc-body :global(table) {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .adoc-body :global(th),
+  .adoc-body :global(td) {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+  }
+</style>

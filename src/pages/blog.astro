@@ -1,36 +1,14 @@
 ---
 import Base from "../layouts/Base.astro"
+import { renderAsciiDocDir } from "../content/loaders/asciidoc"
 
-const posts = [
-  {
-    slug: "webassembly-and-advanced-regular-expressions-with-opal",
-    date: "2021-06-26",
-    title: "WebAssembly and Advanced Regular Expressions with Opal",
-    summary:
-      "How we used Opal + Onigmo to bring Ruby's regex engine to the browser via WASM.",
-  },
-  {
-    slug: "diacritization-in-arabic-with-deep-learning",
-    date: "2021-08-03",
-    title: "Diacritization in Arabic with Deep Learning",
-    summary:
-      "The rababa project: neural-network-based Arabic diacritic restoration, integrated as an Interscript stage.",
-  },
-  {
-    slug: "extending-rababa-for-hebrew-diacriticization",
-    date: "2021-10-03",
-    title: "Extending Rababa for Hebrew Diacriticization",
-    summary:
-      "Generalising the rababa model architecture to handle Hebrew nakdan.",
-  },
-  {
-    slug: "transliteration-learned-from-transformers-and-graphs",
-    date: "2022-04-04",
-    title: "Transliteration Learned from Transformers and Graphs",
-    summary:
-      "Secryst: experimental learned transliteration via sequence-to-sequence models.",
-  },
-]
+const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
+  slug: p.id,
+  date: p.data.date,
+  title: p.data.title,
+  author: p.data.author,
+  summary: p.data.summary ?? "",
+}))
 ---
 
 <Base title="Blog — Interscript" description="Articles on transliteration, the Interscript project, and adjacent topics.">
@@ -43,6 +21,7 @@ const posts = [
         <a href={`/blog/${p.slug}`}>
           <span class="date">{p.date}</span>
           <span class="title">{p.title}</span>
+          {p.author && <span class="author">by {p.author}</span>}
           <span class="summary">{p.summary}</span>
         </a>
       </li>
@@ -82,6 +61,13 @@ const posts = [
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0.25rem 0 0.5rem;
+  }
+  .author {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
   }
   .summary {
     display: block;

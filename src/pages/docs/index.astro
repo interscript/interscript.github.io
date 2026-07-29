@@ -1,34 +1,127 @@
 ---
 import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+const docs = renderAsciiDocDir("src/content/docs")
 ---
 
-<Base title="Docs — Interscript">
-  <h1 class="mb-6 text-3xl font-bold">Documentation</h1>
+<Base title="Docs — Interscript" description="Documentation for the Interscript transliteration project.">
+  <h1>Documentation</h1>
 
-  <div class="prose">
+  <section class="quickstart">
     <h2>Getting started</h2>
     <p>
-      Interscript is available as a Ruby gem and (in development) a TypeScript
-      package. Choose your runtime:
+      Interscript runs in Ruby and TypeScript. Both consume the same
+      authority-backed maps.
     </p>
+    <div class="runtime-tiles">
+      <div class="tile">
+        <h3>Ruby</h3>
+        <pre><code>gem install interscript
+interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 &lt;&lt;&lt; "Антон"
+# => Anton</code></pre>
+        <a href="/docs/Integration_with_Ruby_Applications">Ruby guide →</a>
+      </div>
+      <div class="tile">
+        <h3>TypeScript</h3>
+        <pre><code>npm install interscript-ts</code></pre>
+        <pre><code>import &#123; transliterate &#125; from "interscript-ts"
+transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
+// => "Anton"</code></pre>
+      </div>
+    </div>
+  </section>
 
-    <h3>Ruby</h3>
-    <pre class="rounded-md bg-ink/5 p-4"><code>gem install interscript
-interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 input.txt</code></pre>
+  <section class="docs-list">
+    <h2>All docs</h2>
+    <ul>
+      {docs.map((d) => (
+        <li>
+          <a href={`/docs/${d.id}`}>
+            <span class="title">{d.data.title}</span>
+            {d.data.summary && <span class="summary">{d.data.summary}</span>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 
-    <h3>TypeScript</h3>
-    <pre class="rounded-md bg-ink/5 p-4"><code>npm install interscript-ts</code></pre>
-
-    <h2>Map catalogues</h2>
+  <section class="external">
+    <h2>Source</h2>
     <p>
-      Maps are versioned and tagged by authority. Browse the
-      <a href="/maps">map explorer</a> for a sample.
+      <a href="https://github.com/interscript/interscript">GitHub monorepo</a>
+      tracks the project architecture and TODO list.
     </p>
-
-    <h2>Architecture</h2>
     <p>
-      See <a href="https://github.com/interscript/interscript">the monorepo</a>
-      for technical design.
+      <a href="https://github.com/interscript/maps">Map corpus</a>
+      holds the 300+ `.imp` files; each one is human-readable Ruby DSL.
     </p>
-  </div>
+  </section>
 </Base>
+
+<style>
+  .quickstart {
+    margin: 2rem 0;
+  }
+  .runtime-tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 768px) {
+    .runtime-tiles {
+      grid-template-columns: 1fr;
+    }
+  }
+  .tile {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .tile h3 {
+    margin-top: 0;
+  }
+  .tile pre {
+    background: var(--surface);
+    padding: 0.75rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+  }
+  .docs-list {
+    margin: 3rem 0;
+  }
+  .docs-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  .docs-list li {
+    border-bottom: 1px solid var(--border);
+  }
+  .docs-list a {
+    display: block;
+    padding: 1rem 0;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .docs-list a:hover .title {
+    color: var(--accent);
+  }
+  .docs-list .title {
+    display: block;
+    font-weight: 600;
+  }
+  .docs-list .summary {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  .external {
+    margin-top: 3rem;
+  }
+  .external a {
+    color: var(--accent);
+  }
+</style>
