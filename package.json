@@ -30,7 +30,7 @@
     "iso-639-3": "^2.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-loader-spinner": "^3.1.14",
+    "react-loader-spinner": "^6.1.6",
     "react-simple-tree-menu": "^1.1.18",
     "react-static": "^7.2.0",
     "react-static-plugin-reach-router": "^7.2.0",
