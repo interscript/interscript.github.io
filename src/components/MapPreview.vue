@@ -1,0 +1,230 @@
+<script setup lang="ts">
+/**
+ * MapPreview — single-system transliteration widget for the map detail
+ * page. Smaller surface than MapExplorer; dedicated to one system code.
+ *
+ * If the system's IR isn't bundled (most of the 287 maps), the widget
+ * explains that and offers the Ruby gem path. For the 15 bundled
+ * systems, it transliterates live.
+ */
+import { ref, computed, onMounted } from "vue"
+
+interface Props {
+  systemCode: string
+  systemName: string
+  sourceScript: string
+  destinationScript: string
+  initialInput?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  initialInput: "",
+})
+
+const input = ref(props.initialInput)
+const engine = ref<"ready" | "loading" | "missing" | "unavailable">("loading")
+const errorMessage = ref<string | null>(null)
+
+// Bundled IR maps; only a subset of the catalogue is shipped.
+const BUNDLED_SYSTEMS = new Set([
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "bgnpcgn-deu-Latn-Latn-2000",
+  "odni-rus-Cyrl-Latn-2015",
+  "alalc-amh-Ethi-Latn-2011",
+  "alalc-amh-Ethi-Latn-1997",
+  "un-tam-Taml-Latn-1972",
+  "un-ukr-Cyrl-Latn-2012",
+  "bgnpcgn-rus-Cyrl-Latn-1947",
+  "ua-ukr-Cyrl-Latn-1996",
+  "ua-ukr-Cyrl-Latn-2010",
+])
+
+let transliterateFn: ((code: string, input: string) => string) | null = null
+
+async function ensureEngine() {
+  if (!BUNDLED_SYSTEMS.has(props.systemCode)) {
+    engine.value = "unavailable"
+    return
+  }
+  engine.value = "loading"
+  try {
+    const mod = await import("interscript-ts")
+    const modules = import.meta.glob("/maps/*.json", { eager: true, as: "raw" })
+    const maps: Record<string, unknown> = {}
+    for (const [path, raw] of Object.entries(modules)) {
+      const code = path.match(/\/maps\/(.+)\.json$/)?.[1]
+      if (code) maps[code] = JSON.parse(raw as string)
+    }
+    mod.reset()
+    mod.configure({ strategies: [mod.bundledStrategy(maps)] })
+    transliterateFn = mod.transliterate
+    engine.value = "ready"
+  } catch (e) {
+    engine.value = "missing"
+    errorMessage.value = (e as Error).message
+  }
+}
+
+const output = computed(() => {
+  if (engine.value !== "ready" || !transliterateFn) return ""
+  try {
+    errorMessage.value = null
+    return transliterateFn(props.systemCode, input.value)
+  } catch (e) {
+    errorMessage.value = (e as Error).message
+    return ""
+  }
+})
+
+onMounted(ensureEngine)
+</script>
+
+<template>
+  <div class="preview">
+    <div v-if="engine === 'unavailable'" class="notice">
+      <p>
+        <strong>Live preview not available for this system.</strong>
+        Only a curated subset of maps is shipped to the browser.
+        To run this system locally:
+      </p>
+      <pre><code># Ruby
+gem install interscript
+interscript -s {{ systemCode }} input.txt
+
+# TypeScript (after npm install interscript-ts)
+import {{ '{' }} transliterate {{ '}' }} from "interscript-ts"
+transliterate("{{ systemCode }}", "your input")</code></pre>
+    </div>
+
+    <div v-else class="work">
+      <div class="pane pane-input">
+        <header class="pane-header">
+          <span class="pane-label">Input ({{ sourceScript }})</span>
+        </header>
+        <textarea
+          v-model="input"
+          rows="3"
+          class="pane-body"
+          :placeholder="`Type text in ${sourceScript}…`"
+          spellcheck="false"
+        ></textarea>
+      </div>
+
+      <div class="pane pane-output">
+        <header class="pane-header">
+          <span class="pane-label">Output ({{ destinationScript }})</span>
+          <span
+            class="pane-status"
+            :class="{
+              loading: engine === 'loading',
+              ready: engine === 'ready',
+              missing: engine === 'missing',
+            }"
+            >{{ engine }}</span
+          >
+        </header>
+        <output class="pane-body pane-result">{{
+          output || (engine === 'ready' ? '—' : 'Loading engine…')
+        }}</output>
+      </div>
+
+      <div v-if="errorMessage" class="error-banner" role="alert">
+        <strong>Error:</strong> {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.preview {
+  border: 1px solid var(--color-rule);
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-vellum);
+}
+.notice {
+  padding: 2rem;
+}
+.notice p {
+  margin: 0 0 1rem;
+  color: var(--color-ink);
+}
+.notice pre {
+  margin: 0;
+}
+.work {
+  display: grid;
+  grid-template-rows: 1fr 1fr auto;
+}
+.pane {
+  display: flex;
+  flex-direction: column;
+}
+.pane-input {
+  border-bottom: 1px solid var(--color-rule);
+}
+.pane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: color-mix(in srgb, var(--color-ink) 4%, transparent);
+}
+.pane-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+.pane-status {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+.pane-status.loading {
+  background: color-mix(in srgb, var(--color-saffron) 12%, transparent);
+  color: var(--color-saffron);
+}
+.pane-status.ready {
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+  color: #16a34a;
+}
+.pane-status.missing {
+  background: color-mix(in srgb, var(--color-ochre) 12%, transparent);
+  color: var(--color-ochre);
+}
+.pane-body {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border: none;
+  background: transparent;
+  resize: none;
+  color: var(--color-ink);
+  min-height: 5rem;
+}
+.pane-body:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: -2px;
+}
+.pane-result {
+  font-style: italic;
+  color: var(--color-ochre);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.error-banner {
+  padding: 0.75rem 1.25rem;
+  background: color-mix(in srgb, var(--color-ochre) 8%, transparent);
+  color: var(--color-ochre);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--color-rule);
+}
+</style>

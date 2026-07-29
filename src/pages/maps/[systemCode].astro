@@ -1,0 +1,311 @@
+---
+import Base from "../../layouts/Base.astro"
+import MapPreview from "../../components/MapPreview.vue"
+import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+
+export function getStaticPaths() {
+  return Object.keys(catalogue).map((code) => ({
+    params: { systemCode: code },
+  }))
+}
+
+interface MapEntry {
+  data: {
+    authority_id: string
+    id: string
+    language?: string
+    source_script: string
+    destination_script: string
+    name: string
+    description?: string
+    creation_date?: string
+    confirmation_date?: string
+    url?: string
+  }
+  test?: (string | null)[]
+}
+
+const { systemCode } = Astro.params
+const entry = (catalogue as Record<string, MapEntry>)[systemCode!]
+
+if (!entry) {
+  return Astro.redirect("/404")
+}
+
+const { data, test } = entry
+const year = data.creation_date ?? data.id
+const languageCode = data.language?.split(":").pop()
+const pageTitle = `${data.name} — Interscript Maps`
+const pageDesc = data.description ?? `${data.source_script} → ${data.destination_script} (${data.authority_id.toUpperCase()}, ${year})`
+---
+
+<Base title={pageTitle} description={pageDesc}>
+  <article class="map-detail">
+    <div class="container">
+      <a href="/maps" class="back-link">← All maps</a>
+
+      <header class="map-header">
+        <p class="eyebrow">{data.authority_id.toUpperCase()} · {year}</p>
+        <h1>{data.name}</h1>
+        <code class="system-code">{systemCode}</code>
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Authority</dt>
+            <dd>{data.authority_id}</dd>
+          </div>
+          <div>
+            <dt>Year</dt>
+            <dd>{year}</dd>
+          </div>
+          <div>
+            <dt>Source script</dt>
+            <dd>{data.source_script}</dd>
+          </div>
+          <div>
+            <dt>Destination script</dt>
+            <dd>{data.destination_script}</dd>
+          </div>
+          {languageCode && (
+            <div>
+              <dt>Language</dt>
+              <dd>{languageCode}</dd>
+            </div>
+          )}
+          {data.confirmation_date && (
+            <div>
+              <dt>Confirmed</dt>
+              <dd>{data.confirmation_date}</dd>
+            </div>
+          )}
+        </dl>
+
+        {data.description && (
+          <p class="map-description">{data.description}</p>
+        )}
+
+        {data.url && (
+          <p class="source-link">
+            <a href={data.url} rel="noreferrer">View the authority document →</a>
+          </p>
+        )}
+      </header>
+
+      <hr class="rule-bold" />
+
+      <section class="preview-section">
+        <p class="eyebrow">Live preview</p>
+        <h2>Try this system.</h2>
+        <p class="section-deck">
+          Type any text in {data.source_script} to see the {data.destination_script} output.
+          Backed by <code>interscript-ts</code> running in your browser.
+        </p>
+
+        <MapPreview
+          client:load
+          systemCode={systemCode!}
+          systemName={data.name}
+          sourceScript={data.source_script}
+          destinationScript={data.destination_script}
+          initialInput={test?.[0] ?? ""}
+        />
+      </section>
+
+      {test && test[0] && test[1] && (
+        <section class="reference-section">
+          <p class="eyebrow">Reference vector</p>
+          <h2>What the map should produce.</h2>
+          <p class="section-deck">
+            This vector is checked into git and verified by the Ruby test suite.
+          </p>
+
+          <div class="reference-vector">
+            <div class="vector-cell">
+              <p class="vector-label">Source ({data.source_script})</p>
+              <p class="vector-text vector-source">{test[0]}</p>
+            </div>
+            <div class="vector-arrow" aria-hidden="true">→</div>
+            <div class="vector-cell">
+              <p class="vector-label">Expected ({data.destination_script})</p>
+              <p class="vector-text vector-expected">{test[1]}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section class="source-section">
+        <p class="eyebrow">Source</p>
+        <h2>Read the map definition.</h2>
+        <p class="section-deck">
+          Every Interscript map is a human-readable Ruby DSL file checked into the
+          <a href="https://github.com/interscript/maps" rel="noreferrer">interscript/maps</a> repo.
+        </p>
+        <p>
+          <a
+            class="source-button"
+            href={`https://github.com/interscript/maps/blob/main/maps/${systemCode}.imp`}
+            rel="noreferrer"
+          >
+            View <code>{systemCode}.imp</code> on GitHub →
+          </a>
+        </p>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .map-detail {
+    padding-block: 2rem 6rem;
+  }
+  .back-link {
+    display: inline-block;
+    color: var(--color-stone);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover {
+    color: var(--color-ochre);
+  }
+
+  .map-header h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 0.5rem;
+    line-height: 1.1;
+  }
+  .system-code {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    background: transparent;
+    padding: 0;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+    border-block: 1px solid var(--color-rule);
+  }
+  .meta-grid dt {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin-bottom: 0.25rem;
+  }
+  .meta-grid dd {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--color-ink);
+  }
+  .map-description {
+    font-size: var(--text-lead);
+    line-height: 1.6;
+    max-width: 65ch;
+    color: var(--color-ink);
+    margin-bottom: 1rem;
+  }
+  .source-link {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .preview-section,
+  .reference-section,
+  .source-section {
+    padding-block: 3rem;
+  }
+  .section-deck {
+    max-width: 60ch;
+    color: var(--color-stone);
+    font-size: var(--text-lead);
+    margin-bottom: 2rem;
+  }
+  .section-deck a { color: var(--color-ochre); }
+  .preview-section h2,
+  .reference-section h2,
+  .source-section h2 {
+    font-size: var(--text-h1);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .reference-vector {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+    padding: 2rem;
+    border-radius: 4px;
+  }
+  @media (max-width: 768px) {
+    .reference-vector {
+      grid-template-columns: 1fr;
+    }
+    .vector-arrow {
+      transform: rotate(90deg);
+      justify-self: center;
+    }
+  }
+  .vector-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .vector-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 0;
+  }
+  .vector-text {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 0;
+    word-break: break-word;
+  }
+  .vector-source { color: var(--color-stone); }
+  .vector-expected {
+    color: var(--color-ochre);
+    font-style: italic;
+  }
+  .vector-arrow {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    color: var(--color-ochre);
+  }
+
+  .source-button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--color-ink);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--color-ink);
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .source-button:hover {
+    background: var(--color-ink);
+    color: var(--color-vellum);
+  }
+  .source-button code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+</style>

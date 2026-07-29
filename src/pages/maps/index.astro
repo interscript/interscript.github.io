@@ -1,56 +1,89 @@
 ---
 import Base from "../../layouts/Base.astro"
-import MapExplorer from "../../components/MapExplorer.vue"
+import MapCatalogue from "../../components/MapCatalogue.vue"
 
-const sampleSystems = [
-  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "Ukrainian (BGN/PCGN 2019)" },
-  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "German (BGN/PCGN 2000)" },
-  { code: "odni-rus-Cyrl-Latn-2015", label: "Russian (ODNI 2015)" },
-  { code: "alalc-amh-Ethi-Latn-2011", label: "Amharic (ALA-LC 2011)" },
-  { code: "un-tam-Taml-Latn-1972", label: "Tamil (UN 1972)" },
-]
+// Catalogue data is shipped as JSON; the Vue island does the filtering.
+import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+
+interface MapEntry {
+  data: {
+    authority_id: string
+    id: string
+    language?: string
+    source_script: string
+    destination_script: string
+    name: string
+    description?: string
+    creation_date?: string
+    url?: string
+  }
+  test?: (string | null)[]
+}
+
+const entries = Object.entries(catalogue).map(([code, entry]) => ({
+  code,
+  ...entry,
+})) as unknown as Array<{ code: string } & MapEntry>
+
+// Pre-aggregate filter facets in Astro so the Vue island doesn't have to.
+const authorities = [...new Set(entries.map((e) => e.data.authority_id))].sort()
+const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sort()
+const destinationScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
+const totalMaps = entries.length
+const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
 ---
 
-<Base title="Maps — Interscript" description="Browse and try Interscript transliteration maps.">
-  <h1>Maps explorer</h1>
-  <p class="lead">
-    Live map browser. Each map is a single <code>.imp</code> file in
-    <a href="https://github.com/interscript/maps">interscript/maps</a>;
-    the runtime compiles it to IR that runs in your browser via
-    <code>interscript-ts</code>.
-  </p>
+<Base title="Maps — Interscript" description={`Browse ${totalMaps} authority-backed transliteration maps.`}>
+  <section class="maps-hero">
+    <div class="container">
+      <p class="eyebrow">Map catalogue</p>
+      <h1>Every system, one registry.</h1>
+      <p class="hero-deck">
+        {totalMaps} maps from {authorities.length} authorities.
+        {mapsWithTests} carry reference test vectors checked into git.
+        Filter by authority, source script, or destination script.
+      </p>
+    </div>
+  </section>
 
-  <MapExplorer client:load systems={sampleSystems} />
-
-  <section class="catalogue">
-    <h2>Full catalogue</h2>
-    <p>
-      The complete catalogue of 300+ maps lives in
-      <a href="https://github.com/interscript/maps">the maps repository</a>.
-      Filter by authority, source script, or destination script.
-    </p>
-    <p>
-      A searchable index of every map (with metadata) is in development.
-      Until then, browse the <a href="/authorities">authorities page</a>
-      to see which authorities are covered.
-    </p>
+  <section class="container catalogue-section">
+    <MapCatalogue
+      client:load
+      entries={entries.map((e) => ({
+        code: e.code,
+        authority: e.data.authority_id,
+        name: e.data.name,
+        sourceScript: e.data.source_script,
+        destinationScript: e.data.destination_script,
+        year: e.data.creation_date ?? e.data.id,
+        language: e.data.language,
+        description: e.data.description,
+        hasTest: Boolean(e.test && e.test[0]),
+        testInput: e.test?.[0] ?? null,
+        testExpected: e.test?.[1] ?? null,
+      }))}
+      authorities={authorities}
+      sourceScripts={sourceScripts}
+      destinationScripts={destinationScripts}
+    />
   </section>
 </Base>
 
 <style>
-  .lead {
-    color: var(--muted);
-    margin-bottom: 2rem;
+  .maps-hero {
+    padding-block: 4rem 2rem;
   }
-  .catalogue {
-    margin-top: 3rem;
+  .maps-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 1rem;
   }
-  code {
-    background: var(--surface);
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
+  .hero-deck {
+    max-width: 56ch;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
   }
-  a {
-    color: var(--accent);
+  .catalogue-section {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
   }
 </style>
