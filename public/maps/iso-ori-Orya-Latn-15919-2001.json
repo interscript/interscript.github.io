@@ -1,0 +1,939 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "iso-ori-Orya-Latn-15919-2001",
+  "dependencies": [],
+  "metadata": {
+    "authority_id": "iso",
+    "id": "15919-2001",
+    "language": "iso-639-2:ori",
+    "source_script": "Orya",
+    "destination_script": "Latn",
+    "name": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Oriya)",
+    "creation_date": "2001",
+    "adoption_date": "2001",
+    "description": "Script conversion is often required for documents such as historical and literary texts, geographical texts (including\nmaps and atlases), bibliographies, catalogues, lists and passports (and other identification documents).\n\nText in Devanagari script or other Indic scripts sometimes needs to be shown in Latin script, where users, or\nequipment that they are using, cannot read or write the text\n\nThis International Standard applies to transliteration of Devanagari, and to Indic scripts related to Devanagari,\nindependent of the period in which it is or was used.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ā"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ī"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "u"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ū"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṛ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୠ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṝ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḷ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୡ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḹ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "e"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ai"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଓ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "o"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଔ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "au"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "କ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ka"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଖ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଗ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ga"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଘ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "gha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଙ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṅa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଚ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ca"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଛ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "cha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଜ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ja"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଝ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "jha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଞ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ña"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଟ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṭa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଠ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṭha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଡ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḍa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଡ଼"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṛa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଢ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḍha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଢ଼"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṛha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଣ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṇa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ତ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ta"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଥ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଦ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "da"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଧ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "dha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ନ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "na"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ପ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଫ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ବ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ba"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଭ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "bha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ମ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ma"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଯ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ya"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୟ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ẏa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ର"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ra"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "la"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଳ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḷa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଵ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "va"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଶ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "śa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଷ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṣa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ସ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "sa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୱ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "wa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ହ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḥ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṁ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ା"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ā"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ି"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ī"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "u"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ū"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṛ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṝ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୢ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḷ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୣ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḹ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "େ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "e"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ai"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "o"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "au"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଽ"
+              },
+              "to": {
+                "kind": "string",
+                "value": ":’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "्"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "୍"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "़"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "଼"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "।"
+              },
+              "to": {
+                "kind": "string",
+                "value": "."
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "‍"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "‌"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଯଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐ya"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ୟଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐ẏa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ରଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐ra"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଲଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐la"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଳଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐ḷa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ଵଁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m̐va"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "funcall",
+          "name": "compose",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

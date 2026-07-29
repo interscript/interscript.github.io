@@ -15,34 +15,23 @@ interface Props {
   sourceScript: string
   destinationScript: string
   initialInput?: string
+  /** When false, shows the install-notice fallback without trying to load. */
+  liveDemoable?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   initialInput: "",
+  liveDemoable: false,
 })
 
 const input = ref(props.initialInput)
 const engine = ref<"ready" | "loading" | "missing" | "unavailable">("loading")
 const errorMessage = ref<string | null>(null)
 
-// Bundled IR maps; only a subset of the catalogue is shipped.
-const BUNDLED_SYSTEMS = new Set([
-  "bgnpcgn-ukr-Cyrl-Latn-2019",
-  "bgnpcgn-deu-Latn-Latn-2000",
-  "odni-rus-Cyrl-Latn-2015",
-  "alalc-amh-Ethi-Latn-2011",
-  "alalc-amh-Ethi-Latn-1997",
-  "un-tam-Taml-Latn-1972",
-  "un-ukr-Cyrl-Latn-2012",
-  "bgnpcgn-rus-Cyrl-Latn-1947",
-  "ua-ukr-Cyrl-Latn-1996",
-  "ua-ukr-Cyrl-Latn-2010",
-])
-
 let transliterateFn: ((code: string, input: string) => string) | null = null
 
 async function ensureEngine() {
-  if (!BUNDLED_SYSTEMS.has(props.systemCode)) {
+  if (!props.liveDemoable) {
     engine.value = "unavailable"
     return
   }

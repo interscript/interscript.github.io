@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "gki-bel-Cyrl-Latn-1992",
+  "dependencies": [
+    "gost-rus-Cyrl-Latn-16876-71-1983"
+  ],
+  "metadata": {
+    "authority_id": "gki",
+    "id": "1992",
+    "language": "iso-639-2:bel",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "Byelorussian National Cartographic Authority 1992-3 System (based on GOST 1983)",
+    "creation_date": "1992",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "І"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "і"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Г"
+              },
+              "to": {
+                "kind": "string",
+                "value": "G"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "г"
+              },
+              "to": {
+                "kind": "string",
+                "value": "g"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ŭ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ŭ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ja"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ja"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "gost-rus-Cyrl-Latn-16876-71-1983"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

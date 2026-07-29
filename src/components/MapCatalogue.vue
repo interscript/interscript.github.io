@@ -23,6 +23,7 @@ interface CatalogueEntry {
   hasTest: boolean
   testInput: string | null
   testExpected: string | null
+  liveDemoable: boolean
 }
 
 const props = defineProps<{
@@ -37,6 +38,7 @@ const authorityFilter = ref<string>("")
 const sourceFilter = ref<string>("")
 const destFilter = ref<string>("")
 const onlyWithTests = ref(false)
+const onlyLiveDemoable = ref(false)
 const sortBy = ref<"authority" | "code" | "name">("authority")
 
 const filtered = computed(() => {
@@ -46,6 +48,7 @@ const filtered = computed(() => {
     if (sourceFilter.value && e.sourceScript !== sourceFilter.value) return false
     if (destFilter.value && e.destinationScript !== destFilter.value) return false
     if (onlyWithTests.value && !e.hasTest) return false
+    if (onlyLiveDemoable.value && !e.liveDemoable) return false
     if (q) {
       const hay = `${e.code} ${e.name} ${e.authority}`.toLowerCase()
       if (!hay.includes(q)) return false
@@ -70,6 +73,7 @@ function clearFilters() {
   sourceFilter.value = ""
   destFilter.value = ""
   onlyWithTests.value = false
+  onlyLiveDemoable.value = false
 }
 
 const hasActiveFilters = computed(
@@ -78,7 +82,8 @@ const hasActiveFilters = computed(
     authorityFilter.value !== "" ||
     sourceFilter.value !== "" ||
     destFilter.value !== "" ||
-    onlyWithTests.value,
+    onlyWithTests.value ||
+    onlyLiveDemoable.value,
 )
 </script>
 
@@ -132,6 +137,10 @@ const hasActiveFilters = computed(
           <input type="checkbox" v-model="onlyWithTests" />
           <span>With test vectors only</span>
         </label>
+        <label>
+          <input type="checkbox" v-model="onlyLiveDemoable" />
+          <span>Live-demoable in browser</span>
+        </label>
       </div>
 
       <div class="rail-section">
@@ -163,7 +172,12 @@ const hasActiveFilters = computed(
           <a :href="`/maps/${entry.code}`" class="card-link">
             <div class="card-head">
               <span class="card-auth">{{ entry.authority }}</span>
-              <span class="card-year">{{ entry.year }}</span>
+              <div class="card-head-tags">
+                <span v-if="entry.liveDemoable" class="tag tag-live" title="Runs live in browser">
+                  <span class="dot" aria-hidden="true"></span>LIVE
+                </span>
+                <span class="card-year">{{ entry.year }}</span>
+              </div>
             </div>
             <h3 class="card-name">{{ entry.name }}</h3>
             <code class="card-code">{{ entry.code }}</code>
@@ -313,6 +327,27 @@ const hasActiveFilters = computed(
   font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+.card-head-tags {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tag-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.4rem;
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+  color: #16a34a;
+  border-radius: 2px;
+  font-weight: 500;
+}
+.tag-live .dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: currentColor;
 }
 .card-auth {
   color: var(--color-ochre);

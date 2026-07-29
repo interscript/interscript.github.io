@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "dos-nep-Deva-Latn-1997",
+  "dependencies": [
+    "bgnpcgn-nep-Deva-Latn-2011"
+  ],
+  "metadata": {
+    "authority_id": "dos",
+    "id": "1997",
+    "language": "iso-639-2:nep",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "Survey Department Nepali Romanization System (1997)",
+    "creation_date": "1997",
+    "description": "Survey Department, Ministry of Land Management, Cooperatives and Poverty Alleviation, Government of Nepal.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ः"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "bgnpcgn-nep-Deva-Latn-2011"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

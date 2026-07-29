@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "var-ara-Arab-Arab-rababa",
+  "dependencies": [],
+  "metadata": {
+    "authority_id": "var",
+    "id": "rababa",
+    "language": "iso-639-2:ara",
+    "source_script": "Arab",
+    "destination_script": "Arab",
+    "name": "RABABA the Arabic Diacritization Library",
+    "description": "Arabic diacritization is useful for several practical business cases\nlike text to speech or Romanization of Arabic texts or scripts.\n\nThis map in particular uses the RABABA library to automatically detect\nand add diacritics using machine learning.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "funcall",
+          "name": "rababa",
+          "kwargs": {
+            "config": "200"
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

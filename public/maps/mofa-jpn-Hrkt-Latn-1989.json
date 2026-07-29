@@ -1,0 +1,4272 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "mofa-jpn-Hrkt-Latn-1989",
+  "dependencies": [],
+  "metadata": {
+    "authority_id": "mofa",
+    "id": "1989",
+    "language": "iso-639-2:jpn",
+    "source_script": "Hrkt",
+    "destination_script": "Latn",
+    "name": "Ministry of Foreign Affairs of Japan Hepburn Romanization",
+    "description": "The law (旅券法施行規則) requires the use of Hepburn romanization for passports. https://elaws.e-gov.go.jp/search/elawsSearch/elaws_search/lsg0500/detail?lawId=401M50000020011 ３ 前項の氏名はヘボン式ローマ字によって旅券面に表記する。 ただし、申請者がその氏名についてヘボン式によらないローマ字表記を希望し、 外務大臣又は領事官が、出生証明書等により当該表記が適当であり、かつ、 渡航の便宜のため特に必要であると認めるときは、この限りではない。",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "ん"
+              },
+              {
+                "kind": "string",
+                "value": "ン"
+              }
+            ]
+          },
+          "to": {
+            "kind": "string",
+            "value": "M"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "ば"
+              },
+              {
+                "kind": "string",
+                "value": "び"
+              },
+              {
+                "kind": "string",
+                "value": "ぶ"
+              },
+              {
+                "kind": "string",
+                "value": "べ"
+              },
+              {
+                "kind": "string",
+                "value": "ぼ"
+              },
+              {
+                "kind": "string",
+                "value": "ま"
+              },
+              {
+                "kind": "string",
+                "value": "み"
+              },
+              {
+                "kind": "string",
+                "value": "む"
+              },
+              {
+                "kind": "string",
+                "value": "め"
+              },
+              {
+                "kind": "string",
+                "value": "も"
+              },
+              {
+                "kind": "string",
+                "value": "ぱ"
+              },
+              {
+                "kind": "string",
+                "value": "ぴ"
+              },
+              {
+                "kind": "string",
+                "value": "ぷ"
+              },
+              {
+                "kind": "string",
+                "value": "ぺ"
+              },
+              {
+                "kind": "string",
+                "value": "ぽ"
+              },
+              {
+                "kind": "string",
+                "value": "バ"
+              },
+              {
+                "kind": "string",
+                "value": "ビ"
+              },
+              {
+                "kind": "string",
+                "value": "ブ"
+              },
+              {
+                "kind": "string",
+                "value": "ベ"
+              },
+              {
+                "kind": "string",
+                "value": "ボ"
+              },
+              {
+                "kind": "string",
+                "value": "マ"
+              },
+              {
+                "kind": "string",
+                "value": "ミ"
+              },
+              {
+                "kind": "string",
+                "value": "ム"
+              },
+              {
+                "kind": "string",
+                "value": "メ"
+              },
+              {
+                "kind": "string",
+                "value": "モ"
+              },
+              {
+                "kind": "string",
+                "value": "パ"
+              },
+              {
+                "kind": "string",
+                "value": "ピ"
+              },
+              {
+                "kind": "string",
+                "value": "プ"
+              },
+              {
+                "kind": "string",
+                "value": "ペ"
+              },
+              {
+                "kind": "string",
+                "value": "ポ"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "capture_group",
+                "data": {
+                  "kind": "any",
+                  "of": [
+                    {
+                      "kind": "string",
+                      "value": "お"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "こ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "そ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "と"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "の"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ほ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "も"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "よ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ろ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "を"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ご"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぞ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ど"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぼ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぽ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ょ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぉ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "オ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "コ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ソ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ト"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ノ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ホ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "モ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ヨ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ロ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ヲ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ゴ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ゾ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ド"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ボ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ポ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ョ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ォ"
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "お"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "オ"
+                  }
+                ]
+              }
+            ]
+          },
+          "to": {
+            "kind": "capture_ref",
+            "id": 1
+          },
+          "notAfter": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "alias",
+                "name": "line_end"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "capture_group",
+                "data": {
+                  "kind": "any",
+                  "of": [
+                    {
+                      "kind": "string",
+                      "value": "う"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "く"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "す"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "つ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぬ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ふ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "む"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ゆ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "る"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぐ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ず"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "づ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぶ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぷ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ゅ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ぅ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ウ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ク"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ス"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ツ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ヌ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "フ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ム"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ユ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ル"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "グ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ズ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ヅ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ブ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "プ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ュ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ゥ"
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "う"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "ウ"
+                  }
+                ]
+              }
+            ]
+          },
+          "to": {
+            "kind": "capture_ref",
+            "id": 1
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ー"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "あ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "A"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "い"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "う"
+              },
+              "to": {
+                "kind": "string",
+                "value": "U"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "え"
+              },
+              "to": {
+                "kind": "string",
+                "value": "E"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "お"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "おう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "か"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "き"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "く"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "け"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "こ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "きゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "きゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "きょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "きょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "こう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "さ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "し"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "す"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "せ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "そ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "しゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "しゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "しょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "しょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "そう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "た"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ち"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "つ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TSU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "て"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "と"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ちゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ちゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ちょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "とう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ちょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "な"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "に"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ね"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "の"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "のう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "は"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ひ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ふ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "へ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ほ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ひゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ひゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ひょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ひょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ほう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ま"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "み"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "む"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "め"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ME"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "も"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "みゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "みゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "みょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "みょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "もう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "や"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "よ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "よう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ら"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "り"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "る"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "れ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ろ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "りゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "りゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "りょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "りょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ろう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "わ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "WA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "E"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "を"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "が"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "げ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ご"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぎゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぎゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぎょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぎょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ごう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ざ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ず"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぜ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぞ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぞう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "だ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぢ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "づ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "で"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ど"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぢゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぢゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぢょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "どう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ば"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "び"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぶ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "べ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぼ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "びゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "びゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "びょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "びょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぼう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぱ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぴ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぷ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぺ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぽ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぴゃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぴゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぴょ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぴょう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ぽう"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ん"
+              },
+              "to": {
+                "kind": "string",
+                "value": "N"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ア"
+              },
+              "to": {
+                "kind": "string",
+                "value": "A"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "イ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "U"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "エ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "E"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "オ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "オウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "カ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "キ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ク"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ケ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "コ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "キャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "キュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "キョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "コウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "キョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "コウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "KO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "サ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "シ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ス"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "セ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ソ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "シャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "シュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ショ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ショウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ソウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "タ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ツ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TSU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "テ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ト"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "トウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ナ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ネ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ノ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ノウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ハ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "フ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヘ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ホ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヒャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヒュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヒョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヒョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ホウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "HO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "マ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ミ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ム"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "メ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ME"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "モ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ミャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ミュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ミョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ミョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "モウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "MO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヤ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ユ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヨ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヨウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "YO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ラ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "リ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ル"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "レ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ロ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "リャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "リュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "リョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "リョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ロウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "RO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ワ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "WA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヰ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヱ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "E"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ガ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ギ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "グ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゴ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ギャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ギュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ギョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ギョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゴウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "GO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ザ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ズ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゼ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゾ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゾウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ダ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ZU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "デ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ド"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヂャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヂュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヂョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ドウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "バ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ビ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ブ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ベ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ボ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ビャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ビュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ビョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ビョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ボウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "パ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ピ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "プ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ペ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ポ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ピャ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ピュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ピョ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ピョウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PYO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ポウ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "PO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ン"
+              },
+              "to": {
+                "kind": "string",
+                "value": "N"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "しぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ちぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "てぃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TEI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にぃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NII"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "にぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ふぁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ふぃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ふぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ふぉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "じぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "でぃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DEI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "でゅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DEYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "うぃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "うぇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "うぉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゔぁ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BA"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUA"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゔぃ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BI"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUI"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゔ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゔぇ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BE"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUE"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ゔぉ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BO"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUO"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "シェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "SHIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "チェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "CHIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ティ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "TEI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニィ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NII"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ニェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "NIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ファ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUA"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "フィ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "フェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "フォ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "FUO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ジェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "JIE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ディ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DEI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "デュ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "DEYU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ウィ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UI"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ウェ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UE"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ウォ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "UO"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヴァ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BA"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUA"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヴィ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BI"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUI"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヴ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "BU"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヴェ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BE"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUE"
+                  }
+                ]
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ヴォ"
+              },
+              "to": {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "BO"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "BUO"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "っ"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "ッ"
+                  }
+                ]
+              },
+              {
+                "kind": "capture_group",
+                "data": {
+                  "kind": "any",
+                  "of": [
+                    {
+                      "kind": "string",
+                      "value": "B"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "b"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "D"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "d"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "F"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "f"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "G"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "g"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "H"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "h"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "J"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "j"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "K"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "k"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "L"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "l"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "M"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "m"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "N"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "n"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "P"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "p"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "Q"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "q"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "R"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "r"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "S"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "s"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "T"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "t"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "V"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "v"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "W"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "w"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "X"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "x"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "Y"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "y"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "Z"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "z"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "to": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "capture_ref",
+                "id": 1
+              },
+              {
+                "kind": "capture_ref",
+                "id": 1
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "っ"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "ッ"
+                  }
+                ]
+              },
+              {
+                "kind": "capture_group",
+                "data": {
+                  "kind": "any",
+                  "of": [
+                    {
+                      "kind": "string",
+                      "value": "C"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "c"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "to": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "string",
+                "value": "T"
+              },
+              {
+                "kind": "capture_ref",
+                "id": 1
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "っ"
+              },
+              {
+                "kind": "string",
+                "value": "ッ"
+              }
+            ]
+          },
+          "to": {
+            "kind": "string",
+            "value": ""
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

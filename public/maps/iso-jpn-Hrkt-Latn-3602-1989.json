@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "iso-jpn-Hrkt-Latn-3602-1989",
+  "dependencies": [
+    "mext-jpn-Hrkt-Latn-1954"
+  ],
+  "metadata": {
+    "authority_id": "iso",
+    "id": "3602-1989",
+    "language": "iso-639-2:jpn",
+    "source_script": "Hrkt",
+    "destination_script": "Latn",
+    "name": "ISO 3602:1989 documentation -- Romanization of Japanese (kana script)",
+    "creation_date": "1989",
+    "adoption_date": "1989",
+    "description": "Establishes a system for the romanization of the present-day\nJapanese written language. Unrestricted application for the system\nrequires that the romanizer possess a detailed knowledge of the\nlanguage in its present-day written form.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "capture_group",
+                "data": {
+                  "kind": "any",
+                  "of": [
+                    {
+                      "kind": "string",
+                      "value": "っ"
+                    },
+                    {
+                      "kind": "string",
+                      "value": "ッ"
+                    }
+                  ]
+                }
+              },
+              {
+                "kind": "string",
+                "value": "•"
+              }
+            ]
+          },
+          "to": {
+            "kind": "capture_ref",
+            "id": 1
+          }
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "mext-jpn-Hrkt-Latn-1954"
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "•"
+          },
+          "to": {
+            "kind": "string",
+            "value": ""
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "'"
+          },
+          "to": {
+            "kind": "string",
+            "value": "’"
+          }
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

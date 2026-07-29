@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "odni-ara-Arab-Latn-2004",
+  "dependencies": [
+    "odni-ara-Arab-Latn-2015"
+  ],
+  "metadata": {
+    "authority_id": "odni",
+    "id": "2004",
+    "language": "iso-639-2:ara",
+    "source_script": "Arab",
+    "destination_script": "Latn",
+    "name": "Intelligence Community (IC) Standard for the Transliteration of Arabic Personal Names (2004)",
+    "creation_date": "2004",
+    "confirmation_date": "2004-06",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "odni-ara-Arab-Latn-2015"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

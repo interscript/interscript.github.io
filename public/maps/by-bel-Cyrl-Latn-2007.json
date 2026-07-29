@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "by-bel-Cyrl-Latn-2007",
+  "dependencies": [
+    "by-bel-Cyrl-Latn-1998"
+  ],
+  "metadata": {
+    "authority_id": "by",
+    "id": "2007",
+    "language": "iso-639-2:bel",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "Transliteration of geographical names of the Republic of Belarus in letters of the Latin alphabet (2007)",
+    "creation_date": "2007",
+    "description": "RESOLUTION OF THE STATE COMMITTEE\nON PROPERTY OF THE REPUBLIC OF BELARUS June 11, 2007 No. 38\n\nRegulatory Legal Acts Of The National Bank, National Academy Of Sciences Of\nBelarus, Ministries, Other Republican Government Bodies 8/16668 (06/18/2007)\nOn amendments and additions to the Instructions for the transliteration of\ngeographical names of the Republic of Belarus in letters of the Latin\nalphabet\n\nBased on the Regulation on the State Property Committee of the Republic of Belarus,\napproved by the Decree of the Council of Ministers of the Republic of Belarus dated July 29, 2006\nNo. 958 \"Issues of the State Committee on Property of the Republic of Belarus\"\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "by-bel-Cyrl-Latn-1998"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

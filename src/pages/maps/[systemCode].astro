@@ -1,13 +1,23 @@
 ---
 import Base from "../../layouts/Base.astro"
 import MapPreview from "../../components/MapPreview.vue"
+import RuleViewer from "../../components/RuleViewer.vue"
 import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+import { readdirSync } from "node:fs"
 
 export function getStaticPaths() {
   return Object.keys(catalogue).map((code) => ({
     params: { systemCode: code },
   }))
 }
+
+// Determine which maps have bundled IR available for live preview.
+const bundledCodes = new Set(
+  readdirSync("public/maps")
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(/\.json$/, ""))
+    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
+)
 
 interface MapEntry {
   data: {
@@ -108,6 +118,7 @@ const pageDesc = data.description ?? `${data.source_script} → ${data.destinati
           sourceScript={data.source_script}
           destinationScript={data.destination_script}
           initialInput={test?.[0] ?? ""}
+          liveDemoable={bundledCodes.has(systemCode!)}
         />
       </section>
 
@@ -130,6 +141,18 @@ const pageDesc = data.description ?? `${data.source_script} → ${data.destinati
               <p class="vector-text vector-expected">{test[1]}</p>
             </div>
           </div>
+        </section>
+      )}
+
+      {bundledCodes.has(systemCode!) && (
+        <section class="rules-section">
+          <p class="eyebrow">Rule viewer</p>
+          <h2>First 20 rules of this map.</h2>
+          <p class="section-deck">
+            Each row is one transformation rule. <code>parallel</code> blocks
+            apply simultaneously; <code>sub</code> rules apply sequentially.
+          </p>
+          <RuleViewer client:visible systemCode={systemCode!} maxRules={20} />
         </section>
       )}
 

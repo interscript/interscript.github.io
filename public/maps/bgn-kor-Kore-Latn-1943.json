@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgn-kor-Kore-Latn-1943",
+  "dependencies": [
+    "var-kor-Kore-Hang-2013",
+    "bgn-kor-Hang-Latn-1943"
+  ],
+  "metadata": {
+    "authority_id": "bgn",
+    "id": "1943",
+    "language": "iso-639-2:kor",
+    "source_script": "Kore",
+    "destination_script": "Latn",
+    "name": "Korean McCune-Reischauer (Korean to Latin) (1943 Agreement)",
+    "creation_date": "1943",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-kor-Kore-Hang-2013"
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "bgn-kor-Hang-Latn-1943"
+        },
+        {
+          "kind": "funcall",
+          "name": "compose",
+          "kwargs": {}
+        },
+        {
+          "kind": "funcall",
+          "name": "title_case",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

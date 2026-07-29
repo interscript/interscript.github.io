@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-kor-Kore-Latn-rok-2011",
+  "dependencies": [
+    "var-kor-Kore-Hang-2013",
+    "moct-kor-Hang-Latn-2000"
+  ],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "rok-2011",
+    "language": "iso-639-2:kor",
+    "source_script": "Kore",
+    "destination_script": "Latn",
+    "name": "Romanization of Korean for ROK (Korean-Latin) (2011 Agreement, MOCT System 2000)",
+    "creation_date": "2011",
+    "adoption_date": "2011",
+    "description": "Establishes a system for the transliteration of the characters of Korean script into Latin characters.\nIntended to provide a means for international communication of written documents.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-kor-Kore-Hang-2013"
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "moct-kor-Hang-Latn-2000"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

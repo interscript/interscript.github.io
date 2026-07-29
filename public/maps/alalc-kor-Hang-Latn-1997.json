@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-kor-Hang-Latn-1997",
+  "dependencies": [
+    "var-kor-Hang-Latn-mr-1939"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "1997",
+    "language": "iso-639-2:kor",
+    "source_script": "Hang",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Korean (1997)",
+    "creation_date": "1997",
+    "description": "1. General Practice The Library of Congress will continue to follow the McCune-Reischauer system to romanize Korean with the exceptions noted in this document. See: Romanization of the Korean Language: Based upon its Phonetic Structure by G.M. McCune and E.O. Reischauer ([S.l.: s.n., 1939?), reprinted from the Transactions of the Korea Branch of the Royal Asiatic Society. Full text of the original document is available online from the National Library of Australia Web site: http://www.nla.gov.au/librariesaustralia/cjk/download/ras_1939.pdf",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-kor-Hang-Latn-mr-1939"
+        },
+        {
+          "kind": "funcall",
+          "name": "compose",
+          "kwargs": {}
+        },
+        {
+          "kind": "funcall",
+          "name": "title_case",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

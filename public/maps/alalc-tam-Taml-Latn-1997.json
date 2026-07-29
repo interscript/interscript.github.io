@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-tam-Taml-Latn-1997",
+  "dependencies": [
+    "din-tam-Taml-Latn-33903-2016"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "1997",
+    "language": "iso-639-2:tam",
+    "source_script": "Taml",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Tamil (1997)",
+    "creation_date": "1997",
+    "description": "ALA-LC Romanization table for Tamil\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ஃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḵa"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "din-tam-Taml-Latn-33903-2016"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

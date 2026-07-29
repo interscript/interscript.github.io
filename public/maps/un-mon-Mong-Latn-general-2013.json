@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "un-mon-Mong-Latn-general-2013",
+  "dependencies": [
+    "sasm-mon-Mong-Latn-general-1978"
+  ],
+  "metadata": {
+    "authority_id": "un",
+    "id": "general-2013",
+    "language": "iso-639-2:mon",
+    "source_script": "Mong",
+    "destination_script": "Latn",
+    "name": "Romanization of Mongolian in China -- UNGEGN 4.0",
+    "creation_date": "2013-09",
+    "description": "The United Nations resolution III/8 in 1977 recognized the Scheme for\na Chinese Phonetic Alphabet (Pinyin) as China’s official Roman alphabet\nscheme and recommended the alphabet as the international system for the\nromanization of Chinese geographical names. In China Mongolian\ngeographical names are transcribed directly from the Mongolian script\ninto Pinyin. The scheme was published in Toponymic Guidelines for Map\nand Other Editors: China, 1982.\n\nThe system is used in China and in international cartographic\nproducts.\n\nMongolian uses a vertical script. Transcription of Mongolian names is\nmade from their proper pronunciation based on the written form of the\nMongolian language and Qahar vernacular, with Zhenglan as its\nrepresentative pronunciation. Due to the complex nature of the script\nthe romanization scheme is not reversible, e.g. the name of the city\nHohhot is written ᠬᠥᠬᠡᠬᠣᠲᠠ but may be transliterated as kökeqota.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "sasm-mon-Mong-Latn-general-1978"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

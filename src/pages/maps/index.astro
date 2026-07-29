@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro"
 import MapCatalogue from "../../components/MapCatalogue.vue"
+import { readdirSync } from "node:fs"
 
 // Catalogue data is shipped as JSON; the Vue island does the filtering.
 import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
@@ -31,6 +32,17 @@ const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sor
 const destinationScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
 const totalMaps = entries.length
 const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
+
+// Set of maps whose IR is bundled in /public/maps/ — these can be
+// live-demoed without a server round-trip.
+const bundledCodes = new Set(
+  readdirSync("public/maps")
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(/\.json$/, ""))
+    // exclude library maps from the "live demoable" set
+    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
+)
+const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
 ---
 
 <Base title="Maps — Interscript" description={`Browse ${totalMaps} authority-backed transliteration maps.`}>
@@ -41,6 +53,8 @@ const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
       <p class="hero-deck">
         {totalMaps} maps from {authorities.length} authorities.
         {mapsWithTests} carry reference test vectors checked into git.
+        {liveDemoable} run live in your browser via <code>interscript-ts</code>;
+        the rest link to source on GitHub.
         Filter by authority, source script, or destination script.
       </p>
     </div>
@@ -61,6 +75,7 @@ const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
         hasTest: Boolean(e.test && e.test[0]),
         testInput: e.test?.[0] ?? null,
         testExpected: e.test?.[1] ?? null,
+        liveDemoable: bundledCodes.has(e.code),
       }))}
       authorities={authorities}
       sourceScripts={sourceScripts}

@@ -1,0 +1,4597 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "moct-kor-Hang-Latn-2000",
+  "dependencies": [
+    "var-kor",
+    "var-kor-Hang-Hang-jamo"
+  ],
+  "metadata": {
+    "authority_id": "moct",
+    "id": "2000",
+    "language": "iso-639-2:kor",
+    "source_script": "Hang",
+    "destination_script": "Latn",
+    "name": "Ministry of Culture and Tourism Korean Romanization System (2000)",
+    "creation_date": "2000",
+    "adoption_date": "2002",
+    "description": "Generation of Jamo from Hangul\n\nThis is how the Hangul-to-Jamo maps are generated. Please refer to this page\nfor details about Korean text handling in Unicode.\nhttp://gernot-katzers-spice-pages.com/var/korean_hangul_unicode.html\n\nThis formula copied from the page above is used:\n[stem]\n====\ntail = mod (Hangul codepoint − 44032, 28)\nvowel = 1 + mod (Hangul codepoint − 44032 − tail, 588) / 28\nlead = 1 + int [ (Hangul codepoint − 44032)/588 ]\n====\n\n[source,python]\n----\nimport pandas as pd\nimport re\nimport math\n\nleadjamo = [chr(0x1100+i) for i in range(0,19)]\n# ᄀᄁᄂᄃᄄᄅᄆᄇᄈᄉᄊᄋᄌᄍᄎᄏᄐᄑᄒ\nvoweljamo = [chr(0x1161+i) for i in range(0,21)]\n# ᅡᅢᅣᅤᅥᅦᅧᅨᅩᅪᅫᅬᅭᅮᅯᅰᅱᅲᅳᅴᅵ\ntailjamo = ['']+[chr(0x11A8+i) for i in range(0,27)]\n# ᆨᆩᆪᆫᆬᆭᆮᆯᆰᆱᆲᆳᆴᆵᆶᆷᆸᆹᆺᆻᆼᆽᆾᆿᇀᇁᇂ\n\nhanguls = [chr(i) for i in range(44032,55204)]\ntails = [tailjamo[(i-44032) % 28] for i in range(44032,55204)]\nvowels = [voweljamo[((i-44032-((i-44032) % 28)) % 588) // 28] for i in range(44032,55204)]\nleads = [leadjamo[math.floor((i-44032)// 588)] for i in range(44032,55204)]\n\nkr_df = pd.DataFrame({'Hangul':hanguls, 'Lead':leads,'Vowel':vowels, 'Tail':tails})\n----\n\nHangul\tLead\tVowel\tTail\n0\t가\tᄀ\tᅡ\n1\t각\tᄀ\tᅡ\tᆨ\n2\t갂\tᄀ\tᅡ\tᆩ\n3\t갃\tᄀ\tᅡ\tᆪ\n4\t간\tᄀ\tᅡ\tᆫ\n5\t갅\tᄀ\tᅡ\tᆬ\n6\t갆\tᄀ\tᅡ\tᆭ\n7\t갇\tᄀ\tᅡ\tᆮ\n8\t갈\tᄀ\tᅡ\tᆯ\n9\t갉\tᄀ\tᅡ\tᆰ\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "alias",
+            "name": "none"
+          },
+          "to": {
+            "kind": "alias",
+            "name": "space"
+          },
+          "after": {
+            "kind": "alias",
+            "name": "digit"
+          },
+          "notBefore": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "space"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "1"
+          },
+          "to": {
+            "kind": "string",
+            "value": "일"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "2"
+          },
+          "to": {
+            "kind": "string",
+            "value": "이"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "3"
+          },
+          "to": {
+            "kind": "string",
+            "value": "삼"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "4"
+          },
+          "to": {
+            "kind": "string",
+            "value": "사"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "5"
+          },
+          "to": {
+            "kind": "string",
+            "value": "오"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "6"
+          },
+          "to": {
+            "kind": "string",
+            "value": "육"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "7"
+          },
+          "to": {
+            "kind": "string",
+            "value": "칠"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "8"
+          },
+          "to": {
+            "kind": "string",
+            "value": "팔"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "9"
+          },
+          "to": {
+            "kind": "string",
+            "value": "구"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "alias",
+            "name": "none"
+          },
+          "to": {
+            "kind": "string",
+            "value": "-"
+          },
+          "after": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "any",
+                "of": [
+                  {
+                    "kind": "string",
+                    "value": "도"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "시"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "군"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "구"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "읍"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "면"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "리"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "동"
+                  },
+                  {
+                    "kind": "string",
+                    "value": "가"
+                  }
+                ]
+              },
+              {
+                "kind": "alias",
+                "name": "line_end"
+              }
+            ]
+          },
+          "notBefore": {
+            "kind": "alias",
+            "name": "line_start"
+          }
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-kor-Hang-Hang-jamo"
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "alias",
+            "name": "line_start"
+          },
+          "to": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "alias",
+            "name": "line_end"
+          },
+          "to": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆩᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆨᄁ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆩ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆨ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆪᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆨᄉ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆪ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆨ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆬᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫᄌ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆬ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆭᄀ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫᄏ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆭᄃ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫᄐ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆭᄇ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫᄑ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆭᄌ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫᄎ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆭ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆫ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆮ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆺ"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "ᄀ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄁ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄂ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄃ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄄ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄅ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄆ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄇ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄈ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄉ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄊ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄌ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄍ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄎ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄏ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄐ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄑ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄒ"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆳᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯᄉ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆳ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆴᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯᄐ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆴ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆵᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯᄑ"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆵ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᆯ"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "ᄃ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄄ"
+              },
+              {
+                "kind": "string",
+                "value": "ᄐ"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆵ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ᄇ"
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆶᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆯᄏ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆶᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆯᄐ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆶᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆯᄑ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆶᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆯᄎ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆶ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆯ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆹᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄇᄉ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆹ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄇ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆻᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺᄊ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆻ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆽᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺᄌ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆽ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆾᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺᄎ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆾ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆿᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆨᄏ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆿ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆨ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇀᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺᄐ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇁᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆸᄑ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᆸ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇂᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄏ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇂᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄐ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇂᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄑ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇂᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ᄎ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᇂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            }
+          ]
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆮᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "d"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ks"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "g"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ktt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆨᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ng"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ll"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ns"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "n"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "np"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ntt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "npp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆫᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "njj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ll"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ld"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ll"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ls"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "r"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "rh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ltt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆯᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ljj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "md"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ms"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mtt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆷᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ps"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "b"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ph"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ptt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ppp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆸᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "td"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "nm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ts"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "th"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ttt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆺᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "tjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngs"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ng"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngtt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆼᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngjj"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄀ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "g"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄂ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "n"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄃ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "d"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄅ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "r"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄆ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "m"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄇ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "b"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄉ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "s"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": ""
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄌ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "j"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄎ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ch"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄏ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "k"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄐ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄑ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "p"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄒ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "h"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄁ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "kk"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄄ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "tt"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄈ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "pp"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄊ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ss"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄍ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "jj"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "alpha"
+              },
+              {
+                "kind": "alias",
+                "name": "digit"
+              },
+              {
+                "kind": "alias",
+                "name": "jamo_vowel"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ngm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ks"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ktt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆰᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "md"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ms"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mtt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆱᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mjj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄀ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pg"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄂ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄃ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pd"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄅ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mn"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄆ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "mm"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄇ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄉ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ps"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lb"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄌ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pj"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄎ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄏ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄐ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄒ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄁ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pkk"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄄ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ptt"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄈ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "lpp"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄊ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pss"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᆲᄍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "pjj"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄀ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "g"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄂ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "n"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄃ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "d"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄅ"
+          },
+          "to": {
+            "kind": "string",
+            "value": ""
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "ᅣ"
+              },
+              {
+                "kind": "string",
+                "value": "ᅤ"
+              },
+              {
+                "kind": "string",
+                "value": "ᅧ"
+              },
+              {
+                "kind": "string",
+                "value": "ᅨ"
+              },
+              {
+                "kind": "string",
+                "value": "ᅭ"
+              },
+              {
+                "kind": "string",
+                "value": "ᅲ"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄅ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "n"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄆ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "m"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄇ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "b"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄉ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "s"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄋ"
+          },
+          "to": {
+            "kind": "string",
+            "value": ""
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄌ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "j"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄎ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ch"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄏ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "k"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄐ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄑ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "p"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄒ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "h"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄁ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "kk"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄭ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "kk"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄄ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "tt"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄯ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "tt"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄈ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "pp"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄲ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "pp"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄊ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ss"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄍ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "jj"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᄶ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "jj"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "space"
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅡ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅣ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ya"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅥ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "eo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅧ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "yeo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅩ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "o"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅭ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "yo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅮ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "u"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "yu"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅳ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "eu"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅵ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅢ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ae"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅤ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "yae"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅦ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "e"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅨ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ye"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "oe"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅱ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "wi"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅴ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ui"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅪ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "wa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅯ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "wo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅫ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "wae"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ᅰ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "we"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆨ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "k"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆫ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "n"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆮ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆯ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "l"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆷ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "m"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆸ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "p"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆺ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆼ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ng"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆽ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆾ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆿ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "k"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᇀ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "t"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᇁ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "p"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆰ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "k"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ᆲ"
+          },
+          "to": {
+            "kind": "string",
+            "value": "p"
+          },
+          "after": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "string",
+                "value": "-"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "alias",
+                "name": "line_start"
+              },
+              {
+                "kind": "alias",
+                "name": "space"
+              }
+            ]
+          },
+          "to": {
+            "kind": "alias",
+            "name": "none"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "alias",
+                "name": "space"
+              },
+              {
+                "kind": "alias",
+                "name": "line_end"
+              }
+            ]
+          },
+          "to": {
+            "kind": "alias",
+            "name": "none"
+          }
+        },
+        {
+          "kind": "funcall",
+          "name": "title_case",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "double_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄁ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄄ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄈ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄍ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄊ"
+        }
+      ]
+    },
+    "aspirated_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄏ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄐ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄑ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄎ"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

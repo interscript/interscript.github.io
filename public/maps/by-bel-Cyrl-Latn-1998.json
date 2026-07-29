@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "by-bel-Cyrl-Latn-1998",
+  "dependencies": [
+    "gost-rus-Cyrl-Latn-16876-71-1983",
+    "var-Cyrl"
+  ],
+  "metadata": {
+    "authority_id": "by",
+    "id": "1998",
+    "language": "iso-639-2:bel",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "National System of Geographic Names Transmission into Roman Alphabet in Belarus",
+    "creation_date": "1998",
+    "description": "The national system of romanization for Belarusian was approved by the State Committee and Land Resources,\nGeodesy and Cartography, Republic of Belarus, on 20 March, 1998. This scheme was also supported by\nthe Y. Kolas Institute of Linguistics and the Republic Committee on Toponymy at the Belarusian Academy of Sciences.\nWhile the system is still based on GOST 1983, it takes more precisely into account the peculiarities of\nthe Belarusian orthography. The system is reversible though there may exist some ambiguous consonant combinations.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "Е"
+          },
+          "to": {
+            "kind": "string",
+            "value": "IE"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "е"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ie"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "Ё"
+          },
+          "to": {
+            "kind": "string",
+            "value": "IO"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ё"
+          },
+          "to": {
+            "kind": "string",
+            "value": "io"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "Ю"
+          },
+          "to": {
+            "kind": "string",
+            "value": "IU"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "ю"
+          },
+          "to": {
+            "kind": "string",
+            "value": "iu"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "Я"
+          },
+          "to": {
+            "kind": "string",
+            "value": "IA"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "я"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ia"
+          },
+          "before": {
+            "kind": "alias",
+            "name": "bel_consonant"
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ЗЬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ź"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "зь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ź"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ЛЬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ĺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ль"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ĺ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "СЬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ś"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "сь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ś"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ЦЬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ć"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ць"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ć"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "НЬ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ń"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "нь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ń"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "І"
+              },
+              "to": {
+                "kind": "string",
+                "value": "I"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Г"
+              },
+              "to": {
+                "kind": "string",
+                "value": "H"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Е"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Je"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ё"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Jo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ŭ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Х"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Э"
+              },
+              "to": {
+                "kind": "string",
+                "value": "E"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ja"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "г"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "і"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "е"
+              },
+              "to": {
+                "kind": "string",
+                "value": "je"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ё"
+              },
+              "to": {
+                "kind": "string",
+                "value": "jo"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ŭ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "х"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "э"
+              },
+              "to": {
+                "kind": "string",
+                "value": "e"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ja"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "'"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "gost-rus-Cyrl-Latn-16876-71-1983"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

@@ -1,0 +1,314 @@
+---
+import Base from "../../layouts/Base.astro"
+import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+
+export function getStaticPaths() {
+  const authorities = new Set(
+    Object.values(catalogue).map((e: any) => e.data.authority_id),
+  )
+  return [...authorities].sort().map((slug) => ({ params: { slug } }))
+}
+
+const { slug } = Astro.params
+
+// Full names for well-known authorities; falls back to uppercase slug.
+const FULL_NAMES: Record<string, string> = {
+  acadsin: "Academia Sinica",
+  alalc: "American Library Association – Library of Congress (ALA-LC)",
+  apcbg: "Australian Place Names Board (APCBG)",
+  az: "Azerbaijani National Academy of Sciences",
+  bas: "Bulgarian Academy of Sciences",
+  bgn: "U.S. Board on Geographic Names (BGN)",
+  bgna: "BGN/PCGN (variant)",
+  bgnpcgn: "BGN/PCGN — Board on Geographic Names / Permanent Committee",
+  bis: "Bureau of Indian Standards",
+  by: "State Land and Cartography Committee (Belarus)",
+  din: "Deutsches Institut für Normung (DIN)",
+  dos: "U.S. Department of State",
+  elot: "Hellenic Organization for Standardization (ELOT)",
+  ggg: "Geographical Survey Institute (Japan)",
+  gki: "State Cadastre of Georgia",
+  gost: "GOST (Russian Federal Agency)",
+  hk: "Hong Kong Government",
+  icao: "International Civil Aviation Organization (ICAO)",
+  iso: "International Organization for Standardization (ISO)",
+  kp: "Democratic People's Republic of Korea",
+  lshk: "Linguistic Society of Hong Kong (LSHK)",
+  masm: "Mongolian Agency for Standardization and Metrology",
+  mext: "Ministry of Education, Culture, Sports, Science and Technology (Japan)",
+  moct: "Ministry of Culture and Tourism (South Korea)",
+  mofa: "Ministry of Foreign Affairs (various countries)",
+  mv: "Republic of Maldives",
+  mvd: "Ministry of Internal Affairs (Russia)",
+  odni: "Office of the Director of National Intelligence (ODNI)",
+  sac: "State Administration of Cartography (China)",
+  sasm: "State Agency for Standardization and Metrology (Mongolia)",
+  ses: "Statistics and Election Service",
+  stategeocadastre: "State Service of Ukraine for Geodesy, Cartography and Cadastre",
+  ua: "Derzhheokadastr (Ukraine)",
+  un: "United Nations Group of Experts on Geographical Names (UNGEGN)",
+  var: "Variation systems (research / experimental)",
+}
+
+const fullName = FULL_NAMES[slug!] ?? slug!.toUpperCase()
+
+interface MapEntry {
+  data: {
+    authority_id: string
+    id: string
+    language?: string
+    source_script: string
+    destination_script: string
+    name: string
+    description?: string
+    creation_date?: string
+  }
+  test?: (string | null)[]
+}
+
+const entries = Object.entries(catalogue)
+  .filter(([, e]) => (e as MapEntry).data.authority_id === slug)
+  .map(([code, e]) => ({ code, ...(e as MapEntry) }))
+
+const total = entries.length
+const withTests = entries.filter((e) => e.test && e.test[0]).length
+const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sort()
+const destScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
+const languages = [...new Set(entries.map((e) => e.data.language?.split(":").pop()).filter(Boolean))].sort()
+const yearRange = (() => {
+  const years = entries
+    .map((e) => parseInt(e.data.creation_date ?? e.data.id, 10))
+    .filter((n) => !isNaN(n))
+  if (years.length === 0) return ""
+  const min = Math.min(...years)
+  const max = Math.max(...years)
+  return min === max ? String(min) : `${min}–${max}`
+})()
+
+const pageTitle = `${fullName} — Interscript Authorities`
+---
+
+<Base title={pageTitle} description={`${total} transliteration systems from ${fullName}.`}>
+  <article class="authority-detail">
+    <div class="container">
+      <a href="/authorities" class="back-link">← All authorities</a>
+
+      <header class="auth-header">
+        <p class="eyebrow">Authority</p>
+        <h1>{fullName}</h1>
+        <code class="auth-slug">{slug}</code>
+
+        <dl class="meta-grid">
+          <div>
+            <dt>Systems</dt>
+            <dd>{total}</dd>
+          </div>
+          <div>
+            <dt>With test vectors</dt>
+            <dd>{withTests}</dd>
+          </div>
+          <div>
+            <dt>Source scripts</dt>
+            <dd>{sourceScripts.join(", ")}</dd>
+          </div>
+          <div>
+            <dt>Destination</dt>
+            <dd>{destScripts.join(", ")}</dd>
+          </div>
+          {yearRange && (
+            <div>
+              <dt>Years</dt>
+              <dd>{yearRange}</dd>
+            </div>
+          )}
+          {languages.length > 0 && (
+            <div>
+              <dt>Languages</dt>
+              <dd>{languages.join(", ")}</dd>
+            </div>
+          )}
+        </dl>
+      </header>
+
+      <hr class="rule-bold" />
+
+      <section class="systems-section">
+        <p class="eyebrow">Systems</p>
+        <h2>All {total} transliteration systems.</h2>
+
+        <ul class="system-list">
+          {entries
+            .sort((a, b) => (a.data.creation_date ?? a.data.id).localeCompare(b.data.creation_date ?? b.data.id))
+            .map((e) => (
+              <li class="system-row">
+                <a href={`/maps/${e.code}`} class="system-link">
+                  <span class="system-year">{e.data.creation_date ?? e.data.id}</span>
+                  <div class="system-info">
+                    <span class="system-name">{e.data.name}</span>
+                    <code class="system-code">{e.code}</code>
+                  </div>
+                  <div class="system-flow">
+                    <span>{e.data.source_script}</span>
+                    <span class="arrow" aria-hidden="true">→</span>
+                    <span>{e.data.destination_script}</span>
+                  </div>
+                  {e.test && e.test[0] && (
+                    <div class="system-test">
+                      <span class="test-input">{e.test[0]}</span>
+                      <span class="arrow" aria-hidden="true">⇒</span>
+                      <span class="test-output">{e.test[1]}</span>
+                    </div>
+                  )}
+                </a>
+              </li>
+            ))}
+        </ul>
+      </section>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .authority-detail {
+    padding-block: 2rem 6rem;
+  }
+  .back-link {
+    display: inline-block;
+    color: var(--color-stone);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover { color: var(--color-ochre); }
+
+  .auth-header h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 0.5rem;
+    line-height: 1.1;
+  }
+  .auth-slug {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    background: transparent;
+    padding: 0;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+    border-block: 1px solid var(--color-rule);
+  }
+  .meta-grid dt {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin-bottom: 0.25rem;
+  }
+  .meta-grid dd {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--color-ink);
+  }
+
+  .systems-section {
+    padding-block: 3rem;
+  }
+  .systems-section h2 {
+    font-size: var(--text-h1);
+    margin: 0.5rem 0 2rem;
+  }
+
+  .system-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--color-rule);
+  }
+  .system-row {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .system-link {
+    display: grid;
+    grid-template-columns: 4rem 1.5fr 1fr 1.5fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    text-decoration: none;
+    color: var(--color-ink);
+    align-items: center;
+    transition: background 0.15s ease;
+  }
+  .system-link:hover {
+    background: color-mix(in srgb, var(--color-ochre) 4%, transparent);
+    padding-inline: 0.5rem;
+    margin-inline: -0.5rem;
+    border-radius: 3px;
+  }
+  @media (max-width: 768px) {
+    .system-link {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+  .system-year {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-stone);
+  }
+  .system-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .system-name {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
+  }
+  .system-link:hover .system-name {
+    color: var(--color-ochre);
+  }
+  .system-code {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-stone);
+    background: transparent;
+    padding: 0;
+  }
+  .system-flow {
+    display: flex;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-stone);
+  }
+  .system-flow .arrow {
+    color: var(--color-stone-light);
+  }
+  .system-test {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+  }
+  .test-input {
+    color: var(--color-stone);
+  }
+  .test-output {
+    color: var(--color-ochre);
+    font-style: italic;
+  }
+  .system-test .arrow {
+    color: var(--color-stone-light);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+</style>
