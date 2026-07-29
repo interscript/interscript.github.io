@@ -22,7 +22,7 @@
     "@reach/router": "^1.2.1",
     "@riboseinc/iso-15924": "^1.20200424.0",
     "@root/walk": "^1.1.0",
-    "axios": "^0.19.0",
+    "axios": "^0.33.0",
     "classnames": "^2.3.1",
     "franc-all": "^7.1.0",
     "interscript": "^2.4.5",
