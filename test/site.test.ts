@@ -135,7 +135,7 @@ describe("partners and attribution", () => {
 })
 
 describe("navigation", () => {
-  const navHrefs = ["/demo", "/compare", "/maps", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]
+  const navHrefs = ["/demo", "/compare", "/batch", "/detect", "/maps", "/scripts", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]
 
   it("every page (except /embed) links to all primary destinations", () => {
     const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))

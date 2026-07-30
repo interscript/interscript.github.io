@@ -5,12 +5,14 @@
  * matters": the same name surfaces differently across BGN/PCGN, ISO,
  * UN, ALA-LC, ODNI.
  *
- * Uses httpStrategy so map IR loads on demand.
+ * Uses the Web Worker client so 5 simultaneous transliterations don't
+ * jank the UI thread.
  *
  * Script display names are passed in as a prop (resolved at build time
  * from @iso24229/iso15924-data) so this component stays browser-safe.
  */
-import { ref, computed, onMounted, watch } from "vue"
+import { ref, computed, onMounted, onUnmounted, watch } from "vue"
+import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 
 interface System {
   code: string
@@ -28,7 +30,6 @@ interface Preset {
 
 interface Props {
   presets: Preset[]
-  inputLabel: string
 }
 
 const props = defineProps<Props>()
@@ -43,36 +44,30 @@ const currentPreset = computed(() =>
   props.presets.find((p) => p.id === presetId.value) ?? props.presets[0]!,
 )
 
-let transliterateFn: ((code: string, input: string) => Promise<string>) | null = null
+let client: WorkerClient | null = null
 
 async function ensureEngine() {
-  if (transliterateFn) return
-  const mod = await import("interscript-ts")
-  mod.reset()
-  mod.configure({
-    strategies: [
-      mod.httpStrategy({
-        baseUrl: "/maps",
-        cacheKeyPrefix: "isx-compare:",
-      }),
-    ],
-  })
-  transliterateFn = mod.transliterateAsync
+  if (client) return
+  client = createWorkerClient()
 }
 
 async function run() {
-  if (!transliterateFn) return
+  if (!client) return
   loading.value = true
   outputs.value = {}
   errors.value = {}
-  for (const sys of currentPreset.value.systems) {
-    try {
-      const result = await transliterateFn(sys.code, input.value)
-      outputs.value = { ...outputs.value, [sys.code]: result }
-    } catch (e) {
-      errors.value = { ...errors.value, [sys.code]: (e as Error).message }
-    }
-  }
+  // Race all systems in parallel — the worker handles them off the
+  // main thread, so we get the results back without UI jank.
+  await Promise.all(
+    currentPreset.value.systems.map(async (sys) => {
+      try {
+        const result = await client!.transliterate(sys.code, input.value)
+        outputs.value = { ...outputs.value, [sys.code]: result }
+      } catch (e) {
+        errors.value = { ...errors.value, [sys.code]: (e as Error).message }
+      }
+    }),
+  )
   loading.value = false
 }
 
@@ -85,6 +80,10 @@ function selectPreset(id: string) {
 onMounted(async () => {
   await ensureEngine()
   await run()
+})
+
+onUnmounted(() => {
+  client?.terminate()
 })
 
 watch([input, presetId], () => {

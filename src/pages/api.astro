@@ -130,6 +130,84 @@ const out = await transliterateAsync(
       </div>
     </div>
   </section>
+
+  <section class="section cli-section">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">CLI &amp; CI</p>
+        <h2>Transliterate from the terminal.</h2>
+        <p class="section-deck">
+          The <code>interscript-ts</code> CLI runs anywhere Node does —
+          your laptop, a build pipeline, a GitHub Action. Same engine,
+          same maps, same byte-for-byte output.
+        </p>
+      </header>
+
+      <div class="cli-grid">
+        <article class="cli-card">
+          <header>
+            <span class="runtime-badge">CLI</span>
+            <h3>Install</h3>
+          </header>
+          <pre><code>npm install -g interscript-ts
+# or use without installing:
+npx interscript-ts --help</code></pre>
+        </article>
+
+        <article class="cli-card">
+          <header>
+            <span class="runtime-badge">CLI</span>
+            <h3>Single call</h3>
+          </header>
+          <pre><code set:html={`# Transliterate from stdin
+echo "Антон" | interscript-ts t bgnpcgn-ukr-Cyrl-Latn-2019
+# → Anton
+
+# Or from a file
+interscript-ts t bgnpcgn-ukr-Cyrl-Latn-2019 \\
+  -i input.txt -o output.txt`} /></pre>
+        </article>
+
+        <article class="cli-card">
+          <header>
+            <span class="runtime-badge">CLI</span>
+            <h3>Batch (CSV)</h3>
+          </header>
+          <pre><code set:html={`# names.txt has one name per line
+interscript-ts b bgnpcgn-ukr-Cyrl-Latn-2019 \\
+  names.txt --csv > romanized.csv
+
+# Or: list every BGN/PCGN Cyrillic system
+interscript-ts list --authority bgnpcgn \\
+  --source-script Cyrl --maps-dir ./maps`} /></pre>
+        </article>
+
+        <article class="cli-card github-action-card">
+          <header>
+            <span class="runtime-badge">GitHub Action</span>
+            <h3>CI step</h3>
+          </header>
+          <pre><code set:html={`# .github/workflows/romanize.yml
+name: Romanize names
+on: { push: { paths: ['names.txt'] } }
+jobs:
+  romanize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npx interscript-ts@latest \\
+            b bgnpcgn-ukr-Cyrl-Latn-2019 \\
+            names.txt --csv \\
+            --http https://interscript.org/maps \\
+            > romanized.csv
+      - uses: actions/upload-artifact@v4
+        with: { name: romanized, path: romanized.csv }`} /></pre>
+        </article>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <script>
@@ -224,5 +302,44 @@ const out = await transliterateAsync(
   }
   .embed-snippet {
     margin: 0;
+  }
+
+  .cli-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .cli-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .github-action-card {
+      grid-column: 1 / -1;
+    }
+  }
+  .cli-card {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .cli-card header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .cli-card h3 {
+    font-size: 1.125rem;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--color-stone);
+  }
+  .cli-card pre {
+    margin: 0;
+    font-size: 0.78rem;
   }
 </style>

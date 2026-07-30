@@ -155,8 +155,8 @@ describe("navigation across new pages", () => {
 
   it("every new page links to all primary nav destinations", () => {
     const navHrefs = [
-      "/demo", "/compare", "/maps", "/use-cases", "/api",
-      "/status", "/authorities", "/docs", "/about",
+      "/demo", "/compare", "/batch", "/detect", "/maps", "/scripts",
+      "/use-cases", "/api", "/status", "/authorities", "/docs", "/about",
     ]
     for (const p of pages) {
       const html = readHtml(`${p}/index.html`)
