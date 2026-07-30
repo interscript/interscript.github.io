@@ -31,7 +31,7 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
 
 <style>
   .lead {
-    color: var(--muted);
+    color: var(--color-stone);
     margin-bottom: 3rem;
   }
   .post-list {
@@ -39,20 +39,20 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
     padding: 0;
   }
   .post-list li {
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--color-rule);
   }
   .post-list a {
     display: block;
     padding: 1.5rem 0;
     text-decoration: none;
-    color: var(--text);
+    color: var(--color-ink);
   }
   .post-list a:hover .title {
-    color: var(--accent);
+    color: var(--color-brand);
   }
   .date {
     display: block;
-    color: var(--muted);
+    color: var(--color-stone);
     font-size: 0.85rem;
     letter-spacing: 0.05em;
   }
@@ -64,13 +64,13 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
   }
   .author {
     display: block;
-    color: var(--muted);
+    color: var(--color-stone);
     font-size: 0.9rem;
     font-style: italic;
     margin-bottom: 0.5rem;
   }
   .summary {
     display: block;
-    color: var(--muted);
+    color: var(--color-stone);
   }
 </style>

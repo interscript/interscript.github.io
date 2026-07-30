@@ -29,6 +29,23 @@ describe("ScriptMosaic", () => {
   beforeEach(() => {
     vi.useFakeTimers()
     vi.clearAllMocks()
+    // Mock fetch — the component uses fetch() to load map IR + deps.
+    ;(globalThis as { fetch?: unknown }).fetch = vi.fn(async (url: string) => {
+      if (typeof url === "string" && url.endsWith(".json")) {
+        return {
+          ok: true,
+          json: async () => ({
+            schemaVersion: 1,
+            systemCode: url.split("/").pop()?.replace(".json", ""),
+            dependencies: [],
+            stages: [{ kind: "stage", name: "main", rules: [] }],
+            aliases: {},
+            functions: {},
+          }),
+        }
+      }
+      return { ok: false }
+    })
   })
 
   afterEach(() => {
@@ -124,7 +141,7 @@ describe("ScriptMosaic", () => {
     const html = wrapper.html()
     // Year notes from various transforms
     expect(html).toContain("2019")
-    expect(html).toContain("1972")
+    expect(html).toContain("2011")
     expect(html).toContain("1997")
   })
 })

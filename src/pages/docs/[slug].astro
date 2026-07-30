@@ -72,14 +72,14 @@ const pageTitle = `${data.title} — Interscript Docs`
     }
   }
   .sidebar {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--color-rule);
     padding-right: 1.5rem;
   }
   .sidebar h2 {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--muted);
+    color: var(--color-stone);
     margin-top: 0;
   }
   .sidebar ul {
@@ -90,18 +90,18 @@ const pageTitle = `${data.title} — Interscript Docs`
     padding: 0.25rem 0;
   }
   .sidebar a {
-    color: var(--text);
+    color: var(--color-ink);
     text-decoration: none;
   }
   .sidebar a:hover,
   .sidebar a.active {
-    color: var(--accent);
+    color: var(--color-brand);
   }
   .doc {
     max-width: 42rem;
   }
   .back {
-    color: var(--muted);
+    color: var(--color-stone);
     text-decoration: none;
     font-size: 0.9rem;
   }
@@ -110,7 +110,7 @@ const pageTitle = `${data.title} — Interscript Docs`
     font-size: 2rem;
   }
   .meta {
-    color: var(--muted);
+    color: var(--color-stone);
     font-style: italic;
     margin-top: 0;
   }
@@ -119,19 +119,19 @@ const pageTitle = `${data.title} — Interscript Docs`
     font-size: 1.4rem;
   }
   .adoc-body :global(pre) {
-    background: var(--surface);
+    background: var(--color-vellum);
     padding: 1rem;
     border-radius: 6px;
     overflow-x: auto;
   }
   .adoc-body :global(code) {
-    background: var(--surface);
+    background: var(--color-vellum);
     padding: 0.1rem 0.4rem;
     border-radius: 3px;
     font-size: 0.95em;
   }
   .adoc-body :global(a) {
-    color: var(--accent);
+    color: var(--color-brand);
   }
   .adoc-body :global(table) {
     border-collapse: collapse;
@@ -140,14 +140,14 @@ const pageTitle = `${data.title} — Interscript Docs`
   }
   .adoc-body :global(th),
   .adoc-body :global(td) {
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-rule);
     padding: 0.5rem 0.75rem;
     text-align: left;
   }
   footer {
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-stone);
   }
 </style>

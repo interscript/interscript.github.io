@@ -61,8 +61,8 @@ const cells: Cell[] = [
     id: "devanagari",
     script: "Devanagari",
     transforms: [
-      { system: "un-hin-Deva-Latn-1972", input: "महात्मा", authority: "UN", note: "Hindi · 1972" },
-      { system: "alalc-mar-Deva-Latn-1997", input: "मुंबई", authority: "ALA-LC", note: "Marathi · 1997" },
+      { system: "un-hin-Deva-Latn-2016", input: "महात्मा", authority: "UN", note: "Hindi · 2016" },
+      { system: "alalc-hin-Deva-Latn-2011", input: "मुंबई", authority: "ALA-LC", note: "Hindi · 2011" },
       { system: "iso-hin-Deva-Latn-15919-2001", input: "फिलिपींस", authority: "ISO", note: "ISO 15919" },
     ],
   },
@@ -71,8 +71,8 @@ const cells: Cell[] = [
     script: "Han",
     transforms: [
       { system: "acadsin-zho-Hani-Latn-2002", input: "台北", authority: "Academia Sinica", note: "Tongyong · 2002" },
-      { system: "bgnpcgn-zho-Hani-Latn-1979", input: "北京", authority: "BGN/PCGN", note: "Hanyu Pinyin · 1979" },
-      { system: "iso-zho-Hani-Latn-1996", input: "香港", authority: "ISO", note: "ISO 7098 · 1996" },
+      { system: "bgnpcgn-zho-Hans-Latn-1979", input: "北京", authority: "BGN/PCGN", note: "Hanyu Pinyin · 1979" },
+      { system: "sac-zho-Hans-Latn-1979", input: "香港", authority: "SAC", note: "Hans · 1979" },
     ],
   },
   {
@@ -87,9 +87,9 @@ const cells: Cell[] = [
     id: "greek",
     script: "Greek",
     transforms: [
-      { system: "iso-grc-Grek-Latn-843-1997", input: "Αθήνα", authority: "ISO", note: "Greek · 843/1997" },
-      { system: "alalc-grc-Grek-Latn-1997", input: "Θεσσαλονίκη", authority: "ALA-LC", note: "Greek · 1997" },
-      { system: "bgnpcgn-grc-Grek-Latn-1962", input: "Ελλάδα", authority: "BGN/PCGN", note: "Greek · 1962" },
+      { system: "iso-ell-Grek-Latn-843-1997-t1", input: "Αθήνα", authority: "ISO", note: "Greek · 843/1997" },
+      { system: "alalc-ell-Grek-Latn-1997", input: "Θεσσαλονίκη", authority: "ALA-LC", note: "Greek · 1997" },
+      { system: "bgnpcgn-ell-Grek-Latn-1962", input: "Ελλάδα", authority: "BGN/PCGN", note: "Greek · 1962" },
     ],
   },
 ]
@@ -105,12 +105,30 @@ async function ensureEngine() {
   if (transliterateFn) return
   try {
     const mod = await import("interscript-ts")
-    const modules = import.meta.glob("/maps/*.json", { eager: true, as: "raw" })
-    const maps: Record<string, unknown> = {}
-    for (const [path, raw] of Object.entries(modules)) {
-      const code = path.match(/\/maps\/(.+)\.json$/)?.[1]
-      if (code) maps[code] = JSON.parse(raw as string)
+    // Collect every system code referenced by the mosaic, plus their
+    // transitive dependencies. fetch() each one — import.meta.glob
+    // doesn't see files under public/ in dev.
+    const wanted = new Set<string>()
+    for (const cell of cells) {
+      for (const tf of cell.transforms) {
+        wanted.add(tf.system)
+      }
     }
+    const maps: Record<string, unknown> = {}
+    // Fetch in two passes: first the systems themselves, then any
+    // transitive deps they declare (so multi-stage pipelines resolve).
+    const fetchOne = async (code: string) => {
+      if (maps[code]) return
+      const res = await fetch(`/maps/${code}.json`)
+      if (!res.ok) return
+      const json = (await res.json()) as { dependencies?: string[] }
+      maps[code] = json
+      for (const dep of json.dependencies ?? []) wanted.add(dep)
+    }
+    for (const code of wanted) await fetchOne(code)
+    // Second pass for any deps discovered above.
+    for (const code of [...wanted]) await fetchOne(code)
+
     mod.reset()
     mod.configure({ strategies: [mod.bundledStrategy(maps)] })
     transliterateFn = mod.transliterate

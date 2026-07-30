@@ -2,6 +2,7 @@
 import Base from "../../layouts/Base.astro"
 import MapCatalogue from "../../components/MapCatalogue.vue"
 import { readdirSync } from "node:fs"
+import { scriptName } from "../../data/iso"
 
 // Catalogue data is shipped as JSON; the Vue island does the filtering.
 import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
@@ -27,11 +28,17 @@ const entries = Object.entries(catalogue).map(([code, entry]) => ({
 })) as unknown as Array<{ code: string } & MapEntry>
 
 // Pre-aggregate filter facets in Astro so the Vue island doesn't have to.
+// Script codes are ISO 15924 — surface both the code and the resolved name.
 const authorities = [...new Set(entries.map((e) => e.data.authority_id))].sort()
 const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sort()
 const destinationScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
 const totalMaps = entries.length
 const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
+
+const scriptPairs = new Set<string>()
+for (const e of entries) {
+  scriptPairs.add(`${scriptName(e.data.source_script)} → ${scriptName(e.data.destination_script)}`)
+}
 
 // Set of maps whose IR is bundled in /public/maps/ — these can be
 // live-demoed without a server round-trip.
@@ -77,7 +84,9 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
         authority: e.data.authority_id,
         name: e.data.name,
         sourceScript: e.data.source_script,
+        sourceScriptName: scriptName(e.data.source_script),
         destinationScript: e.data.destination_script,
+        destinationScriptName: scriptName(e.data.destination_script),
         year: e.data.creation_date ?? e.data.id,
         language: e.data.language,
         description: e.data.description,

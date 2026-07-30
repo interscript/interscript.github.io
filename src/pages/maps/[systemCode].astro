@@ -4,6 +4,7 @@ import MapPreview from "../../components/MapPreview.vue"
 import RuleViewer from "../../components/RuleViewer.vue"
 import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
 import { readdirSync } from "node:fs"
+import { scriptName, scriptNumber, parseLanguageField } from "../../data/iso"
 
 export function getStaticPaths() {
   return Object.keys(catalogue).map((code) => ({
@@ -44,9 +45,14 @@ if (!entry) {
 
 const { data, test } = entry
 const year = data.creation_date ?? data.id
-const languageCode = data.language?.split(":").pop()
+const languageDisplay = parseLanguageField(data.language)
+const languageCode = data.language?.split(/[|:]/).pop()
+const sourceName = scriptName(data.source_script)
+const destName = scriptName(data.destination_script)
+const sourceNumber = scriptNumber(data.source_script)
+const destNumber = scriptNumber(data.destination_script)
 const pageTitle = `${data.name} — Interscript Maps`
-const pageDesc = data.description ?? `${data.source_script} → ${data.destination_script} (${data.authority_id.toUpperCase()}, ${year})`
+const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.authority_id.toUpperCase()}, ${year})`
 ---
 
 <Base title={pageTitle} description={pageDesc}>
@@ -70,16 +76,22 @@ const pageDesc = data.description ?? `${data.source_script} → ${data.destinati
           </div>
           <div>
             <dt>Source script</dt>
-            <dd>{data.source_script}</dd>
+            <dd>
+              <span class="script-name">{sourceName}</span>
+              <span class="script-code">{data.source_script}{sourceNumber !== undefined && ` · ${sourceNumber}`}</span>
+            </dd>
           </div>
           <div>
             <dt>Destination script</dt>
-            <dd>{data.destination_script}</dd>
+            <dd>
+              <span class="script-name">{destName}</span>
+              <span class="script-code">{data.destination_script}{destNumber !== undefined && ` · ${destNumber}`}</span>
+            </dd>
           </div>
-          {languageCode && (
+          {languageDisplay && (
             <div>
               <dt>Language</dt>
-              <dd>{languageCode}</dd>
+              <dd>{languageDisplay}</dd>
             </div>
           )}
           {data.confirmation_date && (
@@ -228,6 +240,19 @@ const pageDesc = data.description ?? `${data.source_script} → ${data.destinati
     font-weight: 500;
     margin: 0;
     color: var(--color-ink);
+  }
+  .meta-grid dd .script-name {
+    display: block;
+    font-style: italic;
+  }
+  .meta-grid dd .script-code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--color-stone);
+    margin-top: 0.25rem;
+    letter-spacing: 0.04em;
   }
   .map-description {
     font-size: var(--text-lead);

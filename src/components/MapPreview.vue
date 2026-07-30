@@ -38,12 +38,20 @@ async function ensureEngine() {
   engine.value = "loading"
   try {
     const mod = await import("interscript-ts")
-    const modules = import.meta.glob("/maps/*.json", { eager: true, as: "raw" })
+    // Fetch this system + its transitive deps. import.meta.glob can't
+    // see public/ files in dev.
+    const wanted = new Set<string>([props.systemCode])
     const maps: Record<string, unknown> = {}
-    for (const [path, raw] of Object.entries(modules)) {
-      const code = path.match(/\/maps\/(.+)\.json$/)?.[1]
-      if (code) maps[code] = JSON.parse(raw as string)
+    const fetchOne = async (code: string) => {
+      if (maps[code]) return
+      const res = await fetch(`/maps/${code}.json`)
+      if (!res.ok) return
+      const json = (await res.json()) as { dependencies?: string[] }
+      maps[code] = json
+      for (const dep of json.dependencies ?? []) wanted.add(dep)
     }
+    for (const code of wanted) await fetchOne(code)
+    for (const code of [...wanted]) await fetchOne(code)
     mod.reset()
     mod.configure({ strategies: [mod.bundledStrategy(maps)] })
     transliterateFn = mod.transliterate
