@@ -1,17 +1,19 @@
 {
   "schemaVersion": 1,
-  "systemCode": "bgn-kor-Hang-Latn-1943",
+  "systemCode": "un-mar-Deva-Latn-2016",
   "dependencies": [
-    "var-kor-Hang-Latn-mr-1939"
+    "un-hin-Deva-Latn-2016"
   ],
   "metadata": {
-    "authority_id": "bgn",
-    "id": "1943",
-    "language": "iso-639-2:kor",
-    "source_script": "Hang",
+    "authority_id": "un",
+    "id": "2016",
+    "language": "iso-639-2:mar",
+    "source_script": "Deva",
     "destination_script": "Latn",
-    "name": "Korean McCune-Reischauer (Hangul to Latin) (1943 Agreement)",
-    "creation_date": "1943",
+    "name": "Romanization of Marathi -- UNGEGN 4.0",
+    "creation_date": "1972",
+    "confirmation_date": "2016",
+    "description": "The United Nations recommended system was approved in 1972 (II/11) and amended in 1977\n(III/12), based on a report prepared by D. N. Sharma. The tables and their corrections were\npublished in volume II of the conference reports\n\nThere is no evidence of the use of the system either in India or in international cartographic\nproducts.\n\nMarathi (Marāṭhī) uses the alphasyllabic script Devanāgarī.\n",
     "nonstandard": {}
   },
   "stages": [
@@ -22,390 +24,240 @@
         {
           "kind": "run",
           "stage": "main",
-          "docName": "var-kor-Hang-Latn-mr-1939"
+          "docName": "un-hin-Deva-Latn-2016"
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "group",
+            "items": [
+              {
+                "kind": "repeat",
+                "item": {
+                  "kind": "string",
+                  "value": "U"
+                },
+                "min": 0,
+                "max": null
+              },
+              {
+                "kind": "string",
+                "value": "0939"
+              }
+            ]
+          },
+          "to": {
+            "kind": "string",
+            "value": "h"
+          },
+          "before": {
+            "kind": "string",
+            "value": ""
+          },
+          "after": {
+            "kind": "alias",
+            "name": "boundary"
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ळ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḷa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ऍ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ă"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ऱ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "r"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अि"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अी"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ī"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अु"
+              },
+              "to": {
+                "kind": "string",
+                "value": "u"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अू"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ū"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अे"
+              },
+              "to": {
+                "kind": "string",
+                "value": "e"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "अै"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ai"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ॲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ê"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ऑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ô"
+              }
+            }
+          ]
         },
         {
           "kind": "funcall",
           "name": "compose",
-          "kwargs": {}
-        },
-        {
-          "kind": "funcall",
-          "name": "title_case",
           "kwargs": {}
         }
       ]
     }
   ],
   "aliases": {
-    "kor_beforeterm": {
+    "deva_characters_1": {
       "kind": "any",
       "of": [
         {
-          "kind": "any",
-          "of": [
-            {
-              "kind": "string",
-              "value": "A"
-            },
-            {
-              "kind": "string",
-              "value": "B"
-            },
-            {
-              "kind": "string",
-              "value": "C"
-            },
-            {
-              "kind": "string",
-              "value": "D"
-            },
-            {
-              "kind": "string",
-              "value": "E"
-            },
-            {
-              "kind": "string",
-              "value": "F"
-            },
-            {
-              "kind": "string",
-              "value": "G"
-            },
-            {
-              "kind": "string",
-              "value": "H"
-            },
-            {
-              "kind": "string",
-              "value": "I"
-            },
-            {
-              "kind": "string",
-              "value": "J"
-            },
-            {
-              "kind": "string",
-              "value": "K"
-            },
-            {
-              "kind": "string",
-              "value": "L"
-            },
-            {
-              "kind": "string",
-              "value": "M"
-            },
-            {
-              "kind": "string",
-              "value": "N"
-            },
-            {
-              "kind": "string",
-              "value": "O"
-            },
-            {
-              "kind": "string",
-              "value": "P"
-            },
-            {
-              "kind": "string",
-              "value": "Q"
-            },
-            {
-              "kind": "string",
-              "value": "R"
-            },
-            {
-              "kind": "string",
-              "value": "S"
-            },
-            {
-              "kind": "string",
-              "value": "T"
-            },
-            {
-              "kind": "string",
-              "value": "U"
-            },
-            {
-              "kind": "string",
-              "value": "V"
-            },
-            {
-              "kind": "string",
-              "value": "W"
-            },
-            {
-              "kind": "string",
-              "value": "X"
-            },
-            {
-              "kind": "string",
-              "value": "Y"
-            },
-            {
-              "kind": "string",
-              "value": "Z"
-            }
-          ]
+          "kind": "string",
+          "value": "ा"
         },
         {
-          "kind": "any",
-          "of": [
-            {
-              "kind": "string",
-              "value": "a"
-            },
-            {
-              "kind": "string",
-              "value": "b"
-            },
-            {
-              "kind": "string",
-              "value": "c"
-            },
-            {
-              "kind": "string",
-              "value": "d"
-            },
-            {
-              "kind": "string",
-              "value": "e"
-            },
-            {
-              "kind": "string",
-              "value": "f"
-            },
-            {
-              "kind": "string",
-              "value": "g"
-            },
-            {
-              "kind": "string",
-              "value": "h"
-            },
-            {
-              "kind": "string",
-              "value": "i"
-            },
-            {
-              "kind": "string",
-              "value": "j"
-            },
-            {
-              "kind": "string",
-              "value": "k"
-            },
-            {
-              "kind": "string",
-              "value": "l"
-            },
-            {
-              "kind": "string",
-              "value": "m"
-            },
-            {
-              "kind": "string",
-              "value": "n"
-            },
-            {
-              "kind": "string",
-              "value": "o"
-            },
-            {
-              "kind": "string",
-              "value": "p"
-            },
-            {
-              "kind": "string",
-              "value": "q"
-            },
-            {
-              "kind": "string",
-              "value": "r"
-            },
-            {
-              "kind": "string",
-              "value": "s"
-            },
-            {
-              "kind": "string",
-              "value": "t"
-            },
-            {
-              "kind": "string",
-              "value": "u"
-            },
-            {
-              "kind": "string",
-              "value": "v"
-            },
-            {
-              "kind": "string",
-              "value": "w"
-            },
-            {
-              "kind": "string",
-              "value": "x"
-            },
-            {
-              "kind": "string",
-              "value": "y"
-            },
-            {
-              "kind": "string",
-              "value": "z"
-            }
-          ]
+          "kind": "string",
+          "value": "ि"
         },
         {
-          "kind": "any",
-          "of": [
-            {
-              "kind": "string",
-              "value": "0"
-            },
-            {
-              "kind": "string",
-              "value": "1"
-            },
-            {
-              "kind": "string",
-              "value": "2"
-            },
-            {
-              "kind": "string",
-              "value": "3"
-            },
-            {
-              "kind": "string",
-              "value": "4"
-            },
-            {
-              "kind": "string",
-              "value": "5"
-            },
-            {
-              "kind": "string",
-              "value": "6"
-            },
-            {
-              "kind": "string",
-              "value": "7"
-            },
-            {
-              "kind": "string",
-              "value": "8"
-            },
-            {
-              "kind": "string",
-              "value": "9"
-            }
-          ]
+          "kind": "string",
+          "value": "ी"
         },
         {
-          "kind": "any",
-          "of": [
-            {
-              "kind": "string",
-              "value": "ᅡ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅢ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅣ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅤ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅥ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅦ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅧ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅨ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅩ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅪ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅫ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅬ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅭ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅮ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅯ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅰ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅱ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅲ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅳ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅴ"
-            },
-            {
-              "kind": "string",
-              "value": "ᅵ"
-            }
-          ]
+          "kind": "string",
+          "value": "ु"
+        },
+        {
+          "kind": "string",
+          "value": "ू"
+        },
+        {
+          "kind": "string",
+          "value": "ृ"
+        },
+        {
+          "kind": "string",
+          "value": "ॄ"
+        },
+        {
+          "kind": "string",
+          "value": "ॅ"
+        },
+        {
+          "kind": "string",
+          "value": "े"
+        },
+        {
+          "kind": "string",
+          "value": "ै"
+        },
+        {
+          "kind": "string",
+          "value": "ॉ"
+        },
+        {
+          "kind": "string",
+          "value": "ो"
+        },
+        {
+          "kind": "string",
+          "value": "ौ"
+        },
+        {
+          "kind": "string",
+          "value": " "
+        },
+        {
+          "kind": "string",
+          "value": "्"
         }
       ]
-    },
-    "kor_maybedash": {
-      "kind": "capture_group",
-      "data": {
-        "kind": "repeat",
-        "item": {
-          "kind": "string",
-          "value": "-"
-        },
-        "min": 0,
-        "max": null
-      }
     },
     "upper": {
       "kind": "any",

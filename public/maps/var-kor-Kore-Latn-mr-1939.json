@@ -1,17 +1,19 @@
 {
   "schemaVersion": 1,
-  "systemCode": "bgn-kor-Hang-Latn-1943",
+  "systemCode": "var-kor-Kore-Latn-mr-1939",
   "dependencies": [
+    "var-kor-Kore-Hang-2013",
     "var-kor-Hang-Latn-mr-1939"
   ],
   "metadata": {
-    "authority_id": "bgn",
-    "id": "1943",
+    "authority_id": "var",
+    "id": "mr-1939",
     "language": "iso-639-2:kor",
-    "source_script": "Hang",
+    "source_script": "Kore",
     "destination_script": "Latn",
-    "name": "Korean McCune-Reischauer (Hangul to Latin) (1943 Agreement)",
-    "creation_date": "1943",
+    "name": "McCune-Reischauer System (Korean-Latin)",
+    "creation_date": "1939",
+    "description": "E. O. Reischauer and G. M. McCune The Romanization of the Korean Language Based on Its Phonetic Structure. XXIX:1-55. Korea Branch of the Royal Asiatic Society. Volume XXIX (PDF)",
     "nonstandard": {}
   },
   "stages": [
@@ -19,6 +21,11 @@
       "kind": "stage",
       "name": "main",
       "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-kor-Kore-Hang-2013"
+        },
         {
           "kind": "run",
           "stage": "main",
