@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "un-rus-Cyrl-Latn-1987",
+  "dependencies": [
+    "gost-rus-Cyrl-Latn-16876-71-1983"
+  ],
+  "metadata": {
+    "authority_id": "un",
+    "id": "1987",
+    "language": "iso-639-2:rus",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "Romanization of Russian (1987)",
+    "creation_date": "1987",
+    "confirmation_date": "2016",
+    "description": "The United Nations recommended system was approved in 1987 (V/18),\nbased on the official system of the Main Administration of Geodesy and\nCartography of the former Soviet Union, also known as the GOST 1983\nsystem (GOST 16876-71). The table was published as an annex to the\nresolution.\n\nThe system is used in the Russian Federation and increasingly in\ninternational cartographic products.\n\nRussian uses the Cyrillic script which is alphabetic. The\nromanization table is unambiguous and can be applied automatically. The\nsystem is reversible, although rarely there can be ambiguities.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ъ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "”"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ъ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "”"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ю"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ju"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ja"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "я"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ja"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "gost-rus-Cyrl-Latn-16876-71-1983"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

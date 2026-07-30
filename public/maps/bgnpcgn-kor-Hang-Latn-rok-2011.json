@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-kor-Hang-Latn-rok-2011",
+  "dependencies": [
+    "moct-kor-Hang-Latn-2000"
+  ],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "rok-2011",
+    "language": "iso-639-2:kor",
+    "source_script": "Hang",
+    "destination_script": "Latn",
+    "name": "Romanization of Korean for ROK (Hangul-Latin) (2011 Agreement, MOCT System 2000)",
+    "creation_date": "2011",
+    "adoption_date": "2011",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "moct-kor-Hang-Latn-2000"
+        },
+        {
+          "kind": "funcall",
+          "name": "title_case",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "double_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄁ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄄ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄈ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄍ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄊ"
+        }
+      ]
+    },
+    "aspirated_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄏ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄐ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄑ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄎ"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

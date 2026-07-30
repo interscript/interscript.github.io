@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-hin-Deva-Latn-2011",
+  "dependencies": [
+    "alalc-hin-Deva-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2011",
+    "language": "iso-639-2:hin",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Hindi (2011)",
+    "creation_date": "1997",
+    "description": "ALA-LC Romanization table for Hindi\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-hin-Deva-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "hin_cons_or_conscluster": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ा"
+        },
+        {
+          "kind": "string",
+          "value": "ि"
+        },
+        {
+          "kind": "string",
+          "value": "ी"
+        },
+        {
+          "kind": "string",
+          "value": "ु"
+        },
+        {
+          "kind": "string",
+          "value": "ू"
+        },
+        {
+          "kind": "string",
+          "value": "ृ"
+        },
+        {
+          "kind": "string",
+          "value": "ॄ"
+        },
+        {
+          "kind": "string",
+          "value": "ॅ"
+        },
+        {
+          "kind": "string",
+          "value": "े"
+        },
+        {
+          "kind": "string",
+          "value": "ै"
+        },
+        {
+          "kind": "string",
+          "value": "ॉ"
+        },
+        {
+          "kind": "string",
+          "value": "ो"
+        },
+        {
+          "kind": "string",
+          "value": "ौ"
+        },
+        {
+          "kind": "string",
+          "value": " "
+        },
+        {
+          "kind": "string",
+          "value": "्"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

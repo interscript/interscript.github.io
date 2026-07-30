@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-asm-Deva-Latn-2012",
+  "dependencies": [
+    "alalc-asm-Deva-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2012",
+    "language": "iso-639-2:asm",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Assamese (2012)",
+    "creation_date": "1997",
+    "description": "ALA-LC Romanization table for Assamese\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-asm-Deva-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "deva_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "া"
+        },
+        {
+          "kind": "string",
+          "value": "ি"
+        },
+        {
+          "kind": "string",
+          "value": "ী"
+        },
+        {
+          "kind": "string",
+          "value": "ু"
+        },
+        {
+          "kind": "string",
+          "value": "ূ"
+        },
+        {
+          "kind": "string",
+          "value": "ৃ"
+        },
+        {
+          "kind": "string",
+          "value": "ে"
+        },
+        {
+          "kind": "string",
+          "value": "ৈ"
+        },
+        {
+          "kind": "string",
+          "value": "ো"
+        },
+        {
+          "kind": "string",
+          "value": "ৌ"
+        },
+        {
+          "kind": "string",
+          "value": "्"
+        },
+        {
+          "kind": "string",
+          "value": "্"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

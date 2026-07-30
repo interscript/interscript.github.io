@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "iso-inc-Deva-Latn-15919-2001",
+  "dependencies": [
+    "iso-san-Deva-Latn-15919-2001"
+  ],
+  "metadata": {
+    "authority_id": "iso",
+    "id": "15919-2001",
+    "language": "iso-639-2:inc",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Indic)",
+    "creation_date": "2001",
+    "adoption_date": "2001",
+    "description": "Script conversion is often required for documents such as historical and literary texts, geographical texts (including\nmaps and atlases), bibliographies, catalogues, lists and passports (and other identification documents).\n\nText in Devanagari script or other Indic scripts sometimes needs to be shown in Latin script, where users, or\nequipment that they are using, cannot read or write the text\n\nThis International Standard applies to transliteration of Devanagari, and to Indic scripts related to Devanagari,\nindependent of the period in which it is or was used.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "iso-san-Deva-Latn-15919-2001"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

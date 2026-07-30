@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "odni-prs-Arab-Latn-2004",
+  "dependencies": [
+    "odni-fas-Arab-Latn-2004"
+  ],
+  "metadata": {
+    "authority_id": "odni",
+    "id": "2004",
+    "language": "iso-639-3:prs",
+    "source_script": "Arab",
+    "destination_script": "Latn",
+    "name": "Intelligence Community (IC) Standard for the Transliteration of Dari Personal Names (2004)",
+    "creation_date": "2004",
+    "confirmation_date": "2004-11",
+    "description": "",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ئ"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ؤ"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "قّ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "qq"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "وّ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ww"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ء"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "يي"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "یی"
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "group",
+                "items": [
+                  {
+                    "kind": "string",
+                    "value": "اي"
+                  },
+                  {
+                    "kind": "alias",
+                    "name": "boundary"
+                  }
+                ]
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "group",
+                "items": [
+                  {
+                    "kind": "string",
+                    "value": "ای"
+                  },
+                  {
+                    "kind": "alias",
+                    "name": "boundary"
+                  }
+                ]
+              },
+              "to": {
+                "kind": "string",
+                "value": "i"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ُو"
+              },
+              "to": {
+                "kind": "string",
+                "value": "u"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ع"
+              },
+              "to": {
+                "kind": "string",
+                "value": ""
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ق"
+              },
+              "to": {
+                "kind": "string",
+                "value": "q"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "و"
+              },
+              "to": {
+                "kind": "string",
+                "value": "w"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "odni-fas-Arab-Latn-2004"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

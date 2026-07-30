@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "din-nep-Deva-Latn-33904-2018",
+  "dependencies": [
+    "din-san-Deva-Latn-33904-2018"
+  ],
+  "metadata": {
+    "authority_id": "din",
+    "id": "33904-2018",
+    "language": "iso-639-2:nep",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "DIN 33904:2018-10 Information and documentation -- Romanization Devanagari, Nepali",
+    "creation_date": "2018",
+    "description": "Nepali system.\n\nThis standard specifies the transliteration of all languages of the Devanāgarī characters into Latin letters firmly.\nIt is suitable for any application.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "din-san-Deva-Latn-33904-2018"
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ॲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ê"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ऑ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ô"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "क़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḵa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ख़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḵha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ग़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "g̲a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ज़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j̲a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ड़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṙa"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ढ़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṙha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "फ़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "p̲ha"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "स़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s̲a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ह़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h̲a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "व़"
+              },
+              "to": {
+                "kind": "string",
+                "value": "v̲a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "क़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḵ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ख़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ḵh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ग़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "g̲"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ज़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j̲"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ड़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṙ"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ढ़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ṙh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "फ़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "p̲h"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "स़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s̲"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ह़्"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h̲"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "deva_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ा"
+        },
+        {
+          "kind": "string",
+          "value": "ि"
+        },
+        {
+          "kind": "string",
+          "value": "ी"
+        },
+        {
+          "kind": "string",
+          "value": "ु"
+        },
+        {
+          "kind": "string",
+          "value": "ू"
+        },
+        {
+          "kind": "string",
+          "value": "ृ"
+        },
+        {
+          "kind": "string",
+          "value": "ॄ"
+        },
+        {
+          "kind": "string",
+          "value": "ॅ"
+        },
+        {
+          "kind": "string",
+          "value": "े"
+        },
+        {
+          "kind": "string",
+          "value": "ै"
+        },
+        {
+          "kind": "string",
+          "value": "ॉ"
+        },
+        {
+          "kind": "string",
+          "value": "ो"
+        },
+        {
+          "kind": "string",
+          "value": "ौ"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

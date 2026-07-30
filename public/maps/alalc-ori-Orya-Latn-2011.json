@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-ori-Orya-Latn-2011",
+  "dependencies": [
+    "alalc-ori-Orya-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2011",
+    "language": "iso-639-2:ori",
+    "source_script": "Orya",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Oriya (2011)",
+    "creation_date": "2011",
+    "description": "ALA-LC Romanization table for Oriya\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-ori-Orya-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "cons_or_cluster": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "୍"
+        },
+        {
+          "kind": "string",
+          "value": "ା"
+        },
+        {
+          "kind": "string",
+          "value": "ି"
+        },
+        {
+          "kind": "string",
+          "value": "ୀ"
+        },
+        {
+          "kind": "string",
+          "value": "ୁ"
+        },
+        {
+          "kind": "string",
+          "value": "ୂ"
+        },
+        {
+          "kind": "string",
+          "value": "ୃ"
+        },
+        {
+          "kind": "string",
+          "value": "େ"
+        },
+        {
+          "kind": "string",
+          "value": "ୈ"
+        },
+        {
+          "kind": "string",
+          "value": "ୋ"
+        },
+        {
+          "kind": "string",
+          "value": "ୌ"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

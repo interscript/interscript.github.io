@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-div-Thaa-Latn-2012",
+  "dependencies": [
+    "alalc-div-Thaa-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2012",
+    "language": "iso-639-2:div",
+    "source_script": "Thaa",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Divehi (2012)",
+    "creation_date": "2012",
+    "description": "ALA-Library of Congress Divehi Romanization 2012 System\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-div-Thaa-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

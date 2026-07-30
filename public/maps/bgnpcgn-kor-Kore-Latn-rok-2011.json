@@ -35,6 +35,53 @@
       ]
     }
   ],
-  "aliases": {},
+  "aliases": {
+    "double_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄁ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄄ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄈ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄍ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄊ"
+        }
+      ]
+    },
+    "aspirated_cons_jamo": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ᄏ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄐ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄑ"
+        },
+        {
+          "kind": "string",
+          "value": "ᄎ"
+        }
+      ]
+    }
+  },
   "functions": {}
 }

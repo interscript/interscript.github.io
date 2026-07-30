@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-pra-Deva-Latn-2012",
+  "dependencies": [
+    "alalc-san-Deva-Latn-2012"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2012",
+    "language": "iso-639-2:pra",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Prakrit (2012)",
+    "creation_date": "2012",
+    "description": "ALA-LC Romanization table for Prakrit\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-san-Deva-Latn-2012"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "deva_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ा"
+        },
+        {
+          "kind": "string",
+          "value": "ि"
+        },
+        {
+          "kind": "string",
+          "value": "ी"
+        },
+        {
+          "kind": "string",
+          "value": "ु"
+        },
+        {
+          "kind": "string",
+          "value": "ू"
+        },
+        {
+          "kind": "string",
+          "value": "ृ"
+        },
+        {
+          "kind": "string",
+          "value": "ॄ"
+        },
+        {
+          "kind": "string",
+          "value": "े"
+        },
+        {
+          "kind": "string",
+          "value": "ै"
+        },
+        {
+          "kind": "string",
+          "value": "ो"
+        },
+        {
+          "kind": "string",
+          "value": "ौ"
+        },
+        {
+          "kind": "string",
+          "value": "्"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

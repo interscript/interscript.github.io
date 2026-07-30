@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "un-ukr-Cyrl-Latn-1998",
+  "dependencies": [
+    "gost-rus-Cyrl-Latn-16876-71-1983"
+  ],
+  "metadata": {
+    "authority_id": "un",
+    "id": "1998",
+    "language": "iso-639-2:ukr",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "Romanization of Belarusian, Russian And Ukrainian Cyrillic (1998)",
+    "creation_date": "1998",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "gost-rus-Cyrl-Latn-16876-71-1983"
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ё"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Є"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ê"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "І"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ì"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ї"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ì"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ы"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Э"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ё"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "є"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ê"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "і"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ı̀"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ї"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ı̀"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ы"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "э"
+              },
+              "to": {
+                "kind": "alias",
+                "name": "none"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "funcall",
+          "name": "compose",
+          "kwargs": {}
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-guj-Gujr-Latn-2011",
+  "dependencies": [
+    "alalc-guj-Gujr-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2011",
+    "language": "iso-639-2:guj",
+    "source_script": "Gujr",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Gujarati (2011)",
+    "creation_date": "2011",
+    "description": "ALA-LC Romanization table for Gujarati\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-guj-Gujr-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "characters_set1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ા"
+        },
+        {
+          "kind": "string",
+          "value": "િ"
+        },
+        {
+          "kind": "string",
+          "value": "ી"
+        },
+        {
+          "kind": "string",
+          "value": "ુ"
+        },
+        {
+          "kind": "string",
+          "value": "ૂ"
+        },
+        {
+          "kind": "string",
+          "value": "ૃ"
+        },
+        {
+          "kind": "string",
+          "value": "ૅ"
+        },
+        {
+          "kind": "string",
+          "value": "ે"
+        },
+        {
+          "kind": "string",
+          "value": "ૈ"
+        },
+        {
+          "kind": "string",
+          "value": "ૉ"
+        },
+        {
+          "kind": "string",
+          "value": "ો"
+        },
+        {
+          "kind": "string",
+          "value": "ૌ"
+        },
+        {
+          "kind": "string",
+          "value": "્"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

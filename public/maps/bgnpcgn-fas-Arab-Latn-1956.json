@@ -1,0 +1,362 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-fas-Arab-Latn-1956",
+  "dependencies": [],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "1956",
+    "language": "iso-639-2:fas",
+    "source_script": "Arab",
+    "destination_script": "Latn",
+    "name": "Romanization of Arabic (1956)",
+    "creation_date": "1947",
+    "confirmation_date": "2019-06",
+    "description": "This System was adopted by the BGN in 1946 and by the PCGN in 1956\nand is applied in the systematic romanization of geographic names in\nBahrain, Egypt, Iraq, Jordan, Kuwait, Libya, Oman, Qatar, Saudi Arabia,\nSyria, the United Arab Emirates, and Yemen.\n\nUniform results in the romanization of Arabic are difficult to\nobtain, since vowel points and diacritical marks are generally omitted\nfrom both manual and machine writing. It follows that for correct\nidentification of the words which appear in any particular name,\nknowledge of its standard Arabic- script spelling including proper\npointing, and recognition of dialectal and idiosyncratic deviations are\nessential.\n\nIn order to bring about uniformity in the Roman-script spelling of\ngeographic names in Arabic- language areas, the system is based insofar\nas possible on fully pointed modern standard Arabic. In the interest of\nclarity, vowel pointing has been applied to the examples below. Arabic\nis written from right to left, and does not make a distinction between\nupper and lower case.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ا"
+              },
+              "to": {
+                "kind": "string",
+                "value": "a"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ب"
+              },
+              "to": {
+                "kind": "string",
+                "value": "b"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "پ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "p"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ت"
+              },
+              "to": {
+                "kind": "string",
+                "value": "t"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ث"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ج"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ح"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "چ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ch"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "خ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "kh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "د"
+              },
+              "to": {
+                "kind": "string",
+                "value": "d"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ذ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "z"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ر"
+              },
+              "to": {
+                "kind": "string",
+                "value": "r"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ز"
+              },
+              "to": {
+                "kind": "string",
+                "value": "z"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "س"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ش"
+              },
+              "to": {
+                "kind": "string",
+                "value": "sh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ص"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ض"
+              },
+              "to": {
+                "kind": "string",
+                "value": "z"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ط"
+              },
+              "to": {
+                "kind": "string",
+                "value": "t"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ظ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "z"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ع"
+              },
+              "to": {
+                "kind": "string",
+                "value": "‘"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "غ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "gh"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ف"
+              },
+              "to": {
+                "kind": "string",
+                "value": "f"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ق"
+              },
+              "to": {
+                "kind": "string",
+                "value": "q"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ك"
+              },
+              "to": {
+                "kind": "string",
+                "value": "k"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ل"
+              },
+              "to": {
+                "kind": "string",
+                "value": "l"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "م"
+              },
+              "to": {
+                "kind": "string",
+                "value": "m"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ن"
+              },
+              "to": {
+                "kind": "string",
+                "value": "n"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ه"
+              },
+              "to": {
+                "kind": "string",
+                "value": "h"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "و"
+              },
+              "to": {
+                "kind": "string",
+                "value": "v"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ى"
+              },
+              "to": {
+                "kind": "string",
+                "value": "y"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

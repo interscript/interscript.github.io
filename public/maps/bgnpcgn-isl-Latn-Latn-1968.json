@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-isl-Latn-Latn-1968",
+  "dependencies": [
+    "bgnpcgn-isl-Latn-Latn-1964"
+  ],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "1968",
+    "language": "iso-639-2:isl",
+    "source_script": "Latn",
+    "destination_script": "Latn",
+    "name": "Roman-Script Spelling Convention of Icelandic (1968 Agreement)",
+    "creation_date": "1968",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "bgnpcgn-isl-Latn-Latn-1964"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

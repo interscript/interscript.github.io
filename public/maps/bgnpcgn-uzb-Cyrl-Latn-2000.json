@@ -1,0 +1,543 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-uzb-Cyrl-Latn-2000",
+  "dependencies": [
+    "bgnpcgn-uzb-Cyrl-Latn-1979"
+  ],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "2000",
+    "language": "iso-639-2:uzb",
+    "source_script": "Cyrl",
+    "destination_script": "Latn",
+    "name": "Table of Correspondences for Uzbek (Cyrillic-Roman) (2000 Agreement)",
+    "description": "In 1995, the Uzbek government adopted the Roman alphabet to replace the existing Cyrillic alphabet.\nThe presentation below provides a table of correspondences between the former Cyrillic alphabet and the\ncurrent Roman alphabet. When Uzbek Roman-alphabet spellings are not available, this table can be used to\nconvert Uzbek Cyrillic spellings. This table of correspondences supersedes the BGN/PCGN 1979 romanization\nsystem for Uzbek.\n",
+    "creation_date": "2000",
+    "confirmation_date": "2017-11",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "Е"
+          },
+          "to": {
+            "kind": "string",
+            "value": "Ye"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "А"
+              },
+              {
+                "kind": "string",
+                "value": "а"
+              },
+              {
+                "kind": "string",
+                "value": "Е"
+              },
+              {
+                "kind": "string",
+                "value": "е"
+              },
+              {
+                "kind": "string",
+                "value": "Ё"
+              },
+              {
+                "kind": "string",
+                "value": "ё"
+              },
+              {
+                "kind": "string",
+                "value": "И"
+              },
+              {
+                "kind": "string",
+                "value": "и"
+              },
+              {
+                "kind": "string",
+                "value": "О"
+              },
+              {
+                "kind": "string",
+                "value": "о"
+              },
+              {
+                "kind": "string",
+                "value": "У"
+              },
+              {
+                "kind": "string",
+                "value": "у"
+              },
+              {
+                "kind": "string",
+                "value": "Э"
+              },
+              {
+                "kind": "string",
+                "value": "э"
+              },
+              {
+                "kind": "string",
+                "value": "Ю"
+              },
+              {
+                "kind": "string",
+                "value": "ю"
+              },
+              {
+                "kind": "string",
+                "value": "Я"
+              },
+              {
+                "kind": "string",
+                "value": "я"
+              },
+              {
+                "kind": "string",
+                "value": "Й"
+              },
+              {
+                "kind": "string",
+                "value": "й"
+              },
+              {
+                "kind": "string",
+                "value": "Ь"
+              },
+              {
+                "kind": "string",
+                "value": "ь"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "sub",
+          "from": {
+            "kind": "string",
+            "value": "е"
+          },
+          "to": {
+            "kind": "string",
+            "value": "ye"
+          },
+          "before": {
+            "kind": "any",
+            "of": [
+              {
+                "kind": "string",
+                "value": "А"
+              },
+              {
+                "kind": "string",
+                "value": "а"
+              },
+              {
+                "kind": "string",
+                "value": "Е"
+              },
+              {
+                "kind": "string",
+                "value": "е"
+              },
+              {
+                "kind": "string",
+                "value": "Ё"
+              },
+              {
+                "kind": "string",
+                "value": "ё"
+              },
+              {
+                "kind": "string",
+                "value": "И"
+              },
+              {
+                "kind": "string",
+                "value": "и"
+              },
+              {
+                "kind": "string",
+                "value": "О"
+              },
+              {
+                "kind": "string",
+                "value": "о"
+              },
+              {
+                "kind": "string",
+                "value": "У"
+              },
+              {
+                "kind": "string",
+                "value": "у"
+              },
+              {
+                "kind": "string",
+                "value": "Э"
+              },
+              {
+                "kind": "string",
+                "value": "э"
+              },
+              {
+                "kind": "string",
+                "value": "Ю"
+              },
+              {
+                "kind": "string",
+                "value": "ю"
+              },
+              {
+                "kind": "string",
+                "value": "Я"
+              },
+              {
+                "kind": "string",
+                "value": "я"
+              },
+              {
+                "kind": "string",
+                "value": "Й"
+              },
+              {
+                "kind": "string",
+                "value": "й"
+              },
+              {
+                "kind": "string",
+                "value": "Ь"
+              },
+              {
+                "kind": "string",
+                "value": "ь"
+              }
+            ]
+          }
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "В"
+              },
+              "to": {
+                "kind": "string",
+                "value": "V"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ғ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "G‘"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ж"
+              },
+              "to": {
+                "kind": "string",
+                "value": "J"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "O‘"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Х"
+              },
+              "to": {
+                "kind": "string",
+                "value": "X"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ъ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "в"
+              },
+              "to": {
+                "kind": "string",
+                "value": "w"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ғ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "g‘"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ж"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ў"
+              },
+              "to": {
+                "kind": "string",
+                "value": "o‘"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "х"
+              },
+              "to": {
+                "kind": "string",
+                "value": "x"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ъ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ь"
+              },
+              "to": {
+                "kind": "string",
+                "value": "’"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "bgnpcgn-uzb-Cyrl-Latn-1979"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "uzbek_upper": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "А"
+        },
+        {
+          "kind": "string",
+          "value": "Б"
+        },
+        {
+          "kind": "string",
+          "value": "В"
+        },
+        {
+          "kind": "string",
+          "value": "Г"
+        },
+        {
+          "kind": "string",
+          "value": "Ғ"
+        },
+        {
+          "kind": "string",
+          "value": "Д"
+        },
+        {
+          "kind": "string",
+          "value": "Е"
+        },
+        {
+          "kind": "string",
+          "value": "Ё"
+        },
+        {
+          "kind": "string",
+          "value": "Ж"
+        },
+        {
+          "kind": "string",
+          "value": "З"
+        },
+        {
+          "kind": "string",
+          "value": "И"
+        },
+        {
+          "kind": "string",
+          "value": "Й"
+        },
+        {
+          "kind": "string",
+          "value": "К"
+        },
+        {
+          "kind": "string",
+          "value": "Қ"
+        },
+        {
+          "kind": "string",
+          "value": "Л"
+        },
+        {
+          "kind": "string",
+          "value": "М"
+        },
+        {
+          "kind": "string",
+          "value": "Н"
+        },
+        {
+          "kind": "string",
+          "value": "О"
+        },
+        {
+          "kind": "string",
+          "value": "П"
+        },
+        {
+          "kind": "string",
+          "value": "Р"
+        },
+        {
+          "kind": "string",
+          "value": "С"
+        },
+        {
+          "kind": "string",
+          "value": "Т"
+        },
+        {
+          "kind": "string",
+          "value": "У"
+        },
+        {
+          "kind": "string",
+          "value": "Ў"
+        },
+        {
+          "kind": "string",
+          "value": "Ф"
+        },
+        {
+          "kind": "string",
+          "value": "Ҳ"
+        },
+        {
+          "kind": "string",
+          "value": "Ц"
+        },
+        {
+          "kind": "string",
+          "value": "Ч"
+        },
+        {
+          "kind": "string",
+          "value": "Ш"
+        },
+        {
+          "kind": "string",
+          "value": "Ъ"
+        },
+        {
+          "kind": "string",
+          "value": "Ь"
+        },
+        {
+          "kind": "string",
+          "value": "Э"
+        },
+        {
+          "kind": "string",
+          "value": "Ю"
+        },
+        {
+          "kind": "string",
+          "value": "Я"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "bgnpcgn-sme-Latn-Latn-1984",
+  "dependencies": [],
+  "metadata": {
+    "authority_id": "bgnpcgn",
+    "id": "1984",
+    "language": "iso-639-2:sme",
+    "source_script": "Latn",
+    "destination_script": "Latn",
+    "name": "Roman-Script Spelling Convention of Northern Sami (North Lappish) (1984 Agreement)",
+    "creation_date": "1984",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ŋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "Ń"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ŋ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "ń"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-tel-Telu-Latn-2011",
+  "dependencies": [
+    "alalc-tel-Telu-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2011",
+    "language": "iso-639-2:tel",
+    "source_script": "Telu",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Telugu (2011)",
+    "creation_date": "2011",
+    "description": "ALA-LC Romanization table for Telugu\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-tel-Telu-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "telu_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ా"
+        },
+        {
+          "kind": "string",
+          "value": "ి"
+        },
+        {
+          "kind": "string",
+          "value": "ీ"
+        },
+        {
+          "kind": "string",
+          "value": "ు"
+        },
+        {
+          "kind": "string",
+          "value": "ూ"
+        },
+        {
+          "kind": "string",
+          "value": "ృ"
+        },
+        {
+          "kind": "string",
+          "value": "ె"
+        },
+        {
+          "kind": "string",
+          "value": "ే"
+        },
+        {
+          "kind": "string",
+          "value": "ై"
+        },
+        {
+          "kind": "string",
+          "value": "ొ"
+        },
+        {
+          "kind": "string",
+          "value": "ో"
+        },
+        {
+          "kind": "string",
+          "value": "ౌ"
+        },
+        {
+          "kind": "string",
+          "value": "౬"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "var-mar-Deva-Latn-hunterian-1872",
+  "dependencies": [
+    "var-hin-Deva-Latn-hunterian-1872"
+  ],
+  "metadata": {
+    "authority_id": "var",
+    "id": "hunterian-1872",
+    "language": "iso-639-2:mar",
+    "source_script": "Deva",
+    "destination_script": "Latn",
+    "name": "Marathi Hunterian system",
+    "creation_date": "1872",
+    "description": "The Hunterian system is the national system of romanization in India.",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "var-hin-Deva-Latn-hunterian-1872"
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

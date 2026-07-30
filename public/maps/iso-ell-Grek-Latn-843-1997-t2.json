@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "iso-ell-Grek-Latn-843-1997-t2",
+  "dependencies": [
+    "elot-ell-Grek-Latn-743-1982-ts"
+  ],
+  "metadata": {
+    "authority_id": "iso",
+    "id": "843-1997-t2",
+    "language": "iso-639-2:ell",
+    "source_script": "Grek",
+    "destination_script": "Latn",
+    "name": "ISO 843:1997 Information and documentation -- Conversion of Greek characters into Latin characters (Table 2)",
+    "creation_date": "1997",
+    "description": "Establishes a system for the transliteration and/or transcription\nof Greek characters into Latin characters. This system applies to\nthe characters of the Greek script, independent of the period in\nwhich it is or was used, i.e. scripts from all periods of Classic\nor Modern Greek. Replaces ISO/R 843.\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "elot-ell-Grek-Latn-743-1982-ts"
+        },
+        {
+          "kind": "parallel",
+          "rules": [
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ϝ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "W"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ϝ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "w"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ϲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "s"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ϲ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "S"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "ϳ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j"
+              }
+            },
+            {
+              "kind": "sub",
+              "from": {
+                "kind": "string",
+                "value": "Ϳ"
+              },
+              "to": {
+                "kind": "string",
+                "value": "j"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "aliases": {},
+  "functions": {}
+}

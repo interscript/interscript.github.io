@@ -253,6 +253,64 @@
       ]
     }
   ],
-  "aliases": {},
+  "aliases": {
+    "deva_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ा"
+        },
+        {
+          "kind": "string",
+          "value": "ि"
+        },
+        {
+          "kind": "string",
+          "value": "ी"
+        },
+        {
+          "kind": "string",
+          "value": "ु"
+        },
+        {
+          "kind": "string",
+          "value": "ू"
+        },
+        {
+          "kind": "string",
+          "value": "ृ"
+        },
+        {
+          "kind": "string",
+          "value": "ॄ"
+        },
+        {
+          "kind": "string",
+          "value": "ॅ"
+        },
+        {
+          "kind": "string",
+          "value": "े"
+        },
+        {
+          "kind": "string",
+          "value": "ै"
+        },
+        {
+          "kind": "string",
+          "value": "ॉ"
+        },
+        {
+          "kind": "string",
+          "value": "ो"
+        },
+        {
+          "kind": "string",
+          "value": "ौ"
+        }
+      ]
+    }
+  },
   "functions": {}
 }

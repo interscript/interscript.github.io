@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "systemCode": "alalc-mal-Mlym-Latn-2012",
+  "dependencies": [
+    "alalc-mal-Mlym-Latn-1997"
+  ],
+  "metadata": {
+    "authority_id": "alalc",
+    "id": "2012",
+    "language": "iso-639-2:mal",
+    "source_script": "Mlym",
+    "destination_script": "Latn",
+    "name": "Romanization Table -- Malayalam (2012)",
+    "creation_date": "2012",
+    "description": "ALA-LC Romanization table for Malayalam\n",
+    "nonstandard": {}
+  },
+  "stages": [
+    {
+      "kind": "stage",
+      "name": "main",
+      "rules": [
+        {
+          "kind": "run",
+          "stage": "main",
+          "docName": "alalc-mal-Mlym-Latn-1997"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "mlym_chars_1": {
+      "kind": "any",
+      "of": [
+        {
+          "kind": "string",
+          "value": "ാ"
+        },
+        {
+          "kind": "string",
+          "value": "ി"
+        },
+        {
+          "kind": "string",
+          "value": "ീ"
+        },
+        {
+          "kind": "string",
+          "value": "ു"
+        },
+        {
+          "kind": "string",
+          "value": "ൂ"
+        },
+        {
+          "kind": "string",
+          "value": "്"
+        },
+        {
+          "kind": "string",
+          "value": "ൃ"
+        },
+        {
+          "kind": "string",
+          "value": "ൄ"
+        },
+        {
+          "kind": "string",
+          "value": "െ"
+        },
+        {
+          "kind": "string",
+          "value": "േ"
+        },
+        {
+          "kind": "string",
+          "value": "ൈ"
+        },
+        {
+          "kind": "string",
+          "value": "ൊ"
+        },
+        {
+          "kind": "string",
+          "value": "ോ"
+        },
+        {
+          "kind": "string",
+          "value": "ൌ"
+        },
+        {
+          "kind": "string",
+          "value": "ൢ"
+        },
+        {
+          "kind": "string",
+          "value": "ൣ"
+        },
+        {
+          "kind": "string",
+          "value": "്"
+        }
+      ]
+    }
+  },
+  "functions": {}
+}
