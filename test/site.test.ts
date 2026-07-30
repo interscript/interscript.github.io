@@ -66,15 +66,15 @@ describe("design system — palette (in compiled CSS)", () => {
   const css = readAllCss()
 
   it("uses warm paper background", () => {
-    expect(css).toContain("f4ede0")
+    expect(css).toContain("f6f3ec")
   })
 
-  it("uses oxidized copperplate teal accent", () => {
-    expect(css).toContain("4a7a72")
+  it("uses brand teal accent from the original logo", () => {
+    expect(css).toContain("008075")
   })
 
-  it("uses deep blue-black ink", () => {
-    expect(css).toContain("0e1620")
+  it("uses deep near-black ink", () => {
+    expect(css).toContain("1a1d1f")
   })
 
   it("uses vermillion highlight for CTAs", () => {

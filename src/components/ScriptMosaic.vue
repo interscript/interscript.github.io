@@ -230,8 +230,8 @@ onUnmounted(() => {
   transition: background 0.3s ease;
 }
 .status-dot.live {
-  background: var(--color-accent);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 25%, transparent);
+  background: var(--color-brand);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-brand) 25%, transparent);
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
@@ -277,7 +277,7 @@ onUnmounted(() => {
   font-size: var(--text-micro);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-brand);
   font-weight: 500;
 }
 .cell-counter {

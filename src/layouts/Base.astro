@@ -47,7 +47,7 @@ const currentPath = Astro.url.pathname
     <header class="site-header">
       <div class="container header-inner">
         <a href="/" class="brand" aria-label="Interscript home">
-          <span class="brand-mark" aria-hidden="true">⌘</span>
+          <img src="/symbol.svg" alt="" class="brand-mark" width="22" height="22" />
           <span class="brand-name">Interscript</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
@@ -79,7 +79,7 @@ const currentPath = Astro.url.pathname
       <div class="container footer-inner">
         <div class="footer-brand">
           <div class="brand-line">
-            <span class="brand-mark" aria-hidden="true">⌘</span>
+            <img src="/symbol.svg" alt="" class="brand-mark footer-mark" width="24" height="24" />
             <span class="brand-name">Interscript</span>
           </div>
           <p class="footer-tag">
@@ -165,11 +165,14 @@ const currentPath = Astro.url.pathname
         color: var(--color-ink);
       }
       .brand-mark {
-        font-family: var(--font-display);
-        font-size: 1.5rem;
-        line-height: 1;
-        color: var(--color-highlight);
-        font-variation-settings: "SOFT" 100, "WONK" 1;
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
+        flex-shrink: 0;
+        /* Slight tilt to evoke the parallelogram's bias */
+        transform: skewY(-2deg);
+      }
       }
       .brand-name {
         font-family: var(--font-display);
@@ -238,9 +241,11 @@ const currentPath = Astro.url.pathname
       @media (max-width: 768px) {
         .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       }
-      .footer-brand .brand-line { display: flex; align-items: baseline; gap: 0.5rem; }
+      .footer-brand .brand-line { display: flex; align-items: center; gap: 0.5rem; }
       .footer-brand .brand-mark {
-        color: var(--color-highlight);
+        width: 24px;
+        height: 24px;
+        /* The footer bg is dark, so the teal stays visible as-is */
       }
       .footer-brand .brand-name { color: var(--color-vellum); }
       .footer-tag {
@@ -277,7 +282,7 @@ const currentPath = Astro.url.pathname
         transition: color 0.15s ease;
       }
       .footer-col a:hover {
-        color: var(--color-accent);
+        color: var(--color-brand);
         text-decoration: underline;
       }
       .footer-base {
@@ -305,7 +310,7 @@ const currentPath = Astro.url.pathname
         border-bottom: 1px solid color-mix(in srgb, var(--color-vellum) 12%, transparent);
       }
       .footer-partner-label { font-weight: 500; }
-      .footer-partner strong { color: var(--color-accent); font-weight: 500; }
+      .footer-partner strong { color: var(--color-brand); font-weight: 500; }
       .footer-partner-divider {
         color: color-mix(in srgb, var(--color-vellum) 35%, transparent);
       }

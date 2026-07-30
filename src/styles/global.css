@@ -1,29 +1,36 @@
 @import "tailwindcss";
 
 /* ──────────────────────────────────────────────────────────────────
-   Interscript — "scholarly ink + script mosaic"
+   Interscript — design system built on the original brand mark.
 
-   Direction: warm parchment + deep printer's-ink blue-black, oxidized
-   copperplate teal accent, vermillion highlight. Avoids the three
-   current AI defaults (cream+terracotta, near-black+acid-green,
-   broadsheet hairline columns). Type: Fraunces variable serif
-   (personality display) + Inter Tight (body) + JetBrains Mono (data).
+   The Interscript logo is a teal parallelogram (#008075) with white
+   "iS" letters, set on the bias. The whole system is derived from it:
+   brand teal as the primary accent, the parallelogram as a structural
+   motif, off-white as paper. This is the canonical Ribose/Interscript
+   brand identity — every surface inherits from it.
+
+   Type: Fraunces variable serif (characterful display) + Inter Tight
+   (body) + JetBrains Mono (data).
    ────────────────────────────────────────────────────────────────── */
 
 @theme {
-  /* Palette — deliberately not the AI defaults */
-  --color-paper: #f4ede0;
-  --color-paper-deep: #ebe2cf;
-  --color-vellum: #fbf6ec;
-  --color-ink: #0e1620;
-  --color-ink-soft: #1c2532;
-  --color-accent: #4a7a72;
-  --color-accent-deep: #355a53;
+  /* Palette — anchored on the original brand teal #008075 */
+  --color-paper: #f6f3ec;
+  --color-paper-deep: #ece6d6;
+  --color-vellum: #fcfaf4;
+  --color-ink: #1a1d1f;
+  --color-ink-soft: #2a2f33;
+  /* Brand teal — the logo's signature color. Lives in every accent. */
+  --color-brand: #008075;
+  --color-brand-deep: #005f57;
+  --color-brand-pale: #cfe5e1;
+  /* Highlight/CTA — warm complement to brand teal */
   --color-highlight: #b8462e;
   --color-highlight-deep: #8a3322;
+  /* Stone grays for secondary text */
   --color-stone: #5c5852;
   --color-stone-light: #8c857b;
-  --color-rule: #d4c9b0;
+  --color-rule: #d8d0bc;
   --color-rule-strong: #b8ab8c;
 
   /* Type */
@@ -116,11 +123,11 @@ kbd {
 }
 
 code {
-  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  background: color-mix(in srgb, var(--color-brand) 10%, transparent);
   padding: 0.1em 0.4em;
   border-radius: 2px;
   font-size: 0.9em;
-  color: var(--color-accent-deep);
+  color: var(--color-brand-deep);
 }
 
 pre {
@@ -142,7 +149,7 @@ pre code {
 /* ── Accessibility ──────────────────────────────────────────────── */
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-brand);
   outline-offset: 3px;
   border-radius: 1px;
 }
@@ -196,7 +203,7 @@ pre code {
 }
 .rule-accent {
   border: 0;
-  border-top: 2px solid var(--color-accent);
+  border-top: 2px solid var(--color-brand);
   margin: 0;
 }
 
@@ -217,11 +224,11 @@ pre code {
   display: inline-block;
   width: 1.75rem;
   height: 1.5px;
-  background: var(--color-accent);
+  background: var(--color-brand);
 }
 
 .eyebrow-accent {
-  color: var(--color-accent-deep);
+  color: var(--color-brand-deep);
 }
 
 /* ── Buttons ────────────────────────────────────────────────────── */
@@ -249,8 +256,8 @@ pre code {
   border-color: var(--color-ink);
 }
 .btn-primary:hover {
-  background: var(--color-accent-deep);
-  border-color: var(--color-accent-deep);
+  background: var(--color-brand-deep);
+  border-color: var(--color-brand-deep);
   color: var(--color-vellum);
 }
 .btn-accent {
@@ -299,7 +306,7 @@ pre code {
   color: var(--color-vellum);
 }
 .surface-ink a {
-  color: var(--color-accent);
+  color: var(--color-brand);
 }
 .surface-ink a:hover {
   color: var(--color-vellum);

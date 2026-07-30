@@ -49,11 +49,37 @@ describe("scholarly-ink design system", () => {
     expect(css.toLowerCase()).toMatch(/inter[- ]?tight/)
   })
 
-  it("applies the new palette: paper, ink, accent, highlight", () => {
-    expect(css).toContain("f4ede0") // paper
-    expect(css).toContain("0e1620") // ink
-    expect(css).toContain("4a7a72") // accent (teal)
+  it("applies the new palette: paper, ink, brand teal, highlight", () => {
+    expect(css).toContain("f6f3ec") // paper
+    expect(css).toContain("1a1d1f") // ink
+    expect(css).toContain("008075") // brand teal (from original logo)
     expect(css).toContain("b8462e") // highlight (vermillion)
+  })
+})
+
+describe("original brand logo adoption", () => {
+  it("ships the original symbol.svg from the Ribose/Interscript brand", () => {
+    const exists = existsSync(resolve(DIST, "symbol.svg"))
+    expect(exists).toBe(true)
+  })
+
+  it("uses the symbol as favicon", () => {
+    const exists = existsSync(resolve(DIST, "favicon.svg"))
+    expect(exists).toBe(true)
+  })
+
+  it("symbol.svg contains the brand teal #008075 from the logo", () => {
+    const svg = readFileSync(resolve(DIST, "symbol.svg"), "utf8")
+    expect(svg).toContain("008075")
+  })
+
+  it("every page renders the brand mark as an <img src='/symbol.svg'>", () => {
+    const pages = allBuiltHtmlFiles()
+    expect(pages.length).toBeGreaterThan(50)
+    for (const page of pages.slice(0, 25)) {
+      const html = readFileSync(page, "utf8")
+      expect(html).toMatch(/src="\/symbol\.svg"/)
+    }
   })
 })
 
