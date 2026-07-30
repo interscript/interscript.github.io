@@ -1,0 +1,228 @@
+---
+import Base from "../layouts/Base.astro"
+
+// A few hand-picked systems for the playground dropdown.
+const playgroundSystems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian → Latin (2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German → Latin (2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian → Latin (2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic → Latin (2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil → Latin (1972)" },
+  { code: "iso-ell-Grek-Latn-843-1997-t1", label: "ISO Greek → Latin (843/1997)" },
+]
+---
+
+<Base
+  title="API & playground — Interscript"
+  description="Try the Interscript API in your browser. Generate curl, JavaScript, and Ruby snippets for any transliteration call."
+>
+  <section class="api-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">API & playground</p>
+      <h1>Try it. Copy the snippet. Ship.</h1>
+      <p class="hero-deck">
+        The same engine that powers the live demo is available as a
+        JavaScript / TypeScript API and a Ruby gem. Try a call below
+        and copy the snippet for your stack.
+      </p>
+    </div>
+  </section>
+
+  <section class="container api-main">
+    <div class="playground" id="playground-root"
+      data-systems={JSON.stringify(playgroundSystems)}>
+    </div>
+  </section>
+
+  <section class="section install surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Install</p>
+        <h2>One line per runtime.</h2>
+      </header>
+
+      <div class="install-grid">
+        <article class="install-card">
+          <header>
+            <span class="runtime-badge">TypeScript / JavaScript</span>
+            <h3>npm</h3>
+          </header>
+          <pre><code>npm install interscript-ts</code></pre>
+          <pre><code set:html={`import { transliterate } from "interscript-ts"
+
+const out = transliterate(
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "Антон"
+)
+// → "Anton"`} /></pre>
+        </article>
+
+        <article class="install-card">
+          <header>
+            <span class="runtime-badge">Ruby</span>
+            <h3>gem</h3>
+          </header>
+          <pre><code>gem install interscript</code></pre>
+          <pre><code set:html={`require "interscript"
+
+out = Interscript.transliterate(
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "Антон"
+)
+# → "Anton"`} /></pre>
+        </article>
+
+        <article class="install-card">
+          <header>
+            <span class="runtime-badge">Browser</span>
+            <h3>CDN</h3>
+          </header>
+          <pre><code>npm install interscript-ts
+# or: https://esm.sh/interscript-ts</code></pre>
+          <pre><code set:html={`import {
+  transliterateAsync,
+  httpStrategy,
+  configure
+} from "https://esm.sh/interscript-ts"
+
+configure({
+  strategies: [httpStrategy({
+    baseUrl: "https://interscript.org/maps"
+  })]
+})
+
+const out = await transliterateAsync(
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "Антон"
+)`} /></pre>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section embed-section">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Embed widget</p>
+        <h2>Drop-in transliteration for any site.</h2>
+        <p class="section-deck">
+          One iframe. No build step. Visitors get a live transliteration
+          field; you keep your stack.
+        </p>
+      </header>
+
+      <div class="embed-demo">
+        <div class="embed-frame">
+          <iframe
+            src="/embed?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=Антон"
+            title="Interscript widget preview"
+            loading="lazy"
+            width="100%"
+            height="220"
+            style="border: 1px solid var(--color-rule); border-radius: 1px;"
+          ></iframe>
+        </div>
+        <pre class="embed-snippet"><code>&lt;iframe
+  src="https://interscript.org/embed?system=bgnpcgn-ukr-Cyrl-Latn-2019"
+  width="100%" height="220"
+  style="border:1px solid #d8d0bc"
+&gt;&lt;/iframe&gt;</code></pre>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import "/src/scripts/api-playground.ts"
+</script>
+
+<style>
+  .api-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .api-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .api-main {
+    margin-block: 2rem 5rem;
+  }
+  .playground {
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+    padding: 2rem;
+  }
+
+  .install-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .install-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .install-card {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .install-card header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .install-card h3 {
+    font-size: 1.125rem;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--color-stone);
+  }
+  .runtime-badge {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand-deep);
+  }
+  .install-card pre {
+    margin: 0 0 1rem;
+  }
+  .install-card pre:last-child {
+    margin-bottom: 0;
+  }
+
+  .embed-demo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .embed-demo {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+  .embed-frame {
+    background: var(--color-vellum);
+    padding: 1rem;
+    border: 1px solid var(--color-rule);
+  }
+  .embed-snippet {
+    margin: 0;
+  }
+</style>

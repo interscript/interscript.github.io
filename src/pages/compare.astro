@@ -1,0 +1,171 @@
+---
+import Base from "../layouts/Base.astro"
+import CompareMode from "../components/CompareMode.vue"
+import { scriptName } from "../data/iso"
+
+const presets = [
+  {
+    id: "cyrillic",
+    label: "Cyrillic names",
+    input: "Щербакова",
+    systems: [
+      { code: "bgnpcgn-rus-Cyrl-Latn-1947", authority: "BGN/PCGN", note: "1947", scriptName: scriptName("Cyrl") },
+      { code: "odni-rus-Cyrl-Latn-2015", authority: "ODNI", note: "2015", scriptName: scriptName("Cyrl") },
+      { code: "iso-rus-Cyrl-Latn-9-1995", authority: "ISO", note: "ISO 9 · 1995", scriptName: scriptName("Cyrl") },
+      { code: "alalc-rus-Cyrl-Latn-2012", authority: "ALA-LC", note: "2012", scriptName: scriptName("Cyrl") },
+      { code: "un-rus-Cyrl-Latn-1987", authority: "UN", note: "1987", scriptName: scriptName("Cyrl") },
+    ],
+  },
+  {
+    id: "arabic",
+    label: "Arabic names",
+    input: "القاهرة",
+    systems: [
+      { code: "bgnpcgn-ara-Arab-Latn-1956", authority: "BGN/PCGN", note: "1956", scriptName: scriptName("Arab") },
+      { code: "iso-ara-Arab-Latn-233-1984", authority: "ISO", note: "233 · 1984", scriptName: scriptName("Arab") },
+      { code: "alalc-ara-Arab-Latn-1997", authority: "ALA-LC", note: "1997", scriptName: scriptName("Arab") },
+      { code: "odni-ara-Arab-Latn-2015", authority: "ODNI", note: "2015", scriptName: scriptName("Arab") },
+    ],
+  },
+  {
+    id: "greek",
+    label: "Greek names",
+    input: "Ελευθερίου",
+    systems: [
+      { code: "iso-ell-Grek-Latn-843-1997-t1", authority: "ISO", note: "843 · t1", scriptName: scriptName("Grek") },
+      { code: "iso-ell-Grek-Latn-843-1997-t2", authority: "ISO", note: "843 · t2", scriptName: scriptName("Grek") },
+      { code: "alalc-ell-Grek-Latn-1997", authority: "ALA-LC", note: "1997", scriptName: scriptName("Grek") },
+      { code: "bgnpcgn-ell-Grek-Latn-1962", authority: "BGN/PCGN", note: "1962", scriptName: scriptName("Grek") },
+    ],
+  },
+  {
+    id: "hindi",
+    label: "Hindi names",
+    input: "महात्मा गांधी",
+    systems: [
+      { code: "un-hin-Deva-Latn-2016", authority: "UN", note: "2016", scriptName: scriptName("Deva") },
+      { code: "iso-hin-Deva-Latn-15919-2001", authority: "ISO", note: "15919", scriptName: scriptName("Deva") },
+      { code: "alalc-hin-Deva-Latn-2011", authority: "ALA-LC", note: "2011", scriptName: scriptName("Deva") },
+      { code: "odni-hin-Deva-Latn-2015", authority: "ODNI", note: "2015", scriptName: scriptName("Deva") },
+    ],
+  },
+]
+---
+
+<Base
+  title="Compare transliteration systems — Interscript"
+  description="See how BGN/PCGN, ISO, UN, ALA-LC, and ODNI romanize the same name differently. Side-by-side, live, in your browser."
+>
+  <section class="compare-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">Compare systems</p>
+      <h1>Same name. Five romanizations.</h1>
+      <p class="hero-deck">
+        Every authority publishes its own rules. Interscript encodes them
+        all as runnable maps, so you can see exactly where they diverge —
+        live, in your browser, with the same input piped through every
+        system at once.
+      </p>
+    </div>
+  </section>
+
+  <section class="container compare-main">
+    <CompareMode client:load presets={presets} />
+  </section>
+
+  <section class="section why-compare surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Why this matters</p>
+        <h2>One name. Many spellings.</h2>
+        <p class="section-deck">
+          The name Щербакова surfaces as <em>Shcherbakova</em> (BGN/PCGN),
+          <em>Ščerbakova</em> (ISO 9), <em>Shcherbakova</em> (ODNI),
+          <em>Shcherbakova</em> (UN) — different authorities, different
+          conventions, all "correct" by their own rules. Interscript
+          makes the differences visible and the choices explicit.
+        </p>
+      </header>
+
+      <div class="use-cases">
+        <article class="use-case">
+          <h3>Libraries &amp; archives</h3>
+          <p>
+            Catalogers need consistent romanization across collections.
+            Compare ALA-LC against ISO for cross-catalog discovery.
+          </p>
+        </article>
+        <article class="use-case">
+          <h3>Passports &amp; identity</h3>
+          <p>
+            ICAO 9303 defines machine-readable travel documents. Compare
+            the ICAO romanization against the issuing country's national
+            system to spot where names might surface differently.
+          </p>
+        </article>
+        <article class="use-case">
+          <h3>Newsrooms &amp; journalism</h3>
+          <p>
+            AP, Reuters, and BBC each have their own style guides.
+            Interscript lets you compare and pick the right form for
+            your audience.
+          </p>
+        </article>
+        <article class="use-case">
+          <h3>Academic citations</h3>
+          <p>
+            Chicago, MLA, APA each prescribe specific systems. Compare
+            them side-by-side to ensure citations are consistent.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .compare-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .compare-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .compare-main {
+    margin-block: 2rem 5rem;
+  }
+
+  .why-compare .use-cases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .why-compare .use-cases {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .use-case {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .use-case h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem;
+  }
+  .use-case p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,319 @@
+---
+import Base from "../layouts/Base.astro"
+
+interface UseCase {
+  id: string
+  title: string
+  summary: string
+  systems: { code: string; label: string }[]
+  exampleInput: string
+  exampleOutput: string
+  body: string
+}
+
+const useCases: UseCase[] = [
+  {
+    id: "libraries",
+    title: "Library catalogs (MARC)",
+    summary:
+      "Cataloging authorities use specific romanization standards. Interscript makes it easy to convert author names and titles consistently across collections.",
+    systems: [
+      { code: "alalc-rus-Cyrl-Latn-2012", label: "ALA-LC Russian (2012)" },
+      { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
+      { code: "alalc-ara-Arab-Latn-1997", label: "ALA-LC Arabic (1997)" },
+    ],
+    exampleInput: "Достоевский",
+    exampleOutput: "Dostoevskiĭ",
+    body:
+      "MARC 21 records encode the script of the work; catalogers romanize the access points using ALA-LC rules so readers can find materials across writing systems. Interscript gives libraries a single, versioned source of truth.",
+  },
+  {
+    id: "passports",
+    title: "Passports & ID documents",
+    summary:
+      "ICAO 9303 defines the machine-readable zone. Issuing countries transliterate local-script names into the MRZ following strict character mappings.",
+    systems: [
+      { code: "icao-ukr-Cyrl-Latn-9303", label: "ICAO Ukrainian (9303)" },
+      { code: "icao-bul-Cyrl-Latn-9303", label: "ICAO Bulgarian (9303)" },
+      { code: "icao-tha-Thai-Latn-9303", label: "ICAO Thai (9303)" },
+    ],
+    exampleInput: "ОЛЕКСАНДР",
+    exampleOutput: "OLEKSANDR",
+    body:
+      "The MRZ of a passport must be unambiguously parseable. ICAO 9303 transliteration strips diacritics and maps source-script characters to a restricted ASCII set. Interscript's ICAO maps give you that exact mapping.",
+  },
+  {
+    id: "newsrooms",
+    title: "Newsroom style guides",
+    summary:
+      "AP, Reuters, and the BBC each romanize foreign names differently — readers expect consistency within a publication. Interscript lets a newsroom encode its house style.",
+    systems: [
+      { code: "bgnpcgn-rus-Cyrl-Latn-1947", label: "BGN/PCGN Russian (1947)" },
+      { code: "bgnpcgn-ara-Arab-Latn-1956", label: "BGN/PCGN Arabic (1956)" },
+      { code: "bgnpcgn-zho-Hans-Latn-1979", label: "BGN/PCGN Chinese (1979)" },
+    ],
+    exampleInput: "بغداد",
+    exampleOutput: "Baghdad",
+    body:
+      "BGN/PCGN has long been the de-facto standard for English-language newsrooms covering geographic names. The same machinery can power byline consistency, search indexing, and archive deduplication.",
+  },
+  {
+    id: "academic",
+    title: "Academic citations",
+    summary:
+      "Chicago, MLA, and APA each prescribe specific romanization systems for non-Latin source scripts. Get them right consistently with one tool.",
+    systems: [
+      { code: "iso-rus-Cyrl-Latn-9-1995", label: "ISO 9 Russian (1995)" },
+      { code: "iso-hin-Deva-Latn-15919-2001", label: "ISO 15919 Devanagari" },
+      { code: "var-pra-Deva-Latn-iast-1912", label: "IAST Prakrit/Sanskrit" },
+    ],
+    exampleInput: "महात्मा गांधी",
+    exampleOutput: "mahātmā gāṁdhī",
+    body:
+      "Indological journals typically require ISO 15919 or IAST. Slavistics journals use ISO 9 or ALA-LC. Scholars switching between fields spend real time re-romanizing the same names — Interscript lets them encode the chosen system once.",
+  },
+  {
+    id: "geographic",
+    title: "Geographic names (geocoding)",
+    summary:
+      "Map services need consistent handling of place names in different scripts. The UN Group of Experts on Geographical Names (UNGEGN) publishes romanization systems used by national mapping agencies.",
+    systems: [
+      { code: "un-rus-Cyrl-Latn-1987", label: "UN Russian (1987)" },
+      { code: "un-hin-Deva-Latn-2016", label: "UN Hindi (2016)" },
+      { code: "un-tam-Taml-Latn-1972", label: "UN Tamil (1972)" },
+    ],
+    exampleInput: "Горбачёв",
+    exampleOutput: "Gorbachëv",
+    body:
+      "OpenStreetMap, Google Maps, and the US Board on Geographic Names all rely on UNGEGN systems. Interscript provides them as machine-readable maps so geocoders can normalize inputs consistently.",
+  },
+  {
+    id: "genealogy",
+    title: "Genealogy & family history",
+    summary:
+      "Family records span multiple scripts across generations — a great-grandparent's name recorded in Cyrillic, their immigration papers in Latin, ship manifests in a third convention.",
+    systems: [
+      { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian (2015)" },
+      { code: "bgnpcgn-ell-Grek-Latn-1962", label: "BGN/PCGN Greek (1962)" },
+      { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
+    ],
+    exampleInput: "Ελευθερίου",
+    exampleOutput: "Eleutheriou",
+    body:
+      "Genealogy tools can offer multiple romanizations of the same source-script name so descendants searching across records can find matches under any convention.",
+  },
+]
+---
+
+<Base
+  title="Use cases — Interscript"
+  description="Real-world transliteration use cases: libraries, passports, newsrooms, academia, geocoding, genealogy."
+>
+  <section class="uc-hero surface-deep">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">Use cases</p>
+      <h1>Where Interscript is used.</h1>
+      <p class="hero-deck">
+        Real-world contexts where romanization correctness matters.
+        Each case below is paired with the systems that commonly serve it
+        and a live, runnable example.
+      </p>
+    </div>
+  </section>
+
+  <section class="container uc-main">
+    <ol class="uc-list">
+      {useCases.map((uc, i) => (
+        <li class="uc-row" id={uc.id}>
+          <div class="uc-num tnum">{String(i + 1).padStart(2, "0")}</div>
+          <div class="uc-body">
+            <h2>{uc.title}</h2>
+            <p class="uc-summary">{uc.summary}</p>
+            <p class="uc-detail">{uc.body}</p>
+            <ul class="uc-systems">
+              {uc.systems.map((s) => (
+                <li>
+                  <a href={`/maps/${s.code}`}>{s.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <aside class="uc-example">
+            <p class="example-label">Live example</p>
+            <p class="example-input">{uc.exampleInput}</p>
+            <div class="example-arrow" aria-hidden="true">↓</div>
+            <p class="example-output">{uc.exampleOutput}</p>
+          </aside>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section uc-cta surface-ink">
+    <div class="container cta-inner">
+      <div>
+        <p class="eyebrow eyebrow-accent">Build on it</p>
+        <h2>Your use case not listed?</h2>
+      </div>
+      <p class="cta-deck">
+        Interscript covers {useCases.length * 5}+ systems across {useCases.length} domains.
+        For novel integrations, the JSON IR + TypeScript runtime give you
+        building blocks for any text-pipeline need. Open an issue on
+        GitHub to discuss your scenario.
+      </p>
+      <div class="cta-actions">
+        <a class="btn btn-accent" href="/api">Try the API playground →</a>
+        <a class="btn btn-ghost" href="https://github.com/interscript/interscript-ruby/discussions" rel="noreferrer">Start a discussion ↗</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .uc-hero {
+    padding-block: 4rem 2.5rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .uc-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .uc-main {
+    margin-block: 3rem 5rem;
+  }
+  .uc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .uc-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .uc-row {
+      grid-template-columns: 60px 1.5fr 1fr;
+      gap: 3rem;
+    }
+  }
+  .uc-num {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-brand-deep);
+    letter-spacing: 0.05em;
+  }
+  .uc-body h2 {
+    font-size: 1.625rem;
+    margin: 0 0 0.875rem;
+  }
+  .uc-summary {
+    font-size: 1.0625rem;
+    color: var(--color-ink);
+    line-height: 1.55;
+    margin: 0 0 1rem;
+  }
+  .uc-detail {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+  .uc-systems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .uc-systems li {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+  .uc-systems a {
+    display: inline-block;
+    padding: 0.3rem 0.65rem;
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .uc-systems a:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand-deep);
+  }
+
+  .uc-example {
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .example-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 0 0 0.875rem;
+  }
+  .example-input {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-stone);
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+  }
+  .example-arrow {
+    color: var(--color-highlight);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+  }
+  .example-output {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--color-highlight);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .uc-cta {
+    margin-top: 5rem;
+  }
+  .cta-inner {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .cta-inner h2 {
+    color: var(--color-vellum);
+    margin: 0.75rem 0 0;
+  }
+  .cta-deck {
+    color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 48rem;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+</style>

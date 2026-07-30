@@ -99,22 +99,25 @@ describe("design system — typography (in compiled CSS)", () => {
 })
 
 describe("partners and attribution", () => {
+  // Embed widget is intentionally chrome-free — excluded from "every page"
+  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+
   it("credits Ribose Inc. on every page footer", () => {
-    for (const file of allBuiltHtmlFiles()) {
+    for (const file of mainPages()) {
       const html = readFileSync(file, "utf8")
       expect(html).toMatch(/Ribose Inc\./)
     }
   })
 
   it("credits U.S. NGA as funder on every page footer", () => {
-    for (const file of allBuiltHtmlFiles()) {
+    for (const file of mainPages()) {
       const html = readFileSync(file, "utf8")
       expect(html).toMatch(/National Geospatial-Intelligence Agency/i)
     }
   })
 
   it("includes NGA disclaimer on every page footer", () => {
-    for (const file of allBuiltHtmlFiles()) {
+    for (const file of mainPages()) {
       const html = readFileSync(file, "utf8")
       expect(html).toMatch(/does not necessarily reflect/i)
     }
@@ -132,10 +135,10 @@ describe("partners and attribution", () => {
 })
 
 describe("navigation", () => {
-  const navHrefs = ["/demo", "/maps", "/authorities", "/docs", "/blog", "/about"]
+  const navHrefs = ["/demo", "/compare", "/maps", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]
 
-  it("every page links to all primary destinations", () => {
-    const pages = allBuiltHtmlFiles()
+  it("every page (except /embed) links to all primary destinations", () => {
+    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
     expect(pages.length).toBeGreaterThan(0)
     for (const page of pages) {
       void statSync(page)
@@ -146,8 +149,9 @@ describe("navigation", () => {
     }
   })
 
-  it("GitHub pill is present on every page", () => {
-    for (const page of allBuiltHtmlFiles()) {
+  it("GitHub pill is present on every page (except /embed)", () => {
+    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+    for (const page of pages) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/github\.com\/interscript/)
     }

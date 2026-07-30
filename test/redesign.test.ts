@@ -136,39 +136,40 @@ describe("map catalogue page redesign", () => {
 })
 
 describe("partner attribution on every page", () => {
-  const pages = allBuiltHtmlFiles()
+  // Embed widget is chrome-free — excluded from "every page" assertions.
+  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
 
   it("every page has the 'In partnership with' callout", () => {
-    expect(pages.length).toBeGreaterThan(50)
-    for (const page of pages) {
+    expect(mainPages().length).toBeGreaterThan(50)
+    for (const page of mainPages()) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/In partnership with/i)
     }
   })
 
   it("every page links to Ribose Inc. in the partner callout", () => {
-    for (const page of pages.slice(0, 50)) {
+    for (const page of mainPages().slice(0, 50)) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/class="footer-partner"[^>]*href="https:\/\/www\.ribose\.com"/)
     }
   })
 
   it("every page links to NGA in the partner callout", () => {
-    for (const page of pages.slice(0, 50)) {
+    for (const page of mainPages().slice(0, 50)) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/class="footer-partner"[^>]*href="https:\/\/www\.nga\.mil\/"/)
     }
   })
 
   it("every page preserves the cooperative-agreement legal text", () => {
-    for (const page of pages.slice(0, 50)) {
+    for (const page of mainPages().slice(0, 50)) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/cooperative agreement NSG-2021/i)
     }
   })
 
   it("every page preserves the U.S. Government disclaimer", () => {
-    for (const page of pages.slice(0, 50)) {
+    for (const page of mainPages().slice(0, 50)) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/does not necessarily reflect/i)
     }
@@ -182,8 +183,8 @@ describe("navigation and chrome", () => {
     expect(home).toMatch(/GitHub\s*[↗]/)
   })
 
-  it("primary nav has all 7 destinations", () => {
-    for (const href of ["/", "/demo", "/maps", "/authorities", "/docs", "/blog", "/about"]) {
+  it("primary nav has all 10 destinations", () => {
+    for (const href of ["/", "/demo", "/compare", "/maps", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]) {
       expect(home).toContain(`href="${href}"`)
     }
   })
