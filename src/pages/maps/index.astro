@@ -46,17 +46,26 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
 ---
 
 <Base title="Maps — Interscript" description={`Browse ${totalMaps} authority-backed transliteration maps.`}>
-  <section class="maps-hero">
+  <section class="maps-hero surface-deep">
     <div class="container">
-      <p class="eyebrow">Map catalogue</p>
+      <p class="eyebrow eyebrow-accent">Map catalogue</p>
       <h1>Every system, one registry.</h1>
       <p class="hero-deck">
-        {totalMaps} maps from {authorities.length} authorities.
-        {mapsWithTests} carry reference test vectors checked into git.
-        {liveDemoable} run live in your browser via <code>interscript-ts</code>;
+        <strong class="tnum">{totalMaps}</strong> maps from
+        <strong class="tnum">{authorities.length}</strong> authorities.
+        <strong class="tnum">{mapsWithTests}</strong> carry reference test vectors checked into git.
+        <strong class="tnum">{liveDemoable}</strong> run live in your browser via <code>interscript-ts</code>;
         the rest link to source on GitHub.
         Filter by authority, source script, or destination script.
       </p>
+
+      <dl class="map-stats tnum">
+        <div><dt>Total systems</dt><dd>{totalMaps}</dd></div>
+        <div><dt>Authorities</dt><dd>{authorities.length}</dd></div>
+        <div><dt>Source scripts</dt><dd>{sourceScripts.length}</dd></div>
+        <div><dt>Destination scripts</dt><dd>{destinationScripts.length}</dd></div>
+        <div><dt>Live-demoable</dt><dd>{liveDemoable}</dd></div>
+      </dl>
     </div>
   </section>
 
@@ -86,19 +95,59 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
 
 <style>
   .maps-hero {
-    padding-block: 4rem 2rem;
+    padding-block: 4rem 3rem;
+    border-bottom: 1px solid var(--color-rule);
   }
   .maps-hero h1 {
     font-size: var(--text-hero);
-    margin: 0.75rem 0 1rem;
+    margin: 0.75rem 0 1.25rem;
   }
   .hero-deck {
     max-width: 56ch;
     font-size: var(--text-lead);
     color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .hero-deck strong {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+    font-style: italic;
+  }
+  .map-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0 0;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-ink);
+  }
+  @media (min-width: 768px) {
+    .map-stats {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  .map-stats dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin-bottom: 0.5rem;
+  }
+  .map-stats dd {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
   .catalogue-section {
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 6rem;
   }
 </style>

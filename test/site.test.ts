@@ -65,27 +65,31 @@ describe("site build", () => {
 describe("design system — palette (in compiled CSS)", () => {
   const css = readAllCss()
 
-  it("uses warm parchment background", () => {
-    expect(css).toContain("f2ebdd")
+  it("uses warm paper background", () => {
+    expect(css).toContain("f4ede0")
   })
 
-  it("uses ochre accent", () => {
-    expect(css).toContain("9c4221")
+  it("uses oxidized copperplate teal accent", () => {
+    expect(css).toContain("4a7a72")
   })
 
-  it("uses warm near-black ink", () => {
-    expect(css).toContain("0e0e0c")
+  it("uses deep blue-black ink", () => {
+    expect(css).toContain("0e1620")
+  })
+
+  it("uses vermillion highlight for CTAs", () => {
+    expect(css).toContain("b8462e")
   })
 })
 
 describe("design system — typography (in compiled CSS)", () => {
   const css = readAllCss()
 
-  it("loads Newsreader display font", () => {
-    expect(css.toLowerCase()).toContain("newsreader")
+  it("loads Fraunces display font", () => {
+    expect(css.toLowerCase()).toContain("fraunces")
   })
 
-  it("loads Inter body font", () => {
+  it("loads Inter Tight body font", () => {
     expect(css.toLowerCase()).toContain("inter")
   })
 
@@ -153,21 +157,21 @@ describe("navigation", () => {
 describe("home page", () => {
   const home = readHtml("index.html")
 
-  it("has the morphing hero specimen (signature element)", () => {
-    expect(home).toMatch(/HeroMorph|astro-island/)
+  it("has the script mosaic hero (signature element)", () => {
+    expect(home).toMatch(/ScriptMosaic|astro-island/)
   })
 
   it("renders the headline three beats", () => {
-    expect(home).toMatch(/One(\s|&nbsp;)+map/i)
+    expect(home).toMatch(/Every(\s|&nbsp;)+authority/i)
     expect(home).toMatch(/Every(\s|&nbsp;)+script/i)
-    expect(home).toMatch(/Any(\s|&nbsp;)+runtime/i)
+    expect(home).toMatch(/One(\s|&nbsp;)+map/i)
   })
 
   it("shows the four headline stats", () => {
-    expect(home).toContain("300+")
-    expect(home).toContain("Authorities")
-    expect(home).toContain("Scripts")
-    expect(home).toContain("BSD-2")
+    expect(home).toMatch(/Systems/)
+    expect(home).toMatch(/Authorities/)
+    expect(home).toMatch(/Scripts/)
+    expect(home).toMatch(/Runtimes/)
   })
 
   it("lists authority strip", () => {

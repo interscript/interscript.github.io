@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css"
-import "@fontsource-variable/newsreader"
-import "@fontsource-variable/inter"
+import "@fontsource-variable/fraunces"
+import "@fontsource-variable/inter-tight"
 import "@fontsource/jetbrains-mono/400.css"
 import "@fontsource/jetbrains-mono/500.css"
 
@@ -37,7 +37,7 @@ const currentPath = Astro.url.pathname
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="theme-color" content="#0e0e0c" />
+    <meta name="theme-color" content="#0e1620" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -66,7 +66,7 @@ const currentPath = Astro.url.pathname
           </ul>
         </nav>
         <a class="github-pill" href="https://github.com/interscript" rel="noreferrer">
-          GitHub
+          GitHub ↗
         </a>
       </div>
     </header>
@@ -120,6 +120,16 @@ const currentPath = Astro.url.pathname
       </div>
 
       <div class="container footer-base">
+        <div class="footer-partners">
+          <span class="footer-partner-label">In partnership with</span>
+          <a class="footer-partner" href="https://www.ribose.com" rel="noreferrer">
+            <strong>Ribose Inc.</strong>
+          </a>
+          <span class="footer-partner-divider" aria-hidden="true">·</span>
+          <a class="footer-partner" href="https://www.nga.mil/" rel="noreferrer">
+            <strong>U.S. National Geospatial-Intelligence Agency</strong>
+          </a>
+        </div>
         <p class="footer-legal">
           © {currentYear} Ribose Inc. · BSD-2-Clause · Development supported in part by the
           <a href="https://www.nga.mil/" rel="noreferrer">U.S. National Geospatial-Intelligence Agency</a>
@@ -136,8 +146,8 @@ const currentPath = Astro.url.pathname
         position: sticky;
         top: 0;
         z-index: 50;
-        background: color-mix(in srgb, var(--color-parchment) 92%, transparent);
-        backdrop-filter: saturate(140%) blur(8px);
+        background: color-mix(in srgb, var(--color-paper) 88%, transparent);
+        backdrop-filter: saturate(140%) blur(10px);
         border-bottom: 1px solid var(--color-rule);
       }
       .header-inner {
@@ -145,7 +155,7 @@ const currentPath = Astro.url.pathname
         align-items: center;
         justify-content: space-between;
         gap: 1.5rem;
-        padding-block: 1rem;
+        padding-block: 0.875rem;
       }
       .brand {
         display: inline-flex;
@@ -158,47 +168,53 @@ const currentPath = Astro.url.pathname
         font-family: var(--font-display);
         font-size: 1.5rem;
         line-height: 1;
-        color: var(--color-ochre);
+        color: var(--color-highlight);
+        font-variation-settings: "SOFT" 100, "WONK" 1;
       }
       .brand-name {
         font-family: var(--font-display);
         font-weight: 500;
         font-size: 1.25rem;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.015em;
       }
       .site-nav ul {
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 1.5rem;
+        gap: 1.75rem;
       }
       .nav-link {
+        font-family: var(--font-sans);
         font-size: 0.9375rem;
+        font-weight: 500;
         color: var(--color-ink);
         text-decoration: none;
         padding-block: 0.25rem;
         position: relative;
+        transition: color 0.15s ease;
       }
-      .nav-link:hover { color: var(--color-ochre); }
-      .nav-link.is-active { color: var(--color-ochre); }
+      .nav-link:hover { color: var(--color-highlight); }
+      .nav-link.is-active { color: var(--color-highlight); }
       .nav-link.is-active::after {
         content: "";
         position: absolute;
         inset-inline: 0;
-        bottom: -0.25rem;
+        bottom: -0.3rem;
         height: 2px;
-        background: var(--color-ochre);
+        background: var(--color-highlight);
       }
       .github-pill {
         font-family: var(--font-mono);
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
         text-decoration: none;
         color: var(--color-ink);
-        border: 1px solid var(--color-ink);
-        padding: 0.4rem 0.9rem;
-        border-radius: 999px;
+        border: 1.5px solid var(--color-ink);
+        padding: 0.4rem 0.95rem;
+        border-radius: 1px;
         transition: background 0.15s ease, color 0.15s ease;
+        text-transform: uppercase;
       }
       .github-pill:hover {
         background: var(--color-ink);
@@ -223,7 +239,9 @@ const currentPath = Astro.url.pathname
         .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       }
       .footer-brand .brand-line { display: flex; align-items: baseline; gap: 0.5rem; }
-      .footer-brand .brand-mark,
+      .footer-brand .brand-mark {
+        color: var(--color-highlight);
+      }
       .footer-brand .brand-name { color: var(--color-vellum); }
       .footer-tag {
         margin-top: 1rem;
@@ -239,10 +257,11 @@ const currentPath = Astro.url.pathname
       .footer-col h4 {
         font-family: var(--font-mono);
         font-size: var(--text-micro);
-        letter-spacing: 0.12em;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
         color: color-mix(in srgb, var(--color-vellum) 55%, transparent);
         margin: 0 0 1rem;
+        font-weight: 500;
       }
       .footer-col ul {
         list-style: none;
@@ -255,21 +274,42 @@ const currentPath = Astro.url.pathname
         color: var(--color-vellum);
         text-decoration: none;
         font-size: 0.9375rem;
+        transition: color 0.15s ease;
       }
       .footer-col a:hover {
-        color: var(--color-saffron);
+        color: var(--color-accent);
         text-decoration: underline;
       }
       .footer-base {
         padding-top: 1.5rem;
         font-size: 0.8125rem;
         color: color-mix(in srgb, var(--color-vellum) 65%, transparent);
+        display: grid;
+        gap: 0.75rem;
       }
       .footer-base a {
         color: var(--color-vellum);
         text-decoration: underline;
       }
-      .footer-disclaimer { margin-top: 0.5rem; font-style: italic; }
+      .footer-partners {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.75rem;
+        font-family: var(--font-mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: color-mix(in srgb, var(--color-vellum) 55%, transparent);
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid color-mix(in srgb, var(--color-vellum) 12%, transparent);
+      }
+      .footer-partner-label { font-weight: 500; }
+      .footer-partner strong { color: var(--color-accent); font-weight: 500; }
+      .footer-partner-divider {
+        color: color-mix(in srgb, var(--color-vellum) 35%, transparent);
+      }
+      .footer-disclaimer { font-style: italic; }
       @media (max-width: 768px) {
         .header-inner { flex-wrap: wrap; gap: 0.75rem 1rem; }
         .site-nav { order: 3; width: 100%; overflow-x: auto; }

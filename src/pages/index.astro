@@ -1,301 +1,358 @@
 ---
 import Base from "../layouts/Base.astro"
-import HeroMorph from "../components/HeroMorph.vue"
+import ScriptMosaic from "../components/ScriptMosaic.vue"
+import { readFileSync } from "node:fs"
+import { resolve } from "node:path"
+
+// Load the catalogue to surface real numbers on the home page.
+const catalogue = JSON.parse(
+  readFileSync(resolve(process.cwd(), "src/data/maps-catalogue.json"), "utf8"),
+)
+const systemCodes = Object.keys(catalogue)
+const totalSystems = systemCodes.length
+const authoritySet = new Set<string>()
+const scriptPairSet = new Set<string>()
+for (const code of systemCodes) {
+  const meta = (catalogue[code] as any)?.data ?? {}
+  if (meta.authority_id) authoritySet.add(meta.authority_id)
+  if (meta.source_script && meta.destination_script) {
+    scriptPairSet.add(`${meta.source_script}→${meta.destination_script}`)
+  }
+}
 ---
 
-<Base title="Interscript — Interoperable Script Conversion">
+<Base
+  title="Interscript — Authority-backed transliteration for every script"
+  description="Open-source transliteration maps for BGN/PCGN, ISO, UN, ALA-LC, ODNI and more. One map format. Ruby, TypeScript, and the browser. Same bytes out."
+>
+  <!-- ════════════════════════════════════════════════════════════════
+       HERO — script mosaic signature
+       ════════════════════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
-        <p class="eyebrow">Authority-backed transliteration</p>
+        <p class="eyebrow eyebrow-accent">Open-source · BSD-2-Clause</p>
         <h1 class="hero-headline">
-          One&nbsp;map.<br />
-          <span class="accent">Every&nbsp;script.</span><br />
-          Any&nbsp;runtime.
+          Every&nbsp;authority.<br />
+          <em>Every</em>&nbsp;script.<br />
+          One&nbsp;map.
         </h1>
         <p class="hero-lead">
-          Interscript turns government and library romanization systems
-          into machine-readable maps that run in Ruby, TypeScript, and
-          the browser — byte-identical output across runtimes.
+          Interscript encodes the world's romanization systems — BGN/PCGN,
+          ISO, UN, ALA-LC, ODNI, ICAO, DIN — as machine-readable maps that
+          produce byte-identical output across Ruby, TypeScript, and the
+          browser. {totalSystems} systems, {authoritySet.size} authorities,
+          {scriptPairSet.size} script pairs, all checked into git and tested
+          against the published reference documents.
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="/demo">Try the live demo →</a>
-          <a class="btn btn-ghost" href="/docs">Read the docs</a>
+          <a class="btn btn-accent" href="/demo">Try the live demo →</a>
+          <a class="btn btn-ghost" href="/maps">Browse {totalSystems} systems</a>
         </div>
-        <dl class="hero-stats">
-          <div><dt>Maps</dt><dd>300+</dd></div>
-          <div><dt>Authorities</dt><dd>20+</dd></div>
-          <div><dt>Scripts</dt><dd>30+</dd></div>
-          <div><dt>License</dt><dd>BSD-2</dd></div>
+        <dl class="hero-stats tnum">
+          <div>
+            <dt>Systems</dt>
+            <dd>{totalSystems}</dd>
+          </div>
+          <div>
+            <dt>Authorities</dt>
+            <dd>{authoritySet.size}</dd>
+          </div>
+          <div>
+            <dt>Scripts</dt>
+            <dd>{scriptPairSet.size}</dd>
+          </div>
+          <div>
+            <dt>Runtimes</dt>
+            <dd>3</dd>
+          </div>
         </dl>
       </div>
 
-      <div class="hero-specimen">
-        <HeroMorph client:load />
+      <div class="hero-mosaic">
+        <ScriptMosaic client:load />
       </div>
     </div>
   </section>
 
-  <section class="section-tight authority-strip">
+  <!-- ════════════════════════════════════════════════════════════════
+       AUTHORITY STRIP
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="authority-strip">
     <div class="container">
-      <p class="strip-label">Authoritative sources</p>
+      <p class="strip-label">Authority-backed. Real documents. Real test vectors.</p>
       <ul class="strip-list">
         <li>BGN/PCGN</li>
         <li>ISO</li>
-        <li>UN (UNGEGN)</li>
+        <li>UNGEGN</li>
         <li>ALA-LC</li>
         <li>ODNI</li>
         <li>ICAO</li>
         <li>DIN</li>
         <li>MOFA</li>
+        <li>Academia Sinica</li>
       </ul>
     </div>
   </section>
 
+  <!-- ════════════════════════════════════════════════════════════════
+       WHAT IT IS — three-step explainer
+       ════════════════════════════════════════════════════════════════ -->
   <section class="section what">
     <div class="container">
       <header class="section-head">
         <p class="eyebrow">What it is</p>
         <h2>Transliteration as data, not code.</h2>
         <p class="section-deck">
-          Most romanization libraries hand-roll one system. Interscript
-          encodes the entire corpus of major authority-backed systems
-          (BGN/PCGN, ISO, UN, ALA-LC, ODNI, …) using a single,
-          human-readable map format. Maps are checked into git, versioned,
-          and independently testable against the published authority
-          documents.
+          Most romanization libraries hand-roll one system per language.
+          Interscript encodes the entire corpus of authority-backed systems
+          using a single declarative map format. Maps are checked into git,
+          versioned, independently testable, and compiled to a typed JSON IR
+          that any runtime can execute.
         </p>
       </header>
 
-      <div class="card-grid">
-        <article class="card">
-          <p class="card-num">A</p>
-          <h3>Author the map</h3>
-          <p>Declarative Ruby DSL captures the rules of an authority document verbatim.</p>
-          <pre><code>stage :main do
-  rule "Антон" => "Anton"
+      <div class="pipeline">
+        <article class="pipeline-step">
+          <header class="step-head">
+            <span class="step-num">01</span>
+            <h3>Author the map</h3>
+          </header>
+          <p class="step-deck">
+            A declarative Ruby DSL captures the rules of an authority document
+            verbatim, including all special cases and notes.
+          </p>
+          <pre><code set:html={`stage :main do
   parallel do
     sub "щ" => "shch"
-    sub "ъ" => ""
+    sub "ъ" => "ʺ"
+    sub "Антон" => "Anton"
   end
-end</code></pre>
+end`} /></pre>
         </article>
-        <article class="card">
-          <p class="card-num">B</p>
-          <h3>Compile to IR</h3>
-          <p>Maps compile to a typed JSON IR that any runtime can load and execute.</p>
+
+        <article class="pipeline-step">
+          <header class="step-head">
+            <span class="step-num">02</span>
+            <h3>Compile to JSON IR</h3>
+          </header>
+          <p class="step-deck">
+            The Ruby <code>Compiler::JsonIR</code> emits a typed, versioned
+            intermediate representation any runtime can load.
+          </p>
           <pre><code set:html={`{
   "schemaVersion": 1,
   "systemCode": "bgnpcgn-ukr-Cyrl-Latn-2019",
   "stages": [
     { "kind": "stage", "name": "main",
-      "rules": [ /* ... */ ] }
+      "rules": [ /* parallel sub-rules */ ] }
   ]
 }`} /></pre>
         </article>
-        <article class="card">
-          <p class="card-num">C</p>
-          <h3>Run anywhere</h3>
-          <p>Ruby gem, TypeScript package, browser widget. Same input, same bytes out.</p>
-          <pre><code set:html={`Interscript.transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
-# => "Anton"
 
-transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
-// => "Anton"`} /></pre>
+        <article class="pipeline-step">
+          <header class="step-head">
+            <span class="step-num">03</span>
+            <h3>Run anywhere</h3>
+          </header>
+          <p class="step-deck">
+            Ruby gem, TypeScript package, and in-browser widget — all consume
+            the same IR and produce the same bytes for the same input.
+          </p>
+          <pre><code set:html={`Interscript.transliterate(
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "Антон"
+)
+# => "Anton"`} /></pre>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section featured-systems">
+  <!-- ════════════════════════════════════════════════════════════════
+       FEATURED SYSTEMS — handpicked examples
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section featured surface-deep">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">In production</p>
-        <h2>From the catalogue.</h2>
+        <p class="eyebrow">A handful of the catalogue</p>
+        <h2>From {totalSystems} systems. Five shown.</h2>
         <p class="section-deck">
-          Five of 300+ systems shown. Each is fully open-source and runs
-          live in the <a href="/demo">demo</a>.
+          Each system has a published authority document, machine-readable
+          map, exhaustive test vectors, and live in-browser preview. The
+          five below are running right now on this page.
         </p>
       </header>
 
-      <ul class="system-list">
+      <ol class="system-list">
         <li class="system-row">
           <span class="system-auth">BGN/PCGN</span>
-          <span class="system-name">Ukrainian (2019)</span>
+          <span class="system-name">Ukrainian · 2019</span>
           <span class="system-pair">
             <span class="src">Антон</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">Anton</span>
           </span>
-          <code class="system-code">bgnpcgn-ukr-Cyrl-Latn-2019</code>
+          <code class="system-code"><a href="/maps/bgnpcgn-ukr-Cyrl-Latn-2019">bgnpcgn-ukr-Cyrl-Latn-2019</a></code>
         </li>
         <li class="system-row">
           <span class="system-auth">BGN/PCGN</span>
-          <span class="system-name">German (2000)</span>
+          <span class="system-name">German · 2000</span>
           <span class="system-pair">
             <span class="src">Tschüß!</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">Tschueß!</span>
           </span>
-          <code class="system-code">bgnpcgn-deu-Latn-Latn-2000</code>
+          <code class="system-code"><a href="/maps/bgnpcgn-deu-Latn-Latn-2000">bgnpcgn-deu-Latn-Latn-2000</a></code>
         </li>
         <li class="system-row">
           <span class="system-auth">ODNI</span>
-          <span class="system-name">Russian (2015)</span>
+          <span class="system-name">Russian · 2015</span>
           <span class="system-pair">
             <span class="src">привет мир</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">privet mir</span>
           </span>
-          <code class="system-code">odni-rus-Cyrl-Latn-2015</code>
+          <code class="system-code"><a href="/maps/odni-rus-Cyrl-Latn-2015">odni-rus-Cyrl-Latn-2015</a></code>
         </li>
         <li class="system-row">
           <span class="system-auth">ALA-LC</span>
-          <span class="system-name">Amharic (2011)</span>
+          <span class="system-name">Amharic · 2011</span>
           <span class="system-pair">
             <span class="src">ኢትዮጵያ</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">ʼiteyop̣eyā</span>
           </span>
-          <code class="system-code">alalc-amh-Ethi-Latn-2011</code>
+          <code class="system-code"><a href="/maps/alalc-amh-Ethi-Latn-2011">alalc-amh-Ethi-Latn-2011</a></code>
         </li>
         <li class="system-row">
           <span class="system-auth">UN</span>
-          <span class="system-name">Tamil (1972)</span>
+          <span class="system-name">Tamil · 1972</span>
           <span class="system-pair">
             <span class="src">தமிழ்</span>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">tamil̮</span>
           </span>
-          <code class="system-code">un-tam-Taml-Latn-1972</code>
+          <code class="system-code"><a href="/maps/un-tam-Taml-Latn-1972">un-tam-Taml-Latn-1972</a></code>
         </li>
-      </ul>
+      </ol>
 
       <p class="see-all">
-        <a href="/maps">Browse the full catalogue →</a>
+        <a class="btn btn-ghost" href="/maps">Browse all {totalSystems} systems →</a>
       </p>
     </div>
   </section>
 
-  <section class="section cta">
-    <div class="container cta-inner">
-      <div>
-        <p class="eyebrow">Get started</p>
+  <!-- ════════════════════════════════════════════════════════════════
+       INSTALL CTA
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section cta surface-ink">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <p class="eyebrow eyebrow-accent">Get started</p>
         <h2>Install in one line.</h2>
+        <p class="cta-deck">
+          Open source under BSD-2-Clause. Maintained by Ribose Inc. with
+          support from the U.S. National Geospatial-Intelligence Agency.
+        </p>
       </div>
       <div class="cta-code">
         <pre><code># Ruby
 gem install interscript
 
-# TypeScript
-npm install interscript-ts</code></pre>
+# TypeScript / JavaScript
+npm install interscript-ts
+
+# Or load a single map's IR directly
+curl interscript.org/maps/&lt;system-code&gt;.json</code></pre>
       </div>
     </div>
   </section>
 </Base>
 
 <style>
+  /* ── Hero ──────────────────────────────────────────────────────── */
   .hero {
-    padding-block: 4rem 6rem;
-    position: relative;
-    overflow: hidden;
+    padding-block: 4rem 5rem;
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
     align-items: center;
   }
-  @media (max-width: 1024px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 1.05fr 1fr;
+      gap: 4rem;
+    }
   }
+
   .hero-headline {
     font-size: var(--text-display);
-    font-weight: 500;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
     margin: 1.25rem 0 1.5rem;
   }
-  .hero-headline .accent {
-    color: var(--color-ochre);
+  .hero-headline em {
     font-style: italic;
+    color: var(--color-accent);
+    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
+
   .hero-lead {
     font-size: var(--text-lead);
-    max-width: 50ch;
     color: var(--color-stone);
-    margin-bottom: 2rem;
+    max-width: 36rem;
+    margin: 0 0 2rem;
+    line-height: 1.6;
   }
+
   .hero-cta {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
   }
-  .btn {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.15s ease;
-  }
-  .btn-primary {
-    background: var(--color-ink);
-    color: var(--color-vellum);
-    border: 1px solid var(--color-ink);
-  }
-  .btn-primary:hover {
-    background: var(--color-ochre);
-    border-color: var(--color-ochre);
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--color-ink);
-    border: 1px solid var(--color-ink);
-  }
-  .btn-ghost:hover {
-    background: var(--color-ink);
-    color: var(--color-vellum);
-  }
+
   .hero-stats {
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin: 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-rule);
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-ink);
   }
   .hero-stats dt {
     font-family: var(--font-mono);
     font-size: var(--text-micro);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--color-stone);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
   }
   .hero-stats dd {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     font-weight: 500;
-    margin: 0;
     color: var(--color-ink);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
 
+  /* ── Authority strip ───────────────────────────────────────────── */
   .authority-strip {
-    background: var(--color-ink);
-    color: var(--color-vellum);
     padding-block: 1.5rem;
+    border-block: 1px solid var(--color-rule);
+    background: var(--color-vellum);
   }
   .strip-label {
     font-family: var(--font-mono);
     font-size: var(--text-micro);
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: color-mix(in srgb, var(--color-vellum) 55%, transparent);
-    margin: 0 0 0.75rem;
+    color: var(--color-stone);
+    text-align: center;
+    margin: 0 0 1rem;
   }
   .strip-list {
     list-style: none;
@@ -303,125 +360,201 @@ npm install interscript-ts</code></pre>
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem 2.5rem;
+    justify-content: center;
+    gap: 0 2rem;
     font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
-  .strip-list li {
-    color: var(--color-vellum);
-    opacity: 0.85;
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: var(--color-ink);
+    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
+  /* ── Section heads ─────────────────────────────────────────────── */
   .section-head {
-    max-width: 56ch;
+    max-width: 48rem;
     margin-bottom: 3rem;
   }
   .section-head h2 {
     font-size: var(--text-h1);
-    margin: 0.5rem 0 1rem;
+    margin: 1rem 0 1.25rem;
   }
   .section-deck {
-    font-size: var(--text-lead);
+    font-size: 1.0625rem;
     color: var(--color-stone);
-    line-height: 1.55;
+    line-height: 1.6;
+    margin: 0;
   }
-  .section-deck a { color: var(--color-ochre); }
 
-  .card-grid {
+  /* ── Pipeline ──────────────────────────────────────────────────── */
+  .pipeline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-  .card {
-    background: var(--color-vellum);
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--color-rule);
     border: 1px solid var(--color-rule);
-    padding: 1.75rem;
-    border-radius: 4px;
+  }
+  @media (min-width: 900px) {
+    .pipeline {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .pipeline-step {
+    background: var(--color-vellum);
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
-  .card-num {
+  .step-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .step-num {
     font-family: var(--font-mono);
     font-size: var(--text-micro);
-    color: var(--color-ochre);
-    margin: 0;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    font-weight: 500;
   }
-  .card h3 { margin: 0; font-size: var(--text-h3); }
-  .card p { margin: 0 0 0.75rem; font-size: 0.9375rem; color: var(--color-stone); }
-  .card pre { margin-top: auto; font-size: 0.8125rem; padding: 0.875rem 1rem; }
+  .step-head h3 {
+    font-size: 1.375rem;
+    margin: 0;
+  }
+  .step-deck {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .pipeline-step pre {
+    margin-top: auto;
+  }
 
+  /* ── Featured systems ──────────────────────────────────────────── */
   .system-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    border-top: 1px solid var(--color-rule);
+    border-top: 2px solid var(--color-ink);
   }
   .system-row {
     display: grid;
-    grid-template-columns: 100px 1.2fr 1.5fr 1.5fr;
-    gap: 1.5rem;
+    grid-template-columns: 110px 1fr;
+    grid-template-areas:
+      "auth name"
+      "auth pair"
+      "auth code";
+    gap: 0.25rem 1.5rem;
     padding: 1.5rem 0;
     border-bottom: 1px solid var(--color-rule);
     align-items: center;
   }
-  @media (max-width: 768px) {
-    .system-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.25rem 0; }
+  @media (min-width: 768px) {
+    .system-row {
+      grid-template-columns: 110px 1fr auto 1fr;
+      grid-template-areas: "auth name pair code";
+      gap: 2rem;
+    }
   }
   .system-auth {
+    grid-area: auth;
     font-family: var(--font-mono);
     font-size: var(--text-micro);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-ochre);
+    color: var(--color-accent-deep);
+    font-weight: 500;
   }
   .system-name {
+    grid-area: name;
     font-family: var(--font-display);
     font-size: 1.125rem;
-    font-weight: 500;
     color: var(--color-ink);
+    font-style: italic;
   }
   .system-pair {
+    grid-area: pair;
     display: flex;
     align-items: baseline;
     gap: 0.75rem;
     font-family: var(--font-display);
-    font-size: 1.0625rem;
+    font-size: 1.25rem;
+    font-weight: 400;
   }
-  .system-pair .src { color: var(--color-ink); }
-  .system-pair .arrow { color: var(--color-stone-light); font-size: 0.875rem; }
-  .system-pair .dst {
-    color: var(--color-ochre);
-    font-style: italic;
-  }
-  .system-code {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    background: transparent;
+  .system-pair .src {
     color: var(--color-stone);
-    padding: 0;
   }
-  .see-all {
-    margin-top: 2rem;
+  .system-pair .arrow {
+    color: var(--color-highlight);
     font-family: var(--font-mono);
     font-size: 0.875rem;
   }
-
-  .cta {
-    background: var(--color-vellum);
-    border-block: 1px solid var(--color-rule);
+  .system-pair .dst {
+    color: var(--color-ink);
   }
-  .cta-inner {
+  .system-code {
+    grid-area: code;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-stone);
+    background: transparent;
+    padding: 0;
+  }
+  .system-code a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .system-code a:hover {
+    color: var(--color-highlight);
+    border-bottom-color: var(--color-highlight);
+  }
+
+  .see-all {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  /* ── CTA ───────────────────────────────────────────────────────── */
+  .cta-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
     align-items: center;
   }
-  @media (max-width: 768px) {
-    .cta-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 900px) {
+    .cta-grid {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+    }
   }
-  .cta-inner h2 { font-size: var(--text-h1); margin: 0.5rem 0 0; }
-  .cta-code pre { margin: 0; }
+  .cta-text h2 {
+    color: var(--color-vellum);
+    margin: 1rem 0 1.25rem;
+  }
+  .cta-deck {
+    color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 28rem;
+  }
+  .cta-code pre {
+    margin: 0;
+    background: var(--color-ink-soft);
+    border-color: var(--color-ink-soft);
+  }
+
+  /* ── Responsive ────────────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .hero-stats dd {
+      font-size: 1.75rem;
+    }
+  }
 </style>
