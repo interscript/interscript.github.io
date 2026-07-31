@@ -34,8 +34,13 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const presetId = ref(props.presets[0]?.id ?? "")
-const input = ref(props.presets[0]?.input ?? "")
+// Read initial state from URL params so the page is shareable.
+const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "")
+const initialPreset = urlParams.get("p") ?? props.presets[0]?.id ?? ""
+const initialInput = urlParams.get("i") ?? props.presets.find((p) => p.id === initialPreset)?.input ?? ""
+
+const presetId = ref(initialPreset)
+const input = ref(initialInput)
 const outputs = ref<Record<string, string>>({})
 const errors = ref<Record<string, string>>({})
 const loading = ref(false)
@@ -75,6 +80,17 @@ function selectPreset(id: string) {
   presetId.value = id
   const preset = props.presets.find((p) => p.id === id)
   if (preset) input.value = preset.input
+  syncUrl()
+}
+
+// Push current state to URL for shareable permalinks.
+function syncUrl() {
+  if (typeof window === "undefined") return
+  const params = new URLSearchParams()
+  if (presetId.value) params.set("p", presetId.value)
+  if (input.value) params.set("i", input.value)
+  const newUrl = `${window.location.pathname}?${params.toString()}`
+  window.history.replaceState(null, "", newUrl)
 }
 
 onMounted(async () => {
@@ -87,6 +103,7 @@ onUnmounted(() => {
 })
 
 watch([input, presetId], () => {
+  syncUrl()
   void run()
 })
 </script>

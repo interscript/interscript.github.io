@@ -58,6 +58,44 @@
   --line-bold: 2px;
 }
 
+/* Dark mode — follows system preference by default. Override via the
+   toggle in the header (sets data-theme on <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #13161a;
+    --color-paper-deep: #1c2128;
+    --color-vellum: #1a1d22;
+    --color-ink: #f0eadd;
+    --color-ink-soft: #d8d0bc;
+    --color-brand: #4ec5b8;
+    --color-brand-deep: #6fd6ca;
+    --color-brand-pale: #1f3531;
+    --color-highlight: #d96a4f;
+    --color-highlight-deep: #e88a72;
+    --color-stone: #a8a094;
+    --color-stone-light: #7c756a;
+    --color-rule: #2c323a;
+    --color-rule-strong: #3d454f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-paper: #13161a;
+  --color-paper-deep: #1c2128;
+  --color-vellum: #1a1d22;
+  --color-ink: #f0eadd;
+  --color-ink-soft: #d8d0bc;
+  --color-brand: #4ec5b8;
+  --color-brand-deep: #6fd6ca;
+  --color-brand-pale: #1f3531;
+  --color-highlight: #d96a4f;
+  --color-highlight-deep: #e88a72;
+  --color-stone: #a8a094;
+  --color-stone-light: #7c756a;
+  --color-rule: #2c323a;
+  --color-rule-strong: #3d454f;
+}
+
 html {
   font-family: var(--font-sans);
   background-color: var(--color-paper);

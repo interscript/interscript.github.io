@@ -1,0 +1,122 @@
+---
+import Base from "../layouts/Base.astro"
+import SubtitlesProcessor from "../components/SubtitlesProcessor.vue"
+
+const systems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian (2019)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian (2015)" },
+  { code: "bgnpcgn-ara-Arab-Latn-1956", label: "BGN/PCGN Arabic (1956)" },
+  { code: "alalc-hin-Deva-Latn-2011", label: "ALA-LC Hindi (2011)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
+  { code: "iso-ell-Grek-Latn-843-1997-t1", label: "ISO Greek (843/1997)" },
+]
+---
+
+<Base
+  title="Subtitles & captions transliteration — Interscript"
+  description="Paste .srt or .vtt subtitle files, transliterate non-Latin dialogue. Built for streaming services and captioning teams."
+>
+  <section class="subs-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">For streaming &amp; captions</p>
+      <h1>Subtitles, romanized in place.</h1>
+      <p class="hero-deck">
+        Paste a SubRip (.srt) or WebVTT (.vtt) file. Cues with non-Latin
+        dialogue are transliterated; timestamps and structure are
+        preserved. Useful for streaming services preparing Latin-script
+        subtitle tracks for international audiences.
+      </p>
+    </div>
+  </section>
+
+  <section class="container subs-main">
+    <SubtitlesProcessor client:load systems={systems} />
+  </section>
+
+  <section class="section subs-why surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Built for caption teams</p>
+        <h2>Why this matters.</h2>
+        <p class="section-deck">
+          Streaming services and newsrooms produce hundreds of hours of
+          captions weekly. Romanizing foreign-language dialogue manually
+          is slow and inconsistent; transliterating the cue text only —
+          preserving timestamps — automates the tedious part.
+        </p>
+      </header>
+
+      <div class="cases">
+        <article>
+          <h3>Multi-track subtitles</h3>
+          <p>
+            Source subtitle file in one script, target audience in
+            another. Generate a parallel Latin-script track without
+            re-timing.
+          </p>
+        </article>
+        <article>
+          <h3>Search indexing</h3>
+          <p>
+            Romanized dialogue is searchable in databases that handle
+            only Latin — useful for transcript archives and search
+            engines.
+          </p>
+        </article>
+        <article>
+          <h3>Accessibility</h3>
+          <p>
+            Latin-script viewers who can't read the original script can
+            still follow proper-noun transliterations (place names,
+            people, brands).
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .subs-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .subs-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .subs-main {
+    margin-block: 2rem 5rem;
+  }
+
+  .cases {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .cases { grid-template-columns: repeat(3, 1fr); }
+  }
+  .cases article {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .cases h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem;
+  }
+  .cases p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>

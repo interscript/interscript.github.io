@@ -183,8 +183,8 @@ describe("navigation and chrome", () => {
     expect(home).toMatch(/GitHub\s*[↗]/)
   })
 
-  it("primary nav has all 13 destinations", () => {
-    for (const href of ["/", "/demo", "/compare", "/batch", "/detect", "/maps", "/scripts", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]) {
+  it("primary nav has all 18 destinations", () => {
+    for (const href of ["/", "/demo", "/compare", "/batch", "/detect", "/diff", "/marc", "/subtitles", "/maps", "/scripts", "/use-cases", "/api", "/api-docs", "/status", "/authorities", "/contributing", "/docs", "/about"]) {
       expect(home).toContain(`href="${href}"`)
     }
   })

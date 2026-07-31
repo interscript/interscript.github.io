@@ -83,9 +83,16 @@ const families: ScriptFamily[] = [
   },
 ]
 
-const familyId = ref("cyrillic")
-const input = ref(families[0]!.sampleInput)
-const observed = ref(families[0]!.sampleOutput)
+// Permalink state — read once on mount, sync on change.
+const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "")
+const initialFamily = urlParams.get("f") ?? families[0]!.id
+const initialFamilyObj = families.find((f) => f.id === initialFamily) ?? families[0]!
+const initialInput = urlParams.get("i") ?? initialFamilyObj.sampleInput
+const initialObserved = urlParams.get("o") ?? initialFamilyObj.sampleOutput
+
+const familyId = ref(initialFamily)
+const input = ref(initialInput)
+const observed = ref(initialObserved)
 const candidates = ref<{ system: CandidateSystem; output: string; distance: number; error?: string }[]>([])
 const running = ref(false)
 
@@ -143,6 +150,16 @@ function selectFamily(id: string) {
     input.value = f.sampleInput
     observed.value = f.sampleOutput
   }
+  syncUrl()
+}
+
+function syncUrl() {
+  if (typeof window === "undefined") return
+  const params = new URLSearchParams()
+  if (familyId.value) params.set("f", familyId.value)
+  if (input.value) params.set("i", input.value)
+  if (observed.value) params.set("o", observed.value)
+  window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}`)
 }
 
 const bestMatch = computed(() => candidates.value[0])

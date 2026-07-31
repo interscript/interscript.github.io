@@ -151,6 +151,65 @@ describe("GET /api/systems", () => {
   })
 })
 
+describe("POST /api/transliterate/batch", () => {
+  it("processes a batch of mixed requests", async () => {
+    const res = await fetch(`${BASE}/api/transliterate/batch`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: [
+          { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Антон" },
+          { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Київ" },
+          { system: "nonexistent", input: "test" },
+        ],
+      }),
+    })
+    expect(res.status).toBe(200)
+    const body = (await res.json()) as {
+      results: { output?: string; error?: string }[]
+    }
+    expect(body.results.length).toBe(3)
+    expect(body.results[0]!.output).toBe("Anton")
+    expect(body.results[1]!.output).toBe("Kyiv")
+    expect(body.results[2]!.error).toMatch(/not found/i)
+  })
+
+  it("rejects empty items array", async () => {
+    const res = await fetch(`${BASE}/api/transliterate/batch`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [] }),
+    })
+    expect(res.status).toBe(400)
+  })
+
+  it("rejects bodies over 1000 items", async () => {
+    const items = Array.from({ length: 1001 }, () => ({
+      system: "bgnpcgn-ukr-Cyrl-Latn-2019",
+      input: "test",
+    }))
+    const res = await fetch(`${BASE}/api/transliterate/batch`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items }),
+    })
+    expect(res.status).toBe(413)
+  })
+})
+
+describe("GET /openapi.json (OpenAPI spec)", () => {
+  it("returns the OpenAPI 3.1 spec", async () => {
+    const res = await fetch(`${BASE}/../openapi.json`)
+    expect(res.status).toBe(200)
+    const spec = (await res.json()) as { openapi: string; paths: Record<string, unknown> }
+    expect(spec.openapi).toBe("3.1.0")
+    expect(spec.paths["/transliterate"]).toBeDefined()
+    expect(spec.paths["/transliterate/batch"]).toBeDefined()
+    expect(spec.paths["/systems"]).toBeDefined()
+    expect(spec.paths["/detect"]).toBeDefined()
+  })
+})
+
 describe("OPTIONS preflight", () => {
   it("returns 204 for OPTIONS", async () => {
     const res = await fetch(`${BASE}/api/transliterate`, {
