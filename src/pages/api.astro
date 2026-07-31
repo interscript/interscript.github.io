@@ -21,10 +21,17 @@ const playgroundSystems = [
       <p class="eyebrow eyebrow-accent">API & playground</p>
       <h1>Try it. Copy the snippet. Ship.</h1>
       <p class="hero-deck">
-        The same engine that powers the live demo is available as a
-        JavaScript / TypeScript API and a Ruby gem. Try a call below
-        and copy the snippet for your stack.
+        The Interscript REST API runs at <code>https://interscript.org/api/</code>
+        — open to all, no auth, no rate limits (yet). Three endpoints:
+        <code>/api/transliterate</code>, <code>/api/systems</code>,
+        <code>/api/detect</code>. Or run the same engine locally in JS,
+        TypeScript, Ruby, or your terminal.
       </p>
+      <pre class="hero-curl"><code set:html={`# Live, no install needed:
+curl -G 'https://interscript.org/api/transliterate' \\
+  --data-urlencode 'system=bgnpcgn-ukr-Cyrl-Latn-2019' \\
+  --data-urlencode 'input=Антон'
+# → {"system":"bgnpcgn-ukr-Cyrl-Latn-2019","input":"Антон","output":"Anton",…}`} /></pre>
     </div>
   </section>
 
@@ -227,7 +234,11 @@ jobs:
     font-size: var(--text-lead);
     color: var(--color-stone);
     line-height: 1.6;
-    margin: 0;
+    margin: 0 0 1.5rem;
+  }
+  .hero-curl {
+    margin: 1.5rem 0 0;
+    font-size: 0.8rem;
   }
   .api-main {
     margin-block: 2rem 5rem;

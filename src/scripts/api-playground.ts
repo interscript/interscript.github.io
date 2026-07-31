@@ -66,11 +66,15 @@ puts result
 }
 
 function snippetCurl(s: State): string {
-  // Note: the public REST endpoint is hypothetical — shown as a strawman
-  // for what a hosted API could look like.
-  return `curl -G 'https://api.interscript.org/v1/transliterate' \\
+  return `# GET request — easy to test in any terminal
+curl -G 'https://interscript.org/api/transliterate' \\
   --data-urlencode 'system=${s.system}' \\
-  --data-urlencode 'input=${s.input}'`
+  --data-urlencode 'input=${s.input}'
+
+# Or POST a JSON body:
+curl -X POST 'https://interscript.org/api/transliterate' \\
+  -H 'Content-Type: application/json' \\
+  -d '{"system": "${s.system}", "input": ${JSON.stringify(s.input)}}'`
 }
 
 function render() {

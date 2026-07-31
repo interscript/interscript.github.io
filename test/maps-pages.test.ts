@@ -9,7 +9,7 @@ import { describe, it, expect } from "vitest"
 import { readFileSync, existsSync, readdirSync } from "node:fs"
 import { resolve } from "node:path"
 
-const DIST = resolve(process.cwd(), "dist")
+const DIST = resolve(process.cwd(), "dist/client")
 const MAPS_DIST = resolve(DIST, "maps")
 
 function readHtml(path: string): string {

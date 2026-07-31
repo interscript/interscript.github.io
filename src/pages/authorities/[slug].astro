@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro"
 import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+import { scriptName } from "../../data/iso"
 
 export function getStaticPaths() {
   const authorities = new Set(
@@ -50,7 +51,48 @@ const FULL_NAMES: Record<string, string> = {
   var: "Variation systems (research / experimental)",
 }
 
+// Narrative description of well-known authorities (1-2 paragraphs).
+const DESCRIPTIONS: Record<string, string> = {
+  bgnpcgn:
+    "The BGN/PCGN system is a joint product of the United States Board on Geographic Names (BGN) and the Permanent Committee on Geographical Names for British Official Use (PCGN). For over seventy years it has set the de facto romanization standard for English-language newsrooms, diplomats, and cartographers.",
+  iso:
+    "ISO publishes romanization standards under several numbers — ISO 9 (Cyrillic), ISO 233 (Arabic), ISO 259 (Hebrew), ISO 843 (Greek), ISO 3602 (Japanese), and ISO 7098 (Chinese). These are the standards cited in academic publishing and library science.",
+  alalc:
+    "ALA-LC romanization tables are the dominant standard in North American library cataloging. Developed jointly by the American Library Association and the Library of Congress, they prescribe the form used in MARC records and LCSH authority files.",
+  odni:
+    "The Office of the Director of National Intelligence (ODNI) issues romanization standards used across the U.S. intelligence community. The 2015 ODNI standards update earlier BGN/PCGN conventions for modern operational use.",
+  un:
+    "The United Nations Group of Experts on Geographical Names (UNGEGN) publishes romanization systems used by national mapping agencies, the UN itself, and cartographic organizations worldwide. UNGEGN conferences have ratified systems for dozens of scripts.",
+  icao:
+    "ICAO Document 9303 defines the machine-readable travel documents (MRTD) standard used in passports and ID cards worldwide. Its transliteration rules map source-script names into a restricted ASCII set suitable for OCR and the MRZ.",
+  din:
+    "DIN (Deutsches Institut für Normung) publishes German industrial standards, including DIN 31636 (Yiddish) and DIN 33404 (Hindi). Used in academic and library contexts in German-speaking countries.",
+  gost:
+    "GOST (Russian: ГОСТ) refers to technical standards issued by the Russian Federal Agency for Technical Regulation and Metrology. The GOST 7.79 series prescribes Cyrillic romanization systems used in Soviet and Russian technical publishing.",
+  elot:
+    "ELOT (ΕΛΟΤ) is the Hellenic Organization for Standardization. ELOT 743 is the official Greek romanization standard, mandated by the Greek government and adopted by ISO as ISO 843.",
+  mofa:
+    "The Japanese Ministry of Foreign Affairs (MOFA) publishes romanization conventions used in Japanese passports and official diplomatic documents, derived from but distinct from the cabinet-approved Kunrei and Modifed Hepburn systems.",
+  acadsin:
+    "Academia Sinica (中央研究院) is the national academy of Taiwan (Republic of China). Its 2002 Tongyong Pinyin romanization was adopted by the Taiwanese government before the eventual switch to Hanyu Pinyin.",
+  sac:
+    "China's State Administration of Cartography (SAC) — now part of the Ministry of Natural Resources — publishes the official romanization standards for Chinese geographic names, derived from Hanyu Pinyin.",
+}
+
+// Curated "signature" sample for prominent authorities (real test vector
+// from one of their systems).
+const SIGNATURE_SAMPLES: Record<string, { input: string; output: string; system: string }> = {
+  bgnpcgn: { input: "Антон", output: "Anton", system: "bgnpcgn-ukr-Cyrl-Latn-2019" },
+  alalc: { input: "ኢትዮጵያ", output: "ʼiteyop̣eyā", system: "alalc-amh-Ethi-Latn-2011" },
+  iso: { input: "Αθήνα", output: "Athēna", system: "iso-ell-Grek-Latn-843-1997-t1" },
+  odni: { input: "привет мир", output: "privet mir", system: "odni-rus-Cyrl-Latn-2015" },
+  un: { input: "தமிழ்", output: "tamil̮", system: "un-tam-Taml-Latn-1972" },
+  icao: { input: "Київ", output: "Kyiv", system: "icao-ukr-Cyrl-Latn-9303" },
+}
+
 const fullName = FULL_NAMES[slug!] ?? slug!.toUpperCase()
+const description = DESCRIPTIONS[slug!]
+const signatureSample = SIGNATURE_SAMPLES[slug!]
 
 interface MapEntry {
   data: {
@@ -85,6 +127,24 @@ const yearRange = (() => {
   return min === max ? String(min) : `${min}–${max}`
 })()
 
+// Coverage timeline: count systems per decade.
+const decadeCounts = new Map<string, number>()
+for (const e of entries) {
+  const year = parseInt(e.data.creation_date ?? e.data.id, 10)
+  if (isNaN(year)) continue
+  const decade = `${Math.floor(year / 10) * 10}s`
+  decadeCounts.set(decade, (decadeCounts.get(decade) ?? 0) + 1)
+}
+const decades = [...decadeCounts.entries()].sort(([a], [b]) => a.localeCompare(b))
+const maxDecadeCount = Math.max(1, ...decades.map(([, c]) => c))
+
+// Source scripts with display names.
+const sourceScriptsWithNames = sourceScripts.map((code) => ({
+  code,
+  name: scriptName(code),
+  count: entries.filter((e) => e.data.source_script === code).length,
+}))
+
 const pageTitle = `${fullName} — Interscript Authorities`
 ---
 
@@ -98,6 +158,22 @@ const pageTitle = `${fullName} — Interscript Authorities`
         <h1>{fullName}</h1>
         <code class="auth-slug">{slug}</code>
 
+        {description && (
+          <p class="auth-description">{description}</p>
+        )}
+
+        {signatureSample && (
+          <aside class="auth-signature">
+            <p class="sig-label">Signature sample</p>
+            <div class="sig-pair">
+              <span class="sig-input">{signatureSample.input}</span>
+              <span class="sig-arrow" aria-hidden="true">→</span>
+              <span class="sig-output">{signatureSample.output}</span>
+            </div>
+            <a class="sig-link" href={`/maps/${signatureSample.system}`}>View system →</a>
+          </aside>
+        )}
+
         <dl class="meta-grid">
           <div>
             <dt>Systems</dt>
@@ -109,7 +185,7 @@ const pageTitle = `${fullName} — Interscript Authorities`
           </div>
           <div>
             <dt>Source scripts</dt>
-            <dd>{sourceScripts.join(", ")}</dd>
+            <dd>{sourceScripts.length}</dd>
           </div>
           <div>
             <dt>Destination</dt>
@@ -124,13 +200,45 @@ const pageTitle = `${fullName} — Interscript Authorities`
           {languages.length > 0 && (
             <div>
               <dt>Languages</dt>
-              <dd>{languages.join(", ")}</dd>
+              <dd>{languages.length}</dd>
             </div>
           )}
         </dl>
       </header>
 
       <hr class="rule-bold" />
+
+      {decades.length > 0 && (
+        <section class="timeline-section">
+          <p class="eyebrow">Publication timeline</p>
+          <h2>Systems by decade.</h2>
+          <ul class="timeline">
+            {decades.map(([decade, count]) => (
+              <li>
+                <span class="decade-label tnum">{decade}</span>
+                <span class="decade-bar" style={`--w: ${(count / maxDecadeCount * 100).toFixed(0)}%`}></span>
+                <span class="decade-count tnum">{count}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {sourceScriptsWithNames.length > 0 && (
+        <section class="scripts-section">
+          <p class="eyebrow">Source scripts covered</p>
+          <h2>{sourceScriptsWithNames.length} script{sourceScriptsWithNames.length > 1 ? "s" : ""}.</h2>
+          <ul class="script-coverage">
+            {sourceScriptsWithNames.map((s) => (
+              <li>
+                <span class="cov-name">{s.name}</span>
+                <code class="cov-code">{s.code}</code>
+                <span class="cov-count tnum">{s.count} system{s.count > 1 ? "s" : ""}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <section class="systems-section">
         <p class="eyebrow">Systems</p>
@@ -180,7 +288,7 @@ const pageTitle = `${fullName} — Interscript Authorities`
     font-size: 0.875rem;
     margin-bottom: 2rem;
   }
-  .back-link:hover { color: var(--color-ochre); }
+  .back-link:hover { color: var(--color-brand-deep); }
 
   .auth-header h1 {
     font-size: var(--text-hero);
@@ -194,6 +302,65 @@ const pageTitle = `${fullName} — Interscript Authorities`
     background: transparent;
     padding: 0;
   }
+  .auth-description {
+    max-width: 48rem;
+    font-size: 1.0625rem;
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 1.5rem 0 0;
+  }
+
+  .auth-signature {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--color-ink);
+    color: var(--color-vellum);
+  }
+  .sig-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-vellum) 65%, transparent);
+    margin: 0 0 0.875rem;
+  }
+  .sig-pair {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .sig-input {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: color-mix(in srgb, var(--color-vellum) 80%, transparent);
+    line-height: 1.1;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+  }
+  .sig-arrow {
+    color: var(--color-highlight);
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+  }
+  .sig-output {
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    color: var(--color-highlight);
+    font-style: italic;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .sig-link {
+    display: inline-block;
+    margin-top: 0.875rem;
+    color: var(--color-brand);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+  .sig-link:hover { color: var(--color-vellum); text-decoration: underline; }
+
   .meta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -216,6 +383,89 @@ const pageTitle = `${fullName} — Interscript Authorities`
     font-weight: 500;
     margin: 0;
     color: var(--color-ink);
+  }
+
+  .timeline-section, .scripts-section {
+    padding-block: 2.5rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .timeline-section h2, .scripts-section h2, .systems-section h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.3rem 0;
+  }
+  .decade-label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-stone);
+  }
+  .decade-bar {
+    height: 14px;
+    background: var(--color-rule);
+    position: relative;
+  }
+  .decade-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: var(--w, 0%);
+    background: var(--color-brand);
+  }
+  .decade-count {
+    font-family: var(--font-mono);
+    color: var(--color-ink);
+    text-align: right;
+    font-size: 0.85rem;
+  }
+
+  .script-coverage {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0.625rem;
+  }
+  .script-coverage li {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: baseline;
+    gap: 0.625rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+  }
+  .cov-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--color-ink);
+  }
+  .cov-code {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-stone);
+    background: transparent;
+    padding: 0;
+  }
+  .cov-count {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-brand-deep);
+    text-align: right;
   }
 
   .systems-section {
@@ -246,10 +496,9 @@ const pageTitle = `${fullName} — Interscript Authorities`
     transition: background 0.15s ease;
   }
   .system-link:hover {
-    background: color-mix(in srgb, var(--color-ochre) 4%, transparent);
+    background: color-mix(in srgb, var(--color-brand) 6%, transparent);
     padding-inline: 0.5rem;
     margin-inline: -0.5rem;
-    border-radius: 3px;
   }
   @media (max-width: 768px) {
     .system-link {
@@ -273,7 +522,7 @@ const pageTitle = `${fullName} — Interscript Authorities`
     font-weight: 500;
   }
   .system-link:hover .system-name {
-    color: var(--color-ochre);
+    color: var(--color-brand-deep);
   }
   .system-code {
     font-family: var(--font-mono);
@@ -303,7 +552,7 @@ const pageTitle = `${fullName} — Interscript Authorities`
     color: var(--color-stone);
   }
   .test-output {
-    color: var(--color-ochre);
+    color: var(--color-highlight);
     font-style: italic;
   }
   .system-test .arrow {

@@ -6,7 +6,7 @@ import { describe, it, expect } from "vitest"
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 
-const DIST = resolve(process.cwd(), "dist")
+const DIST = resolve(process.cwd(), "dist/client")
 
 function readHtml(path: string): string {
   return readFileSync(resolve(DIST, path), "utf8")

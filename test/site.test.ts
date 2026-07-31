@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest"
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs"
 import { resolve } from "node:path"
 
-const DIST = resolve(process.cwd(), "dist")
+const DIST = resolve(process.cwd(), "dist/client")
 
 function readHtml(path: string): string {
   const full = resolve(DIST, path)
@@ -100,7 +100,7 @@ describe("design system — typography (in compiled CSS)", () => {
 
 describe("partners and attribution", () => {
   // Embed widget is intentionally chrome-free — excluded from "every page"
-  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
 
   it("credits Ribose Inc. on every page footer", () => {
     for (const file of mainPages()) {
@@ -138,7 +138,7 @@ describe("navigation", () => {
   const navHrefs = ["/demo", "/compare", "/batch", "/detect", "/maps", "/scripts", "/use-cases", "/api", "/status", "/authorities", "/docs", "/about"]
 
   it("every page (except /embed) links to all primary destinations", () => {
-    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
     expect(pages.length).toBeGreaterThan(0)
     for (const page of pages) {
       void statSync(page)
@@ -150,7 +150,7 @@ describe("navigation", () => {
   })
 
   it("GitHub pill is present on every page (except /embed)", () => {
-    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
     for (const page of pages) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/github\.com\/interscript/)

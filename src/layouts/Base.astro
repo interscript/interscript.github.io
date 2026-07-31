@@ -21,6 +21,8 @@ const navItems = [
   { href: "/compare", label: "Compare" },
   { href: "/batch", label: "Batch" },
   { href: "/detect", label: "Detect" },
+  { href: "/diff", label: "Diff" },
+  { href: "/marc", label: "MARC" },
   { href: "/maps", label: "Maps" },
   { href: "/scripts", label: "Scripts" },
   { href: "/use-cases", label: "Use cases" },
@@ -146,6 +148,20 @@ const currentPath = Astro.url.pathname
         </p>
       </div>
     </footer>
+
+    <script is:inline>
+      // Register the service worker for offline-first access.
+      // Skipped during SSR build (no window) and on insecure origins.
+      if (typeof window !== "undefined" &&
+          "serviceWorker" in navigator &&
+          window.location.protocol.startsWith("http")) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {
+            // Silent failure — site still works without SW.
+          })
+        })
+      }
+    </script>
 
     <style>
       .site-header {

@@ -8,7 +8,7 @@ import { describe, it, expect } from "vitest"
 import { readFileSync, existsSync, readdirSync } from "node:fs"
 import { resolve } from "node:path"
 
-const DIST = resolve(process.cwd(), "dist")
+const DIST = resolve(process.cwd(), "dist/client")
 const ASTRO_CSS_DIR = resolve(DIST, "_astro")
 
 function readHtml(path: string): string {
@@ -137,7 +137,7 @@ describe("map catalogue page redesign", () => {
 
 describe("partner attribution on every page", () => {
   // Embed widget is chrome-free — excluded from "every page" assertions.
-  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed"))
+  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
 
   it("every page has the 'In partnership with' callout", () => {
     expect(mainPages().length).toBeGreaterThan(50)
