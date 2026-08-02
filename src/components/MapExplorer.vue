@@ -14,15 +14,18 @@ const selected = ref(props.systems[0]?.code ?? "")
 const input = ref("Антон")
 const error = ref<string | null>(null)
 const engine = ref<"ready" | "loading" | "missing">("loading")
-let transliterateFn: ((code: string, input: string) => string) | null = null
+// Must be a ref so the `output` computed re-evaluates when the engine
+// finishes loading. A plain `let` is invisible to Vue's reactivity tracker.
+const transliterateFn = ref<((code: string, input: string) => string) | null>(null)
 
 async function ensureEngine() {
-  if (transliterateFn) return transliterateFn
+  if (transliterateFn.value) return transliterateFn.value
   engine.value = "loading"
   try {
     const mod = await import("interscript-ts")
-    // fetch() the systems we need + their transitive deps. import.meta.glob
-    // doesn't see files under public/ in dev.
+    // fetch() the systems we need + their full transitive dep closure.
+    // Loop until the wanted set stops growing — a dep may itself have
+    // deps that need fetching (e.g. bgnpcgn-ukr → un-ukr → ua-ukr).
     const wanted = new Set<string>(props.systems.map((s) => s.code))
     const maps: Record<string, unknown> = {}
     const fetchOne = async (code: string) => {
@@ -33,24 +36,28 @@ async function ensureEngine() {
       maps[code] = json
       for (const dep of json.dependencies ?? []) wanted.add(dep)
     }
-    for (const code of wanted) await fetchOne(code)
-    for (const code of [...wanted]) await fetchOne(code)
+    let prevSize = 0
+    while (wanted.size > prevSize) {
+      prevSize = wanted.size
+      for (const code of wanted) await fetchOne(code)
+    }
     mod.reset()
     mod.configure({ strategies: [mod.bundledStrategy(maps)] })
-    transliterateFn = mod.transliterate
+    transliterateFn.value = mod.transliterate
     engine.value = "ready"
   } catch (e) {
     engine.value = "missing"
     error.value = `Failed to load interscript-ts: ${(e as Error).message}`
   }
-  return transliterateFn
+  return transliterateFn.value
 }
 
 const output = computed(() => {
-  if (!transliterateFn) return ""
+  const fn = transliterateFn.value
+  if (!fn) return ""
   try {
     error.value = null
-    return transliterateFn(selected.value, input.value)
+    return fn(selected.value, input.value)
   } catch (e) {
     error.value = (e as Error).message
     return ""
