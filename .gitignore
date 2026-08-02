@@ -22,3 +22,5 @@ yarn-error.log
 *.swp
 
 # Legacy react-static (kept in _legacy-content for reference)
+test-results/
+playwright-report/
