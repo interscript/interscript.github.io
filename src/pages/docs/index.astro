@@ -11,8 +11,11 @@ const docs = renderAsciiDocDir("src/content/docs")
   <section class="quickstart">
     <h2>Getting started</h2>
     <p>
-      Interscript runs in Ruby and TypeScript. Both consume the same
-      authority-backed maps.
+      Interscript runs in Ruby, TypeScript, and Python. All consume the
+      same authority-backed maps. An optional
+      <a href="/docs/phonological-layer">phonological layer</a>
+      (secryst crystals + the interscript-ml contract) recovers vowels
+      and phonemes when a map needs vocalized input.
     </p>
     <div class="runtime-tiles">
       <div class="tile">
@@ -28,6 +31,12 @@ interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 &lt;&lt;&lt; "Антон"
         <pre><code>import &#123; transliterate &#125; from "interscript-ts"
 transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
 // => "Anton"</code></pre>
+      </div>
+      <div class="tile">
+        <h3>Phonological layer</h3>
+        <pre><code>gem install secryst
+# or: pip install secryst / npm i secryst</code></pre>
+        <a href="/docs/phonological-layer">How vocalization fits →</a>
       </div>
     </div>
   </section>

@@ -33,10 +33,42 @@ import Base from "../layouts/Base.astro"
     <h2>History</h2>
     <p>
       Interscript was started at Ribose in 2019 as a Ruby library and
-      has since grown to include a TypeScript runtime, a research-grade
-      neural diacritizer (rababa), and a public reference site. The map
-      corpus now exceeds 300 systems.
+      has since grown to include TypeScript and Python engines, a public
+      reference site, and an optional phonological layer —
+      <a href="/docs/phonological-layer">interscript-ml</a> (the
+      contract and model zoo) run by the
+      <a href="https://www.secryst.org">secryst</a> crystal family
+      (Ruby · Python · TypeScript). The map corpus now exceeds 300
+      systems.
     </p>
+  </section>
+
+  <section>
+    <h2>The ecosystem</h2>
+    <p>
+      Interscript is deliberately layered. The core is deterministic
+      maps and engines. When a map needs undiacritized text vocalized
+      first, it dispatches to an optional crystal:
+    </p>
+    <ul>
+      <li><strong>Maps + engines</strong> —
+        <code>interscript-ruby</code>, <code>interscript-ts</code>,
+        <code>interscript-py</code> — pure deterministic conversion.</li>
+      <li><strong>Contract + zoo</strong> —
+        <a href="https://github.com/interscript/interscript-ml">interscript-ml</a>
+        — the <code>models.yaml</code> index, IMF&nbsp;v1 model format,
+        and golden sets.</li>
+      <li><strong>Crystals</strong> —
+        <a href="https://www.secryst.org">secryst</a>
+        (<code>gem secryst</code> · <code>pip install secryst</code> ·
+        <code>npm i secryst</code>) — local ONNX inference implementing
+        the contract. A crystal has no interscript dependency; an engine
+        without a crystal simply cannot execute maps that declare a
+        vocalization step.</li>
+      <li><strong>Training</strong> —
+        <a href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a>
+        — teachers whose students enter the zoo.</li>
+    </ul>
   </section>
 
   <section>
