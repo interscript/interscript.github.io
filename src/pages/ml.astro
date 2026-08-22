@@ -1,0 +1,513 @@
+---
+import Base from "../layouts/Base.astro"
+
+const serverModels = [
+  {
+    id: "khm-latn-1.0",
+    task: "translit",
+    pair: "Khmer → Latin",
+    metric: "CER 27.42 · EM 59.66",
+    artifact: "fp32 · 1.3 GiB",
+    status: "released",
+  },
+  {
+    id: "urd-g2p-1.0",
+    task: "g2p",
+    pair: "Urdu → IPA",
+    metric: "CER 14.77 · EM 33.6",
+    artifact: "fp32 · 1.3 GiB",
+    status: "released",
+  },
+  {
+    id: "urd-diac-1.0",
+    task: "diacritization",
+    pair: "Urdu → haraqat",
+    metric: "CER 3.74",
+    artifact: "fp32 · 1.3 GiB",
+    status: "released",
+  },
+  {
+    id: "heb-diac-1.0",
+    task: "diacritization",
+    pair: "Hebrew → niqqud",
+    metric: "DER 29.0 greedy · 17.46 beam-4",
+    artifact: "fp32 · 2.6 GiB · parts",
+    status: "released",
+  },
+  {
+    id: "tha-g2p-base-1.0",
+    task: "g2p",
+    pair: "Thai → IPA",
+    metric: "PER 9.19 (teacher 4.43)",
+    artifact: "fp32 · 2.6 GiB · parts",
+    status: "released",
+  },
+]
+
+const clientModels = [
+  {
+    id: "tha-g2p-small-1.0",
+    task: "g2p",
+    pair: "Thai → IPA",
+    metric: "PER 12.06 (teacher 4.43)",
+    artifact: "int8 · 246 MiB",
+    status: "releasing",
+  },
+  {
+    id: "heb-diac-small-1.0",
+    task: "diacritization",
+    pair: "Hebrew → niqqud",
+    metric: "DER 30.37 (teacher 24.79)",
+    artifact: "fp32 · 1.3 GiB",
+    status: "releasing",
+  },
+  {
+    id: "fas-g2p-1.0",
+    task: "g2p",
+    pair: "Persian → IPA",
+    metric: "CER ≈1.6 · homograph 77.34%",
+    artifact: "fp32 · 1.3 GiB",
+    status: "releasing",
+  },
+]
+---
+
+<Base
+  title="Neural layer — Interscript"
+  description="Learned transliteration, diacritization and grapheme-to-phoneme models for interscript: sha256-verified IMF v1 artifacts served identically from Ruby, Python, and TypeScript."
+>
+  <!-- ════════════════════════════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">The neural layer</p>
+      <h1 class="page-headline">
+        Where maps end,<br /><em>models</em> begin.
+      </h1>
+      <p class="hero-lead">
+        The 289 authority-backed maps cover romanization systems that a
+        committee has published. Some conversions have no committee: restoring
+        the haraqat a scribe left out, turning unwritten Thai into phonemes,
+        reading Urdu aloud. Those are learned — and they ship under the same
+        discipline as the maps: one artifact format, checksums verified on
+        every load, byte-identical output from every runtime.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE LEDGER — model catalog
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="ledger">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">The catalogue</p>
+        <h2>Every model, with its number.</h2>
+        <p class="section-deck">
+          No model is published without a measured metric next to its
+          teacher's, on the same harness, in the open. Students are distilled
+          from frozen teachers and gated at a pre-agreed error budget. Each
+          entry resolves from the models.yaml index; artifacts above GitHub's
+          2&nbsp;GiB cap ship as sha256-verified parts that the runtimes
+          reassemble transparently.
+        </p>
+      </header>
+
+      <h3 class="tier-label">Server tier <span>fp32, full quality</span></h3>
+      <ul class="ledger">
+        {
+          serverModels.map((m) => (
+            <li class="ledger-row">
+              <span class="ledger-task" data-status={m.status}>
+                {m.task}
+              </span>
+              <span class="ledger-body">
+                <code class="ledger-id">{m.id}</code>
+                <span class="ledger-pair">{m.pair}</span>
+              </span>
+              <span class="ledger-metric tnum">{m.metric}</span>
+              <span class="ledger-artifact tnum">{m.artifact}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h3 class="tier-label">
+        Client tier <span>distilled or quantized, for the browser and the edge</span>
+      </h3>
+      <ul class="ledger">
+        {
+          clientModels.map((m) => (
+            <li class="ledger-row">
+              <span class="ledger-task" data-status={m.status}>
+                {m.task}
+              </span>
+              <span class="ledger-body">
+                <code class="ledger-id">{m.id}</code>
+                <span class="ledger-pair">{m.pair}</span>
+              </span>
+              <span class="ledger-metric tnum">{m.metric}</span>
+              <span class="ledger-artifact tnum">{m.artifact}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="ledger-note">
+        “Releasing” = passing its parity gate now, entering the release
+        pipeline. Distillation budgets and per-model provenance:
+        <a href="https://github.com/interscript/interscript-ml/blob/main/docs/RESULTS.md">
+          interscript-ml/docs/RESULTS.md
+        </a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE CONTRACT — IMF v1
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section surface-deep" id="contract">
+    <div class="container contract-grid">
+      <div>
+        <p class="eyebrow">The contract</p>
+        <h2>One artifact. Any runtime.</h2>
+        <p class="section-deck">
+          A model is a zip — the Interscript Model Format, IMF v1. Anything
+          that can read a zip, hash a file, and run two ONNX sessions can
+          serve it; no Interscript training code required. Every member is
+          sha256-verified against metadata.yaml on load; tampering raises
+          loudly. The tokenizer is raw UTF-8 bytes — no vocabulary to
+          download, no sentencepiece to drift.
+        </p>
+        <ul class="contract-facts">
+          <li>Byte tokenizer — token id = byte + 3, trailing EOS</li>
+          <li>Decoder emits KV-cache graphs for streaming decode</li>
+          <li>opset 14, the floor set by the Ruby onnxruntime gem</li>
+          <li>Optional int8 / fp16 zips, precision-aware parity gates</li>
+        </ul>
+      </div>
+      <div class="contract-code">
+        <pre><code>tha-g2p-small-1.0-int8.zip
+├── metadata.yaml     # id, metrics, parity, sha256 block
+├── encoder.onnx
+├── decoder.onnx
+├── decoder-kv.onnx   # streaming KV-cache decoder
+└── README.md         # model card</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       CRYSTALS — the runtimes
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="crystals">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">The crystals</p>
+        <h2>Three runtimes, same bytes out.</h2>
+        <p class="section-deck">
+          The neural layer is served by <em>secryst</em> — the same
+          cross-runtime contract as the map layer. Ruby, Python, and
+          TypeScript resolve a model id against the index, fetch (or reuse
+          the cache), verify every checksum, and decode with the KV-cache
+          graph. Golden sets pin the three implementations to each other.
+        </p>
+      </header>
+      <div class="crystal-code">
+        <pre><code># Ruby
+gem install secryst
+
+# Python
+pip install secryst
+
+# TypeScript / JavaScript
+npm install secryst</code></pre>
+        <pre><code>require "secryst"
+model = Secryst::Model.load("tha-g2p-small-1.0")
+model.translate("สวัสดี")
+# => "sa˨˩.wat̚˨˩.diː˧"</code></pre>
+      </div>
+      <p class="env-note">
+        Point deployments at a mirror with <code>SECRYST_INDEX</code>; pin the
+        cache with <code>SECRYST_CACHE</code>. Both are read at call time in
+        all three runtimes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PROVENANCE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section cta surface-ink">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <p class="eyebrow eyebrow-accent">Provenance</p>
+        <h2>Measured, or it doesn't ship.</h2>
+        <p class="cta-deck">
+          Teachers are frozen before distillation and never LLM-generated —
+          language-model teachers hallucinate diacritics. Every number in the
+          ledger links to a protocol in the open results log. BSD-3-Clause,
+          code and weights.
+        </p>
+      </div>
+      <div class="cta-code">
+        <pre><code>github.com/interscript/interscript-ml   # contract + index
+github.com/secryst                     # runtimes + training</code></pre>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ── Header ────────────────────────────────────────────────────── */
+  .hero {
+    padding-block: 4rem 3rem;
+  }
+  .page-headline {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    margin: 1.25rem 0 1.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .page-headline em {
+    font-style: italic;
+    color: var(--color-brand);
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+  }
+  .hero-lead {
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    max-width: 44rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Section heads ─────────────────────────────────────────────── */
+  .section-head {
+    max-width: 48rem;
+    margin-bottom: 3rem;
+  }
+  .section-head h2 {
+    font-size: var(--text-h1);
+    margin: 1rem 0 1.25rem;
+  }
+  .section-deck {
+    font-size: 1.0625rem;
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── The ledger ────────────────────────────────────────────────── */
+  .tier-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand-deep);
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .tier-label span {
+    color: var(--color-stone);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-sans);
+    font-style: italic;
+  }
+  .ledger {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ledger-row {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    grid-template-areas:
+      "task body"
+      "task metric"
+      "task artifact";
+    gap: 0.2rem 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px dotted var(--color-rule);
+    align-items: baseline;
+  }
+  @media (min-width: 900px) {
+    .ledger-row {
+      grid-template-columns: 8.5rem 1.4fr 1.2fr 0.9fr;
+      grid-template-areas: "task body metric artifact";
+      gap: 2rem;
+    }
+  }
+  .ledger-task {
+    grid-area: task;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    position: relative;
+    padding-left: 0.9rem;
+  }
+  .ledger-task::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--color-brand);
+  }
+  .ledger-task[data-status="releasing"]::before {
+    background: transparent;
+    border: 1.5px solid var(--color-highlight);
+    width: 0.3rem;
+    height: 0.3rem;
+  }
+  .ledger-body {
+    grid-area: body;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .ledger-id {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-ink);
+    background: transparent;
+    padding: 0;
+  }
+  .ledger-pair {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-stone);
+  }
+  .ledger-metric {
+    grid-area: metric;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-ink);
+  }
+  .ledger-artifact {
+    grid-area: artifact;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-stone);
+    text-align: right;
+  }
+  @media (max-width: 899px) {
+    .ledger-artifact {
+      text-align: left;
+    }
+  }
+  .ledger-note {
+    font-size: 0.875rem;
+    color: var(--color-stone);
+    margin-top: 1.5rem;
+    max-width: 42rem;
+    line-height: 1.55;
+  }
+  .ledger-note a {
+    color: var(--color-highlight);
+  }
+
+  /* ── Contract ──────────────────────────────────────────────────── */
+  .contract-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 960px) {
+    .contract-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+    }
+  }
+  .contract-grid > *,
+  .crystal-code > *,
+  .cta-grid > * {
+    min-width: 0;
+  }
+  .contract-facts {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+  }
+  .contract-facts li {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-stone);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .contract-facts li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-highlight);
+  }
+  .contract-code pre {
+    margin: 0;
+  }
+
+  /* ── Crystals ──────────────────────────────────────────────────── */
+  .crystal-code {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .crystal-code {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+  }
+  .crystal-code pre {
+    margin: 0;
+  }
+  .env-note {
+    margin-top: 1.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+  }
+  .env-note code {
+    font-size: 0.8125rem;
+  }
+
+  /* ── CTA ───────────────────────────────────────────────────────── */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .cta-grid {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+    }
+  }
+  .cta-text h2 {
+    color: var(--color-vellum);
+    margin: 1rem 0 1.25rem;
+  }
+  .cta-deck {
+    color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 30rem;
+  }
+  .cta-code pre {
+    margin: 0;
+    background: var(--color-ink-soft);
+    border-color: var(--color-ink-soft);
+  }
+</style>

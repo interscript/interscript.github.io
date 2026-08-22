@@ -244,6 +244,49 @@ end`} /></pre>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
+       NEURAL LAYER — model catalogue teaser
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section neural surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">The neural layer</p>
+        <h2>Where maps end, models begin.</h2>
+        <p class="section-deck">
+          Some conversions have no authority document: restoring the diacritics
+          a scribe left out, reading Thai or Urdu as phonemes. Those ship as
+          checksummed neural artifacts under the same discipline — measured
+          metrics, teacher next to student, identical bytes from every runtime.
+        </p>
+      </header>
+      <ul class="neural-ledger">
+        <li class="neural-row">
+          <span class="neural-task">diacritization</span>
+          <code class="neural-id">heb-diac-1.0</code>
+          <span class="neural-metric tnum">DER 17.46 beam-4</span>
+        </li>
+        <li class="neural-row">
+          <span class="neural-task">g2p</span>
+          <code class="neural-id">tha-g2p-base-1.0</code>
+          <span class="neural-metric tnum">PER 9.19</span>
+        </li>
+        <li class="neural-row">
+          <span class="neural-task">diacritization</span>
+          <code class="neural-id">urd-diac-1.0</code>
+          <span class="neural-metric tnum">CER 3.74</span>
+        </li>
+        <li class="neural-row">
+          <span class="neural-task">g2p · client</span>
+          <code class="neural-id">tha-g2p-small-1.0</code>
+          <span class="neural-metric tnum">int8 · 246 MiB · PER 12.06</span>
+        </li>
+      </ul>
+      <p class="see-all">
+        <a class="btn btn-ghost" href="/ml">The model catalogue →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
        INSTALL CTA
        ════════════════════════════════════════════════════════════════ -->
   <section class="section cta surface-ink">
@@ -432,6 +475,10 @@ curl interscript.org/maps/&lt;system-code&gt;.json</code></pre>
   .pipeline-step pre {
     margin-top: auto;
   }
+  .pipeline-step,
+  .cta-grid > * {
+    min-width: 0;
+  }
 
   /* ── Featured systems ──────────────────────────────────────────── */
   .system-list {
@@ -516,6 +563,48 @@ curl interscript.org/maps/&lt;system-code&gt;.json</code></pre>
   .see-all {
     text-align: center;
     margin-top: 2.5rem;
+  }
+
+  /* ── Neural layer teaser ───────────────────────────────────────── */
+  .neural-ledger {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 2px solid var(--color-ink);
+    max-width: 48rem;
+  }
+  .neural-row {
+    display: grid;
+    grid-template-columns: 9rem 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px dotted var(--color-rule);
+  }
+  .neural-task {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+  }
+  .neural-id {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-ink);
+    background: transparent;
+    padding: 0;
+  }
+  .neural-metric {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-stone);
+  }
+  @media (max-width: 640px) {
+    .neural-row {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
   }
 
   /* ── CTA ───────────────────────────────────────────────────────── */
