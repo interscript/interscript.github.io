@@ -20,17 +20,17 @@ const { data, body } = post
 ---
 
 <Base title={`${data.title} — Interscript Blog`} description={data.summary}>
-  <article class="post">
+  <article class="post container container-narrow">
     <header>
       <a href="/blog" class="back">← All posts</a>
       <h1>{data.title}</h1>
-      <p class="meta">
+      <p class="meta tnum">
         <span class="date">{data.date}</span>
         {data.author && <span class="author"> · by {data.author}</span>}
       </p>
     </header>
 
-    <div class="adoc-body" set:html={body} />
+    <div class="adoc-body prose" set:html={body} />
 
     <footer>
       <p>
@@ -42,47 +42,31 @@ const { data, body } = post
 
 <style>
   .post {
-    max-width: 42rem;
-    margin: 0 auto;
+    padding-block: 3rem 4rem;
   }
   .back {
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
     color: var(--color-stone);
     text-decoration: none;
-    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+  .back:hover {
+    color: var(--color-highlight);
   }
   header h1 {
-    margin: 0.5rem 0;
-    font-size: 2rem;
+    margin: 0.75rem 0 0.75rem;
+    font-size: var(--text-h1);
   }
   .meta {
-    color: var(--color-stone);
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-  }
-  .adoc-body :global(h2) {
-    margin-top: 2rem;
-    font-size: 1.4rem;
-  }
-  .adoc-body :global(pre) {
-    background: var(--color-vellum);
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-  }
-  .adoc-body :global(code) {
-    background: var(--color-vellum);
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.95em;
-  }
-  .adoc-body :global(a) {
-    color: var(--color-brand);
-  }
-  .adoc-body :global(blockquote) {
-    border-left: 3px solid var(--color-rule);
-    padding-left: 1rem;
-    color: var(--color-stone);
-    margin: 1rem 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-stone-light);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-rule);
   }
   footer {
     margin-top: 3rem;

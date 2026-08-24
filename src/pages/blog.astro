@@ -12,65 +12,80 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
 ---
 
 <Base title="Blog — Interscript" description="Articles on transliteration, the Interscript project, and adjacent topics.">
-  <h1>Blog</h1>
-  <p class="lead">Long-form articles on transliteration engineering and research.</p>
+  <div class="container">
+    <header class="page-hero">
+      <p class="eyebrow eyebrow-accent">Blog</p>
+      <h1>Blog</h1>
+      <p class="page-deck">Long-form articles on transliteration engineering and research.</p>
+    </header>
 
-  <ul class="post-list">
-    {posts.map((p) => (
-      <li>
-        <a href={`/blog/${p.slug}`}>
-          <span class="date">{p.date}</span>
-          <span class="title">{p.title}</span>
-          {p.author && <span class="author">by {p.author}</span>}
-          <span class="summary">{p.summary}</span>
-        </a>
-      </li>
-    ))}
-  </ul>
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <a href={`/blog/${p.slug}`}>
+            <span class="date tnum">{p.date}</span>
+            <span class="title">{p.title}</span>
+            {p.author && <span class="author">by {p.author}</span>}
+            <span class="summary">{p.summary}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
 </Base>
 
 <style>
-  .lead {
-    color: var(--color-stone);
-    margin-bottom: 3rem;
+  .container {
+    padding-bottom: 3rem;
   }
   .post-list {
     list-style: none;
     padding: 0;
+    max-width: 68ch;
   }
   .post-list li {
     border-bottom: 1px solid var(--color-rule);
   }
+  .post-list li:first-child {
+    border-top: 2px solid var(--color-ink);
+  }
   .post-list a {
     display: block;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.25rem;
     text-decoration: none;
     color: var(--color-ink);
   }
   .post-list a:hover .title {
-    color: var(--color-brand);
+    color: var(--color-highlight);
+  }
+  .post-list a:focus-visible {
+    outline-offset: -2px;
   }
   .date {
     display: block;
-    color: var(--color-stone);
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone-light);
   }
   .title {
     display: block;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0.25rem 0 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+    margin: 0.375rem 0 0.375rem;
   }
   .author {
     display: block;
     color: var(--color-stone);
-    font-size: 0.9rem;
+    font-size: var(--text-small);
     font-style: italic;
     margin-bottom: 0.5rem;
   }
   .summary {
     display: block;
     color: var(--color-stone);
+    line-height: 1.6;
   }
 </style>

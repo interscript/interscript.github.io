@@ -135,43 +135,28 @@ describe("map catalogue page redesign", () => {
   })
 })
 
-describe("partner attribution on every page", () => {
+describe("attribution on every page", () => {
   // Embed widget is chrome-free — excluded from "every page" assertions.
   const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
 
-  it("every page has the 'In partnership with' callout", () => {
+  it("every page links to Ribose Inc. as maintainer", () => {
     expect(mainPages().length).toBeGreaterThan(50)
+    for (const page of mainPages().slice(0, 50)) {
+      const html = readFileSync(page, "utf8")
+      expect(html).toMatch(/href="https:\/\/www\.ribose\.com"/)
+    }
+  })
+
+  // The "cooperative agreement NSG-2021-XXX" NGA funding claim was a
+  // hallucination introduced in the Astro migration and never existed on
+  // the v1 site — keep it out permanently.
+  it("no page carries the fabricated NGA attribution", () => {
     for (const page of mainPages()) {
       const html = readFileSync(page, "utf8")
-      expect(html).toMatch(/In partnership with/i)
-    }
-  })
-
-  it("every page links to Ribose Inc. in the partner callout", () => {
-    for (const page of mainPages().slice(0, 50)) {
-      const html = readFileSync(page, "utf8")
-      expect(html).toMatch(/class="footer-partner"[^>]*href="https:\/\/www\.ribose\.com"/)
-    }
-  })
-
-  it("every page links to NGA in the partner callout", () => {
-    for (const page of mainPages().slice(0, 50)) {
-      const html = readFileSync(page, "utf8")
-      expect(html).toMatch(/class="footer-partner"[^>]*href="https:\/\/www\.nga\.mil\/"/)
-    }
-  })
-
-  it("every page preserves the cooperative-agreement legal text", () => {
-    for (const page of mainPages().slice(0, 50)) {
-      const html = readFileSync(page, "utf8")
-      expect(html).toMatch(/cooperative agreement NSG-2021/i)
-    }
-  })
-
-  it("every page preserves the U.S. Government disclaimer", () => {
-    for (const page of mainPages().slice(0, 50)) {
-      const html = readFileSync(page, "utf8")
-      expect(html).toMatch(/does not necessarily reflect/i)
+      expect(html).not.toMatch(/In partnership with/i)
+      expect(html).not.toMatch(/National Geospatial-Intelligence/i)
+      expect(html).not.toMatch(/NSG-2021/)
+      expect(html).not.toMatch(/does not necessarily reflect/i)
     }
   })
 })
@@ -189,9 +174,9 @@ describe("navigation and chrome", () => {
     }
   })
 
-  it("CTA section mentions Ribose + NGA support", () => {
+  it("CTA section credits Ribose maintenance, no fabricated partners", () => {
     expect(home).toMatch(/Maintained by Ribose Inc\./i)
-    expect(home).toMatch(/National Geospatial-Intelligence Agency/i)
+    expect(home).not.toMatch(/National Geospatial-Intelligence/i)
   })
 })
 

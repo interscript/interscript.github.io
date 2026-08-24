@@ -23,9 +23,9 @@ const pageTitle = `${data.title} — Interscript Docs`
 ---
 
 <Base title={pageTitle} description={data.summary}>
-  <div class="layout">
+  <div class="container layout">
     <aside class="sidebar">
-      <h2>Docs</h2>
+      <p class="sidebar-label">Docs</p>
       <ul>
         {all.map((d) => (
           <li>
@@ -43,7 +43,7 @@ const pageTitle = `${data.title} — Interscript Docs`
       <h1>{data.title}</h1>
       {data.author && <p class="meta">by {data.author}</p>}
 
-      <div class="adoc-body" set:html={body} />
+      <div class="adoc-body prose" set:html={body} />
 
       <footer>
         <p>
@@ -59,90 +59,79 @@ const pageTitle = `${data.title} — Interscript Docs`
 <style>
   .layout {
     display: grid;
-    grid-template-columns: 15rem 1fr;
-    gap: 2rem;
-    margin-top: 1rem;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 3rem;
+    padding-block: 3rem 4rem;
   }
   @media (max-width: 768px) {
     .layout {
       grid-template-columns: 1fr;
+      gap: 2rem;
     }
     .sidebar {
       order: 2;
+      border-right: none;
+      border-top: 1px solid var(--color-rule);
+      padding: 1.5rem 0 0;
     }
   }
   .sidebar {
     border-right: 1px solid var(--color-rule);
     padding-right: 1.5rem;
   }
-  .sidebar h2 {
-    font-size: 0.85rem;
+  .sidebar-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--color-stone);
-    margin-top: 0;
+    margin: 0 0 0.75rem;
   }
   .sidebar ul {
     list-style: none;
     padding: 0;
+    position: sticky;
+    top: 5rem;
   }
   .sidebar li {
     padding: 0.25rem 0;
   }
   .sidebar a {
-    color: var(--color-ink);
+    font-size: var(--text-small);
+    color: var(--color-stone);
     text-decoration: none;
+    line-height: 1.4;
+    display: block;
   }
   .sidebar a:hover,
   .sidebar a.active {
-    color: var(--color-brand);
+    color: var(--color-highlight);
   }
   .doc {
-    max-width: 42rem;
+    max-width: 44rem;
+    min-width: 0;
   }
   .back {
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
     color: var(--color-stone);
     text-decoration: none;
-    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+  .back:hover {
+    color: var(--color-highlight);
   }
   .doc h1 {
-    margin: 0.5rem 0;
-    font-size: 2rem;
+    margin: 0.75rem 0 1rem;
+    font-size: var(--text-h1);
   }
   .meta {
     color: var(--color-stone);
     font-style: italic;
-    margin-top: 0;
-  }
-  .adoc-body :global(h2) {
-    margin-top: 2rem;
-    font-size: 1.4rem;
-  }
-  .adoc-body :global(pre) {
-    background: var(--color-vellum);
-    padding: 1rem;
-    border-radius: 6px;
-    overflow-x: auto;
-  }
-  .adoc-body :global(code) {
-    background: var(--color-vellum);
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.95em;
-  }
-  .adoc-body :global(a) {
-    color: var(--color-brand);
-  }
-  .adoc-body :global(table) {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1rem 0;
-  }
-  .adoc-body :global(th),
-  .adoc-body :global(td) {
-    border: 1px solid var(--color-rule);
-    padding: 0.5rem 0.75rem;
-    text-align: left;
+    margin: 0 0 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-rule);
   }
   footer {
     margin-top: 3rem;

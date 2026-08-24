@@ -354,6 +354,89 @@ pre code {
   background: var(--color-paper-deep);
 }
 
+/* ── Article pages (about, blog, docs) ──────────────────────────── */
+
+.page-hero {
+  padding-block: 3.5rem 1.5rem;
+}
+.page-hero h1 {
+  font-size: var(--text-h1);
+  margin: 0.75rem 0 1rem;
+}
+.page-deck {
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  color: var(--color-stone);
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* Reading measure + rhythm for long-form content. Also applied to
+   injected AsciiDoc HTML via a plain class on the wrapper. */
+.prose {
+  max-width: 68ch;
+}
+.prose > section {
+  margin-block: 2.75rem;
+}
+.prose h2 {
+  font-size: var(--text-h2);
+  margin: 2.25rem 0 0.75rem;
+}
+.prose h3 {
+  font-size: var(--text-h3);
+  margin: 1.75rem 0 0.5rem;
+}
+.prose p {
+  margin: 0 0 1.125rem;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+}
+.prose li {
+  margin-bottom: 0.5rem;
+}
+.prose li::marker {
+  color: var(--color-brand);
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-brand);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-stone);
+  font-style: italic;
+}
+.prose pre {
+  margin: 0 0 1.25rem;
+}
+/* Ledger table — same pattern as the demo reference table */
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+}
+.prose th {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-stone);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--color-ink);
+  white-space: nowrap;
+}
+.prose td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+}
+
 /* ── Type specimens (used in hero mosaic) ───────────────────────── */
 
 .specimen-source,

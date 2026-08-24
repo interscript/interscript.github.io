@@ -3,113 +3,101 @@ import Base from "../layouts/Base.astro"
 ---
 
 <Base title="About — Interscript" description="Background, mission, and team behind Interscript.">
-  <h1>About Interscript</h1>
+  <div class="container">
+    <header class="page-hero">
+      <p class="eyebrow eyebrow-accent">About</p>
+      <h1>About Interscript</h1>
+      <p class="page-deck">
+        One map format for every authority-backed romanization system —
+        running in any language runtime.
+      </p>
+    </header>
 
-  <section>
-    <h2>Mission</h2>
-    <p>
-      Interscript exists to make transliteration between writing systems
-      <strong>interoperable</strong>. Where most romanization tools
-      implement one system or one authority, Interscript encodes the
-      complete corpus of major authority-backed systems (BGN/PCGN, ISO,
-      UN, ALA-LC, ODNI, ICAO, DIN, and others) using a single map format
-      that runs in any language runtime.
-    </p>
-  </section>
+    <div class="prose">
+      <section>
+        <h2>Mission</h2>
+        <p>
+          Interscript exists to make transliteration between writing systems <strong>interoperable</strong>. Where most romanization tools
+          implement one system or one authority, Interscript encodes the
+          complete corpus of major authority-backed systems (BGN/PCGN, ISO,
+          UN, ALA-LC, ODNI, ICAO, DIN, and others) using a single map format
+          that runs in any language runtime.
+        </p>
+      </section>
 
-  <section>
-    <h2>Why it matters</h2>
-    <p>
-      Names, places, and historical records exist in dozens of scripts.
-      Whether you're a librarian cataloguing foreign-language works, a
-      government agency standardising romanisation, or a developer
-      building multilingual search, you need predictable, auditable
-      conversion. Interscript maps are checked into git, versioned, and
-      independently testable against the published authority documents.
-    </p>
-  </section>
+      <section>
+        <h2>Why it matters</h2>
+        <p>
+          Names, places, and historical records exist in dozens of scripts.
+          Whether you're a librarian cataloguing foreign-language works, a
+          government agency standardising romanisation, or a developer
+          building multilingual search, you need predictable, auditable
+          conversion. Interscript maps are checked into git, versioned, and
+          independently testable against the published authority documents.
+        </p>
+      </section>
 
-  <section>
-    <h2>History</h2>
-    <p>
-      Interscript was started at Ribose in 2019 as a Ruby library and
-      has since grown to include TypeScript and Python engines, a public
-      reference site, and an optional phonological layer —
-      <a href="/docs/phonological-layer">interscript-ml</a> (the
-      contract and model zoo) run by the
-      <a href="https://www.secryst.org">secryst</a> crystal family
-      (Ruby · Python · TypeScript). The map corpus now exceeds 300
-      systems.
-    </p>
-  </section>
+      <section>
+        <h2>History</h2>
+        <p>
+          Interscript was started at Ribose in 2019 as a Ruby library and
+          has since grown to include TypeScript and Python engines, a public
+          reference site, and an optional phonological layer — <a href="/docs/phonological-layer">interscript-ml</a> (the
+          contract and model zoo) run by the <a href="https://www.secryst.org">secryst</a> crystal family
+          (Ruby · Python · TypeScript). The map corpus now exceeds 300
+          systems.
+        </p>
+      </section>
 
-  <section>
-    <h2>The ecosystem</h2>
-    <p>
-      Interscript is deliberately layered. The core is deterministic
-      maps and engines. When a map needs undiacritized text vocalized
-      first, it dispatches to an optional crystal:
-    </p>
-    <ul>
-      <li><strong>Maps + engines</strong> —
-        <code>interscript-ruby</code>, <code>interscript-ts</code>,
-        <code>interscript-py</code> — pure deterministic conversion.</li>
-      <li><strong>Contract + zoo</strong> —
-        <a href="https://github.com/interscript/interscript-ml">interscript-ml</a>
-        — the <code>models.yaml</code> index, IMF&nbsp;v1 model format,
-        and golden sets.</li>
-      <li><strong>Crystals</strong> —
-        <a href="https://www.secryst.org">secryst</a> (<code>gem secryst</code> · <code>pip install secryst</code> ·
-        <code>npm i secryst</code>) — local ONNX inference implementing
-        the contract. A crystal has no interscript dependency; an engine
-        without a crystal simply cannot execute maps that declare a
-        vocalization step.</li>
-      <li><strong>Training</strong> —
-        <a href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a>
-        — teachers whose students enter the zoo.</li>
-    </ul>
-  </section>
+      <section>
+        <h2>The ecosystem</h2>
+        <p>
+          Interscript is deliberately layered. The core is deterministic
+          maps and engines. When a map needs undiacritized text vocalized
+          first, it dispatches to an optional crystal:
+        </p>
+        <ul>
+          <li><strong>Maps + engines</strong> — <code>interscript-ruby</code>, <code>interscript-ts</code>, <code>interscript-py</code> — pure deterministic conversion.</li>
+          <li><strong>Contract + zoo</strong> — <a href="https://github.com/interscript/interscript-ml">interscript-ml</a> — the <code>models.yaml</code> index, IMF&nbsp;v1 model format,
+            and golden sets.</li>
+          <li><strong>Crystals</strong> — <a href="https://www.secryst.org">secryst</a> (<code>gem secryst</code> · <code>pip install secryst</code> · <code>npm i secryst</code>) — local ONNX inference implementing
+            the contract. A crystal has no interscript dependency; an engine
+            without a crystal simply cannot execute maps that declare a
+            vocalization step.</li>
+          <li><strong>Training</strong> — <a href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a> — teachers whose students enter the zoo.</li>
+        </ul>
+      </section>
 
-  <section>
-    <h2>Team</h2>
-    <p>
-      Interscript is an open-source project maintained by Ribose Inc.
-      and a community of contributors. Source code is on
-      <a href="https://github.com/interscript">GitHub</a>; issues and
-      pull requests are welcome.
-    </p>
-  </section>
+      <section>
+        <h2>Team</h2>
+        <p>
+          Interscript is an open-source project maintained by Ribose Inc.
+          and a community of contributors. Source code is on <a href="https://github.com/interscript">GitHub</a>; issues and
+          pull requests are welcome.
+        </p>
+      </section>
 
-  <section>
-    <h2>Supporters</h2>
-    <p>
-      The Interscript project has received extensive support from the
-      following organizations and individuals, in no particular order:
-    </p>
-    <ul>
-      <li>Prof. Lyubomir Ivanov (<a href="https://www.bas.bg">Bulgarian Academy of Sciences</a>)</li>
-      <li><a href="https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names">U.S. Board on Geographic Names (BGN)</a></li>
-      <li><a href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a></li>
-      <li><a href="https://www.calconnect.org">CalConnect</a></li>
-      <li>The <a href="https://www.eki.ee/wgrs/">Working Group on Romanization Systems</a> of the <a href="https://unstats.un.org/unsd/ungegn/">United Nations Group of Experts on Geographical Names</a></li>
-      <li><a href="https://www.icao.int">International Civil Aviation Organization (ICAO)</a></li>
-    </ul>
-  </section>
+      <section>
+        <h2>Supporters</h2>
+        <p>
+          The Interscript project has received extensive support from the
+          following organizations and individuals, in no particular order:
+        </p>
+        <ul>
+          <li>Prof. Lyubomir Ivanov (<a href="https://www.bas.bg">Bulgarian Academy of Sciences</a>)</li>
+          <li><a href="https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names">U.S. Board on Geographic Names (BGN)</a></li>
+          <li><a href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a></li>
+          <li><a href="https://www.calconnect.org">CalConnect</a></li>
+          <li>The <a href="https://www.eki.ee/wgrs/">Working Group on Romanization Systems</a> of the <a href="https://unstats.un.org/unsd/ungegn/">United Nations Group of Experts on Geographical Names</a></li>
+          <li><a href="https://www.icao.int">International Civil Aviation Organization (ICAO)</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
 </Base>
 
 <style>
-  section {
-    margin: 2rem 0;
-  }
-  h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    line-height: 1.7;
-    color: var(--color-ink);
-  }
-  a {
-    color: var(--color-brand);
+  .container {
+    padding-bottom: 2rem;
   }
 </style>

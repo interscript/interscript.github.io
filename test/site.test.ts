@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs"
-import { resolve } from "node:path"
+import { resolve, relative } from "node:path"
 
 const DIST = resolve(process.cwd(), "dist/client")
 
@@ -109,17 +109,10 @@ describe("partners and attribution", () => {
     }
   })
 
-  it("credits U.S. NGA as funder on every page footer", () => {
+  it("never claims NGA funding (fabricated-content guard)", () => {
     for (const file of mainPages()) {
       const html = readFileSync(file, "utf8")
-      expect(html).toMatch(/National Geospatial-Intelligence Agency/i)
-    }
-  })
-
-  it("includes NGA disclaimer on every page footer", () => {
-    for (const file of mainPages()) {
-      const html = readFileSync(file, "utf8")
-      expect(html).toMatch(/does not necessarily reflect/i)
+      expect(html).not.toMatch(/National Geospatial-Intelligence|NSG-2021/i)
     }
   })
 
@@ -128,9 +121,11 @@ describe("partners and attribution", () => {
     expect(about).toMatch(/started at Ribose/i)
   })
 
-  it("About page mentions NGA cooperative agreement", () => {
+  it("About page lists the real v1 supporters", () => {
     const about = readHtml("about/index.html")
-    expect(about).toMatch(/NGA|NSG-2021/i)
+    expect(about).toMatch(/Board on Geographic Names/)
+    expect(about).toMatch(/CalConnect/)
+    expect(about).toMatch(/International Civil Aviation Organization/)
   })
 })
 
@@ -290,9 +285,49 @@ describe("about page", () => {
     expect(about).toMatch(/interoperable/i)
   })
 
-  it("covers history, team, funding", () => {
+  it("covers history, team, supporters", () => {
     expect(about).toMatch(/History/)
     expect(about).toMatch(/Team/)
-    expect(about).toMatch(/Funding/)
+    expect(about).toMatch(/Supporters/)
+  })
+})
+
+describe("Astro whitespace collapse guard", () => {
+  // Astro drops the space between text and an inline element when they
+  // sit on different source lines ("the\n<a>x</a>" renders "thex").
+  // Guard the source so the bug can't come back.
+  const INLINE = "(a|em|strong|code|span|abbr|small|cite|sup|sub)"
+  const srcFiles: string[] = []
+  const walk = (dir: string) => {
+    for (const entry of readdirSync(dir)) {
+      const full = resolve(dir, entry)
+      if (statSync(full).isDirectory()) walk(full)
+      else if (entry.endsWith(".astro")) srcFiles.push(full)
+    }
+  }
+  for (const dir of ["src/pages", "src/layouts", "src/components"]) {
+    walk(resolve(process.cwd(), dir))
+  }
+
+  it("no text-to-tag or tag-to-text line breaks around inline elements", () => {
+    const offenders: string[] = []
+    for (const file of srcFiles) {
+      const lines = readFileSync(file, "utf8").split("\n")
+      let inRaw = false
+      for (let i = 0; i < lines.length - 1; i++) {
+        if (/<style|<script/.test(lines[i])) inRaw = true
+        if (/<\/style>|<\/script>/.test(lines[i])) inRaw = false
+        if (inRaw) continue
+        const this_ = lines[i]
+        const next = lines[i + 1]
+        if (/[a-zA-Z0-9,.;:!?)\]'"]$/.test(this_) && new RegExp(`^\\s*<${INLINE}[\\s>]`).test(next)) {
+          offenders.push(`${relative(process.cwd(), file)}:${i + 1} text→tag`)
+        }
+        if (new RegExp(`</${INLINE}>$`).test(this_) && /^\s*[a-zA-Z0-9(]/.test(next) && !/^\s*<(\/|style|script)/.test(next)) {
+          offenders.push(`${relative(process.cwd(), file)}:${i + 1} tag→text`)
+        }
+      }
+    }
+    expect(offenders).toEqual([])
   })
 })

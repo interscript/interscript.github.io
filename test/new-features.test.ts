@@ -167,12 +167,11 @@ describe("navigation across new pages", () => {
     }
   })
 
-  it("every new page preserves partner attribution", () => {
+  it("every new page credits Ribose, no fabricated partners", () => {
     for (const p of pages) {
       const html = readHtml(`${p}/index.html`)
-      expect(html).toMatch(/In partnership with/)
       expect(html).toMatch(/Ribose Inc\./)
-      expect(html).toMatch(/National Geospatial-Intelligence Agency/)
+      expect(html).not.toMatch(/National Geospatial-Intelligence/)
     }
   })
 
