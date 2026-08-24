@@ -49,9 +49,17 @@ const clientModels = [
     id: "tha-g2p-small-1.0",
     task: "g2p",
     pair: "Thai → IPA",
-    metric: "PER 12.06 (teacher 4.43)",
+    metric: "PER 2.85 greedy (12.06 beam-4)",
     artifact: "int8 · 246 MiB",
-    status: "releasing",
+    status: "released",
+  },
+  {
+    id: "tha-g2p-small-1.0-int4",
+    task: "g2p",
+    pair: "Thai → IPA",
+    metric: "same student · 4-bit",
+    artifact: "int4 · 193 MiB",
+    status: "released",
   },
   {
     id: "heb-diac-small-1.0",
@@ -59,15 +67,15 @@ const clientModels = [
     pair: "Hebrew → niqqud",
     metric: "DER 30.37 (teacher 24.79)",
     artifact: "fp32 · 1.3 GiB",
-    status: "releasing",
+    status: "released",
   },
   {
     id: "fas-g2p-1.0",
     task: "g2p",
     pair: "Persian → IPA",
     metric: "CER ≈1.6 · homograph 77.34%",
-    artifact: "fp32 · 1.3 GiB",
-    status: "releasing",
+    artifact: "fp32 · 2.6 GiB · parts",
+    status: "released",
   },
 ]
 ---
@@ -310,7 +318,7 @@ github.com/secryst                     # runtimes + training</code></pre>
     color: var(--color-stone);
     text-transform: none;
     letter-spacing: 0;
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-style: italic;
   }
   .ledger {
