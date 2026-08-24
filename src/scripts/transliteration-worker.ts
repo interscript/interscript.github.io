@@ -16,7 +16,7 @@ import {
   reset,
   transliterateAsync,
   loadMapAsync,
-  httpStrategy,
+  iscStrategy,
   type LoadStrategy,
 } from "interscript-ts"
 
@@ -41,9 +41,8 @@ let configured = false
 
 function defaultStrategies(): LoadStrategy[] {
   return [
-    httpStrategy({
+    iscStrategy({
       baseUrl: "/maps",
-      cacheKeyPrefix: "isx-worker:",
     }),
   ]
 }
