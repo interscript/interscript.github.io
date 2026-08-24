@@ -15,5 +15,15 @@ export default defineConfig({
   integrations: [vue()],
   vite: {
     plugins: [tailwindcss()],
+    // interscript-ts ships ml/session/*-web.js with undeclared
+    // onnxruntime-web / @litertjs/core imports behind lazy dynamic
+    // imports; the transliteration path never loads them, but the dev
+    // scanner and rolldown still try to resolve them.
+    optimizeDeps: { exclude: ["interscript-ts"] },
+    build: {
+      rolldownOptions: {
+        external: ["onnxruntime-web", "@litertjs/core", "onnxruntime-node"],
+      },
+    },
   },
 })

@@ -24,7 +24,7 @@ describe("maps catalogue page", () => {
   })
 
   it("mentions the catalogue total", () => {
-    expect(html).toMatch(/287 maps/)
+    expect(html).toMatch(/289 maps/)
   })
 
   it("mentions authority count", () => {

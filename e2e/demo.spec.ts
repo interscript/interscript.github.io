@@ -143,3 +143,39 @@ test.describe("demo page — transliteration explorer", () => {
     await expect(errorBanner).not.toBeVisible()
   })
 })
+
+test.describe("demo modes — API vs in-browser", () => {
+  test("API mode is the default", async ({ page }) => {
+    await page.goto("/demo")
+    await expect(page.getByTestId("mode-api")).toHaveAttribute("aria-checked", "true")
+    await expect(page.getByTestId("mode-browser")).toHaveAttribute("aria-checked", "false")
+  })
+
+  test("browser mode transliterates via the local ISC engine", async ({ page }) => {
+    await page.goto("/demo")
+
+    await page.getByTestId("mode-browser").click()
+    const status = page.locator(".rail-status")
+    await expect(status).toContainText("ready", { timeout: 30000 })
+
+    await page.locator("textarea.pane-body").fill("Антон")
+    await expect(page.locator(".pane-result")).toContainText("Anton", { timeout: 10000 })
+  })
+
+  test("both modes agree on Ukrainian", async ({ page }) => {
+    await page.goto("/demo")
+
+    // API mode first
+    const status = page.locator(".rail-status")
+    await expect(status).toContainText("ready", { timeout: 30000 })
+    await page.locator("textarea.pane-body").fill("Київ")
+    await expect(page.locator(".pane-result")).toContainText("Kyiv", { timeout: 10000 })
+    const apiOutput = await page.locator(".pane-result").textContent()
+
+    // Switch to the in-browser engine — same answer
+    await page.getByTestId("mode-browser").click()
+    await expect(page.locator(".pane-result")).toContainText(apiOutput ?? "Kyiv", {
+      timeout: 30000,
+    })
+  })
+})

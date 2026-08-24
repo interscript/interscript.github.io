@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue"
+import { ref, computed, watch, onMounted, onBeforeUnmount } from "vue"
+import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 
 interface System {
   code: string
@@ -10,64 +11,87 @@ const props = defineProps<{
   systems: System[]
 }>()
 
+const API_ENDPOINT = "https://api.interscript.org/v1/transliterate"
+const DEBOUNCE_MS = 300
+
+type Mode = "api" | "browser"
+
+const mode = ref<Mode>("api")
 const selected = ref(props.systems[0]?.code ?? "")
 const input = ref("Антон")
+const output = ref("")
 const error = ref<string | null>(null)
-const engine = ref<"ready" | "loading" | "missing">("loading")
-// Must be a ref so the `output` computed re-evaluates when the engine
-// finishes loading. A plain `let` is invisible to Vue's reactivity tracker.
-const transliterateFn = ref<((code: string, input: string) => string) | null>(null)
-
-async function ensureEngine() {
-  if (transliterateFn.value) return transliterateFn.value
-  engine.value = "loading"
-  try {
-    const mod = await import("interscript-ts")
-    // fetch() the systems we need + their full transitive dep closure.
-    // Loop until the wanted set stops growing — a dep may itself have
-    // deps that need fetching (e.g. bgnpcgn-ukr → un-ukr → ua-ukr).
-    const wanted = new Set<string>(props.systems.map((s) => s.code))
-    const maps: Record<string, unknown> = {}
-    const fetchOne = async (code: string) => {
-      if (maps[code]) return
-      const res = await fetch(`/maps/${code}.json`)
-      if (!res.ok) return
-      const json = (await res.json()) as { dependencies?: string[] }
-      maps[code] = json
-      for (const dep of json.dependencies ?? []) wanted.add(dep)
-    }
-    let prevSize = 0
-    while (wanted.size > prevSize) {
-      prevSize = wanted.size
-      for (const code of wanted) await fetchOne(code)
-    }
-    mod.reset()
-    mod.configure({ strategies: [mod.bundledStrategy(maps)] })
-    transliterateFn.value = mod.transliterate
-    engine.value = "ready"
-  } catch (e) {
-    engine.value = "missing"
-    error.value = `Failed to load interscript-ts: ${(e as Error).message}`
-  }
-  return transliterateFn.value
-}
-
-const output = computed(() => {
-  const fn = transliterateFn.value
-  if (!fn) return ""
-  try {
-    error.value = null
-    return fn(selected.value, input.value)
-  } catch (e) {
-    error.value = (e as Error).message
-    return ""
-  }
-})
+const status = ref<"loading" | "ready" | "missing">("loading")
 
 const inputChars = computed(() => Array.from(input.value).length)
 const outputChars = computed(() => Array.from(output.value).length)
 
-onMounted(ensureEngine)
+let worker: WorkerClient | undefined
+let timer: number | undefined
+let seq = 0
+
+async function runApi(text: string): Promise<string> {
+  const res = await fetch(API_ENDPOINT, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ system: selected.value, input: text }),
+  })
+  const body = (await res.json().catch(() => null)) as {
+    output?: unknown
+    error?: { message?: string }
+  } | null
+  if (typeof body?.output !== "string") {
+    throw new Error(body?.error?.message ?? `API error (HTTP ${res.status})`)
+  }
+  return body.output
+}
+
+async function runBrowser(text: string): Promise<string> {
+  worker ??= createWorkerClient()
+  return worker.transliterate(selected.value, text)
+}
+
+function schedule() {
+  const text = input.value
+  const mySeq = ++seq
+  if (timer) window.clearTimeout(timer)
+  if (text === "") {
+    output.value = ""
+    return
+  }
+  timer = window.setTimeout(async () => {
+    try {
+      const result =
+        mode.value === "api" ? await runApi(text) : await runBrowser(text)
+      if (mySeq !== seq) return
+      output.value = result
+      error.value = null
+      status.value = "ready"
+    } catch (e) {
+      if (mySeq !== seq) return
+      error.value = (e as Error).message
+      // A failed in-browser engine boot is terminal; API errors are
+      // transient (network) and surface via the banner alone.
+      if (mode.value === "browser" && status.value !== "ready") {
+        status.value = "missing"
+      }
+    }
+  }, DEBOUNCE_MS)
+}
+
+watch([selected, input, mode], schedule)
+
+watch(mode, () => {
+  error.value = null
+  if (status.value !== "ready") status.value = "loading"
+})
+
+onMounted(schedule)
+
+onBeforeUnmount(() => {
+  worker?.terminate()
+  if (timer) window.clearTimeout(timer)
+})
 </script>
 
 <template>
@@ -78,14 +102,46 @@ onMounted(ensureEngine)
           <span
             class="rail-status"
             :class="{
-              'is-loading': engine === 'loading',
-              'is-ready': engine === 'ready',
-              'is-missing': engine === 'missing',
+              'is-loading': status === 'loading',
+              'is-ready': status === 'ready',
+              'is-missing': status === 'missing',
             }"
-            >{{ engine }}</span
+            >{{ status }}</span
           >
           <p class="rail-label">Engine status</p>
         </div>
+
+        <div class="mode-switch" role="radiogroup" aria-label="Transliteration mode">
+          <button
+            type="button"
+            role="radio"
+            :aria-checked="mode === 'api'"
+            class="mode-btn"
+            :class="{ 'is-active': mode === 'api' }"
+            data-testid="mode-api"
+            @click="mode = 'api'"
+          >
+            API
+          </button>
+          <button
+            type="button"
+            role="radio"
+            :aria-checked="mode === 'browser'"
+            class="mode-btn"
+            :class="{ 'is-active': mode === 'browser' }"
+            data-testid="mode-browser"
+            @click="mode = 'browser'"
+          >
+            In-browser
+          </button>
+        </div>
+        <p class="rail-hint">
+          {{
+            mode === "api"
+              ? "Transliterates on api.interscript.org"
+              : "Runs interscript-ts locally with ISC maps — downloads them on first use"
+          }}
+        </p>
 
         <label class="field">
           <span class="field-label">System</span>
@@ -122,7 +178,7 @@ onMounted(ensureEngine)
             <span class="pane-meta">{{ outputChars }} chars</span>
           </header>
           <output class="pane-body pane-result">{{
-            output || (engine === 'ready' ? '—' : 'Loading transliteration engine…')
+            output || (status === "ready" ? "—" : "Loading transliteration engine…")
           }}</output>
         </div>
 
@@ -204,6 +260,38 @@ onMounted(ensureEngine)
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-stone);
+  margin: 0;
+}
+.mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--color-rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mode-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  background: var(--color-vellum);
+  color: var(--color-stone);
+  cursor: pointer;
+}
+.mode-btn.is-active {
+  background: color-mix(in srgb, var(--color-ink) 92%, var(--color-vellum));
+  color: var(--color-vellum);
+}
+.mode-btn:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: -2px;
+}
+.rail-hint {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-stone-light);
   margin: 0;
 }
 .field { display: flex; flex-direction: column; gap: 0.4rem; }

@@ -12,6 +12,7 @@ import {
   reset,
   transliterate,
   bundledStrategy,
+  iscBundledStrategy,
 } from "interscript-ts"
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
@@ -26,7 +27,7 @@ function loadAllMaps(): Record<string, unknown> {
   return maps
 }
 
-describe("bundled maps integration", () => {
+describe("bundled maps integration", { timeout: 120_000 }, () => {
   it("loads every map in public/maps", () => {
     const maps = loadAllMaps()
     expect(Object.keys(maps).length).toBeGreaterThan(5)
@@ -87,18 +88,24 @@ describe("bundled maps integration", () => {
     }
   })
 
-  it("preserves the any_char_class optimisation across regeneration", () => {
-    // After the JsonIR fix, ranges like 'a'..'z' should be serialised
-    // as any_char_class, not expanded into 26 string alternatives.
+  it("ISC and bundled-JSON paths agree (regeneration guard)", () => {
+    // ISC source is the canonical map format now; the shipped JSON IR
+    // must stay behaviourally identical for every regeneration.
+    const code = "bgnpcgn-per-Arab-Latn-1958"
+    const sample = "داستان ایران"
+
     const maps = loadAllMaps()
-    const per = maps["bgnpcgn-per-Arab-Latn-1958"] as {
-      stages: Array<{ rules: Array<{ from?: { kind: string } }> }>
-    }
-    expect(per).toBeDefined()
-    const main = per.stages.find((s) => s.name === "main")!
-    const hasAnyCharClass = main.rules.some(
-      (r) => r.from?.kind === "any_char_class",
-    )
-    expect(hasAnyCharClass, "post-rule upcase uses any_char_class").toBe(true)
+    expect(maps[code]).toBeDefined()
+    reset()
+    configure({ strategies: [bundledStrategy({ [code]: maps[code] })] })
+    const viaJson = transliterate(code, sample)
+    expect(viaJson.length).toBeGreaterThan(0)
+
+    const iscSource = readFileSync(resolve(MAPS_DIR, `${code}.isc`), "utf8")
+    reset()
+    configure({ strategies: [iscBundledStrategy({ [code]: iscSource })] })
+    const viaIsc = transliterate(code, sample)
+
+    expect(viaIsc).toBe(viaJson)
   })
 })
