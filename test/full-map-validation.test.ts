@@ -16,30 +16,35 @@ import {
   reset,
   transliterate,
   detect,
+  parseIsc,
+  iscBundledStrategy,
   bundledStrategy,
-  type CompiledMapJson,
 } from "interscript-ts"
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
 
-function loadAllMaps(): Record<string, CompiledMapJson> {
-  const maps: Record<string, CompiledMapJson> = {}
+function loadAllSources(): Record<string, string> {
+  const sources: Record<string, string> = {}
   for (const file of readdirSync(MAPS_DIR)) {
-    if (!file.endsWith(".json")) continue
-    const code = file.replace(/\.json$/, "")
-    maps[code] = JSON.parse(readFileSync(resolve(MAPS_DIR, file), "utf8"))
+    if (!file.endsWith(".isc")) continue
+    sources[file.replace(/\.isc$/, "")] = readFileSync(resolve(MAPS_DIR, file), "utf8")
   }
-  return maps
+  return sources
 }
 
-const allMaps = loadAllMaps()
+const allMaps = loadAllSources()
+const libJsons: Record<string, unknown> = {}
+for (const file of readdirSync(MAPS_DIR)) {
+  if (!file.endsWith(".json")) continue
+  libJsons[file.replace(/\.json$/, "")] = JSON.parse(readFileSync(resolve(MAPS_DIR, file), "utf8"))
+}
 const LIBRARY_MAPS = new Set(["posix", "unicode", "var-Cyrl", "var-kor"])
 const systemCodes = Object.keys(allMaps).filter((c) => !LIBRARY_MAPS.has(c))
 
 describe("full-map validation", () => {
   beforeAll(() => {
     reset()
-    configure({ strategies: [bundledStrategy(allMaps)] })
+    configure({ strategies: [iscBundledStrategy(allMaps), bundledStrategy(libJsons)] })
   })
 
   it("loads every non-library map", () => {
@@ -88,11 +93,12 @@ describe("full-map validation", () => {
 
   describe("every map's schema is valid", () => {
     for (const code of systemCodes.slice(0, 20)) {
-      it(`${code} has valid schemaVersion and stages`, () => {
-        const m = allMaps[code] as CompiledMapJson
-        expect(m.schemaVersion).toBe(1)
-        expect(m.stages.length).toBeGreaterThan(0)
-        expect(m.systemCode).toBe(code)
+      it(`${code} parses with stages and a matching system code`, () => {
+        const doc = parseIsc(allMaps[code] ?? "", `${code}.isc`)
+        expect(doc.stages.length).toBeGreaterThan(0)
+        const m = doc.metadata as Record<string, unknown>
+        const lang = String(m["language"]).split(":").pop()
+        expect([m["authority_id"], lang, m["source_script"], m["destination_script"], m["id"]].join("-")).toBe(code)
       })
     }
   })

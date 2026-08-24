@@ -17,8 +17,11 @@ interface System {
   label: string
 }
 
-const root = document.getElementById("playground-root")
-if (!root) throw new Error("playground root missing")
+const rootOrNull = document.getElementById("playground-root")
+if (!rootOrNull) throw new Error("playground root missing")
+// Hoisted function bodies don't inherit the guard's narrowing, so bind
+// a non-null alias for them.
+const root: HTMLElement = rootOrNull
 
 const systems = JSON.parse(root.dataset.systems ?? "[]") as System[]
 

@@ -77,7 +77,7 @@ export function renderAsciiDocDir(dir: string): AsciiDocEntry[] {
     const path = join(fullDir, file)
     const raw = readFileSync(path, "utf8")
     const header = parseAsciiDocHeader(raw)
-    const body = asciidoctor.convert(raw, { standalone: false }) as string
+    const body = asciidoctor.convert(raw, { standalone: false }) as unknown as string
     const id = basename(file, ".adoc")
     entries.push({
       id,

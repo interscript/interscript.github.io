@@ -17,9 +17,8 @@ import {
   reset,
   transliterateAsync,
 } from "interscript-ts"
-import { filesystemStrategy } from "interscript-ts/loaders.node"
+import { serverMapStrategies } from "../../../lib/server-map-strategies"
 import { MapNotFoundError, InterscriptError } from "interscript-ts"
-import { resolve } from "node:path"
 
 export const prerender = false
 
@@ -31,7 +30,7 @@ function ensureConfigured() {
   if (configured) return
   reset()
   configure({
-    strategies: [filesystemStrategy(resolve(process.cwd(), "public/maps"))],
+    strategies: serverMapStrategies(),
   })
   configured = true
 }

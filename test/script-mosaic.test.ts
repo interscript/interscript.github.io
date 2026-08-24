@@ -16,6 +16,15 @@ vi.mock("interscript-ts", () => ({
   configure: vi.fn(),
   transliterate: vi.fn((code: string, input: string) => `[${code}]${input}`),
   bundledStrategy: vi.fn(() => () => undefined),
+  iscBundledStrategy: vi.fn(() => () => undefined),
+  parseIsc: vi.fn(() => ({
+    systemCode: "TEST:xxx-Xxxx:Xxxx:0000",
+    metadata: {},
+    tests: [],
+    aliases: [],
+    stages: [],
+    dependencies: [],
+  })),
 }))
 
 // Mock import.meta.glob
@@ -31,6 +40,9 @@ describe("ScriptMosaic", () => {
     vi.clearAllMocks()
     // Mock fetch — the component uses fetch() to load map IR + deps.
     ;(globalThis as { fetch?: unknown }).fetch = vi.fn(async (url: string) => {
+      if (typeof url === "string" && url.endsWith(".isc")) {
+        return { ok: true, text: async () => 'system "TEST:xxx-Xxxx:Xxxx:0000" {}' }
+      }
       if (typeof url === "string" && url.endsWith(".json")) {
         return {
           ok: true,

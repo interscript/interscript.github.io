@@ -162,6 +162,20 @@ test.describe("demo modes — API vs in-browser", () => {
     await expect(page.locator(".pane-result")).toContainText("Anton", { timeout: 10000 })
   })
 
+  test("browser mode handles library-dependent systems (German)", async ({ page }) => {
+    await page.goto("/demo")
+
+    await page.getByTestId("mode-browser").click()
+    const status = page.locator(".rail-status")
+    await expect(status).toContainText("ready", { timeout: 30000 })
+
+    // bgnpcgn-deu depends on the posix library, which only ships as
+    // compiled JSON behind the ISC strategy.
+    await page.locator("select.field-input").selectOption("bgnpcgn-deu-Latn-Latn-2000")
+    await page.locator("textarea.pane-body").fill("Tschüß!")
+    await expect(page.locator(".pane-result")).toContainText("Tschueß!", { timeout: 15000 })
+  })
+
   test("both modes agree on Ukrainian", async ({ page }) => {
     await page.goto("/demo")
 

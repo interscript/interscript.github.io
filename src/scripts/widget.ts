@@ -5,7 +5,7 @@
  * <iframe src="https://interscript.org/embed">. Reads initial system
  * and input from URL params; renders a minimal transliteration UI.
  *
- * Uses httpStrategy so map IR loads on demand from /maps/*.json —
+ * Maps load on demand via the shared ISC-first strategy stack —
  * no full catalogue bundle, no main-thread jank.
  */
 
@@ -13,19 +13,12 @@ import {
   configure,
   reset,
   transliterateAsync,
-  httpStrategy,
 } from "interscript-ts"
+import { mapStrategies } from "./map-strategies"
 
 // Configure once with HTTP loader + persistent cache.
 reset()
-configure({
-  strategies: [
-    httpStrategy({
-      baseUrl: "/maps",
-      cacheKeyPrefix: "isx-widget:",
-    }),
-  ],
-})
+configure({ strategies: mapStrategies() })
 
 interface WidgetSystem {
   code: string

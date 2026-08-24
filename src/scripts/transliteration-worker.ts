@@ -16,9 +16,9 @@ import {
   reset,
   transliterateAsync,
   loadMapAsync,
-  iscStrategy,
   type LoadStrategy,
 } from "interscript-ts"
+import { mapStrategies } from "./map-strategies"
 
 /// <reference lib="webworker" />
 
@@ -40,11 +40,7 @@ const ctx = self as unknown as DedicatedWorkerGlobalScope
 let configured = false
 
 function defaultStrategies(): LoadStrategy[] {
-  return [
-    iscStrategy({
-      baseUrl: "/maps",
-    }),
-  ]
+  return mapStrategies()
 }
 
 function ensureConfigured() {

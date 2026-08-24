@@ -114,23 +114,32 @@ async function ensureEngine() {
         wanted.add(tf.system)
       }
     }
-    const maps: Record<string, unknown> = {}
+    const sources: Record<string, string> = {}
+    const libJsons: Record<string, unknown> = {}
     // Fetch in two passes: first the systems themselves, then any
     // transitive deps they declare (so multi-stage pipelines resolve).
     const fetchOne = async (code: string) => {
-      if (maps[code]) return
-      const res = await fetch(`/maps/${code}.json`)
-      if (!res.ok) return
-      const json = (await res.json()) as { dependencies?: string[] }
-      maps[code] = json
-      for (const dep of json.dependencies ?? []) wanted.add(dep)
+      if (sources[code]) return
+      const res = await fetch(`/maps/${code}.isc`)
+      if (res.ok) {
+        const text = await res.text()
+        sources[code] = text
+        for (const dep of mod.parseIsc(text, `${code}.isc`).dependencies) wanted.add(dep.target)
+        return
+      }
+      // Libraries (.iml) ship as compiled JSON — no ISC form.
+      const lib = await fetch(`/maps/${code}.json`)
+      if (!lib.ok) return
+      libJsons[code] = await lib.json()
     }
     for (const code of wanted) await fetchOne(code)
     // Second pass for any deps discovered above.
     for (const code of [...wanted]) await fetchOne(code)
 
     mod.reset()
-    mod.configure({ strategies: [mod.bundledStrategy(maps)] })
+    mod.configure({
+      strategies: [mod.iscBundledStrategy(sources), mod.bundledStrategy(libJsons)],
+    })
     transliterateFn = mod.transliterate
     ready.value = true
     // Initial render of all cells

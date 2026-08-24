@@ -12,12 +12,35 @@ import {
   reset,
   transliterate,
   bundledStrategy,
+  parseIsc,
   iscBundledStrategy,
+  type IscDocument,
 } from "interscript-ts"
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
 
-function loadAllMaps(): Record<string, unknown> {
+function loadAllMaps(): Record<string, IscDocument> {
+  const maps: Record<string, IscDocument> = {}
+  for (const file of readdirSync(MAPS_DIR)) {
+    if (!file.endsWith(".isc")) continue
+    const code = file.replace(/\.isc$/, "")
+    maps[code] = parseIsc(readFileSync(resolve(MAPS_DIR, file), "utf8"), file)
+  }
+  return maps
+}
+
+function iscSources(): Record<string, string> {
+  const sources: Record<string, string> = {}
+  for (const file of readdirSync(MAPS_DIR)) {
+    if (!file.endsWith(".isc")) continue
+    sources[file.replace(/\.isc$/, "")] = readFileSync(resolve(MAPS_DIR, file), "utf8")
+  }
+  return sources
+}
+
+// The .iml libraries (posix/unicode/var-*) have no ISC form; they ship
+// as the only remaining compiled JSON maps.
+function libJsons(): Record<string, unknown> {
   const maps: Record<string, unknown> = {}
   for (const file of readdirSync(MAPS_DIR)) {
     if (!file.endsWith(".json")) continue
@@ -27,53 +50,58 @@ function loadAllMaps(): Record<string, unknown> {
   return maps
 }
 
+function iscStrategies() {
+  return [iscBundledStrategy(iscSources()), bundledStrategy(libJsons())]
+}
+
+function iscCode(doc: IscDocument): string {
+  const m = doc.metadata as Record<string, unknown>
+  const lang = String(m["language"]).split(":").pop()
+  return [m["authority_id"], lang, m["source_script"], m["destination_script"], m["id"]].join("-")
+}
+
 describe("bundled maps integration", { timeout: 120_000 }, () => {
   it("loads every map in public/maps", () => {
     const maps = loadAllMaps()
     expect(Object.keys(maps).length).toBeGreaterThan(5)
   })
 
-  it("every map JSON parses with the expected schemaVersion", () => {
+  it("every ISC document parses with a matching system code", () => {
     const maps = loadAllMaps()
-    for (const [code, raw] of Object.entries(maps)) {
-      const m = raw as { schemaVersion?: number; systemCode?: string }
-      expect(m.schemaVersion, `${code} schemaVersion`).toBe(1)
-      expect(m.systemCode, `${code} systemCode`).toBe(code)
+    for (const [code, doc] of Object.entries(maps)) {
+      expect(iscCode(doc), `${code} systemCode`).toBe(code)
     }
   })
 
-  it("every non-library map has at least one stage", () => {
+  it("every map has at least one stage", () => {
     const maps = loadAllMaps()
-    const skipLibraries = new Set(["posix", "unicode", "var-Cyrl", "var-kor"])
-    for (const [code, raw] of Object.entries(maps)) {
-      if (skipLibraries.has(code)) continue
-      const m = raw as { stages?: unknown[] }
-      expect(m.stages, `${code} stages`).toBeDefined()
-      expect(m.stages!.length, `${code} stages count`).toBeGreaterThan(0)
+    for (const [code, doc] of Object.entries(maps)) {
+      expect(doc.stages, `${code} stages`).toBeDefined()
+      expect(doc.stages.length, `${code} stages count`).toBeGreaterThan(0)
     }
   })
 
   it("bgnpcgn-ukr produces expected output", () => {
     reset()
-    configure({ strategies: [bundledStrategy(loadAllMaps())] })
+    configure({ strategies: iscStrategies() })
     expect(transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")).toBe("Anton")
   })
 
   it("bgnpcgn-deu produces expected output", () => {
     reset()
-    configure({ strategies: [bundledStrategy(loadAllMaps())] })
+    configure({ strategies: iscStrategies() })
     expect(transliterate("bgnpcgn-deu-Latn-Latn-2000", "Tschüß!")).toBe("Tschueß!")
   })
 
   it("odni-rus produces expected output (single word)", () => {
     reset()
-    configure({ strategies: [bundledStrategy(loadAllMaps())] })
+    configure({ strategies: iscStrategies() })
     expect(transliterate("odni-rus-Cyrl-Latn-2015", "привет")).toBe("privet")
   })
 
   it("transliterates a sample across multiple scripts without errors", () => {
     reset()
-    configure({ strategies: [bundledStrategy(loadAllMaps())] })
+    configure({ strategies: iscStrategies() })
     const samples: Array<[string, string]> = [
       ["bgnpcgn-ukr-Cyrl-Latn-2019", "Київ"],
       ["alalc-amh-Ethi-Latn-2011", "ኢትዮጵያ"],
@@ -88,24 +116,19 @@ describe("bundled maps integration", { timeout: 120_000 }, () => {
     }
   })
 
-  it("ISC and bundled-JSON paths agree (regeneration guard)", () => {
-    // ISC source is the canonical map format now; the shipped JSON IR
-    // must stay behaviourally identical for every regeneration.
-    const code = "bgnpcgn-per-Arab-Latn-1958"
-    const sample = "داستان ایران"
-
+  it("ISC engine reproduces each map's own test vectors", () => {
+    // Regeneration guard: the shipped .isc sources must stay
+    // self-consistent — their embedded test vectors must pass.
     const maps = loadAllMaps()
-    expect(maps[code]).toBeDefined()
-    reset()
-    configure({ strategies: [bundledStrategy({ [code]: maps[code] })] })
-    const viaJson = transliterate(code, sample)
-    expect(viaJson.length).toBeGreaterThan(0)
-
-    const iscSource = readFileSync(resolve(MAPS_DIR, `${code}.isc`), "utf8")
-    reset()
-    configure({ strategies: [iscBundledStrategy({ [code]: iscSource })] })
-    const viaIsc = transliterate(code, sample)
-
-    expect(viaIsc).toBe(viaJson)
+    let checked = 0
+    for (const [code, doc] of Object.entries(maps)) {
+      if (code.includes("rababa")) continue // neural model proxy, no vectors
+      for (const t of doc.tests.slice(0, 3)) {
+        expect(transliterate(code, t.input), `${code}: ${t.input}`).toBe(t.expected)
+        checked++
+      }
+      if (checked > 200) break
+    }
+    expect(checked).toBeGreaterThan(50)
   })
 })
