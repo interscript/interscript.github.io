@@ -21,7 +21,7 @@ const spec = {
     title: "Interscript REST API",
     version: "1.0.0",
     description:
-      "Authority-backed transliteration as a service. Open source, BSD-2-Clause. Maintained by Ribose Inc. with support from the U.S. National Geospatial-Intelligence Agency.",
+      "Authority-backed transliteration as a service. Open source, BSD-2-Clause. Maintained by Ribose Inc.",
     contact: {
       name: "Interscript",
       url: "https://interscript.org",

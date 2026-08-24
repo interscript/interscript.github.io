@@ -10,7 +10,8 @@ test.describe("home page", () => {
   test("loads and renders hero", async ({ page }) => {
     await page.goto("/")
     await expect(page).toHaveTitle(/Interscript/i)
-    await expect(page.locator("h1")).toContainText(/Every/i)
+    // Scoped to the hero h1 — the Astro dev toolbar injects its own h1s.
+    await expect(page.locator("h1.hero-headline")).toContainText(/Every/i)
   })
 
   test("hero stats render real numbers", async ({ page }) => {

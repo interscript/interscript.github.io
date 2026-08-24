@@ -15,30 +15,105 @@ const {
   description = "Authority-backed transliteration systems for Ruby, TypeScript, and the browser. One map format, many runtimes.",
 } = Astro.props
 
-const navItems = [
-  { href: "/", label: "Home" },
+interface NavLink {
+  href: string
+  label: string
+}
+
+interface NavItem {
+  href?: string
+  label: string
+  children?: NavLink[]
+}
+
+const navItems: NavItem[] = [
   { href: "/demo", label: "Demo" },
-  { href: "/compare", label: "Compare" },
-  { href: "/batch", label: "Batch" },
-  { href: "/detect", label: "Detect" },
-  { href: "/diff", label: "Diff" },
-  { href: "/marc", label: "MARC" },
-  { href: "/subtitles", label: "Subtitles" },
+  {
+    label: "Tools",
+    children: [
+      { href: "/compare", label: "Compare" },
+      { href: "/batch", label: "Batch" },
+      { href: "/detect", label: "Detect" },
+      { href: "/diff", label: "Diff" },
+      { href: "/marc", label: "MARC" },
+      { href: "/subtitles", label: "Subtitles" },
+    ],
+  },
   { href: "/maps", label: "Maps" },
   { href: "/ml", label: "Models" },
-  { href: "/scripts", label: "Scripts" },
-  { href: "/use-cases", label: "Use cases" },
-  { href: "/api", label: "API" },
-  { href: "/api-docs", label: "API ref" },
-  { href: "/status", label: "Status" },
-  { href: "/authorities", label: "Authorities" },
-  { href: "/contributing", label: "Contributing" },
-  { href: "/docs", label: "Docs" },
-  { href: "/about", label: "About" },
+  {
+    label: "Developers",
+    children: [
+      { href: "/api", label: "API playground" },
+      { href: "/api-docs", label: "API reference" },
+      { href: "/status", label: "Status" },
+    ],
+  },
+  {
+    label: "Project",
+    children: [
+      { href: "/scripts", label: "Scripts" },
+      { href: "/use-cases", label: "Use cases" },
+      { href: "/authorities", label: "Authorities" },
+      { href: "/contributing", label: "Contributing" },
+      { href: "/docs", label: "Docs" },
+      { href: "/about", label: "About" },
+    ],
+  },
+]
+
+const drawerGroups: Array<{ label: string; links: NavLink[] }> = [
+  {
+    label: "Try it",
+    links: [
+      { href: "/demo", label: "Live demo" },
+      { href: "/compare", label: "Compare" },
+      { href: "/batch", label: "Batch" },
+      { href: "/detect", label: "Detect" },
+      { href: "/diff", label: "Diff" },
+      { href: "/marc", label: "MARC" },
+      { href: "/subtitles", label: "Subtitles" },
+    ],
+  },
+  {
+    label: "Library",
+    links: [
+      { href: "/maps", label: "Map catalogue" },
+      { href: "/ml", label: "Neural models" },
+      { href: "/scripts", label: "Scripts" },
+    ],
+  },
+  {
+    label: "Developers",
+    links: [
+      { href: "/api", label: "API playground" },
+      { href: "/api-docs", label: "API reference" },
+      { href: "/status", label: "Status" },
+    ],
+  },
+  {
+    label: "Project",
+    links: [
+      { href: "/use-cases", label: "Use cases" },
+      { href: "/authorities", label: "Authorities" },
+      { href: "/contributing", label: "Contributing" },
+      { href: "/docs", label: "Docs" },
+      { href: "/about", label: "About" },
+    ],
+  },
 ]
 
 const currentYear = new Date().getFullYear()
 const currentPath = Astro.url.pathname
+
+const isCurrent = (href: string) =>
+  currentPath === href || currentPath.startsWith(href + "/")
+
+const itemIsCurrent = (item: NavItem) =>
+  (item.href !== undefined && isCurrent(item.href)) ||
+  (item.children?.some((child) => isCurrent(child.href)) ?? false)
+
+const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
 ---
 
 <!doctype html>
@@ -56,6 +131,7 @@ const currentPath = Astro.url.pathname
     <meta property="og:image" content="/og-card.svg" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a href="/" class="brand" aria-label="Interscript home">
@@ -64,34 +140,102 @@ const currentPath = Astro.url.pathname
         </a>
         <nav class="site-nav" aria-label="Primary">
           <ul>
-            {navItems.map((item) => (
+            {navItems.map((item) =>
+              item.href ? (
+                <li>
+                  <a
+                    href={item.href}
+                    class:list={["nav-link", itemIsCurrent(item) && "is-active"]}
+                    aria-current={item.href === currentPath ? "page" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ) : (
+                <li class:list={["nav-item", itemIsCurrent(item) && "is-current"]}>
+                  <button
+                    type="button"
+                    class="nav-trigger"
+                    id={`nav-trigger-${slug(item.label)}`}
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    aria-controls={`nav-menu-${slug(item.label)}`}
+                  >
+                    {item.label}
+                    <svg class="nav-chevron" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
+                      <path d="M1 1L4.5 4.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </button>
+                  <div class="nav-menu" id={`nav-menu-${slug(item.label)}`}>
+                    {item.children?.map((child) => (
+                      <a
+                        href={child.href}
+                        class:list={["nav-menu-link", isCurrent(child.href) && "is-active"]}
+                        aria-current={child.href === currentPath ? "page" : undefined}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <a class="github-pill" href="https://github.com/interscript" rel="noreferrer">
+            GitHub ↗
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-drawer"
+          >
+            <span class="nav-toggle-box" aria-hidden="true">
+              <span class="nav-toggle-bar"></span>
+              <span class="nav-toggle-bar"></span>
+            </span>
+            <span class="visually-hidden">Menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="drawer-scrim" aria-hidden="true"></div>
+    <nav class="site-drawer" id="site-drawer" aria-label="Menu">
+      {drawerGroups.map((group) => (
+        <div class="drawer-group">
+          <h2 class="drawer-eyebrow">{group.label}</h2>
+          <ul>
+            {group.links.map((link) => (
               <li>
                 <a
-                  href={item.href}
-                  class:list={["nav-link", currentPath === item.href && "is-active"]}
-                  aria-current={currentPath === item.href ? "page" : undefined}
+                  href={link.href}
+                  class:list={["drawer-link", isCurrent(link.href) && "is-active"]}
+                  aria-current={link.href === currentPath ? "page" : undefined}
                 >
-                  {item.label}
+                  {link.label}
                 </a>
               </li>
             ))}
           </ul>
-        </nav>
-        <button
-          class="theme-toggle"
-          type="button"
-          aria-label="Toggle dark mode"
-          title="Toggle dark mode"
-        >
-          <span class="theme-toggle-icon" aria-hidden="true"></span>
-        </button>
-        <a class="github-pill" href="https://github.com/interscript" rel="noreferrer">
-          GitHub ↗
-        </a>
+        </div>
+      ))}
+      <div class="drawer-foot">
+        <a class="drawer-github" href="https://github.com/interscript" rel="noreferrer">GitHub ↗</a>
       </div>
-    </header>
+    </nav>
 
-    <main class="site-main">
+    <main class="site-main" id="main">
       <slot />
     </main>
 
@@ -127,7 +271,6 @@ const currentPath = Astro.url.pathname
               <li><a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer">TypeScript package</a></li>
               <li><a href="https://github.com/interscript/maps" rel="noreferrer">Map corpus</a></li>
               <li><a href="https://github.com/interscript/interscript-ruby" rel="noreferrer">Ruby source</a></li>
-              <li><a href="/ml">Neural models</a></li>
               <li><a href="https://www.secryst.org" rel="noreferrer">secryst crystals</a></li>
               <li><a href="https://github.com/interscript/interscript-ml" rel="noreferrer">interscript-ml contract</a></li>
             </ul>
@@ -137,7 +280,7 @@ const currentPath = Astro.url.pathname
             <ul>
               <li><a href="https://www.ribose.com" rel="noreferrer">Ribose Inc.</a></li>
               <li><a href="https://github.com/interscript" rel="noreferrer">GitHub org</a></li>
-              <li><a href="/security">Security policy</a></li>
+              <li><a href="https://github.com/interscript/interscript.org/blob/main/SECURITY.md" rel="noreferrer">Security policy</a></li>
               <li><a href="/about">About &amp; funding</a></li>
             </ul>
           </div>
@@ -145,23 +288,8 @@ const currentPath = Astro.url.pathname
       </div>
 
       <div class="container footer-base">
-        <div class="footer-partners">
-          <span class="footer-partner-label">In partnership with</span>
-          <a class="footer-partner" href="https://www.ribose.com" rel="noreferrer">
-            <strong>Ribose Inc.</strong>
-          </a>
-          <span class="footer-partner-divider" aria-hidden="true">·</span>
-          <a class="footer-partner" href="https://www.nga.mil/" rel="noreferrer">
-            <strong>U.S. National Geospatial-Intelligence Agency</strong>
-          </a>
-        </div>
         <p class="footer-legal">
-          © {currentYear} Ribose Inc. · BSD-2-Clause · Development supported in part by the
-          <a href="https://www.nga.mil/" rel="noreferrer">U.S. National Geospatial-Intelligence Agency</a>
-          under cooperative agreement NSG-2021-XXX.
-        </p>
-        <p class="footer-disclaimer">
-          Content does not necessarily reflect the position or policy of the U.S. Government.
+          © {currentYear} Ribose Inc. · BSD-2-Clause
         </p>
       </div>
     </footer>
@@ -180,6 +308,95 @@ const currentPath = Astro.url.pathname
       import "/src/scripts/theme-toggle.ts"
     </script>
 
+    <script>
+      const navToggle = document.querySelector<HTMLButtonElement>(".nav-toggle")
+      const drawer = document.getElementById("site-drawer")
+      const items = Array.from(document.querySelectorAll<HTMLElement>(".nav-item"))
+
+      function closeMenus(except?: HTMLElement) {
+        for (const item of items) {
+          if (item === except) continue
+          item.classList.remove("is-open")
+          item.querySelector(".nav-trigger")?.setAttribute("aria-expanded", "false")
+        }
+      }
+
+      for (const item of items) {
+        const trigger = item.querySelector<HTMLButtonElement>(".nav-trigger")
+        if (!trigger) continue
+        trigger.addEventListener("click", (e) => {
+          e.stopPropagation()
+          // A hover-opened menu consumes the first click as "pin open"
+          // instead of toggling straight back closed.
+          if (item.dataset.hover === "1") {
+            delete item.dataset.hover
+            return
+          }
+          const open = item.classList.toggle("is-open")
+          trigger.setAttribute("aria-expanded", String(open))
+          closeMenus(item)
+        })
+        item.addEventListener("mouseenter", () => {
+          if (!window.matchMedia("(hover: hover) and (min-width: 1024px)").matches) return
+          closeMenus(item)
+          item.classList.add("is-open")
+          item.dataset.hover = "1"
+          trigger.setAttribute("aria-expanded", "true")
+        })
+        item.addEventListener("mouseleave", () => {
+          delete item.dataset.hover
+          item.classList.remove("is-open")
+          trigger.setAttribute("aria-expanded", "false")
+        })
+      }
+
+      document.addEventListener("click", (e) => {
+        if (!(e.target instanceof Element)) return
+        if (!e.target.closest(".nav-item")) closeMenus()
+      })
+
+      function closeDrawer(returnFocus: boolean) {
+        document.body.classList.remove("nav-open")
+        navToggle?.setAttribute("aria-expanded", "false")
+        document.body.style.overflow = ""
+        if (returnFocus) navToggle?.focus()
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return
+        if (document.body.classList.contains("nav-open")) {
+          closeDrawer(true)
+          return
+        }
+        const open = document.querySelector<HTMLElement>(".nav-item.is-open")
+        if (open) {
+          open.classList.remove("is-open")
+          open.querySelector(".nav-trigger")?.setAttribute("aria-expanded", "false")
+          open.querySelector<HTMLButtonElement>(".nav-trigger")?.focus()
+        }
+      })
+
+      navToggle?.addEventListener("click", () => {
+        if (document.body.classList.contains("nav-open")) {
+          closeDrawer(true)
+          return
+        }
+        document.body.classList.add("nav-open")
+        navToggle.setAttribute("aria-expanded", "true")
+        document.body.style.overflow = "hidden"
+        drawer?.querySelector<HTMLElement>("a, button")?.focus()
+      })
+
+      document.querySelector(".drawer-scrim")?.addEventListener("click", () => closeDrawer(false))
+
+      window
+        .matchMedia("(min-width: 1024px)")
+        .addEventListener("change", (e) => {
+          if (e.matches && document.body.classList.contains("nav-open")) closeDrawer(false)
+          closeMenus()
+        })
+    </script>
+
     <script is:inline>
       // Register the service worker for offline-first access.
       // Skipped during SSR build (no window) and on insecure origins.
@@ -195,6 +412,32 @@ const currentPath = Astro.url.pathname
     </script>
 
     <style>
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        z-index: 100;
+        background: var(--color-ink);
+        color: var(--color-vellum);
+        font-family: var(--font-mono);
+        font-size: var(--text-micro);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.25rem;
+        text-decoration: none;
+      }
+      .skip-link:focus { left: 0; }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
       .site-header {
         position: sticky;
         top: 0;
@@ -216,6 +459,7 @@ const currentPath = Astro.url.pathname
         gap: 0.5rem;
         text-decoration: none;
         color: var(--color-ink);
+        flex-shrink: 0;
       }
       .brand-mark {
         display: inline-block;
@@ -225,7 +469,6 @@ const currentPath = Astro.url.pathname
         flex-shrink: 0;
         /* Slight tilt to evoke the parallelogram's bias */
         transform: skewY(-2deg);
-      }
       }
       .brand-name {
         font-family: var(--font-display);
@@ -238,9 +481,10 @@ const currentPath = Astro.url.pathname
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 1.75rem;
+        gap: 1.4rem;
       }
-      .nav-link {
+      .nav-link,
+      .nav-trigger {
         font-family: var(--font-sans);
         font-size: 0.9375rem;
         font-weight: 500;
@@ -250,15 +494,89 @@ const currentPath = Astro.url.pathname
         position: relative;
         transition: color 0.15s ease;
       }
-      .nav-link:hover { color: var(--color-highlight); }
+      .nav-trigger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .nav-chevron {
+        transition: transform 0.15s ease;
+        margin-top: 1px;
+      }
+      .nav-trigger[aria-expanded="true"] .nav-chevron {
+        transform: rotate(180deg);
+      }
+      .nav-link:hover,
+      .nav-trigger:hover {
+        color: var(--color-highlight);
+      }
+      .nav-link:focus-visible,
+      .nav-trigger:focus-visible {
+        outline: 2px solid var(--color-ochre);
+        outline-offset: 2px;
+      }
       .nav-link.is-active { color: var(--color-highlight); }
-      .nav-link.is-active::after {
+      .nav-link.is-active::after,
+      .nav-item.is-current > .nav-trigger::after {
         content: "";
         position: absolute;
         inset-inline: 0;
         bottom: -0.3rem;
         height: 2px;
         background: var(--color-highlight);
+      }
+      .nav-item.is-current > .nav-trigger { color: var(--color-highlight); }
+      .nav-item { position: relative; }
+      .nav-menu {
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        left: -0.9rem;
+        min-width: 13rem;
+        background: var(--color-vellum);
+        border: 1px solid var(--color-rule-strong);
+        border-radius: 2px;
+        padding: 0.5rem;
+        display: grid;
+        gap: 2px;
+        box-shadow: 0 12px 32px -12px color-mix(in srgb, var(--color-ink) 30%, transparent);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+        z-index: 60;
+      }
+      .nav-item.is-open > .nav-menu,
+      .nav-item:focus-within > .nav-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .nav-menu-link {
+        font-family: var(--font-sans);
+        font-size: 0.9375rem;
+        color: var(--color-ink);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1px;
+        transition: background 0.12s ease, color 0.12s ease;
+      }
+      .nav-menu-link:hover {
+        background: color-mix(in srgb, var(--color-ink) 5%, transparent);
+        color: var(--color-highlight);
+      }
+      .nav-menu-link:focus-visible {
+        outline: 2px solid var(--color-ochre);
+        outline-offset: -2px;
+      }
+      .nav-menu-link.is-active { color: var(--color-highlight); font-weight: 500; }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-shrink: 0;
       }
       .theme-toggle {
         background: transparent;
@@ -275,6 +593,10 @@ const currentPath = Astro.url.pathname
       }
       .theme-toggle:hover {
         border-color: var(--color-brand);
+      }
+      .theme-toggle:focus-visible {
+        outline: 2px solid var(--color-ochre);
+        outline-offset: 2px;
       }
       .theme-toggle-icon {
         display: inline-block;
@@ -308,6 +630,125 @@ const currentPath = Astro.url.pathname
         text-transform: uppercase;
       }
       .github-pill:hover {
+        background: var(--color-ink);
+        color: var(--color-vellum);
+      }
+      .github-pill:focus-visible,
+      .nav-toggle:focus-visible {
+        outline: 2px solid var(--color-ochre);
+        outline-offset: 2px;
+      }
+      .nav-toggle {
+        display: none;
+        background: transparent;
+        border: 1px solid var(--color-rule-strong);
+        width: 36px;
+        height: 32px;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 1px;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-toggle-box {
+        position: relative;
+        width: 16px;
+        height: 12px;
+        display: block;
+      }
+      .nav-toggle-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1.5px;
+        background: var(--color-ink);
+        transition: transform 0.2s ease, top 0.2s ease;
+      }
+      .nav-toggle-bar:nth-child(1) { top: 2px; }
+      .nav-toggle-bar:nth-child(2) { top: 8px; }
+      body.nav-open .nav-toggle-bar:nth-child(1) { top: 5px; transform: rotate(45deg); }
+      body.nav-open .nav-toggle-bar:nth-child(2) { top: 5px; transform: rotate(-45deg); }
+      .site-drawer {
+        position: fixed;
+        inset-block: 0;
+        right: 0;
+        width: min(22rem, 90vw);
+        background: var(--color-vellum);
+        border-left: 1px solid var(--color-rule-strong);
+        z-index: 70;
+        padding: 1.75rem 1.5rem 2rem;
+        overflow-y: auto;
+        display: grid;
+        gap: 1.75rem;
+        align-content: start;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.25s ease, visibility 0.25s;
+      }
+      body.nav-open .site-drawer {
+        transform: translateX(0);
+        visibility: visible;
+      }
+      .drawer-scrim {
+        position: fixed;
+        inset: 0;
+        background: color-mix(in srgb, var(--color-ink) 45%, transparent);
+        z-index: 60;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s;
+      }
+      body.nav-open .drawer-scrim {
+        opacity: 1;
+        visibility: visible;
+      }
+      .drawer-eyebrow {
+        font-family: var(--font-mono);
+        font-size: var(--text-micro);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--color-stone);
+        font-weight: 500;
+        margin: 0 0 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--color-rule);
+      }
+      .drawer-group ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+      }
+      .drawer-link {
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 1.0625rem;
+        color: var(--color-ink);
+        text-decoration: none;
+        padding: 0.5rem 0.25rem;
+      }
+      .drawer-link:hover { color: var(--color-highlight); }
+      .drawer-link:focus-visible {
+        outline: 2px solid var(--color-ochre);
+        outline-offset: 2px;
+      }
+      .drawer-link.is-active { color: var(--color-highlight); }
+      .drawer-foot {
+        border-top: 1px solid var(--color-rule);
+        padding-top: 1.25rem;
+      }
+      .drawer-github {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--color-ink);
+        text-decoration: none;
+        border: 1.5px solid var(--color-ink);
+        padding: 0.4rem 0.95rem;
+        display: inline-block;
+      }
+      .drawer-github:hover {
         background: var(--color-ink);
         color: var(--color-vellum);
       }
@@ -384,30 +825,18 @@ const currentPath = Astro.url.pathname
         color: var(--color-vellum);
         text-decoration: underline;
       }
-      .footer-partners {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.5rem 0.75rem;
-        font-family: var(--font-mono);
-        font-size: 0.6875rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: color-mix(in srgb, var(--color-vellum) 55%, transparent);
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid color-mix(in srgb, var(--color-vellum) 12%, transparent);
+      @media (max-width: 1023px) {
+        .site-nav { display: none; }
+        .nav-toggle { display: inline-flex; }
       }
-      .footer-partner-label { font-weight: 500; }
-      .footer-partner strong { color: var(--color-brand); font-weight: 500; }
-      .footer-partner-divider {
-        color: color-mix(in srgb, var(--color-vellum) 35%, transparent);
+      @media (min-width: 1024px) {
+        .site-drawer, .drawer-scrim { display: none; }
       }
-      .footer-disclaimer { font-style: italic; }
-      @media (max-width: 768px) {
-        .header-inner { flex-wrap: wrap; gap: 0.75rem 1rem; }
-        .site-nav { order: 3; width: 100%; overflow-x: auto; }
-        .site-nav ul { gap: 1.25rem; }
-        .github-pill { margin-left: auto; }
+      @media (prefers-reduced-motion: reduce) {
+        .nav-menu, .site-drawer, .drawer-scrim,
+        .nav-toggle-bar, .nav-chevron, .nav-menu-link {
+          transition: none;
+        }
       }
     </style>
   </body>

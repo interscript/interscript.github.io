@@ -20,8 +20,6 @@ import {
 } from "interscript-ts"
 import { mapStrategies } from "./map-strategies"
 
-/// <reference lib="webworker" />
-
 interface RpcRequest {
   readonly id: number
   readonly method: "configure" | "transliterate" | "loadMap" | "reset"
@@ -35,7 +33,17 @@ interface RpcResponse {
   readonly error?: string
 }
 
-const ctx = self as unknown as DedicatedWorkerGlobalScope
+// Minimal view of the worker global — the DOM lib tsconfig has no
+// DedicatedWorkerGlobalScope, and only these two members are used.
+interface WorkerContext {
+  addEventListener(
+    type: "message",
+    listener: (event: MessageEvent<RpcRequest>) => void,
+  ): void
+  postMessage(message: RpcResponse): void
+}
+
+const ctx = self as unknown as WorkerContext
 
 let configured = false
 
