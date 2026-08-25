@@ -48,24 +48,6 @@ async function run() {
   let count = 0
 
   try {
-    const out = inputText.value.replace(CUE_RE, async (_match, idx, time, dialogue: string) => {
-      // Strip HTML formatting tags before transliterating
-      const stripped = dialogue.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").trim()
-      // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
-      if (!/[^\x00-\x7F]/.test(stripped)) {
-        return `${idx ?? ""}${time}\n${dialogue}`.trim()
-      }
-      try {
-        const transliterated = await client!.transliterate(system.value, stripped)
-        count++
-        return `${idx ?? ""}${time}\n${transliterated}`
-      } catch {
-        return `${idx ?? ""}${time}\n${dialogue}`
-      }
-    })
-
-    // Because String.replace doesn't await async replacers, redo with
-    // sequential await.
     const cues: { idx: string; time: string; dialogue: string }[] = []
     let m: RegExpExecArray | null
     const re = new RegExp(CUE_RE.source, "g")
@@ -76,7 +58,6 @@ async function run() {
         dialogue: m[3]!,
       })
     }
-
     if (cues.length === 0) {
       output.value = inputText.value
       cueCount.value = 0
@@ -89,7 +70,7 @@ async function run() {
       const stripped = cue.dialogue.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").trim()
       // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
       if (!/[^\x00-\x7F]/.test(stripped)) {
-        outParts.push(`${cue.idx}${cue.time}\n${cue.dialogue}`.trim())
+        outParts.push(`${cue.idx}${cue.time}\n${stripped}`)
         continue
       }
       try {
@@ -97,12 +78,11 @@ async function run() {
         count++
         outParts.push(`${cue.idx}${cue.time}\n${transliterated}`)
       } catch {
-        outParts.push(`${cue.idx}${cue.time}\n${cue.dialogue}`)
+        outParts.push(`${cue.idx}${cue.time}\n${stripped}`)
       }
     }
     output.value = outParts.join("\n\n")
     cueCount.value = count
-    void out
   } catch (e) {
     error.value = (e as Error).message
   }
