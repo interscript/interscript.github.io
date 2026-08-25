@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-      - name: Clone interscript-ts (file: dependency)
+      - name: Clone interscript-ts (file dependency)
         run: |
           git clone --depth=1 --branch main https://github.com/interscript/interscript-ts.git ../interscript-ts
           cd ../interscript-ts && npm ci && npm run build
