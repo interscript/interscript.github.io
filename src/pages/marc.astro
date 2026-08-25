@@ -1,0 +1,128 @@
+---
+import Base from "../layouts/Base.astro"
+import MarcTool from "../components/MarcTool.vue"
+
+const systems = [
+  { code: "alalc-rus-Cyrl-Latn-2012", label: "ALA-LC Russian (2012)" },
+  { code: "alalc-ara-Arab-Latn-1997", label: "ALA-LC Arabic (1997)" },
+  { code: "alalc-hin-Deva-Latn-2011", label: "ALA-LC Hindi (2011)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic (2011)" },
+  { code: "alalc-ell-Grek-Latn-1997", label: "ALA-LC Greek (1997)" },
+  { code: "alalc-asm-Deva-Latn-2012", label: "ALA-LC Assamese (2012)" },
+  { code: "alalc-ben-Beng-Latn-1997", label: "ALA-LC Bengali (1997)" },
+]
+---
+
+<Base
+  title="MARC romanization tool — Interscript"
+  description="Paste text-mode MARC fields, get ALA-LC romanized 880 access points. Built for catalogers."
+>
+  <section class="marc-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">For catalogers</p>
+      <h1>MARC records, romanized.</h1>
+      <p class="hero-deck">
+        Paste text-mode MARC fields (MarcEdit-style). The tool detects
+        non-Latin subfield content and emits parallel <code>880</code> fields with ALA-LC romanizations. Runs in your browser; nothing
+        is uploaded.
+      </p>
+    </div>
+  </section>
+
+  <section class="container marc-main">
+    <MarcTool client:load systems={systems} />
+  </section>
+
+  <section class="section marc-info surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Reference</p>
+        <h2>Pairs source + romanization.</h2>
+      </header>
+
+      <div class="info-grid">
+        <article>
+          <h3>ALA-LC default</h3>
+          <p>
+            Most English-language cataloging in North America uses
+            ALA-LC romanization tables. The system picker offers the
+            ALA-LC tables Interscript ships for the most common
+            non-Latin scripts.
+          </p>
+        </article>
+        <article>
+          <h3>Parallel 880 fields</h3>
+          <p>
+            Per <a href="https://www.loc.gov/marc/bibliographic/bd880.html" rel="noreferrer">MARC 21 conventions</a>,
+            the 880 field carries the romanized form of a vernacular
+            field. The tool emits 880 next to the original line for
+            easy copy into your record.
+          </p>
+        </article>
+        <article>
+          <h3>Subfield-aware</h3>
+          <p>
+            The parser only romanizes subfield <em>content</em>,
+            leaving codes (<code>$a</code>, <code>$b</code>…) intact.
+            ASCII-only subfields pass through unchanged.
+          </p>
+        </article>
+        <article>
+          <h3>Local-only</h3>
+          <p>
+            Nothing is uploaded. Useful for sensitive acquisition
+            records in progress or restricted collections.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .marc-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .marc-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .marc-main {
+    margin-block: 2rem 5rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .info-grid article {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .info-grid h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem;
+  }
+  .info-grid p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .info-grid a {
+    color: var(--color-brand-deep);
+  }
+</style>

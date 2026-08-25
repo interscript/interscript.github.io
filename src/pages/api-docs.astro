@@ -1,0 +1,409 @@
+---
+import Base from "../layouts/Base.astro"
+---
+
+<Base
+  title="API Reference — Interscript"
+  description="Interactive OpenAPI reference for the Interscript REST API. Three endpoints, all open source, all CORS-enabled."
+>
+  <section class="docs-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">API reference</p>
+      <h1>Three endpoints. Real documentation.</h1>
+      <p class="hero-deck">
+        The Interscript REST API runs at <code>https://interscript.org/api</code>.
+        Open source, no auth, no rate limits (yet). Browse the OpenAPI 3.1
+        spec below or download it from <a href="/openapi.json">/openapi.json</a>.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="/openapi.json" download>↓ OpenAPI 3.1 JSON</a>
+        <a class="btn btn-ghost" href="https://www.postman.com/interscript-api/redirect" target="_blank" rel="noreferrer">Postman collection ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container docs-main">
+    <nav class="docs-toc">
+      <p class="toc-label">Endpoints</p>
+      <ul>
+        <li><a href="#post-transliterate">POST /transliterate</a></li>
+        <li><a href="#get-transliterate">GET /transliterate</a></li>
+        <li><a href="#get-systems">GET /systems</a></li>
+        <li><a href="#get-detect">GET /detect</a></li>
+      </ul>
+    </nav>
+
+    <article class="endpoint" id="post-transliterate">
+      <header class="endpoint-head">
+        <span class="method method-post">POST</span>
+        <code class="endpoint-path">/api/transliterate</code>
+      </header>
+      <p class="endpoint-deck">
+        Transliterate a single string. Use POST when the input is large,
+        contains newlines, or you prefer explicit request bodies.
+      </p>
+
+      <h3>Request body</h3>
+      <pre><code set:html={`{
+  "system": "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "input": "Антон",
+  "stage": "main"           // optional, defaults to "main"
+}`} /></pre>
+
+      <h3>Response — 200 OK</h3>
+      <pre><code set:html={`{
+  "system": "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "input": "Антон",
+  "output": "Anton",
+  "stage": "main",
+  "durationMs": 7
+}`} /></pre>
+
+      <h3>cURL</h3>
+      <pre><code set:html={`curl -X POST 'https://interscript.org/api/transliterate' \\
+  -H 'Content-Type: application/json' \\
+  -d '{"system":"bgnpcgn-ukr-Cyrl-Latn-2019","input":"Антон"}'`} /></pre>
+
+      <h3>JavaScript (browser / Node 18+)</h3>
+      <pre><code set:html={`const res = await fetch("https://interscript.org/api/transliterate", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    system: "bgnpcgn-ukr-Cyrl-Latn-2019",
+    input: "Антон",
+  }),
+})
+const { output } = await res.json()
+console.log(output) // → "Anton"`} /></pre>
+
+      <h3>Ruby</h3>
+      <pre><code set:html={`require "net/http"
+require "json"
+
+uri = URI("https://interscript.org/api/transliterate")
+res = Net::HTTP.post(
+  uri,
+  { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Антон" }.to_json,
+  "Content-Type" => "application/json",
+)
+puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
+    </article>
+
+    <article class="endpoint" id="get-transliterate">
+      <header class="endpoint-head">
+        <span class="method method-get">GET</span>
+        <code class="endpoint-path">/api/transliterate</code>
+      </header>
+      <p class="endpoint-deck">
+        Same operation, query-string form. Easier to test in a browser
+        or one-liner curl. Avoid for inputs containing newlines.
+      </p>
+
+      <h3>Query parameters</h3>
+      <table class="params-table">
+        <thead>
+          <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>system</code></td><td>yes</td><td>Interscript system code</td></tr>
+          <tr><td><code>input</code></td><td>yes</td><td>Source text (≤ 10,000 chars)</td></tr>
+          <tr><td><code>stage</code></td><td>no</td><td>Stage to execute (default <code>main</code>)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>cURL</h3>
+      <pre><code>curl -G 'https://interscript.org/api/transliterate' \\
+  --data-urlencode 'system=bgnpcgn-ukr-Cyrl-Latn-2019' \\
+  --data-urlencode 'input=Антон'</code></pre>
+    </article>
+
+    <article class="endpoint" id="get-systems">
+      <header class="endpoint-head">
+        <span class="method method-get">GET</span>
+        <code class="endpoint-path">/api/systems</code>
+      </header>
+      <p class="endpoint-deck">
+        List every transliteration system in the catalogue. Optional
+        filters by authority or script.
+      </p>
+
+      <h3>Query parameters</h3>
+      <table class="params-table">
+        <thead>
+          <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>authority</code></td><td>no</td><td>Authority slug (<code>bgnpcgn</code>, <code>iso</code>, …)</td></tr>
+          <tr><td><code>source_script</code></td><td>no</td><td>ISO 15924 source code (<code>Cyrl</code>, <code>Arab</code>, …)</td></tr>
+          <tr><td><code>destination_script</code></td><td>no</td><td>ISO 15924 destination code</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Example response (truncated)</h3>
+      <pre><code set:html={`{
+  "count": 287,
+  "systems": [
+    {
+      "code": "bgnpcgn-amh-Ethi-Latn-1967",
+      "authority": "bgnpcgn",
+      "source_script": "Ethi",
+      "destination_script": "Latn",
+      "name": "Romanization of Amharic (1967)",
+      "year": "1967"
+    },
+    …
+  ]
+}`} /></pre>
+    </article>
+
+    <article class="endpoint" id="get-detect">
+      <header class="endpoint-head">
+        <span class="method method-get">GET</span>
+        <code class="endpoint-path">/api/detect</code>
+      </header>
+      <p class="endpoint-deck">
+        Given a source-script input and an observed romanization, returns
+        the candidate systems in the relevant script family. Pair with
+        the <a href="/detect">detection playground</a> for full ranking.
+      </p>
+
+      <h3>Query parameters</h3>
+      <table class="params-table">
+        <thead>
+          <tr><th>Name</th><th>Required</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>input</code></td><td>yes</td><td>Source text</td></tr>
+          <tr><td><code>output</code></td><td>yes</td><td>Observed romanization</td></tr>
+          <tr><td><code>source_script</code></td><td>no</td><td>Narrow the candidate set</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <section class="schemas">
+      <h2 id="schemas">Schemas</h2>
+      <p class="deck">
+        Response shapes (subset shown — see <a href="/openapi.json">full spec</a> for components/schemas/*).
+      </p>
+
+      <h3>TransliterationResult</h3>
+      <pre><code set:html={`{
+  "type": "object",
+  "required": ["system", "input", "output", "stage", "durationMs"],
+  "properties": {
+    "system": { "type": "string" },
+    "input":  { "type": "string" },
+    "output": { "type": "string" },
+    "stage":  { "type": "string" },
+    "durationMs": { "type": "number" }
+  }
+}`} /></pre>
+    </section>
+
+    <section class="limits">
+      <h2 id="limits">Limits &amp; fairness</h2>
+      <ul>
+        <li><strong>Input size:</strong> 10,000 chars per request.</li>
+        <li><strong>Auth:</strong> none. CORS open to all origins.</li>
+        <li><strong>Rate limits:</strong> currently none. If abused, will add a per-IP cap with 429 responses and Retry-After headers.</li>
+        <li><strong>Uptime:</strong> best-effort. For production pipelines, run <code>interscript-ts</code> locally — same engine, same byte-for-byte output.</li>
+        <li><strong>Privacy:</strong> no logging of input content. Aggregate request counts only.</li>
+      </ul>
+    </section>
+  </section>
+</Base>
+
+<style>
+  .docs-hero {
+    padding-block: 4rem 2.5rem;
+    background: var(--color-ink);
+    color: var(--color-vellum);
+  }
+  .docs-hero h1 {
+    color: var(--color-vellum);
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: color-mix(in srgb, var(--color-vellum) 80%, transparent);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .hero-deck a {
+    color: var(--color-brand);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 0.625rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .hero-actions .btn {
+    border-color: color-mix(in srgb, var(--color-vellum) 30%, transparent);
+    color: var(--color-vellum);
+  }
+  .hero-actions .btn:hover {
+    background: var(--color-vellum);
+    color: var(--color-ink);
+    border-color: var(--color-vellum);
+  }
+
+  .docs-main {
+    margin-block: 3rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .docs-main {
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+    }
+  }
+  .docs-toc {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+  }
+  .docs-toc .toc-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 0 0 0.75rem;
+  }
+  .docs-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid var(--color-rule);
+  }
+  .docs-toc li {
+    padding: 0.3rem 0 0.3rem 0.875rem;
+    margin-left: -1px;
+  }
+  .docs-toc a {
+    color: var(--color-stone);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    display: block;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+    margin-left: -0.875rem;
+  }
+  .docs-toc a:hover {
+    color: var(--color-brand-deep);
+    border-left-color: var(--color-brand);
+  }
+
+  .endpoint {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .endpoint:last-of-type { border-bottom: none; }
+  .endpoint-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .method {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.55rem;
+    border-radius: 1px;
+    color: var(--color-vellum);
+  }
+  .method-get { background: var(--color-brand); }
+  .method-post { background: var(--color-highlight); }
+  .endpoint-path {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-ink);
+    background: transparent;
+    padding: 0;
+  }
+  .endpoint-deck {
+    font-size: 1rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0 0 1.25rem;
+    max-width: 48rem;
+  }
+  .endpoint h3 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 1.5rem 0 0.625rem;
+    font-weight: 500;
+  }
+  .endpoint pre {
+    margin: 0 0 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .params-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+  }
+  .params-table th,
+  .params-table td {
+    text-align: left;
+    padding: 0.5rem 0.625rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .params-table th {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    font-weight: 500;
+  }
+  .params-table td code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-brand-deep);
+    background: transparent;
+    padding: 0;
+  }
+
+  .schemas, .limits {
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--color-ink);
+  }
+  .schemas h2, .limits h2 {
+    font-size: var(--text-h1);
+    margin: 0 0 0.75rem;
+  }
+  .schemas h3 {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 1.25rem 0 0.625rem;
+    font-weight: 500;
+  }
+  .schemas .deck {
+    color: var(--color-stone);
+    margin: 0 0 0.5rem;
+  }
+  .limits ul {
+    padding-left: 1.25rem;
+    color: var(--color-stone);
+    line-height: 1.7;
+  }
+  .limits li { margin-bottom: 0.4rem; }
+  .limits strong { color: var(--color-ink); font-weight: 500; }
+</style>

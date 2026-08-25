@@ -1,0 +1,459 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────────
+   Interscript — design system built on the original brand mark.
+
+   The Interscript logo is a teal parallelogram (#008075) with white
+   "iS" letters, set on the bias. The whole system is derived from it:
+   brand teal as the primary accent, the parallelogram as a structural
+   motif, off-white as paper. This is the canonical Ribose/Interscript
+   brand identity — every surface inherits from it.
+
+   Type: Fraunces variable serif (characterful display) + Inter Tight
+   (body) + JetBrains Mono (data).
+   ────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Palette — anchored on the original brand teal #008075 */
+  --color-paper: #f6f3ec;
+  --color-paper-deep: #ece6d6;
+  --color-vellum: #fcfaf4;
+  --color-ink: #1a1d1f;
+  --color-ink-soft: #2a2f33;
+  /* Brand teal — the logo's signature color. Lives in every accent. */
+  --color-brand: #008075;
+  --color-brand-deep: #005f57;
+  --color-brand-pale: #cfe5e1;
+  /* Highlight/CTA — warm complement to brand teal */
+  --color-highlight: #b8462e;
+  --color-highlight-deep: #8a3322;
+  /* Stone grays for secondary text */
+  --color-stone: #5c5852;
+  --color-stone-light: #8c857b;
+  --color-rule: #d8d0bc;
+  --color-rule-strong: #b8ab8c;
+
+  /* Type */
+  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Type scale */
+  --text-display: clamp(3.25rem, 8vw, 6.5rem);
+  --text-hero: clamp(2.25rem, 5vw, 4rem);
+  --text-h1: clamp(1.875rem, 3.2vw, 2.75rem);
+  --text-h2: 1.625rem;
+  --text-h3: 1.25rem;
+  --text-lead: 1.1875rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-micro: 0.6875rem;
+
+  /* Spacing */
+  --spacing-section: 6rem;
+  --spacing-block: 2rem;
+
+  /* Lines */
+  --line-fine: 1px;
+  --line-bold: 2px;
+}
+
+/* Dark mode — follows system preference by default. Override via the
+   toggle in the header (sets data-theme on <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-paper: #13161a;
+    --color-paper-deep: #1c2128;
+    --color-vellum: #1a1d22;
+    --color-ink: #f0eadd;
+    --color-ink-soft: #d8d0bc;
+    --color-brand: #4ec5b8;
+    --color-brand-deep: #6fd6ca;
+    --color-brand-pale: #1f3531;
+    --color-highlight: #d96a4f;
+    --color-highlight-deep: #e88a72;
+    --color-stone: #a8a094;
+    --color-stone-light: #7c756a;
+    --color-rule: #2c323a;
+    --color-rule-strong: #3d454f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-paper: #13161a;
+  --color-paper-deep: #1c2128;
+  --color-vellum: #1a1d22;
+  --color-ink: #f0eadd;
+  --color-ink-soft: #d8d0bc;
+  --color-brand: #4ec5b8;
+  --color-brand-deep: #6fd6ca;
+  --color-brand-pale: #1f3531;
+  --color-highlight: #d96a4f;
+  --color-highlight-deep: #e88a72;
+  --color-stone: #a8a094;
+  --color-stone-light: #7c756a;
+  --color-rule: #2c323a;
+  --color-rule-strong: #3d454f;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-paper);
+  /* Subtle paper texture via radial gradients */
+  background-image:
+    radial-gradient(at 20% 5%, color-mix(in srgb, var(--color-paper-deep) 50%, transparent) 0px, transparent 60%),
+    radial-gradient(at 95% 90%, color-mix(in srgb, var(--color-paper-deep) 35%, transparent) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* ── Typography ─────────────────────────────────────────────────── */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--color-ink);
+}
+
+h1 {
+  font-variation-settings: "SOFT" 50, "WONK" 1;
+  letter-spacing: -0.035em;
+}
+
+p {
+  line-height: 1.65;
+}
+
+a {
+  color: var(--color-highlight);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+a:hover {
+  color: var(--color-highlight-deep);
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+  font-feature-settings: "cvt01";
+}
+
+code {
+  background: color-mix(in srgb, var(--color-brand) 10%, transparent);
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+  font-size: 0.9em;
+  color: var(--color-brand-deep);
+}
+
+pre {
+  background: var(--color-ink);
+  color: var(--color-vellum);
+  padding: 1.25rem 1.5rem;
+  border-radius: 2px;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  border: 1px solid color-mix(in srgb, var(--color-ink) 50%, var(--color-ink-soft));
+}
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* ── Accessibility ──────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: var(--color-highlight);
+  color: var(--color-vellum);
+}
+
+/* ── Layout utilities ───────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+.container-narrow {
+  max-width: 48rem;
+}
+.container-wide {
+  max-width: 88rem;
+}
+
+.section {
+  padding-block: var(--spacing-section);
+}
+.section-tight {
+  padding-block: 3rem;
+}
+
+.rule {
+  border: 0;
+  border-top: var(--line-fine) solid var(--color-rule);
+  margin: 0;
+}
+.rule-bold {
+  border: 0;
+  border-top: var(--line-bold) solid var(--color-ink);
+  margin: 0;
+}
+.rule-accent {
+  border: 0;
+  border-top: 2px solid var(--color-brand);
+  margin: 0;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.5px;
+  background: var(--color-brand);
+}
+
+.eyebrow-accent {
+  color: var(--color-brand-deep);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 1px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-vellum);
+  border-color: var(--color-ink);
+}
+.btn-primary:hover {
+  background: var(--color-brand-deep);
+  border-color: var(--color-brand-deep);
+  color: var(--color-vellum);
+}
+.btn-accent {
+  background: var(--color-highlight);
+  color: var(--color-vellum);
+  border-color: var(--color-highlight);
+}
+.btn-accent:hover {
+  background: var(--color-highlight-deep);
+  border-color: var(--color-highlight-deep);
+  color: var(--color-vellum);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.btn-ghost:hover {
+  background: var(--color-ink);
+  color: var(--color-vellum);
+}
+
+/* ── Cards ──────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--color-vellum);
+  border: 1px solid var(--color-rule);
+  padding: 1.75rem;
+  border-radius: 1px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.card:hover {
+  border-color: var(--color-rule-strong);
+}
+
+/* ── Surface variants ──────────────────────────────────────────── */
+
+.surface-ink {
+  background: var(--color-ink);
+  color: var(--color-vellum);
+}
+.surface-ink h1,
+.surface-ink h2,
+.surface-ink h3,
+.surface-ink h4 {
+  color: var(--color-vellum);
+}
+.surface-ink a {
+  color: var(--color-brand);
+}
+.surface-ink a:hover {
+  color: var(--color-vellum);
+}
+
+.surface-deep {
+  background: var(--color-paper-deep);
+}
+
+/* ── Article pages (about, blog, docs) ──────────────────────────── */
+
+.page-hero {
+  padding-block: 3.5rem 1.5rem;
+}
+.page-hero h1 {
+  font-size: var(--text-h1);
+  margin: 0.75rem 0 1rem;
+}
+.page-deck {
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  color: var(--color-stone);
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* Reading measure + rhythm for long-form content. Also applied to
+   injected AsciiDoc HTML via a plain class on the wrapper. */
+.prose {
+  max-width: 68ch;
+}
+.prose > section {
+  margin-block: 2.75rem;
+}
+.prose h2 {
+  font-size: var(--text-h2);
+  margin: 2.25rem 0 0.75rem;
+}
+.prose h3 {
+  font-size: var(--text-h3);
+  margin: 1.75rem 0 0.5rem;
+}
+.prose p {
+  margin: 0 0 1.125rem;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+}
+.prose li {
+  margin-bottom: 0.5rem;
+}
+.prose li::marker {
+  color: var(--color-brand);
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-brand);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-stone);
+  font-style: italic;
+}
+.prose pre {
+  margin: 0 0 1.25rem;
+}
+/* Ledger table — same pattern as the demo reference table */
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 0 0 1.5rem;
+}
+.prose th {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-stone);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--color-ink);
+  white-space: nowrap;
+}
+.prose td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-rule);
+  vertical-align: top;
+}
+
+/* ── Type specimens (used in hero mosaic) ───────────────────────── */
+
+.specimen-source,
+.specimen-target {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-variation-settings: "SOFT" 100, "WONK" 0;
+}
+.specimen-target {
+  color: var(--color-highlight);
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+
+/* Numerals tabular */
+.tnum {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}

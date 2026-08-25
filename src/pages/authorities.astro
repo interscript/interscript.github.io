@@ -1,0 +1,146 @@
+---
+import Base from "../layouts/Base.astro"
+import catalogue from "../data/maps-catalogue.json" with { type: "json" }
+
+// Derive real counts from the catalogue instead of hardcoding.
+const authorityCounts: Record<string, number> = {}
+for (const entry of Object.values(catalogue) as any[]) {
+  const a = entry.data.authority_id
+  authorityCounts[a] = (authorityCounts[a] ?? 0) + 1
+}
+
+const FULL_NAMES: Record<string, string> = {
+  bgnpcgn: "BGN/PCGN — Board on Geographic Names / Permanent Committee",
+  iso: "International Organization for Standardization",
+  un: "United Nations Group of Experts on Geographical Names (UNGEGN)",
+  alalc: "American Library Association – Library of Congress (ALA-LC)",
+  odni: "Office of the Director of National Intelligence",
+  icao: "International Civil Aviation Organization",
+  din: "Deutsches Institut für Normung",
+  mofa: "Ministry of Foreign Affairs (various)",
+  bgn: "U.S. Board on Geographic Names",
+  gost: "GOST (Russian Federal Agency)",
+  elot: "Hellenic Organization for Standardization",
+  lshk: "Linguistic Society of Hong Kong",
+  bas: "Bulgarian Academy of Sciences",
+  mext: "Ministry of Education, Culture, Sports, Science and Technology (Japan)",
+  sac: "State Administration of Cartography (China)",
+  sasm: "State Agency for Standardization and Metrology (Mongolia)",
+  stategeocadastre: "State Geo-Cadastre (Ukraine)",
+  ua: "Derzhheokadastr (Ukraine)",
+  by: "State Land and Cartography Committee (Belarus)",
+  hk: "Hong Kong Government",
+  kp: "Democratic People's Republic of Korea",
+  moct: "Ministry of Culture and Tourism (South Korea)",
+  mv: "Republic of Maldives",
+  mvd: "Ministry of Internal Affairs (Russia)",
+  ses: "Statistics and Election Service",
+  acadsin: "Academia Sinica",
+  apcbg: "Australian Place Names Board",
+  az: "Azerbaijani National Academy of Sciences",
+  bgna: "BGN/PCGN variant",
+  bis: "Bureau of Indian Standards",
+  dos: "U.S. Department of State",
+  ggg: "Geographical Survey Institute (Japan)",
+  gki: "State Cadastre of Georgia",
+  masm: "Mongolian Agency for Standardization and Metrology",
+  var: "Variation systems (research / experimental)",
+}
+
+const authorities = Object.entries(authorityCounts)
+  .map(([slug, count]) => ({
+    slug,
+    name: slug.toUpperCase(),
+    full: FULL_NAMES[slug] ?? slug,
+    systems: count,
+  }))
+  .sort((a, b) => b.systems - a.systems)
+
+const totalAuthorities = authorities.length
+const totalSystems = Object.values(authorityCounts).reduce((a, b) => a + b, 0)
+---
+
+<Base title="Authorities — Interscript" description={`${totalAuthorities} transliteration authorities with ${totalSystems} total systems.`}>
+  <section class="auth-hero">
+    <div class="container">
+      <p class="eyebrow">Authorities</p>
+      <h1>{totalAuthorities} authorities, {totalSystems} systems.</h1>
+      <p class="auth-deck">
+        Every transliteration system in Interscript traces back to a
+        published authority document. Click any authority to see all its
+        systems with test vectors.
+      </p>
+    </div>
+  </section>
+
+  <section class="container">
+    <table class="auth-table">
+      <thead>
+        <tr>
+          <th>Authority</th>
+          <th>Full name</th>
+          <th class="num">Systems</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {authorities.map((a) => (
+          <tr>
+            <td><strong>{a.name}</strong></td>
+            <td>{a.full}</td>
+            <td class="num">{a.systems}</td>
+            <td>
+              <a href={`/authorities/${a.slug}`}>View systems →</a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+</Base>
+
+<style>
+  .auth-hero {
+    padding-block: 4rem 2rem;
+  }
+  .auth-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 1rem;
+  }
+  .auth-deck {
+    max-width: 60ch;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+  }
+  .auth-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+  }
+  .auth-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .auth-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: top;
+  }
+  .auth-table td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+  .auth-table a {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+</style>

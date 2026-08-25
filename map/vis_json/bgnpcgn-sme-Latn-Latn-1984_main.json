@@ -1,0 +1,19 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ŋ</kbd><rt>014a</rt></ruby>",
+        "to": "<ruby><kbd>Ń</kbd><rt>0143</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ŋ</kbd><rt>014b</rt></ruby>",
+        "to": "<ruby><kbd>ń</kbd><rt>0144</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

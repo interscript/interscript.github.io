@@ -1,0 +1,77 @@
+---
+import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+export function getStaticPaths() {
+  return renderAsciiDocDir("src/content/blog").map((p) => ({
+    params: { slug: p.id },
+  }))
+}
+
+const slug = Astro.params.slug
+const all = renderAsciiDocDir("src/content/blog")
+const post = all.find((p) => p.id === slug)
+
+if (!post) {
+  return Astro.redirect("/404")
+}
+
+const { data, body } = post
+---
+
+<Base title={`${data.title} — Interscript Blog`} description={data.summary}>
+  <article class="post container container-narrow">
+    <header>
+      <a href="/blog" class="back">← All posts</a>
+      <h1>{data.title}</h1>
+      <p class="meta tnum">
+        <span class="date">{data.date}</span>
+        {data.author && <span class="author"> · by {data.author}</span>}
+      </p>
+    </header>
+
+    <div class="adoc-body prose" set:html={body} />
+
+    <footer>
+      <p>
+        Found a typo or want to improve this post? <a href={`https://github.com/interscript/interscript.github.io/edit/main/src/content/blog/${slug}.adoc`}>Edit on GitHub.</a>
+      </p>
+    </footer>
+  </article>
+</Base>
+
+<style>
+  .post {
+    padding-block: 3rem 4rem;
+  }
+  .back {
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
+    color: var(--color-stone);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .back:hover {
+    color: var(--color-highlight);
+  }
+  header h1 {
+    margin: 0.75rem 0 0.75rem;
+    font-size: var(--text-h1);
+  }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-stone-light);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-stone);
+  }
+</style>

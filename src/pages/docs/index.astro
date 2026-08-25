@@ -1,0 +1,153 @@
+---
+import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+const docs = renderAsciiDocDir("src/content/docs")
+---
+
+<Base title="Docs — Interscript" description="Documentation for the Interscript transliteration project.">
+  <div class="container">
+    <header class="page-hero">
+      <p class="eyebrow eyebrow-accent">Docs</p>
+      <h1>Documentation</h1>
+      <p class="page-deck">
+        Guides for integrating Interscript, writing maps, and running the
+        phonological layer.
+      </p>
+    </header>
+
+    <section class="quickstart">
+      <h2>Getting started</h2>
+      <p>
+        Interscript runs in Ruby, TypeScript, and Python. All consume the
+        same authority-backed maps. An optional <a href="/docs/phonological-layer">phonological layer</a> (secryst crystals + the interscript-ml contract) recovers vowels
+        and phonemes when a map needs vocalized input.
+      </p>
+      <div class="runtime-tiles">
+        <div class="tile card">
+          <h3>Ruby</h3>
+          <pre><code>gem install interscript
+interscript -s bgnpcgn-ukr-Cyrl-Latn-2019 &lt;&lt;&lt; "Антон"
+# => Anton</code></pre>
+          <a href="/docs/Integration_with_Ruby_Applications">Ruby guide →</a>
+        </div>
+        <div class="tile card">
+          <h3>TypeScript</h3>
+          <pre><code>npm install interscript-ts</code></pre>
+          <pre><code>import &#123; transliterate &#125; from "interscript-ts"
+transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
+// => "Anton"</code></pre>
+        </div>
+        <div class="tile card">
+          <h3>Phonological layer</h3>
+          <pre><code>gem install secryst
+# or: pip install secryst / npm i secryst</code></pre>
+          <a href="/docs/phonological-layer">How vocalization fits →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-list">
+      <h2>All docs</h2>
+      <ul>
+        {docs.map((d) => (
+          <li>
+            <a href={`/docs/${d.id}`}>
+              <span class="title">{d.data.title}</span>
+              {d.data.summary && <span class="summary">{d.data.summary}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="external prose">
+      <h2>Source</h2>
+      <p>
+        <a href="https://github.com/interscript/interscript">GitHub monorepo</a> tracks the project architecture and TODO list.
+      </p>
+      <p>
+        <a href="https://github.com/interscript/maps">Map corpus</a> holds the 300+ `.imp` files; each one is human-readable Ruby DSL.
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .container {
+    padding-bottom: 4rem;
+  }
+  .quickstart p {
+    max-width: 68ch;
+    line-height: 1.65;
+  }
+  .quickstart h2,
+  .docs-list h2,
+  .external h2 {
+    font-size: var(--text-h2);
+    margin: 2.5rem 0 1rem;
+  }
+  .runtime-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0 3rem;
+  }
+  .tile h3 {
+    font-size: var(--text-h3);
+    margin: 0 0 0.75rem;
+  }
+  .tile pre {
+    background: var(--color-paper-deep);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+    font-size: 0.8125rem;
+  }
+  .tile a {
+    font-size: var(--text-small);
+    color: var(--color-brand-deep);
+  }
+  .docs-list ul {
+    list-style: none;
+    padding: 0;
+    max-width: 68ch;
+  }
+  .docs-list li {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .docs-list li:first-child {
+    border-top: 2px solid var(--color-ink);
+  }
+  .docs-list a {
+    display: block;
+    padding: 1rem 0.25rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+  .docs-list a:hover .title {
+    color: var(--color-highlight);
+  }
+  .docs-list a:focus-visible {
+    outline-offset: -2px;
+  }
+  .docs-list .title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.1875rem;
+    letter-spacing: -0.01em;
+  }
+  .docs-list .summary {
+    display: block;
+    color: var(--color-stone);
+    font-size: var(--text-small);
+    line-height: 1.55;
+    margin-top: 0.25rem;
+  }
+  .external {
+    border-top: 1px solid var(--color-rule);
+    padding-top: 0.5rem;
+  }
+</style>

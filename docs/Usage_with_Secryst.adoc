@@ -1,35 +1,56 @@
 = Usage with Secryst
 
-Secryst is a seq2seq transformer suited for transliteration. Written in Ruby.
-It's installation is a bit tricky, you should consult its own installation guide
-(https://github.com/secryst/secryst[at GitHub]). By default we don't use Secryst,
-unless you have installed it.
+Secryst is the neural layer of Interscript: distilled, byte-level
+models for conversions that have no authority map — diacritization,
+grapheme-to-phoneme, homograph disambiguation. The models ship as
+checksummed IMF v1 artifacts resolved from the
+https://github.com/interscript/interscript-ml[interscript-ml] index;
+nothing is bundled in the library.
 
-== Using it standalone
-
-It's enough to install it. Be sure to consult the guide above.
-
-== Integration with Ruby Applications
-
-In your Gemfile, add:
+== Install
 
 [source,ruby]
 ----
-source "https://rubygems.org"
-
-gem "secryst"
+gem install secryst      # Ruby
 ----
 
-Create a Secrystfile near your Gemfile with the following, for each model you
-want to use in your application. Please consult our Secrystfile to get all the
-maps needed to get all the Secryst maps needed.
+[source,sh]
+----
+pip install secryst      # Python
+npm install secryst      # TypeScript / JavaScript
+----
+
+== Loading a model
+
+Models resolve by id against the public index, download once into a
+content-addressed cache, and verify every member checksum on load:
 
 [source,ruby]
 ----
-model "model-name"
+require "secryst"
+
+model = Secryst::Model.load("tha-g2p-small-1.0")
+model.translate("สวัสดี")
+# => "sa˨˩.wat̚˨˩.diː˧"
 ----
+
+== Catalog
+
+The catalogue of released models — with the measured metric next to
+each teacher's, per the published protocol — lives at
+https://interscript.org/ml[/ml] and in the
+https://github.com/interscript/interscript-ml/blob/main/docs/RESULTS.md[results log].
+
+== Deployment overrides
+
+Both overrides are read at call time in all three runtimes:
+
+* `SECRYST_INDEX` — a models.yaml URL or path (mirror or pin)
+* `SECRYST_CACHE` — cache directory (default `~/.cache/secryst`)
 
 == Usage inside maps
+
+Neural conversion composes with deterministic stages:
 
 [source,ruby]
 ----
@@ -39,5 +60,3 @@ stage {
   # ... sub "c", "d" ...
 }
 ----
-
-As of now, Secryst is usable only by the Ruby implementation.

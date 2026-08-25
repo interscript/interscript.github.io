@@ -1,0 +1,227 @@
+---
+import Base from "../layouts/Base.astro"
+---
+
+<Base
+  title="Contributing — Interscript"
+  description="How to add a new transliteration map to Interscript. Bring your favorite authority's romanization system to the open-source corpus."
+>
+  <section class="contrib-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">Contributing</p>
+      <h1>Add a transliteration system.</h1>
+      <p class="hero-deck">
+        Interscript grows when contributors encode romanization systems from authority documents
+        into the open-source corpus. This page walks through the process — it's more straightforward
+        than it looks.
+      </p>
+    </div>
+  </section>
+
+  <section class="container contrib-main">
+    <article class="step">
+      <header>
+        <span class="step-num tnum">01</span>
+        <h2>Find a system to add</h2>
+      </header>
+      <p>
+        Browse the <a href="/maps">catalogue</a> to see what's already covered. Then check the <a
+          href="https://github.com/interscript/maps/issues"
+          rel="noreferrer">issue tracker</a
+        > for requested systems. If the system you want isn't listed anywhere, open a new issue describing
+        the authority document so maintainers can confirm scope.
+      </p>
+    </article>
+
+    <article class="step">
+      <header>
+        <span class="step-num tnum">02</span>
+        <h2>Read the authority document</h2>
+      </header>
+      <p>
+        Most authority romanization tables are published as PDFs. Read carefully — the rules include
+        edge cases (word-initial vs word-medial, before/after context, special characters). Note
+        every rule with its source page number; you'll cite it in the map metadata.
+      </p>
+      <p>
+        If the authority document isn't freely available, look for secondary sources (Wikipedia,
+        library science journals) that describe the rules. Cite the secondary source in those cases.
+      </p>
+    </article>
+
+    <article class="step">
+      <header>
+        <span class="step-num tnum">03</span>
+        <h2>Write the map in ISC</h2>
+      </header>
+      <p>
+        Maps live in <a href="https://github.com/interscript/maps" rel="noreferrer"
+          >github.com/interscript/maps</a
+        >, named <code>{"{authority}-{lang}-{source_script}-{dest_script}-{year}.isc"}</code> (e.g. <code
+          >bgnpcgn-ukr-Cyrl-Latn-2019.isc</code
+        >).
+      </p>
+      <pre><code set:html={`# bgnpcgn-ukr-Cyrl-Latn-2019.isc
+system "BGN-PCGN:ukr-Cyrl:Latn:2019" {
+
+metadata {
+  authority_id bgnpcgn
+  id 2019
+  language iso-639-2:ukr
+  source_script Cyrl
+  destination_script Latn
+  name Romanization of Ukrainian (2019 Agreement)
+  url https://assets.publishing.service.gov.uk/...
+}
+
+tests {
+  "Алушта" -> "Alushta"
+  "Борщагівка" -> "Borshchahivka"
+}
+
+stage main {
+  run map.cyrllatn.stage.main
+  parallel {
+    sub "'" ""
+  }
+}
+}`} /></pre>
+      <p>
+        The format has more options (capture groups, before/after constraints, run rules that
+        compose stages) — the corpus itself is the reference; see <a
+          href="https://github.com/interscript/maps/blob/main/maps/bgnpcgn-ukr-Cyrl-Latn-2019.isc"
+          rel="noreferrer">bgnpcgn-ukr-Cyrl-Latn-2019.isc</a
+        > for a fully-worked map.
+      </p>
+    </article>
+
+    <article class="step">
+      <header>
+        <span class="step-num tnum">04</span>
+        <h2>Add test vectors</h2>
+      </header>
+      <p>
+        Every map ships with <code>test</code> directives — input → expected output pairs pulled from
+        the authority document or real-world examples. These run against every engine — the Ruby interpreter
+        and the TypeScript ISC runtime. Failures block merge.
+      </p>
+      <p>
+        Aim for at least 10 test vectors covering common cases, diacritics, edge cases, and (where
+        applicable) word-boundary behavior. Cite source pages in code comments.
+      </p>
+    </article>
+
+    <article class="step">
+      <header>
+        <span class="step-num tnum">05</span>
+        <h2>Open a pull request</h2>
+      </header>
+      <p>
+        Fork <code>interscript/maps</code>, push your branch, open a PR. The CI pipeline runs the
+        test suite against every engine and re-checks the parity suite. Maintainers review the map
+        against the source document; if rules are missing or wrong, they'll point out specific page
+        numbers.
+      </p>
+      <p>Once merged, the new system is automatically:</p>
+      <ul>
+        <li>Available in the Ruby gem (next release)</li>
+        <li>Available in <code>interscript-ts</code> via the ISC runtime</li>
+        <li>Live on <a href="/">interscript.org</a> (next site build)</li>
+        <li>Available through the <a href="/api-docs">REST API</a></li>
+      </ul>
+    </article>
+
+    <section class="contrib-cta">
+      <h2>Need help?</h2>
+      <p>
+        Open a <a href="https://github.com/interscript/maps/issues" rel="noreferrer">GitHub issue</a
+        > with the authority document and what you've tried. The community is friendly and the maintainers
+        are responsive.
+      </p>
+    </section>
+  </section>
+</Base>
+
+<style>
+  .contrib-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .contrib-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .contrib-main {
+    margin-block: 2rem 6rem;
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  .step {
+    display: grid;
+    gap: 0.875rem;
+  }
+  .step header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 2px solid var(--color-ink);
+    padding-bottom: 0.625rem;
+  }
+  .step h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-brand-deep);
+    letter-spacing: 0.05em;
+  }
+  .step p {
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 48rem;
+  }
+  .step a {
+    color: var(--color-brand-deep);
+  }
+  .step pre {
+    margin: 0;
+    font-size: 0.78rem;
+  }
+  .step ul {
+    color: var(--color-stone);
+    line-height: 1.7;
+    max-width: 48rem;
+  }
+  .step code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+  }
+
+  .contrib-cta {
+    background: var(--color-ink);
+    color: var(--color-vellum);
+    padding: 2rem;
+  }
+  .contrib-cta h2 {
+    color: var(--color-vellum);
+    margin: 0 0 0.75rem;
+  }
+  .contrib-cta p {
+    color: color-mix(in srgb, var(--color-vellum) 80%, transparent);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .contrib-cta a {
+    color: var(--color-brand);
+  }
+</style>

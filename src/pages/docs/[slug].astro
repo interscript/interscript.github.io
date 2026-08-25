@@ -1,0 +1,142 @@
+---
+import Base from "../../layouts/Base.astro"
+import { renderAsciiDocDir } from "../../content/loaders/asciidoc"
+
+export function getStaticPaths() {
+  return renderAsciiDocDir("src/content/docs").map((d) => ({
+    params: { slug: d.id },
+  }))
+}
+
+const slug = Astro.params.slug
+const all = renderAsciiDocDir("src/content/docs")
+const doc = all.find((d) => d.id === slug)
+
+if (!doc) {
+  return Astro.redirect("/404")
+}
+
+const { data, body } = doc
+
+// Pretty-print title for the page <title>
+const pageTitle = `${data.title} — Interscript Docs`
+---
+
+<Base title={pageTitle} description={data.summary}>
+  <div class="container layout">
+    <aside class="sidebar">
+      <p class="sidebar-label">Docs</p>
+      <ul>
+        {all.map((d) => (
+          <li>
+            <a
+              href={`/docs/${d.id}`}
+              class:list={[d.id === slug && "active"]}
+            >{d.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+
+    <article class="doc">
+      <a href="/docs" class="back">← All docs</a>
+      <h1>{data.title}</h1>
+      {data.author && <p class="meta">by {data.author}</p>}
+
+      <div class="adoc-body prose" set:html={body} />
+
+      <footer>
+        <p>
+          <a href={`https://github.com/interscript/interscript.github.io/edit/main/src/content/docs/${slug}.adoc`}>
+            Edit this doc on GitHub →
+          </a>
+        </p>
+      </footer>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 3rem;
+    padding-block: 3rem 4rem;
+  }
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .sidebar {
+      order: 2;
+      border-right: none;
+      border-top: 1px solid var(--color-rule);
+      padding: 1.5rem 0 0;
+    }
+  }
+  .sidebar {
+    border-right: 1px solid var(--color-rule);
+    padding-right: 1.5rem;
+  }
+  .sidebar-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin: 0 0 0.75rem;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    position: sticky;
+    top: 5rem;
+  }
+  .sidebar li {
+    padding: 0.25rem 0;
+  }
+  .sidebar a {
+    font-size: var(--text-small);
+    color: var(--color-stone);
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
+  }
+  .sidebar a:hover,
+  .sidebar a.active {
+    color: var(--color-highlight);
+  }
+  .doc {
+    max-width: 44rem;
+    min-width: 0;
+  }
+  .back {
+    font-family: var(--font-mono);
+    font-size: var(--text-small);
+    color: var(--color-stone);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .back:hover {
+    color: var(--color-highlight);
+  }
+  .doc h1 {
+    margin: 0.75rem 0 1rem;
+    font-size: var(--text-h1);
+  }
+  .meta {
+    color: var(--color-stone);
+    font-style: italic;
+    margin: 0 0 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-stone);
+  }
+</style>

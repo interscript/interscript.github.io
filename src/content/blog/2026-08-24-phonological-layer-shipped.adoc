@@ -1,0 +1,133 @@
+= The phonological layer: ten models, three wrong turns, and one correction
+Ronald Tse
+v1.0, 2026-08-24
+:doctype: book
+:docinfo:
+
+== Introduction
+
+Interscript has always been about deterministic transliteration: 289
+authority-backed systems, one map format, byte-identical output from
+every runtime. But some conversions have no committee. Restoring the
+haraqat a scribe left out. Turning unwritten Thai into phonemes.
+Reading Urdu aloud. Those are learned — and for two years they lived
+in a research branch, promising and unshipped.
+
+This August we shipped the phonological layer: ten neural models under
+the same discipline as the maps — one artifact format, checksums
+verified on every load, identical output from Ruby, Python, and
+TypeScript, and a measured number next to every claim. This post is
+the story of what shipped, what didn't, and the two weeks of debugging
+that taught us our own decode was lying to us.
+
+== What shipped
+
+The catalog now spans four languages and two tiers:
+
+[cols="1,1,3,1"]
+|===
+|Model |Task |Measured |Artifact
+
+|khm-latn-1.0 |transliteration |CER 27.42 |fp32, 1.3 GiB
+|urd-g2p-1.0 |grapheme→phoneme |CER 14.77 |fp32, 1.3 GiB
+|urd-diac-1.0 |diacritization |CER 3.74 |fp32, 1.3 GiB
+|heb-diac-1.0 |diacritization |DER 29.0 greedy / 17.5 beam-4 |fp32, parts
+|tha-g2p-base-1.0 |grapheme→phoneme |PER 9.19 (teacher 4.43) |fp32, parts
+|fas-g2p-1.0 |grapheme→phoneme |CER ≈1.6 — above published SOTA on SentenceBench |fp32, parts
+|tha-g2p-small-1.0 |grapheme→phoneme |PER 2.85 greedy |int8, 246 MiB
+|tha-g2p-small-1.0-int4 |same student, 4-bit |byte-identical decode |int4, 193 MiB
+|heb-diac-small-1.0 |diacritization |DER 30.37 (teacher 24.79) |fp32, 1.3 GiB
+|===
+
+Every student was distilled from a frozen, independently evaluated
+teacher, gated at a pre-agreed error budget before release. Every
+artifact is a zip — metadata, ONNX graphs, per-member SHA-256 — that
+any runtime can verify and serve. Models above GitHub's 2 GiB asset
+cap ship as checksummed parts the runtimes reassemble transparently.
+
+== Wrong turn 1: the 30 MB tier that wouldn't exist
+
+The obvious request: make the client models *small*. We tried
+everything. Custom 33M and 70M byte-level students from scratch.
+Microkimi-style linear bridges that map teacher activations into the
+student's geometry. Depth-pruning ByT5. The bridges helped structure
+(75.8 → 71.1 PER on Thai) but nothing rescued accuracy: a randomly
+initialized sub-100M byte model simply cannot generalize, and ByT5's
+smallest pretrained rung (300M) has no useful prune below it — its
+quality lives in its width.
+
+We re-tested the hypothesis on Arabic with clean labels and a
+pretrained backbone at the small rung: the from-scratch 33M student
+fits its training data perfectly and then emits nothing at inference —
+an immediate end-of-sequence, scoring the bare-text error constant.
+The conclusion, now measured in two task families: **a pretrained
+backbone is non-negotiable.** The client tier ships at ByT5-small,
+quantized — 246 MiB at int8, 193 MiB at int4, with the 4-bit drop
+costing 0.17 points of character error and a parity gate to prove it.
+
+== Wrong turn 2: the bug that looked like infrastructure
+
+For two days, every Arabic training run reported its labels file
+"torn" — two to six valid pairs surviving out of eleven thousand, on a
+file that read perfectly from a laptop. We blamed volume replication,
+wrote retry loops, shipped labels inside container images. All of it
+was misdirection for three stacked bugs, each masking the next:
+
+. `str.splitlines()` is not a line split — it fragments on code points
+that legitimately appear inside Arabic text, shredding healthy files
+mid-line.
+. The platform's file-transfer layers re-encode non-ASCII text from
+this workstation — our labels were double-encoded in transit, and the
+"corruption on the volume" was corruption at the door.
+. A hardcoded 384-byte label filter silently discarded nearly every
+Arabic label, because Arabic trains on 1,450-byte windows.
+
+The lesson generalizes: when a file "reads corrupt" remotely and clean
+locally, suspect the parser and the transport before the storage. Our
+labels now travel as gzip+base64 — pure ASCII, immune to every
+encoding layer — and are split on plain newlines.
+
+== The correction: our decode was lying
+
+The deepest problem was the one we trusted most. Evaluation harnesses
+inherited beam-4 decoding from teacher-side convention; the runtimes
+ship greedy. When we finally ported beam search into the runtimes and
+measured both decodes on the *shipped artifact*, through the exact
+ONNX path users get, the numbers disagreed absurdly: the published
+12.06% PER was really **2.85%** — a 4× error — with nearly identical
+exact-match.
+
+The cause is statistical, not mechanical. Distilled byte-level
+students have flat per-token distributions — the top prediction is
+barely above uniform. Greedy rides those tiny margins consistently.
+Beam search with length normalization systematically prefers *long*
+outputs on flat distributions; with raw scores, *short* ones. Either
+way, every sentence the model didn't get exactly right is mangled, and
+edit distance explodes while exact-match barely moves.
+
+So: greedy is the runtime protocol, greedy is what we publish, and the
+beam-4 figures stand only as measurements under that decode. The
+correction rippled through the whole provenance chain — results log,
+model metadata, the index — because a number you can't trace to a
+protocol is a number you can't trust.
+
+== The discipline
+
+Everything above survives because of one contract: no number ships
+without a harness, and no harness without a public protocol. Teachers
+are frozen before distillation and never LLM-generated — language
+models hallucinate haraqat, and a poisoned teacher poisons every
+student. Students are gated against their teacher on the same test
+set. Release artifacts carry their own provenance, and the index
+refuses entries whose metrics don't trace to the results log.
+
+The two-layer stack is now complete: 289 deterministic maps for the
+conversions authorities have published, and a measured neural layer
+for the ones they haven't. Same discipline, same checksums, same bytes
+out of every runtime.
+
+Try it: `pip install secryst` —
+`Secryst::Model.load("tha-g2p-small-1.0")` in Ruby, `Model.load` in
+Python, the same in TypeScript. The catalog lives at
+https://github.com/interscript/interscript-ml[interscript-ml]; the
+measured story behind every number lives in its results log.

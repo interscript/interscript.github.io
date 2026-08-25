@@ -1,0 +1,22 @@
+[
+  {
+    "type": "Run",
+    "doc": "var-kor-Kore-Hang-2013",
+    "stage": "main",
+    "more": ""
+  },
+  {
+    "type": "Run",
+    "doc": "var-kor-Hang-Latn-mr-1939",
+    "stage": "main",
+    "more": ""
+  },
+  {
+    "type": "Compose",
+    "more": ""
+  },
+  {
+    "type": "Title case",
+    "more": ""
+  }
+]

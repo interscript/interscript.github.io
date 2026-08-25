@@ -1,0 +1,463 @@
+[
+  {
+    "type": "Parallel",
+    "children": [
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴀ</kbd><rt>10a0</rt></ruby>",
+        "to": "<ruby><kbd>A</kbd><rt>0041</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴁ</kbd><rt>10a1</rt></ruby>",
+        "to": "<ruby><kbd>B</kbd><rt>0042</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴂ</kbd><rt>10a2</rt></ruby>",
+        "to": "<ruby><kbd>G</kbd><rt>0047</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴃ</kbd><rt>10a3</rt></ruby>",
+        "to": "<ruby><kbd>D</kbd><rt>0044</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴄ</kbd><rt>10a4</rt></ruby>",
+        "to": "<ruby><kbd>E</kbd><rt>0045</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴅ</kbd><rt>10a5</rt></ruby>",
+        "to": "<ruby><kbd>V</kbd><rt>0056</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴆ</kbd><rt>10a6</rt></ruby>",
+        "to": "<ruby><kbd>Z</kbd><rt>005a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴇ</kbd><rt>10a7</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴈ</kbd><rt>10a8</rt></ruby>",
+        "to": "<ruby><kbd>I</kbd><rt>0049</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴉ</kbd><rt>10a9</rt></ruby>",
+        "to": "<ruby><kbd>K</kbd><rt>004b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴊ</kbd><rt>10aa</rt></ruby>",
+        "to": "<ruby><kbd>L</kbd><rt>004c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴋ</kbd><rt>10ab</rt></ruby>",
+        "to": "<ruby><kbd>M</kbd><rt>004d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴌ</kbd><rt>10ac</rt></ruby>",
+        "to": "<ruby><kbd>N</kbd><rt>004e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴍ</kbd><rt>10ad</rt></ruby>",
+        "to": "<ruby><kbd>O</kbd><rt>004f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴎ</kbd><rt>10ae</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴏ</kbd><rt>10af</rt></ruby>",
+        "to": "<ruby><kbd>Ž</kbd><rt>017d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴐ</kbd><rt>10b0</rt></ruby>",
+        "to": "<ruby><kbd>R</kbd><rt>0052</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴑ</kbd><rt>10b1</rt></ruby>",
+        "to": "<ruby><kbd>S</kbd><rt>0053</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴒ</kbd><rt>10b2</rt></ruby>",
+        "to": "<ruby><kbd>T</kbd><rt>0054</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴓ</kbd><rt>10b3</rt></ruby>",
+        "to": "<ruby><kbd>U</kbd><rt>0055</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴔ</kbd><rt>10b4</rt></ruby>",
+        "to": "<ruby><kbd>P</kbd><rt>0050</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴕ</kbd><rt>10b5</rt></ruby>",
+        "to": "<ruby><kbd>K</kbd><rt>004b</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴖ</kbd><rt>10b6</rt></ruby>",
+        "to": "<ruby><kbd>Ġ</kbd><rt>0120</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴗ</kbd><rt>10b7</rt></ruby>",
+        "to": "<ruby><kbd>Q</kbd><rt>0051</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴘ</kbd><rt>10b8</rt></ruby>",
+        "to": "<ruby><kbd>Š</kbd><rt>0160</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴙ</kbd><rt>10b9</rt></ruby>",
+        "to": "<ruby><kbd>Č</kbd><rt>010c</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴚ</kbd><rt>10ba</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴛ</kbd><rt>10bb</rt></ruby>",
+        "to": "<ruby><kbd>Ż</kbd><rt>017b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴜ</kbd><rt>10bc</rt></ruby>",
+        "to": "<ruby><kbd>C</kbd><rt>0043</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴝ</kbd><rt>10bd</rt></ruby>",
+        "to": "<ruby><kbd>Č</kbd><rt>010c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴞ</kbd><rt>10be</rt></ruby>",
+        "to": "<ruby><kbd>X</kbd><rt>0058</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴟ</kbd><rt>10bf</rt></ruby>",
+        "to": "<ruby><kbd>J</kbd><rt>004a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴠ</kbd><rt>10c0</rt></ruby>",
+        "to": "<ruby><kbd>H</kbd><rt>0048</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴡ</kbd><rt>10c1</rt></ruby>",
+        "to": "<ruby><kbd>Ē</kbd><rt>0112</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴢ</kbd><rt>10c2</rt></ruby>",
+        "to": "<ruby><kbd>Y</kbd><rt>0059</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴣ</kbd><rt>10c3</rt></ruby>",
+        "to": "<ruby><kbd>W</kbd><rt>0057</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴤ</kbd><rt>10c4</rt></ruby>",
+        "to": "<ruby><kbd>X</kbd><rt>0058</rt></ruby><ruby><kbd>̣</kbd><rt>0323</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>Ⴥ</kbd><rt>10c5</rt></ruby>",
+        "to": "<ruby><kbd>Ō</kbd><rt>014c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴀ</kbd><rt>2d00</rt></ruby>",
+        "to": "<ruby><kbd>a</kbd><rt>0061</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴁ</kbd><rt>2d01</rt></ruby>",
+        "to": "<ruby><kbd>b</kbd><rt>0062</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴂ</kbd><rt>2d02</rt></ruby>",
+        "to": "<ruby><kbd>g</kbd><rt>0067</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴃ</kbd><rt>2d03</rt></ruby>",
+        "to": "<ruby><kbd>d</kbd><rt>0064</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴄ</kbd><rt>2d04</rt></ruby>",
+        "to": "<ruby><kbd>e</kbd><rt>0065</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴅ</kbd><rt>2d05</rt></ruby>",
+        "to": "<ruby><kbd>v</kbd><rt>0076</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴆ</kbd><rt>2d06</rt></ruby>",
+        "to": "<ruby><kbd>z</kbd><rt>007a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴇ</kbd><rt>2d07</rt></ruby>",
+        "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴈ</kbd><rt>2d08</rt></ruby>",
+        "to": "<ruby><kbd>i</kbd><rt>0069</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴉ</kbd><rt>2d09</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴊ</kbd><rt>2d0a</rt></ruby>",
+        "to": "<ruby><kbd>l</kbd><rt>006c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴋ</kbd><rt>2d0b</rt></ruby>",
+        "to": "<ruby><kbd>m</kbd><rt>006d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴌ</kbd><rt>2d0c</rt></ruby>",
+        "to": "<ruby><kbd>n</kbd><rt>006e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴍ</kbd><rt>2d0d</rt></ruby>",
+        "to": "<ruby><kbd>o</kbd><rt>006f</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴎ</kbd><rt>2d0e</rt></ruby>",
+        "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴏ</kbd><rt>2d0f</rt></ruby>",
+        "to": "<ruby><kbd>ž</kbd><rt>017e</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴐ</kbd><rt>2d10</rt></ruby>",
+        "to": "<ruby><kbd>r</kbd><rt>0072</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴑ</kbd><rt>2d11</rt></ruby>",
+        "to": "<ruby><kbd>s</kbd><rt>0073</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴒ</kbd><rt>2d12</rt></ruby>",
+        "to": "<ruby><kbd>t</kbd><rt>0074</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴓ</kbd><rt>2d13</rt></ruby>",
+        "to": "<ruby><kbd>u</kbd><rt>0075</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴔ</kbd><rt>2d14</rt></ruby>",
+        "to": "<ruby><kbd>p</kbd><rt>0070</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴕ</kbd><rt>2d15</rt></ruby>",
+        "to": "<ruby><kbd>k</kbd><rt>006b</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴖ</kbd><rt>2d16</rt></ruby>",
+        "to": "<ruby><kbd>ġ</kbd><rt>0121</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴗ</kbd><rt>2d17</rt></ruby>",
+        "to": "<ruby><kbd>q</kbd><rt>0071</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴘ</kbd><rt>2d18</rt></ruby>",
+        "to": "<ruby><kbd>š</kbd><rt>0161</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴙ</kbd><rt>2d19</rt></ruby>",
+        "to": "<ruby><kbd>č</kbd><rt>010d</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴚ</kbd><rt>2d1a</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby><ruby><kbd>ʻ</kbd><rt>02bb</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴛ</kbd><rt>2d1b</rt></ruby>",
+        "to": "<ruby><kbd>ż</kbd><rt>017c</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴜ</kbd><rt>2d1c</rt></ruby>",
+        "to": "<ruby><kbd>c</kbd><rt>0063</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴝ</kbd><rt>2d1d</rt></ruby>",
+        "to": "<ruby><kbd>č</kbd><rt>010d</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴞ</kbd><rt>2d1e</rt></ruby>",
+        "to": "<ruby><kbd>x</kbd><rt>0078</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴟ</kbd><rt>2d1f</rt></ruby>",
+        "to": "<ruby><kbd>j</kbd><rt>006a</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴠ</kbd><rt>2d20</rt></ruby>",
+        "to": "<ruby><kbd>h</kbd><rt>0068</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴡ</kbd><rt>2d21</rt></ruby>",
+        "to": "<ruby><kbd>ē</kbd><rt>0113</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴢ</kbd><rt>2d22</rt></ruby>",
+        "to": "<ruby><kbd>y</kbd><rt>0079</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴣ</kbd><rt>2d23</rt></ruby>",
+        "to": "<ruby><kbd>w</kbd><rt>0077</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴤ</kbd><rt>2d24</rt></ruby>",
+        "to": "<ruby><kbd>x</kbd><rt>0078</rt></ruby><ruby><kbd>̣</kbd><rt>0323</rt></ruby>",
+        "more": ""
+      },
+      {
+        "type": "Replace",
+        "from": "<ruby><kbd>ⴥ</kbd><rt>2d25</rt></ruby>",
+        "to": "<ruby><kbd>ō</kbd><rt>014d</rt></ruby>",
+        "more": ""
+      }
+    ]
+  }
+]

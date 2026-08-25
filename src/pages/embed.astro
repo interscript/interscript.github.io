@@ -1,0 +1,76 @@
+---
+import { scriptName, parseLanguageField } from "../data/iso"
+import catalogue from "../data/maps-catalogue.json" with { type: "json" }
+import { readdirSync } from "node:fs"
+
+// Embeddable widget — designed for iframe embedding on third-party sites.
+// URL params: ?system=<code>&input=<text>&compact=1
+// Renders minimal chrome; no nav, no footer.
+
+interface MapEntry {
+  data: {
+    authority_id: string
+    id: string
+    language?: string
+    source_script: string
+    destination_script: string
+    name: string
+  }
+}
+
+const bundledCodes = new Set(
+  readdirSync("public/maps")
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(/\.json$/, ""))
+    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
+)
+
+// Build a curated shortlist for the dropdown (the most-used systems).
+// Pulls from the catalogue and filters to bundled/live-demoable.
+const featuredCodes = [
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "bgnpcgn-deu-Latn-Latn-2000",
+  "bgnpcgn-ara-Arab-Latn-1956",
+  "odni-rus-Cyrl-Latn-2015",
+  "alalc-amh-Ethi-Latn-2011",
+  "un-tam-Taml-Latn-1972",
+  "iso-ell-Grek-Latn-843-1997-t1",
+  "bgnpcgn-zho-Hans-Latn-1979",
+  "alalc-hin-Deva-Latn-2011",
+  "un-hin-Deva-Latn-2016",
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interscript Widget</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style is:global>
+      html, body { margin: 0; padding: 0; background: var(--color-vellum); }
+    </style>
+  </head>
+  <body>
+    <interscript-widget
+      data-systems={JSON.stringify(
+        featuredCodes.map((code) => {
+          const entry = (catalogue as Record<string, MapEntry>)[code]
+          return {
+            code,
+            name: entry?.data.name ?? code,
+            authority: entry?.data.authority_id ?? "",
+            sourceScript: scriptName(entry?.data.source_script ?? ""),
+            destinationScript: scriptName(entry?.data.destination_script ?? ""),
+            language: parseLanguageField(entry?.data.language),
+          }
+        }),
+      )}
+    ></interscript-widget>
+
+    <script>
+      import "/src/scripts/widget.ts"
+    </script>
+  </body>
+</html>

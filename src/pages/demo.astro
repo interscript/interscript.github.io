@@ -1,0 +1,112 @@
+---
+import Base from "../layouts/Base.astro"
+import MapExplorer from "../components/MapExplorer.vue"
+
+const systems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian → Latin (2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German → Latin (2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian → Latin (2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic → Latin (2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil → Latin (1972)" },
+]
+
+const samples = [
+  { system: "BGN/PCGN Ukrainian", input: "Антон", output: "Anton" },
+  { system: "BGN/PCGN German", input: "Tschüß!", output: "Tschueß!" },
+  { system: "ODNI Russian", input: "привет мир", output: "privet mir" },
+  { system: "ALA-LC Amharic", input: "ኢትዮጵያ", output: "ʼiteyop̣eyā" },
+  { system: "UN Tamil", input: "தமிழ்", output: "tamil̮" },
+]
+---
+
+<Base title="Live demo — Interscript" description="Try Interscript transliteration in your browser, powered by interscript-ts.">
+  <section class="demo-hero">
+    <div class="container">
+      <p class="eyebrow">Live demo</p>
+      <h1>Type. Watch scripts change.</h1>
+      <p class="demo-deck">
+        Transliterate through the Interscript API — or flip to in-browser
+        mode to run the full engine locally with ISC maps. No analytics,
+        no waiting.
+      </p>
+    </div>
+  </section>
+
+  <section class="container demo-main">
+    <MapExplorer client:load systems={systems} />
+  </section>
+
+  <section class="container section-tight">
+    <header class="section-head">
+      <p class="eyebrow">Reference vectors</p>
+      <h2>What each system should produce.</h2>
+    </header>
+    <table class="reference-table">
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Input</th>
+          <th></th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        {samples.map((s) => (
+          <tr>
+            <td class="ref-name">{s.system}</td>
+            <td class="ref-input">{s.input}</td>
+            <td class="ref-arrow" aria-hidden="true">→</td>
+            <td class="ref-output">{s.output}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+</Base>
+
+<style>
+  .demo-hero {
+    padding-block: 4rem 2rem;
+  }
+  .demo-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 1rem;
+  }
+  .demo-deck {
+    max-width: 50ch;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+  }
+  .demo-main {
+    margin-block: 2rem 4rem;
+  }
+  .section-head h2 {
+    font-size: var(--text-h1);
+    margin: 0.5rem 0 1.5rem;
+  }
+  .reference-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+  }
+  .reference-table th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid var(--color-ink);
+  }
+  .reference-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-rule);
+    vertical-align: middle;
+  }
+  .ref-name { color: var(--color-stone); font-family: var(--font-sans); font-size: 0.9375rem; }
+  .ref-input { color: var(--color-ink); }
+  .ref-arrow { color: var(--color-stone-light); font-family: var(--font-mono); font-size: 0.875rem; }
+  .ref-output { color: var(--color-ochre); font-style: italic; }
+</style>

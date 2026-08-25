@@ -1,0 +1,91 @@
+---
+import Base from "../layouts/Base.astro"
+import { renderAsciiDocDir } from "../content/loaders/asciidoc"
+
+const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
+  slug: p.id,
+  date: p.data.date,
+  title: p.data.title,
+  author: p.data.author,
+  summary: p.data.summary ?? "",
+}))
+---
+
+<Base title="Blog — Interscript" description="Articles on transliteration, the Interscript project, and adjacent topics.">
+  <div class="container">
+    <header class="page-hero">
+      <p class="eyebrow eyebrow-accent">Blog</p>
+      <h1>Blog</h1>
+      <p class="page-deck">Long-form articles on transliteration engineering and research.</p>
+    </header>
+
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <a href={`/blog/${p.slug}`}>
+            <span class="date tnum">{p.date}</span>
+            <span class="title">{p.title}</span>
+            {p.author && <span class="author">by {p.author}</span>}
+            <span class="summary">{p.summary}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .container {
+    padding-bottom: 3rem;
+  }
+  .post-list {
+    list-style: none;
+    padding: 0;
+    max-width: 68ch;
+  }
+  .post-list li {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .post-list li:first-child {
+    border-top: 2px solid var(--color-ink);
+  }
+  .post-list a {
+    display: block;
+    padding: 1.5rem 0.25rem;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+  .post-list a:hover .title {
+    color: var(--color-highlight);
+  }
+  .post-list a:focus-visible {
+    outline-offset: -2px;
+  }
+  .date {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone-light);
+  }
+  .title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+    margin: 0.375rem 0 0.375rem;
+  }
+  .author {
+    display: block;
+    color: var(--color-stone);
+    font-size: var(--text-small);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  .summary {
+    display: block;
+    color: var(--color-stone);
+    line-height: 1.6;
+  }
+</style>

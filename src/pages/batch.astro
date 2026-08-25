@@ -1,0 +1,126 @@
+---
+import Base from "../layouts/Base.astro"
+import BatchProcessor from "../components/BatchProcessor.vue"
+
+const systems = [
+  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian → Latin (2019)" },
+  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German → Latin (2000)" },
+  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian → Latin (2015)" },
+  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic → Latin (2011)" },
+  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil → Latin (1972)" },
+  { code: "iso-ell-Grek-Latn-843-1997-t1", label: "ISO Greek → Latin (843/1997)" },
+  { code: "alalc-hin-Deva-Latn-2011", label: "ALA-LC Hindi → Latin (2011)" },
+  { code: "bgnpcgn-ara-Arab-Latn-1956", label: "BGN/PCGN Arabic → Latin (1956)" },
+]
+---
+
+<Base
+  title="Batch transliteration — Interscript"
+  description="Paste many names, get them all transliterated. Runs in your browser via a Web Worker — your text never leaves your machine."
+>
+  <section class="batch-hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">Batch processing</p>
+      <h1>One name or a thousand. Same speed.</h1>
+      <p class="hero-deck">
+        Paste a list of names — one per line — pick a system, click run.
+        Transliteration happens in a Web Worker, so 500 names don't
+        freeze the page. Your text never leaves your browser; nothing is
+        sent to a server.
+      </p>
+    </div>
+  </section>
+
+  <section class="container batch-main">
+    <BatchProcessor client:load systems={systems} />
+  </section>
+
+  <section class="section why-batch surface-deep">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Built for working sets</p>
+        <h2>Where batch transliteration pays off.</h2>
+      </header>
+
+      <div class="batch-cases">
+        <article>
+          <h3>Libraries</h3>
+          <p>
+            Cleaning up catalog records? Paste a column of author names
+            from your MARC export and get the ALA-LC romanized forms back
+            as CSV — no scripting required.
+          </p>
+        </article>
+        <article>
+          <h3>Newsrooms</h3>
+          <p>
+            Got a list of foreign names from a story's source documents?
+            Batch-romanize them through your house system before the
+            desk copy deadline.
+          </p>
+        </article>
+        <article>
+          <h3>Genealogy</h3>
+          <p>
+            Working through parish records or immigration manifests?
+            Convert a whole surname list to a single romanization for
+            cross-record matching.
+          </p>
+        </article>
+        <article>
+          <h3>Academia</h3>
+          <p>
+            Preparing a bibliography? Run a list of source-script titles
+            through ISO 15919, ISO 9, or IAST to match your journal's
+            citation style.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .batch-hero {
+    padding-block: 4rem 2.5rem;
+  }
+  .batch-hero h1 {
+    font-size: var(--text-hero);
+    margin: 1rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .batch-main {
+    margin-block: 2rem 5rem;
+  }
+
+  .batch-cases {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 900px) {
+    .batch-cases { grid-template-columns: repeat(4, 1fr); }
+  }
+  .batch-cases article {
+    background: var(--color-vellum);
+    padding: 1.5rem;
+    border: 1px solid var(--color-rule);
+  }
+  .batch-cases h3 {
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem;
+  }
+  .batch-cases p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.55;
+    margin: 0;
+  }
+</style>

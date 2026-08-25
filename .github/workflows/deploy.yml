@@ -3,21 +3,14 @@ name: deploy
 on:
   push:
     branches:
-    - main
-    # - staging
-  pull_request:
+      - main
   workflow_dispatch:
-  repository_dispatch:
-    types: [ 'interscript/interscript' ]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
@@ -34,21 +27,21 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v7
         with:
-          node-version: '18'
-          cache: yarn
-      - name: Install NPM dependencies
+          node-version: "22"
+          cache: npm
+      - name: Clone interscript-ts (file: dependency)
         run: |
-          yarn install --frozen-lockfile
-          yarn global add asciidoctor@^2.2.4
+          git clone --depth=1 --branch feat/imf-runtime-ts https://github.com/interscript/interscript-ts.git ../interscript-ts
+          cd ../interscript-ts && npm ci && npm run build
+      - name: Install dependencies
+        run: npm ci
       - name: Build site
-        run: |
-          yarn adoc make
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages

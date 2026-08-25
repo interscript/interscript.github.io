@@ -1,0 +1,159 @@
+---
+import Base from "../../layouts/Base.astro"
+import MapCatalogue from "../../components/MapCatalogue.vue"
+import { readdirSync } from "node:fs"
+import { scriptName } from "../../data/iso"
+
+// Catalogue data is shipped as JSON; the Vue island does the filtering.
+import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
+
+interface MapEntry {
+  data: {
+    authority_id: string
+    id: string
+    language?: string
+    source_script: string
+    destination_script: string
+    name: string
+    description?: string
+    creation_date?: string
+    url?: string
+  }
+  test?: (string | null)[]
+}
+
+const entries = Object.entries(catalogue).map(([code, entry]) => ({
+  code,
+  ...entry,
+})) as unknown as Array<{ code: string } & MapEntry>
+
+// Pre-aggregate filter facets in Astro so the Vue island doesn't have to.
+// Script codes are ISO 15924 — surface both the code and the resolved name.
+const authorities = [...new Set(entries.map((e) => e.data.authority_id))].sort()
+const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sort()
+const destinationScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
+const totalMaps = entries.length
+const mapsWithTests = entries.filter((e) => e.test && e.test[0]).length
+
+const scriptPairs = new Set<string>()
+for (const e of entries) {
+  scriptPairs.add(`${scriptName(e.data.source_script)} → ${scriptName(e.data.destination_script)}`)
+}
+
+// Set of maps whose IR is bundled in /public/maps/ — these can be
+// live-demoed without a server round-trip.
+const bundledCodes = new Set(
+  readdirSync("public/maps")
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(/\.json$/, ""))
+    // exclude library maps from the "live demoable" set
+    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
+)
+const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
+---
+
+<Base title="Maps — Interscript" description={`Browse ${totalMaps} authority-backed transliteration maps.`}>
+  <section class="maps-hero surface-deep">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">Map catalogue</p>
+      <h1>Every system, one registry.</h1>
+      <p class="hero-deck">
+        <strong class="tnum">{totalMaps}</strong> maps from <strong class="tnum">{authorities.length}</strong> authorities. <strong class="tnum">{mapsWithTests}</strong> carry reference test vectors checked into git. <strong class="tnum">{liveDemoable}</strong> run live in your browser via <code>interscript-ts</code>;
+        the rest link to source on GitHub.
+        Filter by authority, source script, or destination script.
+      </p>
+
+      <dl class="map-stats tnum">
+        <div><dt>Total systems</dt><dd>{totalMaps}</dd></div>
+        <div><dt>Authorities</dt><dd>{authorities.length}</dd></div>
+        <div><dt>Source scripts</dt><dd>{sourceScripts.length}</dd></div>
+        <div><dt>Destination scripts</dt><dd>{destinationScripts.length}</dd></div>
+        <div><dt>Live-demoable</dt><dd>{liveDemoable}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="container catalogue-section">
+    <MapCatalogue
+      client:load
+      entries={entries.map((e) => ({
+        code: e.code,
+        authority: e.data.authority_id,
+        name: e.data.name,
+        sourceScript: e.data.source_script,
+        sourceScriptName: scriptName(e.data.source_script),
+        destinationScript: e.data.destination_script,
+        destinationScriptName: scriptName(e.data.destination_script),
+        year: e.data.creation_date ?? e.data.id,
+        language: e.data.language,
+        description: e.data.description,
+        hasTest: Boolean(e.test && e.test[0]),
+        testInput: e.test?.[0] ?? null,
+        testExpected: e.test?.[1] ?? null,
+        liveDemoable: bundledCodes.has(e.code),
+      }))}
+      authorities={authorities}
+      sourceScripts={sourceScripts}
+      destinationScripts={destinationScripts}
+    />
+  </section>
+</Base>
+
+<style>
+  .maps-hero {
+    padding-block: 4rem 3rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .maps-hero h1 {
+    font-size: var(--text-hero);
+    margin: 0.75rem 0 1.25rem;
+  }
+  .hero-deck {
+    max-width: 56ch;
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .hero-deck strong {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+    font-style: italic;
+  }
+  .map-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0 0;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-ink);
+  }
+  @media (min-width: 768px) {
+    .map-stats {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  .map-stats dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    margin-bottom: 0.5rem;
+  }
+  .map-stats dd {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .catalogue-section {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+</style>

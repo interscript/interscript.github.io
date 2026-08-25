@@ -1,0 +1,92 @@
+---
+import Base from "../../layouts/Base.astro"
+---
+
+<Base
+  title="Phonological layer — Interscript"
+  description="How Interscript maps optionally use secryst crystals and the interscript-ml contract to vocalize undiacritized input before transliteration."
+>
+  <div class="container">
+    <header class="page-hero">
+      <p class="eyebrow eyebrow-accent">Docs</p>
+      <h1>Phonological layer</h1>
+    </header>
+
+    <div class="prose">
+      <p class="lede">
+        Many writing systems underdetermine pronunciation. Undiacritized Arabic,
+        nikud-less Hebrew, and unsegmented Thai cannot be transliterated
+        unambiguously until the hidden vowels or phonemes are restored. That
+        restoration is the <strong>phonological layer</strong> — optional,
+        independent of the core map engine, and run by the <a href="https://www.secryst.org">secryst</a> crystal family against the <a href="https://github.com/interscript/interscript-ml">interscript-ml</a> contract.
+      </p>
+
+      <section>
+        <h2>How the pieces fit</h2>
+        <pre class="diagram"><code>map (deterministic) ──secryst()──► crystal (ONNX)
+                                      │
+                                      ▼
+                            interscript-ml contract
+                            models.yaml · IMF v1 · goldens</code></pre>
+        <ul>
+          <li><strong>interscript engines</strong> stay pure. A map that needs
+            vocalization declares a <code>secryst</code> (or future <code>vocalize</code>) step; without a crystal installed, that map
+            simply cannot run that step.</li>
+          <li><strong>secryst crystals</strong> (<code>gem secryst</code> · <code>pip install secryst</code> · <code>npm i secryst</code> resolve a model id through <code>models.yaml</code>, download a sha256-verified IMF&nbsp;v1 zip,
+            cache it under <code>~/.cache/secryst</code>, and run greedy ONNX
+            inference locally. No cloud, no telemetry.</li>
+          <li><strong>interscript-ml</strong> is the contract only: the index,
+            the format, the golden sets, and the model zoo. It depends on
+            nothing. Crystals depend only on it.</li>
+          <li><strong>interscript-ml-train</strong> produces the teachers whose
+            distilled students enter the zoo.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Environment</h2>
+        <table>
+          <thead><tr><th>Variable</th><th>Meaning</th><th>Default</th></tr></thead>
+          <tbody>
+            <tr><td><code>SECRYST_INDEX</code></td><td>Index URL or path</td>
+              <td>interscript-ml <code>models.yaml</code> on GitHub</td></tr>
+            <tr><td><code>SECRYST_CACHE</code></td><td>Artifact cache</td>
+              <td><code>~/.cache/secryst</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Further reading</h2>
+        <ul>
+          <li><a href="https://www.secryst.org">secryst.org</a> — crystal primer, API reference, model zoo</li>
+          <li><a href="https://www.secryst.org/spec.html">IMF v1 specification</a> — the normative contract text</li>
+          <li><a href="https://github.com/interscript/interscript-ml/blob/main/SPEC.md">interscript-ml/SPEC.md</a> — canonical source of that text</li>
+          <li><a href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a> — teachers</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .lede {
+    font-size: var(--text-lead);
+    line-height: 1.65;
+    color: var(--color-stone);
+    max-width: 60ch;
+  }
+  .diagram {
+    background: var(--color-paper-deep);
+    border: 1px solid var(--color-rule);
+    border-radius: 2px;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .container {
+    padding-bottom: 2rem;
+  }
+</style>
