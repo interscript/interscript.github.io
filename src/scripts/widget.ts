@@ -9,11 +9,7 @@
  * no full catalogue bundle, no main-thread jank.
  */
 
-import {
-  configure,
-  reset,
-  transliterateAsync,
-} from "interscript-ts"
+import { configure, reset, transliterateAsync } from "interscript-ts"
 import { mapStrategies } from "./map-strategies"
 
 // Configure once with HTTP loader + persistent cache.
@@ -84,7 +80,7 @@ class InterscriptWidget extends HTMLElement {
       <style>
         :host {
           display: block;
-          font-family: "Inter Tight", system-ui, -apple-system, sans-serif;
+          font-family: "Inter Tight Variable", "Inter Tight", system-ui, sans-serif;
           background: #fcfaf4;
           color: #1a1d1f;
           padding: 1.25rem;
@@ -195,18 +191,18 @@ class InterscriptWidget extends HTMLElement {
           ${this.systems
             .map(
               (s) =>
-                `<option value="${s.code}" ${s.code === this.selected ? "selected" : ""}>${s.authority.toUpperCase()} · ${s.name}</option>`,
+                `<option value="${this.escapeHtml(s.code)}" ${s.code === this.selected ? "selected" : ""}>${this.escapeHtml(s.authority.toUpperCase())} · ${this.escapeHtml(s.name)}</option>`,
             )
             .join("")}
         </select>
       </div>
       <div class="pair">
         <div class="field">
-          <label>${selected?.sourceScript ?? "Source"} ${selected?.language ? `· ${selected.language}` : ""}</label>
+          <label>${this.escapeHtml(selected?.sourceScript ?? "Source")} ${selected?.language ? `· ${this.escapeHtml(selected.language)}` : ""}</label>
           <textarea rows="3" placeholder="Type here…">${this.escapeHtml(this.input)}</textarea>
         </div>
         <div class="field">
-          <label>${selected?.destinationScript ?? "Latin"}</label>
+          <label>${this.escapeHtml(selected?.destinationScript ?? "Latin")}</label>
           <div class="output ${this.loading ? "loading" : ""} ${this.error ? "error" : ""}">
             ${this.error ? "⚠ " + this.escapeHtml(this.error) : this.loading ? "Loading…" : this.escapeHtml(this.output)}
           </div>

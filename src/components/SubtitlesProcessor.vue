@@ -7,7 +7,7 @@
  * Preserves subtitle structure (timestamps, indices). Only the dialogue
  * text gets transliterated.
  */
-import { ref, computed, onMounted, onUnmounted } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 
 interface Props {
@@ -38,7 +38,8 @@ async function ensureEngine() {
 
 // Regex: capture subtitle cues with timestamps.
 // SRT/VTT pattern: index (optional), time range line, dialogue.
-const CUE_RE = /(\d+\s*\n)?((?:\d{2}:)?\d{2}:\d{2}[,.]\d{3}\s*-->\s*(?:\d{2}:)?\d{2}:\d{2}[,.]\d{3})\s*\n([\s\S]*?)(?=\n\s*\n|\n\d+\s*\n|\n(?:\d{2}:)?\d{2}:\d{2}[,.]\d{3}|$)/g
+const CUE_RE =
+  /(\d+\s*\n)?((?:\d{2}:)?\d{2}:\d{2}[,.]\d{3}\s*-->\s*(?:\d{2}:)?\d{2}:\d{2}[,.]\d{3})\s*\n([\s\S]*?)(?=\n\s*\n|\n\d+\s*\n|\n(?:\d{2}:)?\d{2}:\d{2}[,.]\d{3}|$)/g
 
 async function run() {
   if (!client) return
@@ -49,7 +50,8 @@ async function run() {
   try {
     const out = inputText.value.replace(CUE_RE, async (_match, idx, time, dialogue: string) => {
       // Strip HTML formatting tags before transliterating
-      const stripped = dialogue.replace(/<[^>]+>/g, "").trim()
+      const stripped = dialogue.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").trim()
+      // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
       if (!/[^\x00-\x7F]/.test(stripped)) {
         return `${idx ?? ""}${time}\n${dialogue}`.trim()
       }
@@ -84,7 +86,8 @@ async function run() {
 
     const outParts: string[] = []
     for (const cue of cues) {
-      const stripped = cue.dialogue.replace(/<[^>]+>/g, "").trim()
+      const stripped = cue.dialogue.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").trim()
+      // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
       if (!/[^\x00-\x7F]/.test(stripped)) {
         outParts.push(`${cue.idx}${cue.time}\n${cue.dialogue}`.trim())
         continue
@@ -93,7 +96,7 @@ async function run() {
         const transliterated = await client.transliterate(system.value, stripped)
         count++
         outParts.push(`${cue.idx}${cue.time}\n${transliterated}`)
-      } catch (e) {
+      } catch {
         outParts.push(`${cue.idx}${cue.time}\n${cue.dialogue}`)
       }
     }
@@ -141,11 +144,13 @@ onUnmounted(() => client?.terminate())
           <span class="pane-label">Transliterated output</span>
           <button v-if="output" class="copy-btn" @click="copyOutput">Copy</button>
         </header>
-        <pre>{{ output || 'Output appears here.' }}</pre>
+        <pre>{{ output || "Output appears here." }}</pre>
       </div>
     </div>
 
-    <p v-if="cueCount > 0" class="cue-count tnum">{{ cueCount }} cue{{ cueCount > 1 ? "s" : "" }} transliterated.</p>
+    <p v-if="cueCount > 0" class="cue-count tnum">
+      {{ cueCount }} cue{{ cueCount > 1 ? "s" : "" }} transliterated.
+    </p>
     <p v-if="error" class="error">⚠ {{ error }}</p>
     <p class="privacy">Text never leaves your browser.</p>
   </div>
@@ -185,7 +190,9 @@ onUnmounted(() => client?.terminate())
   color: var(--color-ink);
   border-radius: 1px;
 }
-.control-field select:focus { border-color: var(--color-brand); }
+.control-field select:focus {
+  border-color: var(--color-brand);
+}
 
 .run-btn {
   font-family: var(--font-mono);
@@ -203,7 +210,9 @@ onUnmounted(() => client?.terminate())
   background: var(--color-highlight-deep);
   border-color: var(--color-highlight-deep);
 }
-.run-btn:disabled { opacity: 0.5; }
+.run-btn:disabled {
+  opacity: 0.5;
+}
 
 .subs-grid {
   display: grid;
@@ -211,7 +220,9 @@ onUnmounted(() => client?.terminate())
   gap: 1rem;
 }
 @media (min-width: 900px) {
-  .subs-grid { grid-template-columns: 1fr 1fr; }
+  .subs-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .io-pane {
@@ -240,7 +251,8 @@ onUnmounted(() => client?.terminate())
   color: var(--color-stone-light);
 }
 
-textarea, pre {
+textarea,
+pre {
   flex: 1;
   min-height: 320px;
   font-family: var(--font-mono);
