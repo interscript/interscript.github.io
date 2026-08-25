@@ -67,7 +67,7 @@ async function run() {
 
     const outParts: string[] = []
     for (const cue of cues) {
-      const stripped = cue.dialogue.replace(/<[^>]*>/g, "").replace(/[<>]/g, "").trim()
+      const stripped = cue.dialogue.replace(/[<>]/g, "").trim()
       // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
       if (!/[^\x00-\x7F]/.test(stripped)) {
         outParts.push(`${cue.idx}${cue.time}\n${stripped}`)
