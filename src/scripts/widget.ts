@@ -210,7 +210,7 @@ class InterscriptWidget extends HTMLElement {
       </div>
       <div class="footer">
         <span>Powered by <a href="https://interscript.org" target="_blank" rel="noreferrer">Interscript</a> · BSD-2-Clause</span>
-        <span><a href="https://interscript.org/maps/${this.selected}" target="_blank" rel="noreferrer">View system →</a></span>
+        <span><a href="https://interscript.org/maps/${this.escapeHtml(this.selected)}" target="_blank" rel="noreferrer">View system →</a></span>
       </div>
     `
 
