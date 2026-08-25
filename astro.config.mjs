@@ -10,6 +10,9 @@ import node from "@astrojs/node"
 // @astrojs/node. Deploy target: any Node-capable host.
 export default defineConfig({
   site: "https://www.interscript.org",
+  // Collapse whitespace to a single space (pre-7 behavior) instead of
+  // JSX-style removal, which glues text to adjacent inline elements.
+  compressHTML: true,
   output: "static",
   adapter: node({ mode: "standalone" }),
   integrations: [vue()],
