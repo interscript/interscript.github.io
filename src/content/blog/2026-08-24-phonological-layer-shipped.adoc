@@ -1,4 +1,4 @@
-= The phonological layer: ten models, three wrong turns, and one correction
+= The phonological layer: eleven models, three wrong turns, and one correction
 Ronald Tse
 v1.0, 2026-08-24
 :doctype: book
@@ -13,7 +13,7 @@ haraqat a scribe left out. Turning unwritten Thai into phonemes.
 Reading Urdu aloud. Those are learned — and for two years they lived
 in a research branch, promising and unshipped.
 
-This August we shipped the phonological layer: ten neural models under
+This August we shipped the phonological layer: eleven neural models under
 the same discipline as the maps — one artifact format, checksums
 verified on every load, identical output from Ruby, Python, and
 TypeScript, and a measured number next to every claim. This post is
@@ -32,11 +32,13 @@ The catalog now spans four languages and two tiers:
 |urd-g2p-1.0 |grapheme→phoneme |CER 14.77 |fp32, 1.3 GiB
 |urd-diac-1.0 |diacritization |CER 3.74 |fp32, 1.3 GiB
 |heb-diac-1.0 |diacritization |DER 29.0 greedy / 17.5 beam-4 |fp32, parts
-|tha-g2p-base-1.0 |grapheme→phoneme |PER 9.19 (teacher 4.43) |fp32, parts
-|fas-g2p-1.0 |grapheme→phoneme |CER ≈1.6 — above published SOTA on SentenceBench |fp32, parts
+|tha-g2p-base-1.0 |grapheme→phoneme |PER 3.53 greedy (teacher 1.25) |fp32, parts
+|ara-diac-1.0 |diacritization |DER 2.58 — best dedicated on SadeedDiac-25 |fp32, parts
+|fas-g2p-1.0 |grapheme→phoneme |CER ≈1.6 — above the published best on the SentenceBench homograph benchmark |fp32, parts
 |tha-g2p-small-1.0 |grapheme→phoneme |PER 2.85 greedy |int8, 246 MiB
 |tha-g2p-small-1.0-int4 |same student, 4-bit |byte-identical decode |int4, 193 MiB
 |heb-diac-small-1.0 |diacritization |DER 30.37 (teacher 24.79) |fp32, 1.3 GiB
+|ara-diac-small-1.0 |diacritization |DER 8.26 full-set (see update below) |fp32, 1.3 GiB
 |===
 
 Every student was distilled from a frozen, independently evaluated
@@ -131,3 +133,31 @@ Try it: `pip install secryst` —
 Python, the same in TypeScript. The catalog lives at
 https://github.com/interscript/interscript-ml[interscript-ml]; the
 measured story behind every number lives in its results log.
+
+== Update, 2026-08-26: two Arabic releases and one subset lesson
+
+The catalog grew to eleven: `ara-diac-1.0` (server) and
+`ara-diac-small-1.0` (client) shipped for Arabic haraqat restoration.
+
+*ara-diac-1.0* is the r6 teacher — and on the full SadeedDiac-25
+benchmark, under the benchmark's own Misraj evaluator protocol, it is
+the best dedicated model measured: 2.5793% DER, ahead of GLM-5.2
+(2.6911), Gemini Flash (3.1926), GPT-4 (3.8645), and Sadeed's own
+1.5B model (7.2915); only Claude 3.7 Sonnet's published 1.3941 sits
+above it. At 580M parameters, runnable locally from a checksummed zip.
+
+*ara-diac-small-1.0* taught us a measurement lesson the hard way. Its
+first published number, 3.66% DER, came from the benchmark's first 300
+paragraphs; the full 1,200-paragraph run scores 8.26%. The teacher
+reproduces its documented value on the same run (2.5815 vs 2.5793), so
+the harness was sound — the subset simply sat in the student's
+training-domain neighborhood and hid a domain-generalization gap. The
+subset figure is withdrawn, the full-set number ships in the metadata,
+and two standing rules follow: student-tier numbers publish from full
+benchmark sets only, and a subset figure is labeled as such at first
+publication.
+
+Also corrected above: the Thai server-tier row now carries the greedy
+numbers (3.53, teacher 1.25) measured under the runtime protocol — the
+decode section earlier in this post explains why the beam-4 figures
+overstated the error.

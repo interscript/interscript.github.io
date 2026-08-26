@@ -38,7 +38,15 @@ const serverModels = [
     id: "tha-g2p-base-1.0",
     task: "g2p",
     pair: "Thai → IPA",
-    metric: "PER 9.19 (teacher 4.43)",
+    metric: "PER 3.53 greedy (teacher 1.25)",
+    artifact: "fp32 · 2.6 GiB · parts",
+    status: "released",
+  },
+  {
+    id: "ara-diac-1.0",
+    task: "diacritization",
+    pair: "Arabic → haraqat",
+    metric: "DER 2.58 — best dedicated model on SadeedDiac-25",
     artifact: "fp32 · 2.6 GiB · parts",
     status: "released",
   },
@@ -73,8 +81,16 @@ const clientModels = [
     id: "fas-g2p-1.0",
     task: "g2p",
     pair: "Persian → IPA",
-    metric: "CER ≈1.6 · homograph 77.34%",
+    metric: "CER ≈1.6 · SentenceBench homograph 77.34 (published best 76.89)",
     artifact: "fp32 · 2.6 GiB · parts",
+    status: "released",
+  },
+  {
+    id: "ara-diac-small-1.0",
+    task: "diacritization",
+    pair: "Arabic → haraqat",
+    metric: "DER 8.26 full-set (300-para subset had read 3.66)",
+    artifact: "fp32 · 1.3 GiB",
     status: "released",
   },
 ]
@@ -94,12 +110,11 @@ const clientModels = [
         Where maps end,<br /><em>models</em> begin.
       </h1>
       <p class="hero-lead">
-        The 289 authority-backed maps cover romanization systems that a
-        committee has published. Some conversions have no committee: restoring
-        the haraqat a scribe left out, turning unwritten Thai into phonemes,
-        reading Urdu aloud. Those are learned — and they ship under the same
-        discipline as the maps: one artifact format, checksums verified on
-        every load, byte-identical output from every runtime.
+        The 289 authority-backed maps cover romanization systems that a committee has published.
+        Some conversions have no committee: restoring the haraqat a scribe left out, turning
+        unwritten Thai into phonemes, reading Urdu aloud. Those are learned — and they ship under
+        the same discipline as the maps: one artifact format, checksums verified on every load,
+        byte-identical output from every runtime.
       </p>
     </div>
   </section>
@@ -113,12 +128,11 @@ const clientModels = [
         <p class="eyebrow">The catalogue</p>
         <h2>Every model, with its number.</h2>
         <p class="section-deck">
-          No model is published without a measured metric next to its
-          teacher's, on the same harness, in the open. Students are distilled
-          from frozen teachers and gated at a pre-agreed error budget. Each
-          entry resolves from the models.yaml index; artifacts above GitHub's
-          2&nbsp;GiB cap ship as sha256-verified parts that the runtimes
-          reassemble transparently.
+          No model is published without a measured metric next to its teacher's, on the same
+          harness, in the open. Students are distilled from frozen teachers and gated at a
+          pre-agreed error budget. Each entry resolves from the models.yaml index; artifacts above
+          GitHub's 2&nbsp;GiB cap ship as sha256-verified parts that the runtimes reassemble
+          transparently.
         </p>
       </header>
 
@@ -162,8 +176,11 @@ const clientModels = [
         }
       </ul>
       <p class="ledger-note">
-        “Releasing” = passing its parity gate now, entering the release
-        pipeline. Distillation budgets and per-model provenance: <a href="https://github.com/interscript/interscript-ml/blob/main/docs/RESULTS.md">interscript-ml/docs/RESULTS.md</a>.
+        “Releasing” = passing its parity gate now, entering the release pipeline. Distillation
+        budgets and per-model provenance: <a
+          href="https://github.com/interscript/interscript-ml/blob/main/docs/RESULTS.md"
+          >interscript-ml/docs/RESULTS.md</a
+        >.
       </p>
     </div>
   </section>
@@ -177,12 +194,11 @@ const clientModels = [
         <p class="eyebrow">The contract</p>
         <h2>One artifact. Any runtime.</h2>
         <p class="section-deck">
-          A model is a zip — the Interscript Model Format, IMF v1. Anything
-          that can read a zip, hash a file, and run two ONNX sessions can
-          serve it; no Interscript training code required. Every member is
-          sha256-verified against metadata.yaml on load; tampering raises
-          loudly. The tokenizer is raw UTF-8 bytes — no vocabulary to
-          download, no sentencepiece to drift.
+          A model is a zip — the Interscript Model Format, IMF v1. Anything that can read a zip,
+          hash a file, and run two ONNX sessions can serve it; no Interscript training code
+          required. Every member is sha256-verified against metadata.yaml on load; tampering raises
+          loudly. The tokenizer is raw UTF-8 bytes — no vocabulary to download, no sentencepiece to
+          drift.
         </p>
         <ul class="contract-facts">
           <li>Byte tokenizer — token id = byte + 3, trailing EOS</li>
@@ -211,11 +227,10 @@ const clientModels = [
         <p class="eyebrow">The crystals</p>
         <h2>Three runtimes, same bytes out.</h2>
         <p class="section-deck">
-          The neural layer is served by <em>secryst</em> — the same
-          cross-runtime contract as the map layer. Ruby, Python, and
-          TypeScript resolve a model id against the index, fetch (or reuse
-          the cache), verify every checksum, and decode with the KV-cache
-          graph. Golden sets pin the three implementations to each other.
+          The neural layer is served by <em>secryst</em> — the same cross-runtime contract as the map
+          layer. Ruby, Python, and TypeScript resolve a model id against the index, fetch (or reuse the
+          cache), verify every checksum, and decode with the KV-cache graph. Golden sets pin the three
+          implementations to each other.
         </p>
       </header>
       <div class="crystal-code">
@@ -230,12 +245,12 @@ npm install secryst</code></pre>
         <pre><code>require "secryst"
 model = Secryst::Model.load("tha-g2p-small-1.0")
 model.translate("สวัสดี")
-# => "sa˨˩.wat̚˨˩.diː˧"</code></pre>
+# =&gt; "sa˨˩.wat̚˨˩.diː˧"</code></pre>
       </div>
       <p class="env-note">
-        Point deployments at a mirror with <code>SECRYST_INDEX</code>; pin the
-        cache with <code>SECRYST_CACHE</code>. Both are read at call time in
-        all three runtimes.
+        Point deployments at a mirror with <code>SECRYST_INDEX</code>; pin the cache with <code
+          >SECRYST_CACHE</code
+        >. Both are read at call time in all three runtimes.
       </p>
     </div>
   </section>
@@ -249,10 +264,9 @@ model.translate("สวัสดี")
         <p class="eyebrow eyebrow-accent">Provenance</p>
         <h2>Measured, or it doesn't ship.</h2>
         <p class="cta-deck">
-          Teachers are frozen before distillation and never LLM-generated —
-          language-model teachers hallucinate diacritics. Every number in the
-          ledger links to a protocol in the open results log. BSD-3-Clause,
-          code and weights.
+          Teachers are frozen before distillation and never LLM-generated — language-model teachers
+          hallucinate diacritics. Every number in the ledger links to a protocol in the open results
+          log. BSD-3-Clause, code and weights.
         </p>
       </div>
       <div class="cta-code">
@@ -277,7 +291,6 @@ github.com/secryst                     # runtimes + training</code></pre>
   .page-headline em {
     font-style: italic;
     color: var(--color-brand);
-    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
   .hero-lead {
     font-size: var(--text-lead);
@@ -318,7 +331,7 @@ github.com/secryst                     # runtimes + training</code></pre>
     color: var(--color-stone);
     text-transform: none;
     letter-spacing: 0;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-style: italic;
   }
   .ledger {
