@@ -44,28 +44,11 @@ describe("OpenAPI spec at /openapi.json", () => {
   })
 })
 
-describe("/api-docs interactive reference", () => {
+describe("/api-docs redirect", () => {
   const html = readHtml("api-docs/index.html")
 
-  it("documents all 4 endpoints", () => {
-    expect(html).toContain("POST /transliterate")
-    expect(html).toContain("GET /transliterate")
-    expect(html).toContain("GET /systems")
-    expect(html).toContain("GET /detect")
-  })
-
-  it("includes cURL + JavaScript + Ruby examples", () => {
-    expect(html).toContain("curl -X POST")
-    expect(html).toContain("await fetch")
-    expect(html).toContain("Net::HTTP")
-  })
-
-  it("links to the OpenAPI JSON spec", () => {
-    expect(html).toContain('href="/openapi.json"')
-  })
-
-  it("documents the 10,000 char input limit", () => {
-    expect(html).toContain("10,000")
+  it("redirects to the API's self-hosted docs", () => {
+    expect(html).toContain("https://api.interscript.org/docs")
   })
 })
 

@@ -107,7 +107,7 @@ describe("expanded navigation across new pages", () => {
     "/scripts",
     "/use-cases",
     "/api",
-    "/api-docs",
+    "https://api.interscript.org/docs",
     "/status",
     "/authorities",
     "/contributing",
