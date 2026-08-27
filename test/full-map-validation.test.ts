@@ -98,7 +98,9 @@ describe("full-map validation", () => {
         expect(doc.stages.length).toBeGreaterThan(0)
         const m = doc.metadata as Record<string, unknown>
         const lang = String(m["language"]).split(":").pop()
-        expect([m["authority_id"], lang, m["source_script"], m["destination_script"], m["id"]].join("-")).toBe(code)
+        expect(
+          [m["authority_id"], lang, m["source_script"], m["destination_script"], m["id"]].join("-"),
+        ).toBe(code)
       })
     }
   })

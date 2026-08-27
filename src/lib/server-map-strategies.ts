@@ -17,9 +17,7 @@ function iscFilesystemStrategy(): LoadStrategy {
     baseUrl: "file://local-maps",
     fetchFn: (input: RequestInfo | URL) => {
       const url = String(input)
-      const code = decodeURIComponent(
-        url.slice(url.lastIndexOf("/") + 1).replace(/\.isc$/, ""),
-      )
+      const code = decodeURIComponent(url.slice(url.lastIndexOf("/") + 1).replace(/\.isc$/, ""))
       try {
         const source = readFileSync(resolve(MAPS_DIR, `${code}.isc`), "utf8")
         return Promise.resolve(new Response(source, { status: 200 }))

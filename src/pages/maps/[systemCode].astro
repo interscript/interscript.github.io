@@ -12,12 +12,14 @@ export function getStaticPaths() {
   }))
 }
 
-// Determine which maps have bundled IR available for live preview.
-const bundledCodes = new Set(
+// Every map ships as compact ISC source in public/maps — used for both
+// the live preview and the rule chart. The .iml libraries (posix,
+// unicode, var-Cyrl, var-kor) have no ISC form and are fetched as
+// compiled JSON dependencies by the runtime, so they aren't pages.
+const iscCodes = new Set(
   readdirSync("public/maps")
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => f.replace(/\.json$/, ""))
-    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
+    .filter((f) => f.endsWith(".isc"))
+    .map((f) => f.replace(/\.isc$/, "")),
 )
 
 interface MapEntry {
@@ -46,13 +48,13 @@ if (!entry) {
 const { data, test } = entry
 const year = data.creation_date ?? data.id
 const languageDisplay = parseLanguageField(data.language)
-const languageCode = data.language?.split(/[|:]/).pop()
 const sourceName = scriptName(data.source_script)
 const destName = scriptName(data.destination_script)
 const sourceNumber = scriptNumber(data.source_script)
 const destNumber = scriptNumber(data.destination_script)
 const pageTitle = `${data.name} — Interscript Maps`
-const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.authority_id.toUpperCase()}, ${year})`
+const pageDesc =
+  data.description ?? `${sourceName} → ${destName} (${data.authority_id.toUpperCase()}, ${year})`
 ---
 
 <Base title={pageTitle} description={pageDesc}>
@@ -78,39 +80,49 @@ const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.auth
             <dt>Source script</dt>
             <dd>
               <span class="script-name">{sourceName}</span>
-              <span class="script-code">{data.source_script}{sourceNumber !== undefined && ` · ${sourceNumber}`}</span>
+              <span class="script-code"
+                >{data.source_script}{sourceNumber !== undefined && ` · ${sourceNumber}`}</span
+              >
             </dd>
           </div>
           <div>
             <dt>Destination script</dt>
             <dd>
               <span class="script-name">{destName}</span>
-              <span class="script-code">{data.destination_script}{destNumber !== undefined && ` · ${destNumber}`}</span>
+              <span class="script-code"
+                >{data.destination_script}{destNumber !== undefined && ` · ${destNumber}`}</span
+              >
             </dd>
           </div>
-          {languageDisplay && (
-            <div>
-              <dt>Language</dt>
-              <dd>{languageDisplay}</dd>
-            </div>
-          )}
-          {data.confirmation_date && (
-            <div>
-              <dt>Confirmed</dt>
-              <dd>{data.confirmation_date}</dd>
-            </div>
-          )}
+          {
+            languageDisplay && (
+              <div>
+                <dt>Language</dt>
+                <dd>{languageDisplay}</dd>
+              </div>
+            )
+          }
+          {
+            data.confirmation_date && (
+              <div>
+                <dt>Confirmed</dt>
+                <dd>{data.confirmation_date}</dd>
+              </div>
+            )
+          }
         </dl>
 
-        {data.description && (
-          <p class="map-description">{data.description}</p>
-        )}
+        {data.description && <p class="map-description">{data.description}</p>}
 
-        {data.url && (
-          <p class="source-link">
-            <a href={data.url} rel="noreferrer">View the authority document →</a>
-          </p>
-        )}
+        {
+          data.url && (
+            <p class="source-link">
+              <a href={data.url} rel="noreferrer">
+                View the authority document →
+              </a>
+            </p>
+          )
+        }
       </header>
 
       <hr class="rule-bold" />
@@ -130,57 +142,72 @@ const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.auth
           sourceScript={data.source_script}
           destinationScript={data.destination_script}
           initialInput={test?.[0] ?? ""}
-          liveDemoable={bundledCodes.has(systemCode!)}
+          liveDemoable={iscCodes.has(systemCode!)}
         />
       </section>
 
-      {test && test[0] && test[1] && (
-        <section class="reference-section">
-          <p class="eyebrow">Reference vector</p>
-          <h2>What the map should produce.</h2>
-          <p class="section-deck">
-            This vector is checked into git and verified by the Ruby test suite.
-          </p>
+      {
+        test && test[0] && test[1] && (
+          <section class="reference-section">
+            <p class="eyebrow">Reference vector</p>
+            <h2>What the map should produce.</h2>
+            <p class="section-deck">
+              This vector is checked into git and verified by the Ruby test suite.
+            </p>
 
-          <div class="reference-vector">
-            <div class="vector-cell">
-              <p class="vector-label">Source ({data.source_script})</p>
-              <p class="vector-text vector-source">{test[0]}</p>
+            <div class="reference-vector">
+              <div class="vector-cell">
+                <p class="vector-label">Source ({data.source_script})</p>
+                <p class="vector-text vector-source">{test[0]}</p>
+              </div>
+              <div class="vector-arrow" aria-hidden="true">
+                →
+              </div>
+              <div class="vector-cell">
+                <p class="vector-label">Expected ({data.destination_script})</p>
+                <p class="vector-text vector-expected">{test[1]}</p>
+              </div>
             </div>
-            <div class="vector-arrow" aria-hidden="true">→</div>
-            <div class="vector-cell">
-              <p class="vector-label">Expected ({data.destination_script})</p>
-              <p class="vector-text vector-expected">{test[1]}</p>
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )
+      }
 
-      {bundledCodes.has(systemCode!) && (
-        <section class="rules-section">
-          <p class="eyebrow">Rule viewer</p>
-          <h2>First 20 rules of this map.</h2>
-          <p class="section-deck">
-            Each row is one transformation rule. <code>parallel</code> blocks
-            apply simultaneously; <code>sub</code> rules apply sequentially.
-          </p>
-          <RuleViewer client:visible systemCode={systemCode!} maxRules={20} />
-        </section>
-      )}
+      {
+        iscCodes.has(systemCode!) && (
+          <section class="rules-section">
+            <p class="eyebrow">Rule chart</p>
+            <h2>Every rule of this map.</h2>
+            <p class="section-deck">
+              Parsed live from the map's ISC source. Stages and <code>parallel</code>/
+              <code>sequence</code> groups expand; each row is one transformation — pattern,
+              replacement, and the conditions it applies under.
+            </p>
+            <RuleViewer
+              client:visible
+              systemCode={systemCode!}
+              sourceScript={data.source_script}
+              destinationScript={data.destination_script}
+            />
+          </section>
+        )
+      }
 
       <section class="source-section">
         <p class="eyebrow">Source</p>
         <h2>Read the map definition.</h2>
         <p class="section-deck">
-          Every Interscript map is a human-readable Ruby DSL file checked into the <a href="https://github.com/interscript/maps" rel="noreferrer">interscript/maps</a> repo.
+          Every Interscript map is a human-readable ISC file checked into the <a
+            href="https://github.com/interscript/maps"
+            rel="noreferrer">interscript/maps</a
+          > repo.
         </p>
         <p>
           <a
             class="source-button"
-            href={`https://github.com/interscript/maps/blob/main/maps/${systemCode}.imp`}
+            href={`https://github.com/interscript/maps/blob/main/maps/${systemCode}.isc`}
             rel="noreferrer"
           >
-            View <code>{systemCode}.imp</code> on GitHub →
+            View <code>{systemCode}.isc</code> on GitHub →
           </a>
         </p>
       </section>
@@ -276,7 +303,9 @@ const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.auth
     font-size: var(--text-lead);
     margin-bottom: 2rem;
   }
-  .section-deck a { color: var(--color-ochre); }
+  .section-deck a {
+    color: var(--color-ochre);
+  }
   .preview-section h2,
   .reference-section h2,
   .source-section h2 {
@@ -323,7 +352,9 @@ const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.auth
     margin: 0;
     word-break: break-word;
   }
-  .vector-source { color: var(--color-stone); }
+  .vector-source {
+    color: var(--color-stone);
+  }
   .vector-expected {
     color: var(--color-ochre);
     font-style: italic;
@@ -344,7 +375,9 @@ const pageDesc = data.description ?? `${sourceName} → ${destName} (${data.auth
     color: var(--color-ink);
     font-family: var(--font-mono);
     font-size: 0.9375rem;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
   }
   .source-button:hover {
     background: var(--color-ink);

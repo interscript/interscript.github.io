@@ -69,7 +69,7 @@ describe("ScriptMosaic", () => {
     // Trigger engine load + initial render
     await vi.advanceTimersByTimeAsync(500)
 
-    const cells = wrapper.findAll('[data-script]')
+    const cells = wrapper.findAll("[data-script]")
     expect(cells.length).toBe(6)
   })
 
@@ -132,7 +132,7 @@ describe("ScriptMosaic", () => {
     const wrapper = mount(ScriptMosaic)
     await vi.advanceTimersByTimeAsync(500)
     // Component should not crash; should still render cells
-    expect(wrapper.findAll('[data-script]').length).toBe(6)
+    expect(wrapper.findAll("[data-script]").length).toBe(6)
   })
 
   it("uses the deep-ink surface for the mosaic container", () => {

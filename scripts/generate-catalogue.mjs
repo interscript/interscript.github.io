@@ -42,7 +42,9 @@ function buildEntry(doc) {
 }
 
 function main() {
-  const files = readdirSync(MAPS_DIR).filter((f) => f.endsWith(".isc")).sort()
+  const files = readdirSync(MAPS_DIR)
+    .filter((f) => f.endsWith(".isc"))
+    .sort()
   const catalogue = {}
   let okCount = 0
   const errors = []

@@ -154,12 +154,7 @@ const hasActiveFilters = computed(
         </label>
       </div>
 
-      <button
-        v-if="hasActiveFilters"
-        class="clear-btn"
-        type="button"
-        @click="clearFilters"
-      >
+      <button v-if="hasActiveFilters" class="clear-btn" type="button" @click="clearFilters">
         Clear filters
       </button>
 
@@ -213,7 +208,9 @@ const hasActiveFilters = computed(
   align-items: start;
 }
 @media (max-width: 1024px) {
-  .catalogue { grid-template-columns: 1fr; }
+  .catalogue {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Filter rail */
@@ -229,9 +226,15 @@ const hasActiveFilters = computed(
   border-radius: 4px;
 }
 @media (max-width: 1024px) {
-  .filter-rail { position: static; }
+  .filter-rail {
+    position: static;
+  }
 }
-.rail-section { display: flex; flex-direction: column; gap: 0.4rem; }
+.rail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 .rail-checkbox label {
   display: flex;
   align-items: center;
@@ -240,7 +243,11 @@ const hasActiveFilters = computed(
   color: var(--color-ink);
   cursor: pointer;
 }
-.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 .field-label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -274,7 +281,9 @@ const hasActiveFilters = computed(
   color: var(--color-ink);
   border-radius: 3px;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   align-self: flex-start;
 }
 .clear-btn:hover {
@@ -303,7 +312,9 @@ const hasActiveFilters = computed(
   background: var(--color-vellum);
   border: 1px solid var(--color-rule);
   border-radius: 4px;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
   position: relative;
 }
 .card:hover {
@@ -384,8 +395,12 @@ const hasActiveFilters = computed(
   color: var(--color-stone);
   margin-top: 0.25rem;
 }
-.card-flow .script { color: var(--color-ink); }
-.card-flow .arrow { color: var(--color-stone-light); }
+.card-flow .script {
+  color: var(--color-ink);
+}
+.card-flow .arrow {
+  color: var(--color-stone-light);
+}
 
 .card-sample {
   margin-top: 0.75rem;

@@ -11,7 +11,10 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
 }))
 ---
 
-<Base title="Blog — Interscript" description="Articles on transliteration, the Interscript project, and adjacent topics.">
+<Base
+  title="Blog — Interscript"
+  description="Articles on transliteration, the Interscript project, and adjacent topics."
+>
   <div class="container">
     <header class="page-hero">
       <p class="eyebrow eyebrow-accent">Blog</p>
@@ -20,16 +23,18 @@ const posts = renderAsciiDocDir("src/content/blog").map((p) => ({
     </header>
 
     <ul class="post-list">
-      {posts.map((p) => (
-        <li>
-          <a href={`/blog/${p.slug}`}>
-            <span class="date tnum">{p.date}</span>
-            <span class="title">{p.title}</span>
-            {p.author && <span class="author">by {p.author}</span>}
-            <span class="summary">{p.summary}</span>
-          </a>
-        </li>
-      ))}
+      {
+        posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.slug}`}>
+              <span class="date tnum">{p.date}</span>
+              <span class="title">{p.title}</span>
+              {p.author && <span class="author">by {p.author}</span>}
+              <span class="summary">{p.summary}</span>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </Base>

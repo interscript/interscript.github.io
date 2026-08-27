@@ -71,12 +71,12 @@ describe("per-map detail pages", () => {
     expect(html).toContain("Ethi")
   })
 
-  it("includes a link to the .imp source on GitHub for each map", () => {
+  it("includes a link to the .isc source on GitHub for each map", () => {
     const sample = detailDirs.slice(0, 5)
     for (const dir of sample) {
       const html = readFileSync(resolve(MAPS_DIST, dir, "index.html"), "utf8")
       expect(html).toMatch(/github\.com\/interscript\/maps\/blob\/main\/maps\//)
-      expect(html).toContain(`${dir}.imp`)
+      expect(html).toContain(`${dir}.isc`)
     }
   })
 

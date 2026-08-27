@@ -16,12 +16,7 @@ const VERSION = "isx-sw-v1"
 const CORE_CACHE = `${VERSION}-core`
 const MAP_CACHE = `${VERSION}-maps`
 
-const CORE_ASSETS = [
-  "/",
-  "/offline.html",
-  "/symbol.svg",
-  "/favicon.svg",
-]
+const CORE_ASSETS = ["/", "/offline.html", "/symbol.svg", "/favicon.svg"]
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -32,13 +27,11 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((k) => !k.startsWith(VERSION))
-          .map((k) => caches.delete(k)),
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(keys.filter((k) => !k.startsWith(VERSION)).map((k) => caches.delete(k))),
       ),
-    ),
   )
   self.clients.claim()
 })

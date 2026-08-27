@@ -93,7 +93,9 @@ const initialObserved = urlParams.get("o") ?? initialFamilyObj.sampleOutput
 const familyId = ref(initialFamily)
 const input = ref(initialInput)
 const observed = ref(initialObserved)
-const candidates = ref<{ system: CandidateSystem; output: string; distance: number; error?: string }[]>([])
+const candidates = ref<
+  { system: CandidateSystem; output: string; distance: number; error?: string }[]
+>([])
 const running = ref(false)
 
 let client: WorkerClient | null = null
@@ -135,7 +137,12 @@ async function detect() {
         const distance = levenshtein(output, observed.value)
         out.push({ system: sys, output, distance })
       } catch (e) {
-        out.push({ system: sys, output: "", distance: Number.MAX_SAFE_INTEGER, error: (e as Error).message })
+        out.push({
+          system: sys,
+          output: "",
+          distance: Number.MAX_SAFE_INTEGER,
+          error: (e as Error).message,
+        })
       }
       candidates.value = [...out].sort((a, b) => a.distance - b.distance)
     }),
@@ -163,9 +170,7 @@ function syncUrl() {
 }
 
 const bestMatch = computed(() => candidates.value[0])
-const worstDistance = computed(() =>
-  Math.max(1, ...candidates.value.map((c) => c.distance)),
-)
+const worstDistance = computed(() => Math.max(1, ...candidates.value.map((c) => c.distance)))
 
 onMounted(async () => {
   await ensureEngine()
@@ -226,7 +231,10 @@ onUnmounted(() => client?.terminate())
         </div>
         <div class="rank-distance">
           <div class="distance-bar">
-            <div class="distance-fill" :style="{ width: `${100 - (c.distance / worstDistance) * 100}%` }"></div>
+            <div
+              class="distance-fill"
+              :style="{ width: `${100 - (c.distance / worstDistance) * 100}%` }"
+            ></div>
           </div>
           <span class="distance-num tnum">{{ c.distance }}</span>
         </div>
@@ -235,9 +243,8 @@ onUnmounted(() => client?.terminate())
     </ul>
 
     <p class="detect-deck">
-      The detector transliterates your source text through every system
-      in the family, then ranks by Levenshtein distance between each
-      output and your observed romanization. Distance 0 means the
+      The detector transliterates your source text through every system in the family, then ranks by
+      Levenshtein distance between each output and your observed romanization. Distance 0 means the
       system produced your observed output exactly.
     </p>
   </div>
@@ -273,7 +280,9 @@ onUnmounted(() => client?.terminate())
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.family-pill:hover { border-color: var(--color-brand); }
+.family-pill:hover {
+  border-color: var(--color-brand);
+}
 .family-pill.active {
   background: var(--color-brand);
   border-color: var(--color-brand);
@@ -287,9 +296,14 @@ onUnmounted(() => client?.terminate())
   align-items: end;
 }
 @media (min-width: 900px) {
-  .io-grid { grid-template-columns: 1fr auto 1fr; }
+  .io-grid {
+    grid-template-columns: 1fr auto 1fr;
+  }
 }
-.io-field { display: grid; gap: 0.4rem; }
+.io-field {
+  display: grid;
+  gap: 0.4rem;
+}
 .io-field label {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
@@ -307,7 +321,9 @@ onUnmounted(() => client?.terminate())
   border-radius: 1px;
   outline: none;
 }
-.io-field input:focus { border-color: var(--color-brand); }
+.io-field input:focus {
+  border-color: var(--color-brand);
+}
 .io-arrow {
   color: var(--color-highlight);
   font-family: var(--font-mono);
@@ -339,7 +355,10 @@ onUnmounted(() => client?.terminate())
   background: var(--color-highlight-deep);
   border-color: var(--color-highlight-deep);
 }
-.detect-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.detect-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .verdict {
   margin: 0;
   font-size: 0.95rem;
@@ -384,7 +403,11 @@ onUnmounted(() => client?.terminate())
   padding-inline: 0.5rem;
   margin-inline: -0.5rem;
 }
-.rank-meta { display: flex; flex-direction: column; gap: 0.15rem; }
+.rank-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
 .rank-auth {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -435,7 +458,9 @@ onUnmounted(() => client?.terminate())
   font-size: 0.85rem;
   text-align: center;
 }
-.rank-link:hover { color: var(--color-highlight); }
+.rank-link:hover {
+  color: var(--color-highlight);
+}
 
 .detect-deck {
   font-size: 0.9375rem;

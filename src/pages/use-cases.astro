@@ -24,8 +24,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "Достоевский",
     exampleOutput: "Dostoevskiĭ",
-    body:
-      "MARC 21 records encode the script of the work; catalogers romanize the access points using ALA-LC rules so readers can find materials across writing systems. Interscript gives libraries a single, versioned source of truth.",
+    body: "MARC 21 records encode the script of the work; catalogers romanize the access points using ALA-LC rules so readers can find materials across writing systems. Interscript gives libraries a single, versioned source of truth.",
   },
   {
     id: "passports",
@@ -39,8 +38,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "ОЛЕКСАНДР",
     exampleOutput: "OLEKSANDR",
-    body:
-      "The MRZ of a passport must be unambiguously parseable. ICAO 9303 transliteration strips diacritics and maps source-script characters to a restricted ASCII set. Interscript's ICAO maps give you that exact mapping.",
+    body: "The MRZ of a passport must be unambiguously parseable. ICAO 9303 transliteration strips diacritics and maps source-script characters to a restricted ASCII set. Interscript's ICAO maps give you that exact mapping.",
   },
   {
     id: "newsrooms",
@@ -54,8 +52,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "بغداد",
     exampleOutput: "Baghdad",
-    body:
-      "BGN/PCGN has long been the de-facto standard for English-language newsrooms covering geographic names. The same machinery can power byline consistency, search indexing, and archive deduplication.",
+    body: "BGN/PCGN has long been the de-facto standard for English-language newsrooms covering geographic names. The same machinery can power byline consistency, search indexing, and archive deduplication.",
   },
   {
     id: "academic",
@@ -69,8 +66,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "महात्मा गांधी",
     exampleOutput: "mahātmā gāṁdhī",
-    body:
-      "Indological journals typically require ISO 15919 or IAST. Slavistics journals use ISO 9 or ALA-LC. Scholars switching between fields spend real time re-romanizing the same names — Interscript lets them encode the chosen system once.",
+    body: "Indological journals typically require ISO 15919 or IAST. Slavistics journals use ISO 9 or ALA-LC. Scholars switching between fields spend real time re-romanizing the same names — Interscript lets them encode the chosen system once.",
   },
   {
     id: "geographic",
@@ -84,8 +80,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "Горбачёв",
     exampleOutput: "Gorbachëv",
-    body:
-      "OpenStreetMap, Google Maps, and the US Board on Geographic Names all rely on UNGEGN systems. Interscript provides them as machine-readable maps so geocoders can normalize inputs consistently.",
+    body: "OpenStreetMap, Google Maps, and the US Board on Geographic Names all rely on UNGEGN systems. Interscript provides them as machine-readable maps so geocoders can normalize inputs consistently.",
   },
   {
     id: "genealogy",
@@ -99,8 +94,7 @@ const useCases: UseCase[] = [
     ],
     exampleInput: "Ελευθερίου",
     exampleOutput: "Eleutheriou",
-    body:
-      "Genealogy tools can offer multiple romanizations of the same source-script name so descendants searching across records can find matches under any convention.",
+    body: "Genealogy tools can offer multiple romanizations of the same source-script name so descendants searching across records can find matches under any convention.",
   },
 ]
 ---
@@ -114,38 +108,41 @@ const useCases: UseCase[] = [
       <p class="eyebrow eyebrow-accent">Use cases</p>
       <h1>Where Interscript is used.</h1>
       <p class="hero-deck">
-        Real-world contexts where romanization correctness matters.
-        Each case below is paired with the systems that commonly serve it
-        and a live, runnable example.
+        Real-world contexts where romanization correctness matters. Each case below is paired with
+        the systems that commonly serve it and a live, runnable example.
       </p>
     </div>
   </section>
 
   <section class="container uc-main">
     <ol class="uc-list">
-      {useCases.map((uc, i) => (
-        <li class="uc-row" id={uc.id}>
-          <div class="uc-num tnum">{String(i + 1).padStart(2, "0")}</div>
-          <div class="uc-body">
-            <h2>{uc.title}</h2>
-            <p class="uc-summary">{uc.summary}</p>
-            <p class="uc-detail">{uc.body}</p>
-            <ul class="uc-systems">
-              {uc.systems.map((s) => (
-                <li>
-                  <a href={`/maps/${s.code}`}>{s.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <aside class="uc-example">
-            <p class="example-label">Live example</p>
-            <p class="example-input">{uc.exampleInput}</p>
-            <div class="example-arrow" aria-hidden="true">↓</div>
-            <p class="example-output">{uc.exampleOutput}</p>
-          </aside>
-        </li>
-      ))}
+      {
+        useCases.map((uc, i) => (
+          <li class="uc-row" id={uc.id}>
+            <div class="uc-num tnum">{String(i + 1).padStart(2, "0")}</div>
+            <div class="uc-body">
+              <h2>{uc.title}</h2>
+              <p class="uc-summary">{uc.summary}</p>
+              <p class="uc-detail">{uc.body}</p>
+              <ul class="uc-systems">
+                {uc.systems.map((s) => (
+                  <li>
+                    <a href={`/maps/${s.code}`}>{s.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <aside class="uc-example">
+              <p class="example-label">Live example</p>
+              <p class="example-input">{uc.exampleInput}</p>
+              <div class="example-arrow" aria-hidden="true">
+                ↓
+              </div>
+              <p class="example-output">{uc.exampleOutput}</p>
+            </aside>
+          </li>
+        ))
+      }
     </ol>
   </section>
 
@@ -156,14 +153,17 @@ const useCases: UseCase[] = [
         <h2>Your use case not listed?</h2>
       </div>
       <p class="cta-deck">
-        Interscript covers {useCases.length * 5}+ systems across {useCases.length} domains.
-        For novel integrations, the JSON IR + TypeScript runtime give you
-        building blocks for any text-pipeline need. Open an issue on
-        GitHub to discuss your scenario.
+        Interscript covers {useCases.length * 5}+ systems across {useCases.length} domains. For novel
+        integrations, the JSON IR + TypeScript runtime give you building blocks for any text-pipeline
+        need. Open an issue on GitHub to discuss your scenario.
       </p>
       <div class="cta-actions">
         <a class="btn btn-accent" href="/api">Try the API playground →</a>
-        <a class="btn btn-ghost" href="https://github.com/interscript/interscript-ruby/discussions" rel="noreferrer">Start a discussion ↗</a>
+        <a
+          class="btn btn-ghost"
+          href="https://github.com/interscript/interscript-ruby/discussions"
+          rel="noreferrer">Start a discussion ↗</a
+        >
       </div>
     </div>
   </section>

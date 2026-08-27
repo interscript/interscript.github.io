@@ -37,7 +37,8 @@ const props = defineProps<Props>()
 // Read initial state from URL params so the page is shareable.
 const urlParams = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "")
 const initialPreset = urlParams.get("p") ?? props.presets[0]?.id ?? ""
-const initialInput = urlParams.get("i") ?? props.presets.find((p) => p.id === initialPreset)?.input ?? ""
+const initialInput =
+  urlParams.get("i") ?? props.presets.find((p) => p.id === initialPreset)?.input ?? ""
 
 const presetId = ref(initialPreset)
 const input = ref(initialInput)
@@ -45,8 +46,8 @@ const outputs = ref<Record<string, string>>({})
 const errors = ref<Record<string, string>>({})
 const loading = ref(false)
 
-const currentPreset = computed(() =>
-  props.presets.find((p) => p.id === presetId.value) ?? props.presets[0]!,
+const currentPreset = computed(
+  () => props.presets.find((p) => p.id === presetId.value) ?? props.presets[0]!,
 )
 
 let client: WorkerClient | null = null
@@ -127,7 +128,7 @@ watch([input, presetId], () => {
 
       <div class="input-row">
         <label class="input-label" for="compare-input">
-          {{ currentPreset.systems[0]?.scriptName ?? 'Source' }} input
+          {{ currentPreset.systems[0]?.scriptName ?? "Source" }} input
         </label>
         <input
           id="compare-input"
@@ -147,7 +148,13 @@ watch([input, presetId], () => {
           <span class="result-note">{{ sys.note }}</span>
           <a class="result-link" :href="`/maps/${sys.code}`" title="View system detail">↗</a>
         </div>
-        <div class="result-output" :class="{ error: errors[sys.code], loading: loading && !outputs[sys.code] && !errors[sys.code] }">
+        <div
+          class="result-output"
+          :class="{
+            error: errors[sys.code],
+            loading: loading && !outputs[sys.code] && !errors[sys.code],
+          }"
+        >
           <span v-if="errors[sys.code]" class="err-msg">⚠ {{ errors[sys.code] }}</span>
           <span v-else-if="loading && !outputs[sys.code]">Loading…</span>
           <span v-else>{{ outputs[sys.code] }}</span>
@@ -157,9 +164,9 @@ watch([input, presetId], () => {
     </ul>
 
     <p class="compare-deck">
-      Same input, different romanization systems. Each authority publishes
-      its own rules — Interscript encodes them as comparable, runnable maps
-      so you can see the differences at a glance.
+      Same input, different romanization systems. Each authority publishes its own rules —
+      Interscript encodes them as comparable, runnable maps so you can see the differences at a
+      glance.
     </p>
   </div>
 </template>

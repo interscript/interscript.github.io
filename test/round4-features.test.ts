@@ -123,9 +123,21 @@ describe("expanded navigation", () => {
 
   it("primary nav has all 16 destinations", () => {
     for (const href of [
-      "/", "/demo", "/compare", "/batch", "/detect", "/diff", "/marc",
-      "/maps", "/scripts", "/use-cases", "/api", "/status",
-      "/authorities", "/docs", "/about",
+      "/",
+      "/demo",
+      "/compare",
+      "/batch",
+      "/detect",
+      "/diff",
+      "/marc",
+      "/maps",
+      "/scripts",
+      "/use-cases",
+      "/api",
+      "/status",
+      "/authorities",
+      "/docs",
+      "/about",
     ]) {
       expect(home).toContain(`href="${href}"`)
     }

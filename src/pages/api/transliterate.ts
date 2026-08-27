@@ -101,16 +101,10 @@ async function run(
   } catch (e) {
     const durationMs = Math.round(performance.now() - start)
     if (e instanceof MapNotFoundError) {
-      return json(
-        { error: `System not found: ${system}`, system, durationMs },
-        404,
-      )
+      return json({ error: `System not found: ${system}`, system, durationMs }, 404)
     }
     if (e instanceof InterscriptError) {
-      return json(
-        { error: e.message, system, durationMs },
-        422,
-      )
+      return json({ error: e.message, system, durationMs }, 422)
     }
     return json(
       { error: `Transliteration failed: ${(e as Error).message}`, system, durationMs },

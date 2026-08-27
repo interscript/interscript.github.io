@@ -20,7 +20,12 @@ test.describe("compare systems", () => {
   test("has system selectors", async ({ page }) => {
     await page.goto("/compare")
     const selects = page.locator("select")
-    if (await selects.first().isVisible({ timeout: 3000 }).catch(() => false)) {
+    if (
+      await selects
+        .first()
+        .isVisible({ timeout: 3000 })
+        .catch(() => false)
+    ) {
       const count = await selects.count()
       expect(count).toBeGreaterThanOrEqual(1)
     }

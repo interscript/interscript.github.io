@@ -12,6 +12,9 @@ import { test, expect, type Page } from "@playwright/test"
 
 async function ready(page: Page) {
   await expect(page.locator(".rail-status")).toContainText("ready", { timeout: 20000 })
+  // The page default is the first catalogue entry (Chinese); these tests
+  // assert Cyrillic → Latin, so pin a Cyrillic system.
+  await page.locator("select.field-input").selectOption("odni-rus-Cyrl-Latn-2015")
 }
 
 test.describe("demo edge cases", () => {

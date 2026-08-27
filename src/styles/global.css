@@ -9,8 +9,9 @@
    motif, off-white as paper. This is the canonical Ribose/Interscript
    brand identity — every surface inherits from it.
 
-   Type: Fraunces variable serif (characterful display) + Inter Tight
-   (body) + JetBrains Mono (data).
+   Type: Inter Tight variable (sans) throughout + JetBrains Mono
+   (code/data). Sans-serif only — one family for display and body;
+   mono is reserved for code and data labels.
    ────────────────────────────────────────────────────────────────── */
 
 @theme {
@@ -33,10 +34,13 @@
   --color-rule: #d8d0bc;
   --color-rule-strong: #b8ab8c;
 
-  /* Type */
-  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
-  --font-sans: "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
+  /* Type — fontsource variable fonts register with a " Variable"
+     suffix; list it first or the browser silently falls back. */
+  --font-display: "Inter Tight Variable", "Inter Tight", Inter, system-ui, sans-serif;
+  --font-sans: "Inter Tight Variable", "Inter Tight", Inter, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  /* sans throughout — replaces the Tailwind default serif stack (Georgia) */
+  --font-serif: "Inter Tight Variable", "Inter Tight", Inter, system-ui, sans-serif;
 
   /* Type scale */
   --text-display: clamp(3.25rem, 8vw, 6.5rem);
@@ -100,7 +104,6 @@ html {
   font-family: var(--font-sans);
   background-color: var(--color-paper);
   color: var(--color-ink);
-  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -113,8 +116,16 @@ body {
   background-color: var(--color-paper);
   /* Subtle paper texture via radial gradients */
   background-image:
-    radial-gradient(at 20% 5%, color-mix(in srgb, var(--color-paper-deep) 50%, transparent) 0px, transparent 60%),
-    radial-gradient(at 95% 90%, color-mix(in srgb, var(--color-paper-deep) 35%, transparent) 0px, transparent 50%);
+    radial-gradient(
+      at 20% 5%,
+      color-mix(in srgb, var(--color-paper-deep) 50%, transparent) 0px,
+      transparent 60%
+    ),
+    radial-gradient(
+      at 95% 90%,
+      color-mix(in srgb, var(--color-paper-deep) 35%, transparent) 0px,
+      transparent 50%
+    );
   background-attachment: fixed;
 }
 
@@ -125,16 +136,13 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 500;
-  font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 50, "WONK" 0;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.05;
   color: var(--color-ink);
 }
 
 h1 {
-  font-variation-settings: "SOFT" 50, "WONK" 1;
   letter-spacing: -0.035em;
 }
 
@@ -325,7 +333,9 @@ pre code {
   border: 1px solid var(--color-rule);
   padding: 1.75rem;
   border-radius: 1px;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
 }
 .card:hover {
   border-color: var(--color-rule-strong);
@@ -444,12 +454,10 @@ pre code {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.01em;
-  font-variation-settings: "SOFT" 100, "WONK" 0;
 }
 .specimen-target {
   color: var(--color-highlight);
   font-style: italic;
-  font-variation-settings: "SOFT" 100, "WONK" 1;
 }
 
 /* Numerals tabular */

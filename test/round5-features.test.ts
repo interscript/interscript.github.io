@@ -103,9 +103,9 @@ describe("/contributing guide", () => {
     }
   })
 
-  it("shows the DSL syntax in a code block", () => {
+  it("shows the ISC syntax in a code block", () => {
     expect(html).toContain("metadata {")
-    expect(html).toContain("stage {")
+    expect(html).toContain("stage main {")
     expect(html).toContain("parallel {")
   })
 
@@ -129,4 +129,3 @@ describe("dark mode toggle", () => {
     expect(home).toMatch(/theme-toggle/)
   })
 })
-

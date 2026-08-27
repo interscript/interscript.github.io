@@ -85,12 +85,12 @@ describe("design system — palette (in compiled CSS)", () => {
 describe("design system — typography (in compiled CSS)", () => {
   const css = readAllCss()
 
-  it("loads Fraunces display font", () => {
-    expect(css.toLowerCase()).toContain("fraunces")
+  it("loads Inter Tight (sans-serif throughout)", () => {
+    expect(css.toLowerCase()).toContain("inter tight")
   })
 
-  it("loads Inter Tight body font", () => {
-    expect(css.toLowerCase()).toContain("inter")
+  it("loads no serif faces", () => {
+    expect(css.toLowerCase()).not.toMatch(/fraunces|newsreader/)
   })
 
   it("loads JetBrains Mono", () => {
@@ -100,7 +100,8 @@ describe("design system — typography (in compiled CSS)", () => {
 
 describe("partners and attribution", () => {
   // Embed widget is intentionally chrome-free — excluded from "every page"
-  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
+  const mainPages = () =>
+    allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
 
   it("credits Ribose Inc. on every page footer", () => {
     for (const file of mainPages()) {
@@ -130,10 +131,30 @@ describe("partners and attribution", () => {
 })
 
 describe("navigation", () => {
-  const navHrefs = ["/demo", "/compare", "/batch", "/detect", "/diff", "/marc", "/subtitles", "/maps", "/scripts", "/use-cases", "/api", "/api-docs", "/status", "/authorities", "/contributing", "/docs", "/about"]
+  const navHrefs = [
+    "/demo",
+    "/compare",
+    "/batch",
+    "/detect",
+    "/diff",
+    "/marc",
+    "/subtitles",
+    "/maps",
+    "/scripts",
+    "/use-cases",
+    "/api",
+    "/api-docs",
+    "/status",
+    "/authorities",
+    "/contributing",
+    "/docs",
+    "/about",
+  ]
 
   it("every page (except /embed) links to all primary destinations", () => {
-    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
+    const pages = allBuiltHtmlFiles().filter(
+      (p) => !p.includes("/embed") && !p.includes("/offline.html"),
+    )
     expect(pages.length).toBeGreaterThan(0)
     for (const page of pages) {
       void statSync(page)
@@ -145,7 +166,9 @@ describe("navigation", () => {
   })
 
   it("GitHub pill is present on every page (except /embed)", () => {
-    const pages = allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
+    const pages = allBuiltHtmlFiles().filter(
+      (p) => !p.includes("/embed") && !p.includes("/offline.html"),
+    )
     for (const page of pages) {
       const html = readFileSync(page, "utf8")
       expect(html).toMatch(/github\.com\/interscript/)
@@ -285,10 +308,10 @@ describe("about page", () => {
     expect(about).toMatch(/interoperable/i)
   })
 
-  it("covers history, team, supporters", () => {
+  it("covers history, team, partners", () => {
     expect(about).toMatch(/History/)
     expect(about).toMatch(/Team/)
-    expect(about).toMatch(/Supporters/)
+    expect(about).toMatch(/Partners &amp; supporters/)
   })
 })
 
@@ -320,10 +343,17 @@ describe("Astro whitespace collapse guard", () => {
         if (inRaw) continue
         const this_ = lines[i]
         const next = lines[i + 1]
-        if (/[a-zA-Z0-9,.;:!?)\]'"]$/.test(this_) && new RegExp(`^\\s*<${INLINE}[\\s>]`).test(next)) {
+        if (
+          /[a-zA-Z0-9,.;:!?)\]'"]$/.test(this_) &&
+          new RegExp(`^\\s*<${INLINE}[\\s>]`).test(next)
+        ) {
           offenders.push(`${relative(process.cwd(), file)}:${i + 1} text→tag`)
         }
-        if (new RegExp(`</${INLINE}>$`).test(this_) && /^\s*[a-zA-Z0-9(]/.test(next) && !/^\s*<(\/|style|script)/.test(next)) {
+        if (
+          new RegExp(`</${INLINE}>$`).test(this_) &&
+          /^\s*[a-zA-Z0-9(]/.test(next) &&
+          !/^\s*<(\/|style|script)/.test(next)
+        ) {
           offenders.push(`${relative(process.cwd(), file)}:${i + 1} tag→text`)
         }
       }

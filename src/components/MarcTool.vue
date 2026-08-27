@@ -14,7 +14,7 @@
  * Output: same fields with non-Latin subfield content romanized,
  * original kept alongside.
  */
-import { ref, computed, onMounted, onUnmounted } from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
 import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 
 interface Props {
@@ -53,6 +53,7 @@ function parseMarcLine(line: string): MarcLine | null {
 
 function hasNonLatin(s: string): boolean {
   // Detect non-ASCII letters (i.e. needs transliteration)
+  // eslint-disable-next-line no-control-regex -- \x00-\x7F is the full ASCII range
   return /[^\x00-\x7F]/.test(s)
 }
 
@@ -85,7 +86,7 @@ async function run() {
           const romanized = await client.transliterate(system.value, content.trim())
           translatedParts.push(`$${code} ${romanized}`)
           needsRomanization = true
-        } catch (e) {
+        } catch {
           translatedParts.push(sf)
         }
       } else {
@@ -141,14 +142,11 @@ onUnmounted(() => client?.terminate())
           <span class="pane-label">Romanized output</span>
           <button v-if="output" class="copy-btn" @click="copyOutput">Copy</button>
         </header>
-        <pre>{{ output || 'Output appears here.' }}</pre>
+        <pre>{{ output || "Output appears here." }}</pre>
       </div>
     </div>
 
-    <p class="privacy">
-      Text never leaves your browser. All transliteration runs in a
-      Web Worker.
-    </p>
+    <p class="privacy">Text never leaves your browser. All transliteration runs in a Web Worker.</p>
   </div>
 </template>
 
@@ -187,7 +185,9 @@ onUnmounted(() => client?.terminate())
   border-radius: 1px;
   outline: none;
 }
-.control-field select:focus { border-color: var(--color-brand); }
+.control-field select:focus {
+  border-color: var(--color-brand);
+}
 
 .run-btn {
   font-family: var(--font-mono);
@@ -205,7 +205,10 @@ onUnmounted(() => client?.terminate())
   background: var(--color-highlight-deep);
   border-color: var(--color-highlight-deep);
 }
-.run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.run-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 .marc-grid {
   display: grid;
@@ -213,7 +216,9 @@ onUnmounted(() => client?.terminate())
   gap: 1.5rem;
 }
 @media (min-width: 900px) {
-  .marc-grid { grid-template-columns: 1fr 1fr; }
+  .marc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .io-pane {
@@ -242,7 +247,8 @@ onUnmounted(() => client?.terminate())
   color: var(--color-stone-light);
 }
 
-textarea, pre {
+textarea,
+pre {
   flex: 1;
   min-height: 320px;
   font-family: var(--font-mono);

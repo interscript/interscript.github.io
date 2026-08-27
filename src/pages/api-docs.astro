@@ -11,13 +11,19 @@ import Base from "../layouts/Base.astro"
       <p class="eyebrow eyebrow-accent">API reference</p>
       <h1>Three endpoints. Real documentation.</h1>
       <p class="hero-deck">
-        The Interscript REST API runs at <code>https://interscript.org/api</code>.
-        Open source, no auth, no rate limits (yet). Browse the OpenAPI 3.1
-        spec below or download it from <a href="/openapi.json">/openapi.json</a>.
+        The Interscript REST API runs at <code>https://interscript.org/api</code>. Open source, no
+        auth, no rate limits (yet). Browse the OpenAPI 3.1 spec below or download it from <a
+          href="/openapi.json">/openapi.json</a
+        >.
       </p>
       <div class="hero-actions">
         <a class="btn btn-ghost" href="/openapi.json" download>↓ OpenAPI 3.1 JSON</a>
-        <a class="btn btn-ghost" href="https://www.postman.com/interscript-api/redirect" target="_blank" rel="noreferrer">Postman collection ↗</a>
+        <a
+          class="btn btn-ghost"
+          href="https://www.postman.com/interscript-api/redirect"
+          target="_blank"
+          rel="noreferrer">Postman collection ↗</a
+        >
       </div>
     </div>
   </section>
@@ -39,8 +45,8 @@ import Base from "../layouts/Base.astro"
         <code class="endpoint-path">/api/transliterate</code>
       </header>
       <p class="endpoint-deck">
-        Transliterate a single string. Use POST when the input is large,
-        contains newlines, or you prefer explicit request bodies.
+        Transliterate a single string. Use POST when the input is large, contains newlines, or you
+        prefer explicit request bodies.
       </p>
 
       <h3>Request body</h3>
@@ -95,8 +101,8 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
         <code class="endpoint-path">/api/transliterate</code>
       </header>
       <p class="endpoint-deck">
-        Same operation, query-string form. Easier to test in a browser
-        or one-liner curl. Avoid for inputs containing newlines.
+        Same operation, query-string form. Easier to test in a browser or one-liner curl. Avoid for
+        inputs containing newlines.
       </p>
 
       <h3>Query parameters</h3>
@@ -107,7 +113,11 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
         <tbody>
           <tr><td><code>system</code></td><td>yes</td><td>Interscript system code</td></tr>
           <tr><td><code>input</code></td><td>yes</td><td>Source text (≤ 10,000 chars)</td></tr>
-          <tr><td><code>stage</code></td><td>no</td><td>Stage to execute (default <code>main</code>)</td></tr>
+          <tr
+            ><td><code>stage</code></td><td>no</td><td
+              >Stage to execute (default <code>main</code>)</td
+            ></tr
+          >
         </tbody>
       </table>
 
@@ -123,8 +133,7 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
         <code class="endpoint-path">/api/systems</code>
       </header>
       <p class="endpoint-deck">
-        List every transliteration system in the catalogue. Optional
-        filters by authority or script.
+        List every transliteration system in the catalogue. Optional filters by authority or script.
       </p>
 
       <h3>Query parameters</h3>
@@ -133,9 +142,20 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
           <tr><th>Name</th><th>Required</th><th>Description</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>authority</code></td><td>no</td><td>Authority slug (<code>bgnpcgn</code>, <code>iso</code>, …)</td></tr>
-          <tr><td><code>source_script</code></td><td>no</td><td>ISO 15924 source code (<code>Cyrl</code>, <code>Arab</code>, …)</td></tr>
-          <tr><td><code>destination_script</code></td><td>no</td><td>ISO 15924 destination code</td></tr>
+          <tr
+            ><td><code>authority</code></td><td>no</td><td
+              >Authority slug (<code>bgnpcgn</code>, <code>iso</code>, …)</td
+            ></tr
+          >
+          <tr
+            ><td><code>source_script</code></td><td>no</td><td
+              >ISO 15924 source code (<code>Cyrl</code>, <code>Arab</code>, …)</td
+            ></tr
+          >
+          <tr
+            ><td><code>destination_script</code></td><td>no</td><td>ISO 15924 destination code</td
+            ></tr
+          >
         </tbody>
       </table>
 
@@ -162,9 +182,9 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
         <code class="endpoint-path">/api/detect</code>
       </header>
       <p class="endpoint-deck">
-        Given a source-script input and an observed romanization, returns
-        the candidate systems in the relevant script family. Pair with
-        the <a href="/detect">detection playground</a> for full ranking.
+        Given a source-script input and an observed romanization, returns the candidate systems in
+        the relevant script family. Pair with the <a href="/detect">detection playground</a> for full
+        ranking.
       </p>
 
       <h3>Query parameters</h3>
@@ -205,9 +225,18 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
       <ul>
         <li><strong>Input size:</strong> 10,000 chars per request.</li>
         <li><strong>Auth:</strong> none. CORS open to all origins.</li>
-        <li><strong>Rate limits:</strong> currently none. If abused, will add a per-IP cap with 429 responses and Retry-After headers.</li>
-        <li><strong>Uptime:</strong> best-effort. For production pipelines, run <code>interscript-ts</code> locally — same engine, same byte-for-byte output.</li>
-        <li><strong>Privacy:</strong> no logging of input content. Aggregate request counts only.</li>
+        <li>
+          <strong>Rate limits:</strong> currently none. If abused, will add a per-IP cap with 429 responses
+          and Retry-After headers.
+        </li>
+        <li>
+          <strong>Uptime:</strong> best-effort. For production pipelines, run <code
+            >interscript-ts</code
+          > locally — same engine, same byte-for-byte output.
+        </li>
+        <li>
+          <strong>Privacy:</strong> no logging of input content. Aggregate request counts only.
+        </li>
       </ul>
     </section>
   </section>
@@ -304,7 +333,9 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--color-rule);
   }
-  .endpoint:last-of-type { border-bottom: none; }
+  .endpoint:last-of-type {
+    border-bottom: none;
+  }
   .endpoint-head {
     display: flex;
     align-items: center;
@@ -320,8 +351,12 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
     border-radius: 1px;
     color: var(--color-vellum);
   }
-  .method-get { background: var(--color-brand); }
-  .method-post { background: var(--color-highlight); }
+  .method-get {
+    background: var(--color-brand);
+  }
+  .method-post {
+    background: var(--color-highlight);
+  }
   .endpoint-path {
     font-family: var(--font-mono);
     font-size: 1rem;
@@ -378,11 +413,13 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
     padding: 0;
   }
 
-  .schemas, .limits {
+  .schemas,
+  .limits {
     padding-top: 1.5rem;
     border-top: 2px solid var(--color-ink);
   }
-  .schemas h2, .limits h2 {
+  .schemas h2,
+  .limits h2 {
     font-size: var(--text-h1);
     margin: 0 0 0.75rem;
   }
@@ -404,6 +441,11 @@ puts JSON.parse(res.body)["output"]  # → "Anton"`} /></pre>
     color: var(--color-stone);
     line-height: 1.7;
   }
-  .limits li { margin-bottom: 0.4rem; }
-  .limits strong { color: var(--color-ink); font-weight: 500; }
+  .limits li {
+    margin-bottom: 0.4rem;
+  }
+  .limits strong {
+    color: var(--color-ink);
+    font-weight: 500;
+  }
 </style>

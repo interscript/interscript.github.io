@@ -69,46 +69,54 @@ const scripts = [...byScript.values()]
       <p class="eyebrow eyebrow-accent">Scripts encyclopedia</p>
       <h1>Every script we romanize.</h1>
       <p class="hero-deck">
-        A visual reference for the {scripts.length} ISO 15924 scripts
-        Interscript currently covers. Each card shows a real sample
-        word in the source script alongside its Latin rendering — the
-        same pair checked into the test suite.
+        A visual reference for the {scripts.length} ISO 15924 scripts Interscript currently covers. Each
+        card shows a real sample word in the source script alongside its Latin rendering — the same pair
+        checked into the test suite.
       </p>
     </div>
   </section>
 
   <section class="container scripts-grid-wrap">
     <ul class="scripts-grid">
-      {scripts.map((s) => (
-        <li class="script-card">
-          <header class="card-head">
-            <span class="card-name">{s.name}</span>
-            <span class="card-code">{s.code}{s.number !== undefined && ` · ${s.number}`}</span>
-          </header>
+      {
+        scripts.map((s) => (
+          <li class="script-card">
+            <header class="card-head">
+              <span class="card-name">{s.name}</span>
+              <span class="card-code">
+                {s.code}
+                {s.number !== undefined && ` · ${s.number}`}
+              </span>
+            </header>
 
-          <a class="card-sample" href={`/maps/${s.sample!.system}`}>
-            <p class="sample-source">{s.sample!.input}</p>
-            <p class="sample-arrow" aria-hidden="true">↓</p>
-            <p class="sample-target">{s.sample!.output}</p>
-          </a>
+            <a class="card-sample" href={`/maps/${s.sample!.system}`}>
+              <p class="sample-source">{s.sample!.input}</p>
+              <p class="sample-arrow" aria-hidden="true">
+                ↓
+              </p>
+              <p class="sample-target">{s.sample!.output}</p>
+            </a>
 
-          <footer class="card-foot">
-            <details>
-              <summary>{s.systems.length} system{s.systems.length > 1 ? "s" : ""} for this script</summary>
-              <ul class="systems-list">
-                {s.systems.map((sys) => (
-                  <li>
-                    <a href={`/maps/${sys.code}`}>
-                      <span class="sys-auth">{sys.authority}</span>
-                      <span class="sys-name">{sys.name}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </footer>
-        </li>
-      ))}
+            <footer class="card-foot">
+              <details>
+                <summary>
+                  {s.systems.length} system{s.systems.length > 1 ? "s" : ""} for this script
+                </summary>
+                <ul class="systems-list">
+                  {s.systems.map((sys) => (
+                    <li>
+                      <a href={`/maps/${sys.code}`}>
+                        <span class="sys-auth">{sys.authority}</span>
+                        <span class="sys-name">{sys.name}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </footer>
+          </li>
+        ))
+      }
     </ul>
   </section>
 
@@ -118,9 +126,10 @@ const scripts = [...byScript.values()]
         <p class="eyebrow">Reference</p>
         <h2>ISO 15924 script codes.</h2>
         <p class="section-deck">
-          Every script code used by Interscript maps to an entry in
-          ISO 15924 (Codes for the identification of scripts). Names
-          and numeric identifiers are resolved at build time via <code>@iso24229/iso15924-data</code> from npm.
+          Every script code used by Interscript maps to an entry in ISO 15924 (Codes for the
+          identification of scripts). Names and numeric identifiers are resolved at build time via <code
+            >@iso24229/iso15924-data</code
+          > from npm.
         </p>
       </header>
 
@@ -134,14 +143,20 @@ const scripts = [...byScript.values()]
           </tr>
         </thead>
         <tbody>
-          {scripts.sort((a, b) => a.code.localeCompare(b.code)).map((s) => (
-            <tr>
-              <td><code>{s.code}</code></td>
-              <td class="tnum">{s.number ?? "—"}</td>
-              <td>{s.name}</td>
-              <td class="tnum">{s.systems.length}</td>
-            </tr>
-          ))}
+          {
+            scripts
+              .sort((a, b) => a.code.localeCompare(b.code))
+              .map((s) => (
+                <tr>
+                  <td>
+                    <code>{s.code}</code>
+                  </td>
+                  <td class="tnum">{s.number ?? "—"}</td>
+                  <td>{s.name}</td>
+                  <td class="tnum">{s.systems.length}</td>
+                </tr>
+              ))
+          }
         </tbody>
       </table>
     </div>
@@ -183,7 +198,9 @@ const scripts = [...byScript.values()]
     flex-direction: column;
     transition: border-color 0.15s ease;
   }
-  .script-card:hover { border-color: var(--color-brand); }
+  .script-card:hover {
+    border-color: var(--color-brand);
+  }
 
   .card-head {
     display: flex;
@@ -219,14 +236,15 @@ const scripts = [...byScript.values()]
     background: var(--color-paper-deep);
     transition: background 0.15s ease;
   }
-  .card-sample:hover { background: color-mix(in srgb, var(--color-brand) 12%, var(--color-paper-deep)); }
+  .card-sample:hover {
+    background: color-mix(in srgb, var(--color-brand) 12%, var(--color-paper-deep));
+  }
   .sample-source {
     font-family: var(--font-display);
     font-size: 1.625rem;
     color: var(--color-ink);
     margin: 0;
     line-height: 1.1;
-    font-variation-settings: "SOFT" 100, "WONK" 1;
     text-align: center;
     word-break: break-word;
   }
@@ -261,12 +279,16 @@ const scripts = [...byScript.values()]
     text-transform: uppercase;
     list-style: none;
   }
-  .card-foot summary::-webkit-details-marker { display: none; }
+  .card-foot summary::-webkit-details-marker {
+    display: none;
+  }
   .card-foot summary::before {
     content: "+ ";
     color: var(--color-brand-deep);
   }
-  .card-foot details[open] summary::before { content: "− "; }
+  .card-foot details[open] summary::before {
+    content: "− ";
+  }
 
   .systems-list {
     list-style: none;
@@ -285,7 +307,9 @@ const scripts = [...byScript.values()]
     font-size: 0.78rem;
     padding: 0.2rem 0;
   }
-  .systems-list a:hover .sys-name { color: var(--color-highlight); }
+  .systems-list a:hover .sys-name {
+    color: var(--color-highlight);
+  }
   .sys-auth {
     font-family: var(--font-mono);
     color: var(--color-brand-deep);

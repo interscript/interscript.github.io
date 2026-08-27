@@ -38,12 +38,11 @@ for (const code of systemCodes) {
           One&nbsp;map.
         </h1>
         <p class="hero-lead">
-          Interscript encodes the world's romanization systems — BGN/PCGN,
-          ISO, UN, ALA-LC, ODNI, ICAO, DIN — as machine-readable maps that
-          produce byte-identical output across Ruby, TypeScript, and the
-          browser. {totalSystems} systems, {authoritySet.size} authorities,
-          {scriptPairSet.size} script pairs, all checked into git and tested
-          against the published reference documents.
+          Interscript encodes the world's romanization systems — BGN/PCGN, ISO, UN, ALA-LC, ODNI,
+          ICAO, DIN — as machine-readable maps that produce byte-identical output across Ruby,
+          TypeScript, and the browser. {totalSystems} systems, {authoritySet.size} authorities,
+          {scriptPairSet.size} script pairs, all checked into git and tested against the published reference
+          documents.
         </p>
         <div class="hero-cta">
           <a class="btn btn-accent" href="/demo">Try live transliteration →</a>
@@ -104,11 +103,10 @@ for (const code of systemCodes) {
         <p class="eyebrow">What it is</p>
         <h2>Transliteration as data, not code.</h2>
         <p class="section-deck">
-          Most romanization libraries hand-roll one system per language.
-          Interscript encodes the entire corpus of authority-backed systems
-          using a single declarative map format. Maps are checked into git,
-          versioned, independently testable, and compiled to a typed JSON IR
-          that any runtime can execute.
+          Most romanization libraries hand-roll one system per language. Interscript encodes the
+          entire corpus of authority-backed systems using a single declarative map format. Maps are
+          checked into git, versioned, independently testable, and executed identically by every
+          runtime from one ISC source.
         </p>
       </header>
 
@@ -119,34 +117,32 @@ for (const code of systemCodes) {
             <h3>Author the map</h3>
           </header>
           <p class="step-deck">
-            A declarative Ruby DSL captures the rules of an authority document
-            verbatim, including all special cases and notes.
+            A declarative map language — ISC — captures the rules of an authority document verbatim,
+            all special cases and notes included.
           </p>
-          <pre><code set:html={`stage :main do
-  parallel do
-    sub "щ" => "shch"
-    sub "ъ" => "ʺ"
-    sub "Антон" => "Anton"
-  end
-end`} /></pre>
+          <pre><code set:html={`stage main {
+  parallel {
+    sub "А" "A"
+    sub "Б" "B"
+    sub "В" "V"
+  }
+}`} /></pre>
         </article>
 
         <article class="pipeline-step">
           <header class="step-head">
             <span class="step-num">02</span>
-            <h3>Compile to JSON IR</h3>
+            <h3>One format, every engine</h3>
           </header>
           <p class="step-deck">
-            The Ruby <code>Compiler::JsonIR</code> emits a typed, versioned
-            intermediate representation any runtime can load.
+            The same human-readable ISC text is parsed by the Ruby gem, interscript-ts, and the
+            browser — no intermediate compilation, no format drift between runtimes.
           </p>
-          <pre><code set:html={`{
-  "schemaVersion": 1,
-  "systemCode": "bgnpcgn-ukr-Cyrl-Latn-2019",
-  "stages": [
-    { "kind": "stage", "name": "main",
-      "rules": [ /* parallel sub-rules */ ] }
-  ]
+          <pre><code set:html={`stage main {
+  run map.cyrllatn.stage.main
+  parallel {
+    sub "'" ""
+  }
 }`} /></pre>
         </article>
 
@@ -156,8 +152,8 @@ end`} /></pre>
             <h3>Run anywhere</h3>
           </header>
           <p class="step-deck">
-            Ruby gem, TypeScript package, and in-browser widget — all consume
-            the same IR and produce the same bytes for the same input.
+            Ruby gem, TypeScript package, and in-browser widget — all parse the same ISC maps and
+            produce the same bytes for the same input.
           </p>
           <pre><code set:html={`Interscript.transliterate(
   "bgnpcgn-ukr-Cyrl-Latn-2019",
@@ -178,9 +174,8 @@ end`} /></pre>
         <p class="eyebrow">A handful of the catalogue</p>
         <h2>From {totalSystems} systems. Five shown.</h2>
         <p class="section-deck">
-          Each system has a published authority document, machine-readable
-          map, exhaustive test vectors, and live in-browser preview. The
-          five below are running right now on this page.
+          Each system has a published authority document, machine-readable map, exhaustive test
+          vectors, and live in-browser preview. The five below are running right now on this page.
         </p>
       </header>
 
@@ -193,7 +188,9 @@ end`} /></pre>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">Anton</span>
           </span>
-          <code class="system-code"><a href="/maps/bgnpcgn-ukr-Cyrl-Latn-2019">bgnpcgn-ukr-Cyrl-Latn-2019</a></code>
+          <code class="system-code"
+            ><a href="/maps/bgnpcgn-ukr-Cyrl-Latn-2019">bgnpcgn-ukr-Cyrl-Latn-2019</a></code
+          >
         </li>
         <li class="system-row">
           <span class="system-auth">BGN/PCGN</span>
@@ -203,7 +200,9 @@ end`} /></pre>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">Tschueß!</span>
           </span>
-          <code class="system-code"><a href="/maps/bgnpcgn-deu-Latn-Latn-2000">bgnpcgn-deu-Latn-Latn-2000</a></code>
+          <code class="system-code"
+            ><a href="/maps/bgnpcgn-deu-Latn-Latn-2000">bgnpcgn-deu-Latn-Latn-2000</a></code
+          >
         </li>
         <li class="system-row">
           <span class="system-auth">ODNI</span>
@@ -213,7 +212,9 @@ end`} /></pre>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">privet mir</span>
           </span>
-          <code class="system-code"><a href="/maps/odni-rus-Cyrl-Latn-2015">odni-rus-Cyrl-Latn-2015</a></code>
+          <code class="system-code"
+            ><a href="/maps/odni-rus-Cyrl-Latn-2015">odni-rus-Cyrl-Latn-2015</a></code
+          >
         </li>
         <li class="system-row">
           <span class="system-auth">ALA-LC</span>
@@ -223,7 +224,9 @@ end`} /></pre>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">ʼiteyop̣eyā</span>
           </span>
-          <code class="system-code"><a href="/maps/alalc-amh-Ethi-Latn-2011">alalc-amh-Ethi-Latn-2011</a></code>
+          <code class="system-code"
+            ><a href="/maps/alalc-amh-Ethi-Latn-2011">alalc-amh-Ethi-Latn-2011</a></code
+          >
         </li>
         <li class="system-row">
           <span class="system-auth">UN</span>
@@ -233,7 +236,9 @@ end`} /></pre>
             <span class="arrow" aria-hidden="true">→</span>
             <span class="dst">tamil̮</span>
           </span>
-          <code class="system-code"><a href="/maps/un-tam-Taml-Latn-1972">un-tam-Taml-Latn-1972</a></code>
+          <code class="system-code"
+            ><a href="/maps/un-tam-Taml-Latn-1972">un-tam-Taml-Latn-1972</a></code
+          >
         </li>
       </ol>
 
@@ -252,10 +257,10 @@ end`} /></pre>
         <p class="eyebrow">The neural layer</p>
         <h2>Where maps end, models begin.</h2>
         <p class="section-deck">
-          Some conversions have no authority document: restoring the diacritics
-          a scribe left out, reading Thai or Urdu as phonemes. Those ship as
-          checksummed neural artifacts under the same discipline — measured
-          metrics, teacher next to student, identical bytes from every runtime.
+          Some conversions have no authority document: restoring the diacritics a scribe left out,
+          reading Thai or Urdu as phonemes. Those ship as checksummed neural artifacts under the
+          same discipline — measured metrics, teacher next to student, identical bytes from every
+          runtime.
         </p>
       </header>
       <ul class="neural-ledger">
@@ -294,9 +299,7 @@ end`} /></pre>
       <div class="cta-text">
         <p class="eyebrow eyebrow-accent">Get started</p>
         <h2>Install in one line.</h2>
-        <p class="cta-deck">
-          Open source under BSD-2-Clause. Maintained by Ribose Inc.
-        </p>
+        <p class="cta-deck">Open source under BSD-2-Clause. Maintained by Ribose Inc.</p>
       </div>
       <div class="cta-code">
         <pre><code># Ruby
@@ -337,7 +340,6 @@ curl interscript.org/maps/&lt;system-code&gt;.json</code></pre>
   .hero-headline em {
     font-style: italic;
     color: var(--color-brand);
-    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
   .hero-lead {
@@ -408,7 +410,6 @@ curl interscript.org/maps/&lt;system-code&gt;.json</code></pre>
     font-size: 1.0625rem;
     font-style: italic;
     color: var(--color-ink);
-    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
   /* ── Section heads ─────────────────────────────────────────────── */

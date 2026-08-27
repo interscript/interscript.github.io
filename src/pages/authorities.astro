@@ -60,15 +60,17 @@ const totalAuthorities = authorities.length
 const totalSystems = Object.values(authorityCounts).reduce((a, b) => a + b, 0)
 ---
 
-<Base title="Authorities — Interscript" description={`${totalAuthorities} transliteration authorities with ${totalSystems} total systems.`}>
+<Base
+  title="Authorities — Interscript"
+  description={`${totalAuthorities} transliteration authorities with ${totalSystems} total systems.`}
+>
   <section class="auth-hero">
     <div class="container">
       <p class="eyebrow">Authorities</p>
       <h1>{totalAuthorities} authorities, {totalSystems} systems.</h1>
       <p class="auth-deck">
-        Every transliteration system in Interscript traces back to a
-        published authority document. Click any authority to see all its
-        systems with test vectors.
+        Every transliteration system in Interscript traces back to a published authority document.
+        Click any authority to see all its systems with test vectors.
       </p>
     </div>
   </section>
@@ -84,16 +86,20 @@ const totalSystems = Object.values(authorityCounts).reduce((a, b) => a + b, 0)
         </tr>
       </thead>
       <tbody>
-        {authorities.map((a) => (
-          <tr>
-            <td><strong>{a.name}</strong></td>
-            <td>{a.full}</td>
-            <td class="num">{a.systems}</td>
-            <td>
-              <a href={`/authorities/${a.slug}`}>View systems →</a>
-            </td>
-          </tr>
-        ))}
+        {
+          authorities.map((a) => (
+            <tr>
+              <td>
+                <strong>{a.name}</strong>
+              </td>
+              <td>{a.full}</td>
+              <td class="num">{a.systems}</td>
+              <td>
+                <a href={`/authorities/${a.slug}`}>View systems →</a>
+              </td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </section>

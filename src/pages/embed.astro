@@ -1,7 +1,6 @@
 ---
 import { scriptName, parseLanguageField } from "../data/iso"
 import catalogue from "../data/maps-catalogue.json" with { type: "json" }
-import { readdirSync } from "node:fs"
 
 // Embeddable widget — designed for iframe embedding on third-party sites.
 // URL params: ?system=<code>&input=<text>&compact=1
@@ -18,15 +17,8 @@ interface MapEntry {
   }
 }
 
-const bundledCodes = new Set(
-  readdirSync("public/maps")
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => f.replace(/\.json$/, ""))
-    .filter((c) => !["posix", "unicode", "var-Cyrl", "var-kor"].includes(c)),
-)
-
 // Build a curated shortlist for the dropdown (the most-used systems).
-// Pulls from the catalogue and filters to bundled/live-demoable.
+// Pulls from the catalogue.
 const featuredCodes = [
   "bgnpcgn-ukr-Cyrl-Latn-2019",
   "bgnpcgn-deu-Latn-Latn-2000",
@@ -49,7 +41,12 @@ const featuredCodes = [
     <title>Interscript Widget</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style is:global>
-      html, body { margin: 0; padding: 0; background: var(--color-vellum); }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--color-vellum);
+      }
     </style>
   </head>
   <body>
@@ -66,8 +63,7 @@ const featuredCodes = [
             language: parseLanguageField(entry?.data.language),
           }
         }),
-      )}
-    ></interscript-widget>
+      )}></interscript-widget>
 
     <script>
       import "/src/scripts/widget.ts"

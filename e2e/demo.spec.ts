@@ -21,13 +21,14 @@ test.describe("demo page — transliteration explorer", () => {
     const select = page.locator("select.field-input")
     await expect(select).toBeVisible()
     const options = select.locator("option")
-    await expect(options).toHaveCount(5)
+    await expect(options).toHaveCount(289)
+    await expect(select.locator("optgroup").first()).toHaveAttribute("label", "ACADSIN")
   })
 
-  test("default system is BGN/PCGN Ukrainian", async ({ page }) => {
+  test("default system is the first catalogue entry", async ({ page }) => {
     await page.goto("/demo")
     const select = page.locator("select.field-input")
-    await expect(select).toHaveValue("bgnpcgn-ukr-Cyrl-Latn-2019")
+    await expect(select).toHaveValue("acadsin-zho-Hani-Latn-2002")
   })
 
   test("transliterates Ukrainian Cyrillic to Latin", async ({ page }) => {
@@ -36,6 +37,8 @@ test.describe("demo page — transliteration explorer", () => {
     // Wait for engine to be ready (loads all systems + their deps)
     const status = page.locator(".rail-status")
     await expect(status).toContainText("ready", { timeout: 20000 })
+
+    await page.locator("select.field-input").selectOption("bgnpcgn-ukr-Cyrl-Latn-2019")
 
     // Type Cyrillic input
     const textarea = page.locator("textarea.pane-body")
@@ -158,6 +161,7 @@ test.describe("demo modes — API vs in-browser", () => {
     const status = page.locator(".rail-status")
     await expect(status).toContainText("ready", { timeout: 30000 })
 
+    await page.locator("select.field-input").selectOption("odni-rus-Cyrl-Latn-2015")
     await page.locator("textarea.pane-body").fill("Антон")
     await expect(page.locator(".pane-result")).toContainText("Anton", { timeout: 10000 })
   })
@@ -182,6 +186,7 @@ test.describe("demo modes — API vs in-browser", () => {
     // API mode first
     const status = page.locator(".rail-status")
     await expect(status).toContainText("ready", { timeout: 30000 })
+    await page.locator("select.field-input").selectOption("bgnpcgn-ukr-Cyrl-Latn-2019")
     await page.locator("textarea.pane-body").fill("Київ")
     await expect(page.locator(".pane-result")).toContainText("Kyiv", { timeout: 10000 })
     const apiOutput = await page.locator(".pane-result").textContent()

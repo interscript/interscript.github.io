@@ -5,11 +5,17 @@ import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 interface System {
   code: string
   label: string
+  /** Optional authority group — rendered as an <optgroup>. */
+  group?: string
 }
 
-const props = defineProps<{
-  systems: System[]
-}>()
+const props = withDefaults(
+  defineProps<{
+    systems: System[]
+    initialInput?: string
+  }>(),
+  { initialInput: "Антон" },
+)
 
 const API_ENDPOINT = "https://api.interscript.org/v1/transliterate"
 const DEBOUNCE_MS = 300
@@ -18,13 +24,23 @@ type Mode = "api" | "browser"
 
 const mode = ref<Mode>("api")
 const selected = ref(props.systems[0]?.code ?? "")
-const input = ref("Антон")
+const input = ref(props.initialInput)
 const output = ref("")
 const error = ref<string | null>(null)
 const status = ref<"loading" | "ready" | "missing">("loading")
 
 const inputChars = computed(() => Array.from(input.value).length)
 const outputChars = computed(() => Array.from(output.value).length)
+
+const systemGroups = computed(() => {
+  const groups = new Map<string, System[]>()
+  for (const s of props.systems) {
+    const g = s.group ?? "Other"
+    if (!groups.has(g)) groups.set(g, [])
+    groups.get(g)!.push(s)
+  }
+  return [...groups.entries()]
+})
 
 let worker: WorkerClient | undefined
 let timer: number | undefined
@@ -61,8 +77,7 @@ function schedule() {
   }
   timer = window.setTimeout(async () => {
     try {
-      const result =
-        mode.value === "api" ? await runApi(text) : await runBrowser(text)
+      const result = mode.value === "api" ? await runApi(text) : await runBrowser(text)
       if (mySeq !== seq) return
       output.value = result
       error.value = null
@@ -144,9 +159,11 @@ onBeforeUnmount(() => {
         </p>
 
         <label class="field">
-          <span class="field-label">System</span>
+          <span class="field-label">System ({{ systems.length }})</span>
           <select v-model="selected" class="field-input">
-            <option v-for="s in systems" :key="s.code" :value="s.code">{{ s.label }}</option>
+            <optgroup v-for="[group, items] in systemGroups" :key="group" :label="group">
+              <option v-for="s in items" :key="s.code" :value="s.code">{{ s.label }}</option>
+            </optgroup>
           </select>
         </label>
 
@@ -222,7 +239,11 @@ onBeforeUnmount(() => {
     border-bottom: 1px solid var(--color-rule);
   }
 }
-.rail-head { display: flex; flex-direction: column; gap: 0.25rem; }
+.rail-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
 .rail-status {
   display: inline-flex;
   align-items: center;
@@ -294,7 +315,11 @@ onBeforeUnmount(() => {
   color: var(--color-stone-light);
   margin: 0;
 }
-.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 .field-label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -328,7 +353,9 @@ onBeforeUnmount(() => {
   flex-direction: column;
   min-height: 9rem;
 }
-.pane-input { border-bottom: 1px solid var(--color-rule); }
+.pane-input {
+  border-bottom: 1px solid var(--color-rule);
+}
 .pane-header {
   display: flex;
   align-items: center;

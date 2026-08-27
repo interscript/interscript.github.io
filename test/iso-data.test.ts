@@ -3,20 +3,38 @@
  */
 
 import { describe, it, expect } from "vitest"
-import {
-  scriptName,
-  scriptNumber,
-  languageName,
-  parseLanguageField,
-} from "../src/data/iso"
+import { scriptName, scriptNumber, languageName, parseLanguageField } from "../src/data/iso"
 
 describe("ISO 15924 script codes", () => {
   it("resolves every script code used in the catalogue", () => {
     const used = [
-      "Arab", "Armn", "Beng", "Cyrl", "Deva", "Ethi", "Geok", "Geor",
-      "Grek", "Gujr", "Guru", "Hang", "Hani", "Hans", "Hebr", "Hrkt",
-      "Kana", "Kore", "Latn", "Mlym", "Mong", "Orya", "Sinh", "Taml",
-      "Telu", "Thaa", "Thai",
+      "Arab",
+      "Armn",
+      "Beng",
+      "Cyrl",
+      "Deva",
+      "Ethi",
+      "Geok",
+      "Geor",
+      "Grek",
+      "Gujr",
+      "Guru",
+      "Hang",
+      "Hani",
+      "Hans",
+      "Hebr",
+      "Hrkt",
+      "Kana",
+      "Kore",
+      "Latn",
+      "Mlym",
+      "Mong",
+      "Orya",
+      "Sinh",
+      "Taml",
+      "Telu",
+      "Thaa",
+      "Thai",
     ]
     // Two codes (Thai, Latn) happen to share their ISO 15924 name with
     // the code itself; we just want a non-empty resolution.

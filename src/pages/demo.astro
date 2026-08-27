@@ -1,14 +1,18 @@
 ---
 import Base from "../layouts/Base.astro"
 import MapExplorer from "../components/MapExplorer.vue"
+import catalogue from "../data/maps-catalogue.json" with { type: "json" }
 
-const systems = [
-  { code: "bgnpcgn-ukr-Cyrl-Latn-2019", label: "BGN/PCGN Ukrainian → Latin (2019)" },
-  { code: "bgnpcgn-deu-Latn-Latn-2000", label: "BGN/PCGN German → Latin (2000)" },
-  { code: "odni-rus-Cyrl-Latn-2015", label: "ODNI Russian → Latin (2015)" },
-  { code: "alalc-amh-Ethi-Latn-2011", label: "ALA-LC Amharic → Latin (2011)" },
-  { code: "un-tam-Taml-Latn-1972", label: "UN Tamil → Latin (1972)" },
-]
+// Every shipped system, grouped by authority — the page is live
+// transliteration over the whole corpus, not a curated sample.
+const systems = Object.entries(catalogue).map(([code, entry]) => ({
+  code,
+  label: entry.data.name,
+  group: entry.data.authority_id.toUpperCase(),
+}))
+const firstTest = (catalogue as Record<string, { test?: (string | null)[] }>)[systems[0].code]
+  ?.test?.[0]
+const initialInput = typeof firstTest === "string" ? firstTest : ""
 
 const samples = [
   { system: "BGN/PCGN Ukrainian", input: "Антон", output: "Anton" },
@@ -19,21 +23,23 @@ const samples = [
 ]
 ---
 
-<Base title="Live demo — Interscript" description="Try Interscript transliteration in your browser, powered by interscript-ts.">
+<Base
+  title="Live transliteration — Interscript"
+  description={`Transliterate any of ${systems.length} authority-backed systems live, in your browser, powered by interscript-ts.`}
+>
   <section class="demo-hero">
     <div class="container">
-      <p class="eyebrow">Live demo</p>
+      <p class="eyebrow">Live transliteration</p>
       <h1>Type. Watch scripts change.</h1>
       <p class="demo-deck">
-        Transliterate through the Interscript API — or flip to in-browser
-        mode to run the full engine locally with ISC maps. No analytics,
-        no waiting.
+        All {systems.length} systems, live. Transliterate through the Interscript API — or flip to in-browser
+        mode to run the full engine locally with ISC maps. No analytics, no waiting.
       </p>
     </div>
   </section>
 
   <section class="container demo-main">
-    <MapExplorer client:load systems={systems} />
+    <MapExplorer client:load systems={systems} initialInput={initialInput} />
   </section>
 
   <section class="container section-tight">
@@ -51,14 +57,18 @@ const samples = [
         </tr>
       </thead>
       <tbody>
-        {samples.map((s) => (
-          <tr>
-            <td class="ref-name">{s.system}</td>
-            <td class="ref-input">{s.input}</td>
-            <td class="ref-arrow" aria-hidden="true">→</td>
-            <td class="ref-output">{s.output}</td>
-          </tr>
-        ))}
+        {
+          samples.map((s) => (
+            <tr>
+              <td class="ref-name">{s.system}</td>
+              <td class="ref-input">{s.input}</td>
+              <td class="ref-arrow" aria-hidden="true">
+                →
+              </td>
+              <td class="ref-output">{s.output}</td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </section>
@@ -105,8 +115,21 @@ const samples = [
     border-bottom: 1px solid var(--color-rule);
     vertical-align: middle;
   }
-  .ref-name { color: var(--color-stone); font-family: var(--font-sans); font-size: 0.9375rem; }
-  .ref-input { color: var(--color-ink); }
-  .ref-arrow { color: var(--color-stone-light); font-family: var(--font-mono); font-size: 0.875rem; }
-  .ref-output { color: var(--color-ochre); font-style: italic; }
+  .ref-name {
+    color: var(--color-stone);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+  }
+  .ref-input {
+    color: var(--color-ink);
+  }
+  .ref-arrow {
+    color: var(--color-stone-light);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  .ref-output {
+    color: var(--color-ochre);
+    font-style: italic;
+  }
 </style>

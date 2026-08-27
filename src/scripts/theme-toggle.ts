@@ -7,8 +7,7 @@ const button = document.querySelector<HTMLButtonElement>(".theme-toggle")
 if (button) {
   const icon = button.querySelector<HTMLElement>(".theme-toggle-icon")
   const update = () => {
-    const current =
-      document.documentElement.getAttribute("data-theme") ?? "system"
+    const current = document.documentElement.getAttribute("data-theme") ?? "system"
     if (icon) icon.setAttribute("data-state", current)
     button.setAttribute(
       "aria-label",

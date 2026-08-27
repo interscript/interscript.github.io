@@ -12,10 +12,9 @@ import DetectPanel from "../components/DetectPanel.vue"
       <p class="eyebrow eyebrow-accent">Detection</p>
       <h1>Which system produced this romanization?</h1>
       <p class="hero-deck">
-        Paste a source-script name and an observed Latin form. Interscript
-        transliterates the source through every system in the family and
-        ranks each by edit distance to your observation. The smallest
-        distance is the most likely system.
+        Paste a source-script name and an observed Latin form. Interscript transliterates the source
+        through every system in the family and ranks each by edit distance to your observation. The
+        smallest distance is the most likely system.
       </p>
     </div>
   </section>
@@ -30,9 +29,8 @@ import DetectPanel from "../components/DetectPanel.vue"
         <p class="eyebrow">Why detection matters</p>
         <h2>Attribution forensics for transliteration.</h2>
         <p class="section-deck">
-          You find a romanized name in an old index, a citation, or a
-          news archive — but you don't know which romanization system
-          was used. Interscript's detector reverse-engineers the
+          You find a romanized name in an old index, a citation, or a news archive — but you don't
+          know which romanization system was used. Interscript's detector reverse-engineers the
           attribution by testing every plausible system.
         </p>
       </header>
@@ -41,25 +39,22 @@ import DetectPanel from "../components/DetectPanel.vue"
         <article>
           <h3>Provenance research</h3>
           <p>
-            Trace which romanization system was applied to a historical
-            record. Especially useful for archives that span multiple
-            eras of cataloging practice.
+            Trace which romanization system was applied to a historical record. Especially useful
+            for archives that span multiple eras of cataloging practice.
           </p>
         </article>
         <article>
           <h3>Quality control</h3>
           <p>
-            Verify that a romanization was applied consistently. If
-            distance is high for every system, the source may have
-            errors or use an undocumented convention.
+            Verify that a romanization was applied consistently. If distance is high for every
+            system, the source may have errors or use an undocumented convention.
           </p>
         </article>
         <article>
           <h3>Cross-system deduping</h3>
           <p>
-            Detect when the same name surfaces under different
-            romanizations across records — useful for entity resolution
-            in news archives and library catalogs.
+            Detect when the same name surfaces under different romanizations across records — useful
+            for entity resolution in news archives and library catalogs.
           </p>
         </article>
       </div>
@@ -93,7 +88,9 @@ import DetectPanel from "../components/DetectPanel.vue"
     margin-top: 2.5rem;
   }
   @media (min-width: 900px) {
-    .why-grid { grid-template-columns: repeat(3, 1fr); }
+    .why-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .why-grid article {
     background: var(--color-vellum);

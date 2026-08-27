@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css"
-import "@fontsource-variable/fraunces"
 import "@fontsource-variable/inter-tight"
+import "@fontsource-variable/inter-tight/wght-italic.css"
 import "@fontsource/jetbrains-mono/400.css"
 import "@fontsource/jetbrains-mono/500.css"
 
@@ -27,7 +27,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: "/demo", label: "Demo" },
+  { href: "/demo", label: "Transliterate" },
   {
     label: "Tools",
     children: [
@@ -66,7 +66,7 @@ const drawerGroups: Array<{ label: string; links: NavLink[] }> = [
   {
     label: "Try it",
     links: [
-      { href: "/demo", label: "Live demo" },
+      { href: "/demo", label: "Live transliteration" },
       { href: "/compare", label: "Compare" },
       { href: "/batch", label: "Batch" },
       { href: "/detect", label: "Detect" },
@@ -106,8 +106,7 @@ const drawerGroups: Array<{ label: string; links: NavLink[] }> = [
 const currentYear = new Date().getFullYear()
 const currentPath = Astro.url.pathname
 
-const isCurrent = (href: string) =>
-  currentPath === href || currentPath.startsWith(href + "/")
+const isCurrent = (href: string) => currentPath === href || currentPath.startsWith(href + "/")
 
 const itemIsCurrent = (item: NavItem) =>
   (item.href !== undefined && isCurrent(item.href)) ||
@@ -140,46 +139,60 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         </a>
         <nav class="site-nav" aria-label="Primary">
           <ul>
-            {navItems.map((item) =>
-              item.href ? (
-                <li>
-                  <a
-                    href={item.href}
-                    class:list={["nav-link", itemIsCurrent(item) && "is-active"]}
-                    aria-current={item.href === currentPath ? "page" : undefined}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ) : (
-                <li class:list={["nav-item", itemIsCurrent(item) && "is-current"]}>
-                  <button
-                    type="button"
-                    class="nav-trigger"
-                    id={`nav-trigger-${slug(item.label)}`}
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    aria-controls={`nav-menu-${slug(item.label)}`}
-                  >
-                    {item.label}
-                    <svg class="nav-chevron" width="9" height="6" viewBox="0 0 9 6" fill="none" aria-hidden="true">
-                      <path d="M1 1L4.5 4.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
-                  </button>
-                  <div class="nav-menu" id={`nav-menu-${slug(item.label)}`}>
-                    {item.children?.map((child) => (
-                      <a
-                        href={child.href}
-                        class:list={["nav-menu-link", isCurrent(child.href) && "is-active"]}
-                        aria-current={child.href === currentPath ? "page" : undefined}
+            {
+              navItems.map((item) =>
+                item.href ? (
+                  <li>
+                    <a
+                      href={item.href}
+                      class:list={["nav-link", itemIsCurrent(item) && "is-active"]}
+                      aria-current={item.href === currentPath ? "page" : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ) : (
+                  <li class:list={["nav-item", itemIsCurrent(item) && "is-current"]}>
+                    <button
+                      type="button"
+                      class="nav-trigger"
+                      id={`nav-trigger-${slug(item.label)}`}
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-controls={`nav-menu-${slug(item.label)}`}
+                    >
+                      {item.label}
+                      <svg
+                        class="nav-chevron"
+                        width="9"
+                        height="6"
+                        viewBox="0 0 9 6"
+                        fill="none"
+                        aria-hidden="true"
                       >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                </li>
+                        <path
+                          d="M1 1L4.5 4.5L8 1"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                        />
+                      </svg>
+                    </button>
+                    <div class="nav-menu" id={`nav-menu-${slug(item.label)}`}>
+                      {item.children?.map((child) => (
+                        <a
+                          href={child.href}
+                          class:list={["nav-menu-link", isCurrent(child.href) && "is-active"]}
+                          aria-current={child.href === currentPath ? "page" : undefined}
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </li>
+                ),
               )
-            )}
+            }
           </ul>
         </nav>
         <div class="header-actions">
@@ -212,24 +225,26 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
 
     <div class="drawer-scrim" aria-hidden="true"></div>
     <nav class="site-drawer" id="site-drawer" aria-label="Menu">
-      {drawerGroups.map((group) => (
-        <div class="drawer-group">
-          <h2 class="drawer-eyebrow">{group.label}</h2>
-          <ul>
-            {group.links.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class:list={["drawer-link", isCurrent(link.href) && "is-active"]}
-                  aria-current={link.href === currentPath ? "page" : undefined}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {
+        drawerGroups.map((group) => (
+          <div class="drawer-group">
+            <h2 class="drawer-eyebrow">{group.label}</h2>
+            <ul>
+              {group.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class:list={["drawer-link", isCurrent(link.href) && "is-active"]}
+                    aria-current={link.href === currentPath ? "page" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
       <div class="drawer-foot">
         <a class="drawer-github" href="https://github.com/interscript" rel="noreferrer">GitHub ↗</a>
       </div>
@@ -247,8 +262,8 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
             <span class="brand-name">Interscript</span>
           </div>
           <p class="footer-tag">
-            Open-source transliteration systems from BGN/PCGN, ISO, UN,
-            ALA-LC, ODNI, and other authorities.
+            Open-source transliteration systems from BGN/PCGN, ISO, UN, ALA-LC, ODNI, and other
+            authorities.
           </p>
         </div>
 
@@ -256,7 +271,7 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
           <div class="footer-col">
             <h4>Explore</h4>
             <ul>
-              <li><a href="/demo">Live demo</a></li>
+              <li><a href="/demo">Live transliteration</a></li>
               <li><a href="/maps">Map catalogue</a></li>
               <li><a href="/ml">Model catalogue</a></li>
               <li><a href="/authorities">Authorities</a></li>
@@ -268,11 +283,23 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
             <h4>Runtimes</h4>
             <ul>
               <li><a href="https://rubygems.org/gems/interscript" rel="noreferrer">Ruby gem</a></li>
-              <li><a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer">TypeScript package</a></li>
+              <li>
+                <a href="https://www.npmjs.com/package/interscript-ts" rel="noreferrer"
+                  >TypeScript package</a
+                >
+              </li>
               <li><a href="https://github.com/interscript/maps" rel="noreferrer">Map corpus</a></li>
-              <li><a href="https://github.com/interscript/interscript-ruby" rel="noreferrer">Ruby source</a></li>
+              <li>
+                <a href="https://github.com/interscript/interscript-ruby" rel="noreferrer"
+                  >Ruby source</a
+                >
+              </li>
               <li><a href="https://www.secryst.org" rel="noreferrer">secryst crystals</a></li>
-              <li><a href="https://github.com/interscript/interscript-ml" rel="noreferrer">interscript-ml contract</a></li>
+              <li>
+                <a href="https://github.com/interscript/interscript-ml" rel="noreferrer"
+                  >interscript-ml contract</a
+                >
+              </li>
             </ul>
           </div>
           <div class="footer-col">
@@ -280,7 +307,12 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
             <ul>
               <li><a href="https://www.ribose.com" rel="noreferrer">Ribose Inc.</a></li>
               <li><a href="https://github.com/interscript" rel="noreferrer">GitHub org</a></li>
-              <li><a href="https://github.com/interscript/interscript.org/blob/main/SECURITY.md" rel="noreferrer">Security policy</a></li>
+              <li>
+                <a
+                  href="https://github.com/interscript/interscript.org/blob/main/SECURITY.md"
+                  rel="noreferrer">Security policy</a
+                >
+              </li>
               <li><a href="/about">About &amp; funding</a></li>
             </ul>
           </div>
@@ -296,7 +328,7 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
 
     <script is:inline>
       // Apply saved theme before paint to avoid FOUC.
-      (function () {
+      ;(function () {
         const saved = localStorage.getItem("isx-theme")
         if (saved === "dark" || saved === "light") {
           document.documentElement.setAttribute("data-theme", saved)
@@ -389,20 +421,20 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
 
       document.querySelector(".drawer-scrim")?.addEventListener("click", () => closeDrawer(false))
 
-      window
-        .matchMedia("(min-width: 1024px)")
-        .addEventListener("change", (e) => {
-          if (e.matches && document.body.classList.contains("nav-open")) closeDrawer(false)
-          closeMenus()
-        })
+      window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
+        if (e.matches && document.body.classList.contains("nav-open")) closeDrawer(false)
+        closeMenus()
+      })
     </script>
 
     <script is:inline>
       // Register the service worker for offline-first access.
       // Skipped during SSR build (no window) and on insecure origins.
-      if (typeof window !== "undefined" &&
-          "serviceWorker" in navigator &&
-          window.location.protocol.startsWith("http")) {
+      if (
+        typeof window !== "undefined" &&
+        "serviceWorker" in navigator &&
+        window.location.protocol.startsWith("http")
+      ) {
         window.addEventListener("load", () => {
           navigator.serviceWorker.register("/sw.js").catch(() => {
             // Silent failure — site still works without SW.
@@ -426,7 +458,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         padding: 0.75rem 1.25rem;
         text-decoration: none;
       }
-      .skip-link:focus { left: 0; }
+      .skip-link:focus {
+        left: 0;
+      }
       .visually-hidden {
         position: absolute;
         width: 1px;
@@ -493,13 +527,15 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         padding-block: 0.25rem;
         position: relative;
         transition: color 0.15s ease;
+        /* Same box model for links and dropdown triggers so labels
+           share one baseline — inline vs inline-flex boxes diverge. */
+        display: inline-flex;
+        align-items: center;
       }
       .nav-trigger {
         background: none;
         border: none;
         cursor: pointer;
-        display: inline-flex;
-        align-items: center;
         gap: 0.35rem;
       }
       .nav-chevron {
@@ -518,7 +554,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         outline: 2px solid var(--color-ochre);
         outline-offset: 2px;
       }
-      .nav-link.is-active { color: var(--color-highlight); }
+      .nav-link.is-active {
+        color: var(--color-highlight);
+      }
       .nav-link.is-active::after,
       .nav-item.is-current > .nav-trigger::after {
         content: "";
@@ -528,8 +566,12 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         height: 2px;
         background: var(--color-highlight);
       }
-      .nav-item.is-current > .nav-trigger { color: var(--color-highlight); }
-      .nav-item { position: relative; }
+      .nav-item.is-current > .nav-trigger {
+        color: var(--color-highlight);
+      }
+      .nav-item {
+        position: relative;
+      }
       .nav-menu {
         position: absolute;
         top: calc(100% + 0.6rem);
@@ -545,7 +587,10 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4px);
-        transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+        transition:
+          opacity 0.15s ease,
+          transform 0.15s ease,
+          visibility 0.15s;
         z-index: 60;
       }
       .nav-item.is-open > .nav-menu,
@@ -561,7 +606,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         text-decoration: none;
         padding: 0.5rem 0.75rem;
         border-radius: 1px;
-        transition: background 0.12s ease, color 0.12s ease;
+        transition:
+          background 0.12s ease,
+          color 0.12s ease;
       }
       .nav-menu-link:hover {
         background: color-mix(in srgb, var(--color-ink) 5%, transparent);
@@ -571,7 +618,10 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         outline: 2px solid var(--color-ochre);
         outline-offset: -2px;
       }
-      .nav-menu-link.is-active { color: var(--color-highlight); font-weight: 500; }
+      .nav-menu-link.is-active {
+        color: var(--color-highlight);
+        font-weight: 500;
+      }
       .header-actions {
         display: flex;
         align-items: center;
@@ -589,7 +639,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        transition: background 0.15s ease, border-color 0.15s ease;
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
       }
       .theme-toggle:hover {
         border-color: var(--color-brand);
@@ -609,13 +661,11 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         content: "";
         position: absolute;
         inset: 0;
-        background:
-          radial-gradient(circle at center, var(--color-ink) 35%, transparent 36%);
+        background: radial-gradient(circle at center, var(--color-ink) 35%, transparent 36%);
       }
       /* Moon icon for dark mode */
       .theme-toggle-icon[data-state="dark"]::before {
-        background:
-          radial-gradient(circle at 30% 30%, transparent 50%, var(--color-ink) 51%);
+        background: radial-gradient(circle at 30% 30%, transparent 50%, var(--color-ink) 51%);
       }
       .github-pill {
         font-family: var(--font-mono);
@@ -626,7 +676,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         border: 1.5px solid var(--color-ink);
         padding: 0.4rem 0.95rem;
         border-radius: 1px;
-        transition: background 0.15s ease, color 0.15s ease;
+        transition:
+          background 0.15s ease,
+          color 0.15s ease;
         text-transform: uppercase;
       }
       .github-pill:hover {
@@ -662,12 +714,24 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         right: 0;
         height: 1.5px;
         background: var(--color-ink);
-        transition: transform 0.2s ease, top 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          top 0.2s ease;
       }
-      .nav-toggle-bar:nth-child(1) { top: 2px; }
-      .nav-toggle-bar:nth-child(2) { top: 8px; }
-      body.nav-open .nav-toggle-bar:nth-child(1) { top: 5px; transform: rotate(45deg); }
-      body.nav-open .nav-toggle-bar:nth-child(2) { top: 5px; transform: rotate(-45deg); }
+      .nav-toggle-bar:nth-child(1) {
+        top: 2px;
+      }
+      .nav-toggle-bar:nth-child(2) {
+        top: 8px;
+      }
+      body.nav-open .nav-toggle-bar:nth-child(1) {
+        top: 5px;
+        transform: rotate(45deg);
+      }
+      body.nav-open .nav-toggle-bar:nth-child(2) {
+        top: 5px;
+        transform: rotate(-45deg);
+      }
       .site-drawer {
         position: fixed;
         inset-block: 0;
@@ -683,7 +747,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         align-content: start;
         transform: translateX(100%);
         visibility: hidden;
-        transition: transform 0.25s ease, visibility 0.25s;
+        transition:
+          transform 0.25s ease,
+          visibility 0.25s;
       }
       body.nav-open .site-drawer {
         transform: translateX(0);
@@ -696,7 +762,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         z-index: 60;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.25s ease, visibility 0.25s;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s;
       }
       body.nav-open .drawer-scrim {
         opacity: 1;
@@ -727,12 +795,16 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         text-decoration: none;
         padding: 0.5rem 0.25rem;
       }
-      .drawer-link:hover { color: var(--color-highlight); }
+      .drawer-link:hover {
+        color: var(--color-highlight);
+      }
       .drawer-link:focus-visible {
         outline: 2px solid var(--color-ochre);
         outline-offset: 2px;
       }
-      .drawer-link.is-active { color: var(--color-highlight); }
+      .drawer-link.is-active {
+        color: var(--color-highlight);
+      }
       .drawer-foot {
         border-top: 1px solid var(--color-rule);
         padding-top: 1.25rem;
@@ -752,7 +824,9 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         background: var(--color-ink);
         color: var(--color-vellum);
       }
-      .site-main { flex: 1; }
+      .site-main {
+        flex: 1;
+      }
 
       .site-footer {
         background: var(--color-ink);
@@ -768,15 +842,24 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         border-bottom: 1px solid color-mix(in srgb, var(--color-vellum) 15%, transparent);
       }
       @media (max-width: 768px) {
-        .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+        .footer-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
       }
-      .footer-brand .brand-line { display: flex; align-items: center; gap: 0.5rem; }
+      .footer-brand .brand-line {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
       .footer-brand .brand-mark {
         width: 24px;
         height: 24px;
         /* The footer bg is dark, so the teal stays visible as-is */
       }
-      .footer-brand .brand-name { color: var(--color-vellum); }
+      .footer-brand .brand-name {
+        color: var(--color-vellum);
+      }
       .footer-tag {
         margin-top: 1rem;
         max-width: 32ch;
@@ -784,9 +867,15 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         line-height: 1.6;
         color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
       }
-      .footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+      .footer-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
       @media (max-width: 768px) {
-        .footer-nav { grid-template-columns: 1fr 1fr; }
+        .footer-nav {
+          grid-template-columns: 1fr 1fr;
+        }
       }
       .footer-col h4 {
         font-family: var(--font-mono);
@@ -826,15 +915,26 @@ const slug = (label: string) => label.toLowerCase().replace(/\s+/g, "-")
         text-decoration: underline;
       }
       @media (max-width: 1023px) {
-        .site-nav { display: none; }
-        .nav-toggle { display: inline-flex; }
+        .site-nav {
+          display: none;
+        }
+        .nav-toggle {
+          display: inline-flex;
+        }
       }
       @media (min-width: 1024px) {
-        .site-drawer, .drawer-scrim { display: none; }
+        .site-drawer,
+        .drawer-scrim {
+          display: none;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
-        .nav-menu, .site-drawer, .drawer-scrim,
-        .nav-toggle-bar, .nav-chevron, .nav-menu-link {
+        .nav-menu,
+        .site-drawer,
+        .drawer-scrim,
+        .nav-toggle-bar,
+        .nav-chevron,
+        .nav-menu-link {
           transition: none;
         }
       }

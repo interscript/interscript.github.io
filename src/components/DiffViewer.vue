@@ -6,7 +6,7 @@
  * Pulls the first ~30 rules from each system's IR and shows them in
  * parallel columns.
  */
-import { ref, computed, onMounted, onUnmounted, watch } from "vue"
+import { ref, onMounted, onUnmounted, watch } from "vue"
 import { createWorkerClient, type WorkerClient } from "../scripts/worker-client"
 
 interface System {
@@ -83,7 +83,7 @@ function stringify(item: Record<string, unknown> | null): string {
     case "alias":
       return `:${item.name}`
     case "any":
-      return `any(${(((item.of as unknown[]) ?? []).length).toString()})`
+      return `any(${((item.of as unknown[]) ?? []).length.toString()})`
     case "any_char_class":
       if (item.range) return `[${item.range[0]}-${item.range[1]}]`
       if (item.chars) return `[${(item.chars as string[]).slice(0, 5).join("")}…]`
@@ -120,8 +120,6 @@ async function load() {
   loading.value = false
 }
 
-const maxRows = computed(() => Math.max(leftRules.value.length, rightRules.value.length))
-
 onMounted(async () => {
   await ensureEngine()
   await load()
@@ -129,7 +127,9 @@ onMounted(async () => {
 
 onUnmounted(() => client?.terminate())
 
-watch([left, right], () => { void load() })
+watch([left, right], () => {
+  void load()
+})
 </script>
 
 <template>
@@ -161,9 +161,9 @@ watch([left, right], () => { void load() })
         <ol>
           <li v-for="(r, i) in leftRules" :key="i" :class="`rule rule-${r.kind}`">
             <span class="rule-kind">{{ r.kind }}</span>
-            <span class="rule-from">{{ r.from || '—' }}</span>
+            <span class="rule-from">{{ r.from || "—" }}</span>
             <span class="rule-arrow">→</span>
-            <span class="rule-to">{{ r.to || '—' }}</span>
+            <span class="rule-to">{{ r.to || "—" }}</span>
           </li>
         </ol>
       </div>
@@ -176,9 +176,9 @@ watch([left, right], () => { void load() })
         <ol>
           <li v-for="(r, i) in rightRules" :key="i" :class="`rule rule-${r.kind}`">
             <span class="rule-kind">{{ r.kind }}</span>
-            <span class="rule-from">{{ r.from || '—' }}</span>
+            <span class="rule-from">{{ r.from || "—" }}</span>
             <span class="rule-arrow">→</span>
-            <span class="rule-to">{{ r.to || '—' }}</span>
+            <span class="rule-to">{{ r.to || "—" }}</span>
           </li>
         </ol>
       </div>
@@ -202,9 +202,15 @@ watch([left, right], () => { void load() })
   .diff-controls {
     grid-template-columns: 1fr;
   }
-  .vs { text-align: center; padding: 0.5rem 0; }
+  .vs {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
 }
-.control-field { display: grid; gap: 0.4rem; }
+.control-field {
+  display: grid;
+  gap: 0.4rem;
+}
 .control-field label {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
@@ -296,17 +302,27 @@ watch([left, right], () => { void load() })
   font-size: 0.78rem;
   line-height: 1.4;
 }
-.rule:last-child { border-bottom: none; }
+.rule:last-child {
+  border-bottom: none;
+}
 .rule-kind {
   font-size: var(--text-micro);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-stone);
 }
-.rule-sub .rule-kind { color: var(--color-brand-deep); }
-.rule-parallel .rule-kind { color: var(--color-highlight); }
-.rule-run .rule-kind { color: var(--color-stone-light); }
-.rule-funcall .rule-kind { color: var(--color-stone-light); }
+.rule-sub .rule-kind {
+  color: var(--color-brand-deep);
+}
+.rule-parallel .rule-kind {
+  color: var(--color-highlight);
+}
+.rule-run .rule-kind {
+  color: var(--color-stone-light);
+}
+.rule-funcall .rule-kind {
+  color: var(--color-stone-light);
+}
 
 .rule-from {
   color: var(--color-ink);

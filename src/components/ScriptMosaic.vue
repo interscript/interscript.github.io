@@ -43,18 +43,48 @@ const cells: Cell[] = [
     id: "cyrillic",
     script: "Cyrillic",
     transforms: [
-      { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Антон", authority: "BGN/PCGN", note: "Ukrainian · 2019" },
-      { system: "odni-rus-Cyrl-Latn-2015", input: "Калинина", authority: "ODNI", note: "Russian · 2015" },
-      { system: "icao-ukr-Cyrl-Latn-9303", input: "Київ", authority: "ICAO", note: "Travel docs · 9303" },
+      {
+        system: "bgnpcgn-ukr-Cyrl-Latn-2019",
+        input: "Антон",
+        authority: "BGN/PCGN",
+        note: "Ukrainian · 2019",
+      },
+      {
+        system: "odni-rus-Cyrl-Latn-2015",
+        input: "Калинина",
+        authority: "ODNI",
+        note: "Russian · 2015",
+      },
+      {
+        system: "icao-ukr-Cyrl-Latn-9303",
+        input: "Київ",
+        authority: "ICAO",
+        note: "Travel docs · 9303",
+      },
     ],
   },
   {
     id: "arabic",
     script: "Arabic",
     transforms: [
-      { system: "bgnpcgn-ara-Arab-Latn-1956", input: "عَبد الله", authority: "BGN/PCGN", note: "Arabic · 1956" },
-      { system: "iso-ara-Arab-Latn-233-1984", input: "القاهرة", authority: "ISO", note: "Arabic · 233" },
-      { system: "alalc-ara-Arab-Latn-1997", input: "بَغداد", authority: "ALA-LC", note: "Arabic · 1997" },
+      {
+        system: "bgnpcgn-ara-Arab-Latn-1956",
+        input: "عَبد الله",
+        authority: "BGN/PCGN",
+        note: "Arabic · 1956",
+      },
+      {
+        system: "iso-ara-Arab-Latn-233-1984",
+        input: "القاهرة",
+        authority: "ISO",
+        note: "Arabic · 233",
+      },
+      {
+        system: "alalc-ara-Arab-Latn-1997",
+        input: "بَغداد",
+        authority: "ALA-LC",
+        note: "Arabic · 1997",
+      },
     ],
   },
   {
@@ -62,16 +92,36 @@ const cells: Cell[] = [
     script: "Devanagari",
     transforms: [
       { system: "un-hin-Deva-Latn-2016", input: "महात्मा", authority: "UN", note: "Hindi · 2016" },
-      { system: "alalc-hin-Deva-Latn-2011", input: "मुंबई", authority: "ALA-LC", note: "Hindi · 2011" },
-      { system: "iso-hin-Deva-Latn-15919-2001", input: "फिलिपींस", authority: "ISO", note: "ISO 15919" },
+      {
+        system: "alalc-hin-Deva-Latn-2011",
+        input: "मुंबई",
+        authority: "ALA-LC",
+        note: "Hindi · 2011",
+      },
+      {
+        system: "iso-hin-Deva-Latn-15919-2001",
+        input: "फिलिपींस",
+        authority: "ISO",
+        note: "ISO 15919",
+      },
     ],
   },
   {
     id: "han",
     script: "Han",
     transforms: [
-      { system: "acadsin-zho-Hani-Latn-2002", input: "台北", authority: "Academia Sinica", note: "Tongyong · 2002" },
-      { system: "bgnpcgn-zho-Hans-Latn-1979", input: "北京", authority: "BGN/PCGN", note: "Hanyu Pinyin · 1979" },
+      {
+        system: "acadsin-zho-Hani-Latn-2002",
+        input: "台北",
+        authority: "Academia Sinica",
+        note: "Tongyong · 2002",
+      },
+      {
+        system: "bgnpcgn-zho-Hans-Latn-1979",
+        input: "北京",
+        authority: "BGN/PCGN",
+        note: "Hanyu Pinyin · 1979",
+      },
       { system: "sac-zho-Hans-Latn-1979", input: "香港", authority: "SAC", note: "Hans · 1979" },
     ],
   },
@@ -79,17 +129,42 @@ const cells: Cell[] = [
     id: "ethiopic",
     script: "Ethiopic",
     transforms: [
-      { system: "alalc-amh-Ethi-Latn-2011", input: "ኢትዮጵያ", authority: "ALA-LC", note: "Amharic · 2011" },
-      { system: "bgnpcgn-amh-Ethi-Latn-1967", input: "አዲስ አበባ", authority: "BGN/PCGN", note: "Amharic · 1967" },
+      {
+        system: "alalc-amh-Ethi-Latn-2011",
+        input: "ኢትዮጵያ",
+        authority: "ALA-LC",
+        note: "Amharic · 2011",
+      },
+      {
+        system: "bgnpcgn-amh-Ethi-Latn-1967",
+        input: "አዲስ አበባ",
+        authority: "BGN/PCGN",
+        note: "Amharic · 1967",
+      },
     ],
   },
   {
     id: "greek",
     script: "Greek",
     transforms: [
-      { system: "iso-ell-Grek-Latn-843-1997-t1", input: "Αθήνα", authority: "ISO", note: "Greek · 843/1997" },
-      { system: "alalc-ell-Grek-Latn-1997", input: "Θεσσαλονίκη", authority: "ALA-LC", note: "Greek · 1997" },
-      { system: "bgnpcgn-ell-Grek-Latn-1962", input: "Ελλάδα", authority: "BGN/PCGN", note: "Greek · 1962" },
+      {
+        system: "iso-ell-Grek-Latn-843-1997-t1",
+        input: "Αθήνα",
+        authority: "ISO",
+        note: "Greek · 843/1997",
+      },
+      {
+        system: "alalc-ell-Grek-Latn-1997",
+        input: "Θεσσαλονίκη",
+        authority: "ALA-LC",
+        note: "Greek · 1997",
+      },
+      {
+        system: "bgnpcgn-ell-Grek-Latn-1962",
+        input: "Ελλάδα",
+        authority: "BGN/PCGN",
+        note: "Greek · 1962",
+      },
     ],
   },
 ]
@@ -158,7 +233,7 @@ function tickCell(i: number) {
   const tf = cell.transforms[next]!
   try {
     outputs.value[i] = transliterateFn(tf.system, tf.input)
-  } catch (e) {
+  } catch {
     outputs.value[i] = `(error)`
   }
 }
@@ -194,16 +269,11 @@ onUnmounted(() => {
       <span class="status-dot" :class="{ live: ready }" aria-hidden="true"></span>
       <span v-if="!ready && !failed">Warming up the engine…</span>
       <span v-else-if="failed">Engine unavailable</span>
-      <span v-else>{{ ready ? 'Live transliteration' : '' }}</span>
+      <span v-else>{{ ready ? "Live transliteration" : "" }}</span>
     </div>
 
     <div class="mosaic-grid">
-      <article
-        v-for="(cell, i) in cells"
-        :key="cell.id"
-        class="cell"
-        :data-script="cell.id"
-      >
+      <article v-for="(cell, i) in cells" :key="cell.id" class="cell" :data-script="cell.id">
         <header class="cell-head">
           <span class="cell-script">{{ cell.script }}</span>
           <span class="cell-counter tnum">{{ indices[i]! + 1 }}/{{ cell.transforms.length }}</span>
@@ -262,8 +332,13 @@ onUnmounted(() => {
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .mosaic-grid {
@@ -329,7 +404,6 @@ onUnmounted(() => {
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin: 0;
-  font-variation-settings: "SOFT" 100, "WONK" 0;
   word-break: break-word;
 }
 
@@ -365,14 +439,15 @@ onUnmounted(() => {
   letter-spacing: -0.015em;
   font-style: italic;
   margin: 0;
-  font-variation-settings: "SOFT" 100, "WONK" 1;
   word-break: break-word;
 }
 
 /* Transition */
 .cellmorph-enter-active,
 .cellmorph-leave-active {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 .cellmorph-enter-from {
   opacity: 0;
@@ -384,8 +459,14 @@ onUnmounted(() => {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .status-dot.live { animation: none; opacity: 1; }
-  .cellmorph-enter-active, .cellmorph-leave-active { transition: none; }
+  .status-dot.live {
+    animation: none;
+    opacity: 1;
+  }
+  .cellmorph-enter-active,
+  .cellmorph-leave-active {
+    transition: none;
+  }
 }
 
 .mosaic.failed {
