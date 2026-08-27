@@ -286,7 +286,7 @@ onMounted(async () => {
     const res = await fetch(`/maps/${props.systemCode}.isc`)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const text = await res.text()
-    const mod = await import("interscript-ts")
+    const mod = await import("interscript")
     const doc = mod.parseIsc(text, `${props.systemCode}.isc`)
     stages.value = doc.stages.map((s) => ({
       name: s.name,

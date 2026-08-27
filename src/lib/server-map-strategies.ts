@@ -7,8 +7,8 @@
  */
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
-import { iscStrategy, type LoadStrategy } from "interscript-ts"
-import { filesystemStrategy } from "interscript-ts/loaders.node"
+import { iscStrategy, type LoadStrategy } from "interscript"
+import { filesystemStrategy } from "interscript/loaders.node"
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
 

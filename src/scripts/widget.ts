@@ -9,7 +9,7 @@
  * no full catalogue bundle, no main-thread jank.
  */
 
-import { configure, reset, transliterateAsync } from "interscript-ts"
+import { configure, reset, transliterateAsync } from "interscript"
 import { mapStrategies } from "./map-strategies"
 
 // Configure once with HTTP loader + persistent cache.

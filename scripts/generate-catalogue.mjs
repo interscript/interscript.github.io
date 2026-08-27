@@ -7,7 +7,7 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs"
 import { join, resolve, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
-import { parseIsc } from "interscript-ts"
+import { parseIsc } from "interscript"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, "..")

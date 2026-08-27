@@ -6,7 +6,7 @@
  * the .iml libraries (posix, unicode, var-Cyrl, var-kor), which have
  * no ISC form — maps depending on them would otherwise fail to load.
  */
-import { httpStrategy, iscStrategy, type LoadStrategy } from "interscript-ts"
+import { httpStrategy, iscStrategy, type LoadStrategy } from "interscript"
 
 export function mapStrategies(): LoadStrategy[] {
   return [

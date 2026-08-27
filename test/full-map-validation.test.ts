@@ -19,7 +19,7 @@ import {
   parseIsc,
   iscBundledStrategy,
   bundledStrategy,
-} from "interscript-ts"
+} from "interscript"
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
 

@@ -12,9 +12,9 @@
  */
 
 import type { APIRoute } from "astro"
-import { configure, reset, transliterateAsync } from "interscript-ts"
+import { configure, reset, transliterateAsync } from "interscript"
 import { serverMapStrategies } from "../../../lib/server-map-strategies"
-import { MapNotFoundError, InterscriptError } from "interscript-ts"
+import { MapNotFoundError, InterscriptError } from "interscript"
 
 export const prerender = false
 

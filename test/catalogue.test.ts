@@ -7,7 +7,7 @@ import { describe, it, expect, vi } from "vitest"
 import { mount } from "@vue/test-utils"
 import MapCatalogue from "../src/components/MapCatalogue.vue"
 
-vi.mock("interscript-ts", () => ({
+vi.mock("interscript", () => ({
   reset: vi.fn(),
   configure: vi.fn(),
   transliterate: vi.fn(),
