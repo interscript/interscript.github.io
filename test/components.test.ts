@@ -11,7 +11,7 @@ import QuickBox from "../src/components/QuickBox.vue"
 
 // Mock the dynamic import of interscript-ts so tests don't need
 // Vite's import.meta.glob polyfill.
-vi.mock("interscript-ts", () => ({
+vi.mock("interscript", () => ({
   reset: vi.fn(),
   configure: vi.fn(),
   transliterate: vi.fn((code: string, input: string) => `[${code}]${input}`),

@@ -39,7 +39,7 @@ let transliterateFn: ((code: string, input: string) => string) | null = null
 async function ensureEngine() {
   if (transliterateFn) return
   try {
-    const mod = await import("interscript-ts")
+    const mod = await import("interscript")
     const wanted = new Set<string>(systems.map((s) => s.code))
     const sources: Record<string, string> = {}
     const libJsons: Record<string, unknown> = {}

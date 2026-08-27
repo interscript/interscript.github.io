@@ -60,7 +60,7 @@ let transliterateFn: ((code: string, input: string) => string) | null = null
 async function ensureEngine() {
   if (transliterateFn) return
   try {
-    const mod = await import("interscript-ts")
+    const mod = await import("interscript")
     const wanted = new Set<string>(morphs.map((m) => m.system))
     const maps: Record<string, unknown> = {}
     const fetchOne = async (code: string) => {

@@ -17,9 +17,9 @@ import {
   reset,
   transliterateAsync,
   // filesystemStrategy is server-only (node:fs) — import directly.
-} from "interscript-ts"
+} from "interscript"
 import { serverMapStrategies } from "../../lib/server-map-strategies"
-import { MapNotFoundError, InterscriptError } from "interscript-ts"
+import { MapNotFoundError, InterscriptError } from "interscript"
 
 export const prerender = false
 

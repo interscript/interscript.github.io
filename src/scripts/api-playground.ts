@@ -5,7 +5,7 @@
  * type input, see output, and copy the equivalent curl/JS/Ruby call.
  */
 
-import { configure, reset, transliterateAsync, httpStrategy } from "interscript-ts"
+import { configure, reset, transliterateAsync, httpStrategy } from "interscript"
 
 interface System {
   code: string
@@ -42,7 +42,7 @@ const state: State = {
 }
 
 function snippetJs(s: State): string {
-  return `import { transliterate } from "interscript-ts"
+  return `import { transliterate } from "interscript"
 
 const result = transliterate(
   "${s.system}",

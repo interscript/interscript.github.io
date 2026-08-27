@@ -223,7 +223,7 @@ describe("demo page", () => {
   const demo = readHtml("demo/index.html")
 
   it("mentions interscript-ts", () => {
-    expect(demo).toMatch(/interscript-ts/)
+    expect(demo).toMatch(/interscript/)
   })
 
   it("includes the MapExplorer island", () => {

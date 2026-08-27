@@ -11,13 +11,7 @@
  * `new Worker(new URL('./transliteration-worker.ts', import.meta.url), { type: 'module' })`.
  */
 
-import {
-  configure,
-  reset,
-  transliterateAsync,
-  loadMapAsync,
-  type LoadStrategy,
-} from "interscript-ts"
+import { configure, reset, transliterateAsync, loadMapAsync, type LoadStrategy } from "interscript"
 import { mapStrategies } from "./map-strategies"
 
 interface RpcRequest {

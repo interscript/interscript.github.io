@@ -37,7 +37,7 @@ async function ensureEngine() {
   }
   engine.value = "loading"
   try {
-    const mod = await import("interscript-ts")
+    const mod = await import("interscript")
     // Fetch this system + its transitive deps. import.meta.glob can't
     // see public/ files in dev.
     const wanted = new Set<string>([props.systemCode])
@@ -96,7 +96,7 @@ gem install interscript
 interscript -s {{ systemCode }} input.txt
 
 # TypeScript (after npm install interscript-ts)
-import {{ '{' }} transliterate {{ '}' }} from "interscript-ts"
+import {{ '{' }} transliterate {{ '}' }} from "interscript"
 transliterate("{{ systemCode }}", "your input")</code></pre>
     </div>
 

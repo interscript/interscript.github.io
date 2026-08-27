@@ -179,7 +179,7 @@ let transliterateFn: ((code: string, input: string) => string) | null = null
 async function ensureEngine() {
   if (transliterateFn) return
   try {
-    const mod = await import("interscript-ts")
+    const mod = await import("interscript")
     // Collect every system code referenced by the mosaic, plus their
     // transitive dependencies. fetch() each one — import.meta.glob
     // doesn't see files under public/ in dev.

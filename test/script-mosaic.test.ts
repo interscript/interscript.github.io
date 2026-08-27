@@ -11,7 +11,7 @@ import { mount } from "@vue/test-utils"
 import ScriptMosaic from "../src/components/ScriptMosaic.vue"
 
 // Mock the dynamic import of interscript-ts
-vi.mock("interscript-ts", () => ({
+vi.mock("interscript", () => ({
   reset: vi.fn(),
   configure: vi.fn(),
   transliterate: vi.fn((code: string, input: string) => `[${code}]${input}`),
@@ -125,7 +125,7 @@ describe("ScriptMosaic", () => {
 
   it("shows engine load failure state when interscript-ts throws", async () => {
     // Re-mock with a failing import
-    vi.doMock("interscript-ts", () => {
+    vi.doMock("interscript", () => {
       throw new Error("simulated failure")
     })
 
