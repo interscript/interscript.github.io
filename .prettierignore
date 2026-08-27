@@ -26,3 +26,4 @@ TODO.complete/
 # preview deck) stay hand-wrapped — prettier-ignore corrupts files.
 src/pages/compare.astro
 src/pages/maps/\[systemCode\].astro
+src/pages/api-docs.astro
