@@ -36,10 +36,7 @@ interface RpcResponse {
 // Minimal view of the worker global — the DOM lib tsconfig has no
 // DedicatedWorkerGlobalScope, and only these two members are used.
 interface WorkerContext {
-  addEventListener(
-    type: "message",
-    listener: (event: MessageEvent<RpcRequest>) => void,
-  ): void
+  addEventListener(type: "message", listener: (event: MessageEvent<RpcRequest>) => void): void
   postMessage(message: RpcResponse): void
 }
 

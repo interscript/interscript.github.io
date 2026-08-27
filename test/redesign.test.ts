@@ -40,12 +40,12 @@ function allBuiltHtmlFiles(): string[] {
 describe("scholarly-ink design system", () => {
   const css = readAllCss()
 
-  it("uses the new Fraunces display font (not Newsreader)", () => {
-    expect(css.toLowerCase()).toMatch(/fraunces/)
-    expect(css.toLowerCase()).not.toMatch(/newsreader/)
+  it("uses Inter Tight only — sans-serif throughout, no serif faces", () => {
+    expect(css.toLowerCase()).toMatch(/inter[- ]?tight/)
+    expect(css.toLowerCase()).not.toMatch(/fraunces|newsreader|source serif|georgia/)
   })
 
-  it("loads Inter Tight body font", () => {
+  it("loads the Inter Tight body font", () => {
     expect(css.toLowerCase()).toMatch(/inter[- ]?tight/)
   })
 
@@ -125,19 +125,26 @@ describe("map catalogue page redesign", () => {
   const css = readAllCss()
 
   it("shows the new stats grid with 5 metrics", () => {
-    for (const label of ["Total systems", "Authorities", "Source scripts", "Destination scripts", "Live-demoable"]) {
+    for (const label of [
+      "Total systems",
+      "Authorities",
+      "Source scripts",
+      "Destination scripts",
+      "Live-demoable",
+    ]) {
       expect(maps).toContain(label)
     }
   })
 
-  it("uses italic Fraunces variation settings in CSS", () => {
-    expect(css).toMatch(/WONK/)
+  it("ships no leftover Fraunces axis settings", () => {
+    expect(css).not.toMatch(/"WONK"|"SOFT"/)
   })
 })
 
 describe("attribution on every page", () => {
   // Embed widget is chrome-free — excluded from "every page" assertions.
-  const mainPages = () => allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
+  const mainPages = () =>
+    allBuiltHtmlFiles().filter((p) => !p.includes("/embed") && !p.includes("/offline.html"))
 
   it("every page links to Ribose Inc. as maintainer", () => {
     expect(mainPages().length).toBeGreaterThan(50)
@@ -169,7 +176,26 @@ describe("navigation and chrome", () => {
   })
 
   it("primary nav has all 18 destinations", () => {
-    for (const href of ["/", "/demo", "/compare", "/batch", "/detect", "/diff", "/marc", "/subtitles", "/maps", "/scripts", "/use-cases", "/api", "/api-docs", "/status", "/authorities", "/contributing", "/docs", "/about"]) {
+    for (const href of [
+      "/",
+      "/demo",
+      "/compare",
+      "/batch",
+      "/detect",
+      "/diff",
+      "/marc",
+      "/subtitles",
+      "/maps",
+      "/scripts",
+      "/use-cases",
+      "/api",
+      "/api-docs",
+      "/status",
+      "/authorities",
+      "/contributing",
+      "/docs",
+      "/about",
+    ]) {
       expect(home).toContain(`href="${href}"`)
     }
   })

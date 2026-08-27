@@ -46,8 +46,7 @@ async function get(path: string): Promise<Response> {
 describe("GET /api/transliterate", () => {
   it("returns the expected romanization for Ukrainian", async () => {
     const res = await get(
-      "/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=" +
-        encodeURIComponent("Антон"),
+      "/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=" + encodeURIComponent("Антон"),
     )
     expect(res.status).toBe(200)
     const body = (await res.json()) as {
@@ -61,8 +60,7 @@ describe("GET /api/transliterate", () => {
 
   it("supports Amharic / Ethiopic script", async () => {
     const res = await get(
-      "/api/transliterate?system=alalc-amh-Ethi-Latn-2011&input=" +
-        encodeURIComponent("ኢትዮጵያ"),
+      "/api/transliterate?system=alalc-amh-Ethi-Latn-2011&input=" + encodeURIComponent("ኢትዮጵያ"),
     )
     expect(res.status).toBe(200)
     const body = (await res.json()) as { output: string }
@@ -83,16 +81,12 @@ describe("GET /api/transliterate", () => {
   })
 
   it("returns CORS headers", async () => {
-    const res = await get(
-      "/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=test",
-    )
+    const res = await get("/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=test")
     expect(res.headers.get("access-control-allow-origin")).toBe("*")
   })
 
   it("includes durationMs timing", async () => {
-    const res = await get(
-      "/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=test",
-    )
+    const res = await get("/api/transliterate?system=bgnpcgn-ukr-Cyrl-Latn-2019&input=test")
     const body = await res.json()
     expect(body.durationMs).toBeGreaterThanOrEqual(0)
   })

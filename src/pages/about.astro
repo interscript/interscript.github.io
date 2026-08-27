@@ -1,96 +1,178 @@
 ---
 import Base from "../layouts/Base.astro"
+
+interface Partner {
+  name: string
+  desc?: string
+  url: string
+  logo: string
+  alt: string
+  dark?: boolean
+}
+
+const partners: Partner[] = [
+  {
+    name: "U.S. Board on Geographic Names",
+    url: "https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names",
+    logo: "/img/partners/bgn.png",
+    alt: "Seal of the U.S. Board on Geographic Names",
+  },
+  {
+    name: "Open Geospatial Consortium",
+    url: "https://www.ogc.org",
+    logo: "/img/partners/ogc.svg",
+    alt: "Open Geospatial Consortium logo",
+    dark: true,
+  },
+  {
+    name: "CalConnect",
+    desc: "The Calendaring & Scheduling Consortium",
+    url: "https://www.calconnect.org",
+    logo: "/img/partners/calconnect.svg",
+    alt: "CalConnect logo",
+  },
+  {
+    name: "UNGEGN",
+    desc: "UN Group of Experts on Geographical Names",
+    url: "https://unstats.un.org/unsd/ungegn/",
+    logo: "/img/partners/ungegn.png",
+    alt: "United Nations Statistics Division logo",
+  },
+  {
+    name: "ICAO",
+    desc: "International Civil Aviation Organization",
+    url: "https://www.icao.int",
+    logo: "/img/partners/icao.ico",
+    alt: "ICAO logo",
+  },
+  {
+    name: "Bulgarian Academy of Sciences",
+    url: "https://www.bas.bg",
+    logo: "/img/partners/bas.png",
+    alt: "Bulgarian Academy of Sciences logo",
+  },
+]
 ---
 
-<Base title="About — Interscript" description="Background, mission, and team behind Interscript.">
+<Base
+  title="About — Interscript"
+  description="Background, mission, and partners behind Interscript."
+>
   <div class="container">
     <header class="page-hero">
       <p class="eyebrow eyebrow-accent">About</p>
       <h1>About Interscript</h1>
       <p class="page-deck">
-        One map format for every authority-backed romanization system —
-        running in any language runtime.
+        One map format for every authority-backed romanization system — running in any language
+        runtime.
       </p>
     </header>
+
+    <section class="partners" aria-labelledby="partners-title">
+      <h2 id="partners-title">Partners &amp; supporters</h2>
+      <p>
+        The Interscript project has received extensive support from the following organizations and
+        individuals, in no particular order:
+      </p>
+      <ul class="partner-grid">
+        {
+          partners.map((p) => (
+            <li>
+              <a class="partner-card" href={p.url} rel="noreferrer">
+                <span class:list={["partner-logo", p.dark && "partner-logo--dark"]}>
+                  <img src={p.logo} alt={p.alt} loading="lazy" />
+                </span>
+                <span class="partner-name">{p.name}</span>
+                {p.desc && <span class="partner-desc">{p.desc}</span>}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="partner-note">
+        Individual support: Prof. Lyubomir Ivanov (<a
+          href="http://www.math.bas.bg/logic/ivanovll/Lyubomir-Ivanov.html"
+          rel="noreferrer">profile</a
+        >) of the <a href="https://www.bas.bg" rel="noreferrer">Bulgarian Academy of Sciences</a>,
+        and the <a href="https://www.eki.ee/wgrs/" rel="noreferrer"
+          >Working Group on Romanization Systems</a
+        > of <a href="https://unstats.un.org/unsd/ungegn/" rel="noreferrer">UNGEGN</a>.
+      </p>
+    </section>
 
     <div class="prose">
       <section>
         <h2>Mission</h2>
         <p>
-          Interscript exists to make transliteration between writing systems <strong>interoperable</strong>. Where most romanization tools
-          implement one system or one authority, Interscript encodes the
-          complete corpus of major authority-backed systems (BGN/PCGN, ISO,
-          UN, ALA-LC, ODNI, ICAO, DIN, and others) using a single map format
-          that runs in any language runtime.
+          Interscript exists to make transliteration between writing systems <strong
+            >interoperable</strong
+          >. Where most romanization tools implement one system or one authority, Interscript
+          encodes the complete corpus of major authority-backed systems (BGN/PCGN, ISO, UN, ALA-LC,
+          ODNI, ICAO, DIN, and others) using a single map format that runs in any language runtime.
         </p>
       </section>
 
       <section>
         <h2>Why it matters</h2>
         <p>
-          Names, places, and historical records exist in dozens of scripts.
-          Whether you're a librarian cataloguing foreign-language works, a
-          government agency standardising romanisation, or a developer
-          building multilingual search, you need predictable, auditable
-          conversion. Interscript maps are checked into git, versioned, and
-          independently testable against the published authority documents.
+          Names, places, and historical records exist in dozens of scripts. Whether you're a
+          librarian cataloguing foreign-language works, a government agency standardising
+          romanisation, or a developer building multilingual search, you need predictable, auditable
+          conversion. Interscript maps are checked into git, versioned, and independently testable
+          against the published authority documents.
         </p>
       </section>
 
       <section>
         <h2>History</h2>
         <p>
-          Interscript was started at Ribose in 2019 as a Ruby library and
-          has since grown to include TypeScript and Python engines, a public
-          reference site, and an optional phonological layer — <a href="/docs/phonological-layer">interscript-ml</a> (the
-          contract and model zoo) run by the <a href="https://www.secryst.org">secryst</a> crystal family
-          (Ruby · Python · TypeScript). The map corpus now exceeds 300
-          systems.
+          Interscript was started at Ribose in 2019 as a Ruby library and has since grown to include
+          TypeScript and Python engines, a public reference site, and an optional phonological layer
+          — <a href="/docs/phonological-layer">interscript-ml</a> (the contract and model zoo) run by
+          the <a href="https://www.secryst.org">secryst</a> crystal family (Ruby · Python · TypeScript).
+          The map corpus now covers 289 systems.
         </p>
       </section>
 
       <section>
         <h2>The ecosystem</h2>
         <p>
-          Interscript is deliberately layered. The core is deterministic
-          maps and engines. When a map needs undiacritized text vocalized
-          first, it dispatches to an optional crystal:
+          Interscript is deliberately layered. The core is deterministic maps and engines. When a
+          map needs undiacritized text vocalized first, it dispatches to an optional crystal:
         </p>
         <ul>
-          <li><strong>Maps + engines</strong> — <code>interscript-ruby</code>, <code>interscript-ts</code>, <code>interscript-py</code> — pure deterministic conversion.</li>
-          <li><strong>Contract + zoo</strong> — <a href="https://github.com/interscript/interscript-ml">interscript-ml</a> — the <code>models.yaml</code> index, IMF&nbsp;v1 model format,
-            and golden sets.</li>
-          <li><strong>Crystals</strong> — <a href="https://www.secryst.org">secryst</a> (<code>gem secryst</code> · <code>pip install secryst</code> · <code>npm i secryst</code>) — local ONNX inference implementing
-            the contract. A crystal has no interscript dependency; an engine
-            without a crystal simply cannot execute maps that declare a
-            vocalization step.</li>
-          <li><strong>Training</strong> — <a href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a> — teachers whose students enter the zoo.</li>
+          <li>
+            <strong>Maps + engines</strong> — <code>interscript-ruby</code>, <code
+              >interscript-ts</code
+            >, <code>interscript-py</code> — pure deterministic conversion.
+          </li>
+          <li>
+            <strong>Contract + zoo</strong> — <a
+              href="https://github.com/interscript/interscript-ml">interscript-ml</a
+            > — the <code>models.yaml</code> index, IMF&nbsp;v1 model format, and golden sets.
+          </li>
+          <li>
+            <strong>Crystals</strong> — <a href="https://www.secryst.org">secryst</a> (<code
+              >gem secryst</code
+            > · <code>pip install secryst</code> · <code>npm i secryst</code>) — local ONNX
+            inference implementing the contract. A crystal has no interscript dependency; an engine
+            without a crystal simply cannot execute maps that declare a vocalization step.
+          </li>
+          <li>
+            <strong>Training</strong> — <a
+              href="https://github.com/interscript/interscript-ml-train">interscript-ml-train</a
+            > — teachers whose students enter the zoo.
+          </li>
         </ul>
       </section>
 
       <section>
         <h2>Team</h2>
         <p>
-          Interscript is an open-source project maintained by Ribose Inc.
-          and a community of contributors. Source code is on <a href="https://github.com/interscript">GitHub</a>; issues and
-          pull requests are welcome.
+          Interscript is an open-source project maintained by Ribose Inc. and a community of
+          contributors. Source code is on <a href="https://github.com/interscript">GitHub</a>;
+          issues and pull requests are welcome.
         </p>
-      </section>
-
-      <section>
-        <h2>Supporters</h2>
-        <p>
-          The Interscript project has received extensive support from the
-          following organizations and individuals, in no particular order:
-        </p>
-        <ul>
-          <li>Prof. Lyubomir Ivanov (<a href="https://www.bas.bg">Bulgarian Academy of Sciences</a>)</li>
-          <li><a href="https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names">U.S. Board on Geographic Names (BGN)</a></li>
-          <li><a href="https://www.ogc.org">Open Geospatial Consortium (OGC)</a></li>
-          <li><a href="https://www.calconnect.org">CalConnect</a></li>
-          <li>The <a href="https://www.eki.ee/wgrs/">Working Group on Romanization Systems</a> of the <a href="https://unstats.un.org/unsd/ungegn/">United Nations Group of Experts on Geographical Names</a></li>
-          <li><a href="https://www.icao.int">International Civil Aviation Organization (ICAO)</a></li>
-        </ul>
       </section>
     </div>
   </div>
@@ -99,5 +181,81 @@ import Base from "../layouts/Base.astro"
 <style>
   .container {
     padding-bottom: 2rem;
+  }
+  .partners h2 {
+    font-size: var(--text-h2);
+    margin: 2rem 0 0.75rem;
+  }
+  .partners > p {
+    max-width: 68ch;
+  }
+  .partner-grid {
+    list-style: none;
+    margin: 1.75rem 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+    gap: 0.9rem;
+  }
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--color-vellum);
+    border: 1px solid var(--color-rule);
+    padding: 1.25rem 1rem 1.1rem;
+    height: 100%;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+  .partner-card:hover {
+    border-color: var(--color-highlight);
+  }
+  .partner-card:focus-visible {
+    outline: 2px solid var(--color-ochre, var(--color-highlight));
+    outline-offset: 2px;
+  }
+  /* Logos are designed for light backgrounds; keep the plate light in
+     both themes (dark variant for marks built for dark grounds). */
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    width: 100%;
+    background: #fcfaf4;
+    border: 1px solid var(--color-rule);
+    padding: 0.5rem 1.1rem;
+  }
+  .partner-logo--dark {
+    background: var(--color-ink);
+  }
+  .partner-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .partner-name {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    text-align: center;
+    line-height: 1.35;
+  }
+  .partner-desc {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+    text-align: center;
+    margin-top: -0.45rem;
+  }
+  .partner-note {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    max-width: 68ch;
   }
 </style>

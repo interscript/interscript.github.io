@@ -90,15 +90,9 @@ onMounted(ensureEngine)
     <select id="qs" v-model="selected" class="select">
       <option v-for="s in systems" :key="s.code" :value="s.code">{{ s.label }}</option>
     </select>
-    <input
-      v-model="input"
-      type="text"
-      class="input"
-      placeholder="Type text…"
-      :disabled="!ready"
-    />
+    <input v-model="input" type="text" class="input" placeholder="Type text…" :disabled="!ready" />
     <div class="output" :class="{ placeholder: !output }">
-      {{ output || (ready ? '—' : 'Loading…') }}
+      {{ output || (ready ? "—" : "Loading…") }}
     </div>
   </div>
 </template>

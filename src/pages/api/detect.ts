@@ -40,10 +40,10 @@ export const GET: APIRoute = ({ url }) => {
   const output = url.searchParams.get("output")
   const sourceScript = url.searchParams.get("source_script")
   if (!input || !output) {
-    return new Response(
-      JSON.stringify({ error: "Both input and output are required" }),
-      { status: 400, headers: { "Content-Type": "application/json" } },
-    )
+    return new Response(JSON.stringify({ error: "Both input and output are required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    })
   }
 
   // Detect is meant for the client-side playground — this endpoint

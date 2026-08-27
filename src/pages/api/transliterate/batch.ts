@@ -12,11 +12,7 @@
  */
 
 import type { APIRoute } from "astro"
-import {
-  configure,
-  reset,
-  transliterateAsync,
-} from "interscript-ts"
+import { configure, reset, transliterateAsync } from "interscript-ts"
 import { serverMapStrategies } from "../../../lib/server-map-strategies"
 import { MapNotFoundError, InterscriptError } from "interscript-ts"
 
@@ -67,10 +63,7 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ error: "items array is empty" }, 400)
   }
   if (items.length > MAX_ITEMS) {
-    return json(
-      { error: `Too many items: ${items.length}. Max ${MAX_ITEMS} per batch.` },
-      413,
-    )
+    return json({ error: `Too many items: ${items.length}. Max ${MAX_ITEMS} per batch.` }, 413)
   }
 
   const results: BatchResult[] = []

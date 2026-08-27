@@ -27,10 +27,23 @@ const props = withDefaults(defineProps<Props>(), {
 // Order is intentional: Latin → Cyrillic → back to Latin via a different
 // authority. Each pair shows a real map that ships with the bundle.
 const morphs = [
-  { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Anton", label: "Latin → Cyrillic (Ukrainian, BGN/PCGN 2019)", reverse: true },
-  { system: "bgnpcgn-ukr-Cyrl-Latn-2019", input: "Антон", label: "Cyrillic → Latin (Ukrainian, BGN/PCGN 2019)" },
+  {
+    system: "bgnpcgn-ukr-Cyrl-Latn-2019",
+    input: "Anton",
+    label: "Latin → Cyrillic (Ukrainian, BGN/PCGN 2019)",
+    reverse: true,
+  },
+  {
+    system: "bgnpcgn-ukr-Cyrl-Latn-2019",
+    input: "Антон",
+    label: "Cyrillic → Latin (Ukrainian, BGN/PCGN 2019)",
+  },
   { system: "odni-rus-Cyrl-Latn-2015", input: "привет мир", label: "Russian → Latin (ODNI 2015)" },
-  { system: "bgnpcgn-deu-Latn-Latn-2000", input: "Tschüß!", label: "German normalisation (BGN/PCGN 2000)" },
+  {
+    system: "bgnpcgn-deu-Latn-Latn-2000",
+    input: "Tschüß!",
+    label: "German normalisation (BGN/PCGN 2000)",
+  },
   { system: "alalc-amh-Ethi-Latn-2011", input: "ኢትዮጵያ", label: "Amharic → Latin (ALA-LC 2011)" },
   { system: "un-tam-Taml-Latn-1972", input: "தமிழ்", label: "Tamil → Latin (UN 1972)" },
 ] as const
@@ -95,12 +108,15 @@ onUnmounted(() => {
   if (timer) window.clearInterval(timer)
 })
 
-watch(() => props.intervalMs, (v) => {
-  if (timer) window.clearInterval(timer)
-  timer = window.setInterval(() => {
-    if (ready.value) tick()
-  }, v)
-})
+watch(
+  () => props.intervalMs,
+  (v) => {
+    if (timer) window.clearInterval(timer)
+    timer = window.setInterval(() => {
+      if (ready.value) tick()
+    }, v)
+  },
+)
 </script>
 
 <template>
@@ -156,8 +172,13 @@ watch(() => props.intervalMs, (v) => {
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .specimen-stage {
   min-height: 7rem;
@@ -207,7 +228,9 @@ watch(() => props.intervalMs, (v) => {
 /* Transition: fade + slight Y shift between morphs */
 .morph-enter-active,
 .morph-leave-active {
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 .morph-enter-from {
   opacity: 0;
@@ -219,8 +242,14 @@ watch(() => props.intervalMs, (v) => {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .specimen-label::before { animation: none; opacity: 1; }
-  .morph-enter-active, .morph-leave-active { transition: none; }
+  .specimen-label::before {
+    animation: none;
+    opacity: 1;
+  }
+  .morph-enter-active,
+  .morph-leave-active {
+    transition: none;
+  }
 }
 
 .specimen.failed {

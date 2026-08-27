@@ -50,17 +50,14 @@ export const GET: APIRoute = ({ url }) => {
     }))
     .sort((a, b) => a.code.localeCompare(b.code))
 
-  return new Response(
-    JSON.stringify({ count: systems.length, systems }),
-    {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, max-age=300",
-        "Access-Control-Allow-Origin": "*",
-      },
+  return new Response(JSON.stringify({ count: systems.length, systems }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "Cache-Control": "public, max-age=300",
+      "Access-Control-Allow-Origin": "*",
     },
-  )
+  })
 }
 
 export const OPTIONS: APIRoute = () => new Response(null, { status: 204 })

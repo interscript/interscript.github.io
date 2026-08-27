@@ -106,7 +106,7 @@ class InterscriptWidget extends HTMLElement {
           gap: 0.4rem;
           text-decoration: none;
           color: inherit;
-          font-family: "Fraunces", Georgia, serif;
+          font-family: "Inter Tight", Inter, system-ui, sans-serif;
           font-size: 1rem;
           font-weight: 500;
           letter-spacing: -0.015em;
@@ -143,7 +143,7 @@ class InterscriptWidget extends HTMLElement {
           color: var(--stone);
         }
         textarea, .output {
-          font-family: "Fraunces", Georgia, serif;
+          font-family: "Inter Tight", Inter, system-ui, sans-serif;
           font-size: 1rem;
           padding: 0.625rem;
           border: 1px solid var(--rule);

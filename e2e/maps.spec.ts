@@ -22,7 +22,9 @@ test.describe("maps browser", () => {
   test("has search or filter controls", async ({ page }) => {
     await page.goto("/maps")
     // Look for search input, select, or filter buttons
-    const controls = page.locator("input[type='search'], input[placeholder*='search' i], select, button")
+    const controls = page.locator(
+      "input[type='search'], input[placeholder*='search' i], select, button",
+    )
     await expect(controls.first()).toBeVisible({ timeout: 5000 })
   })
 

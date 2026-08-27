@@ -70,9 +70,7 @@ const csvOutput = computed(() => {
   for (const r of results.value) {
     rows.push([r.input, r.output, r.error ?? ""])
   }
-  return rows
-    .map((row) => row.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(","))
-    .join("\n")
+  return rows.map((row) => row.map((cell) => `"${cell.replace(/"/g, '""')}"`).join(",")).join("\n")
 })
 
 async function copyCsv() {
@@ -93,7 +91,9 @@ onUnmounted(() => client?.terminate())
         </select>
       </div>
       <button class="run-btn" :disabled="running || inputCount === 0" @click="run">
-        {{ running ? `Working… (${results.length}/${inputCount})` : `Transliterate ${inputCount} →` }}
+        {{
+          running ? `Working… (${results.length}/${inputCount})` : `Transliterate ${inputCount} →`
+        }}
       </button>
     </div>
 
@@ -118,11 +118,7 @@ onUnmounted(() => client?.terminate())
             <span v-if="errorCount" class="err">{{ errorCount }} errors</span>
             <span v-if="elapsedMs" class="time">{{ elapsedMs }}ms</span>
           </span>
-          <button
-            v-if="results.length > 0"
-            class="copy-btn"
-            @click="copyCsv"
-          >Copy CSV</button>
+          <button v-if="results.length > 0" class="copy-btn" @click="copyCsv">Copy CSV</button>
         </header>
         <ol class="result-list">
           <li v-for="(r, i) in results" :key="i" :class="{ error: r.error }">
@@ -175,7 +171,9 @@ onUnmounted(() => client?.terminate())
   color: var(--color-ink);
   outline: none;
 }
-.control-field select:focus { border-color: var(--color-brand); }
+.control-field select:focus {
+  border-color: var(--color-brand);
+}
 
 .run-btn {
   font-family: var(--font-mono);
@@ -210,13 +208,15 @@ onUnmounted(() => client?.terminate())
   }
 }
 
-.input-pane, .output-pane {
+.input-pane,
+.output-pane {
   background: var(--color-vellum);
   border: 1px solid var(--color-rule);
   display: flex;
   flex-direction: column;
 }
-.input-pane header, .output-pane header {
+.input-pane header,
+.output-pane header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -228,7 +228,9 @@ onUnmounted(() => client?.terminate())
   text-transform: uppercase;
   color: var(--color-stone);
 }
-.pane-label { flex: 1; }
+.pane-label {
+  flex: 1;
+}
 .pane-count {
   background: var(--color-paper-deep);
   padding: 0.2rem 0.55rem;
@@ -240,9 +242,15 @@ onUnmounted(() => client?.terminate())
   gap: 0.625rem;
   font-size: 0.65rem;
 }
-.pane-stats .ok { color: var(--color-brand-deep); }
-.pane-stats .err { color: var(--color-highlight); }
-.pane-stats .time { color: var(--color-stone-light); }
+.pane-stats .ok {
+  color: var(--color-brand-deep);
+}
+.pane-stats .err {
+  color: var(--color-highlight);
+}
+.pane-stats .time {
+  color: var(--color-stone-light);
+}
 .copy-btn {
   font-family: inherit;
   font-size: 0.65rem;
@@ -294,7 +302,9 @@ textarea {
   font-family: var(--font-display);
   font-size: 1rem;
 }
-.result-list li:last-child { border-bottom: none; }
+.result-list li:last-child {
+  border-bottom: none;
+}
 .result-list li.empty {
   grid-template-columns: 1fr;
   text-align: center;
@@ -307,8 +317,22 @@ textarea {
 .result-list li.error .row-err {
   color: var(--color-highlight);
 }
-.row-in { color: var(--color-stone); }
-.row-arrow { color: var(--color-highlight); font-family: var(--font-mono); font-size: 0.75rem; }
-.row-out { color: var(--color-highlight); font-style: italic; }
-.row-err { color: var(--color-highlight); font-family: var(--font-mono); font-size: 0.75rem; font-style: normal; }
+.row-in {
+  color: var(--color-stone);
+}
+.row-arrow {
+  color: var(--color-highlight);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.row-out {
+  color: var(--color-highlight);
+  font-style: italic;
+}
+.row-err {
+  color: var(--color-highlight);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-style: normal;
+}
 </style>

@@ -22,8 +22,8 @@ const systems = [
       <p class="eyebrow eyebrow-accent">For catalogers</p>
       <h1>MARC records, romanized.</h1>
       <p class="hero-deck">
-        Paste text-mode MARC fields (MarcEdit-style). The tool detects
-        non-Latin subfield content and emits parallel <code>880</code> fields with ALA-LC romanizations. Runs in your browser; nothing
+        Paste text-mode MARC fields (MarcEdit-style). The tool detects non-Latin subfield content
+        and emits parallel <code>880</code> fields with ALA-LC romanizations. Runs in your browser; nothing
         is uploaded.
       </p>
     </div>
@@ -44,34 +44,33 @@ const systems = [
         <article>
           <h3>ALA-LC default</h3>
           <p>
-            Most English-language cataloging in North America uses
-            ALA-LC romanization tables. The system picker offers the
-            ALA-LC tables Interscript ships for the most common
-            non-Latin scripts.
+            Most English-language cataloging in North America uses ALA-LC romanization tables. The
+            system picker offers the ALA-LC tables Interscript ships for the most common non-Latin
+            scripts.
           </p>
         </article>
         <article>
           <h3>Parallel 880 fields</h3>
           <p>
-            Per <a href="https://www.loc.gov/marc/bibliographic/bd880.html" rel="noreferrer">MARC 21 conventions</a>,
-            the 880 field carries the romanized form of a vernacular
-            field. The tool emits 880 next to the original line for
-            easy copy into your record.
+            Per <a href="https://www.loc.gov/marc/bibliographic/bd880.html" rel="noreferrer"
+              >MARC 21 conventions</a
+            >, the 880 field carries the romanized form of a vernacular field. The tool emits 880
+            next to the original line for easy copy into your record.
           </p>
         </article>
         <article>
           <h3>Subfield-aware</h3>
           <p>
-            The parser only romanizes subfield <em>content</em>,
-            leaving codes (<code>$a</code>, <code>$b</code>…) intact.
-            ASCII-only subfields pass through unchanged.
+            The parser only romanizes subfield <em>content</em>, leaving codes (<code>$a</code>, <code
+              >$b</code
+            >…) intact. ASCII-only subfields pass through unchanged.
           </p>
         </article>
         <article>
           <h3>Local-only</h3>
           <p>
-            Nothing is uploaded. Useful for sensitive acquisition
-            records in progress or restricted collections.
+            Nothing is uploaded. Useful for sensitive acquisition records in progress or restricted
+            collections.
           </p>
         </article>
       </div>
@@ -105,7 +104,9 @@ const systems = [
     margin-top: 2.5rem;
   }
   @media (min-width: 900px) {
-    .info-grid { grid-template-columns: repeat(2, 1fr); }
+    .info-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   .info-grid article {
     background: var(--color-vellum);

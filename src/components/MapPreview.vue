@@ -71,16 +71,15 @@ async function ensureEngine() {
   }
 }
 
-const output = computed(() => {
-  if (engine.value !== "ready" || !transliterateFn) return ""
+const runResult = computed<{ value: string; error: string | null }>(() => {
+  if (engine.value !== "ready" || !transliterateFn) return { value: "", error: null }
   try {
-    errorMessage.value = null
-    return transliterateFn(props.systemCode, input.value)
+    return { value: transliterateFn(props.systemCode, input.value), error: null }
   } catch (e) {
-    errorMessage.value = (e as Error).message
-    return ""
+    return { value: "", error: (e as Error).message }
   }
 })
+const output = computed(() => runResult.value.value)
 
 onMounted(ensureEngine)
 </script>
@@ -90,8 +89,7 @@ onMounted(ensureEngine)
     <div v-if="engine === 'unavailable'" class="notice">
       <p>
         <strong>Live preview not available for this system.</strong>
-        Only a curated subset of maps is shipped to the browser.
-        To run this system locally:
+        This map has no browser-bundled ISC source. To run it locally:
       </p>
       <pre><code># Ruby
 gem install interscript
@@ -130,12 +128,12 @@ transliterate("{{ systemCode }}", "your input")</code></pre>
           >
         </header>
         <output class="pane-body pane-result">{{
-          output || (engine === 'ready' ? '—' : 'Loading engine…')
+          output || (engine === "ready" ? "—" : "Loading engine…")
         }}</output>
       </div>
 
-      <div v-if="errorMessage" class="error-banner" role="alert">
-        <strong>Error:</strong> {{ errorMessage }}
+      <div v-if="runResult.error || errorMessage" class="error-banner" role="alert">
+        <strong>Error:</strong> {{ runResult.error || errorMessage }}
       </div>
     </div>
   </div>

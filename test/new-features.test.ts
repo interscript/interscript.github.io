@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect } from "vitest"
-import { readFileSync, existsSync, readdirSync } from "node:fs"
+import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 const DIST = resolve(process.cwd(), "dist/client")
@@ -67,7 +67,7 @@ describe("/status page", () => {
 
   it("shows the Ruby parity KPI", () => {
     expect(html).toMatch(/Ruby parity/)
-    expect(html).toMatch(/100\.0%|99\.\d%/)  // at least 99%
+    expect(html).toMatch(/100\.0%|99\.\d%/) // at least 99%
   })
 
   it("shows total systems, authorities, scripts", () => {
@@ -82,7 +82,7 @@ describe("/status page", () => {
   })
 
   it("lists top authorities with rank bars", () => {
-    expect(html).toContain("class=\"rank-list\"")
+    expect(html).toContain('class="rank-list"')
     expect(html).toContain("bgnpcgn")
   })
 
@@ -155,9 +155,23 @@ describe("navigation across new pages", () => {
 
   it("every new page links to all primary nav destinations", () => {
     const navHrefs = [
-      "/demo", "/compare", "/batch", "/detect", "/diff", "/marc", "/subtitles",
-      "/maps", "/scripts", "/use-cases", "/api", "/api-docs", "/status",
-      "/authorities", "/contributing", "/docs", "/about",
+      "/demo",
+      "/compare",
+      "/batch",
+      "/detect",
+      "/diff",
+      "/marc",
+      "/subtitles",
+      "/maps",
+      "/scripts",
+      "/use-cases",
+      "/api",
+      "/api-docs",
+      "/status",
+      "/authorities",
+      "/contributing",
+      "/docs",
+      "/about",
     ]
     for (const p of pages) {
       const html = readHtml(`${p}/index.html`)

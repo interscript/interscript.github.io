@@ -30,10 +30,9 @@ const initialRight = systems[2]!.code
       <p class="eyebrow eyebrow-accent">Map diff</p>
       <h1>Where do two systems actually differ?</h1>
       <p class="hero-deck">
-        Pick two transliteration systems and inspect their rule sets
-        side-by-side. Each row is one transformation rule, exactly as
-        it appears in the JSON IR. The first 30 rules of each map are
-        shown — enough to spot the divergences that matter.
+        Pick two transliteration systems and inspect their rule sets side-by-side. Each row is one
+        transformation rule, exactly as it appears in the map's ISC source. The first 30 rules of
+        each system are shown — enough to spot the divergences that matter.
       </p>
     </div>
   </section>
@@ -53,9 +52,8 @@ const initialRight = systems[2]!.code
         <p class="eyebrow">Why diff?</p>
         <h2>Choose with evidence.</h2>
         <p class="section-deck">
-          Choosing between romanization systems is hard when the rules
-          are buried in PDFs. The diff viewer surfaces the structural
-          differences: which systems use parallel blocks, which add
+          Choosing between romanization systems is hard when the rules are buried in PDFs. The diff
+          viewer surfaces the structural differences: which systems use parallel blocks, which add
           diacritics, which collapse distinctions.
         </p>
       </header>
@@ -64,22 +62,22 @@ const initialRight = systems[2]!.code
         <article>
           <h3>Adoption decisions</h3>
           <p>
-            Switching a newsroom or library from BGN/PCGN to ISO? See
-            exactly what changes before you commit.
+            Switching a newsroom or library from BGN/PCGN to ISO? See exactly what changes before
+            you commit.
           </p>
         </article>
         <article>
           <h3>Map authoring</h3>
           <p>
-            Writing a new map? Compare against an existing one to make
-            sure you're not missing edge cases.
+            Writing a new map? Compare against an existing one to make sure you're not missing edge
+            cases.
           </p>
         </article>
         <article>
           <h3>Linguistic research</h3>
           <p>
-            Study how authorities have evolved their romanization
-            conventions over time — pair an old system with a new one.
+            Study how authorities have evolved their romanization conventions over time — pair an
+            old system with a new one.
           </p>
         </article>
       </div>
@@ -113,7 +111,9 @@ const initialRight = systems[2]!.code
     margin-top: 2.5rem;
   }
   @media (min-width: 900px) {
-    .diff-cases { grid-template-columns: repeat(3, 1fr); }
+    .diff-cases {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
   .diff-cases article {
     background: var(--color-vellum);

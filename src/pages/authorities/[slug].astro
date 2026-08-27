@@ -4,9 +4,7 @@ import catalogue from "../../data/maps-catalogue.json" with { type: "json" }
 import { scriptName } from "../../data/iso"
 
 export function getStaticPaths() {
-  const authorities = new Set(
-    Object.values(catalogue).map((e: any) => e.data.authority_id),
-  )
+  const authorities = new Set(Object.values(catalogue).map((e: any) => e.data.authority_id))
   return [...authorities].sort().map((slug) => ({ params: { slug } }))
 }
 
@@ -55,28 +53,19 @@ const FULL_NAMES: Record<string, string> = {
 const DESCRIPTIONS: Record<string, string> = {
   bgnpcgn:
     "The BGN/PCGN system is a joint product of the United States Board on Geographic Names (BGN) and the Permanent Committee on Geographical Names for British Official Use (PCGN). For over seventy years it has set the de facto romanization standard for English-language newsrooms, diplomats, and cartographers.",
-  iso:
-    "ISO publishes romanization standards under several numbers — ISO 9 (Cyrillic), ISO 233 (Arabic), ISO 259 (Hebrew), ISO 843 (Greek), ISO 3602 (Japanese), and ISO 7098 (Chinese). These are the standards cited in academic publishing and library science.",
+  iso: "ISO publishes romanization standards under several numbers — ISO 9 (Cyrillic), ISO 233 (Arabic), ISO 259 (Hebrew), ISO 843 (Greek), ISO 3602 (Japanese), and ISO 7098 (Chinese). These are the standards cited in academic publishing and library science.",
   alalc:
     "ALA-LC romanization tables are the dominant standard in North American library cataloging. Developed jointly by the American Library Association and the Library of Congress, they prescribe the form used in MARC records and LCSH authority files.",
-  odni:
-    "The Office of the Director of National Intelligence (ODNI) issues romanization standards used across the U.S. intelligence community. The 2015 ODNI standards update earlier BGN/PCGN conventions for modern operational use.",
-  un:
-    "The United Nations Group of Experts on Geographical Names (UNGEGN) publishes romanization systems used by national mapping agencies, the UN itself, and cartographic organizations worldwide. UNGEGN conferences have ratified systems for dozens of scripts.",
-  icao:
-    "ICAO Document 9303 defines the machine-readable travel documents (MRTD) standard used in passports and ID cards worldwide. Its transliteration rules map source-script names into a restricted ASCII set suitable for OCR and the MRZ.",
-  din:
-    "DIN (Deutsches Institut für Normung) publishes German industrial standards, including DIN 31636 (Yiddish) and DIN 33404 (Hindi). Used in academic and library contexts in German-speaking countries.",
-  gost:
-    "GOST (Russian: ГОСТ) refers to technical standards issued by the Russian Federal Agency for Technical Regulation and Metrology. The GOST 7.79 series prescribes Cyrillic romanization systems used in Soviet and Russian technical publishing.",
-  elot:
-    "ELOT (ΕΛΟΤ) is the Hellenic Organization for Standardization. ELOT 743 is the official Greek romanization standard, mandated by the Greek government and adopted by ISO as ISO 843.",
-  mofa:
-    "The Japanese Ministry of Foreign Affairs (MOFA) publishes romanization conventions used in Japanese passports and official diplomatic documents, derived from but distinct from the cabinet-approved Kunrei and Modifed Hepburn systems.",
+  odni: "The Office of the Director of National Intelligence (ODNI) issues romanization standards used across the U.S. intelligence community. The 2015 ODNI standards update earlier BGN/PCGN conventions for modern operational use.",
+  un: "The United Nations Group of Experts on Geographical Names (UNGEGN) publishes romanization systems used by national mapping agencies, the UN itself, and cartographic organizations worldwide. UNGEGN conferences have ratified systems for dozens of scripts.",
+  icao: "ICAO Document 9303 defines the machine-readable travel documents (MRTD) standard used in passports and ID cards worldwide. Its transliteration rules map source-script names into a restricted ASCII set suitable for OCR and the MRZ.",
+  din: "DIN (Deutsches Institut für Normung) publishes German industrial standards, including DIN 31636 (Yiddish) and DIN 33404 (Hindi). Used in academic and library contexts in German-speaking countries.",
+  gost: "GOST (Russian: ГОСТ) refers to technical standards issued by the Russian Federal Agency for Technical Regulation and Metrology. The GOST 7.79 series prescribes Cyrillic romanization systems used in Soviet and Russian technical publishing.",
+  elot: "ELOT (ΕΛΟΤ) is the Hellenic Organization for Standardization. ELOT 743 is the official Greek romanization standard, mandated by the Greek government and adopted by ISO as ISO 843.",
+  mofa: "The Japanese Ministry of Foreign Affairs (MOFA) publishes romanization conventions used in Japanese passports and official diplomatic documents, derived from but distinct from the cabinet-approved Kunrei and Modifed Hepburn systems.",
   acadsin:
     "Academia Sinica (中央研究院) is the national academy of Taiwan (Republic of China). Its 2002 Tongyong Pinyin romanization was adopted by the Taiwanese government before the eventual switch to Hanyu Pinyin.",
-  sac:
-    "China's State Administration of Cartography (SAC) — now part of the Ministry of Natural Resources — publishes the official romanization standards for Chinese geographic names, derived from Hanyu Pinyin.",
+  sac: "China's State Administration of Cartography (SAC) — now part of the Ministry of Natural Resources — publishes the official romanization standards for Chinese geographic names, derived from Hanyu Pinyin.",
 }
 
 // Curated "signature" sample for prominent authorities (real test vector
@@ -116,7 +105,9 @@ const total = entries.length
 const withTests = entries.filter((e) => e.test && e.test[0]).length
 const sourceScripts = [...new Set(entries.map((e) => e.data.source_script))].sort()
 const destScripts = [...new Set(entries.map((e) => e.data.destination_script))].sort()
-const languages = [...new Set(entries.map((e) => e.data.language?.split(":").pop()).filter(Boolean))].sort()
+const languages = [
+  ...new Set(entries.map((e) => e.data.language?.split(":").pop()).filter(Boolean)),
+].sort()
 const yearRange = (() => {
   const years = entries
     .map((e) => parseInt(e.data.creation_date ?? e.data.id, 10))
@@ -158,21 +149,25 @@ const pageTitle = `${fullName} — Interscript Authorities`
         <h1>{fullName}</h1>
         <code class="auth-slug">{slug}</code>
 
-        {description && (
-          <p class="auth-description">{description}</p>
-        )}
+        {description && <p class="auth-description">{description}</p>}
 
-        {signatureSample && (
-          <aside class="auth-signature">
-            <p class="sig-label">Signature sample</p>
-            <div class="sig-pair">
-              <span class="sig-input">{signatureSample.input}</span>
-              <span class="sig-arrow" aria-hidden="true">→</span>
-              <span class="sig-output">{signatureSample.output}</span>
-            </div>
-            <a class="sig-link" href={`/maps/${signatureSample.system}`}>View system →</a>
-          </aside>
-        )}
+        {
+          signatureSample && (
+            <aside class="auth-signature">
+              <p class="sig-label">Signature sample</p>
+              <div class="sig-pair">
+                <span class="sig-input">{signatureSample.input}</span>
+                <span class="sig-arrow" aria-hidden="true">
+                  →
+                </span>
+                <span class="sig-output">{signatureSample.output}</span>
+              </div>
+              <a class="sig-link" href={`/maps/${signatureSample.system}`}>
+                View system →
+              </a>
+            </aside>
+          )
+        }
 
         <dl class="meta-grid">
           <div>
@@ -191,85 +186,110 @@ const pageTitle = `${fullName} — Interscript Authorities`
             <dt>Destination</dt>
             <dd>{destScripts.join(", ")}</dd>
           </div>
-          {yearRange && (
-            <div>
-              <dt>Years</dt>
-              <dd>{yearRange}</dd>
-            </div>
-          )}
-          {languages.length > 0 && (
-            <div>
-              <dt>Languages</dt>
-              <dd>{languages.length}</dd>
-            </div>
-          )}
+          {
+            yearRange && (
+              <div>
+                <dt>Years</dt>
+                <dd>{yearRange}</dd>
+              </div>
+            )
+          }
+          {
+            languages.length > 0 && (
+              <div>
+                <dt>Languages</dt>
+                <dd>{languages.length}</dd>
+              </div>
+            )
+          }
         </dl>
       </header>
 
       <hr class="rule-bold" />
 
-      {decades.length > 0 && (
-        <section class="timeline-section">
-          <p class="eyebrow">Publication timeline</p>
-          <h2>Systems by decade.</h2>
-          <ul class="timeline">
-            {decades.map(([decade, count]) => (
-              <li>
-                <span class="decade-label tnum">{decade}</span>
-                <span class="decade-bar" style={`--w: ${(count / maxDecadeCount * 100).toFixed(0)}%`}></span>
-                <span class="decade-count tnum">{count}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {
+        decades.length > 0 && (
+          <section class="timeline-section">
+            <p class="eyebrow">Publication timeline</p>
+            <h2>Systems by decade.</h2>
+            <ul class="timeline">
+              {decades.map(([decade, count]) => (
+                <li>
+                  <span class="decade-label tnum">{decade}</span>
+                  <span
+                    class="decade-bar"
+                    style={`--w: ${((count / maxDecadeCount) * 100).toFixed(0)}%`}
+                  />
+                  <span class="decade-count tnum">{count}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
-      {sourceScriptsWithNames.length > 0 && (
-        <section class="scripts-section">
-          <p class="eyebrow">Source scripts covered</p>
-          <h2>{sourceScriptsWithNames.length} script{sourceScriptsWithNames.length > 1 ? "s" : ""}.</h2>
-          <ul class="script-coverage">
-            {sourceScriptsWithNames.map((s) => (
-              <li>
-                <span class="cov-name">{s.name}</span>
-                <code class="cov-code">{s.code}</code>
-                <span class="cov-count tnum">{s.count} system{s.count > 1 ? "s" : ""}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {
+        sourceScriptsWithNames.length > 0 && (
+          <section class="scripts-section">
+            <p class="eyebrow">Source scripts covered</p>
+            <h2>
+              {sourceScriptsWithNames.length} script{sourceScriptsWithNames.length > 1 ? "s" : ""}.
+            </h2>
+            <ul class="script-coverage">
+              {sourceScriptsWithNames.map((s) => (
+                <li>
+                  <span class="cov-name">{s.name}</span>
+                  <code class="cov-code">{s.code}</code>
+                  <span class="cov-count tnum">
+                    {s.count} system{s.count > 1 ? "s" : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )
+      }
 
       <section class="systems-section">
         <p class="eyebrow">Systems</p>
         <h2>All {total} transliteration systems.</h2>
 
         <ul class="system-list">
-          {entries
-            .sort((a, b) => (a.data.creation_date ?? a.data.id).localeCompare(b.data.creation_date ?? b.data.id))
-            .map((e) => (
-              <li class="system-row">
-                <a href={`/maps/${e.code}`} class="system-link">
-                  <span class="system-year">{e.data.creation_date ?? e.data.id}</span>
-                  <div class="system-info">
-                    <span class="system-name">{e.data.name}</span>
-                    <code class="system-code">{e.code}</code>
-                  </div>
-                  <div class="system-flow">
-                    <span>{e.data.source_script}</span>
-                    <span class="arrow" aria-hidden="true">→</span>
-                    <span>{e.data.destination_script}</span>
-                  </div>
-                  {e.test && e.test[0] && (
-                    <div class="system-test">
-                      <span class="test-input">{e.test[0]}</span>
-                      <span class="arrow" aria-hidden="true">⇒</span>
-                      <span class="test-output">{e.test[1]}</span>
+          {
+            entries
+              .sort((a, b) =>
+                (a.data.creation_date ?? a.data.id).localeCompare(
+                  b.data.creation_date ?? b.data.id,
+                ),
+              )
+              .map((e) => (
+                <li class="system-row">
+                  <a href={`/maps/${e.code}`} class="system-link">
+                    <span class="system-year">{e.data.creation_date ?? e.data.id}</span>
+                    <div class="system-info">
+                      <span class="system-name">{e.data.name}</span>
+                      <code class="system-code">{e.code}</code>
                     </div>
-                  )}
-                </a>
-              </li>
-            ))}
+                    <div class="system-flow">
+                      <span>{e.data.source_script}</span>
+                      <span class="arrow" aria-hidden="true">
+                        →
+                      </span>
+                      <span>{e.data.destination_script}</span>
+                    </div>
+                    {e.test && e.test[0] && (
+                      <div class="system-test">
+                        <span class="test-input">{e.test[0]}</span>
+                        <span class="arrow" aria-hidden="true">
+                          ⇒
+                        </span>
+                        <span class="test-output">{e.test[1]}</span>
+                      </div>
+                    )}
+                  </a>
+                </li>
+              ))
+          }
         </ul>
       </section>
     </div>
@@ -288,7 +308,9 @@ const pageTitle = `${fullName} — Interscript Authorities`
     font-size: 0.875rem;
     margin-bottom: 2rem;
   }
-  .back-link:hover { color: var(--color-brand-deep); }
+  .back-link:hover {
+    color: var(--color-brand-deep);
+  }
 
   .auth-header h1 {
     font-size: var(--text-hero);
@@ -335,7 +357,6 @@ const pageTitle = `${fullName} — Interscript Authorities`
     font-size: 2rem;
     color: color-mix(in srgb, var(--color-vellum) 80%, transparent);
     line-height: 1.1;
-    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
   .sig-arrow {
     color: var(--color-highlight);
@@ -359,7 +380,10 @@ const pageTitle = `${fullName} — Interscript Authorities`
     letter-spacing: 0.05em;
     text-decoration: none;
   }
-  .sig-link:hover { color: var(--color-vellum); text-decoration: underline; }
+  .sig-link:hover {
+    color: var(--color-vellum);
+    text-decoration: underline;
+  }
 
   .meta-grid {
     display: grid;
@@ -385,11 +409,14 @@ const pageTitle = `${fullName} — Interscript Authorities`
     color: var(--color-ink);
   }
 
-  .timeline-section, .scripts-section {
+  .timeline-section,
+  .scripts-section {
     padding-block: 2.5rem;
     border-bottom: 1px solid var(--color-rule);
   }
-  .timeline-section h2, .scripts-section h2, .systems-section h2 {
+  .timeline-section h2,
+  .scripts-section h2,
+  .systems-section h2 {
     font-size: 1.5rem;
     margin: 0.5rem 0 1.5rem;
   }

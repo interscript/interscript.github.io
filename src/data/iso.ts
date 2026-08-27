@@ -21,9 +21,10 @@ for (const part of ["639-1", "639-2", "639-3", "639-5"] as const) {
 
 const scriptIndex = new Map<string, { name: string; number: string | number }>()
 for (const [code, entry] of Object.entries(scriptCodes)) {
-  const name = (entry as { name?: { en?: string }; pva?: string }).name?.en
-    ?? (entry as { pva?: string }).pva
-    ?? code
+  const name =
+    (entry as { name?: { en?: string }; pva?: string }).name?.en ??
+    (entry as { pva?: string }).pva ??
+    code
   scriptIndex.set(code, { name, number: (entry as { number: string | number }).number })
 }
 

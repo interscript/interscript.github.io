@@ -5,12 +5,7 @@
  * type input, see output, and copy the equivalent curl/JS/Ruby call.
  */
 
-import {
-  configure,
-  reset,
-  transliterateAsync,
-  httpStrategy,
-} from "interscript-ts"
+import { configure, reset, transliterateAsync, httpStrategy } from "interscript-ts"
 
 interface System {
   code: string
@@ -100,7 +95,7 @@ function render() {
         color: #5c5852;
       }
       .pg-select, .pg-input, .pg-output {
-        font-family: "Fraunces", Georgia, serif;
+        font-family: "Inter Tight", Inter, system-ui, sans-serif;
         font-size: 1.125rem;
         padding: 0.625rem 0.75rem;
         border: 1px solid #d8d0bc;
@@ -110,7 +105,7 @@ function render() {
         outline: none;
         min-height: 2.5rem;
       }
-      .pg-select { font-family: "Inter Tight", sans-serif; font-size: 0.9rem; }
+      .pg-select { font-family: "Inter Tight Variable", "Inter Tight", system-ui, sans-serif; font-size: 0.9rem; }
       .pg-input:focus, .pg-select:focus { border-color: #008075; }
       .pg-output {
         background: #f6f3ec;
