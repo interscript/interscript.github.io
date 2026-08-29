@@ -3,6 +3,14 @@ import Base from "../layouts/Base.astro"
 
 const serverModels = [
   {
+    id: "ara-diac-2.0",
+    task: "diacritization",
+    pair: "Arabic → haraqat",
+    metric: "DER 2.29 · OOD WER 17.38",
+    artifact: "fp32 · 2.7 GiB · parts",
+    status: "releasing",
+  },
+  {
     id: "khm-latn-1.0",
     task: "translit",
     pair: "Khmer → Latin",
@@ -45,6 +53,14 @@ const serverModels = [
 ]
 
 const clientModels = [
+  {
+    id: "ara-diac-small-2.0",
+    task: "diacritization",
+    pair: "Arabic → haraqat",
+    metric: "DER 4.82 (1.0 was 8.26)",
+    artifact: "int8 · ~0.5 GiB",
+    status: "releasing",
+  },
   {
     id: "tha-g2p-small-1.0",
     task: "g2p",
