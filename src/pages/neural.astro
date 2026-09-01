@@ -89,6 +89,8 @@ import Base from "../layouts/Base.astro"
 <script>
   import { imf } from "interscript/ml"
 
+  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v2/models-index.yaml"
+
   const $ = (id: string) => document.getElementById(id)!
   let current: { dispose?(): Promise<void> } | null = null
 
@@ -98,7 +100,7 @@ import Base from "../layouts/Base.astro"
     const label = $("progress-label")
     progress.hidden = false
     label.textContent = "Resolving verified index…"
-    const resolved = await imf.resolve(modelId, undefined, {
+    const resolved = await imf.resolve(modelId, ASSET_INDEX, {
       onProgress: (fraction, bytes) => {
         bar.style.width = `${Math.round(fraction * 100)}%`
         label.textContent = `${(bytes / 1e6).toFixed(0)} MB (${Math.round(fraction * 100)}%)`
