@@ -1,0 +1,147 @@
+---
+// Neural models demo (TODO.client-work 08/11): live diacritization in
+// the browser — verified Release fetch, download-once cache, streaming
+// decode with per-step confidence. No server round-trip.
+import Base from "../layouts/Base.astro"
+---
+
+<Base title="Neural models demo">
+  <section class="page-narrow">
+    <h1>Neural models demo</h1>
+    <p>
+      Authority-backed diacritization running locally in your browser. The model
+      downloads once (content-verified), then works offline.
+    </p>
+    <noscript><p>This demo needs JavaScript.</p></noscript>
+
+    <label for="model">Model</label>
+    <select id="model">
+      <option value="ara-diac-small-2.0-int8">Arabic diacritization — 2.0 (int8, 264 MB)</option>
+      <option value="ara-diac-small-1.0-int8">Arabic diacritization — 1.0 (int8, 264 MB)</option>
+      <option value="tha-g2p-small-1.0">Thai G2P — small (int8, 202 MB)</option>
+    </select>
+
+    <label for="input">Input</label>
+    <textarea id="input" rows="4" dir="auto">السلام عليكم ورحمة الله</textarea>
+
+    <button id="run" class="btn">Transliterate</button>
+    <button id="clear-cache" class="btn">Clear cached models</button>
+
+    <div id="progress" hidden>
+      <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+      <span id="progress-label"></span>
+    </div>
+
+    <label for="output">Output</label>
+    <output id="output" dir="auto" readonly></output>
+    <p id="confidence" class="muted" hidden></p>
+  </section>
+</Base>
+
+<style>
+  .progress-track {
+    height: 8px;
+    background: rgba(128, 128, 128, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0.75rem 0;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #008075;
+    transition: width 0.2s ease;
+  }
+  #output {
+    display: block;
+    min-height: 3rem;
+    padding: 0.6rem;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 6px;
+    font-size: 1.15rem;
+    white-space: pre-wrap;
+  }
+  .low-conf {
+    background: rgba(200, 120, 0, 0.25);
+    border-radius: 3px;
+  }
+  .muted {
+    color: #5c6470;
+    font-size: 0.85rem;
+  }
+  label {
+    display: block;
+    margin: 0.75rem 0 0.25rem;
+    font-weight: 600;
+  }
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+  }
+  .btn {
+    margin: 0.75rem 0.5rem 0.75rem 0;
+  }
+</style>
+
+<script>
+  import { imf } from "interscript/ml"
+
+  const $ = (id: string) => document.getElementById(id)!
+  let current: { dispose?(): Promise<void> } | null = null
+
+  async function load(modelId: string): Promise<{ translate(t: string, m?: number, o?: object): Promise<string> }> {
+    const progress = $("progress")
+    const bar = $("progress-bar")
+    const label = $("progress-label")
+    progress.hidden = false
+    label.textContent = "Resolving verified index…"
+    const resolved = await imf.resolve(modelId, undefined, {
+      onProgress: (fraction, bytes) => {
+        bar.style.width = `${Math.round(fraction * 100)}%`
+        label.textContent = `${(bytes / 1e6).toFixed(0)} MB (${Math.round(fraction * 100)}%)`
+      },
+    })
+    label.textContent = "Opening session…"
+    const model = await imf.IMFModel.fromZipBytes(resolved.bytes)
+    progress.hidden = true
+    return model
+  }
+
+  $("run").addEventListener("click", async () => {
+    const out = $("output")
+    const conf = $("confidence")
+    out.textContent = ""
+    try {
+      const model = await load(($("model") as HTMLSelectElement).value)
+      current?.dispose?.()
+      current = model as unknown as { dispose?(): Promise<void> }
+      const gaps: number[] = []
+      const parts: string[] = []
+      const text = ($("input") as HTMLTextAreaElement).value
+      const result = await model.translate(text, 2048, {
+        onToken: (token: number) => {
+          parts.push(imf.decode([token]))
+          out.textContent = parts.join("")
+        },
+        onConfidence: (gap: number) => gaps.push(gap),
+      })
+      out.textContent = result
+      if (gaps.length) {
+        const min = Math.min(...gaps)
+        conf.hidden = false
+        conf.textContent = `Decode confidence: min top-2 gap ${min.toFixed(2)} across ${gaps.length} steps (lower = less certain)`
+      }
+    } catch (e) {
+      out.textContent = `Error: ${(e as Error).message}`
+    }
+  })
+
+  $("clear-cache").addEventListener("click", async () => {
+    if (typeof caches !== "undefined") await caches.delete("interscript-imf-models-v1")
+    $("confidence").hidden = true
+    $("confidence").textContent = "Model cache cleared — next run re-downloads."
+  })
+</script>
