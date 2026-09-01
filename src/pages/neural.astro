@@ -137,7 +137,8 @@ import Base from "../layouts/Base.astro"
         conf.textContent = `Decode confidence: min top-2 gap ${min.toFixed(2)} across ${gaps.length} steps (lower = less certain)`
       }
     } catch (e) {
-      out.textContent = `Error: ${(e as Error).message}`
+      const cause = (e as Error).cause as Error | undefined
+      out.textContent = `Error: ${(e as Error).message}${cause ? " | cause: " + cause.message : ""}`
     }
   })
 
