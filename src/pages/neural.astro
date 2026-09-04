@@ -16,6 +16,8 @@ import Base from "../layouts/Base.astro"
 
     <label for="model">Model</label>
     <select id="model">
+      <option value="ara-diac-layerdrop-1.0-int4">Arabic diacritization — lite (int4, 95 MB)</option>
+      <option value="ara-diac-small-2.1-int8">Arabic diacritization — 2.1 (int8, 264 MB)</option>
       <option value="ara-diac-small-2.0-int8">Arabic diacritization — 2.0 (int8, 264 MB)</option>
       <option value="ara-diac-small-1.0-int8">Arabic diacritization — 1.0 (int8, 264 MB)</option>
       <option value="tha-g2p-small-1.0">Thai G2P — small (int8, 202 MB)</option>
@@ -89,7 +91,7 @@ import Base from "../layouts/Base.astro"
 <script>
   import { imf } from "interscript/ml"
 
-  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v2/models-index.yaml"
+  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v3/models-index.yaml"
 
   const $ = (id: string) => document.getElementById(id)!
   let current: { dispose?(): Promise<void> } | null = null
