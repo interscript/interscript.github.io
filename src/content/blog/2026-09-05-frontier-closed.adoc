@@ -1,0 +1,86 @@
+= The Arabic frontier, closed: every rung measured, two verdicts negative, one 95 MB browser model
+Ronald Tse
+v1.0, 2026-09-05
+:doctype: book
+:docinfo:
+
+== Introduction
+
+Two weeks ago the phonological layer shipped with an honest gap: the
+Arabic client student scored 8.26 on the full benchmark — a disclosed
+miss. This week that gap closed the only way gaps should close: every
+rung measured on the full set, confidence intervals on every
+separation, and the two causal hypotheses that remained both tested to
+a verdict. One verdict was negative. That is the point.
+
+== The frontier, bracketed
+
+The Arabic size–quality frontier, every rung full-set with a paired
+bootstrap interval on the gap to the teacher:
+
+[cols="1,1,1,1"]
+|===
+|Student |Params |Full-set DER-CE |Gap to teacher [95% CI]
+
+|from-scratch 30M, every lever |30M |73.95 |[70.22, 71.09]
+|1.0 rung |300M |8.26 |[4.6, 5.7]
+|lite rung (enc 12→6) |190M |5.78 |[3.03, 3.49]
+|2.0 rung |300M |4.82 |[2.36, 2.82]
+|2.1 rung |300M |4.57 |[1.91, 2.35]
+|teacher r7 |580M |2.29 |—
+|===
+
+Adjacent intervals are disjoint end to end: the frontier's separations
+are statistically real. The new releases —
+https://github.com/interscript/interscript-ml/releases/tag/ara-diac-small-2.1[ara-diac-small-2.1]
+and the
+https://github.com/interscript/interscript-ml/releases/tag/ara-diac-layerdrop-1.0[layerdrop
+trio] — resolve from index-v3 in every runtime.
+
+== The 95 MB tier
+
+The lite rung is the headline for the browser: encoder depth halved by
+verbatim layer copy, quantized to 4 bits, ~95 MB — and the
+quantization is nearly free by measurement: 0.036% of argmax decisions
+flip against fp32, every one of them at near-tie margins. The
+https://interscript.org/neural[live demo] leads with it: download
+once, verify the checksum, run offline, watch the decoder stream with
+per-step confidence.
+
+== Two verdicts, both negative
+
+The residual gap between the 2.1 student and its teacher had one live
+attribution left: classical-domain coverage. Both tests of it failed.
+Swapping news-domain training units for classical Tashkeela at constant
+budget made the student worse (−0.98pp). Adding five times the
+classical corpus — the maximal version of the lever — left it
+statistically flat (4.82 vs 4.57, intervals overlapping). The residual
+is not a coverage deficit the corpus can reach; it lives in the
+teacher–student interaction itself.
+
+The second negative traveled further. The depth cut that costs 1.21pp
+on Arabic was replicated single-variable on the Hebrew lineage — and
+collapsed: 77.48 DER against the full-depth 30.38. Depth-compressibility
+is a property of the recipe, not of the pretrained backbone. Both
+findings ship in the results log with their intervals; a claim scoped
+by its counterexample beats a generalization nobody tested.
+
+== Re-score us
+
+Every leaderboard number we publish can now be re-derived by anyone:
+
+    pip install interscript-ml-tools[sadeed]
+    interscript-sadeed-eval score \
+        --preds predictions.jsonl --data Misraj/SadeedDiac-25
+
+The tool reproduces our published verdicts exactly — it re-derives this
+week's 4.8231 run from its raw predictions and the public benchmark,
+intervals included. Protocol-matched comparison should be a command,
+not a promise.
+
+== Where this leaves the stack
+
+Twenty-two models across four languages and three tiers, every
+artifact checksummed and index-pinned, every metric traceable to a
+logged harness, and now a protocol tool that puts the scoring in your
+hands instead of ours.
