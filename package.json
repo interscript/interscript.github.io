@@ -31,6 +31,7 @@
     "@fontsource/jetbrains-mono": "^5.3.0",
     "@iso24229/iso15924-data": "^0.2.0",
     "@iso24229/iso639-data": "^0.2.0",
+    "@litertjs/core": "^2.5.3",
     "@tailwindcss/vite": "^4.0.0",
     "astro": "^7.0.0",
     "interscript": "^5.2.1",

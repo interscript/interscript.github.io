@@ -23,9 +23,14 @@ export default defineConfig({
     // imports; the transliteration path never loads them, but the dev
     // scanner and rolldown still try to resolve them.
     optimizeDeps: { exclude: ["interscript-ts"] },
+    // onnxruntime-web must NOT be externalized: the /neural demo loads
+    // the ML engine lazily in the browser, and an externalized bare
+    // specifier is unresolvable at runtime (the deployed demo failed
+    // with "Failed to resolve module specifier 'onnxruntime-web'").
+    // Node-only backends stay external — the client never imports them.
     build: {
       rolldownOptions: {
-        external: ["onnxruntime-web", "@litertjs/core", "onnxruntime-node"],
+        external: ["onnxruntime-node"],
       },
     },
   },
