@@ -69,7 +69,7 @@ by its counterexample beats a generalization nobody tested.
 
 Every leaderboard number we publish can now be re-derived by anyone:
 
-    pip install interscript-ml-tools[sadeed]
+    pip install "interscript-ml-tools[sadeed] @ git+https://github.com/interscript/interscript-ml.git"
     interscript-sadeed-eval score \
         --preds predictions.jsonl --data Misraj/SadeedDiac-25
 
