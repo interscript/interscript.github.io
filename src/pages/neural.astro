@@ -22,6 +22,10 @@ import Base from "../layouts/Base.astro"
       <option value="ara-diac-small-1.0-int8">Arabic diacritization — 1.0 (int8, 264 MB)</option>
       <option value="tha-g2p-small-1.0">Thai G2P — small (int8, 202 MB)</option>
     </select>
+    <p class="tier-hint">
+      Full-set numbers for every tier — the leaderboard and the client ladder — on
+      <a href="/ml#leaderboard">the neural layer page</a>.
+    </p>
 
     <label for="input">Input</label>
     <textarea id="input" rows="4" dir="auto">السلام عليكم ورحمة الله</textarea>
@@ -41,6 +45,14 @@ import Base from "../layouts/Base.astro"
 </Base>
 
 <style>
+  .tier-hint {
+    font-size: 0.8125rem;
+    opacity: 0.72;
+    margin: 0.4rem 0 1.25rem;
+  }
+  .tier-hint a {
+    text-decoration: underline;
+  }
   .progress-track {
     height: 8px;
     background: rgba(128, 128, 128, 0.25);
@@ -91,7 +103,7 @@ import Base from "../layouts/Base.astro"
 <script>
   import { imf } from "interscript/ml"
 
-  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v3/models-index.yaml"
+  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v5/models-index.yaml"
 
   const $ = (id: string) => document.getElementById(id)!
   let current: { dispose?(): Promise<void> } | null = null
