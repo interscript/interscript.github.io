@@ -25,7 +25,7 @@ bootstrap interval on the gap to the teacher:
 |from-scratch 30M, every lever |30M |73.95 |[70.22, 71.09]
 |1.0 rung |300M |8.26 |[4.6, 5.7]
 |lite rung (enc 12→6) |190M |5.78 |[3.03, 3.49]
-|2.0 rung |300M |4.82 |[2.36, 2.82]
+|2.0 rung |300M |5.08 (corrected 2026-09-05) |[2.36, 2.82]
 |2.1 rung |300M |4.57 |[1.91, 2.35]
 |teacher r7 |580M |2.29 |—
 |===
@@ -52,7 +52,8 @@ per-step confidence.
 The residual gap between the 2.1 student and its teacher had one live
 attribution left: classical-domain coverage. Both tests of it failed.
 Swapping news-domain training units for classical Tashkeela at constant
-budget made the student worse (−0.98pp). Adding five times the
+budget made the student worse (+0.72pp over the corrected 2.0
+control). Adding five times the
 classical corpus — the maximal version of the lever — left it
 statistically flat (4.82 vs 4.57, intervals overlapping). The residual
 is not a coverage deficit the corpus can reach; it lives in the

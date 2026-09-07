@@ -338,11 +338,17 @@ const clientModels = [
       </ul>
       <p class="lb-note">
         What didn't move it — every rung pre-registered, measured, and kept in the log:
-        multi-token-prediction auxiliary 5.09 (+0.26pp); classical-register swap at constant
-        budget 5.81 (+0.98pp); register add at matched epochs 4.82 (flat — it cancelled the epoch
-        gain); on-policy GKD 6.00 (+1.18pp, the worst rung); depth-halved 5.78 (63% of the
-        parameters — shipped anyway as the browser tier). At SFT convergence, supervision quality
-        dominates. The ladder is closed.
+        multi-token-prediction auxiliary 5.09 (+0.26pp as measured vs the
+        then-published control — level with the corrected 5.08); classical-register swap at
+        constant budget 5.81 (+0.98pp as measured; +0.72pp over the corrected control); register
+        add at matched epochs 4.82 (statistically flat against news-only 4.57, intervals
+        overlapping — it sits between the corrected control and the news-only rung); on-policy
+        GKD 6.00 (+1.18pp as measured; +1.43pp over the rung it was meant to improve — the worst
+        measured); depth-halved 5.78 (63% of the parameters — shipped anyway as the browser
+        tier). At SFT convergence, supervision quality dominates. The ladder is closed. The
+        control's originally published 4.8218 did not reproduce and was withdrawn on
+        2026-09-05; two independent re-measurements, one at the artifact level on the exact
+        released bytes, agree on 5.08.
       </p>
       <p class="lb-note">
         Hebrew, same discipline: 16.43% DER on Biblical Hebrew, where the modern-Hebrew state of
