@@ -54,12 +54,28 @@ const serverModels = [
 
 const clientModels = [
   {
+    id: "ara-diac-layerdrop-1.0-int4",
+    task: "diacritization",
+    pair: "Arabic → haraqat (lite, encoder 12→6)",
+    metric: "DER 5.78 · depth premium 1.21pp (CI-separated)",
+    artifact: "int4 · 95 MiB",
+    status: "released",
+  },
+  {
+    id: "ara-diac-small-2.1",
+    task: "diacritization",
+    pair: "Arabic → haraqat",
+    metric: "DER 4.57 [1.91, 2.35] vs teacher",
+    artifact: "int8 · 264 MiB",
+    status: "released",
+  },
+  {
     id: "ara-diac-small-2.0",
     task: "diacritization",
     pair: "Arabic → haraqat",
-    metric: "DER 4.82 (1.0 was 8.26)",
+    metric: "DER 5.08 (corrected 2026-09-05; 1.0 was 8.26)",
     artifact: "int8 · ~0.5 GiB",
-    status: "releasing",
+    status: "released",
   },
   {
     id: "tha-g2p-small-1.0",
