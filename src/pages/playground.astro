@@ -1,0 +1,231 @@
+---
+// Playground: the full two-layer stack in the browser — pick any of the
+// 289 authority systems, optionally vocalize Arabic through the neural
+// layer first, transliterate off-main-thread, share the state by URL,
+// and copy the exact TS that does the same thing.
+import Base from "../layouts/Base.astro"
+import catalogue from "../data/maps-catalogue.json"
+
+const systems = Object.entries(catalogue as Record<string, { data: { name: string; language: string } }>)
+  .map(([code, m]) => ({ code, name: m.data.name, lang: m.data.language }))
+  .sort((a, b) => a.name.localeCompare(b.name))
+---
+
+<Base title="Playground">
+  <section class="page-narrow">
+    <h1>Playground</h1>
+    <p>
+      The whole stack runs in your browser: 289 authority systems, plus the
+      neural layer for the conversions no committee ever published. Nothing
+      leaves the page.
+    </p>
+
+    <div class="grid">
+      <div class="pane">
+        <label for="input">Input</label>
+        <textarea id="input" rows="5" dir="auto">Антон Павлович Чехов</textarea>
+
+        <label for="vocalize">Neural vocalization (Arabic input)</label>
+        <select id="vocalize">
+          <option value="">Off — deterministic maps only</option>
+          <option value="ara-diac-layerdrop-1.0-int4">Arabic lite (int4, 95 MB, downloads once)</option>
+          <option value="ara-diac-small-2.1-int8">Arabic 2.1 (int8, 264 MB, downloads once)</option>
+        </select>
+
+        <label for="filter">System</label>
+        <input id="filter" type="search" placeholder="Filter 289 systems — try “BGN”, “Thai”, “ISO 9”…" />
+        <select id="system"></select>
+
+        <button id="run" class="btn">Transliterate</button>
+        <p id="status" class="muted" hidden></p>
+      </div>
+
+      <div class="pane">
+        <label for="vocalized">Vocalized (neural layer)</label>
+        <output id="vocalized" dir="auto" hidden></output>
+
+        <label for="output">Output</label>
+        <output id="output" dir="auto"></output>
+
+        <label for="snippet">The same thing in TypeScript</label>
+        <pre><code id="snippet"></code></pre>
+        <button id="copy-snippet" class="btn">Copy snippet</button>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 800px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .pane {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+  textarea,
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    font-size: 1rem;
+  }
+  output,
+  #vocalized {
+    display: block;
+    min-height: 2.5rem;
+    padding: 0.6rem;
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    border-radius: 6px;
+    font-size: 1.1rem;
+    white-space: pre-wrap;
+  }
+  #vocalized { border-style: dashed; }
+  pre {
+    margin: 0.25rem 0;
+    padding: 0.75rem;
+    background: rgba(128, 128, 128, 0.12);
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+  .muted { color: #5c6470; font-size: 0.85rem; }
+  .btn {
+    margin-top: 0.75rem;
+    max-width: max-content;
+  }
+</style>
+
+<script>
+  import { createWorkerClient } from "../scripts/worker-client"
+  import { imf } from "interscript/ml"
+  import catalogue from "../data/maps-catalogue.json"
+
+  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v5/models-index.yaml"
+
+  type Sys = { code: string; name: string; lang: string }
+  const systems: Sys[] = Object.entries(
+    catalogue as Record<string, { data: { name: string; language: string } }>,
+  )
+    .map(([code, m]) => ({ code, name: m.data.name, lang: m.data.language }))
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+  const $ = (id: string) => document.getElementById(id)!
+  const worker = createWorkerClient()
+  let mlModel: { translate(t: string, m?: number): Promise<string> } | null = null
+  let mlModelId = ""
+
+  const systemSelect = $("system") as HTMLSelectElement
+  const filterInput = $("filter") as HTMLInputElement
+
+  function renderOptions() {
+    const q = filterInput.value.trim().toLowerCase()
+    const hits = systems.filter(
+      (s) => !q || s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q),
+    )
+    systemSelect.innerHTML = ""
+    for (const s of hits) {
+      const opt = document.createElement("option")
+      opt.value = s.code
+      opt.textContent = `${s.name} (${s.code})`
+      systemSelect.append(opt)
+    }
+    if (hits.length === 0) {
+      const opt = document.createElement("option")
+      opt.textContent = "no system matches the filter"
+      systemSelect.append(opt)
+    }
+  }
+  renderOptions()
+  filterInput.addEventListener("input", renderOptions)
+
+  const params = new URLSearchParams(location.search)
+  if (params.get("q")) ($("input") as HTMLTextAreaElement).value = params.get("q")!
+  if (params.get("voc")) ($("vocalize") as HTMLSelectElement).value = params.get("voc")!
+  renderOptions()
+  if (params.get("sys")) systemSelect.value = params.get("sys")!
+  if (!params.get("sys") && systemSelect.options.length) {
+    const rus = systems.find((s) => s.code.includes("bgnpcgn-rus"))
+    if (rus) systemSelect.value = rus.code
+  }
+
+  function snippetText(): string {
+    const code = systemSelect.value
+    const voc = ($("vocalize") as HTMLSelectElement).value
+    if (!voc) {
+      return `import { transliterateAsync } from "interscript"\n\nconst out = await transliterateAsync(\n  "${code}",\n  "…",\n)`
+    }
+    return `import { transliterateAsync } from "interscript"\nimport { imf } from "interscript/ml"\n\nconst resolved = await imf.resolve("${voc}")\nconst model = await imf.IMFModel.fromZipBytes(resolved.bytes)\nconst vocalized = await model.translate("…")\nconst out = await transliterateAsync(\n  "${code}",\n  vocalized,\n)`
+  }
+  $("snippet").textContent = snippetText()
+  systemSelect.addEventListener("change", () => ($("snippet").textContent = snippetText()))
+  ;($("vocalize") as HTMLSelectElement).addEventListener("change", () => {
+    $("snippet").textContent = snippetText()
+  })
+
+  $("copy-snippet").addEventListener("click", async () => {
+    await navigator.clipboard.writeText(snippetText())
+    $("copy-snippet").textContent = "Copied"
+    setTimeout(() => ($("copy-snippet").textContent = "Copy snippet"), 1500)
+  })
+
+  async function ensureModel(id: string) {
+    if (mlModel && mlModelId === id) return mlModel
+    const status = $("status")
+    status.hidden = false
+    status.textContent = `Downloading ${id} (once per browser)…`
+    const resolved = await imf.resolve(id, ASSET_INDEX, {
+      onProgress: (f: number, b: number) => {
+        status.textContent = `${id}: ${(b / 1e6).toFixed(0)} MB (${Math.round(f * 100)}%)`
+      },
+    })
+    const model = await imf.IMFModel.fromZipBytes(resolved.bytes)
+    mlModel = model as unknown as { translate(t: string, m?: number): Promise<string> }
+    mlModelId = id
+    status.hidden = true
+    return mlModel
+  }
+
+  $("run").addEventListener("click", async () => {
+    const out = $("output")
+    const voc = $("vocalized")
+    const status = $("status")
+    out.textContent = ""
+    voc.hidden = true
+    status.hidden = true
+    try {
+      let text = ($("input") as HTMLTextAreaElement).value
+      const modelId = ($("vocalize") as HTMLSelectElement).value
+      if (modelId) {
+        const model = await ensureModel(modelId)
+        text = imf.normalizeArabicInput(text)
+        text = await model.translate(text, 2048)
+        voc.hidden = false
+        voc.textContent = text
+      }
+      const result = await worker.transliterate(systemSelect.value, text)
+      out.textContent = result
+      const share = new URLSearchParams({
+        q: ($("input") as HTMLTextAreaElement).value,
+        sys: systemSelect.value,
+      })
+      if (modelId) share.set("voc", modelId)
+      history.replaceState(null, "", `?${share}`)
+    } catch (e) {
+      out.textContent = `Error: ${(e as Error).message}`
+    }
+  })
+</script>
