@@ -57,7 +57,7 @@ const clientModels = [
     id: "ara-diac-small-2.1",
     task: "diacritization",
     pair: "Arabic → haraqat",
-    metric: "DER 4.57 (2.0 was 4.82 · 1.0 was 8.26)",
+    metric: "DER 4.57 [1.91, 2.35] vs teacher (1.0 was 8.26)",
     artifact: "int8 · 264 MiB · fp16 · 674 MiB",
     status: "released",
   },
@@ -302,10 +302,9 @@ const clientModels = [
         </table>
       </div>
       <p class="lb-note">
-        WER columns, decode protocols, and paired bootstrap CIs for every row:
-        <a href="https://github.com/interscript/rababa/blob/main/docs/RESULTS.md"
-          >rababa/docs/RESULTS.md</a
-        >. The GLM-5.3 family cannot disable thinking; low effort is its plainest protocol.
+        WER columns, decode protocols, and paired bootstrap CIs for every row live
+        in <a href="https://github.com/interscript/rababa/blob/main/docs/RESULTS.md">rababa/docs/RESULTS.md</a>.
+        The GLM-5.3 family cannot disable thinking; low effort is its plainest protocol.
       </p>
 
       <h3 class="tier-label">
@@ -327,8 +326,8 @@ const clientModels = [
         <li class="ledger-row">
           <span class="ledger-task">+ r7 labels</span>
           <span class="ledger-body"><code class="ledger-id">fresher teacher labels</code></span>
-          <span class="ledger-metric tnum">4.82</span>
-          <span class="ledger-artifact">−0.47pp</span>
+          <span class="ledger-metric tnum">5.08</span>
+          <span class="ledger-artifact">−0.18pp (corrected 2026-09-05)</span>
         </li>
         <li class="ledger-row">
           <span class="ledger-task">+ 6 epochs</span>
