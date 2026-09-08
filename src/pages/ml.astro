@@ -194,9 +194,9 @@ const clientModels = [
         Frontier context, same instrument (SadeedDiac-25, the same 1,200 paragraphs under the
         same windowed evaluator): GLM-5.2 diacritizes Arabic at 2.51 DER with plain completion;
         the rest of the family does not — GLM-5.3-Flash at 8.57, GLM-5.3 at 9.98, glm-4.7-flash
-        at 13.00 raw DER — and the loss is wrong vowels, not writing convention. As frontier
-        optimization shifts agentic, dedicated distilled models remain the reproducible,
-        protocol-pinned way to ship this task. Every row with its decode protocol and bootstrap
+        at 13.00 raw DER — and the loss is wrong vowels, not writing convention. Newer
+        general-purpose models focus on other tasks and score worse here, so a small dedicated
+        model remains the reliable way to do this work. Every row with its decode protocol and bootstrap
         CIs: <a
           href="https://github.com/interscript/rababa/blob/main/docs/RESULTS.md"
           >rababa/docs/RESULTS.md</a
@@ -366,9 +366,9 @@ const clientModels = [
         <p class="eyebrow">The instrument</p>
         <h2>How we measure.</h2>
         <p class="section-deck">
-          Measurement discipline isn't ceremony — each of these rules exists because the naive
-          version produced a wrong number we nearly shipped. They are why a number on this page
-          means the same thing next month, on another machine.
+          Each of these rules exists because the naive version produced a wrong number that
+          nearly shipped. Together they are why a number on this page means the same thing next
+          month, on another machine.
         </p>
       </div>
       <ul class="contract-facts instrument-facts">
