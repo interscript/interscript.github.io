@@ -19,20 +19,20 @@ const playgroundSystems = [
   <section class="api-hero">
     <div class="container">
       <p class="eyebrow eyebrow-accent">API & playground</p>
-      <h1>Try it. Copy the snippet. Ship.</h1>
+      <h1>Try the API.</h1>
       <p class="hero-deck">
-        The Interscript REST API runs at <code>https://interscript.org/api/</code> — open to all, no auth,
-        no rate limits (yet). Three endpoints: <code>/api/transliterate</code>, <code
-          >/api/systems</code
-        >, <code>/api/detect</code>. Or run the same engine locally in JS, TypeScript, Ruby, or your
-        terminal.
+        The REST API runs at <code>https://api.interscript.org/v1</code>. No account, no API key.
+        Send a POST request with a JSON body. Endpoints: <code>/transliterate</code> (one
+        conversion), <code>/transliterate/batch</code> (many), <code>/systems</code> (the 289-system
+        catalogue), <code>/detect</code> (which system explains a source–target pair), and
+        <code>/infer</code> (neural models — diacritization and grapheme-to-phoneme). Responses
+        allow cross-origin requests, so browser scripts can call the API directly.
       </p>
       <pre
-        class="hero-curl"><code set:html={`# Live, no install needed:
-curl -G 'https://interscript.org/api/transliterate' \\
-  --data-urlencode 'system=bgnpcgn-ukr-Cyrl-Latn-2019' \\
-  --data-urlencode 'input=Антон'
-# → {"system":"bgnpcgn-ukr-Cyrl-Latn-2019","input":"Антон","output":"Anton",…}`} /></pre>
+        class="hero-curl"><code set:html={`curl -X POST 'https://api.interscript.org/v1/transliterate' \\
+  -H 'Content-Type: application/json' \\
+  -d '{"system": "bgnpcgn-ukr-Cyrl-Latn-2019", "input": "Антон"}'
+# → {"system":"bgnpcgn-ukr-Cyrl-Latn-2019","input":"Антон","output":"Anton"}`} /></pre>
     </div>
   </section>
 
@@ -55,9 +55,19 @@ curl -G 'https://interscript.org/api/transliterate' \\
             <h3>npm</h3>
           </header>
           <pre><code>npm install interscript</code></pre>
-          <pre><code set:html={`import { transliterate } from "interscript"
+          <pre><code set:html={`import {
+  configure,
+  iscStrategy,
+  transliterateAsync
+} from "interscript"
 
-const out = transliterate(
+configure({
+  strategies: [
+    iscStrategy({ baseUrl: "https://interscript.org/maps" })
+  ]
+})
+
+const out = await transliterateAsync(
   "bgnpcgn-ukr-Cyrl-Latn-2019",
   "Антон"
 )
@@ -81,27 +91,47 @@ out = Interscript.transliterate(
 
         <article class="install-card">
           <header>
+            <span class="runtime-badge">Python</span>
+            <h3>pip</h3>
+          </header>
+          <pre><code>pip install interscript</code></pre>
+          <pre><code set:html={`import os, interscript
+
+# Point at a checkout of github.com/interscript/maps
+# (the pip package ships the engine, not the corpus):
+interscript.add_load_path(
+  os.environ["INTERSCRIPT_MAPS_PATH"]
+)
+
+print(interscript.transliterate(
+  "bgnpcgn-ukr-Cyrl-Latn-2019", "Антон"
+))
+# → Anton`} /></pre>
+        </article>
+
+        <article class="install-card">
+          <header>
             <span class="runtime-badge">Browser</span>
             <h3>CDN</h3>
           </header>
-          <pre><code>npm install interscript
-# or: https://esm.sh/interscript-ts</code></pre>
+          <pre><code>No build step. Import from a CDN:</code></pre>
           <pre><code set:html={`import {
-  transliterateAsync,
-  httpStrategy,
-  configure
-} from "https://esm.sh/interscript-ts"
+  configure,
+  iscStrategy,
+  transliterateAsync
+} from "https://esm.sh/interscript@5.3.1"
 
 configure({
-  strategies: [httpStrategy({
-    baseUrl: "https://interscript.org/maps"
-  })]
+  strategies: [
+    iscStrategy({ baseUrl: "https://interscript.org/maps" })
+  ]
 })
 
 const out = await transliterateAsync(
   "bgnpcgn-ukr-Cyrl-Latn-2019",
   "Антон"
-)`} /></pre>
+)
+// → "Anton Olehovych"`} /></pre>
         </article>
       </div>
     </div>
@@ -143,8 +173,9 @@ const out = await transliterateAsync(
         <p class="eyebrow">CLI &amp; CI</p>
         <h2>Transliterate from the terminal.</h2>
         <p class="section-deck">
-          The <code>interscript-ts</code> CLI runs anywhere Node does — your laptop, a build pipeline,
-          a GitHub Action. Same engine, same maps, same byte-for-byte output.
+          The <code>interscript</code> CLI runs anywhere Node does — a laptop, a build pipeline,
+          a GitHub Action. Maps load from interscript.org; no local checkout needed
+          (npm package 5.3.1 or later). Same engine and same output as every other runtime.
         </p>
       </header>
 
@@ -154,9 +185,9 @@ const out = await transliterateAsync(
             <span class="runtime-badge">CLI</span>
             <h3>Install</h3>
           </header>
-          <pre><code>npm install -g interscript-ts
-# or use without installing:
-npx interscript-ts --help</code></pre>
+          <pre><code>npm install -g interscript
+# or run it once without installing:
+npx interscript --help</code></pre>
         </article>
 
         <article class="cli-card">
@@ -165,11 +196,11 @@ npx interscript-ts --help</code></pre>
             <h3>Single call</h3>
           </header>
           <pre><code set:html={`# Transliterate from stdin
-echo "Антон" | interscript-ts t bgnpcgn-ukr-Cyrl-Latn-2019
+echo "Антон" | interscript t bgnpcgn-ukr-Cyrl-Latn-2019
 # → Anton
 
 # Or from a file
-interscript-ts t bgnpcgn-ukr-Cyrl-Latn-2019 \\
+interscript t bgnpcgn-ukr-Cyrl-Latn-2019 \\
   -i input.txt -o output.txt`} /></pre>
         </article>
 
@@ -179,11 +210,11 @@ interscript-ts t bgnpcgn-ukr-Cyrl-Latn-2019 \\
             <h3>Batch (CSV)</h3>
           </header>
           <pre><code set:html={`# names.txt has one name per line
-interscript-ts b bgnpcgn-ukr-Cyrl-Latn-2019 \\
+interscript b bgnpcgn-ukr-Cyrl-Latn-2019 \\
   names.txt --csv > romanized.csv
 
 # Or: list every BGN/PCGN Cyrillic system
-interscript-ts list --authority bgnpcgn \\
+interscript list --authority bgnpcgn \\
   --source-script Cyrl --maps-dir ./maps`} /></pre>
         </article>
 
@@ -202,7 +233,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
-      - run: npx interscript-ts@latest \\
+      - run: npx interscript@latest \\
             b bgnpcgn-ukr-Cyrl-Latn-2019 \\
             names.txt --csv \\
             --http https://interscript.org/maps \\

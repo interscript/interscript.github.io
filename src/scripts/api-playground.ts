@@ -42,9 +42,13 @@ const state: State = {
 }
 
 function snippetJs(s: State): string {
-  return `import { transliterate } from "interscript"
+  return `import { configure, iscStrategy, transliterateAsync } from "interscript"
 
-const result = transliterate(
+configure({
+  strategies: [iscStrategy({ baseUrl: "https://interscript.org/maps" })],
+})
+
+const result = await transliterateAsync(
   "${s.system}",
   ${JSON.stringify(s.input)}
 )
@@ -64,15 +68,10 @@ puts result
 }
 
 function snippetCurl(s: State): string {
-  return `# GET request — easy to test in any terminal
-curl -G 'https://interscript.org/api/transliterate' \\
-  --data-urlencode 'system=${s.system}' \\
-  --data-urlencode 'input=${s.input}'
-
-# Or POST a JSON body:
-curl -X POST 'https://interscript.org/api/transliterate' \\
+  return `curl -X POST 'https://api.interscript.org/v1/transliterate' \\
   -H 'Content-Type: application/json' \\
-  -d '{"system": "${s.system}", "input": ${JSON.stringify(s.input)}}'`
+  -d '{"system": "${s.system}", "input": ${JSON.stringify(s.input)}}'
+# → {"system":"${s.system}","input":${JSON.stringify(s.input)},"output":${JSON.stringify(s.output)}}`
 }
 
 function render() {
