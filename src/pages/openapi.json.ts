@@ -32,77 +32,20 @@ const spec = {
       url: "https://opensource.org/license/bsd-2-clause",
     },
   },
-  servers: [{ url: `${SITE}/api` }],
+  servers: [{ url: "https://api.interscript.org/v1" }],
   tags: [
     { name: "transliterate", description: "Run a transliteration system" },
     { name: "systems", description: "Browse the system catalogue" },
     { name: "detect", description: "Find a matching system" },
+    { name: "infer", description: "Run a neural model" },
   ],
   paths: {
     "/transliterate": {
-      get: {
-        tags: ["transliterate"],
-        summary: "Transliterate a single string",
-        description:
-          "Translates non-Latin text into Latin (or another script) using the named authority system. Idempotent, cacheable for the lifetime of a system version.",
-        operationId: "transliterateGet",
-        parameters: [
-          {
-            name: "system",
-            in: "query",
-            required: true,
-            description: "Interscript system code (e.g. `bgnpcgn-ukr-Cyrl-Latn-2019`).",
-            schema: { type: "string", maxLength: 200 },
-            example: "bgnpcgn-ukr-Cyrl-Latn-2019",
-          },
-          {
-            name: "input",
-            in: "query",
-            required: true,
-            description: "Source text to transliterate.",
-            schema: { type: "string", maxLength: 10_000 },
-            example: "Антон",
-          },
-          {
-            name: "stage",
-            in: "query",
-            required: false,
-            description: "Stage to execute (default: `main`).",
-            schema: { type: "string", default: "main" },
-          },
-        ],
-        responses: {
-          "200": {
-            description: "Successful transliteration.",
-            content: {
-              "application/json": {
-                schema: { $ref: "#/components/schemas/TransliterationResult" },
-              },
-            },
-          },
-          "400": {
-            description: "Missing or invalid parameters.",
-            content: {
-              "application/json": {
-                schema: { $ref: "#/components/schemas/Error" },
-              },
-            },
-          },
-          "404": {
-            description: "System not found.",
-            content: {
-              "application/json": {
-                schema: { $ref: "#/components/schemas/Error" },
-              },
-            },
-          },
-        },
-      },
       post: {
         tags: ["transliterate"],
         summary: "Transliterate via JSON body",
         description:
-          "Same as GET /transliterate but accepts a JSON body — useful when input is large, contains newlines, or you prefer POST semantics.",
+          "Accepts a JSON body. The only request form this endpoint supports — query-parameter GET requests are not implemented.",
         operationId: "transliteratePost",
         requestBody: {
           required: true,
@@ -227,6 +170,78 @@ const spec = {
             content: {
               "application/json": {
                 schema: { $ref: "#/components/schemas/SystemList" },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/infer": {
+      post: {
+        tags: ["infer"],
+        summary: "Run a neural model",
+        description:
+          "Runs a neural model from the model index (diacritization, grapheme-to-phoneme). Model ids and their measured scores are listed in the models.yaml index; see interscript.org/ml for the catalogue.",
+        operationId: "inferPost",
+        requestBody: {
+          required: true,
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                required: ["model", "input"],
+                properties: {
+                  model: { type: "string", example: "ara-diac-small-2.1" },
+                  input: { type: "string", example: "كتاب" },
+                },
+              },
+            },
+          },
+        },
+        responses: {
+          "200": {
+            description: "Successful inference.",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    model: { type: "string" },
+                    task: { type: "string" },
+                    input: { type: "string" },
+                    output: { type: "string", example: "كِتَابٍ" },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      options: {
+        tags: ["infer"],
+        summary: "CORS preflight",
+        responses: { "204": { description: "No content" } },
+      },
+    },
+    "/info": {
+      get: {
+        tags: ["systems"],
+        summary: "API version and catalogue counts",
+        description: "Returns the API version, the map count, and the model count.",
+        operationId: "infoGet",
+        responses: {
+          "200": {
+            description: "API metadata.",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    api_version: { type: "string" },
+                    maps: { type: "integer" },
+                    models: { type: "integer" },
+                  },
+                },
               },
             },
           },
