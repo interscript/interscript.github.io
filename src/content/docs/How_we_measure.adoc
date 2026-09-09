@@ -1,0 +1,70 @@
+= How we measure
+
+Every quality number we publish is measured, recorded, and can be
+re-derived by anyone. This page explains how.
+
+== Where numbers come from
+
+Each model's accuracy figure comes from a fixed evaluation protocol,
+run on the complete test set, and is recorded in a public results log:
+https://github.com/interscript/interscript-ml/blob/main/docs/RESULTS.md[docs/RESULTS.md].
+The log records the number, a confidence interval where the protocol
+supports one, and a checksum of the exact training labels used.
+
+When a number turned out to be wrong, we corrected it in public. One
+example: the Arabic model ara-diac-small-2.0 was first published with a
+score of 4.82. Two independent re-measurements of the released files
+agreed on a different value, 5.08, and the original number was
+withdrawn (the correction entry in the results log explains what
+changed and what it affected).
+
+== Re-deriving our results
+
+The pieces are public:
+
+* The benchmark: https://huggingface.co/datasets/Misraj/SadeedDiac-25[SadeedDiac-25]
+* The scoring tool: `pip install interscript-ml-tools[sadeed]`
+* Our raw predictions for every published run: the
+  https://github.com/interscript/interscript-ml/releases/tag/frontier-predictions-v1[frontier-predictions-v1]
+  release
+* The teacher checkpoints behind the training results: the
+  https://github.com/interscript/interscript-ml/releases/tag/teachers-arabic-v1[teachers-arabic-v1]
+  release
+
+To re-score one of our runs:
+
+```
+pip install interscript-ml-tools[sadeed]
+interscript-sadeed-eval score \
+  --preds <predictions file> \
+  --data Misraj/SadeedDiac-25
+```
+
+The tool reproduces the published numbers exactly; that is how the
+incorrect 4.82 above was found.
+
+== Cross-runtime correctness
+
+The same model file must produce the same output in TypeScript,
+Python, and Ruby. We check this with a shared corpus of reference
+inputs and outputs (the
+https://github.com/interscript/interscript-ml/releases/tag/golden-v1[golden-v1]
+release), generated from the released artifacts themselves.
+
+The guarantee has a measured boundary. Models stored at full precision
+(fp32, fp16) produce byte-identical output on every machine we tested.
+Quantized models (int8, int4) run faster and smaller, but on different
+CPU types their outputs can differ slightly: tiny numerical
+differences flip decisions that the model is nearly undecided on. For
+those models the guarantee is quality-level, not byte-level, and each
+artifact carries its measured quality difference from the full
+precision version in its metadata.
+
+== Negative results
+
+Not every approach worked. Attempts to close the quality gap between
+the small student models and their teachers by adding more classical
+training text, changing the text mixture, or training on the model's
+own mistakes all failed, with measurements recorded in the results
+log. We publish these alongside the successes because they define what
+the current models are and are not.
