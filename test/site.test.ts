@@ -215,7 +215,7 @@ describe("home page", () => {
 
   it("shows install command in CTA", () => {
     expect(home).toContain("gem install interscript")
-    expect(home).toContain("npm install interscript-ts")
+    expect(home).toContain("npm install interscript")
   })
 })
 

@@ -6,12 +6,12 @@ v1.0, 2026-09-05
 
 == Introduction
 
-Two weeks ago the phonological layer shipped with an honest gap: the
-Arabic client student scored 8.26 on the full benchmark — a disclosed
-miss. This week that gap closed the only way gaps should close: every
-rung measured on the full set, confidence intervals on every
-separation, and the two causal hypotheses that remained both tested to
-a verdict. One verdict was negative. That is the point.
+Two weeks ago the phonological layer shipped with a disclosed gap:
+the Arabic client model scored 8.26 on the full benchmark. This week
+every rung was measured on the full test set, with confidence
+intervals on each separation, and the two remaining hypotheses were
+both tested. One test came back negative, and that result is published
+here with the rest.
 
 == The frontier, bracketed
 
@@ -76,8 +76,7 @@ Every leaderboard number we publish can now be re-derived by anyone:
 
 The tool reproduces our published verdicts exactly — it re-derives this
 week's 4.8231 run from its raw predictions and the public benchmark,
-intervals included. Protocol-matched comparison should be a command,
-not a promise.
+intervals included. The comparison is a command, not a claim.
 
 == Where this leaves the stack
 
