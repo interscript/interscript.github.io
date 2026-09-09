@@ -1,17 +1,33 @@
 = Usage with Secryst
 
-Secryst is a seq2seq transformer suited for transliteration. Written in Ruby.
-It's installation is a bit tricky, you should consult its own installation guide
-(https://github.com/secryst/secryst[at GitHub]). By default we don't use Secryst,
-unless you have installed it.
+Secryst is the Ruby runtime for Interscript's neural models:
+
+[source,ruby]
+----
+gem install secryst
+----
+
+For details, see the https://github.com/secryst/secryst[repository].
 
 == Using it standalone
 
-It's enough to install it. Be sure to consult the guide above.
+After installing, load any published model by id:
 
-== Integration with Ruby Applications
+[source,ruby]
+----
+require "secryst"
 
-In your Gemfile, add:
+model = Secryst::Model.load("ara-diac-small-2.1-int8")
+model.translate("قوله فحكمها في الوفاة")
+----
+
+The model is downloaded once, verified against its checksum, and cached
+under `~/.cache/secryst`. The list of published models is in
+https://github.com/interscript/interscript-ml/blob/main/models.yaml[models.yaml].
+
+== Integration with Ruby applications
+
+Add the gem to your Gemfile:
 
 [source,ruby]
 ----
@@ -20,16 +36,12 @@ source "https://rubygems.org"
 gem "secryst"
 ----
 
-Create a Secrystfile near your Gemfile with the following, for each model you
-want to use in your application. Please consult our Secrystfile to get all the
-maps needed to get all the Secryst maps needed.
-
-[source,ruby]
-----
-model "model-name"
-----
+Load models where they are needed. `Model.load` resolves, verifies, and
+caches on first use; there is no separate configuration file.
 
 == Usage inside maps
+
+A transliteration map can run a neural model as a step:
 
 [source,ruby]
 ----
@@ -40,4 +52,5 @@ stage {
 }
 ----
 
-As of now, Secryst is usable only by the Ruby implementation.
+A map that declares a `secryst` step requires the gem; maps without
+neural steps work unchanged.
