@@ -1,0 +1,110 @@
+= Libraries
+
+Interscript ships as libraries for three languages, a command-line
+tool, and a web API. All of them run the same transliteration systems
+and the same neural models, and all model artifacts are
+checksum-verified when they load.
+
+== TypeScript (Node and browsers)
+
+Install:
+
+```
+npm install interscript
+```
+
+Transliterate with one of the 289 authority systems:
+
+```ts
+import { transliterateAsync } from "interscript"
+
+const out = await transliterateAsync(
+  "bgnpcgn-ukr-Cyrl-Latn-2019",
+  "Антон",
+)
+```
+
+Use a neural model (for example, Arabic diacritization). The model
+downloads once, is verified against its checksum, and is cached:
+
+```ts
+import { imf } from "interscript/ml"
+
+const resolved = await imf.resolve("ara-diac-layerdrop-1.0-int4")
+const model = await imf.IMFModel.fromZipBytes(resolved.bytes)
+const vocalized = await model.translate("السلام عليكم")
+```
+
+== Python
+
+Install:
+
+```
+pip install interscript-ml
+```
+
+Load a model and run it:
+
+```python
+from interscript_ml import Model
+
+model = Model.load("ara-diac-small-2.1-int8")
+print(model.translate("قوله فحكمها في الوفاة"))
+```
+
+== Ruby
+
+Install:
+
+```
+gem install secryst
+```
+
+Load and translate:
+
+```ruby
+require "secryst"
+
+model = Secryst::Model.load("ara-diac-small-2.1-int8")
+model.translate("قوله فحكمها في الوفاة")
+```
+
+== Command line
+
+The deterministic systems:
+
+```
+echo "Антон" | npx interscript t bgnpcgn-ukr-Cyrl-Latn-2019
+```
+
+The neural layer:
+
+```
+echo "السلام عليكم" | npx interscript m ara-diac-layerdrop-1.0-int4
+```
+
+Run `npx interscript --help` for the full command list, including bulk
+processing and script detection.
+
+== Web API
+
+A hosted REST API serves both layers:
+https://api.interscript.org[api.interscript.org]. Its documentation,
+including batch endpoints and asset serving, lives at
+https://api.interscript.org/docs[/docs].
+
+== Try it in the browser
+
+The link:/playground[playground] runs the full stack in your browser:
+pick any system, optionally vocalize Arabic text first, and copy the
+exact code for the configuration you selected. Nothing is sent to a
+server.
+
+== Which models exist
+
+The model catalog with measured quality numbers for every artifact is
+on the link:/ml[neural layer page]. The machine-readable index that the
+libraries resolve against is
+https://github.com/interscript/interscript-ml/blob/main/models.yaml[models.yaml]
+in the https://github.com/interscript/interscript-ml[interscript-ml]
+repository.
