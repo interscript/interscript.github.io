@@ -126,7 +126,7 @@ conversions authorities have published, and a measured neural layer
 for the ones they haven't. Same discipline, same checksums, same bytes
 out of every runtime.
 
-Try it: `pip install interscript-ml` —
+Try it: `pip install secryst` —
 `Secryst::Model.load("tha-g2p-small-1.0")` in Ruby, `Model.load` in
 Python, `transliterateAsync` in TypeScript. The catalog lives at
 https://github.com/interscript/interscript-ml[interscript-ml]; the

@@ -40,13 +40,13 @@ const vocalized = await model.translate("السلام عليكم")
 Install:
 
 ```
-pip install interscript-ml
+pip install secryst
 ```
 
 Load a model and run it:
 
 ```python
-from interscript_ml import Model
+from secryst import Model
 
 model = Model.load("ara-diac-small-2.1-int8")
 print(model.translate("قوله فحكمها في الوفاة"))
