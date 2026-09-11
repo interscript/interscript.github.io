@@ -144,19 +144,19 @@ describe("API page additions (CLI + GitHub Action)", () => {
   const html = readHtml("api/index.html")
 
   it("mentions the CLI install command", () => {
-    expect(html).toContain("npm install -g interscript-ts")
-    expect(html).toContain("npx interscript-ts")
+    expect(html).toContain("npm install -g interscript")
+    expect(html).toContain("npx interscript")
   })
 
   it("shows single-call + batch CLI usage", () => {
-    expect(html).toContain("interscript-ts t ")
-    expect(html).toContain("interscript-ts b ")
-    expect(html).toContain("interscript-ts list ")
+    expect(html).toContain("interscript t ")
+    expect(html).toContain("interscript b ")
+    expect(html).toContain("interscript list ")
   })
 
   it("includes a GitHub Action snippet", () => {
     expect(html).toContain("name: Romanize names")
     expect(html).toContain("uses: actions/setup-node")
-    expect(html).toContain("npx interscript-ts@latest")
+    expect(html).toContain("npx interscript@latest")
   })
 })
