@@ -27,3 +27,6 @@ TODO.complete/
 src/pages/compare.astro
 src/pages/maps/\[systemCode\].astro
 src/pages/api-docs.astro
+
+# hand-wrapped prose (Astro whitespace trap) — see CLAUDE.md
+src/pages/playground.astro

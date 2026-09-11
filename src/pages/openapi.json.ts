@@ -13,7 +13,7 @@ import type { APIRoute } from "astro"
 
 export const prerender = true
 
-const SITE = "https://interscript.org"
+const _SITE = "https://interscript.org"
 
 const spec = {
   openapi: "3.1.0",
