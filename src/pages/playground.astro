@@ -27,9 +27,6 @@ import catalogue from "../data/maps-catalogue.json"
           <option value="">Off — deterministic maps only</option>
           <option value="ara-diac-layerdrop-1.0-int4">Arabic lite (int4, 95 MB, downloads once)</option>
           <option value="ara-diac-small-2.1-int8">Arabic 2.1 (int8, 264 MB, downloads once)</option>
-          <option value="spec:ara-diac-small-2.1-int8">
-            Arabic 2.1 + speculative (int4 drafts it, 359 MB, downloads once)
-          </option>
         </select>
 
         <label for="filter">System</label>
@@ -168,10 +165,6 @@ import catalogue from "../data/maps-catalogue.json"
     if (!voc) {
       return `import { transliterateAsync } from "interscript"\n\nconst out = await transliterateAsync(\n  "${code}",\n  "…",\n)`
     }
-    if (voc.startsWith("spec:")) {
-      const verifier = voc.slice(5)
-      return `import { transliterateAsync } from "interscript"\nimport { imf } from "interscript/ml"\n\nconst drafter = await imf.IMFModel.fromZipBytes(\n  (await imf.resolve("ara-diac-layerdrop-1.0-int4")).bytes,\n)\nconst verifierModel = await imf.IMFModel.fromZipBytes(\n  (await imf.resolve("${verifier}")).bytes,\n)\nconst spec = new imf.SpeculativeModel(drafter, verifierModel)\nconst vocalized = await spec.translate("…")\nconst out = await transliterateAsync(\n  "${code}",\n  vocalized,\n)`
-    }
     return `import { transliterateAsync } from "interscript"\nimport { imf } from "interscript/ml"\n\nconst resolved = await imf.resolve("${voc}")\nconst model = await imf.IMFModel.fromZipBytes(resolved.bytes)\nconst vocalized = await model.translate("…")\nconst out = await transliterateAsync(\n  "${code}",\n  vocalized,\n)`
   }
   $("snippet").textContent = snippetText()
@@ -189,10 +182,7 @@ import catalogue from "../data/maps-catalogue.json"
   async function ensureModel(id: string) {
     if (mlModel && mlModelId === id) return mlModel
     const status = $("status")
-    const spec = id.startsWith("spec:")
-    const verifierId = spec ? id.slice(5) : id
-    const drafterId = spec ? "ara-diac-layerdrop-1.0-int4" : ""
-    const wanted = spec ? [drafterId, verifierId] : [verifierId]
+    const wanted = [id]
     const models: Record<string, Awaited<ReturnType<typeof imf.IMFModel.fromZipBytes>>> = {}
     for (const wantedId of wanted) {
       status.hidden = false
@@ -204,12 +194,7 @@ import catalogue from "../data/maps-catalogue.json"
       })
       models[wantedId] = await imf.IMFModel.fromZipBytes(resolved.bytes)
     }
-    mlModel = spec
-      ? (new imf.SpeculativeModel(models[drafterId]!, models[verifierId]!) as unknown as {
-          translate(t: string, m?: number): Promise<string>
-          stats(): { accepted: number; drafted: number; blocks: number } | undefined
-        })
-      : (models[verifierId] as unknown as { translate(t: string, m?: number): Promise<string> })
+    mlModel = models[id] as unknown as { translate(t: string, m?: number): Promise<string> }
     mlModelId = id
     status.hidden = true
     return mlModel
@@ -234,15 +219,6 @@ import catalogue from "../data/maps-catalogue.json"
       }
       const result = await worker.transliterate(systemSelect.value, text)
       out.textContent = result
-      if (modelId?.startsWith("spec:") && mlModel) {
-        const stats = (
-          mlModel as { stats?: () => { accepted: number; drafted: number; blocks: number } }
-        ).stats?.()
-        if (stats) {
-          status.hidden = false
-          status.textContent = `Speculative: ${stats.accepted}/${stats.drafted} draft tokens accepted across ${stats.blocks} verifier passes`
-        }
-      }
       const share = new URLSearchParams({
         q: ($("input") as HTMLTextAreaElement).value,
         sys: systemSelect.value,
