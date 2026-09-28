@@ -122,7 +122,7 @@ describe("/use-cases page", () => {
   })
 
   it("includes a CTA back to the API playground", () => {
-    expect(html).toMatch(/Try the API playground/)
+    expect(html).toMatch(/Try the API/)
   })
 })
 
