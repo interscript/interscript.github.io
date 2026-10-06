@@ -54,6 +54,22 @@ const serverModels = [
 
 const clientModels = [
   {
+    id: "ara-diac-plane-large-1.0",
+    task: "diacritization · plane",
+    pair: "Arabic → haraqat",
+    metric: "DER 2.74 full-set — dedicated #2, ahead of Gemini-Flash",
+    artifact: "int8 · 866 MiB · one graph",
+    status: "released",
+  },
+  {
+    id: "ara-diac-plane-1.0",
+    task: "diacritization · plane",
+    pair: "Arabic → haraqat",
+    metric: "DER 3.59 · −45% size · −67% CPU latency vs seq2seq student",
+    artifact: "int8 · 219 MiB · K-pass decode",
+    status: "released",
+  },
+  {
     id: "ara-diac-small-2.1",
     task: "diacritization",
     pair: "Arabic → haraqat",
@@ -136,11 +152,15 @@ const clientModels = [
         <p class="eyebrow">The catalogue</p>
         <h2>Every model, with its measured score.</h2>
         <p class="section-deck">
-          The index resolves 23 models across five languages. No model is published without a
+          The index (v8) resolves 26 models across five languages. No model is published without a
           measured metric next to its teacher's, on the same harness, in the open. Students are
           distilled from frozen teachers and gated at a pre-agreed error budget. Each entry
           resolves from the models.yaml index; artifacts above GitHub's 2&nbsp;GiB cap ship as
-          sha256-verified parts that the runtimes reassemble transparently.
+          sha256-verified parts that the runtimes reassemble transparently. Every id is mirrored
+          on the <a href="https://huggingface.co/Interscript">Hugging Face Interscript org</a> —
+          browse the <a
+          href="https://huggingface.co/collections/Interscript/secryst-phonological-layer-6ac3393f7ea49323314bb84b">Secryst
+          phonological layer collection</a>.
         </p>
       </header>
 
