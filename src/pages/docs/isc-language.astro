@@ -1,0 +1,102 @@
+---
+import Base from "../../layouts/Base.astro"
+
+const docStructure = `system "AUTHORITY:lang-SrcScript:DstScript:year" {
+  metadata {
+    authority_id odni
+    id 2004
+    language iso-639-3:prs
+    source_script Arab
+    destination_script Latn
+  }
+  stage main {
+    parallel {
+      sub "ئ" ""
+    }
+  }
+  tests { "input" -> "expected" }
+}`
+
+const rules = `sub { from "a" + any("bc") to "X" before "d" after boundary }
+maybe("h")            // zero-or-one, participates in longest-match
+capture("a") + "b"    // captured; ref(1) substitutes it in the target
+any("0" .. "9")       // inclusive codepoint range
+any_character         // any single character`
+
+const aliases = `aliases { vowel = any("aeiou") }
+stage main { parallel { sub { from "b" + vowel + "t" to "X" } } }`
+
+const run = `run stage.main              // this document
+run map.dep.stage.main      // a declared dependency
+
+downcase                    // stage-level stdlib directives run at their
+upcase                      // rule position on the whole string
+title_case
+compose / decompose
+separate / unseparate`
+
+const casing = `sub { from "ة" to upcase }   // uppercases the matched text only`
+
+const tests = `tests { "input" -> "expected" }`
+---
+
+<Base
+  title="The ISC Language — Interscript"
+  description="The normative reference for ISC, the declarative specification language for script conversion (IS-1 v2)."
+>
+  <h1 class="mb-6 text-3xl font-bold">The ISC Language</h1>
+  <div class="prose">
+    <p>
+      ISC (Interscript Specification Code) is the declarative language for
+      script conversion. A <code>.isc</code> file denotes exactly one
+      conversion function; every runtime computes the same object. This is
+      the normative language reference (IS-1 v2 — the executable form is
+      the 22-vector suite in interscript-ruby).
+    </p>
+
+    <h2>Document structure</h2>
+    <pre><code>{docStructure}</code></pre>
+
+    <h2>Stages</h2>
+    <p><code>sequence</code> executes rules in order. <code>parallel</code> is
+    single-pass longest-match — the longest applicable rule wins at each
+    position; duplicate rules resolve last-declared-wins.</p>
+
+    <h2>Rules and contexts</h2>
+    <pre><code>{rules}</code></pre>
+    <p><code>before</code>/<code>after</code> are zero-width
+    lookbehind/lookahead. <code>boundary</code> is a zero-width word edge.
+    <code>not_before</code>/<code>not_after</code> negate.
+    <strong>There is no alternation operator</strong> — alternatives are
+    separate rules.</p>
+
+    <h2>Aliases</h2>
+    <pre><code>{aliases}</code></pre>
+    <p>Aliases bind named item expressions at parse time and are usable in
+    both from and to positions.</p>
+
+    <h2>Stages calling stages; stdlib directives</h2>
+    <pre><code>{run}</code></pre>
+    <p><code>run</code> takes no other form — stray identifiers are a
+    parse error (a typo'd map fails loudly). The <code>rababa</code>
+    directive invokes the ML adapter with mandatory keyword arguments;
+    an unprovisioned model raises a named error enumerating known ids.</p>
+
+    <h2>Casing targets</h2>
+    <pre><code>{casing}</code></pre>
+
+    <h2>Embedded tests</h2>
+    <pre><code>{tests}</code></pre>
+    <p>Normative data on the document — executed by the verification layer
+    (the conformance runner), never by <code>transliterate</code>.</p>
+
+    <h2>The strict parse</h2>
+    <p>The corpus is strict-parse-clean: stray identifiers and undeclared
+    constructs are parse errors. A typo'd map fails loudly.</p>
+
+    <h2>Normative reference</h2>
+    <p>The full specification (IS-1 v2) with the 22 frozen rulings and the
+    cross-runtime guarantee lives in
+    <a href="https://github.com/interscript/interscript-models/blob/main/docs/IS-1-v2.md">interscript-models/docs/IS-1-v2.md</a>.</p>
+  </div>
+</Base>
