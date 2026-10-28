@@ -1,0 +1,85 @@
+= Coverage and Known Gaps
+Ribose
+v1.1, 2026-10-28
+
+Interscript encodes authority transliteration standards as executable
+maps. This page states which systems the corpus covers, which reference
+tables in the project's reference collection, the archive of standards
+documents used to build and verify the maps, do not yet have a
+corresponding map, and which source documents are not in the
+collection. Each map carries the example rows of its
+standard and is checked by ISC parsing, embedded tests, and
+cross-runtime parity.
+
+== What is covered
+
+The corpus contains more than 290 authority-backed systems, including
+ALA-LC, BGN/PCGN, ISO, ODNI (the Intelligence Community standard),
+UN/UNGEGN, ICAO, DIN, BSI, and national systems.
+
+The neural layer is separate from the map layer. A language can have a
+map without a model, and most languages in the corpus have no model.
+Published neural models cover Hebrew, Khmer, Thai, Persian, Arabic, and
+Urdu.
+
+== Reference tables not yet encoded
+
+The project's reference collection contains complete reference tables
+for the following systems, and the corpus does not yet provide a map
+for them.
+
+=== ODNI / ICS 630-01
+
+* **Kurdish** (Annex G) is the Intelligence Community table for Kurdish
+  personal names: Perso-Arabic (Sorani) to Latin, using the 26 Latin
+  letters and the apostrophe without diacritics. It is a different
+  system from the BGN/PCGN Kurdish 2007 map.
+* **Chinese** (Annex D) is not a Han-character romanizer. The standard
+  applies to names already written in Hanyu Pinyin and normalises that
+  rendering, including surname capitalization, the omission of the
+  umlaut on u, spacing, and apostrophes. Its appendices contain
+  conversion tables from Wade-Giles, Yale, and Mandarin Phonetic to
+  pinyin. A Han-to-pinyin conversion requires a character lexicon, and
+  the corpus provides the BGN/PCGN Hanyu Pinyin map for that purpose.
+
+=== DIN
+
+* **DIN 31635:2011** covers Arabic, Ottoman Turkish, Persian, Kurdish,
+  and Urdu.
+* **DIN 31636:2018** covers Hebrew.
+* **DIN 32706:2010** covers Armenian.
+* **DIN 32708:2014** covers Japanese.
+* **DIN 1460-2:2011** covers non-Slavic Cyrillic alphabets.
+
+DIN 32707:2010 (Georgian), DIN 33903:2016 (Tamil), and DIN 33904:2018
+(Devanagari) are already encoded.
+
+=== BSI
+
+* **BS 2979:1958** specifies the transliteration of Cyrillic and Greek
+  characters.
+* **PD 6505:1982** is a guide to the romanization of Korean.
+
+=== BGN/PCGN
+
+The project's reference collection contains complete BGN/PCGN tables
+for Adyghe, Avar, Burmese,
+Chuvash, Dzongkha, Hebrew, Inuktitut, Kabardian, Karachay-Balkar,
+Khmer, Lao, Modern Syriac, Ossetian, Shan, Udmurt, and Yakut. The
+corpus does not yet provide a map for these systems. Hebrew is
+represented by the ICAO 9303 map and Khmer by a neural model; neither
+substitutes for a BGN/PCGN rule map.
+
+== Source documents not in the collection
+
+The corpus contains verified maps for several authorities whose source
+table documents are not in the project's reference collection:
+
+* **ALA-LC** — the collection contains one table document of the 78
+  tables in the official catalogue. The corpus contains 55 ALA-LC maps.
+* **ISO** — ISO 9, ISO 9984, and ISO/TR 11941 are in the collection.
+  The corpus's other ISO maps, which implement ISO 233, ISO 843, ISO
+  3602, ISO 11940, and ISO 15919, have no source document in the
+  collection.
+* **UN/UNGEGN** — the corpus contains 32 UN maps, and the schedules are
+  not in the collection.

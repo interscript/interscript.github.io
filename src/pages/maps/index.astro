@@ -103,6 +103,11 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
       sourceScripts={sourceScripts}
       destinationScripts={destinationScripts}
     />
+
+    <div class="coverage-link">
+      <p><a href="/docs/Coverage_and_Gaps">Coverage and known gaps →</a></p>
+      <p>What is held but not yet encoded, and which neural models are deliberately withheld.</p>
+    </div>
   </section>
 </Base>
 
@@ -161,5 +166,22 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
   .catalogue-section {
     margin-top: 3rem;
     margin-bottom: 6rem;
+  }
+  .coverage-link {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-rule);
+    font-size: var(--text-small);
+  }
+  .coverage-link p {
+    margin: 0;
+  }
+  .coverage-link p + p {
+    margin-top: 0.35rem;
+    color: var(--color-stone);
+  }
+  .coverage-link a {
+    color: var(--color-brand-deep);
+    font-weight: 600;
   }
 </style>
