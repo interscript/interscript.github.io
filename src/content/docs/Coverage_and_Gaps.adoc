@@ -1,0 +1,95 @@
+= Coverage and Known Gaps
+Ribose
+v1.0, 2026-10-28
+
+Interscript encodes authority transliteration standards as executable maps.
+Every standard the project holds has been audited against the corpus; this
+page states what is covered, what is held but not yet encoded, and what is
+deliberately not done.
+
+The authoritative reference-to-corpus inventory lives in the
+https://github.com/interscript/maps/blob/main/docs/coverage/README.adoc[maps repository].
+
+== What is covered
+
+The corpus contains 300 authority-backed systems, including ALA-LC,
+BGN/PCGN, ISO, ODNI (the Intelligence Community standard), UN/UNGEGN,
+ICAO, DIN, BSI, and national systems. Each map carries its standard's own
+example rows and is gated by ISC parse checks, embedded tests, and
+cross-runtime parity.
+
+The neural layer is separate from the map layer. A language can have a map
+without a model; most of the corpus does. Shipped models currently cover
+Hebrew, Khmer, Thai, Persian, Arabic, and Urdu.
+
+== Held standards not yet encoded
+
+Fifteen deterministic tables are held but not yet encoded. Each is a
+complete table with its own example rows. None needs training data to
+encode; a training corpus is required only to train a model on top of the
+map.
+
+=== ODNI / ICS 630-01
+
+* **Kurdish** (Annex G) — the Intelligence Community table for Kurdish
+  personal names: Perso-Arabic (Sorani) to Latin, using the 26 Latin
+  letters plus the apostrophe, deliberately without diacritics. It is a
+  different system from the BGN/PCGN Kurdish 2007 map.
+* **Chinese** (Annex D) — not a Han-character romanizer. The standard
+  applies to names already written in Hanyu Pinyin and normalises that
+  rendering (surname title case, no umlauted u, spacing, apostrophes). Its
+  appendices include conversion tables from Wade-Giles and Yale to pinyin.
+  Han to pinyin is a separate problem that needs a character lexicon; the
+  corpus already has the BGN/PCGN Hanyu Pinyin map for that.
+
+=== DIN
+
+* **DIN 31635** — Arabic, Ottoman Turkish, Persian, Kurdish, and Urdu.
+* **DIN 31636** — Hebrew.
+* **DIN 32706** — Armenian.
+* **DIN 32708** — Japanese.
+* **DIN 1460-2** — non-Slavic Cyrillic alphabets.
+
+DIN 32707 (Georgian), DIN 33903 (Tamil), and DIN 33904 (Devanagari) are
+already encoded.
+
+=== BSI
+
+* **BS 2979:1958** — transliteration of Cyrillic and Greek characters.
+* **PD 6505:1982** — guide to the romanization of Korean.
+
+=== BGN/PCGN
+
+* **Burmese**, **Lao**, **Shan**, and **Inuktitut** — complete BGN/PCGN
+  tables for scripts whose maps are not yet encoded.
+* **Hebrew** and **Khmer** — complete BGN/PCGN tables; Hebrew is currently
+  covered only by the ICAO 9303 map, and Khmer by a neural model, not by a
+  BGN/PCGN rule map.
+
+== Not doing: neural models for five languages
+
+Burmese, Dzongkha, Inuktitut, Lao, and Shan have complete BGN/PCGN tables,
+but no gold script-to-romanization data exists to train a neural model.
+Interscript withholds a model rather than ship a bad-quality one. This
+blocks training, not map coverage: the deterministic maps for these
+languages remain in scope.
+
+== Source documents not held
+
+Some verified maps have no archived source document in the project:
+
+* **ALA-LC** — one table document is archived of the 78 tables in the
+  official catalogue. The 55 encoded ALA-LC maps are verified corpus
+  entries, but their source tables are not held.
+* **ISO** — ISO 9, ISO 9984, and ISO/TR 11941 are held; the other ISO
+  standards represented in the corpus are not.
+* **UN/UNGEGN** — the schedules are not held.
+
+These are archival gaps, not encoding gaps.
+
+== How the audit works
+
+A system is only called missing after checking, in order: the corpus on
+main, open pull requests, merged history, and maps under other authority
+prefixes. The corpus is the authority for what is encoded; a diff of held
+PDFs against `main` alone is not enough.
