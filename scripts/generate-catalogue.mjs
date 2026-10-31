@@ -45,6 +45,19 @@ function main() {
   const files = readdirSync(MAPS_DIR)
     .filter((f) => f.endsWith(".isc"))
     .sort()
+  // Invertibility verdicts from the maps repo's coverage ledger — merged
+  // per system so catalog pages can state lossless/lossy behavior.
+  let ledger = {}
+  try {
+    ledger = JSON.parse(
+      readFileSync(
+        resolve(MAPS_DIR, "..", "docs", "coverage", "invertibility-ledger.json"),
+        "utf8",
+      ),
+    )
+  } catch {
+    console.warn("invertibility-ledger.json not found; omitting verdicts")
+  }
   const catalogue = {}
   let okCount = 0
   const errors = []
@@ -53,7 +66,18 @@ function main() {
     try {
       const src = readFileSync(join(MAPS_DIR, f), "utf8")
       const doc = parseIsc(src, f)
-      catalogue[code] = buildEntry(doc)
+      const entry = buildEntry(doc)
+      const led = ledger[code]
+      if (led) {
+        entry.invertibility = {
+          verdict: led.verdict,
+          pairs: led.pairs,
+          context_rules: led.context_rules,
+          many_to_one: led.many_to_one,
+          one_to_many: led.one_to_many,
+        }
+      }
+      catalogue[code] = entry
       okCount++
     } catch (e) {
       errors.push(`${f}: ${e.message}`)

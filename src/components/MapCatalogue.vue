@@ -11,6 +11,14 @@
  */
 import { ref, computed, defineProps } from "vue"
 
+interface Invertibility {
+  verdict: string
+  pairs: number
+  context_rules?: number
+  many_to_one: number
+  one_to_many: number
+}
+
 interface CatalogueEntry {
   code: string
   authority: string
@@ -20,10 +28,17 @@ interface CatalogueEntry {
   year: string
   language?: string
   description?: string
+  invertibility?: Invertibility | null
   hasTest: boolean
   testInput: string | null
   testExpected: string | null
   liveDemoable: boolean
+}
+
+const VERDICT_LABELS: Record<string, string> = {
+  LOSSLESS_ONE_TO_ONE: "Lossless · 1:1",
+  LOSSY_MANY_TO_ONE: "Lossy · many-to-one",
+  CONTEXT_ONLY: "Context-only",
 }
 
 const props = defineProps<{
@@ -37,9 +52,14 @@ const search = ref("")
 const authorityFilter = ref<string>("")
 const sourceFilter = ref<string>("")
 const destFilter = ref<string>("")
+const verdictFilter = ref<string>("")
 const onlyWithTests = ref(false)
 const onlyLiveDemoable = ref(false)
 const sortBy = ref<"authority" | "code" | "name">("authority")
+
+const verdicts = computed(() =>
+  [...new Set(props.entries.map((e) => e.invertibility?.verdict).filter(Boolean))].sort(),
+)
 
 const filtered = computed(() => {
   const q = search.value.trim().toLowerCase()
@@ -47,10 +67,11 @@ const filtered = computed(() => {
     if (authorityFilter.value && e.authority !== authorityFilter.value) return false
     if (sourceFilter.value && e.sourceScript !== sourceFilter.value) return false
     if (destFilter.value && e.destinationScript !== destFilter.value) return false
+    if (verdictFilter.value && e.invertibility?.verdict !== verdictFilter.value) return false
     if (onlyWithTests.value && !e.hasTest) return false
     if (onlyLiveDemoable.value && !e.liveDemoable) return false
     if (q) {
-      const hay = `${e.code} ${e.name} ${e.authority}`.toLowerCase()
+      const hay = `${e.code} ${e.name} ${e.authority} ${e.description ?? ""}`.toLowerCase()
       if (!hay.includes(q)) return false
     }
     return true
@@ -72,6 +93,7 @@ function clearFilters() {
   authorityFilter.value = ""
   sourceFilter.value = ""
   destFilter.value = ""
+  verdictFilter.value = ""
   onlyWithTests.value = false
   onlyLiveDemoable.value = false
 }
@@ -82,6 +104,7 @@ const hasActiveFilters = computed(
     authorityFilter.value !== "" ||
     sourceFilter.value !== "" ||
     destFilter.value !== "" ||
+    verdictFilter.value !== "" ||
     onlyWithTests.value ||
     onlyLiveDemoable.value,
 )
@@ -132,6 +155,18 @@ const hasActiveFilters = computed(
         </label>
       </div>
 
+      <div class="rail-section" v-if="verdicts.length > 0">
+        <label class="field">
+          <span class="field-label">Invertibility</span>
+          <select v-model="verdictFilter" class="field-input">
+            <option value="">All ({{ verdicts.length }})</option>
+            <option v-for="v in verdicts" :key="v" :value="v">
+              {{ VERDICT_LABELS[v] ?? v }}
+            </option>
+          </select>
+        </label>
+      </div>
+
       <div class="rail-section rail-checkbox">
         <label>
           <input type="checkbox" v-model="onlyWithTests" />
@@ -176,10 +211,21 @@ const hasActiveFilters = computed(
             </div>
             <h3 class="card-name">{{ entry.name }}</h3>
             <code class="card-code">{{ entry.code }}</code>
-            <div class="card-flow">
-              <span class="script">{{ entry.sourceScript }}</span>
-              <span class="arrow" aria-hidden="true">→</span>
-              <span class="script">{{ entry.destinationScript }}</span>
+            <p v-if="entry.description" class="card-desc">{{ entry.description }}</p>
+            <div class="card-meta">
+              <span
+                v-if="entry.invertibility"
+                class="tag tag-verdict"
+                :class="`verdict-${entry.invertibility.verdict.toLowerCase()}`"
+                :title="`${entry.invertibility.pairs} mapping pairs, ${entry.invertibility.many_to_one} many-to-one, ${entry.invertibility.one_to_many} one-to-many`"
+              >
+                {{ VERDICT_LABELS[entry.invertibility.verdict] ?? entry.invertibility.verdict }}
+              </span>
+              <span class="card-flow">
+                <span class="script">{{ entry.sourceScript }}</span>
+                <span class="arrow" aria-hidden="true">→</span>
+                <span class="script">{{ entry.destinationScript }}</span>
+              </span>
             </div>
             <div v-if="entry.hasTest && entry.testInput && entry.testExpected" class="card-sample">
               <span class="sample-input">{{ entry.testInput }}</span>
@@ -386,6 +432,35 @@ const hasActiveFilters = computed(
   padding: 0;
   word-break: break-all;
 }
+.card-desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-stone);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+.tag-verdict {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-rule);
+  color: var(--color-stone);
+}
+.verdict-lossless_one_to_one {
+  border-color: var(--color-ochre);
+  color: var(--color-ochre);
+}
 .card-flow {
   display: flex;
   align-items: center;
@@ -393,7 +468,7 @@ const hasActiveFilters = computed(
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--color-stone);
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 .card-flow .script {
   color: var(--color-ink);
