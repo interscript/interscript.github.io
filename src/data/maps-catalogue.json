@@ -18,7 +18,14 @@
       "Fukang",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 22411,
+      "context_rules": 5081,
+      "many_to_one": 396,
+      "one_to_many": 0
+    }
   },
   "alalc-amh-Ethi-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -39,7 +46,14 @@
       "yazégenate kebere ba ʼiteyop̣eyāčene ṣaneto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 268,
+      "context_rules": 32,
+      "many_to_one": 7,
+      "one_to_many": 0
+    }
   },
   "alalc-amh-Ethi-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -60,7 +74,14 @@
       "yazégenate kebere ba ʼiteyop̣eyāčene ṣaneto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-ara-Arab-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -81,7 +102,14 @@
       "waḍ‘",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 360,
+      "context_rules": 22,
+      "many_to_one": 41,
+      "one_to_many": 39
+    }
   },
   "alalc-asm-Deva-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -102,7 +130,14 @@
       "asamīẏā kabitā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 39,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "alalc-asm-Deva-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -123,7 +158,14 @@
       "rājẏika sbāsthẏa mantrī pīyusha hājarikāra biruddhe dākhila karā haiche ejāhāra.",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-aze-Arab-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -144,7 +186,14 @@
       "Barakat",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 95,
+      "context_rules": 19,
+      "many_to_one": 9,
+      "one_to_many": 1
+    }
   },
   "alalc-aze-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -165,7 +214,14 @@
       "Azărbaı̐jan dili",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 1
+    }
   },
   "alalc-bel-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -186,7 +242,14 @@
       "Belarusʹ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 69,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "alalc-ben-Beng-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -207,7 +270,14 @@
       "āmāra sonāra bāṃlā, āmi tomāẏa bhālobāsi।\nciradina tomāra ākāśa, tomāra bātāsa, āmāra prāṇe bājāẏa bān̐śi॥\no mā, phāgune tora āmera bane ghrāṇe pāgala kare, mari hāẏa, hāẏa re—\no mā, aghrāṇe tora bharā kshete āmi kī dekhechi madhura hāsi॥\n\nkī śobhā, kī chāyaṛā go, kī sneha, kī māyaṛā go—\nkī ām̐cala bichāyaṛecha baṭera mūle, nadīra kūle kūle।\nmā, tora mukhera bāṇī āmāra kāne lāge sudhāra mato,\nmari hāẏa, hāẏa re—\nmā, tora badanakhāni malina hale, o mā, āmi naẏanajale bhāsi॥",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 76,
+      "context_rules": 40,
+      "many_to_one": 9,
+      "one_to_many": 0
+    }
   },
   "alalc-ben-Beng-Latn-2017": {
     "class": "Interscript::Node::MetaData",
@@ -228,7 +298,14 @@
       "rka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 53,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 1
+    }
   },
   "alalc-bul-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -249,7 +326,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "alalc-div-Thaa-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -270,7 +354,14 @@
       "maśaḫ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 48,
+      "context_rules": 28,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "alalc-div-Thaa-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -291,7 +382,14 @@
       "maśaḫ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-ell-Grek-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -312,7 +410,14 @@
       "Ena prama monon me parakinēse ki emena na grapsō oti toutēn tēn patrida tēn echomen oloi mazi, kai sophoi ki amatheis kai plousioi kai phtōchoi kai politikoi kai stratiōtikoi kai oi pleon mikroteroi anthrōpoi; osoi agōnistēkamen, analogōs o katheis, echomen na zēsomen edō. To loipon doulepsamen oloi mazi, na tēn phylamen ki oloi mazi kai na mēn legei oute o dynatos «egō» oute o adynatos. Xerete pote na legei o katheis «egō»? Otan agōnistei monos tou kai phkiasei ē chalasei, na legei «egō»; otan omōs agōnizontai polloi kai phkianoun, tote na lene «emeis». Eimaste eis to «emeis» ki ochi eis to «egō». Kai eis to exēs na mathomen gnōsē, an thelomen na phkiasomen chōrion, na zēsomen oloi mazi.\n\nGiannēs Makrygiannēs.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 21,
+      "many_to_one": 17,
+      "one_to_many": 0
+    }
   },
   "alalc-ell-Grek-Latn-2010": {
     "class": "Interscript::Node::MetaData",
@@ -333,7 +438,14 @@
       "Ena prama monon me parakinēse ki emena na grapsō oti toutēn tēn patrida tēn echomen oloi mazi, kai sophoi ki amatheis kai plousioi kai phtōchoi kai politikoi kai stratiōtikoi kai oi pleon mikroteroi anthrōpoi; osoi agōnistēkamen, analogōs o katheis, echomen na zēsomen edō. To loipon doulepsamen oloi mazi, na tēn phylamen ki oloi mazi kai na mēn legei oute o dynatos «egō» oute o adynatos. Xerete pote na legei o katheis «egō»? Otan agōnistei monos tou kai phkiasei ē chalasei, na legei «egō»; otan omōs agōnizontai polloi kai phkianoun, tote na lene «emeis». Eimaste eis to «emeis» ki ochi eis to «egō». Kai eis to exēs na mathomen gnōsē, an thelomen na phkiasomen chōrion, na zēsomen oloi mazi.\n\nGiannēs Makrygiannēs.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 25,
+      "many_to_one": 17,
+      "one_to_many": 0
+    }
   },
   "alalc-fas-Arab-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -354,7 +466,14 @@
       "Dānā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 88,
+      "context_rules": 20,
+      "many_to_one": 7,
+      "one_to_many": 0
+    }
   },
   "alalc-guj-Gujr-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -375,7 +494,14 @@
       "amita śāhanȏ kȏrȏnā ripȏrṭa 2 ȏgasṭȇ pȏjhiṭiva āvyȏ hatȏ, tyārathī tȇmanuṃ svāsthya sāruṃ nathī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 77,
+      "context_rules": 39,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "alalc-guj-Gujr-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -396,7 +522,14 @@
       "mȏrgana anȇ rasȇla phlȏpa rahyā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-hin-Deva-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -417,7 +550,14 @@
       "hama",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 91,
+      "context_rules": 5,
+      "many_to_one": 20,
+      "one_to_many": 0
+    }
   },
   "alalc-hin-Deva-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -438,7 +578,14 @@
       "is cunăutīpūrṇ samay meṃ 'vark phrôm homa’ sāmāny ban cukā hai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kan-Kana-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -459,7 +606,14 @@
       "karṇāṭaka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 83,
+      "context_rules": 40,
+      "many_to_one": 15,
+      "one_to_many": 0
+    }
   },
   "alalc-kan-Kana-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -480,7 +634,14 @@
       "karṇāṭaka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kat-Geok-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -501,7 +662,14 @@
       "CIGNI",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 76,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kat-Geok-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -522,7 +690,14 @@
       "CIGNI",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kat-Geor-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -543,7 +718,14 @@
       "xaopʻse",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 41,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kat-Geor-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -564,7 +746,14 @@
       "xaopʻse",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-kor-Hang-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -585,7 +774,14 @@
       "Ŭnha-ri",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-mal-Mlym-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -606,7 +802,14 @@
       "cainayŭkŭketire lad̂ākŭkil sadāsajŭjaṃ; yuesilninŭnŭ 72,500 sigŭ–16 ṟaiphiḷ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 99,
+      "context_rules": 41,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "alalc-mal-Mlym-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -627,7 +830,14 @@
       "bār kōḻa āviyāyi; makan māṇiye vŭyakŭtihatŭya naṭatŭtiyavaruṭe kūṭāratŭtil",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-mar-Deva-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -648,7 +858,14 @@
       "ṭhaāṇae - jailahayaāta baudhavaāraī eka hajaāra raugaṇaāñcaī vaāḍha, tara jaṇaāñcayaā maṛitayaūcaī naonda",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 73,
+      "context_rules": 4,
+      "many_to_one": 8,
+      "one_to_many": 0
+    }
   },
   "alalc-mar-Deva-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -669,7 +886,14 @@
       "kaoraonaācayaā laḍhaāīta paolaīsa thakalaeta, paṇa haimmata haralaelae naāhaīta; gaṛihamantarayaāṅkaḍaūna kaautauka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-mkd-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -690,7 +914,14 @@
       "Opština Erdut",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 66,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-mkd-Cyrl-Latn-2013": {
     "class": "Interscript::Node::MetaData",
@@ -711,7 +942,14 @@
       "Opština Erdut",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 64,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-mon-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -732,7 +970,14 @@
       "Êrdênêt Sum",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "alalc-ori-Orya-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -753,7 +998,14 @@
       "rka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 81,
+      "context_rules": 44,
+      "many_to_one": 11,
+      "one_to_many": 0
+    }
   },
   "alalc-ori-Orya-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -774,7 +1026,14 @@
       "bihāra nirbācana: sandhẏā 6ṭā suddhā 53.54 pratiśata matadāna",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-pan-Guru-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -795,7 +1054,14 @@
       "pañjaāba 'ca wadha raihaā khaudakaushaīāṃ daā raujhaāna",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 108,
+      "context_rules": 8,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "alalc-pan-Guru-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -816,7 +1082,14 @@
       "sawaāmaitawa yaojanaā tahaita jaāidaāda kaāraḍa waṇḍae",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-pli-Deva-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -837,7 +1110,14 @@
       "taena khao pana samayaena vaesaālaiyaā avaidaūrae kalanadagaāmao naāma atathai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 53,
+      "context_rules": 4,
+      "many_to_one": 8,
+      "one_to_many": 0
+    }
   },
   "alalc-pra-Deva-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -858,7 +1138,14 @@
       "sṛṣṭisthitivināśānāṃ śaktibhūte sanātani",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-rus-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -879,7 +1166,14 @@
       "Azov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "alalc-rus-Cyrl-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -900,7 +1194,14 @@
       "Azov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 8,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-san-Deva-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -921,7 +1222,14 @@
       "pūrṇamadaḥ pūrṇamidaṃ pūrṇāt pūrṇmudacyate",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 38,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "alalc-sin-Sinh-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -942,7 +1250,14 @@
       "śīra laṃkāvē kīraḍāva itihāsayē ihaḷama tănakaṭa gēnanna kaṭayutu karanavā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 43,
+      "many_to_one": 18,
+      "one_to_many": 0
+    }
   },
   "alalc-sin-Sinh-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -963,7 +1278,14 @@
       "hiṭapu agrāmātya ranil vikramasiṃha aprēl 21 prahāraya sambanandhayen vimarśanaya karana janādhipati parīkṣaṇa komisama hamuvē deveni dinaṭat sākṣi labādīmaṭa pămiṇeyi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-srp-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -984,7 +1306,14 @@
       "Opština Erdut",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 66,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-srp-Cyrl-Latn-2013": {
     "class": "Interscript::Node::MetaData",
@@ -1005,7 +1334,14 @@
       "Šuplja Stena",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 60,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-tam-Taml-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1026,7 +1362,14 @@
       "aḻintu pōṉa nakarattil , tolaintu pōṉa nāṉ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 1,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-tam-Taml-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1047,7 +1390,14 @@
       "malaiyāḷa naṭikar caṅkattiliruntu naṭikai pārvati tiṭīr vilakal.",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-tel-Telu-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1068,7 +1418,14 @@
       "tamiḷanāḍu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 86,
+      "context_rules": 43,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "alalc-tel-Telu-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1089,7 +1446,14 @@
       "tamiḷanāḍu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-tir-Ethi-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1110,7 +1474,14 @@
       "yazégenate kebere ba ʼiteyop̣eyāčene ṣaneto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 261,
+      "context_rules": 33,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "alalc-tir-Ethi-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1131,7 +1502,14 @@
       "yazégenate kebere ba ʼiteyop̣eyāčene ṣaneto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "alalc-ukr-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1152,7 +1530,14 @@
       "Avtonomna Respublika Krym",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "alalc-ukr-Cyrl-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1173,7 +1558,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "apcbg-bul-Cyrl-Latn-1995": {
     "class": "Interscript::Node::MetaData",
@@ -1194,7 +1586,14 @@
       "nunatak Abrit",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "az-aze-Cyrl-Latn-1939": {
     "class": "Interscript::Node::MetaData",
@@ -1215,7 +1614,14 @@
       "Yuya",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 73,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "az-aze-Cyrl-Latn-1958": {
     "class": "Interscript::Node::MetaData",
@@ -1236,7 +1642,14 @@
       "Azərbaycan əlifbası",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 12,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 2
+    }
   },
   "bas-rus-Cyrl-Latn-2017-bss": {
     "class": "Interscript::Node::MetaData",
@@ -1257,7 +1670,14 @@
       "Eh, troyka! ptitsa troyka, kto tebya vidumal? znat, u boykogo naroda\nti mogla tolko roditsya, v toy zemle, chto ne lyubit shutit, a\nrovnem-gladnem razmetnulas na polsveta, da i stupay schitat versti, poka\nne zaryabit tebe v ochi. I ne hitriy, kazhis, dorozhniy snaryad, ne\nzheleznim shvachen vintom, a naskoro zhivyem s odnim toporom da dolotom\nsnaryadil i sobral tebya yaroslavskiy rastoropniy muzhik. Ne v nemetskih\nbotfortah yamshchik: boroda da rukavitsi, i sidit chert znaet na chem; a\nprivstal, da zamahnulsya, da zatyanul pesnyu — koni vihrem, spitsi v\nkolesah smeshalis v odin gladkiy krug, tolko drognula doroga, da vskriknul\nv ispuge ostanovivshiysya peshehod — i von ona poneslas, poneslas,\nponeslas!\n\nN.V. Gogol",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 16,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "bas-rus-Cyrl-Latn-2017-oss": {
     "class": "Interscript::Node::MetaData",
@@ -1278,7 +1698,14 @@
       "`Eh, troyka! ptitsa troyka, kto tebya v`idumal? znat', u boykogo naroda t`i mogla tol'ko rodit'sya, v toy zemle, chto ne lyubit shutit', a rovnem-gladnem razmetnulas' na polsveta, da i stupay schitat' verst`i, poka ne zaryabit tebe v ochi. I ne hitr`iy, kazhis', dorozhn`iy snaryad, ne zhelezn`im shvachen vintom, a naskoro zhivy``em s odnim toporom da dolotom snaryadil i sobral tebya yaroslavskiy rastoropn`iy muzhik. Ne v nemetskih botfortah yamshchik: boroda da rukavits`i, i sidit ch``ert znaet na ch``em; a privstal, da zamahnulsya, da zatyanul pesnyu — koni vihrem, spits`i v kolesah smeshalis' v odin gladkiy krug, tol'ko drognula doroga, da vskriknul v ispuge ostanovivshiysya peshehod — i von ona poneslas', poneslas', poneslas'!\nN.V. Gogol'",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 18,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "bgn-jpn-Hrkt-Latn-1962": {
     "class": "Interscript::Node::MetaData",
@@ -1299,7 +1726,14 @@
       "shimbashi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 12,
+      "context_rules": 13,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "bgn-kor-Hang-Latn-1943": {
     "class": "Interscript::Node::MetaData",
@@ -1320,7 +1754,14 @@
       "Sŏul",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgn-kor-Kore-Latn-1943": {
     "class": "Interscript::Node::MetaData",
@@ -1341,7 +1782,14 @@
       "Sŏul",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgna-bul-Cyrl-Latn-2006": {
     "class": "Interscript::Node::MetaData",
@@ -1362,7 +1810,14 @@
       "nunatak Abrit",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgna-bul-Cyrl-Latn-2009": {
     "class": "Interscript::Node::MetaData",
@@ -1383,7 +1838,42 @@
       "nunatak Abrit",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-ady-Cyrl-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2012",
+      "language": "iso-639-2:ady",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Adyghe (2012)",
+      "description": "The BGN/PCGN system for Adyghe is designed for use in romanizing names written in the\n    Adyghe Cyrillic alphabet. Adyghe, a language of the north-western Caucasian family, is\n    principally spoken in Russia's republic of Adygeya and has been written in a modified\n    Cyrillic script since 1938. Also known as West Circassian, Adyghe is notable for its\n    rich density of consonant phonemes and corresponding paucity of vowels. Adyghe letters\n    are addressed in the romanizations as per their articulation: glottalised consonants\n    are marked with an apostrophe, labialized consonants with w, and retroflex consonants\n    with an underbar. Phonemes shared with Kabardian are represented as per the\n    BGN/PCGN Kabardian Romanization System.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 134,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-amh-Ethi-Latn-1967": {
     "class": "Interscript::Node::MetaData",
@@ -1404,7 +1894,14 @@
       "yezēgnet kbr be ītyop’yachn ts’ento",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 246,
+      "context_rules": 40,
+      "many_to_one": 21,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-ara-Arab-Latn-1956": {
     "class": "Interscript::Node::MetaData",
@@ -1425,7 +1922,14 @@
       "Qur’ān",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 185,
+      "context_rules": 19,
+      "many_to_one": 33,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-arm-Armn-Latn-1981": {
     "class": "Interscript::Node::MetaData",
@@ -1446,7 +1950,70 @@
       "Hayastan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 0,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-av-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:ava",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Avar (BGN/PCGN 2011 System)",
+      "description": "The BGN/PCGN system for Avar is designed for use in romanizing names written\n    in the Avar Cyrillic alphabet. Avar is a consonant-rich north-eastern Caucasian language,\n    spoken principally in Russia’s republic of Dagestan. It has been written in a modified\n    Cyrillic script since 1938 and, as other Caucasian languages, features glottalised\n    consonants, and though these are not marked with a uniform marker in Avar Cyrillic, an\n    apostrophe denotes the glottalised form of consonants in this romanization table.",
+      "url": "https://geonames.nga.mil/gns/html/Romanization/ROMANIZATION%20OF%20AVAR.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "МагӀарул",
+      "Maġarul",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 4,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-ava-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:ava",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Avar (2011)",
+      "description": "The BGN/PCGN system for Avar is designed for use in romanizing names written in the\n    Avar Cyrillic alphabet. Avar is a consonant-rich north-eastern Caucasian language,\n    spoken principally in Russia's republic of Dagestan. It has been written in a modified\n    Cyrillic script since 1938 and, as other Caucasian languages, features glottalised\n    consonants; an apostrophe denotes the glottalised form of consonants in this\n    romanization table.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 98,
+      "context_rules": 2,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-aze-Cyrl-Latn-1993": {
     "class": "Interscript::Node::MetaData",
@@ -1467,7 +2034,14 @@
       "Azərbaycan əlifbası",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 64,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-bak-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -1488,7 +2062,14 @@
       "Wasyılğa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 84,
+      "context_rules": 2,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-bal-Arab-Latn-2008": {
     "class": "Interscript::Node::MetaData",
@@ -1509,7 +2090,14 @@
       "Benṭag",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 129,
+      "context_rules": 0,
+      "many_to_one": 16,
+      "one_to_many": 1
+    }
   },
   "bgnpcgn-bel-Cyrl-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -1530,7 +2118,14 @@
       "Anton",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 79,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-bul-Cyrl-Latn-1952": {
     "class": "Interscript::Node::MetaData",
@@ -1551,7 +2146,14 @@
       "Sofiya",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 18,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-bul-Cyrl-Latn-2013": {
     "class": "Interscript::Node::MetaData",
@@ -1572,7 +2174,14 @@
       "Sofia",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 1,
+      "context_rules": 2,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-che-Cyrl-Latn-2008": {
     "class": "Interscript::Node::MetaData",
@@ -1593,7 +2202,70 @@
       "khant",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 4,
+      "many_to_one": 6,
+      "one_to_many": 3
+    }
+  },
+  "bgnpcgn-chv-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:chv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Chuvash (2011)",
+      "description": "The BGN/PCGN system for Chuvash is designed for use in romanizing names written in the\n    Chuvash Cyrillic alphabet. Chuvash is an official language within Chuvashiya, one of the\n    republics of the Russian Federation.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 76,
+      "context_rules": 4,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-cv-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:chv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Chuvash (BGN/PCGN 2011 System)",
+      "description": "The BGN/PCGN system for Chuvash is designed for use in romanizing names written\n    in the Chuvash Cyrillic alphabet. Chuvash is an official language within Chuvashiya, one of\n    the republics of the Russian Federation.",
+      "url": "https://geonames.nga.mil/gns/html/Romanization/ROMANIZATION%20OF%20CHUVASH.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "Чӑвашла",
+      "Chăvashla",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 8,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-deu-Latn-Latn-2000": {
     "class": "Interscript::Node::MetaData",
@@ -1614,7 +2286,14 @@
       "Dein weisses Fleisch erregt mich so",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 7,
+      "context_rules": 4,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-div-Thaa-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -1635,7 +2314,14 @@
       "’iruga’i",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 36,
+      "context_rules": 4,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-div-Thaa-Latn-1988": {
     "class": "Interscript::Node::MetaData",
@@ -1656,7 +2342,14 @@
       "irugai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 14,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-ell-Grek-Latn-1962": {
     "class": "Interscript::Node::MetaData",
@@ -1677,7 +2370,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrídha tin ékhomen óloi mazí, kai sofoí ki amathís kai ploúsioi kai ftokhoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o kathís, ékhomen na zísomen edhó. To loipón dhoulépsamen óloi mazí, na tin filámen ki óloi mazí kai na min léyi oúte o dhinatós «egó» oúte o adhínatos. Xérete póte na léyi o kathís «egó»? Ótan agonistí mónos tou kai fkiási í khalási, na léyi «egó»; ótan ómos agonízondai polloí kai fkiánoun, tóte na léne «emís». Ímaste is to «emís» ki ókhi is to «egó». Kai is to exís na máthomen gnósi, an thélomen na fkiásomen khorión, na zísomen óloi mazí.\n\nYiánnis Makriyiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 92,
+      "context_rules": 61,
+      "many_to_one": 17,
+      "one_to_many": 1
+    }
   },
   "bgnpcgn-ell-Grek-Latn-1996": {
     "class": "Interscript::Node::MetaData",
@@ -1698,7 +2398,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-fao-Latn-Latn-1964": {
     "class": "Interscript::Node::MetaData",
@@ -1719,7 +2426,14 @@
       "Fyrirgefdhu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 4,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-fao-Latn-Latn-1968": {
     "class": "Interscript::Node::MetaData",
@@ -1740,7 +2454,14 @@
       "Fyrirgefdhu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-fas-Arab-Latn-1956": {
     "class": "Interscript::Node::MetaData",
@@ -1761,7 +2482,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 30,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-isl-Latn-Latn-1964": {
     "class": "Interscript::Node::MetaData",
@@ -1782,7 +2510,14 @@
       "Fyrirgefdhu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 4,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-isl-Latn-Latn-1968": {
     "class": "Interscript::Node::MetaData",
@@ -1803,7 +2538,42 @@
       "Fyrirgefdhu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-iu-Cans-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2013",
+      "language": "iso-639-2:iu",
+      "source_script": "Cans",
+      "destination_script": "Latn",
+      "name": "Romanization of Inuktitut (2013 Agreement)",
+      "description": "The BGN/PCGN system for Inuktitut romanizes Canadian Aboriginal Syllabics\n    (qaniujaaqpait) used for geographic names in Nunavut. The syllabic chart was\n    approved by the Inuit Cultural Institute at Arviat in 1976. The BGN/PCGN\n    agreement is dated 2013 and was checked for validity and accuracy in June 2018.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᐃ",
+      "I",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 114,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-jpn-Hrkt-Latn-1976": {
     "class": "Interscript::Node::MetaData",
@@ -1824,7 +2594,14 @@
       "Tegata-karamiden",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 0,
+      "many_to_one": 37,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kat-Geor-Latn-1981": {
     "class": "Interscript::Node::MetaData",
@@ -1845,7 +2622,14 @@
       "hebudi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 36,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kat-Geor-Latn-2009": {
     "class": "Interscript::Node::MetaData",
@@ -1866,7 +2650,14 @@
       "tbilisi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kaz-Cyrl-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -1887,7 +2678,42 @@
       "Öngirek",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 84,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-kbd-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:kbd",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Kabardian (2011)",
+      "description": "The BGN/PCGN system for Kabardian is designed for use in romanizing names written in the\n    Kabardian Cyrillic alphabet. Kabardian, of the north-western Caucasian language family, is\n    principally spoken in Russia's republics of Kabardino-Balkariya and Karachayevo-Cherkesiya\n    and has been written in a modified Cyrillic script since 1936. Also known as East\n    Circassian, Kabardian is notable for its rich density of consonant phonemes (most\n    commentators agree on an inventory of 47 or 48) and corresponding paucity of vowels.\n    Kabardian letters are addressed in the romanizations as per their articulation:\n    glottalised consonants are marked with an apostrophe, and labialized consonants with w.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 116,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kir-Cyrl-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -1908,7 +2734,14 @@
       "Ysyk-Köl Oblusu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 72,
+      "context_rules": 0,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kor-Hang-Latn-kn-1945": {
     "class": "Interscript::Node::MetaData",
@@ -1929,7 +2762,14 @@
       "P’yŏngyang",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 10,
+      "context_rules": 28,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kor-Hang-Latn-rok-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1950,7 +2790,14 @@
       "Bulguksa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kor-Kore-Latn-rok-2011": {
     "class": "Interscript::Node::MetaData",
@@ -1971,7 +2818,42 @@
       "Bulguksa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-krc-Cyrl-Latn-2008": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2008",
+      "language": "iso-639-2:krc",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Table of Correspondences for Karachay-Balkar (Cyrillic-Roman) (2008 Agreement)",
+      "description": "Karachay-Balkar is an official language within Karachayevo-Cherkesiya and\n    Kabardino-Balkariya, two of the republics of the Russian Federation. It will normally\n    be encountered in Cyrillic script, in which case it should be romanized by means of\n    the Cyrillic-Roman table of correspondences given below.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2008",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 79,
+      "context_rules": 2,
+      "many_to_one": 7,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-kur-Arab-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -1992,7 +2874,14 @@
       "Kanî Masê",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 49,
+      "context_rules": 6,
+      "many_to_one": 10,
+      "one_to_many": 4
+    }
   },
   "bgnpcgn-mkd-Cyrl-Latn-1981": {
     "class": "Interscript::Node::MetaData",
@@ -2013,7 +2902,14 @@
       "Đol",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 62,
+      "context_rules": 4,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-mkd-Cyrl-Latn-2013": {
     "class": "Interscript::Node::MetaData",
@@ -2034,7 +2930,14 @@
       "Ǵenovi Livaǵe",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 62,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-mon-Cyrl-Latn-1964": {
     "class": "Interscript::Node::MetaData",
@@ -2055,7 +2958,14 @@
       "Erdenet Sum",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 4,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-nep-Deva-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -2076,7 +2986,70 @@
       "lekhn",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 75,
+      "context_rules": 4,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-os-Cyrl-Latn-2009": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2009",
+      "language": "iso-639-2:oss",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Ossetian (BGN/PCGN 2009 System)",
+      "description": "The BGN/PCGN system for Ossetian is designed for use in romanizing names written\n    in the Ossetian Cyrillic alphabet. Ossetian is a member of the north-eastern Iranian language\n    group and has over half a million speakers. It has principally been written in a modified\n    Cyrillic alphabet though a Roman alphabet was used between 1923 and 1938. The BGN/PCGN\n    Romanization System is derived from the correspondences between that Roman alphabet and\n    the Cyrillic alphabet used for Ossetian today, with modifications to suit an\n    English-language user.",
+      "url": "https://geonames.nga.mil/gns/html/Romanization/ROMANIZATION%20OF%20OSSETIAN.pdf",
+      "creation_date": "2009",
+      "nonstandard": {}
+    },
+    "test": [
+      "Дзау",
+      "Dzaw",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 98,
+      "context_rules": 4,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-oss-Cyrl-Latn-2009": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2009",
+      "language": "iso-639-2:oss",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Ossetian (2009)",
+      "description": "The BGN/PCGN system for Ossetian is designed for use in romanizing names written in the\n    Ossetian Cyrillic alphabet. Ossetian is a member of the north-eastern Iranian language\n    group and has over half a million speakers. It has principally been written in a modified\n    Cyrillic alphabet, though a Roman alphabet was used between 1923 and 1938. The\n    BGN/PCGN Romanization System is derived from the correspondences between that Roman\n    alphabet and the Cyrillic alphabet used for Ossetian today, with modifications to suit\n    an English-language user.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2009",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 86,
+      "context_rules": 6,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-per-Arab-Latn-1958": {
     "class": "Interscript::Node::MetaData",
@@ -2097,7 +3070,14 @@
       "Anjīreh",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 81,
+      "context_rules": 7,
+      "many_to_one": 9,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-prs-Arab-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -2118,7 +3098,14 @@
       "Baghlān",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 114,
+      "context_rules": 19,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-prs-Arab-Latn-yaghoubi": {
     "class": "Interscript::Node::MetaData",
@@ -2139,7 +3126,14 @@
       "baghlān",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 98,
+      "context_rules": 24,
+      "many_to_one": 13,
+      "one_to_many": 4
+    }
   },
   "bgnpcgn-pus-Arab-Latn-1968": {
     "class": "Interscript::Node::MetaData",
@@ -2160,7 +3154,14 @@
       "Baghlān",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 20,
+      "context_rules": 1,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-ron-Cyrl-Latn-2002": {
     "class": "Interscript::Node::MetaData",
@@ -2181,7 +3182,14 @@
       "Bună diminea'ţa!",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 62,
+      "context_rules": 15,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-rue-Cyrl-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -2202,7 +3210,14 @@
       "rusyn'skyj yazyk",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-rus-Cyrl-Latn-1947": {
     "class": "Interscript::Node::MetaData",
@@ -2223,7 +3238,42 @@
       "Vybory deputatov Gosudarstvennoy Dumy Federal’nogo Sobraniya Rossiyskoy Federatsii sed’mogo sozyva\nData golosovaniya: 18.09.2016\n\nNaimenovaniye Izbiratel’noy komissii:    TSIK Rossii\n\nSvodnaya tablitsa rezul’tatov vyborov po federal’nomu izbiratel’nomu okrugu\n\n\nChislo izbirateley, vnesennykh v spisok izbirateley na moment okonchaniya golosovaniya\nChislo izbiratel’nykh byulleteney, poluchennykh uchastkovoy izbiratel’noy komissiyey\nChislo izbiratel’nykh byulleteney, vydannykh izbiratelyam, progolosovavshim dosrochno\nChislo izbiratel’nykh byulleteney, vydannykh v pomeshchenii dlya golosovaniya v den’ golosovaniya\nChislo izbiratel’nykh byulleteney, vydannykh vne pomeshcheniya dlya golosovaniya v den’ golosovaniya\nChislo pogashennykh izbiratel’nykh byulleteney\nChislo izbiratel’nykh byulleteney, soderzhashchikhsya v perenosnykh yashchikakh dlya golosovaniya\nChislo izbiratel’nykh byulleteney, soderzhashchikhsya v statsionarnykh yashchikakh dlya golosovaniya\nChislo nedeystvitel’nykh izbiratel’nykh byulleteney\nChislo deystvitel’nykh izbiratel’nykh byulleteney\nChislo otkrepitel’nykh udostovereniy, poluchennykh uchastkovoy izbiratel’noy komissiyey\nChislo otkrepitel’nykh udostovereniy, vydannykh na izbiratel’nom uchastke do dnya golosovaniya\nChislo izbirateley, progolosovavshikh po otkrepitel’nym udostovereniyam na izbiratel’nom uchastke\nChislo pogashennykh neispol’zovannykh otkrepitel’nykh udostovereniy\nChislo otkrepitel’nykh udostovereniy, vydannykh izbiratelyam territorial’noy izbiratel’noy komissiyey\nChislo utrachennykh otkrepitel’nykh udostovereniy\nChislo utrachennykh izbiratel’nykh byulleteney\nChislo izbiratel’nykh byulleteney, ne uchtennykh pri poluchenii\n1. VSEROSSIYSKAYA POLITICHESKAYA PARTIYA \"RODINA\"\n2. Politicheskaya partiya KOMMUNISTICHESKAYA PARTIYA KOMMUNISTY ROSSII\n3. Politicheskaya partiya \"Rossiyskaya partiya pensionerov za spravedlivost’\"\n4. Vserossiyskaya politicheskaya partiya \"YEDINAYA ROSSIYA\"\n5. Politicheskaya partiya \"Rossiyskaya ekologicheskaya partiya \"Zelenyye\"\n6. Politicheskaya partiya \"Grazhdanskaya Platforma\"\n7. Politicheskaya partiya LDPR - Liberal’no-demokraticheskaya partiya Rossii\n8. Politicheskaya partiya \"Partiya narodnoy svobody\" (PARNAS)\n9. Vserossiyskaya politicheskaya partiya \"PARTIYA ROSTA\"\n10. Obshchestvennaya organizatsiya Vserossiyskaya politicheskaya partiya \"Grazhdanskaya Sila\"\n11. Politicheskaya partiya \"Rossiyskaya ob\"yedinennaya demokraticheskaya partiya \"YABLOKO\"\n12. Politicheskaya partiya \"KOMMUNISTICHESKAYA PARTIYA ROSSIYSKOY FEDERATSII\"\n13. Politicheskaya partiya \"PATRIOTY ROSSII\"\n14. Politicheskaya partiya SPRAVEDLIVAYA ROSSIYA\n\nDannyye okruzhnykh izbiratel’nykh komissiy o chisle otkrepitel’nykh udostovereniy\n\n\nChislo otkrepitel’nykh udostovereniy, poluchennykh okruzhnoy izbiratel’noy komissiyey\nChislo otkrepitel’nykh udostovereniy, vydannykh territorial’nym izbiratel’nym komissiyam\nChislo neispol’zovannykh otkrepitel’nykh udostovereniy, pogashennykh okruzhnoy izbiratel’noy komissiyey\nChislo otkrepitel’nykh udostovereniy, utrachennykh v okruzhnoy izbiratel’noy komissii",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 24,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-sah-Cyrl-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2012",
+      "language": "iso-639-2:sah",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Yakut (2012)",
+      "description": "Yakut, or Sakha, is a Turkic language spoken by the Yakut people of the Sakha\n    (Yakutiya) Republic of the Russian Federation. The BGN/PCGN system romanizes names\n    written in the Yakut Cyrillic alphabet.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 84,
+      "context_rules": 4,
+      "many_to_one": 8,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-sme-Latn-Latn-1984": {
     "class": "Interscript::Node::MetaData",
@@ -2244,7 +3294,14 @@
       "adjágas",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 2,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-srp-Cyrl-Latn-1962": {
     "class": "Interscript::Node::MetaData",
@@ -2265,7 +3322,14 @@
       "Šuplja Stena",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-srp-Cyrl-Latn-2005": {
     "class": "Interscript::Node::MetaData",
@@ -2286,7 +3350,42 @@
       "Šuplja Stena",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 60,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-syc-Syrc-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:syc",
+      "source_script": "Syrc",
+      "destination_script": "Latn",
+      "name": "Romanization System for Modern Syriac Script (BGN/PCGN 2011 System)",
+      "description": "The modern Syriac script is used today by Assyrian writers of the neo-Aramaic language.\n    This Romanization System may be applied to any toponyms written in this script as may be\n    encountered in parts of northern Iraq, Syria, northern Iran and eastern Turkey. The\n    Neo-Aramaic language has a degree of locally official status within Iraq, and accordingly\n    some bilingual Arabic and modern Syriac signage may be encountered.\n\n    The script is closely aligned to that of both Hebrew and Arabic, and, as these, is written\n    from right to left. In this Romanization System, “strong” consonants have been marked with\n    a sub-dot so as not to give a closer visual relation to either Arabic (which marks such\n    consonants with a cedilla) or Hebrew (which marks these with an underbar). The equivalences\n    where they exist in the Arabic and Hebrew scripts have also been shown only for a guide to\n    the cognate root.",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/693736/ROMANIZATION_OF_MODERN_SYRIAC.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ܒܝܬ",
+      "byt",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 7,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-tat-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -2307,7 +3406,14 @@
       "Ğil’miew",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 68,
+      "context_rules": 27,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-tgk-Cyrl-Latn-1994": {
     "class": "Interscript::Node::MetaData",
@@ -2328,7 +3434,42 @@
       "Tamomi odamon ozod ba dunyo meoyand va az lihozi manzilatu huquq bo ham barobarand.\nHama sohibi aqlu vijdonand, boyad nisbat ba yakdigar barodarvor munosabat namoyand.",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 4,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-tha-Thai-Latn-2002": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2002",
+      "language": "iso-639-2:tha",
+      "source_script": "Thai",
+      "destination_script": "Latn",
+      "name": "BGN/PCGN 2002 agreement — Romanization of Thai (Royal Institute of Thailand system)",
+      "description": "",
+      "url": "https://www.gov.uk/government/publications/romanization-systems",
+      "creation_date": "2000",
+      "nonstandard": {}
+    },
+    "test": [
+      "ภาษาไทย",
+      "phasathai",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 109,
+      "context_rules": 0,
+      "many_to_one": 19,
+      "one_to_many": 1
+    }
   },
   "bgnpcgn-tir-Ethi-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -2349,7 +3490,14 @@
       "yeziegĭnetĭ kĭbĭrĭ be ’itĭyop’ĭyachĭnĭ ts’enĭto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 276,
+      "context_rules": 41,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-tuk-Cyrl-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -2370,7 +3518,14 @@
       "Ashgabat",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 4,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-tuk-Cyrl-Latn-1993": {
     "class": "Interscript::Node::MetaData",
@@ -2391,7 +3546,42 @@
       "Aşgabat",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 30,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
+  },
+  "bgnpcgn-udm-Cyrl-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:udm",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization of Udmurt (2011)",
+      "description": "The BGN/PCGN system for Udmurt is designed for use in romanizing names written in the\n    Udmurt Cyrillic alphabet. Udmurt (sometimes known as Votyak) is a member of the Permian\n    branch of the Finno-Ugric languages and is an official language alongside Russian in the\n    Russian Federation's republic of Udmurtiya; it has existed in written form since the late\n    18th century, and first appeared in its present Cyrillic orthography in 1905.",
+      "url": "https://www.gov.uk/government/organisations/permanent-committee-on-geographical-names",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 76,
+      "context_rules": 2,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-ukr-Cyrl-Latn-1965": {
     "class": "Interscript::Node::MetaData",
@@ -2412,7 +3602,14 @@
       "Avdiyivs’ka Mis’krada",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-ukr-Cyrl-Latn-2019": {
     "class": "Interscript::Node::MetaData",
@@ -2433,7 +3630,14 @@
       "Alushta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 1,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-urd-Arab-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -2454,7 +3658,14 @@
       "Pālīr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 107,
+      "context_rules": 19,
+      "many_to_one": 10,
+      "one_to_many": 2
+    }
   },
   "bgnpcgn-uzb-Cyrl-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -2475,7 +3686,14 @@
       "Ŭzbek yozuwi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 18,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-uzb-Cyrl-Latn-2000": {
     "class": "Interscript::Node::MetaData",
@@ -2496,7 +3714,14 @@
       "O‘zbek yozuwi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 14,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "bgnpcgn-zho-Hans-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -2517,7 +3742,14 @@
       "zhongguo",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 7341,
+      "context_rules": 3,
+      "many_to_one": 384,
+      "one_to_many": 3
+    }
   },
   "bis-asm-Beng-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2538,7 +3770,14 @@
       "asmīẏā kbitā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 68,
+      "context_rules": 5,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "bis-ben-Beng-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2559,7 +3798,14 @@
       "ṭikā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 5,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "bis-dev-Deva-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2580,7 +3826,14 @@
       "hm",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 83,
+      "context_rules": 5,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "bis-guj-Gujr-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2601,7 +3854,14 @@
       "amit śāhnŏ kŏrŏnā ripŏrṭ 2 ŏgsṭē pŏjhiṭiv āvyŏ htŏ, tyārthī tēmnuṃ svāsthy sāruṃ nthī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 77,
+      "context_rules": 5,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "bis-kan-Kana-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2622,7 +3882,14 @@
       "īg vairl āguttide kṅgnā rṇāvut hḷēy viḍiyō",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 72,
+      "context_rules": 5,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "bis-mlm-Mlym-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2643,7 +3910,14 @@
       "svpnykkeāppṃ hōṭṭlil mntriputrṇ, citrṅṅḷ; 4 kōṭi kmmiṣniluṃ pṅkupṟṟi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 5,
+      "many_to_one": 19,
+      "one_to_many": 0
+    }
   },
   "bis-ori-Orya-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2664,7 +3938,14 @@
       "sāmprtik biśb sthitābsthāku cālēñj kruthibā dui mukhẏ prtidbndbī hēuchnti cīn ŏ ruṣ: iṃlṇḍ guindā adhikārī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 79,
+      "context_rules": 5,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "bis-pnj-Guru-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2685,7 +3966,14 @@
       "sdā jvāṉ rhō",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 5,
+      "many_to_one": 11,
+      "one_to_many": 0
+    }
   },
   "bis-tel-Telu-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2706,7 +3994,14 @@
       "ippuḍu idē kŏvlŏ ṭālīvuḍlŏ mrŏ mlṭīsṭārr rūpondnundni sinī vrgāllŏ vārtlu vinipistunnāyi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 5,
+      "many_to_one": 15,
+      "one_to_many": 0
+    }
   },
   "bis-tml-Taml-Latn-13194-1991": {
     "class": "Interscript::Node::MetaData",
@@ -2727,7 +4022,266 @@
       "iḷaiñrkḷiṉ uṟutiyāṉ mṉnilaiyai pirtiplikkiṟtu: nīṭ tērvil 85-90 ctvīt māṇvrkḷ pṅkēṟpu - rmēṣ pokriyāl",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 58,
+      "context_rules": 5,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
+  },
+  "bsi-bel-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:bel",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Byelorussian (White R.) column (the British system)",
+      "description": "BS 2979:1958, Table A, Byelorussian (White R.) column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian).",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Мінск",
+      "Minsk",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
+  },
+  "bsi-bul-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:bul",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Bulgarian column (the British system)",
+      "description": "BS 2979:1958, Table A, Bulgarian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian).",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "София",
+      "Sofiya",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
+  },
+  "bsi-chu-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:chu",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table D, Transliteration of Church Slavonic Cyrillic",
+      "description": "BS 2979:1958, Table D: transliteration of Church Slavonic Cyrillic. The table\n    covers the full Church Slavonic alphabet including the yuses, ksi, psi, fita\n    and izhitsa, with the letters' numerical values annotated.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
+  },
+  "bsi-ell-Grek-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:ell",
+      "source_script": "Grek",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table G, Transliteration of Greek characters",
+      "description": "BS 2979:1958, Table G: a letter-for-letter system for Greek, aimed at\n    cataloguers and providing a one-to-one correspondence between Greek and\n    Roman characters in both directions.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Α",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 49,
+      "context_rules": 68,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
+  },
+  "bsi-mkd-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:mkd",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Serbian & Macedonian (Macedonian) column (the British system)",
+      "description": "BS 2979:1958, Table A, Serbian & Macedonian (Macedonian) column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian).\n    The column is shared with Serbian; this map adds the Macedonian-specific\n    letters ѓ, ѕ and ќ to the shared rows.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Македонски Јазик",
+      "Makedonski Jazik",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 62,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
+  },
+  "bsi-ron-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:ron",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table E, Transliteration of Rumanian Cyrillic (Alfabetul Cirilic)",
+      "description": "BS 2979:1958, Table E: transliteration of Rumanian Cyrillic (Alfabetul Cirilic),\n    the Cyrillic alphabet used for Romanian until 1860. For transliteration of\n    Moldavian in the modern orthography, the table's companion note directs the\n    reader to Table C (ISO/R9) in Section 2.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 2,
+      "many_to_one": 10,
+      "one_to_many": 0
+    }
+  },
+  "bsi-rus-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:rus",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Russian column (the British system)",
+      "description": "BS 2979:1958, Table A, Russian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian); this map is the\n    Russian column. The Serbian and Macedonian column gives the latinica, the existing\n    Latin alphabet of Serbo-Croat. British Standard confirmed December 1998; the BSI\n    05-2000 reprint is the digitized edition.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Бюллетень",
+      "Byulleten’",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 72,
+      "context_rules": 0,
+      "many_to_one": 7,
+      "one_to_many": 1
+    }
+  },
+  "bsi-srp-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:srp",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Serbian column (the British system)",
+      "description": "BS 2979:1958, Table A, Serbian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian).\n    This map is the Serbian rows of the column; the Macedonian-specific letters\n    (ѓ, ѕ, ќ) are a separate map.",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Заштита биља",
+      "Zaštita bilja",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 56,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "bsi-ukr-Cyrl-Latn-1958": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "1958",
+      "language": "iso-639-2:ukr",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Ukrainian column (the British system)",
+      "description": "BS 2979:1958, Table A, Ukrainian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian).",
+      "url": "https://www.bsigroup.com",
+      "creation_date": "1958",
+      "nonstandard": {}
+    },
+    "test": [
+      "Української",
+      "Ukrayins’koyi",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 72,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "by-bel-Cyrl-Latn-1998": {
     "class": "Interscript::Node::MetaData",
@@ -2748,7 +4302,14 @@
       "Aršanski",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 31,
+      "context_rules": 8,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "by-bel-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -2769,7 +4330,42 @@
       "Aršanski",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "din-ara-Arab-Latn-31635-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31635-2011",
+      "language": "iso-639-2:ara",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "DIN 31635:2011-07 Transliteration des arabischen Alphabets",
+      "description": "DIN 31635:2011-07, section 6: transliteration of the Arabic alphabet, applicable\n    to classical and modern standard Arabic. Based on the 1935 recommendation of the\n    International Orientalists' Congress and nearly identical to ISO 233:1984, with\n    additional provisions in the notes for transliteration work. The norm's Persian,\n    Kurdish and Urdu sections are separate maps; its Ottoman-Turkish section gives\n    references only.",
+      "url": "https://www.din.de",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ء",
+      "",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 80,
+      "context_rules": 13,
+      "many_to_one": 9,
+      "one_to_many": 0
+    }
   },
   "din-grc-Grek-Latn-31634-2011-t1": {
     "class": "Interscript::Node::MetaData",
@@ -2790,7 +4386,42 @@
       "Ena prama monon me parakinēse ki emena na grapsō oti toutēn tēn patrida tēn echomen oloi mazi, kai sophoi ki amatheis kai plousioi kai phtōchoi kai politikoi kai stratiōtikoi kai oi pleon mikroteroi anthrōpoi; osoi agōnistēkamen, analogōs o katheis, echomen na zēsomen edō. To loipon doulepsamen oloi mazi, na tēn phylamen ki oloi mazi kai na mēn legei oute o dynatos «egō» oute o adynatos. Xerete pote na legei o katheis «egō»? Otan agōnistei monos tou kai phkiasei ē chalasei, na legei «egō»; otan omōs agōnizontai polloi kai phkianoun, tote na lene «emeis». Eimaste eis to «emeis» ki ochi eis to «egō». Kai eis to exēs na mathomen gnōsē, an thelomen na phkiasomen chōrion, na zēsomen oloi mazi.\n\nGiannēs Makrygiannēs.",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 283,
+      "context_rules": 20,
+      "many_to_one": 36,
+      "one_to_many": 2
+    }
+  },
+  "din-heb-Hebr-Latn-31636-2018": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31636-2018",
+      "language": "iso-639-2:heb",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "DIN 31636:2018-10 Information und Dokumentation - Umschrift des hebraeischen Alphabets",
+      "description": "Information and documentation -- Romanization of the Hebrew alphabet.\n    2018-10 edition, replacing DIN 31636:2011-01. The norm fixes the rendering of the\n    letters of the Hebrew alphabet (including Ivrit) in letters of the Latin alphabet.\n    This map implements the Hebrew (including Ivrit) column over vocalized input;\n    the Yiddish column of the same norm is a separate map.",
+      "url": "https://www.din.de",
+      "creation_date": "2018",
+      "nonstandard": {}
+    },
+    "test": [
+      "יִשְׂרָאֵל",
+      "yiśraʾel",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 59,
+      "context_rules": 39,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "din-hin-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2811,7 +4442,42 @@
       "gambhīra marījoṃ ke māmale meṃ bhārata dūsare nambara para",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 20,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
+  },
+  "din-hye-Armn-Latn-32706-2010": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "32706-2010",
+      "language": "iso-639-2:hye",
+      "source_script": "Armn",
+      "destination_script": "Latn",
+      "name": "DIN 32706:2010-01 Information und Dokumentation - Umschrift des armenischen Alphabets",
+      "description": "Information and documentation -- Romanization of the Armenian alphabet.\n    The norm fixes the rendering of the letters of the Armenian alphabet in letters of the\n    Latin alphabet and is suitable for all fields of application. It follows the principle\n    of transliteration and is based on library practice and on ISO 9985:1996.",
+      "url": "https://www.din.de",
+      "creation_date": "2010",
+      "nonstandard": {}
+    },
+    "test": [
+      "Ա",
+      "A",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 77,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 1
+    }
   },
   "din-kat-Geor-Latn-32707-2010": {
     "class": "Interscript::Node::MetaData",
@@ -2832,7 +4498,14 @@
       "xaop̕se",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 41,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "din-mar-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2853,7 +4526,14 @@
       "ṭhāṇe - jilhyāta budhavārī eka hajāra rugṇāñcī vāḍha, tara jaṇāñcyā mṛtyūcī nonda",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 2,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "din-nep-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2874,7 +4554,14 @@
       "lekhana",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 21,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "din-pli-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2895,7 +4582,14 @@
       "tena kho pana samayena vesāliyā avidūre kalandagāmo nāma atthi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "din-pra-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2916,7 +4610,14 @@
       "sṛṣṭisthitivināśānāṃ śaktibhūte sanātani",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "din-san-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -2937,7 +4638,14 @@
       "pustaka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 113,
+      "context_rules": 40,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "din-tam-Taml-Latn-33903-2016": {
     "class": "Interscript::Node::MetaData",
@@ -2958,7 +4666,42 @@
       "kārttikēyaṉ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 85,
+      "context_rules": 23,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
+  },
+  "din-yid-Hebr-Latn-31636-2018": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31636-2018-yid",
+      "language": "iso-639-2:yid",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "DIN 31636:2018-10 Information und Dokumentation - Umschrift des hebraeischen Alphabets (jiddische Spalte)",
+      "description": "Information and documentation -- Romanization of the Hebrew alphabet, Yiddish\n    column. 2018-10 edition, replacing DIN 31636:2011-01. This map implements the\n    Yiddish column of Table 1 with the Yiddish vowel table (Table 4) and the Yiddish\n    notes (section 9) of the norm. The Hebrew column is a separate map.",
+      "url": "https://www.din.de",
+      "creation_date": "2018",
+      "nonstandard": {}
+    },
+    "test": [
+      "א",
+      "ʾ",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 63,
+      "context_rules": 10,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "dos-nep-Deva-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -2979,7 +4722,14 @@
       "duhkh",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 1,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "elot-ell-Grek-Latn-743-1982-tl": {
     "class": "Interscript::Node::MetaData",
@@ -3000,7 +4750,14 @@
       "Éna práma mónon me parakíni̱se ki eména na grápso̱ óti toúti̱n ti̱n patrída ti̱n échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai fto̱choí kai politikoí kai stratio̱tikoí kai oi pléon mikróteroi ánthro̱poi; ósoi ago̱nistí̱kamen, analógo̱s o katheís, échomen na zí̱somen edó̱. To loipón doulépsamen óloi mazí, na ti̱n fylámen ki óloi mazí kai na mi̱n légei oúte o dynatós «egó̱» oúte o adýnatos. Xérete póte na légei o katheís «egó̱»? Ótan ago̱nisteí mónos tou kai fkiásei í̱ chalásei, na légei «egó̱»; ótan ómo̱s ago̱nízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó̱». Kai eis to exí̱s na máthomen gnó̱si̱, an thélomen na fkiásomen cho̱rión, na zí̱somen óloi mazí.\n\nGiánni̱s Makrygiánni̱s.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 81,
+      "context_rules": 40,
+      "many_to_one": 6,
+      "one_to_many": 1
+    }
   },
   "elot-ell-Grek-Latn-743-1982-ts": {
     "class": "Interscript::Node::MetaData",
@@ -3021,7 +4778,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 87,
+      "context_rules": 34,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "elot-ell-Grek-Latn-743-2001-tl": {
     "class": "Interscript::Node::MetaData",
@@ -3042,7 +4806,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "elot-ell-Grek-Latn-743-2001-ts": {
     "class": "Interscript::Node::MetaData",
@@ -3063,7 +4834,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "ggg-kat-Geor-Latn-2002": {
     "class": "Interscript::Node::MetaData",
@@ -3084,7 +4862,14 @@
       "tbilisi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 33,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "gki-bel-Cyrl-Latn-1992": {
     "class": "Interscript::Node::MetaData",
@@ -3105,7 +4890,14 @@
       "Sjamaški",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 10,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "gki-bel-Cyrl-Latn-2000": {
     "class": "Interscript::Node::MetaData",
@@ -3126,7 +4918,14 @@
       "Aršanski",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 65,
+      "context_rules": 8,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "gost-rus-Cyrl-Latn-16876-71-1983": {
     "class": "Interscript::Node::MetaData",
@@ -3147,7 +4946,14 @@
       "Anapa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 3,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "gost-rus-Cyrl-Latn-7.79-2000-2002": {
     "class": "Interscript::Node::MetaData",
@@ -3168,7 +4974,14 @@
       "adres",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 64,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "hk-yue-Hani-Latn-1888": {
     "class": "Interscript::Node::MetaData",
@@ -3189,7 +5002,14 @@
       "Tsin Yue Wan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 24932,
+      "context_rules": 4212,
+      "many_to_one": 376,
+      "one_to_many": 0
+    }
   },
   "icao-bel-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3210,7 +5030,14 @@
       "Babrykovich Aliaksandr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 91,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "icao-bul-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3231,7 +5058,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 1
+    }
   },
   "icao-fas-Arab-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3252,7 +5086,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 75,
+      "context_rules": 0,
+      "many_to_one": 9,
+      "one_to_many": 0
+    }
   },
   "icao-heb-Hebr-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3273,7 +5114,14 @@
       "MEDIYNAT YSEREEL",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 115,
+      "context_rules": 0,
+      "many_to_one": 29,
+      "one_to_many": 1
+    }
   },
   "icao-mkd-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3294,7 +5142,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "icao-rus-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3315,7 +5170,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "icao-srp-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3336,7 +5198,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 0,
+      "many_to_one": 20,
+      "one_to_many": 0
+    }
   },
   "icao-ukr-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -3357,7 +5226,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 90,
+      "context_rules": 0,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "iso-ara-Arab-Latn-233-1984": {
     "class": "Interscript::Node::MetaData",
@@ -3378,7 +5254,14 @@
       "Miṣr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 160,
+      "context_rules": 3,
+      "many_to_one": 30,
+      "one_to_many": 0
+    }
   },
   "iso-ara-Arab-Latn-233-2-1993": {
     "class": "Interscript::Node::MetaData",
@@ -3399,7 +5282,14 @@
       "Miṣr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 153,
+      "context_rules": 6,
+      "many_to_one": 29,
+      "one_to_many": 0
+    }
   },
   "iso-asm-Beng-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3420,7 +5310,14 @@
       "asamaīẏaā kabaitaā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 2,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-ben-Beng-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3441,7 +5338,14 @@
       "āgauẏaeraora haām̐ṭaura caoṭa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 81,
+      "context_rules": 0,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "iso-ell-Grek-Latn-843-1997-t1": {
     "class": "Interscript::Node::MetaData",
@@ -3462,7 +5366,14 @@
       "Éna práma mónon me parakínīse ki eména na grápsō óti toútīn tīn patrída tīn échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftōchoí kai politikoí kai stratiōtikoí kai oi pléon mikróteroi ánthrōpoi; ósoi agōnistī́kamen, analógōs o katheís, échomen na zī́somen edṓ. To loipón doulépsamen óloi mazí, na tīn fylámen ki óloi mazí kai na mīn légei oúte o dynatós «egṓ» oúte o adýnatos. Xérete póte na légei o katheís «egṓ»? Ótan agōnisteí mónos tou kai fkiásei ī́ chalásei, na légei «egṓ»; ótan ómōs agōnízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egṓ». Kai eis to exī́s na máthomen gnṓsī, an thélomen na fkiásomen chōrión, na zī́somen óloi mazí.\n\nGiánnīs Makrygiánnīs.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 3,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "iso-ell-Grek-Latn-843-1997-t2": {
     "class": "Interscript::Node::MetaData",
@@ -3483,7 +5394,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 6,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "iso-guj-Gujr-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3504,7 +5422,14 @@
       "amaita śaāhanao kaoraonaā raipaoratạ 2 ogasatạe paojhaitạiva āvayao hatao, tayaārathaī taemanauṁ savaāsathaya saārauṁ nathaī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 0,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "iso-hin-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3525,7 +5450,14 @@
       "hama",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-inc-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3546,7 +5478,14 @@
       "upamaukhayamaṁtarayaāṁcaī 'maoṭhaī' ghaoṣaṇaā; raājayaāta kaeṁdaraācayaā kaṛṣaī va kaāmagaāra vaidhaeyakaācaī aṁmalabajaāvaṇaī naāhaī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-jpn-Hrkt-Latn-3602-1989": {
     "class": "Interscript::Node::MetaData",
@@ -3567,7 +5506,14 @@
       "kan’ô",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 2,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-kan-Kana-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3588,7 +5534,14 @@
       "īga vaairala āgautataidae kaṁganaā raṇaāvauta haḷaēya vaiḍaiyaō",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 97,
+      "context_rules": 0,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "iso-kat-Geor-Latn-9984-1996": {
     "class": "Interscript::Node::MetaData",
@@ -3609,7 +5562,14 @@
       "xaop̕se",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 39,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-kor-Hang-Latn-1996-method1": {
     "class": "Interscript::Node::MetaData",
@@ -3630,7 +5590,14 @@
       "kkoch'i",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 38,
+      "context_rules": 1,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-kor-Hang-Latn-1996-method2": {
     "class": "Interscript::Node::MetaData",
@@ -3651,7 +5618,14 @@
       "ggoc'i",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 23,
+      "context_rules": 1,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-mal-Mlym-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3672,7 +5646,14 @@
       "svapnaykkaeāppam haōṭṭalai:la mantraipautra:ṇa, caitraṅṅa:ḷa; 4 kaōṭai kammaiṣanailaum paṅkaupaṟṟai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 133,
+      "context_rules": 3,
+      "many_to_one": 17,
+      "one_to_many": 0
+    }
   },
   "iso-mar-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3693,7 +5674,14 @@
       "ṭhaāṇae - jailahayaāta baudhavaāraī eka hajaāra raugaṇaāṁcaī vaāḍha, tara jaṇaāṁcayaā maṛtayaūcaī naoṁda",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-nep-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3714,7 +5702,14 @@
       "laekhana",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-ori-Orya-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3735,7 +5730,14 @@
       "saāmaparataika baiśaba sathaitaābasathaākau caālaeñaja karauthaibaā daui maukhaẏa parataidabanadabaī haeuchanatai caīna o rauṣa: iṁlaṇaḍa gauinadaā adhaikaāraī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 82,
+      "context_rules": 0,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "iso-pan-Guru-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3756,7 +5758,14 @@
       "paṁjaāba 'ca vadha raihaā ḵẖaudakauśaīāṃ daā raujhaāna",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 94,
+      "context_rules": 0,
+      "many_to_one": 18,
+      "one_to_many": 0
+    }
   },
   "iso-pli-Beng-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3777,7 +5786,14 @@
       "taena samayaena baudadhao bhagavaā vaerañajaāyaṁ vaiharatai nala়eraupaucaimanadamaūlae mahataā bhaikakhausaṅaghaena sadadhaiṁ pañacamatataehai bhaikakhausataehai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-pli-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3798,7 +5814,14 @@
       "taena khao pana samayaena vaesaālaiyaā avaidaūrae kalanadagaāmao naāma atathai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-pli-Sinh-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3819,7 +5842,14 @@
       "taena samayaena baudadhao bhagavaā vaerañajaāyaṁ vaiharatai naḷaeraupaucaimanadamaūlae mahataā bhaikakhausaṅaghaena sadadhaiṁ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 97,
+      "context_rules": 0,
+      "many_to_one": 18,
+      "one_to_many": 0
+    }
   },
   "iso-pli-Thai-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3840,7 +5870,14 @@
       "oy kp–̥pokṭīh̄ipi xp–̥pemy–̥ẙ;",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-pra-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3861,7 +5898,14 @@
       "saṛṣaṭaisathaitaivainaāśaānaāṁ śakataibhaūtae sanaātanai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "iso-prs-Arab-Latn-233-3-1999": {
     "class": "Interscript::Node::MetaData",
@@ -3882,7 +5926,14 @@
       "âẕar",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 72,
+      "context_rules": 17,
+      "many_to_one": 16,
+      "one_to_many": 35
+    }
   },
   "iso-rus-Cyrl-Latn-9-1995": {
     "class": "Interscript::Node::MetaData",
@@ -3903,7 +5954,14 @@
       null,
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 251,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "iso-san-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3924,7 +5982,14 @@
       "paūraṇamadaḥ paūraṇamaidaṁ paūraṇaāta paūraṇamaudacayatae",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 99,
+      "context_rules": 0,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "iso-tam-Taml-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3945,7 +6010,14 @@
       "kaāratataikaēyaṉa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 62,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "iso-tel-Telu-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -3966,7 +6038,14 @@
       "ipapauḍau idaē kaōvalaō ṭaālaīvauḍalaō maraō malaṭaīsaṭaārara raūpaoṁdanauṁdanai sainaī varagaālalaō vaāratalau vainaipaisataunanaāyai",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 99,
+      "context_rules": 0,
+      "many_to_one": 15,
+      "one_to_many": 0
+    }
   },
   "iso-tha-Thai-Latn-11940-1998": {
     "class": "Interscript::Node::MetaData",
@@ -3987,7 +6066,14 @@
       "p̣hās̛̄āịthy",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 86,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "kp-kor-Hang-Latn-2002": {
     "class": "Interscript::Node::MetaData",
@@ -4008,7 +6094,14 @@
       "Urisan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 253,
+      "context_rules": 80,
+      "many_to_one": 58,
+      "one_to_many": 0
+    }
   },
   "lshk-yue-Hani-Latn-jyutping-1993": {
     "class": "Interscript::Node::MetaData",
@@ -4029,7 +6122,14 @@
       "jat1ji6saam1sei3ng5luk6cat1baat3gau2sap6",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 22276,
+      "context_rules": 6678,
+      "many_to_one": 1363,
+      "one_to_many": 0
+    }
   },
   "masm-mon-Cyrl-Latn-5217-2012": {
     "class": "Interscript::Node::MetaData",
@@ -4050,7 +6150,14 @@
       "Avarga, khalbaga, aav",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "masm-mon-Latn-Cyrl-5217-2012": {
     "class": "Interscript::Node::MetaData",
@@ -4071,7 +6178,14 @@
       "Аварга, халбага, аав",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "CONTEXT_ONLY",
+      "pairs": 72,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 4
+    }
   },
   "mext-jpn-Hrkt-Latn-1954": {
     "class": "Interscript::Node::MetaData",
@@ -4092,7 +6206,14 @@
       "kan'ô",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 267,
+      "context_rules": 5,
+      "many_to_one": 126,
+      "one_to_many": 0
+    }
   },
   "moct-kor-Hang-Latn-2000": {
     "class": "Interscript::Node::MetaData",
@@ -4113,7 +6234,14 @@
       "Bulguksa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 262,
+      "context_rules": 60,
+      "many_to_one": 59,
+      "one_to_many": 0
+    }
   },
   "mofa-jpn-Hrkt-Latn-1989": {
     "class": "Interscript::Node::MetaData",
@@ -4134,7 +6262,14 @@
       "NAMBA",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 301,
+      "context_rules": 8,
+      "many_to_one": 116,
+      "one_to_many": 1
+    }
   },
   "mv-div-Thaa-Latn-1987": {
     "class": "Interscript::Node::MetaData",
@@ -4155,7 +6290,14 @@
       "en’boodhoo",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 35,
+      "context_rules": 50,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "mvd-bel-Cyrl-Latn-2008": {
     "class": "Interscript::Node::MetaData",
@@ -4176,7 +6318,14 @@
       "Jeva",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 73,
+      "context_rules": 30,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "mvd-bel-Cyrl-Latn-2010": {
     "class": "Interscript::Node::MetaData",
@@ -4197,7 +6346,14 @@
       "Babrykovich Aliaksandr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 4,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "mvd-rus-Cyrl-Latn-2008": {
     "class": "Interscript::Node::MetaData",
@@ -4218,7 +6374,14 @@
       "Eva",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 69,
+      "context_rules": 2,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "mvd-rus-Cyrl-Latn-2010": {
     "class": "Interscript::Node::MetaData",
@@ -4239,7 +6402,14 @@
       "Eva",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 1,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-ara-Arab-Latn-2004": {
     "class": "Interscript::Node::MetaData",
@@ -4260,7 +6430,14 @@
       "Miṣr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-ara-Arab-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4281,7 +6458,14 @@
       "Miṣr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 17,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "odni-aze-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4302,7 +6486,14 @@
       "Rashad Sadykhov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 76,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "odni-bel-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4323,7 +6514,14 @@
       "Mikhail",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 67,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "odni-bul-Cyrl-Latn-2005": {
     "class": "Interscript::Node::MetaData",
@@ -4344,7 +6542,14 @@
       "Dobri Khristov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 60,
+      "context_rules": 0,
+      "many_to_one": 4,
+      "one_to_many": 0
+    }
   },
   "odni-bul-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4365,7 +6570,14 @@
       "Dobri Khristov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 16,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "odni-che-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4386,7 +6598,14 @@
       "Ilyas Akhmadkant",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 4,
+      "context_rules": 3,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "odni-fas-Arab-Latn-2004": {
     "class": "Interscript::Node::MetaData",
@@ -4407,7 +6626,14 @@
       "musa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 86,
+      "context_rules": 7,
+      "many_to_one": 20,
+      "one_to_many": 1
+    }
   },
   "odni-fas-Arab-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4428,7 +6654,14 @@
       "musa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 85,
+      "context_rules": 7,
+      "many_to_one": 19,
+      "one_to_many": 1
+    }
   },
   "odni-hin-Deva-Latn-2004": {
     "class": "Interscript::Node::MetaData",
@@ -4449,7 +6682,14 @@
       "dilli",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 71,
+      "context_rules": 0,
+      "many_to_one": 20,
+      "one_to_many": 1
+    }
   },
   "odni-hin-Deva-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4470,7 +6710,14 @@
       "hsn mohmmd",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 20,
+      "one_to_many": 0
+    }
   },
   "odni-kat-Geor-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4491,7 +6738,14 @@
       "baqaqi",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 33,
+      "context_rules": 0,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "odni-kaz-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4512,7 +6766,14 @@
       "Bekzat Sattarkhanov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 80,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "odni-kir-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4533,7 +6794,14 @@
       "Guljigit Kalykov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 68,
+      "context_rules": 0,
+      "many_to_one": 8,
+      "one_to_many": 0
+    }
   },
   "odni-kor-Hang-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4554,7 +6822,42 @@
       "Kim Yo’ng-su",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 1,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
+  },
+  "odni-kur-Arab-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "odni",
+      "id": "2011",
+      "language": "iso-639-2:kur",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ICS-630-01 Romanization of Kurdish Personal Names (2011)",
+      "description": "This system is the Intelligence Community standard for the\n    transliteration of Kurdish names that will be applied to all\n    final written reports and products for IC consumers. It is\n    not intended to eliminate variations of a name that can\n    contribute forensic information. Rather, it is to provide an\n    IC standard Romanized (English) transliteration from Kurdish\n    that can then be linked to forensic information in ways that\n    will help identify the referent of a name.\n\n    The system uses the 26 letters of the standard (English)\n    Roman alphabet plus the apostrophe. Some ambiguities in the\n    Romanized form will occur without the use of diacritics.\n    Within the context of a report, where additional information\n    about the individual is provided, the referent will be\n    clearly identified. The system is used in conjunction with\n    on-line tools, name dictionaries, and lists containing\n    conventional spellings of names of well-known individuals.\n\n    This system does not apply to names of Kurds from Turkey or\n    other regions where Roman script is used. For non-Kurdish\n    names, use the relevant IC transliteration standard for\n    names from that language. Names of individuals from\n    languages written in Roman letters are spelled as they are\n    spelled in those languages.\n\n    In cases where an individual's name has already been\n    transliterated in a variant spelling, that variant is\n    indicated in parentheses immediately following its rendition\n    in the transliteration standard. If the original Cyrillic or\n    Perso-Arabic-script spelling is known, that spelling should\n    also appear in parentheses following the name, following\n    best practices of the issuing organization and taking into\n    consideration information system capabilities. This\n    convention is designed to ensure that vital forensic\n    information is not lost.\n\n    For active senior government officials listed in the online\n    CIA World Factbook and the online directory of Chiefs of\n    State and Cabinet Members of Foreign Governments, the\n    spellings given in those reference works are used in place\n    of the IC Standard. For individuals no longer listed, the IC\n    Standard spelling appears first, with the previous reference\n    spelling in parentheses at first usage.\n\n    There is an effort in the region to purge Kurdish of Arabic\n    vocabulary, influencing how Kurdish names borrowed from\n    Arabic appear, especially in official publications. Defer to\n    the Kurdish IC Standard in these cases.",
+      "url": "",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ئومێد",
+      "Umed",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 78,
+      "context_rules": 0,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "odni-mkd-Cyrl-Latn-2005": {
     "class": "Interscript::Node::MetaData",
@@ -4575,7 +6878,14 @@
       "Biljana",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-mkd-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4596,7 +6906,14 @@
       "Biljana",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 63,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-prs-Arab-Latn-2004": {
     "class": "Interscript::Node::MetaData",
@@ -4617,7 +6934,14 @@
       "musa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 11,
+      "context_rules": 2,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "odni-prs-Arab-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4638,7 +6962,14 @@
       "musa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 12,
+      "context_rules": 2,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "odni-pus-Arab-Latn-2011": {
     "class": "Interscript::Node::MetaData",
@@ -4659,7 +6990,14 @@
       "Hassan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 46,
+      "context_rules": 9,
+      "many_to_one": 7,
+      "one_to_many": 1
+    }
   },
   "odni-rus-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4680,7 +7018,14 @@
       "Irina Ivanovna Nikitina",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-srp-Cyrl-Latn-2005": {
     "class": "Interscript::Node::MetaData",
@@ -4701,7 +7046,14 @@
       "Gojko Mitic",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "odni-srp-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4722,7 +7074,14 @@
       "Gojko Mitic",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 60,
+      "context_rules": 0,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "odni-tat-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4743,7 +7102,14 @@
       "Rustam Abdrashitov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 0,
+      "many_to_one": 10,
+      "one_to_many": 0
+    }
   },
   "odni-tgk-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4764,7 +7130,14 @@
       "Parvona Jamshedov",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 74,
+      "context_rules": 0,
+      "many_to_one": 8,
+      "one_to_many": 0
+    }
   },
   "odni-tuk-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4785,7 +7158,14 @@
       "Akgyul",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 76,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "odni-uig-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4806,7 +7186,14 @@
       "Zordun Sabir",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 70,
+      "context_rules": 0,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "odni-ukr-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4827,7 +7214,14 @@
       "Andriy",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "odni-urd-Arab-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4848,7 +7242,14 @@
       "ishal tsakr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 54,
+      "context_rules": 0,
+      "many_to_one": 10,
+      "one_to_many": 0
+    }
   },
   "odni-uzb-Cyrl-Latn-2015": {
     "class": "Interscript::Node::MetaData",
@@ -4869,7 +7270,42 @@
       "Farkhod Tojiev",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 84,
+      "context_rules": 0,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
+  },
+  "royin-tha-Thai-Latn-1999": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "royin",
+      "id": "1999",
+      "language": "iso-639-2:tha",
+      "source_script": "Thai",
+      "destination_script": "Latn",
+      "name": "Royal Thai General System of Transcription (1999) — phoneme-to-RTGS stage",
+      "description": "",
+      "url": "http://www.royin.go.th/wp-content/uploads/royin-ebook/276/FileUpload/758_6484.pdf",
+      "creation_date": "1999",
+      "nonstandard": {}
+    },
+    "test": [
+      "k a ˨˩ . k aː ˧",
+      "kaka",
+      null
+    ],
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 20,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "sac-zho-Hans-Latn-1979": {
     "class": "Interscript::Node::MetaData",
@@ -4890,7 +7326,14 @@
       "yun2hu4qi2wu3",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 18617,
+      "context_rules": 1818,
+      "many_to_one": 1131,
+      "one_to_many": 0
+    }
   },
   "sasm-mon-Mong-Latn-general-1978": {
     "class": "Interscript::Node::MetaData",
@@ -4911,7 +7354,14 @@
       "ordos hota",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 32,
+      "context_rules": 0,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "sasm-mon-Mong-Latn-phonetic-1978": {
     "class": "Interscript::Node::MetaData",
@@ -4932,7 +7382,14 @@
       "ôrdôs hôta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 2,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "ses-ara-Arab-Latn-1930": {
     "class": "Interscript::Node::MetaData",
@@ -4953,7 +7410,14 @@
       "Sharm el-Sheikh",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 38,
+      "context_rules": 40,
+      "many_to_one": 7,
+      "one_to_many": 0
+    }
   },
   "stategeocadastre-ukr-Cyrl-Latn-1993": {
     "class": "Interscript::Node::MetaData",
@@ -4974,7 +7438,14 @@
       "Kamianka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 68,
+      "context_rules": 0,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "ua-ukr-Cyrl-Latn-1996": {
     "class": "Interscript::Node::MetaData",
@@ -4995,7 +7466,14 @@
       "Alushta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 2,
+      "many_to_one": 3,
+      "one_to_many": 0
+    }
   },
   "ua-ukr-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -5016,7 +7494,14 @@
       "OLEKSANDR YAN",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 20,
+      "context_rules": 1,
+      "many_to_one": 3,
+      "one_to_many": 2
+    }
   },
   "ua-ukr-Cyrl-Latn-2010": {
     "class": "Interscript::Node::MetaData",
@@ -5037,7 +7522,14 @@
       "Alushta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 8,
+      "context_rules": 0,
+      "many_to_one": 1,
+      "one_to_many": 2
+    }
   },
   "un-amh-Ethi-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -5058,7 +7550,14 @@
       "Ye̠zegi̠ne̠ti̠ Ki̠bi̠ri̠ Be̠ Iti̠yop’i̠yachi̠ni̠ Ts’e̠ni̠to",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 249,
+      "context_rules": 32,
+      "many_to_one": 24,
+      "one_to_many": 0
+    }
   },
   "un-ara-Arab-Latn-1971": {
     "class": "Interscript::Node::MetaData",
@@ -5079,7 +7578,14 @@
       "K͟haybar",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 31,
+      "context_rules": 0,
+      "many_to_one": 6,
+      "one_to_many": 0
+    }
   },
   "un-ara-Arab-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5100,7 +7606,14 @@
       "Mişr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 28,
+      "context_rules": 0,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "un-ara-Arab-Latn-2017": {
     "class": "Interscript::Node::MetaData",
@@ -5121,7 +7634,14 @@
       "Mis̱r",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 159,
+      "context_rules": 17,
+      "many_to_one": 30,
+      "one_to_many": 0
+    }
   },
   "un-asm-Beng-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5142,7 +7662,14 @@
       "asamīyā kabitā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 65,
+      "context_rules": 39,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "un-bel-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -5163,7 +7690,14 @@
       "Aršanski",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-ben-Beng-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -5184,7 +7718,14 @@
       "rka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 363,
+      "context_rules": 0,
+      "many_to_one": 15,
+      "one_to_many": 2
+    }
   },
   "un-bul-Cyrl-Latn-1977": {
     "class": "Interscript::Node::MetaData",
@@ -5205,7 +7746,14 @@
       "nunatak Abrit",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 60,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "un-ell-Grek-Latn-1987-phonetic": {
     "class": "Interscript::Node::MetaData",
@@ -5226,7 +7774,14 @@
       "ɛnɑ prɑmɑ monon mɛ pɑrɑkinisɛ ki ɛmɛnɑ nɑ ɣrɑpso oti tutin tin pɑtriðɑ tin ɛxomɛn oli mɑzi,\n\nkɛ sofi ki ɑmɑθis kɛ plusii kɛ ftoxi kɛ politiki kɛ strɑtiotiki kɛ i plɛon mikrotɛri ɑnθropi;\n\nosi ɑɣonistikɑmɛn, ɑnɑloɣos o kɑθis, ɛxomɛn nɑ zisomɛn ɛðo.\n\nto lipon ðulɛpsɑmɛn oli mɑzi, nɑ tin filɑmɛn ki oli mɑzi kɛ nɑ min lɛɣi utɛ o ðinɑtos «ɛɣo» utɛ o ɑðinɑtos.\n\nksɛrɛtɛ potɛ nɑ lɛɣi o kɑθis «ɛɣo»? otɑn ɑɣonisti monos tu kɛ fkiɑsi i xɑlɑsi, nɑ lɛɣi «ɛɣo»;\n\notɑn omos ɑɣonizondɛ poli kɛ fkiɑnun, totɛ nɑ lɛnɛ «ɛmis». imɑstɛ is to «ɛmis» ki oxi is to «ɛɣo».\n\nkɛ is to ɛksis nɑ mɑθomɛn ɣnosi, ɑn θɛlomɛn nɑ fkiɑsomɛn xorion, nɑ zisomɛn oli mɑzi.\n\nɣiɑnis mɑkriɣiɑnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 99,
+      "context_rules": 50,
+      "many_to_one": 27,
+      "one_to_many": 0
+    }
   },
   "un-ell-Grek-Latn-1987-tl": {
     "class": "Interscript::Node::MetaData",
@@ -5247,7 +7802,14 @@
       "Éna práma mónon me parakíni̱se ki eména na grápso̱ óti toúti̱n ti̱n patrída ti̱n échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai fto̱choí kai politikoí kai stratio̱tikoí kai oi pléon mikróteroi ánthro̱poi; ósoi ago̱nistí̱kamen, analógo̱s o katheís, échomen na zí̱somen edó̱. To loipón doulépsamen óloi mazí, na ti̱n fylámen ki óloi mazí kai na mi̱n légei oúte o dynatós «egó̱» oúte o adýnatos. Xérete póte na légei o katheís «egó̱»? Ótan ago̱nisteí mónos tou kai fkiásei í̱ chalásei, na légei «egó̱»; ótan ómo̱s ago̱nízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó̱». Kai eis to exí̱s na máthomen gnó̱si̱, an thélomen na fkiásomen cho̱rión, na zí̱somen óloi mazí.\n\nGiánni̱s Makrygiánni̱s.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-ell-Grek-Latn-1987-ts": {
     "class": "Interscript::Node::MetaData",
@@ -5268,7 +7830,14 @@
       "Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-guj-Gujr-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5289,7 +7858,14 @@
       "amita shāhanŏ kŏrŏnā ripŏrṭa 2 ŏgasṭĕ pŏjhiṭiva āvyŏ hatŏ, tyārathī tĕmanuṁ svāsthya sāruṁ nathī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 77,
+      "context_rules": 34,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "un-hin-Deva-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -5310,7 +7886,14 @@
       "dillī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 107,
+      "context_rules": 80,
+      "many_to_one": 10,
+      "one_to_many": 0
+    }
   },
   "un-kan-Kana-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -5331,7 +7914,14 @@
       "karṇāṭaka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 77,
+      "context_rules": 34,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "un-mal-Mlym-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5352,7 +7942,14 @@
       "chainaykkĕtirĕ laḍākkil sadāsajjaṃ; yuĕsilninn 72,500 sig–16 ṟaiphiḷ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 91,
+      "context_rules": 37,
+      "many_to_one": 13,
+      "one_to_many": 0
+    }
   },
   "un-mar-Deva-Latn-2016": {
     "class": "Interscript::Node::MetaData",
@@ -5373,7 +7970,14 @@
       "mahārāṣhṭr",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 11,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-mkd-Cyrl-Latn-1977": {
     "class": "Interscript::Node::MetaData",
@@ -5394,7 +7998,14 @@
       "Makedonija",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 62,
+      "context_rules": 4,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-mon-Mong-Latn-general-2013": {
     "class": "Interscript::Node::MetaData",
@@ -5415,7 +8026,14 @@
       "ordos hota",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-mon-Mong-Latn-phonetic-2013": {
     "class": "Interscript::Node::MetaData",
@@ -5436,7 +8054,14 @@
       "ôrdôs hôta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-nep-Deva-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5457,7 +8082,14 @@
       "nepāl",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 80,
+      "many_to_one": 11,
+      "one_to_many": 0
+    }
   },
   "un-nep-Deva-Latn-2013": {
     "class": "Interscript::Node::MetaData",
@@ -5478,7 +8110,14 @@
       "nepāl",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-ori-Orya-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5499,7 +8138,14 @@
       "rka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 81,
+      "context_rules": 37,
+      "many_to_one": 11,
+      "one_to_many": 0
+    }
   },
   "un-pan-Guru-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5520,7 +8166,14 @@
       "paṁzāba 'cha vadha rihā khaḳhudakusḳhīāṁ dā rujhāna",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 155,
+      "context_rules": 66,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "un-prs-Arab-Latn-1967": {
     "class": "Interscript::Node::MetaData",
@@ -5541,7 +8194,14 @@
       "Anjīrah",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 75,
+      "context_rules": 19,
+      "many_to_one": 7,
+      "one_to_many": 0
+    }
   },
   "un-rus-Cyrl-Latn-1987": {
     "class": "Interscript::Node::MetaData",
@@ -5562,7 +8222,14 @@
       "Anapa",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 8,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "un-sin-Sinh-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5583,7 +8250,14 @@
       "shīra laṁkāve kīraḍāva itihāsaye ihaḷama tæ̆nakaṭa genna kaṭayutu karanavā",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 89,
+      "context_rules": 35,
+      "many_to_one": 16,
+      "one_to_many": 0
+    }
   },
   "un-srp-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -5604,7 +8278,14 @@
       "Šuplja Stena",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-tam-Taml-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5625,7 +8306,14 @@
       "al̮intu poṉa nakarattil , tŏlaintu poṉa nāṉ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 66,
+      "context_rules": 23,
+      "many_to_one": 12,
+      "one_to_many": 0
+    }
   },
   "un-tel-Telu-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5646,7 +8334,14 @@
       "tamiḷanāḍu",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 83,
+      "context_rules": 35,
+      "many_to_one": 14,
+      "one_to_many": 0
+    }
   },
   "un-ukr-Cyrl-Latn-1998": {
     "class": "Interscript::Node::MetaData",
@@ -5667,7 +8362,14 @@
       "OLEKSANDR ÂN",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 6,
+      "context_rules": 0,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "un-ukr-Cyrl-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -5688,7 +8390,14 @@
       "Alushta",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "un-urd-Arab-Latn-1972": {
     "class": "Interscript::Node::MetaData",
@@ -5709,7 +8418,14 @@
       "Bvghdī",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 105,
+      "context_rules": 19,
+      "many_to_one": 21,
+      "one_to_many": 3
+    }
   },
   "var-amh-Ethi-Latn-eae-2003": {
     "class": "Interscript::Node::MetaData",
@@ -5730,7 +8446,14 @@
       "yäzegənätə kəbərə bä ʾitəyoṗəyačənə ṣänəto",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 288,
+      "context_rules": 0,
+      "many_to_one": 5,
+      "one_to_many": 0
+    }
   },
   "var-ara-Arab-Arab-rababa": {
     "class": "Interscript::Node::MetaData",
@@ -5751,7 +8474,14 @@
       "قِطْرَ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-gez-Ethi-Latn-eae-2003": {
     "class": "Interscript::Node::MetaData",
@@ -5772,7 +8502,14 @@
       "bäqädami gäbərä ʾəgəziʾabəḥerə sämayä wämədərä",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-hin-Deva-Latn-hunterian-1872": {
     "class": "Interscript::Node::MetaData",
@@ -5793,7 +8530,14 @@
       "paraipakka",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 108,
+      "context_rules": 4,
+      "many_to_one": 28,
+      "one_to_many": 0
+    }
   },
   "var-jpn-Hrkt-Latn-hepburn-1886": {
     "class": "Interscript::Node::MetaData",
@@ -5814,7 +8558,14 @@
       "gumma",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 264,
+      "context_rules": 5,
+      "many_to_one": 127,
+      "one_to_many": 0
+    }
   },
   "var-jpn-Hrkt-Latn-hepburn-1954": {
     "class": "Interscript::Node::MetaData",
@@ -5835,7 +8586,14 @@
       "kagomma",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 264,
+      "context_rules": 5,
+      "many_to_one": 126,
+      "one_to_many": 0
+    }
   },
   "var-kor-Hang-Hang-jamo": {
     "class": "Interscript::Node::MetaData",
@@ -5856,7 +8614,14 @@
       "안녕",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 11172,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-kor-Hang-Latn-mr-1939": {
     "class": "Interscript::Node::MetaData",
@@ -5877,7 +8642,14 @@
       "kugyŏng",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 23,
+      "context_rules": 295,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-kor-Kore-Hang-2013": {
     "class": "Interscript::Node::MetaData",
@@ -5898,7 +8670,14 @@
       "일일일",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 59616,
+      "context_rules": 0,
+      "many_to_one": 2422,
+      "one_to_many": 114
+    }
   },
   "var-kor-Kore-Latn-mr-1939": {
     "class": "Interscript::Node::MetaData",
@@ -5919,7 +8698,14 @@
       "Pangmulgwan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-mar-Deva-Latn-hunterian-1872": {
     "class": "Interscript::Node::MetaData",
@@ -5940,7 +8726,14 @@
       "thaānae - jailhyaāta baudhawaāraī eka hajaāra raugnaānchaī waādha, tara janaānchyaā marityaūchaī naonda",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-mon-Mong-Latn-1930": {
     "class": "Interscript::Node::MetaData",
@@ -5961,7 +8754,14 @@
       "man-u ulus-un nejislel kota ulaganbagatur bol 80 000 sikam kymyn-tei, ulus-un olan nejite-jin, aƶu akui-jin tөb gaƶar-ud orosigsan jekeken oron bolun-a.\ntus ulus-un dotor-a-aça garku tygykei ƶujil-i bolbasuragulku aƶu yiledbyri-jin gaƶar-ud-i bajigulku ni çikula.",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 28,
+      "context_rules": 2,
+      "many_to_one": 2,
+      "one_to_many": 0
+    }
   },
   "var-mon-Mong-Latn-lessing": {
     "class": "Interscript::Node::MetaData",
@@ -5982,7 +8782,14 @@
       "køkexota",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 35,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "var-mon-Mong-Latn-vpmc": {
     "class": "Interscript::Node::MetaData",
@@ -6003,7 +8810,14 @@
       "q-a",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 33,
+      "context_rules": 2,
+      "many_to_one": 1,
+      "one_to_many": 0
+    }
   },
   "var-pra-Deva-Latn-iast-1912": {
     "class": "Interscript::Node::MetaData",
@@ -6024,7 +8838,14 @@
       "naitayaḥ saravagataḥ sathaāṇauracalao’yaṃ sanaātanaḥ",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSLESS_ONE_TO_ONE",
+      "pairs": 0,
+      "context_rules": 0,
+      "many_to_one": 0,
+      "one_to_many": 0
+    }
   },
   "var-san-Deva-Latn-iast-1912": {
     "class": "Interscript::Node::MetaData",
@@ -6045,7 +8866,14 @@
       "paūraṇamadaḥ paūraṇamaidaṃ paūraṇaāta paūraṇamaudacayatae",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 69,
+      "context_rules": 0,
+      "many_to_one": 17,
+      "one_to_many": 0
+    }
   },
   "var-zho-Hani-Latn-wd-1979": {
     "class": "Interscript::Node::MetaData",
@@ -6066,6 +8894,13 @@
       "Hsi-nan",
       null
     ],
-    "skip_js": false
+    "skip_js": false,
+    "invertibility": {
+      "verdict": "LOSSY_MANY_TO_ONE",
+      "pairs": 22412,
+      "context_rules": 5081,
+      "many_to_one": 396,
+      "one_to_many": 0
+    }
   }
 }

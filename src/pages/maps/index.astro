@@ -22,6 +22,14 @@ interface MapEntry {
   test?: (string | null)[]
 }
 
+interface Invertibility {
+  verdict: string
+  pairs: number
+  context_rules?: number
+  many_to_one: number
+  one_to_many: number
+}
+
 const entries = Object.entries(catalogue).map(([code, entry]) => ({
   code,
   ...entry,
@@ -94,6 +102,8 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
         year: e.data.creation_date ?? e.data.id,
         language: e.data.language,
         description: e.data.description,
+        invertibility:
+          (e as unknown as { invertibility?: Invertibility }).invertibility ?? null,
         hasTest: Boolean(e.test && e.test[0]),
         testInput: e.test?.[0] ?? null,
         testExpected: e.test?.[1] ?? null,

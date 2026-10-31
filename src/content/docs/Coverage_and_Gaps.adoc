@@ -1,0 +1,62 @@
+= Coverage and gaps
+
+Interscript ships a registry of authority-backed transliteration
+systems. This page states what is covered today, what is not, and how
+the gap list is tracked. Every claim here links to a source you can
+check.
+
+== What is covered
+
+The map registry contains **318 systems** drawn from
+https://github.com/interscript/maps[the maps repository] — each an
+executable, test-carrying transliteration map with a named authority
+and source document. Browse them on the
+https://interscript.org/maps[map catalogue]; every system has its own
+page with its description, source document, scripts, mapping counts,
+invertibility class, a live in-browser preview, and its full rule
+chart.
+
+Invertibility is measured per system and recorded in the
+https://github.com/interscript/maps/tree/main/docs/coverage[coverage
+ledger]: systems are classed as lossless one-to-one (reversible),
+lossy many-to-one, or context-only. The counts are re-derived from the
+maps themselves, not asserted.
+
+== What is not covered yet
+
+The open queue is tracked as work orders in
+https://github.com/interscript/interscript-models/tree/main/TODO.sota[the
+models repository's campaign ledger]. The remaining systems, by
+source:
+
+* *DIN* — 1460-2 (Cyrillic, part 2), 31635 (Persian, Kurdish and Urdu
+  columns; the Arabic column is shipped), 31636 (Yiddish column; the
+  Hebrew column is shipped), 32708.
+* *BSI PD 6505:1982* — the romanization of Korean (a mechanical BSI
+  system, not McCune-Reischauer); transcription from the scan is in
+  progress.
+* *ISO* — ISO 9 non-Russian Cyrillic coverage check, ISO 259 Hebrew
+  letter table, ISO 7089/7098 Chinese pinyin, and the remaining ISO
+  15919 Indic scripts.
+* *ALA-LC* — the remaining systems of the ALA-LC romanization guide
+  beyond the 55 ALA-LC maps already in the registry, queued in
+  batches.
+* *ICAO and UNGEGN* — current source documents need to be diffed
+  against the registry.
+
+== Neural lines with open targets
+
+The neural (learned) model lines and their open quality targets are
+tracked in the same ledger. Where a line's next step depends on a
+license or a dataset only the project owner can grant — additional
+Hebrew vocalization data, commercial-license Urdu dictionaries, the
+SEAlang and full Chuon Nath sources for Khmer — that gate is recorded
+as owner-held and the line waits.
+
+== How to check any of this
+
+* Registry source: https://github.com/interscript/maps[maps repo]
+* Coverage ledger:
+  https://github.com/interscript/maps/tree/main/docs/coverage[maps/docs/coverage]
+* Campaign ledger (what is open, what shipped, what is blocked):
+  https://github.com/interscript/interscript-models/tree/main/TODO.sota[interscript-models/TODO.sota]

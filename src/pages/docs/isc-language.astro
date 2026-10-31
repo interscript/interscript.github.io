@@ -65,10 +65,8 @@ const tests = `tests { "input" -> "expected" }`
     <h2>Rules and contexts</h2>
     <pre><code>{rules}</code></pre>
     <p><code>before</code>/<code>after</code> are zero-width
-    lookbehind/lookahead. <code>boundary</code> is a zero-width word edge.
-    <code>not_before</code>/<code>not_after</code> negate.
-    <strong>There is no alternation operator</strong> — alternatives are
-    separate rules.</p>
+    lookbehind/lookahead. <code>boundary</code> is a zero-width
+    word edge. <code>not_before</code>/<code>not_after</code> negate. <strong>There is no alternation operator</strong> — alternatives are separate rules.</p>
 
     <h2>Aliases</h2>
     <pre><code>{aliases}</code></pre>
@@ -77,10 +75,11 @@ const tests = `tests { "input" -> "expected" }`
 
     <h2>Stages calling stages; stdlib directives</h2>
     <pre><code>{run}</code></pre>
-    <p><code>run</code> takes no other form — stray identifiers are a
-    parse error (a typo'd map fails loudly). The <code>rababa</code>
-    directive invokes the ML adapter with mandatory keyword arguments;
-    an unprovisioned model raises a named error enumerating known ids.</p>
+    <p><code>run</code> takes no other form — stray identifiers
+    are a parse error (a typo'd map fails loudly).
+    The <code>rababa</code> directive invokes the ML adapter with
+    mandatory keyword arguments; an unprovisioned model raises a named
+    error enumerating known ids.</p>
 
     <h2>Casing targets</h2>
     <pre><code>{casing}</code></pre>
@@ -96,7 +95,7 @@ const tests = `tests { "input" -> "expected" }`
 
     <h2>Normative reference</h2>
     <p>The full specification (IS-1 v2) with the 22 frozen rulings and the
-    cross-runtime guarantee lives in
-    <a href="https://github.com/interscript/interscript-models/blob/main/docs/IS-1-v2.md">interscript-models/docs/IS-1-v2.md</a>.</p>
+    cross-runtime guarantee lives in <a
+    href="https://github.com/interscript/interscript-models/blob/main/docs/IS-1-v2.md">interscript-models/docs/IS-1-v2.md</a>.</p>
   </div>
 </Base>

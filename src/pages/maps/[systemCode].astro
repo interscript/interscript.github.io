@@ -46,6 +46,16 @@ if (!entry) {
 }
 
 const { data, test } = entry
+const invertibility = (
+  entry as {
+    invertibility?: {
+      verdict: string
+      pairs: number
+      many_to_one: number
+      one_to_many: number
+    } | null
+  }
+).invertibility
 const year = data.creation_date ?? data.id
 const languageDisplay = parseLanguageField(data.language)
 const sourceName = scriptName(data.source_script)
@@ -99,6 +109,25 @@ const pageDesc =
               <div>
                 <dt>Language</dt>
                 <dd>{languageDisplay}</dd>
+              </div>
+            )
+          }
+          {
+            invertibility && (
+              <div>
+                <dt>Invertibility</dt>
+                <dd>
+                  {invertibility.verdict === "LOSSLESS_ONE_TO_ONE"
+                    ? "Lossless · one-to-one"
+                    : invertibility.verdict === "LOSSY_MANY_TO_ONE"
+                      ? "Lossy · many-to-one"
+                      : invertibility.verdict}{" "}
+                  <span class="script-code">
+                    ({invertibility.pairs} pairs
+                    {invertibility.many_to_one > 0 && `, ${invertibility.many_to_one} many-to-one`}
+                    {invertibility.one_to_many > 0 && `, ${invertibility.one_to_many} one-to-many`})
+                  </span>
+                </dd>
               </div>
             )
           }
