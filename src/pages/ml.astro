@@ -1,123 +1,52 @@
 ---
 import Base from "../layouts/Base.astro"
+import models from "../data/models-catalogue.json" with { type: "json" }
+const all = Object.values(models) as Array<{
+  id: string
+  task: string
+  precision: string
+  sizeHuman: string
+  splitParts: number | null
+  metrics: { name: string; value: number }[]
+  releaseUrl: string
+}>
 
-const serverModels = [
-  {
-    id: "ara-diac-2.0",
-    task: "diacritization",
-    pair: "Arabic → haraqat",
-    metric: "DER 2.29 · OOD WER 17.38",
-    artifact: "fp32 · 2.7 GiB · parts",
-    status: "released",
-  },
-  {
-    id: "khm-latn-1.0",
-    task: "translit",
-    pair: "Khmer → Latin",
-    metric: "CER 27.42 · EM 59.66",
-    artifact: "fp32 · 1.3 GiB",
-    status: "released",
-  },
-  {
-    id: "urd-g2p-1.0",
-    task: "g2p",
-    pair: "Urdu → IPA",
-    metric: "CER 14.77 · EM 33.6",
-    artifact: "fp32 · 1.3 GiB",
-    status: "released",
-  },
-  {
-    id: "urd-diac-1.0",
-    task: "diacritization",
-    pair: "Urdu → haraqat",
-    metric: "CER 3.74",
-    artifact: "fp32 · 1.3 GiB",
-    status: "released",
-  },
-  {
-    id: "heb-diac-1.0",
-    task: "diacritization",
-    pair: "Hebrew → niqqud",
-    metric: "DER 29.0 greedy · 17.46 beam-4",
-    artifact: "fp32 · 2.6 GiB · parts",
-    status: "released",
-  },
-  {
-    id: "tha-g2p-base-1.0",
-    task: "g2p",
-    pair: "Thai → IPA",
-    metric: "PER 9.19 (teacher 4.43)",
-    artifact: "fp32 · 2.6 GiB · parts",
-    status: "released",
-  },
-]
+const metricLabel = (m: { name: string; value: number }) => {
+  const names: Record<string, string> = {
+    der_total_greedy: "DER",
+    der_morph_greedy: "morph DER",
+    der_teacher_greedy: "DER (teacher)",
+    der_teacher_fullset: "DER (teacher)",
+    wer_wikinews2024_multiref: "OOD WER",
+    wer_wikinews_multiref: "OOD WER",
+    cer: "CER",
+    per: "PER",
+    em: "EM",
+  }
+  return `${names[m.name] ?? m.name} ${m.value}`
+}
 
-const clientModels = [
-  {
-    id: "ara-diac-plane-large-1.0",
-    task: "diacritization · plane",
-    pair: "Arabic → haraqat",
-    metric: "DER 2.74 full-set — dedicated #2, ahead of Gemini-Flash",
-    artifact: "int8 · 866 MiB · one graph",
-    status: "released",
-  },
-  {
-    id: "ara-diac-plane-1.0",
-    task: "diacritization · plane",
-    pair: "Arabic → haraqat",
-    metric: "DER 3.59 · −45% size · −67% CPU latency vs seq2seq student",
-    artifact: "int8 · 219 MiB · K-pass decode",
-    status: "released",
-  },
-  {
-    id: "ara-diac-small-2.1",
-    task: "diacritization",
-    pair: "Arabic → haraqat",
-    metric: "DER 4.57 [1.91, 2.35] vs teacher (1.0 was 8.26)",
-    artifact: "int8 · 264 MiB · fp16 · 674 MiB",
-    status: "released",
-  },
-  {
-    id: "ara-diac-layerdrop-1.0",
-    task: "diacritization",
-    pair: "Arabic → haraqat",
-    metric: "DER 5.78 · 63% of the parameters",
-    artifact: "int4 · 95 MiB · browser-native",
-    status: "released",
-  },
-  {
-    id: "tha-g2p-small-1.0",
-    task: "g2p",
-    pair: "Thai → IPA",
-    metric: "PER 2.85 greedy (12.06 beam-4)",
-    artifact: "int8 · 246 MiB",
-    status: "released",
-  },
-  {
-    id: "tha-g2p-small-1.0-int4",
-    task: "g2p",
-    pair: "Thai → IPA",
-    metric: "same student · 4-bit",
-    artifact: "int4 · 193 MiB",
-    status: "released",
-  },
-  {
-    id: "heb-diac-small-1.0",
-    task: "diacritization",
-    pair: "Hebrew → niqqud",
-    metric: "DER 30.37 (teacher 24.79)",
-    artifact: "fp32 · 1.3 GiB",
-    status: "released",
-  },
-  {
-    id: "fas-g2p-1.0",
-    task: "g2p",
-    pair: "Persian → IPA",
-    metric: "CER ≈1.6 · homograph 77.34%",
-    artifact: "fp32 · 2.6 GiB · parts",
-    status: "released",
-  },
-]
+const row = (m: (typeof all)[number]) => ({
+  id: m.id,
+  task: m.task,
+  metric: m.metrics.map(metricLabel).slice(0, 2).join(" · ") || "see RESULTS.md",
+  artifact:
+    `${m.precision} · ${m.sizeHuman}` +
+    (m.splitParts ? ` · ${m.splitParts} parts` : ""),
+  releaseUrl: m.releaseUrl,
+})
+
+const serverModels = all
+  .filter((m) => m.precision === "fp32")
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map(row)
+
+const clientModels = all
+  .filter((m) => m.precision !== "fp32")
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .map(row)
+
+const modelCount = all.length
 ---
 
 <Base
@@ -152,7 +81,7 @@ const clientModels = [
         <p class="eyebrow">The catalogue</p>
         <h2>Every model, with its measured score.</h2>
         <p class="section-deck">
-          The index (v8) resolves 26 models across five languages. No model is published without a
+          The models.yaml registry resolves {modelCount} models across six languages. No model is published without a
           measured metric next to its teacher's, on the same harness, in the open. Students are
           distilled from frozen teachers and gated at a pre-agreed error budget. Each entry
           resolves from the models.yaml index; artifacts above GitHub's 2&nbsp;GiB cap ship as
@@ -173,7 +102,7 @@ const clientModels = [
                 {m.task}
               </span>
               <span class="ledger-body">
-                <code class="ledger-id">{m.id}</code>
+                <a class="ledger-id" href={m.releaseUrl}><code>{m.id}</code></a>
                 <span class="ledger-pair">{m.pair}</span>
               </span>
               <span class="ledger-metric tnum">{m.metric}</span>
@@ -194,7 +123,7 @@ const clientModels = [
                 {m.task}
               </span>
               <span class="ledger-body">
-                <code class="ledger-id">{m.id}</code>
+                <a class="ledger-id" href={m.releaseUrl}><code>{m.id}</code></a>
                 <span class="ledger-pair">{m.pair}</span>
               </span>
               <span class="ledger-metric tnum">{m.metric}</span>
