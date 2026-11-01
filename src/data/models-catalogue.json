@@ -1,0 +1,965 @@
+{
+  "khm-phonemic-1.0": {
+    "id": "khm-phonemic-1.0",
+    "task": "g2p",
+    "scripts": [],
+    "precision": "fp32",
+    "size": 1112390964,
+    "sizeHuman": "1.0 GiB",
+    "splitParts": null,
+    "filename": "khm-phonemic-1.0.zip",
+    "releaseTag": "khm-phonemic-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/khm-phonemic-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 24.5
+      },
+      {
+        "name": "cer_legacy_split",
+        "value": 24.16
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "tha-phonemic-1.0": {
+    "id": "tha-phonemic-1.0",
+    "task": "g2p",
+    "scripts": [],
+    "precision": "fp32",
+    "size": 1111939721,
+    "sizeHuman": "1.0 GiB",
+    "splitParts": null,
+    "filename": "tha-phonemic-1.0.zip",
+    "releaseTag": "tha-phonemic-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/tha-phonemic-1.0",
+    "metrics": [
+      {
+        "name": "per",
+        "value": 19.29
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "khm-latn-1.0": {
+    "id": "khm-latn-1.0",
+    "task": "translit",
+    "scripts": [
+      "Khmr",
+      "Latn"
+    ],
+    "precision": "fp32",
+    "size": 1418009977,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "khm-latn-1.0-fp32.zip",
+    "releaseTag": "khm-latn-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/khm-latn-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 27.42
+      },
+      {
+        "name": "em",
+        "value": 59.66
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 895
+  },
+  "urd-ipa-1.0": {
+    "id": "urd-ipa-1.0",
+    "task": "g2p",
+    "scripts": [
+      "Arab",
+      "IPA"
+    ],
+    "precision": "fp32",
+    "size": 1418039605,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "urd-g2p-1.0-fp32.zip",
+    "releaseTag": "urd-ipa-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-ipa-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 14.77
+      },
+      {
+        "name": "em",
+        "value": 33.6
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 12699
+  },
+  "urd-vocalized-1.0": {
+    "id": "urd-vocalized-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 1417851421,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "urd-diac-1.0-fp32.zip",
+    "releaseTag": "urd-vocalized-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 3.74
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 11940
+  },
+  "heb-vocalized-1.0": {
+    "id": "heb-vocalized-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "fp32",
+    "size": 2781139753,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "heb-diac-1.0-fp32.zip",
+    "releaseTag": "heb-diac-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-diac-1.0",
+    "metrics": [
+      {
+        "name": "der_greedy",
+        "value": 29
+      },
+      {
+        "name": "der_beam4",
+        "value": 17.46
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "tha-phonemic-base-1.0": {
+    "id": "tha-phonemic-base-1.0",
+    "task": "g2p",
+    "scripts": [
+      "Thai",
+      "IPA"
+    ],
+    "precision": "fp32",
+    "size": 2781174343,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "tha-g2p-base-1.0-fp32.zip",
+    "releaseTag": "tha-g2p-base-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/tha-g2p-base-1.0",
+    "metrics": [
+      {
+        "name": "per_teacher",
+        "value": 1.25
+      },
+      {
+        "name": "per_student",
+        "value": 3.53
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 1219
+  },
+  "tha-phonemic-small-1.0": {
+    "id": "tha-phonemic-small-1.0",
+    "task": "g2p",
+    "scripts": [
+      "Thai",
+      "IPA"
+    ],
+    "precision": "int8",
+    "size": 257468517,
+    "sizeHuman": "246 MiB",
+    "splitParts": null,
+    "filename": "tha-g2p-small-1.0-int8.zip",
+    "releaseTag": "tha-phonemic-small-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/tha-phonemic-small-1.0",
+    "metrics": [
+      {
+        "name": "per_teacher",
+        "value": 4.43
+      },
+      {
+        "name": "per_student_beam4",
+        "value": 12.06
+      },
+      {
+        "name": "per_student",
+        "value": 2.85
+      }
+    ],
+    "license": "",
+    "paritySamples": 1219
+  },
+  "tha-phonemic-small-1.0-int4": {
+    "id": "tha-phonemic-small-1.0-int4",
+    "task": "g2p",
+    "scripts": [
+      "Thai",
+      "IPA"
+    ],
+    "precision": "int4",
+    "size": 201958073,
+    "sizeHuman": "193 MiB",
+    "splitParts": null,
+    "filename": "tha-phonemic-small-1.0-int4.zip",
+    "releaseTag": "tha-phonemic-small-1.0-int4",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/tha-phonemic-small-1.0-int4",
+    "metrics": [
+      {
+        "name": "per_teacher",
+        "value": 4.43
+      },
+      {
+        "name": "per_student_beam4",
+        "value": 12.06
+      },
+      {
+        "name": "per_student",
+        "value": 2.85
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "heb-vocalized-small-1.0": {
+    "id": "heb-vocalized-small-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "fp32",
+    "size": 1418663344,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "heb-diac-small-1.0-fp32.zip",
+    "releaseTag": "heb-vocalized-small-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-small-1.0",
+    "metrics": [
+      {
+        "name": "der_teacher_greedy",
+        "value": 24.79
+      },
+      {
+        "name": "der_student_greedy",
+        "value": 30.37
+      }
+    ],
+    "license": "",
+    "paritySamples": 1864
+  },
+  "fas-phonemic-1.0": {
+    "id": "fas-phonemic-1.0",
+    "task": "g2p",
+    "scripts": [
+      "Arab",
+      "Latn"
+    ],
+    "precision": "fp32",
+    "size": 2780254270,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "fas-g2p-1.0-fp32.zip",
+    "releaseTag": "fas-g2p-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/fas-g2p-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 1.6
+      },
+      {
+        "name": "sb_homograph_ezafe_norm",
+        "value": 77.34
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 1000
+  },
+  "ara-vocalized-small-1.0": {
+    "id": "ara-vocalized-small-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 1418126835,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "ara-diac-small-1.0-fp32.zip",
+    "releaseTag": "ara-vocalized-small-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-1.0",
+    "metrics": [
+      {
+        "name": "der_teacher_greedy",
+        "value": 1.3205
+      },
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.5815
+      },
+      {
+        "name": "der_student_greedy",
+        "value": 3.658
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 8.259
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 800
+  },
+  "heb-vocalized-1.1": {
+    "id": "heb-vocalized-1.1",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "fp32",
+    "size": 2780987905,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "heb.zip",
+    "releaseTag": "heb-diac-1.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-diac-1.1",
+    "metrics": [
+      {
+        "name": "der_greedy",
+        "value": 16.44
+      },
+      {
+        "name": "der_beam4",
+        "value": 16.43
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 500
+  },
+  "ara-vocalized-1.0": {
+    "id": "ara-vocalized-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 2780311342,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "ara-diac-1.0-fp32.zip",
+    "releaseTag": "ara-diac-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-diac-1.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 2.5793
+      },
+      {
+        "name": "der_morph_greedy",
+        "value": 1.5317
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 500
+  },
+  "ara-vocalized-small-1.0-int8": {
+    "id": "ara-vocalized-small-1.0-int8",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 256959713,
+    "sizeHuman": "245 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-small-1.0-int8.zip",
+    "releaseTag": "ara-vocalized-small-1.0-int8",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-1.0-int8",
+    "metrics": [
+      {
+        "name": "der_teacher_greedy",
+        "value": 1.3205
+      },
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.5815
+      },
+      {
+        "name": "der_student_greedy",
+        "value": 3.658
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 8.259
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 800
+  },
+  "ara-vocalized-small-2.0": {
+    "id": "ara-vocalized-small-2.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 1418516306,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "ara-diac-small-2.0-fp32.zip",
+    "releaseTag": "ara-vocalized-small-2.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-2.0",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 5.0821
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "ara-vocalized-small-2.0-int8": {
+    "id": "ara-vocalized-small-2.0-int8",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 264043016,
+    "sizeHuman": "252 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-small-2.0-int8.zip",
+    "releaseTag": "ara-vocalized-small-2.0-int8",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-2.0-int8",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 4.8218
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "ara-vocalized-2.0": {
+    "id": "ara-vocalized-2.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 2780299051,
+    "sizeHuman": "2.6 GiB",
+    "splitParts": 2,
+    "filename": "ara-diac-2.0-fp32.zip",
+    "releaseTag": "ara-diac-2.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-diac-2.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 2.2864
+      },
+      {
+        "name": "der_morph_greedy",
+        "value": 1.3343
+      },
+      {
+        "name": "wer_wikinews_multiref",
+        "value": 17.3794
+      },
+      {
+        "name": "der_wikinews_multiref",
+        "value": 11.8273
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "ara-vocalized-2.0-int8": {
+    "id": "ara-vocalized-2.0-int8",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 519207340,
+    "sizeHuman": "495 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-2.0-int8.zip",
+    "releaseTag": "ara-vocalized-2.0-int8",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-2.0-int8",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 2.2864
+      },
+      {
+        "name": "der_morph_greedy",
+        "value": 1.3343
+      },
+      {
+        "name": "wer_wikinews_multiref",
+        "value": 17.3794
+      },
+      {
+        "name": "der_wikinews_multiref",
+        "value": 11.8273
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "ara-vocalized-small-2.1": {
+    "id": "ara-vocalized-small-2.1",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 1419756840,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "ara-diac-small-2.1-fp32.zip",
+    "releaseTag": "ara-vocalized-small-2.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-2.1",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 4.5701
+      }
+    ],
+    "license": "",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-small-2.1-int8": {
+    "id": "ara-vocalized-small-2.1-int8",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 267965657,
+    "sizeHuman": "256 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-small-2.1-int8.zip",
+    "releaseTag": "ara-vocalized-small-2.1-int8",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-2.1-int8",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 4.5701
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-layerdrop-1.0": {
+    "id": "ara-vocalized-layerdrop-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 1015218371,
+    "sizeHuman": "968 MiB",
+    "splitParts": null,
+    "filename": "ara-diac-layerdrop-1.0-fp32.zip",
+    "releaseTag": "ara-vocalized-layerdrop-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-layerdrop-1.0",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.2921
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 5.784
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-layerdrop-1.0-int8": {
+    "id": "ara-vocalized-layerdrop-1.0-int8",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 191603048,
+    "sizeHuman": "183 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-layerdrop-1.0-int8.zip",
+    "releaseTag": "ara-vocalized-layerdrop-1.0-int8",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-layerdrop-1.0-int8",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.2921
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 5.784
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-layerdrop-1.0-int4": {
+    "id": "ara-vocalized-layerdrop-1.0-int4",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int4",
+    "size": 145195702,
+    "sizeHuman": "138 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-layerdrop-1.0-int4.zip",
+    "releaseTag": "ara-vocalized-layerdrop-1.0-int4",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-layerdrop-1.0-int4",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.2921
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 5.784
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-small-2.1-fp16": {
+    "id": "ara-vocalized-small-2.1-fp16",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp16",
+    "size": 706351903,
+    "sizeHuman": "674 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-small-2.1-fp16.zip",
+    "releaseTag": "ara-vocalized-small-2.1-fp16",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-2.1-fp16",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 4.5701
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-small-int8static-2.1": {
+    "id": "ara-vocalized-small-int8static-2.1",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 515362212,
+    "sizeHuman": "491 MiB",
+    "splitParts": null,
+    "filename": "ara-diac-small-int8static-2.1-int8.zip",
+    "releaseTag": "ara-vocalized-small-int8static-2.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-small-int8static-2.1",
+    "metrics": [
+      {
+        "name": "der_teacher_fullset",
+        "value": 2.289
+      },
+      {
+        "name": "der_student_fullset",
+        "value": 4.5701
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 2480
+  },
+  "ara-vocalized-plane-1.0": {
+    "id": "ara-vocalized-plane-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 219076965,
+    "sizeHuman": "209 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-plane-1.0.zip",
+    "releaseTag": "ara-vocalized-plane-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-plane-1.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 3.5905
+      },
+      {
+        "name": "der_morph_greedy",
+        "value": 2.2149
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "ara-vocalized-plane-large-1.0": {
+    "id": "ara-vocalized-plane-large-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 866052488,
+    "sizeHuman": "826 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-plane-large-1.0.zip",
+    "releaseTag": "ara-vocalized-plane-large-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-plane-large-1.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 2.7397
+      },
+      {
+        "name": "der_morph_greedy",
+        "value": 1.6717
+      },
+      {
+        "name": "wer_total_greedy",
+        "value": 8.6083
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "ara-vocalized-news-1.0": {
+    "id": "ara-vocalized-news-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 399018923,
+    "sizeHuman": "381 MiB",
+    "splitParts": null,
+    "filename": "ara-vocalized-news-1.0.zip",
+    "releaseTag": "ara-vocalized-news-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-vocalized-news-1.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 5.4814
+      },
+      {
+        "name": "wer_wikinews2024_multiref",
+        "value": 4.0976
+      },
+      {
+        "name": "der_wikinews2024_multiref",
+        "value": 1.5606
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "heb-vocalized-plane-1.0": {
+    "id": "heb-vocalized-plane-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "int8",
+    "size": 219322007,
+    "sizeHuman": "209 MiB",
+    "splitParts": null,
+    "filename": "heb-vocalized-plane-1.0.zip",
+    "releaseTag": "heb-vocalized-plane-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-plane-1.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 12.48
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "heb-vocalized-plane-2.0": {
+    "id": "heb-vocalized-plane-2.0",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "int8",
+    "size": 415901226,
+    "sizeHuman": "397 MiB",
+    "splitParts": null,
+    "filename": "heb-vocalized-plane-2.0.zip",
+    "releaseTag": "heb-vocalized-plane-2.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-plane-2.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 8.18
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "urd-ipa-base-1.0": {
+    "id": "urd-ipa-base-1.0",
+    "task": "g2p",
+    "scripts": [
+      "Arab",
+      "IPA"
+    ],
+    "precision": "fp32",
+    "size": 2159598918,
+    "sizeHuman": "2.0 GiB",
+    "splitParts": 2,
+    "filename": "urd-g2p-base-1.0-fp32.zip",
+    "releaseTag": "urd-g2p-base-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-g2p-base-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 15.65
+      },
+      {
+        "name": "cer_normalized",
+        "value": 10.75
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 500
+  },
+  "ara-diac-news-1.1": {
+    "id": "ara-diac-news-1.1",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp32",
+    "size": 2160091218,
+    "sizeHuman": "2.0 GiB",
+    "splitParts": null,
+    "filename": "ara-diac-news-1.1.zip",
+    "releaseTag": "ara-diac-news-1.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/ara-diac-news-1.1",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 2.84
+      },
+      {
+        "name": "wer_wikinews2024_multiref",
+        "value": 8.85
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": null
+  },
+  "urd-vocalized-base-1.0": {
+    "id": "urd-vocalized-base-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp16",
+    "size": 1347488093,
+    "sizeHuman": "1.3 GiB",
+    "splitParts": null,
+    "filename": "urd-diac-base-1.0-fp16.zip",
+    "releaseTag": "urd-vocalized-base-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-base-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 3.57
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 500
+  },
+  "fas-vocalized-base-1.0": {
+    "id": "fas-vocalized-base-1.0",
+    "task": "diac",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "fp16",
+    "size": 711254463,
+    "sizeHuman": "678 MiB",
+    "splitParts": null,
+    "filename": "fas-diac-base-1.0-fp16.zip",
+    "releaseTag": "fas-vocalized-base-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/fas-vocalized-base-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 0.603
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 500
+  }
+}
