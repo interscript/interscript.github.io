@@ -223,6 +223,27 @@
       "one_to_many": 1
     }
   },
+  "alalc-ban-Bali-Latn-2025": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2025",
+      "language": "iso-639-2:ban",
+      "source_script": "Bali",
+      "destination_script": "Latn",
+      "name": "Balinese Romanization Table (2025)",
+      "description": "ALA-LC Balinese Romanization Table, 2025 version — strict\n    transliteration per ISO 15919:2001 with PKU modifications. The\n    vowel a is inherent after all consonants except terminal ones,\n    replaced by combining vowel signs or cancelled by the\n    vowel-suppressant adeg-adeg (word-finally the middle dot). The\n    full consonant inventory: the aksara wresastra core, the Indic\n    swalalita set, and the terminal consonants. Vowels include the\n    vocalic and l̥ series and the pepet ə. Transcribed from the\n    loc.gov document's complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/balinese.pdf",
+      "creation_date": "2025",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᬳ᭄ᬯ᭄",
+      "PROBE",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-bel-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -307,6 +328,48 @@
       "one_to_many": 1
     }
   },
+  "alalc-bod-Tibt-Latn-2015": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2015",
+      "language": "iso-639-2:bod",
+      "source_script": "Tibt",
+      "destination_script": "Latn",
+      "name": "Tibetan Romanization Table (2015)",
+      "description": "ALA-LC Tibetan Romanization Table, 2015 version — the Wylie\n    system. Every base consonant carries the inherent vowel a (Note 2);\n    subjoined letters take no vowel; the thirteen vowel signs include\n    the vocalic r and l and the a-chung lengthening (ā); the ʼa chung\n    (འ) romanizes as the alif. Non-Tibetan retroflex and aspirate\n    extensions per the special-letter section. Transcribed from the\n    loc.gov document.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/tibetan.pdf",
+      "creation_date": "2015",
+      "nonstandard": {}
+    },
+    "test": [
+      "ཀ་",
+      "ka",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-btk-Batk-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:btk",
+      "source_script": "Batk",
+      "destination_script": "Latn",
+      "name": "Batak Romanization Table (2012)",
+      "description": "ALA-LC Batak Romanization Table, 2012 version (earlier: 2002). Fourteen\n    consonant letters carry an implicit /a/ (suppressed by the pangolat\n    or overridden by a vowel sign); I and U are pure vowels; the vowel\n    signs e i o u follow the letter a when it is already present (aek);\n    the ng and h consonant signs are codas that keep the implicit vowel.\n    Dialect notes from the table: Mandailing S/H/CA and the ka letter\n    (Mandailing HA), Dairi t/v readings. Transcribed from the loc.gov\n    document; the PDF renders Batak glyphs through a shape-based\n    substitute font, so the letter-to-codepoint correspondence follows\n    the standard Batak block with the table's dialect footnotes\n    (all 31 assignments verified against Unicode names).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/batak.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᯀ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-bul-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -334,6 +397,27 @@
       "many_to_one": 1,
       "one_to_many": 0
     }
+  },
+  "alalc-cjm-Cham-Latn-2015": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2015",
+      "language": "iso-639-2:cjm",
+      "source_script": "Cham",
+      "destination_script": "Latn",
+      "name": "Cham Romanization Table (2015 version)",
+      "description": "ALA-LC Cham Romanization Table, 2015 version (no earlier\n    versions). The table serves both Akhar Thrah (Eastern Cham) and\n    Akhar Srak (Western Cham), whose letters share the Unicode Cham\n    block. Thirty-five consonants and semivowels with living (hadiip)\n    and dead (mâtai) forms, six independent vowels, the living vowel\n    modifiers (Takai Akhar Hadiip) including the medials ya/ra/la/wa,\n    the dead feet (Takai Akhar Mâtai) with inherent consonant or vowel\n    endings, the Hua Bilau vowel elongator, the numerals zero through\n    nine, twelve example words from the Cham calendar, and Notes 1-2.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/cham.pdf",
+      "creation_date": "2015",
+      "nonstandard": {}
+    },
+    "test": [
+      "ꨓꨪꨆꨲꩍ",
+      "tikuh",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-div-Thaa-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -587,6 +671,27 @@
       "one_to_many": 0
     }
   },
+  "alalc-jav-Java-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:jav",
+      "source_script": "Java",
+      "destination_script": "Latn",
+      "name": "Javanese, Sundanese, and Madurese Romanization Table",
+      "description": "ALA-LC romanization table covering Javanese, Sundanese and\n    Madurese (the PDF carries no in-document version date; its\n    metadata records conversion to MS Word on 2012-01-10). Twenty\n    principal consonants in the hanacaraka order, each with a regular\n    and an appended form (Note 1); the aksara murda and aksara rekan\n    alternates (Note 4); the vowels and sandangan (taling e, pepet e\n    with breve, wulu i, taling plus tarung o, suku u, tarung a-macron)\n    with free-standing vowels (Note 5); the other signs wignyan h,\n    layar r, cecak ng, pa-cerek re with breve, nga-lelet le with\n    breve, pengkal (ya medial) and cakra (ra medial) (Note 5); the\n    pangkon vowel suppressor (Note 1); the numerals zero through nine;\n    and Notes 1-9. Glyphs corresponded to the Unicode Javanese block\n    (the PDF's text layer renders the script in a legacy PUA font).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/javanese.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ꦥꦚ꧀ꦕ",
+      "panca",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-kan-Kana-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -755,6 +860,27 @@
       "one_to_many": 0
     }
   },
+  "alalc-khm-Khmr-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2013",
+      "language": "iso-639-2:khm",
+      "source_script": "Khmr",
+      "destination_script": "Latn",
+      "name": "Khmer Romanization Table (2013)",
+      "description": "ALA-LC Khmer Romanization Table, 2013 version. Consonants carry\n    the Indic values (k kh g gh ng c ch j jh ñ ...). A bare consonant\n    takes the inherent vowel a (kak mak sak); the coeng subscript\n    suppresses it and repeats the consonant value; the bantoc shortens\n    the preceding vowel to an acute (kák). The series marks mos-soton\n    (˝) and treysap (ʹ) romanize immediately after their consonant.\n    Dependent vowels follow the consonant; nikahit am, reahmuk ah, and\n    the yuukaleapintu grave per the table. Transcribed from the\n    loc.gov document (the dependent-sign glyphs are visually\n    corresponded to the Unicode Khmer block; the vowel-table's leading\n    mark is table typography, not romanization).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/khmer.pdf",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "កក",
+      "kak",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-kor-Hang-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -782,6 +908,69 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-lao-Laoo-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:lao",
+      "source_script": "Laoo",
+      "destination_script": "Latn",
+      "name": "Lao Romanization Table (2012)",
+      "description": "ALA-LC Lao Romanization Table, 2012 version. Consonants have\n    initial and word-final values (parenthesized source finals occur\n    only in loans and keep the initial value here). Inherent vowel a.\n    ho hip is silent in clusters (ligatures included); subscript lo lut\n    is silent except after ho hip. DO is ʻ word-initially, else a\n    vowel. WO is positional per Note 4 (cluster w, u+a before a final,\n    o word-finally after a vowel). Vowel romanizations always follow\n    the consonant. Tone marks are not romanized. Transcribed from the\n    loc.gov document's complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/lao.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ວັດ",
+      "vat",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-lep-Lepc-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012-09",
+      "language": "iso-639-2:lep",
+      "source_script": "Lepc",
+      "destination_script": "Latn",
+      "name": "Lepcha Romanization Table (2012-09)",
+      "description": "ALA-LC Lepcha Romanization Table, September 2012 version (earlier\n    version: 1997). Thirty-nine consonant and cluster letters in the\n    guttural/palatal/cerebral/dental/labial arrangement plus\n    semivowels, sibilants and the aspirate, with the inherent vowel a\n    (Note 3); ten vowel values a ā i ī u ū e o ō â listed in their\n    syllable-initial forms (Note 1); final superscripts k ng t n p m r\n    l (Rule of application 1); the subjoined ya and ra mutations\n    (Rules 2-3); and the glottal carrier of Note 2. Glyphs visually\n    corresponded to the Unicode Lepcha block (the PDF's text layer\n    carries no script codepoints).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/lepcha.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᰀ",
+      "ka",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-lif-Limb-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2011",
+      "language": "iso-639-2:lif",
+      "source_script": "Limb",
+      "destination_script": "Latn",
+      "name": "Limbu Romanization Table (2011)",
+      "description": "ALA-LC Limbu Romanization Table, 2011 version. Twenty-six\n    consonants (the Sirijunga alphabet order) with the inherent vowel\n    a; the syllable-initial vowel forms per the table; the dependent\n    vowel signs (ᤠ ᤡ ᤢ ᤣ ᤤ ᤥ) carry the grammar values, noted per\n    the table's Note 1. The Limbu glyphs are visually corresponded to\n    the Unicode Limbu block (the PDF's text layer carries no script\n    codepoints).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/limbu.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᤁ",
+      "ka",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-mal-Mlym-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -951,6 +1140,27 @@
       "one_to_many": 0
     }
   },
+  "alalc-mni-Mtei-Latn-2022": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2022",
+      "language": "iso-639-2:mni",
+      "source_script": "Mtei",
+      "destination_script": "Latn",
+      "name": "Modern Manipuri (Meitei script) Romanization Table (2022)",
+      "description": "ALA-LC Modern Manipuri (Meitei Mayek) Romanization Table,\n    June 2022. Consonants carry the inherent vowel a; the seven final\n    letters (katap) close syllables without a vowel; dependent vowel\n    signs override; the heavy-tone mark romanizes as a dot below.\n    Transcribed from the loc.gov document's complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/manipuri.pdf",
+      "creation_date": "2022",
+      "nonstandard": {}
+    },
+    "test": [
+      "ꯑꯥ",
+      "se",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-mon-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -978,6 +1188,27 @@
       "many_to_one": 3,
       "one_to_many": 0
     }
+  },
+  "alalc-mya-Mymr-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2011",
+      "language": "iso-639-2:mya",
+      "source_script": "Mymr",
+      "destination_script": "Latn",
+      "name": "Burmese Romanization Table (2011)",
+      "description": "ALA-LC Burmese Romanization Table, 2011 version. Consonants carry\n    the Indic values with the inherent vowel a (Devanagari-style); the\n    asa/virama closes the syllable with an ʻ; medials y r v h romanize\n    between the consonant and its vowel in the order y-or-r, then v,\n    then h; anusvara ṃ; the dot-below and visarga tone marks romanize\n    ʹ and ʺ. Modified conjunct ligatures are visual only — Unicode\n    text spells the sequences, so no special rows are needed.\n    Transcribed from the loc.gov document's text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/burmese.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "မွါ",
+      "mva",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-ori-Orya-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1231,6 +1462,48 @@
       "one_to_many": 0
     }
   },
+  "alalc-sat-Olck-Latn-2017": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2017",
+      "language": "iso-639-2:sat",
+      "source_script": "Olck",
+      "destination_script": "Latn",
+      "name": "Santali (in Ol script) Romanization Table (2017)",
+      "description": "ALA-LC Santali (Ol Chiki) Romanization Table, 2017 version.\n    Pure letter substitution: seven vowels, twenty-five consonants and\n    marks including the relwa (ᱽ), the nasalization dot (ᱸ → m̐), the\n    omitted low-pitch mark (ᱹ), and the prolongation mark (ᱻ,\n    omitted). Transcribed from the loc.gov document's complete text\n    layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/santali.pdf",
+      "creation_date": "2017",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᱠ",
+      "k",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-shn-Shan-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:shn",
+      "source_script": "Shan",
+      "destination_script": "Latn",
+      "name": "Shan Romanization Table (2012)",
+      "description": "ALA-LC Shan Romanization Table. Consonants carry the inherent\n    vowel a (per Note 2); the full vowel-sign table (the tone-sign\n    combinations ႆ act as vowel markers: ai āi oi); medials y r v in\n    their documented order. Transcribed from the loc.gov document's\n    text layer with the glyph column visually corresponded to the\n    Shan/Myanmar-extended Unicode blocks (the PDF renders Shan glyphs\n    through a shape-based substitute font).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/shan.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ၵါ",
+      "kā",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-sin-Sinh-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -1454,6 +1727,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-tha-Thai-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2011",
+      "language": "iso-639-2:tha",
+      "source_script": "Thai",
+      "destination_script": "Latn",
+      "name": "Thai Romanization Table (2011)",
+      "description": "ALA-LC Thai Romanization Table, 2011 version. Consonants have\n    initial and word-final values; tones are not romanized; ho hip and\n    the four tone-marking o-ang words are silent before a consonant;\n    tho-thanthakhat + ro (ทร) = s. Rule 5: the inherent vowel (o, a,\n    or ǭ) is determined from an authoritative dictionary — bare\n    consonants therefore romanize without an inserted vowel, the\n    composition point for a vocalization model. Transcribed from the\n    loc.gov document's complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/thai.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "กำ",
+      "kam",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-tir-Ethi-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1964,7 +2258,7 @@
     "data": {
       "authority_id": "bgnpcgn",
       "id": "2011",
-      "language": "iso-639-2:ava",
+      "language": "iso-639-1:av",
       "source_script": "Cyrl",
       "destination_script": "Latn",
       "name": "Romanization of Avar (BGN/PCGN 2011 System)",
@@ -2244,7 +2538,7 @@
     "data": {
       "authority_id": "bgnpcgn",
       "id": "2011",
-      "language": "iso-639-2:chv",
+      "language": "iso-639-1:cv",
       "source_script": "Cyrl",
       "destination_script": "Latn",
       "name": "Romanization of Chuvash (BGN/PCGN 2011 System)",
@@ -2350,6 +2644,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "bgnpcgn-dzo-Tibt-Latn-2010": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2010",
+      "language": "iso-639-2:dzo",
+      "source_script": "Tibt",
+      "destination_script": "Latn",
+      "name": "Romanization of Dzongkha (2010 Agreement)",
+      "description": "This romanization system for Dzongkha was developed by the Dzongkha Development\n    Commission. Bhutan's Ministry of Home Affairs approved this system in 1997 and\n    mandated that the Bhutanese government use standardized spellings of geographical\n    names and official guidelines for romanization. The tabulation is derived from the\n    version available on the UNGEGN Working Group on Romanization Systems website.",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/693691/ROMANIZATION_OF_DZONGKHA.pdf",
+      "creation_date": "2010",
+      "nonstandard": {}
+    },
+    "test": [
+      "ཐིམ་ཕུ",
+      "thimphu",
+      null
+    ],
+    "skip_js": false
   },
   "bgnpcgn-ell-Grek-Latn-1962": {
     "class": "Interscript::Node::MetaData",
@@ -3000,7 +3315,7 @@
     "data": {
       "authority_id": "bgnpcgn",
       "id": "2009",
-      "language": "iso-639-2:oss",
+      "language": "iso-639-1:os",
       "source_script": "Cyrl",
       "destination_script": "Latn",
       "name": "Romanization of Ossetian (BGN/PCGN 2009 System)",
@@ -3386,6 +3701,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "bgnpcgn-syr-Syrc-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bgnpcgn",
+      "id": "2011",
+      "language": "iso-639-2:syr",
+      "source_script": "Syrc",
+      "destination_script": "Latn",
+      "name": "Romanization of modern Syriac script (2011)",
+      "description": "The modern Syriac script is used today by Assyrian writers of the neo-Aramaic\n    language. This Romanization System may be applied to any toponyms written in\n    this script as may be encountered in parts of northern Iraq, Syria, northern\n    Iran and eastern Turkey. The Neo-Aramaic language has a degree of locally\n    official status within Iraq, and accordingly some bilingual Arabic and modern\n    Syriac signage may be encountered.\n\n    The script is closely aligned to that of both Hebrew and Arabic, and, as these,\n    is written from right to left. In this Romanization System, 'strong' consonants\n    have been marked with a sub-dot so as not to give a closer visual relation to\n    either Arabic (which marks such consonants with a cedilla) or Hebrew (which\n    marks these with an underbar). The equivalences where they exist in the Arabic\n    and Hebrew scripts have also been shown only for a guide to the cognate root.",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/693736/ROMANIZATION_OF_MODERN_SYRIAC.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ܐ",
+      "",
+      null
+    ],
+    "skip_js": false
   },
   "bgnpcgn-tat-Cyrl-Latn-2007": {
     "class": "Interscript::Node::MetaData",
@@ -4143,6 +4479,27 @@
       "one_to_many": 0
     }
   },
+  "bsi-kor-Kore-Latn-6505-1982": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "6505-1982",
+      "language": "iso-639-2:kor",
+      "source_script": "Kore",
+      "destination_script": "Latn",
+      "name": "PD 6505:1982 Guide to the romanization of Korean (BSI mechanical system)",
+      "description": "BSI PD 6505:1982, Guide to the romanization of Korean. A mechanical,\n    orthographic system: 14 consonants (the circle is silent initially and\n    ng finally), 14 vowels including /ai/ /ei/ /yai/ /yei/, and the\n    horizontal-stroke vowel rendered w; compound vowels are the plain\n    concatenation of their components' values (\\uC640 = oa, \\uC65C = uei,\n    \\uC758 = wi). Not McCune-Reischauer. Transcribed visually from the\n    scan (no text layer); letter tables and syllable mechanics from\n    sections 2-3 read verbatim.",
+      "url": "",
+      "creation_date": "1982",
+      "nonstandard": {}
+    },
+    "test": [
+      "아",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "bsi-mkd-Cyrl-Latn-1958": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -4339,6 +4696,69 @@
       "one_to_many": 0
     }
   },
+  "din-ab-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-2",
+      "language": "iso-639-3:ab",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 2: Abchasisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 2\n    (Abchasisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-abq-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-1",
+      "language": "iso-639-3:abq",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 1: Abasinisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 1\n    (Abasinisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ady-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-3",
+      "language": "iso-639-3:ady",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 3: Adygeisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 3\n    (Adygeisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "din-ara-Arab-Latn-31635-2011": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -4366,6 +4786,384 @@
       "many_to_one": 9,
       "one_to_many": 0
     }
+  },
+  "din-atv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-4",
+      "language": "iso-639-3:atv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 4: Altaisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 4\n    (Altaisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-av-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-6",
+      "language": "iso-639-3:av",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 6: Awarisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 6\n    (Awarisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-az-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-5",
+      "language": "iso-639-3:az",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 5: Aserbaidschanisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 5\n    (Aserbaidschanisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ba-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-8",
+      "language": "iso-639-3:ba",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 8: Baschkirisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 8\n    (Baschkirisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-bxr-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-9",
+      "language": "iso-639-3:bxr",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 9: Burjatisch (Mongolic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 9\n    (Burjatisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ce-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-54",
+      "language": "iso-639-3:ce",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 54: Tschetschenisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 54\n    (Tschetschenisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-cjs-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-47",
+      "language": "iso-639-3:cjs",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 47: Schorisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 47\n    (Schorisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ckt-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-55",
+      "language": "iso-639-3:ckt",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 55: Tschuktschisch (Paleo-Asiatic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 55\n    (Tschuktschisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-crh-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-30",
+      "language": "iso-639-3:crh",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 30: Krimtatarisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 30\n    (Krimtatarisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-cv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-56",
+      "language": "iso-639-3:cv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 56: Tschuwaschisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 56\n    (Tschuwaschisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-dar-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-11",
+      "language": "iso-639-3:dar",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 11: Darginisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 11\n    (Darginisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-dng-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-12",
+      "language": "iso-639-3:dng",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 12: Dunganisch ((St))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 12\n    (Dunganisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ess-Cyrl-Latn-1460-2-2011-s14": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-14",
+      "language": "iso-639-3:ess",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 14: Eskimo (Asiatic (Siberian) Eskimo, Central Siberian Yupik) (Paleo-Asiatic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 14\n    (Eskimo (Asiatic (Siberian) Eskimo, Central Siberian Yupik)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-eve-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-15",
+      "language": "iso-639-3:eve",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 15: Ewenisch ((Tg))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 15\n    (Ewenisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-evn-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-16",
+      "language": "iso-639-3:evn",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 16: Ewenkisch ((Tg))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 16\n    (Ewenkisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-fas-Arab-Latn-31635-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31635-2011-8",
+      "language": "iso-639-2:fas",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "DIN 31635:2011-07 section 8: Transliteration des Persischen (Farsi, Dari)",
+      "description": "DIN 31635:2011-07, section 8: transliteration of Persian (Farsi,\n    Dari). Section 8.1 states the norm is historically strongly tied to\n    the Arabic transliteration of section 6 (shipped as\n    din-ara-Arab-Latn-31635-2011); Tabelle 2 (rows 1-22, transliteration\n    guidance) and Tabelle 3 (the 32-row letter table) are encoded here.\n    The Persian letters pe gaf che zhe and the Persian kaf and yeh are\n    included; the yeh is accepted in its Arabic (064A), Persian (06CC)\n    and alif-maqsura (0649) forms.",
+      "url": "https://www.din.de",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ء",
+      "ʾ",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-gag-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-17",
+      "language": "iso-639-3:gag",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 17: Gagausisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 17\n    (Gagausisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-gld-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-40",
+      "language": "iso-639-3:gld",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 40: Nanaisch ((Tg))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 40\n    (Nanaisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "din-grc-Grek-Latn-31634-2011-t1": {
     "class": "Interscript::Node::MetaData",
@@ -4479,6 +5277,69 @@
       "one_to_many": 1
     }
   },
+  "din-inh-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-18",
+      "language": "iso-639-3:inh",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 18: Inguschisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 18\n    (Inguschisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-jpn-Hrkt-Latn-32708-2014": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "32708-2014",
+      "language": "iso-639-2:jpn",
+      "source_script": "Hrkt",
+      "destination_script": "Latn",
+      "name": "DIN 32708:2014-08 Romanization of Japanese (Kana)",
+      "description": "DIN 32708:2014-08, Romanization of Japanese: the modified Hepburn\n    system of Kenkyusha's New Japanese-English Dictionary (3rd/4th\n    ed.) applied to the two kana syllabaries in modern orthography\n    (gendai kanazukai). Tabelle 1 (the one-mora syllables, including\n    the historical kana), Tabelle 2 (the yoon syllables), Tabelle 3\n    (the gairaigo sequences, whose readings the norm itself marks as\n    proposals), and Tabelle 4 (the subscripted kana, whose sokuon\n    doubles the following consonant). Extracted mechanically from the\n    standard's text layer; both syllabaries are accepted.",
+      "url": "https://www.din.de",
+      "creation_date": "2014",
+      "nonstandard": {}
+    },
+    "test": [
+      "おう",
+      "ō",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kaa-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-22",
+      "language": "iso-639-3:kaa",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 22: Karakalpakisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 22\n    (Karakalpakisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "din-kat-Geor-Latn-32707-2010": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -4506,6 +5367,426 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "din-kbd-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-20",
+      "language": "iso-639-3:kbd",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 20: Kabardinisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 20\n    (Kabardinisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kca-Cyrl-Latn-1460-2-2011-s25": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-25",
+      "language": "iso-639-3:kca",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 25: Kasym-Chantisch (Kasym Khanty) (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 25\n    (Kasym-Chantisch (Kasym Khanty)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kca-Cyrl-Latn-1460-2-2011-s36": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-36",
+      "language": "iso-639-3:kca",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 36: Mittel-Ob-Chantisch (Middle-Ob Khanty) (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 36\n    (Mittel-Ob-Chantisch (Middle-Ob Khanty)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kca-Cyrl-Latn-1460-2-2011-s48": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-48",
+      "language": "iso-639-3:kca",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 48: Schuryschkar- (Shuryshkar Khanty) (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 48\n    (Schuryschkar- (Shuryshkar Khanty)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kca-Cyrl-Latn-1460-2-2011-s50": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-50",
+      "language": "iso-639-3:kca",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 50: Surgut-Chantisch (Surgut Khanty) (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 50\n    (Surgut-Chantisch (Surgut Khanty)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kca-Cyrl-Latn-1460-2-2011-s62": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-62",
+      "language": "iso-639-3:kca",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 62: Wach-Chantisch (Wach Khanty) (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 62\n    (Wach-Chantisch (Wach Khanty)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-khk-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-39",
+      "language": "iso-639-3:khk",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 39: Mongolisch (Mongolic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 39\n    (Mongolisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kjh-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-10",
+      "language": "iso-639-3:kjh",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 10: Chakassisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 10\n    (Chakassisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kk-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-24",
+      "language": "iso-639-3:kk",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 24: Kasachisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 24\n    (Kasachisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-koi-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-27",
+      "language": "iso-639-3:koi",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 27: Komi-Permjakisch (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 27\n    (Komi-Permjakisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kpy-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-29",
+      "language": "iso-639-3:kpy",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 29: Korjakisch (Paleo-Asiatic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 29\n    (Korjakisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-krc-Cyrl-Latn-1460-2-2011-s23": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-23",
+      "language": "iso-639-3:krc",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 23: Karatschaisch (Karachay) (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 23\n    (Karatschaisch (Karachay)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-krc-Cyrl-Latn-1460-2-2011-s7": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-7",
+      "language": "iso-639-3:krc",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 7: Balkarisch (Balkar) (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 7\n    (Balkarisch (Balkar)). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ku-Cyrl-Latn-1460-2-2011-s32": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-32",
+      "language": "iso-639-3:ku",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 32: Kurdisch (Kurdish (Cyrillic)) (Indo-European)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 32\n    (Kurdisch (Kurdish (Cyrillic))). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kum-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-31",
+      "language": "iso-639-3:kum",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 31: Kumükisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 31\n    (Kumükisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kur-Arab-Latn-31635-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31635-2011-9",
+      "language": "iso-639-2:kur",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "DIN 31635:2011-07 section 9: Transliteration des Kurdischen (Soranî und Kurmancî)",
+      "description": "DIN 31635:2011-07, section 9: transliteration of Kurdish (Soranî and\n    Kurmancî) in the Arabic script, agreeing with the transcription of\n    the cited reference [5]. Tabelle 4 (vowels), Tabelle 5\n    (semivowels), the remarks 9.1.3 a-g and Tabelle 6 (the 32-row\n    letter table) are encoded. The section covers Soranî and Kurmancî\n    as written in Iraq and Iran; the Latin- and Cyrillic-script\n    Kurmancî of Turkey, Syria and the former Soviet republics is out of\n    scope by the norm's own statement.",
+      "url": "https://www.din.de",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ا",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-kv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-28",
+      "language": "iso-639-3:kv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 28: Komi-Syrjänisch (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 28\n    (Komi-Syrjänisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ky-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-26",
+      "language": "iso-639-3:ky",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 26: Kirgisisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 26\n    (Kirgisisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-lbe-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-33",
+      "language": "iso-639-3:lbe",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 33: Lakkisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 33\n    (Lakkisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-lez-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-34",
+      "language": "iso-639-3:lez",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 34: Lesgisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 34\n    (Lesgisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "din-mar-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -4535,6 +5816,111 @@
       "one_to_many": 0
     }
   },
+  "din-mdf-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-37",
+      "language": "iso-639-3:mdf",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 37: Mokscha-Mordwin. (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 37\n    (Mokscha-Mordwin.). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-mhr-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-42",
+      "language": "iso-639-3:mhr",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 42: Wiesen-Mari (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 42\n    (Wiesen-Mari). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-mns-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-35",
+      "language": "iso-639-3:mns",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 35: Mansisch (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 35\n    (Mansisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-mrj-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-45",
+      "language": "iso-639-3:mrj",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 45: Berg-Mari (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 45\n    (Berg-Mari). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-myv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-13",
+      "language": "iso-639-3:myv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 13: Ersa-Mordwinisch (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 13\n    (Ersa-Mordwinisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "din-nep-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -4562,6 +5948,69 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "din-niv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-43",
+      "language": "iso-639-3:niv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 43: Niwchisch (Paleo-Asiatic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 43\n    (Niwchisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-nog-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-44",
+      "language": "iso-639-3:nog",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 44: Nogaisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 44\n    (Nogaisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-os-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-46",
+      "language": "iso-639-3:os",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 46: Ossetisch (Indo-European)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 46\n    (Ossetisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "din-pli-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
@@ -4619,6 +6068,48 @@
       "one_to_many": 0
     }
   },
+  "din-ro-Cyrl-Latn-1460-2-2011-s38": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-38",
+      "language": "iso-639-3:ro",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 38: Moldauisch (Moldavian (Cyrillic)) (Indo-European)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 38\n    (Moldauisch (Moldavian (Cyrillic))). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-sah-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-19",
+      "language": "iso-639-3:sah",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 19: Jakutisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 19\n    (Jakutisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "din-san-Deva-Latn-33904-2018": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -4646,6 +6137,48 @@
       "many_to_one": 12,
       "one_to_many": 0
     }
+  },
+  "din-sel-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-49",
+      "language": "iso-639-3:sel",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 49: Selkupisch ((S))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 49\n    (Selkupisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-tab-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-51",
+      "language": "iso-639-3:tab",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 51: Tabassaranisch (Caucasus)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 51\n    (Tabassaranisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "din-tam-Taml-Latn-33903-2016": {
     "class": "Interscript::Node::MetaData",
@@ -4675,11 +6208,200 @@
       "one_to_many": 0
     }
   },
+  "din-tg-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-52",
+      "language": "iso-639-3:tg",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 52: Tadschikisch (Indo-European)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 52\n    (Tadschikisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-tk-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-57",
+      "language": "iso-639-3:tk",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 57: Turkmenisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 57\n    (Turkmenisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-tt-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-53",
+      "language": "iso-639-3:tt",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 53: Tatarisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 53\n    (Tatarisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "д",
+      "d",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-tyv-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-58",
+      "language": "iso-639-3:tyv",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 58: Tuwinisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 58\n    (Tuwinisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-udm-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-59",
+      "language": "iso-639-3:udm",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 59: Udmurtisch (Uralic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 59\n    (Udmurtisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-ug-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-60",
+      "language": "iso-639-3:ug",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 60: Uigurisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 60\n    (Uigurisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-urd-Arab-Latn-31635-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "31635-2011-10",
+      "language": "iso-639-2:urd",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "DIN 31635:2011-07 section 10: Transliteration von Urdu",
+      "description": "DIN 31635:2011-07, section 10: transliteration of Urdu. Tabelle 7\n    (the 37-row letter table, including the four retroflex letters,\n    the nasal letter and the badi ye) plus the transliteration hints\n    10.1 a-d: the vowel system (short a i u; long a-macron e i-macron\n    o u-macron; diphthongs ai au), the dropped word-initial alif\n    short-vowel carrier, nasal vowels marked by the following nasal\n    letter, and aspiration written as in the original script.",
+      "url": "https://www.din.de",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ء",
+      "",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-uz-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-61",
+      "language": "iso-639-3:uz",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 61: Usbekisch (Turkic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 61\n    (Usbekisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "din-xal-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-21",
+      "language": "iso-639-3:xal",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 21: Kalmückisch (Mongolic)",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 21\n    (Kalmückisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "din-yid-Hebr-Latn-31636-2018": {
     "class": "Interscript::Node::MetaData",
     "data": {
       "authority_id": "din",
-      "id": "31636-2018-yid",
+      "id": "31636-2018",
       "language": "iso-639-2:yid",
       "source_script": "Hebr",
       "destination_script": "Latn",
@@ -4702,6 +6424,27 @@
       "many_to_one": 16,
       "one_to_many": 0
     }
+  },
+  "din-yrk-Cyrl-Latn-1460-2-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "din",
+      "id": "1460-2-2011-41",
+      "language": "iso-639-3:yrk",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "DIN 1460-2:2011-10, Tabelle 1 row 41: Nenzisch ((S))",
+      "description": "DIN 1460-2:2011-10, Romanization of Cyrillic alphabets of\n    non-Slavic languages, Tabelle 1, language row 41\n    (Nenzisch). The table assigns each Cyrillic letter of the\n    language's alphabet a Latin letter or letter group; the column\n    order follows DIN 1460:1982 (Slavic). Extracted mechanically from\n    the standard's text layer; the mapping rows below are the table's\n    own cells.",
+      "url": "https://www.beuth.de/de/norm/din-1460-2/134564104",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "a",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "dos-nep-Deva-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -5054,8 +6797,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "Щ",
+      "SHT",
       null
     ],
     "skip_js": false,
@@ -5082,8 +6825,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "ة",
+      "XTA",
       null
     ],
     "skip_js": false,
@@ -5138,8 +6881,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "К",
+      "K",
       null
     ],
     "skip_js": false,
@@ -5150,6 +6893,27 @@
       "many_to_one": 12,
       "one_to_many": 0
     }
+  },
+  "icao-mul-Latn-Latn-2015": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "icao",
+      "id": "9303",
+      "language": "iso-639-2:mul",
+      "source_script": "Latn",
+      "destination_script": "Latn",
+      "name": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Transliteration of Multinational Latin-based Characters",
+      "description": "Part 3 defines specifications that are common to TD1, TD2 and TD3 size machine\n    readable travel documents (MRTDs) including those necessary for global\n    interoperability using visual inspection and machine readable (optical character\n    recognition) means. Section A of the document's transliteration scheme renders\n    the multinational Latin-based characters; this map carries that folding for\n    Latin-script input. The document's per-language Cyrillic tables are separate\n    maps.",
+      "url": "https://www.icao.int/publications/pages/publication.aspx?docnum=9303",
+      "creation_date": "2015",
+      "nonstandard": {}
+    },
+    "test": [
+      "À",
+      "A",
+      null
+    ],
+    "skip_js": false
   },
   "icao-rus-Cyrl-Latn-9303": {
     "class": "Interscript::Node::MetaData",
@@ -5166,8 +6930,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "Ъ",
+      "IE",
       null
     ],
     "skip_js": false,
@@ -5194,8 +6958,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "Г",
+      "H",
       null
     ],
     "skip_js": false,
@@ -5215,15 +6979,15 @@
       "language": "iso-639-2:ukr",
       "source_script": "Cyrl",
       "destination_script": "Latn",
-      "name": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Ukranian Cyrillic to Latin",
+      "name": "ICAO Doc 9303 Machine Readable Travel Documents Part 3 -- Ukrainian Cyrillic to Latin",
       "description": "Part 3 defines specifications that are common to TD1, TD2 and TD3\n    size machine readable travel documents (MRTDs) including those\n    necessary for global interoperability using visual inspection and\n    machine readable (optical character recognition) means.\n\n    Since only Latin-alphabet characters are allowed in the VIZ, if\n    mandatory data elements are in a national language that does not use\n    the Latin alphabet, a transcription or transliteration shall also be\n    provided.\n\n    This document defines the transliteration mappings used to produce\n    this transcription or transliteration.",
       "url": "https://www.icao.int/publications/pages/publication.aspx?docnum=9303",
       "creation_date": "2015",
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "Г",
+      "H",
       null
     ],
     "skip_js": false,
@@ -5950,8 +7714,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "Ӧ̄ ӧ̄",
+      "Ọ̈ ọ̈",
       null
     ],
     "skip_js": false,
@@ -7630,8 +9394,8 @@
       "nonstandard": {}
     },
     "test": [
-      "مِصر",
-      "Mis̱r",
+      "بِيَا",
+      "Biyā",
       null
     ],
     "skip_js": false,
@@ -7658,8 +9422,8 @@
       "nonstandard": {}
     },
     "test": [
-      "অসমীয়া কবিতা",
-      "asamīyā kabitā",
+      "ঢ়",
+      "ṙha",
       null
     ],
     "skip_js": false,
@@ -7714,8 +9478,8 @@
       "nonstandard": {}
     },
     "test": [
-      "র্ক",
-      "rka",
+      "য",
+      "j̱a",
       null
     ],
     "skip_js": false,
@@ -7742,8 +9506,8 @@
       "nonstandard": {}
     },
     "test": [
-      "нунатак Абрит",
-      "nunatak Abrit",
+      "ю",
+      "ju",
       null
     ],
     "skip_js": false,
@@ -7798,8 +9562,8 @@
       "nonstandard": {}
     },
     "test": [
-      "Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n",
-      "Éna práma mónon me parakíni̱se ki eména na grápso̱ óti toúti̱n ti̱n patrída ti̱n échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai fto̱choí kai politikoí kai stratio̱tikoí kai oi pléon mikróteroi ánthro̱poi; ósoi ago̱nistí̱kamen, analógo̱s o katheís, échomen na zí̱somen edó̱. To loipón doulépsamen óloi mazí, na ti̱n fylámen ki óloi mazí kai na mi̱n légei oúte o dynatós «egó̱» oúte o adýnatos. Xérete póte na légei o katheís «egó̱»? Ótan ago̱nisteí mónos tou kai fkiásei í̱ chalásei, na légei «egó̱»; ótan ómo̱s ago̱nízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó̱». Kai eis to exí̱s na máthomen gnó̱si̱, an thélomen na fkiásomen cho̱rión, na zí̱somen óloi mazí.\n\nGiánni̱s Makrygiánni̱s.\n",
+      "ναυτικό",
+      "naf̱tikó",
       null
     ],
     "skip_js": false,
@@ -7938,8 +9702,8 @@
       "nonstandard": {}
     },
     "test": [
-      "ചൈനയ്ക്കെതിരെ ലഡാക്കിൽ സദാസജ്ജം; യുഎസിൽനിന്ന് ൭൨,൫൦൦ സിഗ്–൧൬ റൈഫിൾ",
-      "chainaykkĕtirĕ laḍākkil sadāsajjaṃ; yuĕsilninn 72,500 sig–16 ṟaiphiḷ",
+      "ടൗ",
+      "ṭau",
       null
     ],
     "skip_js": false,
@@ -7966,8 +9730,8 @@
       "nonstandard": {}
     },
     "test": [
-      "महाराष्ट्र",
-      "mahārāṣhṭr",
+      "कॅ",
+      "kă",
       null
     ],
     "skip_js": false,
@@ -8134,8 +9898,8 @@
       "nonstandard": {}
     },
     "test": [
-      "ର୍କ",
-      "rka",
+      "କଂ",
+      "kaṁ",
       null
     ],
     "skip_js": false,
@@ -8190,8 +9954,8 @@
       "nonstandard": {}
     },
     "test": [
-      "اَنجِيرة",
-      "Anjīrah",
+      "دَهَانِهٴ مَمبَر",
+      "Dahāneh-ye Mambar",
       null
     ],
     "skip_js": false,
@@ -8267,7 +10031,7 @@
       "language": "iso-639-2:srp",
       "source_script": "Cyrl",
       "destination_script": "Latn",
-      "name": "Romanization of Serbo-Crotian (1972)",
+      "name": "Romanization of Serbian (1977)",
       "description": "The United Nations recommended system was approved in 1977 (III/11), based on the Roman equivalent of the Serbo-Croatian Cyrillic alphabet that had long been employed in official gazetteers and maps of Yugoslavia. The table was published as an annex to the resolution1. The term relating to the language (Serbian instead of Serbo-Croatian) was modified in 2002 (resolution VIII/14).\n    The system is used in Serbia, Montenegro, and Bosnia and Herzegovina. It is also used in international cartographic products.\n    Serbian uses the Cyrillic script that is alphabetic. The romanization table is unambiguous and can be applied automatically. The system is reversible.",
       "url": "http://www.eki.ee/wgrs/rom1_sr.htm",
       "creation_date": "1997",
@@ -8379,7 +10143,7 @@
       "language": "iso-639-2:ukr",
       "source_script": "Cyrl",
       "destination_script": "Latn",
-      "name": "Romanization of Belarusian, Russian And Ukrainian Cyrillic (2012)",
+      "name": "Romanization of Ukrainian (2012)",
       "description": "",
       "url": "http://www.eki.ee/wgrs/rom1_uk.htm",
       "creation_date": "2010",
@@ -8407,10 +10171,10 @@
       "language": "iso-639-2:urd",
       "source_script": "Arab",
       "destination_script": "Latn",
-      "name": "Romanization of Arabic (2017)",
+      "name": "Romanization of Urdu (1972)",
       "description": "The United Nations recommended system was approved in 1972 (\n    II/11) and amended in 1977 (III/12), based on a report\n    prepared by D. N. Sharma. The tables and their corrections\n    were published in volume II of the conference reports1,2.\n\n    There is no evidence of the use of the system either in\n    Pakistan, India or in international cartographic products.\n    Instead, in Pakistan the Hunterian system is officially\n    used3. The resolutions III/12 (1977) and IV/17 (1982)\n    recommended association, inter alia, with Pakistan, in\n    carrying out further studies on the system.\n\n    Urdu (Urdū) uses the Perso-Arabic script which is written\n    from right to left. In the script vowel points are usually\n    omitted which makes it difficult to obtain uniform\n    romanizations. Some of the Arabic consonants are\n    undifferentiated in romanization which means that the\n    system is not fully reversible.",
       "url": "https://www.eki.ee/wgrs/rom1_ur.htm",
-      "creation_date": "2017",
+      "creation_date": "1972",
       "nonstandard": {}
     },
     "test": [
