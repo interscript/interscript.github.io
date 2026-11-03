@@ -4,6 +4,7 @@ import models from "../data/models-catalogue.json" with { type: "json" }
 const all = Object.values(models) as Array<{
   id: string
   task: string
+  scripts: string[]
   precision: string
   sizeHuman: string
   splitParts: number | null
@@ -29,6 +30,7 @@ const metricLabel = (m: { name: string; value: number }) => {
 const row = (m: (typeof all)[number]) => ({
   id: m.id,
   task: m.task,
+  pair: m.scripts?.join(" \u2192 ") ?? "",
   metric: m.metrics.map(metricLabel).slice(0, 2).join(" · ") || "see RESULTS.md",
   artifact:
     `${m.precision} · ${m.sizeHuman}` +
@@ -98,7 +100,7 @@ const modelCount = all.length
         {
           serverModels.map((m) => (
             <li class="ledger-row">
-              <span class="ledger-task" data-status={m.status}>
+              <span class="ledger-task">
                 {m.task}
               </span>
               <span class="ledger-body">
@@ -119,7 +121,7 @@ const modelCount = all.length
         {
           clientModels.map((m) => (
             <li class="ledger-row">
-              <span class="ledger-task" data-status={m.status}>
+              <span class="ledger-task">
                 {m.task}
               </span>
               <span class="ledger-body">
