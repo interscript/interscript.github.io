@@ -4479,6 +4479,27 @@
       "one_to_many": 0
     }
   },
+  "bsi-kor-Kore-Latn-6505-1982-t8": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "bsi",
+      "id": "6505-1982-t8",
+      "language": "iso-639-2:kor",
+      "source_script": "Kore",
+      "destination_script": "Latn",
+      "name": "PD 6505:1982 Table VIII - The Romanization of All Letters in Sino-Korean Words",
+      "description": "PD 6505:1982, Guide to the romanization of Korean, Table VIII\n    (source p26): the Sino-Korean-specific layer of the guide. Values\n    are McCune-Reischauer-style: o-breve for the ㅓ series, u-macron\n    for ㅡ, w-compounds, the intervocalic voiced forms -g- -d- -b-\n    -j- -r-, the syllable-final assimilation grid (-ngn- -ngm- -kt-\n    -ls- -rh-), silent initial ㅇ, ㅆ romanized ss-, and a hyphen\n    between syllables (the document's own convention in its\n    bracketed examples). Transcribed visually from the scan at 8-10x.\n    The guide's mechanical system (Part Four) is a separate map.",
+      "url": "",
+      "creation_date": "1982",
+      "nonstandard": {}
+    },
+    "test": [
+      "군어",
+      "kun-ŏ",
+      null
+    ],
+    "skip_js": false
+  },
   "bsi-kor-Kore-Latn-6505-1982": {
     "class": "Interscript::Node::MetaData",
     "data": {
