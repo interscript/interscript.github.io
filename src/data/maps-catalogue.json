@@ -9064,6 +9064,27 @@
       "one_to_many": 0
     }
   },
+  "odni-zho-Hani-Latn-2015": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "odni",
+      "id": "2015",
+      "language": "iso-639-2:zho",
+      "source_script": "Hani",
+      "destination_script": "Latn",
+      "name": "ICS-630-01 Romanization of Chinese Personal Names (2015)",
+      "description": "This system applies to personal names rendered in Modern Chinese as\n    represented in the Hanyu Pinyin Romanization System. It does not\n    apply to names that are represented in other systems or in\n    Romanization schemes or practices that are used to represent\n    personal names in Chinese dialects.\n\n    The Intelligence Community (IC) standard for transliterating Chinese\n    personal names into English is the Hanyu Pinyin Romanization System\n    (or pinyin), officially known as the Scheme of the Chinese Phonetic\n    Alphabet (汉语拼音方案), with several modifications as specified in\n    this document (e.g., absence of umlauted ü, title case for\n    surnames). In 1982 the International Organization for\n    Standardization (ISO) codified the Hanyu Pinyin Romanization System\n    as ISO 7098, Information and Documentation – Romanization of Chinese\n    (Second Edition, 12-15-1991).\n\n    The primary purpose for designating a singular system is to allow\n    for a consistent transcription of names that is specifically\n    readable to the English-speaking non-specialist. It is not intended\n    to be fully \"reversible\". Disambiguation should be accomplished by\n    providing additional information following best practices of the\n    issuing organization: the Unicode-encoded form of the original\n    Chinese characters, the original encoding scheme if other than\n    Unicode (e.g., Big5 or GB), whether traditional or simplified\n    characters were used, and Standard Telegraphic Code (标准电码)\n    representations (The Standard Telegraph Codebook, revised edition,\n    PRC Ministry of Post and Telecommunications) — e.g., Ma Yingjiu\n    (STC: 7456/5391/0036). Use simplified (or short form) characters as\n    the default; traditional (or long form) characters may be used for\n    non-Mainland persons.\n\n    Personal names in Chinese should be transliterated into the IC\n    Standard in accordance with the following criteria:\n\n    a. the surname (family name) should appear first, followed by the\n       given name\n    b. the surname should be separated from the given name and be\n       followed by the given name. The initial letter of each name\n       should be capitalized, with the rest in lower case letters\n    c. commas should not be placed between the surname and given name\n    d. syllables should not be separated in the given name\n    e. hyphens should not be used between any syllables (except as\n       noted in paragraph 12)\n    f. apostrophes should not be used between any syllables (see\n       paragraph 14 for details)\n    g. compound surnames should be capitalized with no space between\n       the characters\n\n    Examples include Zhang Wei, Hu Jintao, Ouyang Xiu, Zhou Youguang,\n    and Ouyang Qianqing. If an official spelling of a name differs from\n    the IC Standard, it may be used throughout the document, with the\n    IC Standard spelling included where capabilities allow.\n\n    When a married woman uses both her surname and her husband's\n    surname, both surnames are capitalized, but a hyphen should be used\n    to separate the surnames (e.g., Chen-Li Meiling; the first surname\n    is the husband's, the second the wife's maiden name).\n\n    The umlaut (ü), as in Lü and Nü, should not be used. The standard\n    uses u for the ü character: Lu, Nu. No apostrophe (’) should be\n    used between syllables; other forensic information (e.g. original\n    Chinese characters, STC codes) should be used where necessary to\n    disambiguate syllable combinations. Any additional ambiguity should\n    be addressed in a Translator's Comment.",
+      "url": "",
+      "creation_date": "2015",
+      "nonstandard": {}
+    },
+    "test": [
+      "丁",
+      "Ding",
+      null
+    ],
+    "skip_js": false
+  },
   "royin-tha-Thai-Latn-1999": {
     "class": "Interscript::Node::MetaData",
     "data": {
