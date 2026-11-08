@@ -1,0 +1,90 @@
+= ISC-WF-1: workflow extension (rulesets, overrides, language variants)
+
+The Interscript Configuration Syntax (ISC) describes each transliteration
+system as a self-contained map. *ISC-WF-1* extends the language with three
+additive constructs for reuse and specialization: named rulesets, use-time
+overrides, and language conditioning. The constructs are defined by the
+normative specification
+https://github.com/interscript/maps/blob/main/docs/isc-wf-1.md[ISC-WF-1]
+and are additive: any map that does not use them transliterates
+byte-identically under runtimes with and without the extension.
+
+== W1 — named rulesets
+
+A `ruleset` is a named block of rules that never runs on its own. A stage
+pulls it in with `use`, which expands the ruleset's items at that position:
+
+[source,ruby]
+----
+ruleset romanize_descenders {
+  parallel {
+    sub "җ" "ž̧"
+    sub "қ" "ķ"
+    sub "ҫ" "ş"
+  }
+}
+
+stage main {
+  use romanize_descenders
+  parallel {
+    sub "а" "a"
+  }
+}
+----
+
+Rulesets compose with dependencies: after `dependency "id" as alias`, a
+ruleset from that map is referenced as `use alias.<name>`. Expansion is
+recursive; a reference cycle is a load error.
+
+== W2 — use with override
+
+A `use` directive may carry an `override` block. Rows whose source string
+matches an override row exactly are replaced by it; all other rows pass
+through; new rows are added. The whole expansion still applies as one
+longest-match pass:
+
+[source,ruby]
+----
+stage main {
+  use romanize_descenders override {
+    sub "қ" "k̦"   # this map's tradition uses the comma-below form
+  }
+  parallel {
+    sub "а" "a"
+  }
+}
+----
+
+An override row is complete: it replaces the imported row's output and any
+constraints, and it may carry its own language guard.
+
+== W3 — language conditioning
+
+A map can declare the languages it serves, and individual rows can be
+guarded by a language selected at call time:
+
+[source,ruby]
+----
+system "ISO:rus-Cyrl:Latn:9-1995" {
+  languages kur ckv
+}
+stage main {
+  parallel {
+    sub "қ" "ķ"            # generic
+    sub "қ" "k̦" when kur   # Kurdish tradition
+  }
+}
+----
+
+Rules whose guard lists the selected language apply; guard-applicable rows
+take precedence over an unguarded row with the same source string; with no
+language selected every guard is inert and the map behaves as if the guarded
+rows were absent.
+
+== Availability
+
+The construct semantics are specified in ISC-WF-1. Runtime support is
+landing across the Interscript runtimes (Ruby reference implementation
+first, then TypeScript, Python and Rust); each landing is gated by the
+corpus additivity proof, so maps that do not use these constructs are never
+affected.
