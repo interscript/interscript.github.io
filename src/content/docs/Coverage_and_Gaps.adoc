@@ -7,10 +7,11 @@ check.
 
 == What is covered
 
-The map registry contains **318 systems** drawn from
+The map registry contains **428 systems** drawn from
 https://github.com/interscript/maps[the maps repository] — each an
 executable, test-carrying transliteration map with a named authority
-and source document. Browse them on the
+and source document, 12,337 embedded tests from those documents, all
+green. Browse them on the
 https://interscript.org/maps[map catalogue]; every system has its own
 page with its description, source document, scripts, mapping counts,
 invertibility class, a live in-browser preview, and its full rule
@@ -29,20 +30,20 @@ https://github.com/interscript/interscript-models/tree/main/TODO.sota[the
 models repository's campaign ledger]. The remaining systems, by
 source:
 
-* *DIN* — 1460-2 (Cyrillic, part 2), 31635 (Persian, Kurdish and Urdu
-  columns; the Arabic column is shipped), 31636 (Yiddish column; the
-  Hebrew column is shipped), 32708.
-* *BSI PD 6505:1982* — the romanization of Korean (a mechanical BSI
-  system, not McCune-Reischauer); transcription from the scan is in
-  progress.
 * *ISO* — ISO 9 non-Russian Cyrillic coverage check, ISO 259 Hebrew
   letter table, ISO 7089/7098 Chinese pinyin, and the remaining ISO
-  15919 Indic scripts.
-* *ALA-LC* — the remaining systems of the ALA-LC romanization guide
-  beyond the 55 ALA-LC maps already in the registry, queued in
-  batches.
-* *ICAO and UNGEGN* — current source documents need to be diffed
-  against the registry.
+  15919 Indic scripts. The source documents are not yet in the
+  project's reference collection; acquisition is owner-held.
+* *ALA-LC* — the batch campaigns landed through 2026-11-09 (Brahmic/
+  SE-Asian, Arabic-script, Cyrillic, East Asian, and misc-script
+  systems; 93 ALA-LC maps in the registry). The systems listed in the
+  campaign ledger without a source document in the collection —
+  moghol, bashkir, chuvash, udmurt, komi, yakut/sakha, N'Ko,
+  tod-oirat — are recorded there, not encodable until a source is
+  acquired.
+* *ICAO and UNGEGN* — the source-document diff against the registry
+  is complete (2026-11-08), and the UNGEGN editions are acquired into
+  the reference library.
 
 == Neural lines with open targets
 

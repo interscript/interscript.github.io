@@ -37,6 +37,31 @@ separate / unseparate`
 
 const casing = `sub { from "ة" to upcase }   // uppercases the matched text only`
 
+const reuse = `ruleset romanize_descenders {
+  parallel {
+    sub "җ" "ž̧"
+    sub "қ" "ķ"
+  }
+}
+
+stage main {
+  use romanize_descenders        // splice the ruleset's items here
+  use romanize_descenders override {
+    sub "қ" "k̦"                  // child-wins on exact from-equality
+  }
+}`
+
+const languages = `system "ISO:rus-Cyrl:Latn:9-1995" {
+  languages kur ckv               // the languages this map serves
+  ...
+}
+stage main {
+  parallel {
+    sub "қ" "ķ" when kur          // applies only when the caller
+    sub "ҫ" "ș" when ckv          // selects that language
+  }
+}`
+
 const tests = `tests { "input" -> "expected" }`
 ---
 
@@ -83,6 +108,25 @@ const tests = `tests { "input" -> "expected" }`
 
     <h2>Casing targets</h2>
     <pre><code>{casing}</code></pre>
+
+    <h2>Reuse and language conditioning (ISC-WF-1)</h2>
+    <pre><code>{reuse}</code></pre>
+    <p>A <code>ruleset</code> never runs on its own: <code>use</code> splices
+    its items at that position (recursively; a reference cycle is a
+    load error, and <code>use alias.&lt;ruleset&gt;</code> reaches into a
+    declared dependency). An <code>override</code> block replaces
+    rows on byte-exact from-equality, adds new rows, and joins the
+    expansion's parallel pass — replacement acts on the
+    source-script pass.</p>
+    <pre><code>{languages}</code></pre>
+    <p>A map can declare the languages it serves, and rows can be
+    guarded with <code>when</code>. The caller selects a language;
+    guard-applicable rows win over an unguarded row with the same
+    from-string; with no selection every guard is inert. All three
+    constructs are additive: a map that does not use them
+    transliterates identically under runtimes with and without them.
+    The narrative page is <a href="/docs/Workflow_Extension">Workflow extension</a>;
+    the normative text is <a href="https://github.com/interscript/maps/blob/main/docs/isc-wf-1.md">maps/docs/isc-wf-1.md</a>.</p>
 
     <h2>Embedded tests</h2>
     <pre><code>{tests}</code></pre>
