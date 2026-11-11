@@ -232,14 +232,14 @@
       "source_script": "Bali",
       "destination_script": "Latn",
       "name": "Balinese Romanization Table (2025)",
-      "description": "ALA-LC Balinese Romanization Table, 2025 version — strict\n    transliteration per ISO 15919:2001 with PKU modifications. The\n    vowel a is inherent after all consonants except terminal ones,\n    replaced by combining vowel signs or cancelled by the\n    vowel-suppressant adeg-adeg (word-finally the middle dot). The\n    full consonant inventory: the aksara wresastra core, the Indic\n    swalalita set, and the terminal consonants. Vowels include the\n    vocalic and l̥ series and the pepet ə. Transcribed from the\n    loc.gov document's complete text layer.",
+      "description": "ALA-LC Balinese Romanization Table, 2025 version — strict\n    transliteration per ISO 15919:2001 with PKU modifications. The\n    vowel a is inherent after all consonants except terminal ones,\n    replaced by combining vowel signs or cancelled by the\n    vowel-suppressant adeg-adeg (word-finally the middle dot). The\n    full consonant inventory: the aksara wresastra core, the Indic\n    swalalita set, and the terminal consonants. Vowels include the\n    vocalic and l̥ series and the pepet ə. Transcribed from the\n    loc.gov document's complete text layer and verified against the\n    rendered tables.",
       "url": "https://www.loc.gov/catdir/cpso/romanization/balinese.pdf",
       "creation_date": "2025",
       "nonstandard": {}
     },
     "test": [
-      "ᬳ᭄ᬯ᭄",
-      "PROBE",
+      "ᬓ",
+      "ka",
       null
     ],
     "skip_js": false
@@ -337,7 +337,7 @@
       "source_script": "Tibt",
       "destination_script": "Latn",
       "name": "Tibetan Romanization Table (2015)",
-      "description": "ALA-LC Tibetan Romanization Table, 2015 version — the Wylie\n    system. Every base consonant carries the inherent vowel a (Note 2);\n    subjoined letters take no vowel; the thirteen vowel signs include\n    the vocalic r and l and the a-chung lengthening (ā); the ʼa chung\n    (འ) romanizes as the alif. Non-Tibetan retroflex and aspirate\n    extensions per the special-letter section. Transcribed from the\n    loc.gov document.",
+      "description": "ALA-LC Tibetan Romanization Table, 2015 version — the Wylie\n    system. Every base consonant carries the inherent vowel a (Note 2);\n    stacked consonants romanize as the consonant sequence with the\n    implicit a of the final member; the thirteen vowel signs include\n    the vocalic r and l and the a-chung lengthening (ā); the ʼa chung\n    (འ) romanizes as the alif. Non-Tibetan retroflex and aspirate\n    extensions per the special-letter section. Transcribed from the\n    loc.gov document.",
       "url": "https://www.loc.gov/catdir/cpso/romanization/tibetan.pdf",
       "creation_date": "2015",
       "nonstandard": {}
@@ -398,6 +398,48 @@
       "one_to_many": 0
     }
   },
+  "alalc-chr-Cher-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:chr",
+      "source_script": "Cher",
+      "destination_script": "Latn",
+      "name": "Cherokee Romanization Table (2012)",
+      "description": "ALA-LC Cherokee Romanization Table, 2012 version (no earlier\n    versions). One-to-one romanization of the complete Cherokee\n    syllabary: six vowels, the twenty consonant series with their\n    vowel-series syllables, the s letter, the hna/nah letters, and the\n    digraph series qua/que/qui/quo/quu/quv, dla/tla and its series,\n    tsa series, and the w and y series. Eighty-five syllabary\n    characters, transcribed from the loc.gov document.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/cherokee.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "Ꭰ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-chu-Cyrl-Latn-2022": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2022",
+      "language": "iso-639-2:chu",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Church Slavic (2022)",
+      "description": "ALA-LC romanization table for Church Slavic, 2022 version\n    (earlier versions 2011 and 1997). Covers the full Church Slavonic\n    alphabet including the yuses, ksi, psi, fita, izhitsa and the two uk\n    forms, with the letters' numeric values annotated. Transcribed from\n    the digitized table (pages 1-2).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/church-slavic.pdf",
+      "creation_date": "2022",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-cjm-Cham-Latn-2015": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -415,6 +457,27 @@
     "test": [
       "ꨓꨪꨆꨲꩍ",
       "tikuh",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-cop-Copt-Latn-2014": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2014",
+      "language": "iso-639-2:cop",
+      "source_script": "Copt",
+      "destination_script": "Latn",
+      "name": "Coptic Romanization Table (2014)",
+      "description": "ALA-LC Coptic Romanization Table, 2014 version (no earlier\n    versions). Covers the Coptic alphabet (Greek-derived and Demotic\n    letters), the Old Coptic letters with their diacritic romanizations\n    (diaeresis forms Ï Ü Ẍ, the K-diaeresis-below and dialect-p ni and\n    crossed shei letters, the dialect-p alef to a modifier-letter\n    apostrophe), the Old Nubian letters (ŋ ɲ w), the letter-numeral\n    table (macron above for units, overline for thousands), and the\n    note rules: the single prime inserted between two letters that\n    could be misread as a digraph, and the ignoring of diacritics per\n    the practice of the Journal of Coptic Studies except the iaude (ⲓ)\n    and ua (ⲩ) diaereses.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/coptic.pdf",
+      "creation_date": "2014",
+      "nonstandard": {}
+    },
+    "test": [
+      "ⲙⲛ̅ⲧϩⲗ̅ⲗⲟ",
+      "mntʹhllo",
       null
     ],
     "skip_js": false
@@ -671,6 +734,48 @@
       "one_to_many": 0
     }
   },
+  "alalc-hye-Armn-Latn-2022": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2022",
+      "language": "iso-639-2:hye",
+      "source_script": "Armn",
+      "destination_script": "Latn",
+      "name": "Armenian Romanization Table (2022)",
+      "description": "ALA-LC Armenian Romanization Table, 2022 version (earlier\n    versions: 2011, 1997). The table is based on the phonetic values of\n    Classical and East Armenian; the bracketed West Armenian variant\n    values (B [P], G [K], D [T], Ts [Dz], K [G], Dz [Ts], Ch [J], P [B],\n    J [Ch]) are intended solely for preparing references from West\n    Armenian forms and are not encoded here — the primary rendering is\n    encoded per row. The table covers the complete letter inventory\n    (including the ու digraph, the Եւ/Եվ/և forms), the Note 3 soft-sign\n    (prime) combinations, the punctuation transcription rules, and the\n    letter-numeral table. The aspiration mark is U+02BB (ʻ); the soft\n    sign is U+02B9 (ʹ).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/armenian.pdf",
+      "creation_date": "2022",
+      "nonstandard": {}
+    },
+    "test": [
+      "Երևան",
+      "Erevan",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-jav-Arab-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:jav",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Jawi/Pegon (2012)",
+      "description": "ALA-LC Romanization table for Jawi/Pegon, 2012 version (earlier versions: 2011, 1997, both tables named Malay (in Jawi-Arabic script))",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/jawi-pegon.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-jav-Java-Latn-2012": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -688,6 +793,48 @@
     "test": [
       "ꦥꦚ꧀ꦕ",
       "panca",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-jba-Hebr-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2011",
+      "language": "iso-639-2:jba",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "ALA/LC Systematic Romanization for Judeo-Arabic (2011)",
+      "description": "ALA/LC Systematic Romanization for Judeo-Arabic, Jan. 31, 2011 (no earlier versions)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/judeo-arabic.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "א",
+      "ʼ",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-jpn-Hrkt-Latn-2022": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2022",
+      "language": "iso-639-2:jpn",
+      "source_script": "Hrkt",
+      "destination_script": "Latn",
+      "name": "Japanese Romanization Table (2022)",
+      "description": "ALA-LC Japanese Romanization Table, 2022 version\n    (McCune-Reischauer). Encodes the Romanized/Kana Equivalent Charts\n    (chart A, Standard; chart B, Non-traditional Japanese for foreign\n    words) kana-by-kana, per section 2.1 (\"words and parts of words\n    written only in hiragana or katakana should be romanized as they\n    appear\") and section 2.4.2.1 (\"Romanize kana-by-kana\"), together\n    with the deterministic orthographic rules of the same document: the\n    lengthening-bar macron rule (2.5.1), the sokuon doubling rule\n    (chart A note ii), the n-apostrophe rule (5.2), the kana repetition\n    markers (4.4.1) and the punctuation and typographical equivalents\n    (4.2-4.3). Transcribed from the loc.gov document's complete text\n    layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/japanese.pdf",
+      "creation_date": "2022",
+      "nonstandard": {}
+    },
+    "test": [
+      "きゃ",
+      "kya",
       null
     ],
     "skip_js": false
@@ -860,6 +1007,27 @@
       "one_to_many": 0
     }
   },
+  "alalc-kaz-Arab-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:kaz",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Kazakh (2012)",
+      "description": "ALA-LC Romanization table for Kazakh (in Arabic Script), 2012 version (no earlier versions)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/kazakh.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ا",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-khm-Khmr-Latn-2013": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -908,6 +1076,48 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-kur-Arab-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:kur",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Kurdish (2012)",
+      "description": "ALA-LC Romanization table for Kurdish, 2012 version (earlier versions: 2004, 2002).\n    Trilingual table (Roman Hawar / Cyrillic / Arabic); this map encodes the Arabic column into the Roman (Hawar) column.",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/kurdish.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ئا",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-lad-Hebr-Latn-2025": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2025",
+      "language": "iso-639-2:lad",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Ladino (2025)",
+      "description": "ALA-LC Romanization table for Ladino, 2025 version (earlier versions: 2011, 2005)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/ladino.pdf",
+      "creation_date": "2025",
+      "nonstandard": {}
+    },
+    "test": [
+      "א",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-lao-Laoo-Latn-2012": {
     "class": "Interscript::Node::MetaData",
@@ -1140,6 +1350,27 @@
       "one_to_many": 0
     }
   },
+  "alalc-mnc-Mong-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:mnc",
+      "source_script": "Mong",
+      "destination_script": "Latn",
+      "name": "Manchu Romanization Table (2012)",
+      "description": "ALA-LC Manchu Romanization Table, 2012 version (no earlier\n    versions). The printed table gives each letter in its isolated,\n    initial, medial and final forms; Manchu is a cursive script and all\n    positional forms of a letter share one Unicode codepoint, so each\n    row encodes one rule. The before-vowel variant letters of the\n    printed table are distinct letters of the script and carry distinct\n    codepoints: k (1) before a, o, and ū / k (2) before e, i, and u;\n    likewise g (1)/(2), h (1)/(2), t (1)/(2), d (1)/(2), and f (3)\n    before a and e only versus f. The letters and digraphs used in\n    foreign words (kʻ, gʻ, hʻ before a and o; ts, dz, ž, sy, cy, jy per\n    Chinese pinyin values) are shown in the table in isolated form.\n    The Unicode correspondence follows the standard Mongolian block\n    model: shared Mongolian letters, the Sibe letterforms that coincide\n    with the Manchu forms, and the five Manchu-specific codepoints\n    (Manchu I, KA, RA, FA, ZHA); the three foreign-letter forms kʻ gʻ\n    hʻ correspond to the Todo KA/GAA/HAA codepoints, and ts, dz, ž to\n    the Sibe TSA/ZA/ZHA codepoints.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/manchu.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ᠮᠠᠨᠵᡠ",
+      "manju",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-mni-Mtei-Latn-2022": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -1155,7 +1386,7 @@
       "nonstandard": {}
     },
     "test": [
-      "ꯑꯥ",
+      "ꯁꯦ",
       "se",
       null
     ],
@@ -1204,7 +1435,7 @@
       "nonstandard": {}
     },
     "test": [
-      "မွါ",
+      "မွ",
       "mva",
       null
     ],
@@ -1265,6 +1496,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-ota-Arab-Latn-1997": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "1997",
+      "language": "iso-639-2:ota",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table for Ottoman Turkish",
+      "description": "ALA-LC Romanization table for Ottoman Turkish, based on the romanization system published by Eleazer Birnbaum in the Journal of the American Oriental Society, volume 87 (1967), with slight modifications. The source document carries no edition date; the 1997 attribute follows the ALA-LC 1997 system edition in which the table appears.",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/ottoman.pdf",
+      "creation_date": "1997",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-pan-Guru-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1377,6 +1629,48 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-pus-Arab-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2013",
+      "language": "iso-639-2:pus",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Pushto (2013)",
+      "description": "ALA-LC Romanization table for Pushto, 2013 version (earlier versions: 2012, 1997)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/pushto.pdf",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-rue-Cyrl-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2013",
+      "language": "iso-639-3:rue",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Rusyn (2013)",
+      "description": "ALA-LC romanization table for Rusyn / Carpatho-Rusyn (2013 version,\n    no earlier versions). Reflects written variants of Rusyn from\n    several regions. Transcribed from the digitized table (pages 1-2).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/rusyn.pdf",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-rus-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1559,6 +1853,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-snd-Arab-Latn-2024": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2024",
+      "language": "iso-639-2:snd",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Sindhi (2024)",
+      "description": "ALA-LC Romanization table for Sindhi (in Arabic script), 2024 version (earlier versions: 2013, 2012, 1997)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/sindhi.pdf",
+      "creation_date": "2024",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
   },
   "alalc-srp-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
@@ -1805,6 +2120,48 @@
       "one_to_many": 0
     }
   },
+  "alalc-tmh-Tfng-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2013",
+      "language": "iso-639-2:tmh",
+      "source_script": "Tfng",
+      "destination_script": "Latn",
+      "name": "Tamashek Romanization Table (2013)",
+      "description": "ALA-LC Tamashek Romanization Table, 2013 version (no earlier\n    versions). The Tuareg Tifinagh alphabet as used for Tamashek:\n    five vowel letters plus schwa, the consonant inventory including\n    the geminate letters (nn, ll) and the two dialect letters, the\n    Ahaggar ǰ (U+2D4B) and the Tawellemmet ž (U+2D64). The source\n    document renders the vernacular glyphs through a substitute font\n    with no text layer for most cells; the codepoint assignments\n    follow the Tuareg letter-to-codepoint unification, grounded on the\n    twenty-one cells whose codepoints the text layer does carry\n    (ⵀ ⵛ ⴹ ⵒ ⵗ ⵆ ⵘ ⵔ ⵙ ⴼ ⴶ ⵐ ⵂ ⵌ ⴾ ⵎ ⵏ ⵠ ⵣ ⵋ ⵤ).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/tamashek.pdf",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "ⴰ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-uig-Arab-Latn-2015": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2015",
+      "language": "iso-639-2:uig",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Uighur (2015)",
+      "description": "ALA-LC Romanization table for Uighur, 2015 version (earlier versions: 2011, 1997)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/uighur.pdf",
+      "creation_date": "2015",
+      "nonstandard": {}
+    },
+    "test": [
+      "ا",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "alalc-ukr-Cyrl-Latn-1997": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -1860,6 +2217,153 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "alalc-und-Dsrt-Latn-2016": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2016",
+      "language": "iso-639-2:und",
+      "source_script": "Dsrt",
+      "destination_script": "Latn",
+      "name": "Deseret Romanization Table (2016)",
+      "description": "ALA-LC Deseret Romanization Table, 2016 version (no earlier\n    versions). The table is scoped to the Deseret script (the Deseret\n    alphabet), not to any one language, so the language field carries\n    the undetermined code; the alphabet was devised in the 1850s for\n    English. Forty letters (six vowels and thirty-four consonants and\n    vowel-length and diphthong forms), each mapping one-to-one; the\n    letter values follow the printed table. The source document's\n    text layer doubles every letter glyph in the vernacular column; a\n    visual check of the rendered pages confirms a single letter per\n    row, and the codepoints below are the Unicode Deseret block values\n    corresponding to the table's letter order.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/deseret.pdf",
+      "creation_date": "2016",
+      "nonstandard": {}
+    },
+    "test": [
+      "𐐀",
+      "Ē",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-urd-Arab-Latn-2013": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2013",
+      "language": "iso-639-2:urd",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Urdu (2013)",
+      "description": "ALA-LC Romanization table for Urdu (in Arabic script), 2013 version (earlier versions: 2011, 1997)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/urdu.pdf",
+      "creation_date": "2013",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-vai-Vaii-Latn-2010": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2010",
+      "language": "iso-639-2:vai",
+      "source_script": "Vaii",
+      "destination_script": "Latn",
+      "name": "Vai Romanization Table (2010)",
+      "description": "ALA-LC Vai Romanization Table, 2010 version. One-to-one\n    romanization of the Vai syllabary as scoped by the table: 239\n    syllable characters across the e, i, a, o, u, ɔ and ɛ vowel\n    series (including the nasalized syllables and the ŋã, kpã, gbɔ̃,\n    kpɛ̃, gɛ̃, ŋgɛ̃, ŋɔ̃, ŋɛ̃ forms) plus the syllabic nasal ꘋ (ŋ).\n    Nasalized Latin vowels are normalized to the precomposed tilded\n    letters (ẽ ĩ ã õ ũ) where they exist and to the combining tilde\n    for ɔ̃ and ɛ̃. The extended Latin letters ɓ ɗ ɛ ŋ ɲ ɔ follow the\n    table's Note 1 (Unicode standard usage approved by NDMSO, 2007).",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/vai.pdf",
+      "creation_date": "2010",
+      "nonstandard": {}
+    },
+    "test": [
+      "ꔀ",
+      "e",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-zgh-Tfng-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:zgh",
+      "source_script": "Tfng",
+      "destination_script": "Latn",
+      "name": "Moroccan Tamazight Romanization Table (2012)",
+      "description": "ALA-LC Moroccan Tamazight Romanization Table, approved by\n    CC:AAM 2012-01-22 (no version year printed on the document; the\n    approval date is from the PDF metadata). The table follows, with\n    minimal exceptions, the romanization method used by the Institut\n    Royal de la Culture Amazighe (IRCAM) for texts published in the\n    Central Atlas Tamazight and Standard Tamazight languages of\n    Morocco, using neo-Tifinagh script. Characters needed to support\n    the Tachelhit and Tarifit languages have also been included, so\n    the scope covers all living Moroccan Tamazight languages in\n    neo-Tifinagh. Forty-two letter rules plus the labialized digraphs\n    and the labialization mark (tamatart). The spirant letters romanize\n    with a macron below (ḇ ḡ ḏ ṯ, U+0331); the emphatic letters with a\n    dot below (ḍ ḥ ṛ ṣ ṭ ẓ); the Tachelhit emphatic d with both marks.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/tamazight.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "ⴰⵖⵍⵢⴰⵙ",
+      "aɣlyas",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-zho-Hani-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:zho",
+      "source_script": "Hani",
+      "destination_script": "Latn",
+      "name": "Chinese Romanization Table (2012)",
+      "description": "ALA-LC Chinese Romanization Table, 2012 version. The\n    2012 table follows the principles of the Pinyin system, replacing\n    the Wade-Giles system of earlier editions, and does not indicate\n    tone marks (Rules of Application 1). Separation of Syllables: the\n    romanization of each Chinese character is separated by a space.\n    This map encodes the character readings attested by the document's\n    own examples, output as lowercase syllables separated by spaces,\n    and the deterministic punctuation equivalents. Transcribed from the\n    loc.gov document's complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/chinese.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "西北",
+      "xi bei",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-zho-Latn-Latn-2012": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2012",
+      "language": "iso-639-2:zho",
+      "source_script": "Latn",
+      "destination_script": "Latn",
+      "name": "Correspondence of Wade-Giles to Pinyin (2012)",
+      "description": "The Correspondence of Wade-Giles to Pinyin table from\n    the ALA-LC Chinese Romanization Table, 2012 version (pages 9-21).\n    The document presents the table \"as a device to show the usual\n    relationship between Wade-Giles and Pinyin romanizations\", drawing\n    the Wade-Giles syllabic readings from Di ming Han zi yi yin biao\n    地名漢字譯音表 (1971) and the ALA-LC romanization tables (1997),\n    and the Pinyin equivalents from Xian dai Han yu ci dian 现代汉语词典\n    (1983). The list is printed as not exhaustive; every printed row is\n    transcribed here in order. Transcribed from the loc.gov document's\n    complete text layer.",
+      "url": "https://www.loc.gov/catdir/cpso/romanization/chinese.pdf",
+      "creation_date": "2012",
+      "nonstandard": {}
+    },
+    "test": [
+      "chih",
+      "zhi",
+      null
+    ],
+    "skip_js": false
+  },
+  "alalc-zsm-Arab-Latn-2011": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "alalc",
+      "id": "2011",
+      "language": "iso-639-2:zsm",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "Romanization Table -- Malay (in Jawi-Arabic script) (2011)",
+      "description": "ALA-LC Romanization table for Malay (in Jawi-Arabic script), 2011 version (earlier version: 1997)",
+      "url": "http://catdir.loc.gov/catdir/cpso/romanization/malay.pdf",
+      "creation_date": "2011",
+      "nonstandard": {}
+    },
+    "test": [
+      "ب",
+      "b",
+      null
+    ],
+    "skip_js": false
   },
   "apcbg-bul-Cyrl-Latn-1995": {
     "class": "Interscript::Node::MetaData",
