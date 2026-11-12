@@ -13,7 +13,7 @@ Install:
 npm install interscript
 ```
 
-Transliterate with one of the 289 authority systems:
+Transliterate with any of the 428 authority systems:
 
 ```ts
 import { transliterateAsync } from "interscript"
@@ -34,6 +34,35 @@ const resolved = await imf.resolve("ara-diac-layerdrop-1.0-int4")
 const model = await imf.IMFModel.fromZipBytes(resolved.bytes)
 const vocalized = await model.translate("السلام عليكم")
 ```
+
+All four language runtimes execute the same canonical grammar: the
+ ISC grammar has a single normative source (the parsanol `.parg`
+ file, checksum-pinned), and the TypeScript and Python parsers are
+ generated from it — verified structurally identical across the whole
+ 434-file corpus on every change.
+
+== Rust (crates.io)
+
+Install:
+
+```
+cargo add interscript
+```
+
+Transliterate and run the golden conformance gate:
+
+```rust
+use interscript_rs::Runtime;
+
+let rt = Runtime::new(vec![
+    std::path::PathBuf::from("maps/maps"),
+    std::path::PathBuf::from("maps/libs"),
+]);
+let out = rt.transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")?;
+```
+
+The crate also ships the `iscrs` CLI (transliterate, corpus test
+sweeps, the golden capture, and IMF model inference).
 
 == Python
 
@@ -57,16 +86,26 @@ print(model.translate("قوله فحكمها في الوفاة"))
 Install:
 
 ```
-gem install secryst
+gem install interscript
 ```
 
-Load and translate:
+Transliterate (deterministic maps), optionally with a language
+selection for maps that declare languages:
 
 ```ruby
-require "secryst"
+require "interscript"
 
-model = Secryst::Model.load("ara-diac-small-2.1-int8")
-model.translate("قوله فحكمها في الوفاة")
+Interscript.transliterate("bgnpcgn-ukr-Cyrl-Latn-2019", "Антон")
+```
+
+Use a neural model — the gem embeds the IMF v1 runtime (index
+resolution, checksum verification, ONNX inference):
+
+```ruby
+require "interscript/ml"
+
+Interscript::ML::Translator.new(model_file: "ara-diac-base-1.0")
+  .translate("قوله فحكمها في الوفاة")
 ```
 
 == Command line
