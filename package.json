@@ -35,7 +35,7 @@
     "@litertjs/core": "^2.5.3",
     "@tailwindcss/vite": "^4.0.0",
     "astro": "^7.3.5",
-    "interscript": "^5.13.0",
+    "interscript": "^5.14.0",
     "onnxruntime-web": "^1.31.1",
     "svgo": "^4.1.0",
     "tailwindcss": "^4.0.0",
