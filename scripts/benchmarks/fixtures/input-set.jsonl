@@ -1,0 +1,514 @@
+{"map":"acadsin-zho-Hani-Latn-2002","src":"阜康","out":"Fukang"}
+{"map":"alalc-amh-Ethi-Latn-1997","src":"አዲግራት","out":"ʼadigerāte"}
+{"map":"alalc-amh-Ethi-Latn-1997","src":"ራስ ጉግሣ ፳፮","out":"rāse gugeśā 206"}
+{"map":"alalc-amh-Ethi-Latn-2011","src":"የሚያስፈልጉ ህጎች ጥንቅር ነው። ቋንቋወችን ለመፈረጅ እንዲሁም","out":"yamiyāsefalegu hegoče ṭeneqere nawe። qwāneqwāwačene lamafaraǧe ʼenedihume"}
+{"map":"alalc-amh-Ethi-Latn-2011","src":"ኦፓኛ","out":"ʼopāñā"}
+{"map":"alalc-ara-Arab-Latn-1997","src":"يَد","out":"yad"}
+{"map":"alalc-ara-Arab-Latn-1997","src":"يَحيَى","out":"yaḥyá"}
+{"map":"alalc-ara-Arab-Latn-1997","src":"عَدُوّ","out":"‘adūw"}
+{"map":"alalc-ara-Arab-Latn-1997","src":"الإتِّحَاد","out":"al-ittiḥād"}
+{"map":"alalc-asm-Deva-Latn-1997","src":"লখিমপুৰ জিলাৰ নাৰায়ণপুৰৰ বৰপথাৰত আজি প্ৰশান্তি ধাম নামেৰে এখন বৃদ্ধাশ্ৰমৰ শুভাৰম্ভ কৰা হয়","out":"lakhimapura jilāra nārāẏaṇapurara barapathārata āji praśānti dhāma nāmere ekhana bṛddhāśramara śubhārambha karā haẏa"}
+{"map":"alalc-aze-Arab-Latn-1997","src":"اَيْوَان","out":"Eyvān"}
+{"map":"alalc-ban-Bali-Latn-2025","src":"ᬒ","out":"au"}
+{"map":"alalc-bel-Cyrl-Latn-1997","src":"Парк Чалюскінцаў","out":"Park Chali͡uskintsaŭ"}
+{"map":"alalc-bod-Tibt-Latn-2015","src":"ཀ་","out":"ka"}
+{"map":"alalc-btk-Batk-Latn-2012","src":"ᯄ","out":"ka"}
+{"map":"alalc-chr-Cher-Latn-2012","src":"Ꭱ","out":"e"}
+{"map":"alalc-chr-Cher-Latn-2012","src":"Ꮊ","out":"me"}
+{"map":"alalc-chr-Cher-Latn-2012","src":"Ꮣ","out":"da"}
+{"map":"alalc-chr-Cher-Latn-2012","src":"Ꮼ","out":"wo"}
+{"map":"alalc-chu-Cyrl-Latn-2022","src":"Ж","out":"Zh"}
+{"map":"alalc-chu-Cyrl-Latn-2022","src":"р","out":"r"}
+{"map":"alalc-chu-Cyrl-Latn-2022","src":"Ъ","out":"ʺ"}
+{"map":"alalc-chu-Cyrl-Latn-2022","src":"ѫ","out":"ǫ"}
+{"map":"alalc-cjm-Cham-Latn-2015","src":"꩗","out":"7"}
+{"map":"alalc-div-Thaa-Latn-1997","src":"ބޮއް","out":"boh"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"κογξ","out":"konx"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Άμφισσα","out":"Amphissa"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Επτάνησα","out":"Eptanēsa"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Καστοριά","out":"Kastoria"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Λέρος","out":"Leros"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Όλυμπος","out":"Olympos"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Σαντορίνη","out":"Santorinē"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Χαλκιδική","out":"Chalkidikē"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Λευκωσία","out":"Leukōsia"}
+{"map":"alalc-ell-Grek-Latn-1997","src":"Ταϊτή","out":"Taitē"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"αθεΐα","out":"atheia"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Βόλος","out":"Volos"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Θεσσαλία","out":"Thessalia"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Κοζάνη","out":"Kozanē"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Μαρκόπουλο","out":"Markopoulo"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Πειραιάς","out":"Peiraias"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Στερεά Ελλάδα","out":"Sterea Ellada"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Άμστερνταμ","out":"Amsterntam"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Μόσχα","out":"Moscha"}
+{"map":"alalc-ell-Grek-Latn-2010","src":"Χαβάη","out":"Chavaē"}
+{"map":"alalc-fas-Arab-Latn-1997","src":"كُلِّيَّة الآدَاب","out":"Kullīyat al-Ādāb"}
+{"map":"alalc-guj-Gujr-Latn-2011","src":"ઓગસ્ટ મહિનામાં મેન્યુફેક્ચરિંગ સેક્ટરનું ઉત્પાદન ગગડ્યુ","out":"ȏgasṭa mahināmāṃ mȇnyuphȇkcariṅga sȇkṭaranuṃ utpādana gagaḍyu"}
+{"map":"alalc-hin-Deva-Latn-2011","src":"छोटे व्यापारियों को ढूंढें, उनसे खरीदें और उनका साथ दें","out":"choṭe vyāpāriyoṃ ko ḍhūṃḍheṃ, unase kharīdeṃ ăur unakā sāth deṃ"}
+{"map":"alalc-hye-Armn-Latn-2022","src":"Ե","out":"E"}
+{"map":"alalc-hye-Armn-Latn-2022","src":"ձ","out":"dz"}
+{"map":"alalc-hye-Armn-Latn-2022","src":"Վ","out":"V"}
+{"map":"alalc-hye-Armn-Latn-2022","src":"գհ","out":"gʹh"}
+{"map":"alalc-hye-Armn-Latn-2022","src":"Ձ․","out":"80"}
+{"map":"alalc-jav-Arab-Latn-2012","src":"ح","out":"h"}
+{"map":"alalc-jav-Arab-Latn-2012","src":"ه","out":"h"}
+{"map":"alalc-jav-Arab-Latn-2012","src":"ياڠ","out":"yang"}
+{"map":"alalc-jav-Java-Latn-2012","src":"ꦏ꦳","out":"kha"}
+{"map":"alalc-jba-Hebr-Latn-2011","src":"ך","out":"k"}
+{"map":"alalc-jba-Hebr-Latn-2011","src":"ﭏ","out":"ʼl"}
+{"map":"alalc-jba-Hebr-Latn-2011","src":"אייאם","out":"ʼyyʼm"}
+{"map":"alalc-jpn-Hrkt-Latn-2022","src":"きぃ","out":"kī"}
+{"map":"alalc-jpn-Hrkt-Latn-2022","src":"を","out":"o"}
+{"map":"alalc-jpn-Hrkt-Latn-2022","src":"すぇ","out":"swe"}
+{"map":"alalc-jpn-Hrkt-Latn-2022","src":"ヴュ","out":"vyu"}
+{"map":"alalc-jpn-Hrkt-Latn-2022","src":"しんえつ","out":"shin'etsu"}
+{"map":"alalc-kan-Kana-Latn-2011","src":"ಹೇಗಿದೆ ಅಮೆರಿಕನ್‌ ಚುನಾವಣ ಕಣ?","out":"hēgide amerikan cunāvaṇa kaṇa?"}
+{"map":"alalc-kat-Geor-Latn-1997","src":"მუხრან-თელეთი","out":"muxran-tʻeletʻi"}
+{"map":"alalc-kat-Geor-Latn-2011","src":"მუხრან-თელეთი","out":"muxran-tʻeletʻi"}
+{"map":"alalc-kaz-Arab-Latn-2012","src":"ه","out":"e"}
+{"map":"alalc-kaz-Arab-Latn-2012","src":"ٴ","out":"ʼ"}
+{"map":"alalc-kor-Hang-Latn-1997","src":"은행정","out":"Ŭnhaengjŏng"}
+{"map":"alalc-kur-Arab-Latn-2012","src":"ئا","out":"a"}
+{"map":"alalc-kur-Arab-Latn-2012","src":"ڵ","out":"ł"}
+{"map":"alalc-kur-Arab-Latn-2012","src":"ﻫﻪر","out":"her"}
+{"map":"alalc-kur-Arab-Latn-2012","src":"دِوێره","out":"diwêre"}
+{"map":"alalc-lad-Hebr-Latn-2025","src":"ח","out":"ḥ"}
+{"map":"alalc-lad-Hebr-Latn-2025","src":"ק","out":"ḳ"}
+{"map":"alalc-lad-Hebr-Latn-2025","src":"ביל","out":"bel"}
+{"map":"alalc-lao-Laoo-Latn-2012","src":"ຫຍ້າ","out":"nyā"}
+{"map":"alalc-lep-Lepc-Latn-2012","src":"ᰣᰶ","out":"â"}
+{"map":"alalc-mar-Deva-Latn-1997","src":"ठाणे - जिल्ह्यात बुधवारी एक हजार रुग्णांची वाढ, तर जणांच्या मृत्यूची नोंद","out":"ṭhaāṇae - jailahayaāta baudhavaāraī eka hajaāra raugaṇaāñcaī vaāḍha, tara jaṇaāñcayaā maṛitayaūcaī naonda"}
+{"map":"alalc-mnc-Mong-Latn-2012","src":"ᠠ","out":"a"}
+{"map":"alalc-mnc-Mong-Latn-2012","src":"ᠶ","out":"y"}
+{"map":"alalc-mon-Cyrl-Latn-1997","src":"Шарынгол","out":"Sharyngol"}
+{"map":"alalc-mon-Cyrl-Latn-1997","src":"Говьсүмбэр Сум","out":"Govisümbêr Sum"}
+{"map":"alalc-mon-Cyrl-Latn-1997","src":"Ёроол, оёдол","out":"Ërool, oëdol"}
+{"map":"alalc-ori-Orya-Latn-1997","src":"ତିର୍ତ୍ତୋଲର ବିକାଶ ନେଇ ବିଷ୍ଣୁବାବୁ ମୋତେ ବହୁ ବାର ଭେଟୁଥିଲେ: ନବୀନ","out":"tirtteālara bikāśa nei bishṇubābu mote bahu bāra bheṭuthile: nabīna"}
+{"map":"alalc-ota-Arab-Latn-1997","src":"س","out":"s"}
+{"map":"alalc-ota-Arab-Latn-1997","src":"وَْ","out":"aw"}
+{"map":"alalc-pli-Deva-Latn-2012","src":"तेन खो पन समयेन वेसालिया अविदूरे कलन्दगामो नाम अत्थि","out":"taena khao pana samayaena vaesaālaiyaā avaidaūrae kalanadagaāmao naāma atathai"}
+{"map":"alalc-pus-Arab-Latn-2013","src":"ر","out":"r"}
+{"map":"alalc-pus-Arab-Latn-2013","src":"ة","out":"h"}
+{"map":"alalc-rue-Cyrl-Latn-2013","src":"г","out":"h"}
+{"map":"alalc-rue-Cyrl-Latn-2013","src":"К","out":"K"}
+{"map":"alalc-rue-Cyrl-Latn-2013","src":"х","out":"k͡h"}
+{"map":"alalc-rus-Cyrl-Latn-1997","src":"Владимир","out":"Vladimir"}
+{"map":"alalc-rus-Cyrl-Latn-1997","src":"Кандалакша","out":"Kandalaksha"}
+{"map":"alalc-rus-Cyrl-Latn-1997","src":"Подъездной","out":"Podʺezdnoǐ"}
+{"map":"alalc-rus-Cyrl-Latn-2012","src":"Лужники","out":"Luzhniki"}
+{"map":"alalc-rus-Cyrl-Latn-2012","src":"Углич","out":"Uglich"}
+{"map":"alalc-san-Deva-Latn-2012","src":"पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते","out":"pūrṇasya pūrṇamādāya pūrṇamevāvaśiṣyate"}
+{"map":"alalc-sin-Sinh-Latn-2011","src":"ඉරණවිල වෙරළේ නාඳුනන ධීවර යාත‍්‍රා දෙකක්","out":"iraṇavila veraḷē nāndunana dhīvara yātarā dekak"}
+{"map":"alalc-snd-Arab-Latn-2024","src":"ڏ","out":"d̤"}
+{"map":"alalc-snd-Arab-Latn-2024","src":"ن","out":"n"}
+{"map":"alalc-srp-Cyrl-Latn-2013","src":"Црна Трава","out":"Crna Trava"}
+{"map":"alalc-tam-Taml-Latn-1997","src":"ஸ்கூல் ப்ரெண்ட் கார்த்திக் வீட்டுக்கு போய்ட்டு","out":"skūl preṇṭ kārttik vīṭṭukku pōyṭṭu"}
+{"map":"alalc-tel-Telu-Latn-1997","src":"వారిపై జీవితాంతం నిషేధం విధించండి!","out":"vāripai jīvitāntaṃ niṣēdhaṃ vidhiñcaṃḍi!"}
+{"map":"alalc-tir-Ethi-Latn-1997","src":"መሠረተ ፅኑ ሰብዕናን ያልሻርን","out":"maśarata ṡenu sabeʻenāne yālešārene"}
+{"map":"alalc-tir-Ethi-Latn-1997","src":"ደብረ ታቦር (ከተማ)","out":"dabera tābore (katamā)"}
+{"map":"alalc-tir-Ethi-Latn-1997","src":"ዳግማዊ ዓጼ ተክለ ጊዮርጊስ ፫","out":"dāgemāwi ʻāṣé takela giyoregise 3"}
+{"map":"alalc-tir-Ethi-Latn-2011","src":"አንኮበር","out":"ʼanekobare"}
+{"map":"alalc-tir-Ethi-Latn-2011","src":"ቡሳኛ","out":"busāñā"}
+{"map":"alalc-tmh-Tfng-Latn-2013","src":"ⵏⵏ","out":"nn"}
+{"map":"alalc-uig-Arab-Latn-2015","src":"چ","out":"ch"}
+{"map":"alalc-uig-Arab-Latn-2015","src":"ئۈ","out":"ü"}
+{"map":"alalc-ukr-Cyrl-Latn-1997","src":"Іванівщина","out":"Ivanivshchyna"}
+{"map":"alalc-und-Dsrt-Latn-2016","src":"𐐰","out":"a"}
+{"map":"alalc-und-Dsrt-Latn-2016","src":"𐐕","out":"Ch"}
+{"map":"alalc-und-Dsrt-Latn-2016","src":"𐑆","out":"z"}
+{"map":"alalc-und-Dsrt-Latn-2016","src":"𐐒𐐮𐐺","out":"Bib"}
+{"map":"alalc-urd-Arab-Latn-2013","src":"ف","out":"f"}
+{"map":"alalc-urd-Arab-Latn-2013","src":"آب","out":"āb"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꔋ","out":"gbe"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꔨ","out":"wi"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꕅ","out":"gi"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꕠ","out":"ɗa"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꕻ","out":"mgbo"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꖘ","out":"hũ"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꖵ","out":"ŋgu"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꗏ","out":"lɔ"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꗪ","out":"ɓɛ"}
+{"map":"alalc-vai-Vaii-Latn-2010","src":"ꘇ","out":"gɛ̃"}
+{"map":"alalc-zgh-Tfng-Latn-2012","src":"ⴷ","out":"d"}
+{"map":"alalc-zgh-Tfng-Latn-2012","src":"ⵛ","out":"c"}
+{"map":"alalc-zho-Hani-Latn-2012","src":"尔","out":"er"}
+{"map":"alalc-zho-Hani-Latn-2012","src":"史","out":"shi"}
+{"map":"alalc-zho-Latn-Latn-2012","src":"ssu","out":"si"}
+{"map":"alalc-zho-Latn-Latn-2012","src":"hsiao","out":"xiao"}
+{"map":"alalc-zsm-Arab-Latn-2011","src":"ض","out":"d"}
+{"map":"alalc-zsm-Arab-Latn-2011","src":"قودوس","out":"kudus"}
+{"map":"apcbg-bul-Cyrl-Latn-1995","src":"Чакъров остров","out":"Chakarov ostrov"}
+{"map":"apcbg-bul-Cyrl-Latn-1995","src":"залив Лазурен бряг","out":"zaliv Lazuren bryag"}
+{"map":"apcbg-bul-Cyrl-Latn-1995","src":"остров Рогулят","out":"ostrov Rogulyat"}
+{"map":"apcbg-bul-Cyrl-Latn-1995","src":"остров Вълчедръм","out":"ostrov Valchedram"}
+{"map":"bas-rus-Cyrl-Latn-2017-bss","src":"Ручьи","out":"Ruchyi"}
+{"map":"bgn-kor-Hang-Latn-1943","src":"평양","out":"P’yŏngyang"}
+{"map":"bgna-bul-Cyrl-Latn-2006","src":"ледник Етър","out":"lednik Etar"}
+{"map":"bgna-bul-Cyrl-Latn-2006","src":"нос Никюп","out":"nos Nikyup"}
+{"map":"bgna-bul-Cyrl-Latn-2006","src":"ледник Сигмен","out":"lednik Sigmen"}
+{"map":"bgna-bul-Cyrl-Latn-2006","src":"ледник Збелсурд","out":"lednik Zbelsurd"}
+{"map":"bgna-bul-Cyrl-Latn-2009","src":"риф Гергини","out":"rif Gergini"}
+{"map":"bgna-bul-Cyrl-Latn-2009","src":"Оряховски възвишения","out":"Oryahovski vazvisheniya"}
+{"map":"bgna-bul-Cyrl-Latn-2009","src":"залив Слънчев бряг","out":"zaliv Slanchev bryag"}
+{"map":"bgna-bul-Cyrl-Latn-2009","src":"залив Златни пясъци","out":"zaliv Zlatni pyasatsi"}
+{"map":"bgnpcgn-ady-Cyrl-Latn-2012","src":"Е","out":"E"}
+{"map":"bgnpcgn-ady-Cyrl-Latn-2012","src":"кӀу","out":"kw’"}
+{"map":"bgnpcgn-ady-Cyrl-Latn-2012","src":"С","out":"S"}
+{"map":"bgnpcgn-ady-Cyrl-Latn-2012","src":"цӀ","out":"ts’"}
+{"map":"bgnpcgn-ady-Cyrl-Latn-2012","src":"Ь","out":"’"}
+{"map":"bgnpcgn-amh-Ethi-Latn-1967","src":"ቋንቋ የድምጽ፣ የምልክት ወይም የምስል ቅንብር ሆኖ","out":"k’wank’wa yedmts’፣ yemlkt weym yemsl k’nbr hono"}
+{"map":"bgnpcgn-amh-Ethi-Latn-1967","src":"ናይሎ ሳህራን","out":"naylo sahran"}
+{"map":"bgnpcgn-ara-Arab-Latn-1956","src":"قُرآن","out":"Qur’ān"}
+{"map":"bgnpcgn-ara-Arab-Latn-1956","src":"حَلَب","out":"Ḩalab"}
+{"map":"bgnpcgn-ara-Arab-Latn-1956","src":"سَلْمان پَاك","out":"Salmān Pāk"}
+{"map":"bgnpcgn-av-Cyrl-Latn-2011","src":"рукъ","out":"ruq’"}
+{"map":"bgnpcgn-ava-Cyrl-Latn-2011","src":"ж","out":"zh"}
+{"map":"bgnpcgn-ava-Cyrl-Latn-2011","src":"О","out":"O"}
+{"map":"bgnpcgn-ava-Cyrl-Latn-2011","src":"ц","out":"ts"}
+{"map":"bgnpcgn-ava-Cyrl-Latn-2011","src":"ъе","out":"’’e"}
+{"map":"bgnpcgn-bal-Arab-Latn-2008","src":"دامان","out":"Dāmān"}
+{"map":"bgnpcgn-bel-Cyrl-Latn-1979","src":"Нёман","out":"Nyoman"}
+{"map":"bgnpcgn-bel-Cyrl-Latn-1979","src":"Пінск","out":"Pinsk"}
+{"map":"bgnpcgn-bel-Cyrl-Latn-1979","src":"Шчара","out":"Shchara"}
+{"map":"bgnpcgn-bul-Cyrl-Latn-2013","src":"София-Град","out":"Sofia-Grad"}
+{"map":"bgnpcgn-chv-Cyrl-Latn-2011","src":"Е","out":"Ye"}
+{"map":"bgnpcgn-chv-Cyrl-Latn-2011","src":"п","out":"p"}
+{"map":"bgnpcgn-chv-Cyrl-Latn-2011","src":"Щ","out":"Shch"}
+{"map":"bgnpcgn-cv-Cyrl-Latn-2011","src":"ҫын","out":"śyn"}
+{"map":"bgnpcgn-div-Thaa-Latn-1972","src":"ޝަހީދުންގެ ދުވަސް","out":"shahīdunge duvas"}
+{"map":"bgnpcgn-dzo-Tibt-Latn-2010","src":"ཏ","out":"ta"}
+{"map":"bgnpcgn-dzo-Tibt-Latn-2010","src":"ཀུ","out":"ku"}
+{"map":"bgnpcgn-dzo-Tibt-Latn-2010","src":"སྲ","out":"sa"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Γοίθιος","out":"Goíthios"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Άρτα","out":"Árta"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Ήπειρος","out":"Ípiros"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Κέρκυρα","out":"Kérkira"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Λιβαδειά","out":"Livadhiá"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Πασαλιμάνι","out":"Pasalimáni"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Σκιάθος","out":"Skiáthos"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Αβάνα","out":"Avána"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Μάλαγα","out":"Málaga"}
+{"map":"bgnpcgn-ell-Grek-Latn-1962","src":"Τιρόλο","out":"Tirólo"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"αέρας","out":"aéras"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Γιαννιτσά","out":"Giannitsá"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Ιθάκη","out":"Itháki"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Κορώνη","out":"Koróni"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Μεταξουργείο","out":"Metaxourgeío"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Πήλιο","out":"Pílio"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Σφακιά","out":"Sfakiá"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Βερόνα","out":"Veróna"}
+{"map":"bgnpcgn-ell-Grek-Latn-1996","src":"Νέα Υόρκη","out":"Néa Yórki"}
+{"map":"bgnpcgn-fao-Latn-Latn-1968","src":"Fyrirgefðu","out":"Fyrirgefdhu"}
+{"map":"bgnpcgn-iu-Cans-Latn-2013","src":"ᑐ","out":"Tu"}
+{"map":"bgnpcgn-iu-Cans-Latn-2013","src":"ᒻ","out":"M"}
+{"map":"bgnpcgn-iu-Cans-Latn-2013","src":"ᔫ","out":"Juu"}
+{"map":"bgnpcgn-iu-Cans-Latn-2013","src":"ᖏ","out":"Ngi"}
+{"map":"bgnpcgn-iu-Cans-Latn-2013","src":"ᓇᐅᔮᑦ","out":"Naujaat"}
+{"map":"bgnpcgn-jpn-Hrkt-Latn-1976","src":"けいだい-かわら","out":"Keidai-kawara"}
+{"map":"bgnpcgn-jpn-Hrkt-Latn-1976","src":"なす がわ","out":"Nasu Gawa"}
+{"map":"bgnpcgn-jpn-Hrkt-Latn-1976","src":"ぽっぽっや","out":"Poppoyya"}
+{"map":"bgnpcgn-kaz-Cyrl-Latn-1979","src":"Өгізтөбе Тауы","out":"Ögiztöbe Taūy"}
+{"map":"bgnpcgn-kaz-Cyrl-Latn-1979","src":"Цуриковка","out":"Tsūrīkovka"}
+{"map":"bgnpcgn-kaz-Cyrl-Latn-1979","src":"Қазақстан","out":"Qazaqstan"}
+{"map":"bgnpcgn-kbd-Cyrl-Latn-2011","src":"е","out":"e"}
+{"map":"bgnpcgn-kbd-Cyrl-Latn-2011","src":"Кхъ","out":"Q"}
+{"map":"bgnpcgn-kbd-Cyrl-Latn-2011","src":"т","out":"t"}
+{"map":"bgnpcgn-kbd-Cyrl-Latn-2011","src":"Щ","out":"Ś"}
+{"map":"bgnpcgn-kir-Cyrl-Latn-1979","src":"Чирик-Сай","out":"Chirik-Say"}
+{"map":"bgnpcgn-kir-Cyrl-Latn-1979","src":"Метеорологическая Станция Чамкал","out":"Meteorologicheskaya Stantsiya Chamkal"}
+{"map":"bgnpcgn-kir-Cyrl-Latn-1979","src":"Ак-Суу","out":"Ak-Suu"}
+{"map":"bgnpcgn-kor-Hang-Latn-kn-1945","src":"원신-리","out":"Wŏnsil-li"}
+{"map":"bgnpcgn-kor-Hang-Latn-rok-2011","src":"남산리","out":"Namsan-ri"}
+{"map":"bgnpcgn-krc-Cyrl-Latn-2008","src":"В","out":"V"}
+{"map":"bgnpcgn-krc-Cyrl-Latn-2008","src":"къ","out":"q"}
+{"map":"bgnpcgn-krc-Cyrl-Latn-2008","src":"Х","out":"X"}
+{"map":"bgnpcgn-krc-Cyrl-Latn-2008","src":"у","out":"u"}
+{"map":"bgnpcgn-mkd-Cyrl-Latn-1981","src":"Прлиќ","out":"Prlić"}
+{"map":"bgnpcgn-mkd-Cyrl-Latn-2013","src":"Испраена Плоча","out":"Ispraena Ploča"}
+{"map":"bgnpcgn-mon-Cyrl-Latn-1964","src":"Хонгор","out":"Hongor"}
+{"map":"bgnpcgn-mon-Cyrl-Latn-1964","src":"Бор-Өндөр Сум","out":"Bor-Öndör Sum"}
+{"map":"bgnpcgn-nep-Deva-Latn-2011","src":"प्रशंसा","out":"parshṃsā"}
+{"map":"bgnpcgn-os-Cyrl-Latn-2009","src":"Республикӕ","out":"Respublikæ"}
+{"map":"bgnpcgn-oss-Cyrl-Latn-2009","src":"Г","out":"G"}
+{"map":"bgnpcgn-oss-Cyrl-Latn-2009","src":"къ","out":"k’"}
+{"map":"bgnpcgn-oss-Cyrl-Latn-2009","src":"Хъ","out":"Q"}
+{"map":"bgnpcgn-oss-Cyrl-Latn-2009","src":"я","out":"ya"}
+{"map":"bgnpcgn-prs-Arab-Latn-2007","src":"پُوټَكَى","out":"Pōṯakay"}
+{"map":"bgnpcgn-prs-Arab-Latn-2007","src":"مَزَارِ شَرِيف","out":"Mazār-e Sharīf"}
+{"map":"bgnpcgn-prs-Arab-Latn-yaghoubi","src":"کُوْټ","out":"kōt"}
+{"map":"bgnpcgn-pus-Arab-Latn-1968","src":"حَضْرَتِ سُلْطَان","out":"Ḩaẕrat-e Sulţān"}
+{"map":"bgnpcgn-ron-Cyrl-Latn-2002","src":"Ну неам вэзут де ун кар де ань!","out":"Nu neam văzut de un car de ani!"}
+{"map":"bgnpcgn-rue-Cyrl-Latn-2016","src":"русиньскый язык","out":"rusyn'skyj yazyk"}
+{"map":"bgnpcgn-rus-Cyrl-Latn-1947","src":"Он видел её в первый раз","out":"On videl yeyë v pervyy raz"}
+{"map":"bgnpcgn-sah-Cyrl-Latn-2012","src":"е","out":"ye"}
+{"map":"bgnpcgn-sah-Cyrl-Latn-2012","src":"О","out":"O"}
+{"map":"bgnpcgn-sah-Cyrl-Latn-2012","src":"Ч","out":"Ch"}
+{"map":"bgnpcgn-sme-Latn-Latn-1984","src":"ÁEL","out":"ÁEL"}
+{"map":"bgnpcgn-srp-Cyrl-Latn-1962","src":"Ервеник","out":"Ervenik"}
+{"map":"bgnpcgn-srp-Cyrl-Latn-2005","src":"Доње Љупче","out":"Donje Ljupče"}
+{"map":"bgnpcgn-syr-Syrc-Latn-2011","src":"ܘ","out":"w"}
+{"map":"bgnpcgn-tat-Cyrl-Latn-2007","src":"Гыйльмиев","out":"Ğil’miew"}
+{"map":"bgnpcgn-tgk-Cyrl-Latn-1994","src":"ғор","out":"ghor"}
+{"map":"bgnpcgn-tgk-Cyrl-Latn-1994","src":"талаб","out":"talab"}
+{"map":"bgnpcgn-tha-Thai-Latn-2002","src":"เขา","out":"khao"}
+{"map":"bgnpcgn-tir-Ethi-Latn-2007","src":"አዲስ ዘመን (ከተማ)","out":"’edisĭ zemenĭ (ketema)"}
+{"map":"bgnpcgn-tir-Ethi-Latn-2007","src":"አልሞት ባይ ተጋዳይ","out":"’elĭmotĭ bayĭ tegadayĭ"}
+{"map":"bgnpcgn-tuk-Cyrl-Latn-1979","src":"Бүзмейин","out":"Büzmeyin"}
+{"map":"bgnpcgn-tuk-Cyrl-Latn-1993","src":"Чаршаңңы","out":"Çarşaňňy"}
+{"map":"bgnpcgn-udm-Cyrl-Latn-2011","src":"З","out":"Z"}
+{"map":"bgnpcgn-udm-Cyrl-Latn-2011","src":"р","out":"r"}
+{"map":"bgnpcgn-udm-Cyrl-Latn-2011","src":"Ь","out":"’"}
+{"map":"bgnpcgn-ukr-Cyrl-Latn-1965","src":"Ивахи","out":"Yvakhy"}
+{"map":"bgnpcgn-ukr-Cyrl-Latn-2019","src":"Гадяч","out":"Hadiach"}
+{"map":"bgnpcgn-ukr-Cyrl-Latn-2019","src":"Ужгород","out":"Uzhhorod"}
+{"map":"bgnpcgn-urd-Arab-Latn-2007","src":"أَحمَدِي شَامَا","out":"Aḩmadī Shāmā"}
+{"map":"bgnpcgn-urd-Arab-Latn-2007","src":"خَان گھَڑِی","out":"Khān Ghaṛī"}
+{"map":"bgnpcgn-uzb-Cyrl-Latn-1979","src":"ПАПАПАЧУКА Респект!","out":"PAPAPACHUKA Respekt!"}
+{"map":"bis-asm-Beng-Latn-13194-1991","src":"লখিমপুৰ জিলাৰ নাৰায়ণপুৰৰ বৰপথাৰত আজি প্ৰশান্তি ধাম নামেৰে এখন বৃদ্ধাশ্ৰমৰ শুভাৰম্ভ কৰা হয়","out":"lkhimpur jilār nārāẏṇpurr brpthārt āji prśānti dhām nāmērē ēkhn bṛddhāśrmr śubhārmbh krā hẏ"}
+{"map":"bis-guj-Gujr-Latn-13194-1991","src":"લિબિયાના એલ અજિજિયામાં ધરતી પર સૌથી વધુ તાપમાન નોંધાયું. એ વખતે છાયામાં નોંધવામાં આવેલું તાપમાન 58 ડિગ્રી સેલ્સિયસ હતું.","out":"libiyānā ēl ajijiyāmāṃ dhrtī pr sauthī vdhu tāpmān nŏndhāyuṃ. ē vkhtē chāyāmāṃ nŏndhvāmāṃ āvēluṃ tāpmān 58 ḍigrī sēlsiys htuṃ."}
+{"map":"bis-mlm-Mlym-Latn-13194-1991","src":"ഏറ്റവും ചെറുപ്പം ജോയി; ജയലക്ഷ്മി, ദീപ്തി, ജ്യോതി; പട്ടികയിലെ നിര ഇങ്ങനെ‌","out":"ēṟṟvuṃ ceṟuppṃ jōyi; jylkṣmi, dīpti, jyōti; pṭṭikyile nir iṅṅne"}
+{"map":"bis-tel-Telu-Latn-13194-1991","src":"ఆ సంతోషాన్ని అభిమానులతో పంచుకున్నారు","out":"ā sntŏṣānni abhimānultŏ pñcukunnāru"}
+{"map":"bsi-bel-Cyrl-Latn-1958","src":"Ъ","out":"”"}
+{"map":"bsi-bel-Cyrl-Latn-1958","src":"у","out":"u"}
+{"map":"bsi-bul-Cyrl-Latn-1958","src":"к","out":"k"}
+{"map":"bsi-chu-Cyrl-Latn-1958","src":"Е","out":"E"}
+{"map":"bsi-chu-Cyrl-Latn-1958","src":"о","out":"o"}
+{"map":"bsi-chu-Cyrl-Latn-1958","src":"Ъ","out":"Ŭ"}
+{"map":"bsi-chu-Cyrl-Latn-1958","src":"ѱ","out":"ps"}
+{"map":"bsi-ell-Grek-Latn-1958","src":"Λ","out":"L"}
+{"map":"bsi-ell-Grek-Latn-1958","src":"Ψ","out":"Ps"}
+{"map":"bsi-kor-Kore-Latn-6505-1982","src":"어","out":"e"}
+{"map":"bsi-mkd-Cyrl-Latn-1958","src":"ѕ","out":"dz"}
+{"map":"bsi-mkd-Cyrl-Latn-1958","src":"ћ","out":"ć"}
+{"map":"bsi-ron-Cyrl-Latn-1958","src":"и","out":"i"}
+{"map":"bsi-ron-Cyrl-Latn-1958","src":"с","out":"s"}
+{"map":"bsi-ron-Cyrl-Latn-1958","src":"Ѣ","out":"Ea"}
+{"map":"bsi-rus-Cyrl-Latn-1958","src":"Известия","out":"Izvestiya"}
+{"map":"bsi-rus-Cyrl-Latn-1958","src":"Й","out":"Ĭ"}
+{"map":"bsi-rus-Cyrl-Latn-1958","src":"ф","out":"f"}
+{"map":"bsi-rus-Cyrl-Latn-1958","src":"Ѣ","out":"Ě"}
+{"map":"bsi-srp-Cyrl-Latn-1958","src":"к","out":"k"}
+{"map":"bsi-ukr-Cyrl-Latn-1958","src":"Ѣ","out":"Ě"}
+{"map":"by-bel-Cyrl-Latn-1998","src":"Нясвіж","out":"Niasviž"}
+{"map":"by-bel-Cyrl-Latn-2007","src":"Аршанскi","out":"Aršanski"}
+{"map":"by-bel-Cyrl-Latn-2007","src":"Талачын","out":"Talačyn"}
+{"map":"din-ab-Cyrl-Latn-1460-2-2011","src":"г","out":"g"}
+{"map":"din-ara-Arab-Latn-31635-2011","src":"ض","out":"ḍ"}
+{"map":"din-ara-Arab-Latn-31635-2011","src":"اِبْن","out":"ibn"}
+{"map":"din-av-Cyrl-Latn-1460-2-2011","src":"г","out":"g"}
+{"map":"din-crh-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-evn-Cyrl-Latn-1460-2-2011","src":"б","out":"b"}
+{"map":"din-fas-Arab-Latn-31635-2011","src":"ف","out":"f"}
+{"map":"din-gag-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Ἐϊγιαφιάτλαγιοκουτλ","out":"Eïgiaphiatlagiokoutl"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Ἅγιον Όρος","out":"Hagion Oros"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Διόνυσος","out":"Dionysos"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Καλαμάτα","out":"Kalamata"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Κυκλάδες","out":"Kyklades"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Μυτιλήνη","out":"Mytilēnē"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Πύλος","out":"Pylos"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Τσακωνιὰ","out":"Tsakōnia"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Καλιφόρνια","out":"Kaliphornia"}
+{"map":"din-grc-Grek-Latn-31634-2011-t1","src":"Πολυνησία","out":"Polynēsia"}
+{"map":"din-heb-Hebr-Latn-31636-2018","src":"תּוֹרָה","out":"torah"}
+{"map":"din-heb-Hebr-Latn-31636-2018","src":"ם","out":"m"}
+{"map":"din-heb-Hebr-Latn-31636-2018","src":"טʹ","out":"ṭʹ"}
+{"map":"din-hye-Armn-Latn-32706-2010","src":"Բ","out":"B"}
+{"map":"din-hye-Armn-Latn-32706-2010","src":"ծ","out":"c"}
+{"map":"din-hye-Armn-Latn-32706-2010","src":"Ջ","out":"J̌"}
+{"map":"din-inh-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-kaa-Cyrl-Latn-1460-2-2011","src":"в","out":"v"}
+{"map":"din-kat-Geor-Latn-32707-2010","src":"ჯართი","out":"ǰart̕i"}
+{"map":"din-kca-Cyrl-Latn-1460-2-2011-s62","src":"в","out":"v"}
+{"map":"din-krc-Cyrl-Latn-1460-2-2011-s7","src":"a","out":"a"}
+{"map":"din-kur-Arab-Latn-31635-2011","src":"س","out":"s"}
+{"map":"din-kur-Arab-Latn-31635-2011","src":"گوڵ","out":"guḻ"}
+{"map":"din-lbe-Cyrl-Latn-1460-2-2011","src":"б","out":"b"}
+{"map":"din-mns-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-nep-Deva-Latn-33904-2018","src":"चैत पहिलो साता घर आएका उनी लकडाउन भएपछि यतै रोकिए","out":"caita pahilo sātā ghara āekā unī lakaḍāuna bhaepachi yatai rokie"}
+{"map":"din-pra-Deva-Latn-33904-2018","src":"गुणाश्रये गुणमये नारायणि नमोऽस्तु ते","out":"guṇāśraye guṇamaye nārāyaṇi namo’stu te"}
+{"map":"din-sel-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-tk-Cyrl-Latn-1460-2-2011","src":"б","out":"b"}
+{"map":"din-urd-Arab-Latn-31635-2011","src":"ج","out":"j"}
+{"map":"din-urd-Arab-Latn-31635-2011","src":"ن","out":"n"}
+{"map":"din-xal-Cyrl-Latn-1460-2-2011","src":"a","out":"a"}
+{"map":"din-yid-Hebr-Latn-31636-2018","src":"ן","out":"n"}
+{"map":"din-yid-Hebr-Latn-31636-2018","src":"אַ","out":"a"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"γκέγκε","out":"gkégke"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Αλεξανδρούπολη","out":"Alexandroúpoli̱"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Έδεσσα","out":"Édessa"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Καρπενήσι","out":"Karpení̱si"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Λαμία","out":"Lamía"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Νέα Σμύρνη","out":"Néa Smýrni̱"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Σαλαμίνα","out":"Salamína"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Χάλκη","out":"Chálki̱"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Κωνσταντινούπολη","out":"Ko̱nstantinoúpoli̱"}
+{"map":"elot-ell-Grek-Latn-743-1982-tl","src":"Σκόπια","out":"Skópia"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"μπέικον","out":"béikon"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Βελούχι","out":"Veloúchi"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Ηράκλειο","out":"Irákleio"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Κεφαλλονιά","out":"Kefalloniá"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Μακεδονία","out":"Makedonía"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Πατήσια","out":"Patísia"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Σκόπελος","out":"Skópelos"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Αγγλία","out":"Anglía"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Μασσαλία","out":"Massalía"}
+{"map":"elot-ell-Grek-Latn-743-1982-ts","src":"Τορίνο","out":"Toríno"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Αμοργός","out":"Amorgós"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Καβάλα","out":"Kavála"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Μαρκόπουλο","out":"Markópoulo"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Ρέθυμνο","out":"Réthymno"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Άμστερνταμ","out":"Ámsterntam"}
+{"map":"elot-ell-Grek-Latn-743-2001-ts","src":"Τζαμάικα","out":"Tzamáika"}
+{"map":"gki-bel-Cyrl-Latn-2000","src":"Добруш","out":"Dobruš"}
+{"map":"gki-bel-Cyrl-Latn-2000","src":"Цёмны Лес","out":"Ciomny Lies"}
+{"map":"gost-rus-Cyrl-Latn-16876-71-1983","src":"Идрица","out":"Idrica"}
+{"map":"gost-rus-Cyrl-Latn-16876-71-1983","src":"Юрюзань","out":"Ûrûzan´"}
+{"map":"gost-rus-Cyrl-Latn-7.79-2000-2002","src":"физика","out":"fizika"}
+{"map":"icao-bel-Cyrl-Latn-9303","src":"Міховіч Марыя","out":"Mikhovich Maryia"}
+{"map":"icao-bel-Cyrl-Latn-9303","src":"ќ","out":"k"}
+{"map":"icao-mkd-Cyrl-Latn-9303","src":"К","out":"K"}
+{"map":"icao-mul-Latn-Latn-2015","src":"Ä","out":"AE"}
+{"map":"icao-mul-Latn-Latn-2015","src":"Ž","out":"Z"}
+{"map":"icao-srp-Cyrl-Latn-9303","src":"Ђ","out":"D"}
+{"map":"icao-ukr-Cyrl-Latn-9303","src":"Є","out":"IE"}
+{"map":"iso-ara-Arab-Latn-233-2-1993","src":"مِصر","out":"Miṣr"}
+{"map":"iso-ben-Beng-Latn-15919-2001","src":"ওদিকে সদ্য করোনা থেকে ফিরে এসে দাপটের সঙ্গে পিএসজির হয়ে খেলে যাওয়া দি মারিয়া কেন ডাক পাননি, কেউ জানে না","out":"odaikae sadaya karaonaā thaekae phairae esae daāpaṭaera saṅagae paiesajaira haẏae khaelae yaāoẏaā dai maāraiẏaā kaena ḍaāka paānanai, kaeu jaānae naā"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Εΐτζι","out":"Eḯtzi"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Γαλαξίδι","out":"Galaxídi"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Θήβα","out":"Thī́va"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Κομοτηνή","out":"Komotīnī́"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Μέγαρα","out":"Mégara"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Περιστέρι","out":"Peristéri"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Σύμη","out":"Sýmī"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Βενετία","out":"Venetía"}
+{"map":"iso-ell-Grek-Latn-843-1997-t1","src":"Νάπολη","out":"Nápolī"}
+{"map":"iso-ell-Grek-Latn-843-1997-t2","src":"Ένα πράμα μόνον με παρακίνησε κι εμένα να γράψω ότι τούτην την πατρίδα την έχομεν όλοι μαζί, και σοφοί κι αμαθείς και πλούσιοι και φτωχοί και πολιτικοί και στρατιωτικοί και οι πλέον μικρότεροι άνθρωποι· όσοι αγωνιστήκαμεν, αναλόγως ο καθείς, έχομεν να ζήσομεν εδώ. Το λοιπόν δουλέψαμεν όλοι μαζί, να την φυλάμεν κι όλοι μαζί και να μην λέγει ούτε ο δυνατός «εγώ» ούτε ο αδύνατος. Ξέρετε πότε να λέγει ο καθείς «εγώ»; Όταν αγωνιστεί μόνος του και φκιάσει ή χαλάσει, να λέγει «εγώ»· όταν όμως αγωνίζονται πολλοί και φκιάνουν, τότε να λένε «εμείς». Είμαστε εις το «εμείς» κι όχι εις το «εγώ». Και εις το εξής να μάθομεν γνώση, αν θέλομεν να φκιάσομεν χωριόν, να ζήσομεν όλοι μαζί.\n\nΓιάννης Μακρυγιάννης.\n","out":"Éna práma mónon me parakínise ki eména na grápso óti toútin tin patrída tin échomen óloi mazí, kai sofoí ki amatheís kai ploúsioi kai ftochoí kai politikoí kai stratiotikoí kai oi pléon mikróteroi ánthropoi; ósoi agonistíkamen, analógos o katheís, échomen na zísomen edó. To loipón doulépsamen óloi mazí, na tin fylámen ki óloi mazí kai na min légei oúte o dynatós «egó» oúte o adýnatos. Xérete póte na légei o katheís «egó»? Ótan agonisteí mónos tou kai fkiásei í chalásei, na légei «egó»; ótan ómos agonízontai polloí kai fkiánoun, tóte na léne «emeís». Eímaste eis to «emeís» ki óchi eis to «egó». Kai eis to exís na máthomen gnósi, an thélomen na fkiásomen chorión, na zísomen óloi mazí.\n\nGiánnis Makrygiánnis.\n"}
+{"map":"iso-hin-Deva-Latn-15919-2001","src":"सीडीसी चीफ का बयान अहम","out":"saīḍaīsaī caīpha kaā bayaāna ahama"}
+{"map":"iso-kan-Kana-Latn-15919-2001","src":"ಶಾಸಕರಿಂದಲೂ ಒತ್ತಡ?","out":"śaāsakaraiṁdalaū otataḍa?"}
+{"map":"iso-kat-Geor-Latn-9984-1996","src":"აუალიცა","out":"aualic̕a"}
+{"map":"iso-kor-Hang-Latn-1996-method1","src":"안자라","out":"ancara"}
+{"map":"iso-kor-Hang-Latn-1996-method2","src":"바께","out":"ba'gge"}
+{"map":"iso-mar-Deva-Latn-15919-2001","src":"सांताक्रूझ-चेंबूर लिंक रोडवरील उन्नत मार्गाला स्थगिती","out":"saāṁtaākaraūjha-caeṁbaūra laiṁka raoḍavaraīla unanata maāragaālaā sathagaitaī"}
+{"map":"iso-ori-Orya-Latn-15919-2001","src":"ନବନିଯୁକ୍ତ ଓଡିଶା କଂଗ୍ରେସ ପ୍ରଭାରୀ ଏ.ଚେଲ୍ଲା କୁମାରଙ୍କୁ କରୋନା","out":"nabanaiyaukata oḍaiśaā kaṁgaraesa parabhaāraī e.caelalaā kaumaāraṅakau karaonaā"}
+{"map":"iso-pli-Deva-Latn-15919-2001","src":"तत्थ सुदिन्‍नो नाम कलन्दपुत्तो सेट्ठिपुत्तो होति","out":"tatatha saudainanao naāma kalanadapautatao saeṭaṭhaipautatao haotai"}
+{"map":"iso-pli-Thai-Latn-15919-2001","src":"อกาโล โข, มาณวก, อตฺถิ เม อชฺช เภสชฺชมตฺตา ปีตา, อปฺเปว นาม สฺเวปิ อุปสงฺกเมยฺยามา","out":"xkāol ok̄h, māṇwk, xt–̥t̄hi em xch–̥ch ep̣hs̄ch–̥chmt–̥tā pītā, xp–̥epw nām s̄–̥ewpi xups̄ng–̥kemy–̥yāmā"}
+{"map":"iso-san-Deva-Latn-15919-2001","src":"यो न हृष्यति न द्वेष्टि न शोचति न काङ्‍क्षति","out":"yao na haṛṣayatai na davaeṣaṭai na śaocatai na kaāṅakaṣatai"}
+{"map":"iso-tel-Telu-Latn-15919-2001","src":"శ్రియ సినిమా సెట్‌లో అడుగుపెట్టి ఆరు నెలలు కావొస్తోంది","out":"śaraiya sainaimaā saeṭalaō aḍaugaupaeṭaṭai ārau naelalau kaāvaosataōṁdai"}
+{"map":"kp-kor-Hang-Latn-2002","src":"압록강","out":"Amrokgang"}
+{"map":"masm-mon-Cyrl-Latn-5217-2012","src":"Ишиг, бичиг, хань","out":"Ishig, bichig, khani"}
+{"map":"masm-mon-Latn-Cyrl-5217-2012","src":"Avarga, khalbaga, aav","out":"Аварга, халбага, аав"}
+{"map":"masm-mon-Latn-Cyrl-5217-2012","src":"Tsatsag, tsetseg","out":"Цацаг, цэцэг"}
+{"map":"moct-kor-Hang-Latn-2000","src":"묵호","out":"Mukho"}
+{"map":"mofa-jpn-Hrkt-Latn-1989","src":"ヒュウガ","out":"HYUGA"}
+{"map":"mv-div-Thaa-Latn-1987","src":"ދަރިވަރުންނާއި","out":"dharivarun’n’aai"}
+{"map":"mvd-rus-Cyrl-Latn-2008","src":"Ева","out":"Eva"}
+{"map":"odni-ara-Arab-Latn-2004","src":"نُورُالدِين","out":"Nur al Din"}
+{"map":"odni-bel-Cyrl-Latn-2015","src":"Кастусь Каліноўскі","out":"Kastus Kalinowski"}
+{"map":"odni-che-Cyrl-Latn-2015","src":"Ильяс Ахмадкӏант","out":"Ilyas Akhmadkant"}
+{"map":"odni-hin-Deva-Latn-2004","src":"समीर","out":"smir"}
+{"map":"odni-kir-Cyrl-Latn-2015","src":"Гульжигит Калыков","out":"Guljigit Kalykov"}
+{"map":"odni-kur-Arab-Latn-2011","src":"ئاواره","out":"Awara"}
+{"map":"odni-prs-Arab-Latn-2004","src":"صَفَّار","out":"saffar"}
+{"map":"odni-pus-Arab-Latn-2011","src":"قَيُّوم","out":"Qayyum"}
+{"map":"odni-srp-Cyrl-Latn-2015","src":"Пролеће","out":"Prolece"}
+{"map":"odni-ukr-Cyrl-Latn-2015","src":"Олег","out":"Oleh"}
+{"map":"odni-ukr-Cyrl-Latn-2015","src":"Новофедорівка","out":"Novofedorivka"}
+{"map":"odni-zho-Hani-Latn-2015","src":"毛","out":"Mao"}
+{"map":"odni-zho-Hani-Latn-2015","src":"金","out":"Jin"}
+{"map":"odni-zho-Hani-Latn-2015","src":"唐","out":"Tang"}
+{"map":"odni-zho-Hani-Latn-2015","src":"董","out":"Dong"}
+{"map":"odni-zho-Hani-Latn-2015","src":"谢","out":"Xie"}
+{"map":"odni-zho-Hani-Latn-2015","src":"luo jiahui","out":"Luo Jiahui"}
+{"map":"sasm-mon-Mong-Latn-general-1978","src":"ᠤᠯᠠᠭᠠᠨᠴᠠᠪ ᠬᠣᠲᠠ","out":"ulaganqab hota"}
+{"map":"sasm-mon-Mong-Latn-general-1978","src":"ᠣᠲᠣᠭ ᠬᠣᠰᠢᠭᠤ","out":"otog hosigu"}
+{"map":"sasm-mon-Mong-Latn-general-1978","src":"ᠡᠵᠡᠨ᠎ᠡ ᠬᠣᠰᠢᠭᠤ","out":"ejen-e hosigu"}
+{"map":"sasm-mon-Mong-Latn-general-1978","src":"ᠲᠠᠶᠢᠫᠤᠰᠧ ᠬᠣᠰᠢᠭᠤ","out":"tayipuse hosigu"}
+{"map":"sasm-mon-Mong-Latn-phonetic-1978","src":"ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ","out":"hayirûb-ûn tôhôi tôgôrig"}
+{"map":"sasm-mon-Mong-Latn-phonetic-1978","src":"ᠰᠢᠨ᠎ᠡ ᠪᠠᠷᠭᠤ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ","out":"sin-e bargû baragûn hôsigû"}
+{"map":"sasm-mon-Mong-Latn-phonetic-1978","src":"ᠠᠯᠠᠱᠠ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ","out":"alaxa baragûn hôsigû"}
+{"map":"sasm-mon-Mong-Latn-phonetic-1978","src":"ᠲᠣᠭᠲᠠᠬᠤ ᠰᠢᠶᠠᠨ","out":"tôgtahû siyan"}
+{"map":"stategeocadastre-ukr-Cyrl-Latn-1993","src":"Верховина","out":"Verkhovyna"}
+{"map":"stategeocadastre-ukr-Cyrl-Latn-1993","src":"Форос","out":"Foros"}
+{"map":"ua-ukr-Cyrl-Latn-1996","src":"Іршава","out":"Irshava"}
+{"map":"ua-ukr-Cyrl-Latn-1996","src":"Знам’янка","out":"Znam”ianka"}
+{"map":"ua-ukr-Cyrl-Latn-2010","src":"Ґорґани","out":"Gorgany"}
+{"map":"ua-ukr-Cyrl-Latn-2010","src":"Коваленко","out":"Kovalenko"}
+{"map":"ua-ukr-Cyrl-Latn-2010","src":"Чернівці","out":"Chernivtsi"}
+{"map":"un-amh-Ethi-Latn-2016","src":"ለማሰብ ወይም የታሰበን ሃሳብ ለሌላ ለማስተላለፍ የሚረዳ መሳሪያ ነው","out":"Le̠mase̠bi̠ We̠yi̠mi̠ Ye̠tase̠be̠ni̠ Hasabi̠ Le̠lela Le̠masi̠te̠lale̠fi̠ Ye̠mire̠da Me̠sariya Ne̠wi̠"}
+{"map":"un-amh-Ethi-Latn-2016","src":"አኙዋክኛ","out":"Anyuwaki̠nya"}
+{"map":"un-amh-Ethi-Latn-2016","src":"አዲስ አበባ","out":"Adisi̠ Abe̠ba"}
+{"map":"un-ara-Arab-Latn-2017","src":"السُودان","out":"As Sūdān"}
+{"map":"un-bel-Cyrl-Latn-2007","src":"Віцебск","out":"Viciebsk"}
+{"map":"un-bel-Cyrl-Latn-2007","src":"Шаркаўшчына","out":"Šarkaŭščyna"}
+{"map":"un-ben-Beng-Latn-2016","src":"ড়","out":"ṙa"}
+{"map":"un-bul-Cyrl-Latn-1977","src":"Чакъров остров","out":"Čakǎrov ostrov"}
+{"map":"un-bul-Cyrl-Latn-1977","src":"залив Лазурен бряг","out":"zaliv Lazuren brjag"}
+{"map":"un-bul-Cyrl-Latn-1977","src":"остров Рогулят","out":"ostrov Roguljat"}
+{"map":"un-bul-Cyrl-Latn-1977","src":"остров Вълчедръм","out":"ostrov Vǎlčedrǎm"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Γοίθιος","out":"ɣiθios"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Άρτα","out":"ɑrtɑ"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Ήπειρος","out":"ipiros"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Κέρκυρα","out":"kɛrkirɑ"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Λιβαδειά","out":"livɑðiɑ"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Πασαλιμάνι","out":"pɑsɑlimɑni"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Σκιάθος","out":"skiɑθos"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Αβάνα","out":"ɑvɑnɑ"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Μάλαγα","out":"mɑlɑɣɑ"}
+{"map":"un-ell-Grek-Latn-1987-phonetic","src":"Τιρόλο","out":"tirolo"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Γοίθιος","out":"Goíthios"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Άρτα","out":"Árta"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Ήπειρος","out":"Ípeiros"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Κέρκυρα","out":"Kérkyra"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Λιβαδειά","out":"Livadeiá"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Πασαλιμάνι","out":"Pasalimáni"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Σκιάθος","out":"Skiáthos"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Αβάνα","out":"Avána"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Μάλαγα","out":"Málaga"}
+{"map":"un-ell-Grek-Latn-1987-ts","src":"Τιρόλο","out":"Tirólo"}
+{"map":"un-hin-Deva-Latn-2016","src":"गंभीर मरीजों के मामले में भारत दूसरे नंबर पर","out":"gaṁbhīr marījoṁ ke māmale meṁ bhārat dūsare naṁbar par"}
+{"map":"un-mal-Mlym-Latn-1972","src":"സ്വർണക്കടത്ത്‌: ഫൈസൽ ഫരീദും റബിന്‍സും ദുബായിൽ അറസ്റ്റിലായെന്ന്‌ എന്‍ഐഎ","out":"svarṇakkaṭatt: phaisal pharīduṃ ṟabinsuṃ dubāyil aṟasṟṟilāyĕnn ĕnaiĕ"}
+{"map":"un-mar-Deva-Latn-2016","src":"पीएम स्वनिधी कर्ज योजनेला मुंबईतून अल्प प्रतिसाद","out":"pīem svanidhī karj yojanelā muṁbaītūn alp pratisād"}
+{"map":"un-mon-Mong-Latn-general-2013","src":"ᠷᠠᠰᠢᠶᠠᠨ ᠬᠣᠲᠠ","out":"rasiyan hota"}
+{"map":"un-mon-Mong-Latn-general-2013","src":"ᠴᠢᠩᠱᠠᠨ ᠲᠣᠭᠣᠷᠢᠭ","out":"qingxan togorig"}
+{"map":"un-mon-Mong-Latn-general-2013","src":"ᠨᠠᠢᠮᠠᠨ ᠬᠣᠰᠢᠭᠤ","out":"naiman hosigu"}
+{"map":"un-mon-Mong-Latn-general-2013","src":"ᠬᠠᠶᠢᠷᠤᠪ ᠤᠨ ᠲᠣᠬᠣᠢ ᠲᠣᠭᠣᠷᠢᠭ","out":"hayirub-un tohoi togorig"}
+{"map":"un-mon-Mong-Latn-phonetic-2013","src":"ᠡᠷᠢᠶᠡᠨ ᠬᠣᠲᠠ","out":"eriyen hôta"}
+{"map":"un-mon-Mong-Latn-phonetic-2013","src":"ᠳᠦᠩᠾᠧ ᠲᠣᠭᠣᠷᠢᠭ","out":"dunghe tôgôrig"}
+{"map":"un-mon-Mong-Latn-phonetic-2013","src":"ᠬᠦᠷᠢᠶ᠎ᠡ ᠬᠣᠰᠢᠭᠤ","out":"huriy-e hôsigû"}
+{"map":"un-mon-Mong-Latn-phonetic-2013","src":"ᠰᠢᠨ᠎ᠡ ᠬᠣᠲᠠ ᠲᠣᠭᠣᠷᠢᠭ","out":"sin-e hôta tôgôrig"}
+{"map":"un-nep-Deva-Latn-1972","src":"मुद्रा","out":"mudrā"}
+{"map":"un-nep-Deva-Latn-2013","src":"प्रशंसा","out":"prashaṁsā"}
+{"map":"un-ori-Orya-Latn-1972","src":"ପ୍ରେମ ସମ୍ପର୍କରେ ଭଟ୍ଟା: ରାଗରେ ପ୍ରେମିକାର ତଣ୍ଟି କାଟି ନିଜେ ବିଷ ପିଇଲା ପ୍ରେମିକ","out":"prema samparkare bhaṭṭā: rāgare premikāra taṇṭi kāṭi nije biṣha piilā premika"}
+{"map":"un-prs-Arab-Latn-1967","src":"قُرآن","out":"Qor’ān"}
+{"map":"un-rus-Cyrl-Latn-1987","src":"Мaймaк","out":"Majmak"}
+{"map":"un-rus-Cyrl-Latn-1987","src":"Ямaл","out":"Jamal"}
+{"map":"un-srp-Cyrl-Latn-1997","src":"Тресаначка Река","out":"Tresanačka Reka"}
+{"map":"un-tam-Taml-Latn-1972","src":"டார்பிடோவை ஏவ உதவும் சூப்பர்சானிக் ஏவுகணையான ஸ்மார்ட் சோதனை வெற்றி","out":"ṭārpiṭovai eva utavum chūpparchāṉik evukaṇaiyāṉa smārṭ chotaṉai vĕṟṟi"}
+{"map":"un-tel-Telu-Latn-1972","src":"హైదరాబాదు","out":"haidarābādu"}
+{"map":"un-ukr-Cyrl-Latn-2012","src":"Згурський","out":"Zghurskyi"}
+{"map":"un-ukr-Cyrl-Latn-2012","src":"Олексій","out":"Oleksii"}
+{"map":"un-ukr-Cyrl-Latn-2012","src":"Біла Церква","out":"Bila Tserkva"}
+{"map":"un-urd-Arab-Latn-1972","src":"دُرَانِي","out":"Durānī"}
+{"map":"un-urd-Arab-Latn-1972","src":"پھاشک","out":"Phāshk"}
+{"map":"var-amh-Ethi-Latn-eae-2003","src":"ለሰላም ለፍትህ ለሕዝቦች ነጻነት","out":"läsälamə läfətəhə läḥəzəbočə näṣanätə"}
+{"map":"var-amh-Ethi-Latn-eae-2003","src":"ደብረ ማርቆስ","out":"däbərä marəqosə"}
+{"map":"var-amh-Ethi-Latn-eae-2003","src":"ራስ ሳይጠና ጉተና","out":"rasə sayəṭäna gutäna"}
+{"map":"var-gez-Ethi-Latn-eae-2003","src":"ወኮነ ሌሊተ ወጸብሐ ወኮነ ራብዕተ ዕለተ","out":"wäkonä lelitä wäṣäbəḥa wäkonä rabəʿətä ʿəlätä"}
+{"map":"var-jpn-Hrkt-Latn-hepburn-1886","src":"きんようび","out":"kin-yōbi"}
+{"map":"var-kor-Hang-Latn-mr-1939","src":"하나님","out":"hananim"}
+{"map":"var-kor-Hang-Latn-mr-1939","src":"령반","out":"yŏngban"}
+{"map":"var-kor-Hang-Latn-mr-1939","src":"밥","out":"pap"}
+{"map":"var-kor-Hang-Latn-mr-1939","src":"민족","out":"minjok"}
+{"map":"var-kor-Hang-Latn-mr-1939","src":"쇠뿔","out":"soeppul"}
+{"map":"var-kor-Kore-Hang-2013","src":"協力局長協助主義協同組合協同農場南倭北虜","out":"협력국장협조주의협동조합협동농장남왜북로"}
+{"map":"var-mon-Mong-Latn-lessing","src":"ᠡᠷᠢᠶᠡᠨ ᠬᠣᠲᠠ","out":"erijen xota"}
+{"map":"var-mon-Mong-Latn-lessing","src":"ᠭᠦᠶᠠᠩ ᠰᠢᠶᠠᠨ","out":"gyjang sijan"}
+{"map":"var-mon-Mong-Latn-lessing","src":"ᠬᠣᠷᠴᠢᠨ ᠵᠡᠭᠦᠨ ᠭᠠᠷᠤᠨ ᠬᠣᠶᠢᠲᠤ ᠬᠣᠰᠢᠭᠤ","out":"xorcin zegyn γarun xoitu xosiγu"}
+{"map":"var-mon-Mong-Latn-lessing","src":"ᠤᠷᠠᠳ ᠤᠨ ᠡᠮᠦᠨᠡᠳᠦ ᠬᠣᠰᠢᠭᠤ","out":"urad-un emynedy xosiγu"}
+{"map":"var-mon-Mong-Latn-vpmc","src":"ᠪᠠᠭᠠᠷᠢᠨ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ","out":"baγarin baraγun qosiγu"}
+{"map":"var-mon-Mong-Latn-vpmc","src":"ᠲᠦᠮᠡᠳ ᠪᠠᠷᠠᠭᠤᠨ ᠬᠣᠰᠢᠭᠤ","out":"tümed baraγun qosiγu"}
+{"map":"var-mon-Mong-Latn-vpmc","src":"ᠰᠡᠷᠡᠴᠢ","out":"sereči"}
+{"map":"var-mon-Mong-Latn-vpmc","src":"ᠰᠥᠨᠡᠳ ᠵᠡᠭᠦᠨ ᠬᠣᠰᠢᠭᠤ","out":"söned ǰegün qosiγu"}
+{"map":"var-zho-Hani-Latn-wd-1979","src":"三塊厝","out":"San-k’uai-ts’o"}
