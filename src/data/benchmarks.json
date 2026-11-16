@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-16T15:00:31.525Z",
+  "methodology": {
+    "runs": 3,
+    "aggregation": "median",
+    "serial": true,
+    "note": "clean serial runs — one runtime at a time, nothing else executing (maps/docs/parity/README.md §A.8)"
+  },
+  "machine": {
+    "os": "Darwin 23.1.0",
+    "arch": "arm64",
+    "cpuModel": "Apple M1 Max",
+    "cores": 10,
+    "memoryGb": 64,
+    "node": "v24.14.0",
+    "toolchains": {
+      "ruby": "3.4.8",
+      "python": "3.10.5"
+    }
+  },
+  "runtimeHeads": {
+    "rs": {
+      "repo": "interscript/interscript-rs",
+      "ref": "main",
+      "sha": "74b4b8d071ff0e3c10159da2832b7fb76b92f8e2",
+      "version": "0.3.2",
+      "path": "/Users/mulgogi/src/interscript/wo20-bench/interscript-rs"
+    },
+    "ts": {
+      "repo": "interscript/interscript-ts",
+      "ref": "main",
+      "sha": "b74cfdaf56b4a726ad98abf40ccccbf3d486f418",
+      "version": "5.10.0",
+      "path": "/Users/mulgogi/src/interscript/wo20-bench/interscript-ts"
+    },
+    "ruby": {
+      "repo": "interscript/interscript-ruby",
+      "ref": "main",
+      "sha": "4c47eb52db75ff459ecb599d3386748f31bd6c93",
+      "version": "3.7.2",
+      "path": "/Users/mulgogi/src/interscript/wo20-bench/interscript-ruby"
+    },
+    "py": {
+      "repo": "interscript/interscript-ruby (py ISC engine tree)",
+      "ref": "wo17/py-override-placement",
+      "sha": "5781a996fbb20450661ef44d5fbdf251da0bc0dc",
+      "version": "0.1.0",
+      "path": "/Users/mulgogi/src/interscript/wo20-bench/interscript-py-isc",
+      "note": "the py ISC engine ships on this unmerged branch of the interscript-ruby repo; interscript-py main still carries the legacy .imp engine and cannot run the ISC corpus"
+    }
+  },
+  "corpus": {
+    "maps": 428,
+    "goldenRows": 12839,
+    "fixtureRows": 514,
+    "sha": "c55bc5c2127f4796418391917a4dfaf75c7b4f88"
+  },
+  "parse": {
+    "rs": {
+      "runs": [
+        35012,
+        26366,
+        25293
+      ],
+      "medianMs": 26366,
+      "matched": 428,
+      "total": 428,
+      "perMapMeanMs": 61.6,
+      "note": "wall clock of the iscrs process (includes ~20 ms startup)"
+    },
+    "ruby": {
+      "runs": [
+        167427.6,
+        178408.4,
+        149516.8
+      ],
+      "medianMs": 167427.6,
+      "matched": 428,
+      "total": 428,
+      "rowsPerSec": 2.6,
+      "perMapMeanMs": 391.19
+    },
+    "ts": {
+      "runs": [
+        16106.3,
+        15026.8,
+        15267.8
+      ],
+      "medianMs": 15267.8,
+      "matched": 428,
+      "total": 428,
+      "rowsPerSec": 28,
+      "perMapMeanMs": 35.67
+    },
+    "py": {
+      "runs": [
+        5077.4,
+        4677.8,
+        4503.5
+      ],
+      "medianMs": 4677.8,
+      "matched": 428,
+      "total": 428,
+      "rowsPerSec": 91.5,
+      "perMapMeanMs": 10.93
+    }
+  },
+  "goldenReplay": {
+    "rs": {
+      "runs": [
+        66592,
+        66448,
+        66568
+      ],
+      "medianMs": 66568,
+      "rows": 12839,
+      "maps": 428,
+      "loadErrors": 1,
+      "rowsPerSec": 192.9,
+      "note": "iscrs capture wall clock: load + transliterate every corpus map's embedded tests in one process (includes corpus parse)"
+    },
+    "ruby": {
+      "runs": [
+        7604.8,
+        7685.4,
+        7590.9
+      ],
+      "medianMs": 7604.8,
+      "matched": 12839,
+      "total": 12839,
+      "rowsPerSec": 1688.3
+    },
+    "ts": {
+      "runs": [
+        7843,
+        7105.1,
+        6796.9
+      ],
+      "medianMs": 7105.1,
+      "matched": 12839,
+      "total": 12839,
+      "rowsPerSec": 1807
+    },
+    "py": {
+      "runs": [
+        61664.2,
+        61842.7,
+        86985.9
+      ],
+      "medianMs": 61842.7,
+      "matched": 12836,
+      "total": 12839,
+      "divergent": 3,
+      "rowsPerSec": 207.6
+    }
+  },
+  "fixtureThroughput": {
+    "ruby": {
+      "runs": [
+        218.5,
+        234.6,
+        240.3
+      ],
+      "medianMs": 234.6,
+      "matched": 514,
+      "total": 514,
+      "rowsPerSec": 2191
+    },
+    "ts": {
+      "runs": [
+        751,
+        229.9,
+        228.9
+      ],
+      "medianMs": 229.9,
+      "matched": 514,
+      "total": 514,
+      "rowsPerSec": 2235.8
+    },
+    "py": {
+      "runs": [
+        7046.5,
+        6855.7,
+        6929.9
+      ],
+      "medianMs": 6929.9,
+      "matched": 514,
+      "total": 514,
+      "rowsPerSec": 74.2
+    },
+    "rs": {
+      "rowsPerSec": 192.9,
+      "derivedFrom": "goldenReplay.rs (iscrs capture); rs has no batch transliteration CLI"
+    }
+  }
+}
