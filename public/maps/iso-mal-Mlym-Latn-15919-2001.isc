@@ -35,6 +35,7 @@ metadata {
     note "Where it is desired to show the Vedic accent Anudatta, it should be transliterated as an underscore. In the case of\n the digraphs ai, au, both Latin vowels should be underscored.\n Where word boundaries are not shown in the original text (as happens commonly in Sanskrit) and a word ends in a\n consonant, the transliteration should show word division by a space; but when phonological processes result in two\n words sharing a common vowel, no attempt should be made to separate them. This will require a good knowledge\n of the language in question."
     note "In Malayalam text, ് acts as the mātrā for ŭ when final in a word, except when it removes the inherent vowel of a single\n consonant."
     note "The ambiguous pure consonant r/ṟ (ർ) in Malayalam script shall be transliterated into r when combined\n with another consonant; when it is final in a word it shall be transliterated as ṟ in Malayalam language."
+    note "Official-edition finding (published ISO 15919:2001, owner-provided PDF): Table 9 does NOT print the letter U+0D3A (ttta) or any t-line-below row; the U+0D3A row seen in modern secondary transcriptions is a post-2001 extension and is not encoded. The official alveolar rows are ref 041a (n with line below, the letter today at U+0D29, encoded) and ref 049 (ra with line below, U+0D31, encoded); ref 052 prints la with line below (U+0D34, encoded). Table 9 also omits the second edition's chillu rows."
   }
 }
 

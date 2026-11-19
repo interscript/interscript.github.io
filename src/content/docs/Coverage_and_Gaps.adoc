@@ -7,10 +7,10 @@ check.
 
 == What is covered
 
-The map registry contains **428 systems** drawn from
+The map registry contains **450 systems** drawn from
 https://github.com/interscript/maps[the maps repository] — each an
 executable, test-carrying transliteration map with a named authority
-and source document, 12,337 embedded tests from those documents, all
+and source document, 15,464 embedded tests from those documents, all
 green. Browse them on the
 https://interscript.org/maps[map catalogue]; every system has its own
 page with its description, source document, scripts, mapping counts,
@@ -30,10 +30,10 @@ https://github.com/interscript/interscript-models/tree/main/TODO.sota[the
 models repository's campaign ledger]. The remaining systems, by
 source:
 
-* *ISO* — ISO 9 non-Russian Cyrillic coverage check, ISO 259 Hebrew
-  letter table, ISO 7089/7098 Chinese pinyin, and the remaining ISO
-  15919 Indic scripts. The source documents are not yet in the
-  project's reference collection; acquisition is owner-held.
+* *ISO* — ISO 9 non-Russian Cyrillic coverage check, ISO 7089/7098
+  Chinese pinyin, and the remaining ISO 15919 Indic scripts. The source
+  documents are not yet in the project's reference collection;
+  acquisition is owner-held.
 * *ALA-LC* — the batch campaigns landed through 2026-11-09 (Brahmic/
   SE-Asian, Arabic-script, Cyrillic, East Asian, and misc-script
   systems; 93 ALA-LC maps in the registry). The systems listed in the

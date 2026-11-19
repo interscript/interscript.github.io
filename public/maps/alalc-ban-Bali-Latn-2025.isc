@@ -1,0 +1,610 @@
+system "ALA-LC:ban-Bali:Latn:2025" {
+
+metadata {
+  authority_id alalc
+  id 2025
+  language iso-639-2:ban
+  source_script Bali
+  destination_script Latn
+  name "Balinese Romanization Table (2025)"
+  url https://www.loc.gov/catdir/cpso/romanization/balinese.pdf
+  creation_date 2025
+  adoption_date
+  description {    ALA-LC Balinese Romanization Table, 2025 version — strict
+    transliteration per ISO 15919:2001 with PKU modifications. The
+    vowel a is inherent after all consonants except terminal ones,
+    replaced by combining vowel signs or cancelled by the
+    vowel-suppressant adeg-adeg (word-finally the middle dot). The
+    full consonant inventory: the aksara wresastra core, the Indic
+    swalalita set, and the terminal consonants. Vowels include the
+    vocalic and l̥ series and the pepet ə. Transcribed from the
+    loc.gov document's complete text layer and verified against the
+    rendered tables.
+  }
+
+  notes {
+    note "The 22 footnotes of the source (script variants, the
+    pangongko/lingsa punctuation details, and the pepet controversy)
+    accompany this table; the romanization values above are the
+    table's own."
+    note "2025 corpus repair, anchored to the rendered document: the
+    sa row ᬲ (p. 2) was missing and is now encoded; the o sign ᭀ (the
+    combining form of ᬑ, p. 4) romanizes o without a macron; the au
+    sign ᭁ and pepet tedung ᭃ (p. 4, values au and ə̄) are now
+    encoded; adeg-adeg after a consonant suppresses that consonant's
+    inherent vowel (p. 1 preamble and its example ᬲ᭄ᬢ᭄ᬭ᭄ᬬᭀᬄ stryoḥ),
+    and a word-final adeg-adeg cancels the vowel as the middle dot
+    (preamble rule b; e.g. hampun·, p. 6 note 2); akara ᬅ used as a
+    zero vowel romanizes q (note 15, ᬅᬶ = qi) and ᬅ᭄ romanizes q·
+    (note 13, ᬩᬇᬅ᭄ = baiq·); the terminal consonants ulu ricem ᬀ =
+    ṃ, ulu candra ᬁ = m̐, cecek ᬂ = ŋ (p. 3, notes 7-8); the aksara
+    rekan rows fa, za, ‘a (p. 4); the remaining punctuation marks
+    (p. 5). Recorded gaps, behavior unchanged: the generalized
+    rerekan underline practice (note 11) and the scribal-error
+    bracket practice (note 16) are not implemented; the Sasak
+    letters ᭅ-ᭋ are excluded per source note 12."
+  }
+}
+
+tests {
+   "ᬓ" ->  "ka"
+   "ᬲ" ->  "sa"
+   "ᬗ" ->  "ṅa"
+   "ᬱ" ->  "ṣa"
+   "ᬔ" ->  "kha"
+   "ᬧ᬴" ->  "fa"
+   "ᬗ᬴" ->  "‘a"
+   "ᬆ" ->  "ā"
+   "ᬋ" ->  "r̥"
+   "ᬒ" ->  "au"
+   "ᬓᬶ" ->  "ki"
+   "ᬓᭀ" ->  "ko"
+   "ᬓᭁ" ->  "kau"
+   "ᬓᭂ" ->  "kə"
+   "᭑" ->  "1"
+   "᭓" ->  "3"
+   "᭞" ->  ","
+   "᭎" ->  ";"
+   "᭄" ->  "·"
+   "ᬳ᭄ᬯ᭄" ->  "hw·"
+   "ᬲ᭄ᬢ᭄ᬭ᭄ᬬᭀᬄ" ->  "stryoḥ"
+   "ᬳᬫ᭄ᬧᬸᬦ᭄" ->  "hampun·"
+   "ᬧ᭄ᬭᬚ᭄ᬜ" ->  "prajña"
+   "ᬧᬜ᭄ᬘ" ->  "pañca"
+   "ᬅᬶ" ->  "qi"
+   "ᬩᬇᬅ᭄" ->  "baiq·"
+}
+
+aliases {
+  ban_vowel_or_adeg = any("ᬵᬶᬷᬸᬹᬺᭀᬾᬿᭂᭁᭃ᭄")
+  ban_consonant = any("ᬳᬦᬘᬭᬓᬤᬢᬯᬮᬫᬕᬩᬗᬧᬚᬬᬜᬡᬙᬔᬥᬟᬠᬣᬝᬞᬰᬱᬖᬪᬨᬛᬲhwnckdtlmgṅpjyñṇḍṭśṣbfz‘qrs")
+}
+
+stage main {
+
+  # adeg-adeg linking a cluster (p. 1 preamble: the combining group
+  # replaces the inherent vowel of the full character): suppressed
+  # without a dot
+  sub {
+    from "ᬳ᭄"
+    to "h"
+    after ban_consonant
+  }
+  sub {
+    from "ᬦ᭄"
+    to "n"
+    after ban_consonant
+  }
+  sub {
+    from "ᬘ᭄"
+    to "c"
+    after ban_consonant
+  }
+  sub {
+    from "ᬭ᭄"
+    to "r"
+    after ban_consonant
+  }
+  sub {
+    from "ᬓ᭄"
+    to "k"
+    after ban_consonant
+  }
+  sub {
+    from "ᬤ᭄"
+    to "d"
+    after ban_consonant
+  }
+  sub {
+    from "ᬢ᭄"
+    to "t"
+    after ban_consonant
+  }
+  sub {
+    from "ᬯ᭄"
+    to "w"
+    after ban_consonant
+  }
+  sub {
+    from "ᬮ᭄"
+    to "l"
+    after ban_consonant
+  }
+  sub {
+    from "ᬫ᭄"
+    to "m"
+    after ban_consonant
+  }
+  sub {
+    from "ᬕ᭄"
+    to "g"
+    after ban_consonant
+  }
+  sub {
+    from "ᬩ᭄"
+    to "b"
+    after ban_consonant
+  }
+  sub {
+    from "ᬗ᭄"
+    to "ṅ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬧ᭄"
+    to "p"
+    after ban_consonant
+  }
+  sub {
+    from "ᬚ᭄"
+    to "j"
+    after ban_consonant
+  }
+  sub {
+    from "ᬬ᭄"
+    to "y"
+    after ban_consonant
+  }
+  sub {
+    from "ᬜ᭄"
+    to "ñ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬡ᭄"
+    to "ṇ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬙ᭄"
+    to "ch"
+    after ban_consonant
+  }
+  sub {
+    from "ᬔ᭄"
+    to "kh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬥ᭄"
+    to "dh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬟ᭄"
+    to "ḍ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬠ᭄"
+    to "ḍh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬣ᭄"
+    to "th"
+    after ban_consonant
+  }
+  sub {
+    from "ᬝ᭄"
+    to "ṭ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬞ᭄"
+    to "ṭh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬰ᭄"
+    to "ś"
+    after ban_consonant
+  }
+  sub {
+    from "ᬱ᭄"
+    to "ṣ"
+    after ban_consonant
+  }
+  sub {
+    from "ᬖ᭄"
+    to "gh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬪ᭄"
+    to "bh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬨ᭄"
+    to "ph"
+    after ban_consonant
+  }
+  sub {
+    from "ᬛ᭄"
+    to "jh"
+    after ban_consonant
+  }
+  sub {
+    from "ᬲ᭄"
+    to "s"
+    after ban_consonant
+  }
+  sub {
+    from "ᬧ᬴᭄"
+    to "f"
+    after ban_consonant
+  }
+  sub {
+    from "ᬚ᬴᭄"
+    to "z"
+    after ban_consonant
+  }
+  sub {
+    from "ᬗ᬴᭄"
+    to "‘"
+    after ban_consonant
+  }
+
+  # bisah and surang combining forms (p. 3 terminal consonants)
+  sub "᭄ᭀᬄ" "ḥ"
+  sub "᭄ᬃ" "ŕ"
+
+  # inherent vowel replaced by a following combining vowel sign, or
+  # suppressed by a following adeg-adeg (p. 1 preamble rules a and b)
+  sub {
+    from "ᬳ"
+    to "h"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬦ"
+    to "n"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬘ"
+    to "c"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬭ"
+    to "r"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬓ"
+    to "k"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬤ"
+    to "d"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬢ"
+    to "t"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬯ"
+    to "w"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬮ"
+    to "l"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬫ"
+    to "m"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬕ"
+    to "g"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬩ"
+    to "b"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬗ"
+    to "ṅ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬧ"
+    to "p"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬚ"
+    to "j"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬬ"
+    to "y"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬜ"
+    to "ñ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬡ"
+    to "ṇ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬙ"
+    to "ch"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬔ"
+    to "kh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬥ"
+    to "dh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬟ"
+    to "ḍ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬠ"
+    to "ḍh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬣ"
+    to "th"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬝ"
+    to "ṭ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬞ"
+    to "ṭh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬰ"
+    to "ś"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬱ"
+    to "ṣ"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬖ"
+    to "gh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬪ"
+    to "bh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬨ"
+    to "ph"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬛ"
+    to "jh"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬲ"
+    to "s"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬧ᬴"
+    to "f"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬚ᬴"
+    to "z"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬗ᬴"
+    to "‘"
+    after ban_vowel_or_adeg
+  }
+  sub {
+    from "ᬅ"
+    to "q"
+    after ban_vowel_or_adeg
+  }
+
+  # orphan combining forms (adeg-adeg with no preceding full character)
+  parallel {
+    sub "᭄ᬳ" "h"
+    sub "᭄ᬦ" "n"
+    sub "᭄ᬘ" "c"
+    sub "᭄ᬭ" "r"
+    sub "᭄ᬓ" "k"
+    sub "᭄ᬤ" "d"
+    sub "᭄ᬢ" "t"
+    sub "᭄ᬯ" "w"
+    sub "᭄ᬮ" "l"
+    sub "᭄ᬫ" "m"
+    sub "᭄ᬕ" "g"
+    sub "᭄ᬩ" "b"
+    sub "᭄ᬗ" "ṅ"
+    sub "᭄ᬧ" "p"
+    sub "᭄ᬚ" "j"
+    sub "᭄ᬬ" "y"
+    sub "᭄ᬜ" "ñ"
+    sub "᭄ᬡ" "ṇ"
+    sub "᭄ᬙ" "ch"
+    sub "᭄ᬔ" "kh"
+    sub "᭄ᬥ" "dh"
+    sub "᭄ᬟ" "ḍ"
+    sub "᭄ᬠ" "ḍh"
+    sub "᭄ᬣ" "th"
+    sub "᭄ᬝ" "ṭ"
+    sub "᭄ᬞ" "ṭh"
+    sub "᭄ᬰ" "ś"
+    sub "᭄ᬱ" "ṣ"
+    sub "᭄ᬖ" "gh"
+    sub "᭄ᬪ" "bh"
+    sub "᭄ᬨ" "ph"
+    sub "᭄ᬛ" "jh"
+    sub "᭄ᬲ" "s"
+    sub "᭄ᬧ᬴" "f"
+    sub "᭄ᬚ᬴" "z"
+    sub "᭄ᬗ᬴" "‘"
+  }
+
+  # word-final adeg-adeg: the cancelled vowel transliterates as the
+  # middle dot (p. 1 preamble rule b)
+  sub "᭄" "·"
+
+  # full consonants with the inherent vowel a (p. 2-4 tables)
+  parallel {
+    sub "ᬳ" "ha"
+    sub "ᬦ" "na"
+    sub "ᬘ" "ca"
+    sub "ᬭ" "ra"
+    sub "ᬓ" "ka"
+    sub "ᬤ" "da"
+    sub "ᬢ" "ta"
+    sub "ᬯ" "wa"
+    sub "ᬮ" "la"
+    sub "ᬫ" "ma"
+    sub "ᬕ" "ga"
+    sub "ᬩ" "ba"
+    sub "ᬗ" "ṅa"
+    sub "ᬧ" "pa"
+    sub "ᬚ" "ja"
+    sub "ᬬ" "ya"
+    sub "ᬜ" "ña"
+    sub "ᬡ" "ṇa"
+    sub "ᬙ" "cha"
+    sub "ᬔ" "kha"
+    sub "ᬥ" "dha"
+    sub "ᬟ" "ḍa"
+    sub "ᬠ" "ḍha"
+    sub "ᬣ" "tha"
+    sub "ᬝ" "ṭa"
+    sub "ᬞ" "ṭha"
+    sub "ᬰ" "śa"
+    sub "ᬱ" "ṣa"
+    sub "ᬖ" "gha"
+    sub "ᬪ" "bha"
+    sub "ᬨ" "pha"
+    sub "ᬛ" "jha"
+    sub "ᬲ" "sa"
+    sub "ᬧ᬴" "fa"
+    sub "ᬚ᬴" "za"
+    sub "ᬗ᬴" "‘a"
+  }
+
+  # standalone vowel signs (p. 4 vowels table)
+  parallel {
+    sub "ᬵ" "ā"
+    sub "ᬶ" "i"
+    sub "ᬷ" "ī"
+    sub "ᬸ" "u"
+    sub "ᬹ" "ū"
+    sub "ᬺ" "r̥"
+    sub "ᭀ" "o"
+    sub "ᬾ" "e"
+    sub "ᬿ" "ai"
+    sub "ᭂ" "ə"
+    sub "ᭁ" "au"
+    sub "ᭃ" "ə̄"
+  }
+
+  # independent vowel letters (p. 4)
+  parallel {
+    sub "ᬅ" "a"
+    sub "ᬆ" "ā"
+    sub "ᬇ" "i"
+    sub "ᬈ" "ī"
+    sub "ᬉ" "u"
+    sub "ᬊ" "ū"
+    sub "ᬋ" "r̥"
+    sub "ᬌ" "r̥̄"
+    sub "ᬍ" "l̥"
+    sub "ᬎ" "l̥̄"
+    sub "ᬏ" "e"
+    sub "ᬐ" "ai"
+    sub "ᬑ" "o"
+    sub "ᬒ" "au"
+  }
+
+  # terminal consonants (p. 3), numerals and punctuation (p. 5)
+  parallel {
+    sub "ᬀ" "ṃ"
+    sub "ᬁ" "m̐"
+    sub "ᬂ" "ŋ"
+    sub "ᬃ" "ŕ"
+    sub "ᬄ" "ḥ"
+    sub "᭑" "1"
+    sub "᭒" "2"
+    sub "᭓" "3"
+    sub "᭔" "4"
+    sub "᭕" "5"
+    sub "᭖" "6"
+    sub "᭗" "7"
+    sub "᭘" "8"
+    sub "᭙" "9"
+    sub "᭐" "0"
+    sub "᭞" ","
+    sub "᭟" "."
+    sub "᭠" "-"
+    sub "᭝" ":"
+    sub "᭜" "ø"
+    sub "᭿" "|~"
+    sub "᭚" "||~"
+    sub "᭽" "|||~"
+    sub "᭛" "//~"
+    sub "᭾" "///~"
+    sub "᭎" ";"
+    sub "᭏" ";;"
+  }
+}
+}
