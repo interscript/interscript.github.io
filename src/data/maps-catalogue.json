@@ -7727,6 +7727,27 @@
       "one_to_many": 0
     }
   },
+  "iso-ell-Grek-Latn-r843-1968": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "r843-1968",
+      "language": "iso-639-2:ell",
+      "source_script": "Grek",
+      "destination_script": "Latn",
+      "name": "ISO/R 843:1968 International system for the transliteration of Greek characters into Latin characters",
+      "description": "ISO Recommendation R 843, October 1968: the international system for\n    the transliteration of Greek characters into Latin characters. Superseded\n    by ISO 843:1997 (encoded separately). Bibliographic letter-by-letter\n    system with no diphthong vocalizer: eta -> e-macron, ypsilon -> u,\n    chi -> h, phi -> f, omega -> o-macron, beta -> b.",
+      "url": "",
+      "creation_date": "1968",
+      "nonstandard": {}
+    },
+    "test": [
+      "Ἀγαμέμνων",
+      "Agamémnōn",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-guj-Gujr-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
