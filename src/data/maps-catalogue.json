@@ -211,7 +211,7 @@
     },
     "test": [
       "Азәрбајҹан дили",
-      "Azărbaı̐jan dili",
+      "Azărbai̐jan dili",
       null
     ],
     "skip_js": false,
@@ -385,8 +385,8 @@
       "nonstandard": {}
     },
     "test": [
-      null,
-      null,
+      "А",
+      "A",
       null
     ],
     "skip_js": false,
@@ -5081,16 +5081,16 @@
       "one_to_many": 0
     }
   },
-  "bsi-rus-Cyrl-Latn-1958": {
+  "bsi-rus-Cyrl-Latn-2979-1958": {
     "class": "Interscript::Node::MetaData",
     "data": {
       "authority_id": "bsi",
-      "id": "1958",
+      "id": "2979-1958",
       "language": "iso-639-2:rus",
       "source_script": "Cyrl",
       "destination_script": "Latn",
       "name": "BS 2979:1958 Transliteration of Cyrillic and Greek characters - Table A, Russian column (the British system)",
-      "description": "BS 2979:1958, Table A, Russian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian); this map is the\n    Russian column. The Serbian and Macedonian column gives the latinica, the existing\n    Latin alphabet of Serbo-Croat. British Standard confirmed December 1998; the BSI\n    05-2000 reprint is the digitized edition.",
+      "description": "BS 2979:1958, Table A, Russian column: the \"British\" system for (modern) Cyrillic.\n    Table A is a five-column family table (East Slavonic: Russian, Ukrainian,\n    Byelorussian; South Slavonic: Bulgarian, Serbian and Macedonian); this map is the\n    Russian column, all 48 rows of which are transcribed here (including the two the\n    scan previously could not resolve: 46 fita and 47 izhitsa as parenthesized obsolete\n    values; 45 is the old Bulgarian big-yus ligature with an empty Russian cell).\n    British Standard approved 30 July 1958, confirmed December 1998; the BSI 05-2000\n    reprint is the digitized edition.",
       "url": "https://www.bsigroup.com",
       "creation_date": "1958",
       "nonstandard": {}
@@ -5100,14 +5100,7 @@
       "Byulleten’",
       null
     ],
-    "skip_js": false,
-    "invertibility": {
-      "verdict": "LOSSY_MANY_TO_ONE",
-      "pairs": 72,
-      "context_rules": 0,
-      "many_to_one": 7,
-      "one_to_many": 1
-    }
+    "skip_js": false
   },
   "bsi-srp-Cyrl-Latn-1958": {
     "class": "Interscript::Node::MetaData",
@@ -7636,6 +7629,48 @@
       "one_to_many": 0
     }
   },
+  "iso-ben-Beng-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:ben",
+      "source_script": "Beng",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Bengali (and Assamese); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "অ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-doi-Takr-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:doi",
+      "source_script": "Takr",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Dogri (Takri); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑚀",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-ell-Grek-Latn-843-1997-t1": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -7720,6 +7755,69 @@
       "one_to_many": 0
     }
   },
+  "iso-guj-Gujr-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:guj",
+      "source_script": "Gujr",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Gujarati; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "અ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-heb-Hebr-Latn-259-1984": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "259-1984",
+      "language": "iso-639-2:heb",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "ISO 259:1984 Documentation -- Transliteration of Hebrew characters into Latin characters",
+      "description": "Establishes the system for the transliteration of Hebrew characters into Latin\n    characters, following the principles of stringent conversion (full rendering of the\n    consonants and their diacritics). First edition 1984-10-01, prepared by ISO/TC 46;\n    cancels and replaces ISO/R 259:1962. This map encodes Table 1, the consonant table\n    (43 rows), together with the notes to the table (geresh and gershayim abbreviation\n    handling). The vocalized Table 2 of the standard is not part of this consonantal\n    encoding.",
+      "url": "https://www.iso.org/standard/4161.html",
+      "creation_date": "1984",
+      "nonstandard": {}
+    },
+    "test": [
+      "א",
+      "ʾ̲",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-heb-Hebr-Latn-259-2-1994": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "259-2-1994",
+      "language": "iso-639-2:heb",
+      "source_script": "Hebr",
+      "destination_script": "Latn",
+      "name": "ISO 259-2:1994 Information and documentation -- Transliteration of Hebrew characters into Latin characters -- Part 2: Simplified transliteration",
+      "description": "Specifies a simplified system for the transliteration of Hebrew characters\n    into Latin characters, relaxing the stringent prescriptions of ISO 259:1984;\n    intended for the processing of bibliographic information (catalogues, indexes,\n    references). First edition 1994-12-15, prepared by ISO/TC 46, corrected and\n    reprinted 1995-07-15. This map encodes Table 1 (consonants, 43 rows),\n    Table 2 (vowel signs, 44-55) and Table 3 (non-Hebrew phonemes and\n    abbreviation symbols).",
+      "url": "https://www.iso.org/standard/4162.html",
+      "creation_date": "1994",
+      "nonstandard": {}
+    },
+    "test": [
+      "א",
+      "ʾ̲",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-hin-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -7776,6 +7874,48 @@
       "one_to_many": 0
     }
   },
+  "iso-inc-Kthi-Latn-15919-2001": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2001",
+      "language": "iso-639-2:inc",
+      "source_script": "Kthi",
+      "destination_script": "Latn",
+      "name": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Kaithi)",
+      "description": "ISO 15919:2001 first edition, Transliteration of Devanagari and related Indic scripts\n    into Latin characters. Every printed row of the transcription-source table is encoded\n    and embedded as a test row; see notes for provenance, cross-check rates, and findings.",
+      "url": "https://www.chatranjali.fr/Scripts/Standards/ISO15919.pdf",
+      "creation_date": "2001",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑂃",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-inc-Kthi-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:inc",
+      "source_script": "Kthi",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Indo-Aryan (Kaithi); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑂃",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-jpn-Hrkt-Latn-3602-1989": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -7831,6 +7971,48 @@
       "many_to_one": 16,
       "one_to_many": 0
     }
+  },
+  "iso-kan-Kana-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:kan",
+      "source_script": "Kana",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Kannada; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "ಅ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-kas-Shrd-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:kas",
+      "source_script": "Shrd",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Kashmiri (Sharada); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑆃",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "iso-kat-Geor-Latn-9984-1996": {
     "class": "Interscript::Node::MetaData",
@@ -7944,6 +8126,27 @@
       "one_to_many": 0
     }
   },
+  "iso-mal-Mlym-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:mal",
+      "source_script": "Mlym",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Malayalam; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "അ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-mar-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -7971,6 +8174,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "iso-mar-Modi-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:mar",
+      "source_script": "Modi",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Marathi (Modi); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑘀",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "iso-nep-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -8000,6 +8224,27 @@
       "one_to_many": 0
     }
   },
+  "iso-new-Newa-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:new",
+      "source_script": "Newa",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Newar (Newa); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑐀",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-ori-Orya-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8028,6 +8273,27 @@
       "one_to_many": 0
     }
   },
+  "iso-ori-Orya-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:ori",
+      "source_script": "Orya",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Odia; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "ଅ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-pan-Guru-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8055,6 +8321,27 @@
       "many_to_one": 18,
       "one_to_many": 0
     }
+  },
+  "iso-pan-Guru-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:pan",
+      "source_script": "Guru",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Punjabi (Gurmukhi); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "ਅ",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "iso-pli-Beng-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
@@ -8168,6 +8455,27 @@
       "one_to_many": 0
     }
   },
+  "iso-pra-Brah-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:pra",
+      "source_script": "Brah",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Prakrit (Brahmi); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑀅",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-pra-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8280,6 +8588,90 @@
       "one_to_many": 0
     }
   },
+  "iso-san-Deva-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:san",
+      "source_script": "Deva",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Sanskrit; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "अ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-san-Gran-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:san",
+      "source_script": "Gran",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Sanskrit (Grantha); DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "𑌅",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-sin-Sinh-Latn-15919-2001": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2001",
+      "language": "iso-639-2:sin",
+      "source_script": "Sinh",
+      "destination_script": "Latn",
+      "name": "ISO 15919:2001 Information and documentation -- Transliteration of Devanagari and related Indic scripts into Latin characters (Sinhala)",
+      "description": "ISO 15919:2001 first edition, Transliteration of Devanagari and related Indic scripts\n    into Latin characters. Every printed row of the transcription-source table is encoded\n    and embedded as a test row; see notes for provenance, cross-check rates, and findings.",
+      "url": "https://www.chatranjali.fr/Scripts/Standards/ISO15919.pdf",
+      "creation_date": "2001",
+      "nonstandard": {}
+    },
+    "test": [
+      "අ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-sin-Sinh-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:sin",
+      "source_script": "Sinh",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Sinhala; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "අ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-tam-Taml-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8308,6 +8700,27 @@
       "one_to_many": 0
     }
   },
+  "iso-tam-Taml-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:tam",
+      "source_script": "Taml",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Tamil; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "அ",
+      "a",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-tel-Telu-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8335,6 +8748,27 @@
       "many_to_one": 15,
       "one_to_many": 0
     }
+  },
+  "iso-tel-Telu-Latn-15919-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "15919-2026",
+      "language": "iso-639-2:tel",
+      "source_script": "Telu",
+      "destination_script": "Latn",
+      "name": "ISO/DIS 15919 (2026) Information and documentation -- Transliteration of Indic scripts into Latin characters (Telugu; DIS stage)",
+      "description": "Second edition (DIS stage) of ISO 15919, Transliteration of Indic scripts into Latin characters.\n    Encoded from the committee ballot ISO/TC 46/WG 3 N125; per-script tables of clause 7,\n    numerals of normative Annex A, Rule 17 Vedic accents, and options 9.8/9.9/9.10 as\n    selectable variants (languages opt98 opt99 opt10). See notes for provenance and errata.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "అ",
+      "a",
+      null
+    ],
+    "skip_js": false
   },
   "iso-tha-Thai-Latn-11940-1998": {
     "class": "Interscript::Node::MetaData",
@@ -10904,6 +11338,27 @@
       "many_to_one": 126,
       "one_to_many": 0
     }
+  },
+  "var-jpn-Hrkt-Latn-komaba-2009": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "var",
+      "id": "komaba-2009",
+      "language": "iso-639-2:jpn",
+      "source_script": "Hrkt",
+      "destination_script": "Latn",
+      "name": "Recommended System for Romanizing Japanese (UT-Komaba, 2009)",
+      "description": "The Hepburn-based romanization recommended by the Department of\n    English Language / Komaba Organization for Educational Development,\n    The University of Tokyo, Komaba (\"Recommended System for Romanizing\n    Japanese\", 2009.04 v1).",
+      "url": "http://park.itc.u-tokyo.ac.jp/eigo/romaji.html",
+      "creation_date": "2009",
+      "nonstandard": {}
+    },
+    "test": [
+      "おかあさん",
+      "okāsan",
+      null
+    ],
+    "skip_js": false
   },
   "var-kor-Hang-Hang-jamo": {
     "class": "Interscript::Node::MetaData",

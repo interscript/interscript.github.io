@@ -19,6 +19,19 @@ import {
 
 const MAPS_DIR = resolve(process.cwd(), "public/maps")
 
+// Shared ruleset libraries (referenced via `use` from corpus maps), not
+// transliteration maps: no metadata and no stages of their own. The
+// four .iml libraries additionally keep compiled-JSON fallback forms.
+const LIBRARY_STEMS = new Set([
+  "posix",
+  "unicode",
+  "var-Cyrl",
+  "var-kor",
+  "hebr-latn",
+  "jawi-latn",
+  "thai-latn",
+])
+
 function loadAllMaps(): Record<string, IscDocument> {
   const maps: Record<string, IscDocument> = {}
   for (const file of readdirSync(MAPS_DIR)) {
@@ -38,8 +51,9 @@ function iscSources(): Record<string, string> {
   return sources
 }
 
-// The .iml libraries (posix/unicode/var-*) have no ISC form; they ship
-// as the only remaining compiled JSON maps.
+// posix/unicode/var-* keep compiled-JSON fallback forms alongside
+// their ISC sources (the corpus has shipped ISC library sources
+// since the v2.5.2 artifact fix).
 function libJsons(): Record<string, unknown> {
   const maps: Record<string, unknown> = {}
   for (const file of readdirSync(MAPS_DIR)) {
@@ -69,6 +83,7 @@ describe("bundled maps integration", { timeout: 120_000 }, () => {
   it("every ISC document parses with a matching system code", () => {
     const maps = loadAllMaps()
     for (const [code, doc] of Object.entries(maps)) {
+      if (LIBRARY_STEMS.has(code)) continue // ruleset library, no metadata
       expect(iscCode(doc), `${code} systemCode`).toBe(code)
     }
   })
@@ -76,6 +91,7 @@ describe("bundled maps integration", { timeout: 120_000 }, () => {
   it("every map has at least one stage", () => {
     const maps = loadAllMaps()
     for (const [code, doc] of Object.entries(maps)) {
+      if (LIBRARY_STEMS.has(code)) continue // ruleset library, no stages
       expect(doc.stages, `${code} stages`).toBeDefined()
       expect(doc.stages.length, `${code} stages count`).toBeGreaterThan(0)
     }

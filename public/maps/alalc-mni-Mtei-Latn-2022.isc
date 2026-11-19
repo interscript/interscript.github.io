@@ -1,0 +1,362 @@
+system "ALA-LC:mni-Mtei:Latn:2022" {
+
+metadata {
+  authority_id alalc
+  id 2022
+  language iso-639-2:mni
+  source_script Mtei
+  destination_script Latn
+  name "Modern Manipuri (Meitei script) Romanization Table (2022)"
+  url https://www.loc.gov/catdir/cpso/romanization/manipuri.pdf
+  creation_date 2022
+  adoption_date
+  description {    ALA-LC Modern Manipuri (Meitei Mayek) Romanization Table,
+    June 2022. Consonants carry the inherent vowel a; the seven final
+    letters (katap) close syllables without a vowel; dependent vowel
+    signs override; the heavy-tone mark romanizes as a dot below.
+    Transcribed from the loc.gov document's complete text layer.
+  }
+
+  notes {
+    note "The heavy tone symbol (꯬) is a recent innovation; its
+    romanization is the combining dot below per the table."
+    note "2025 corpus repair: the source (p. 2) romanizes the numerals
+    ꯰-꯹ as 0-9; the digit rules were added and the numeral test
+    corrected (꯳ = 3, not saṣ). The vowel test was corrected to the
+    source's own row ꯁꯦ = se (p. 1, Vowels: Dependent vowel sign with
+    ꯁ); the katap test to ꯛ = k (p. 1, Final-consonants); the heavy
+    tone test to the source's own example ꯀꯥ꯬ = kā + combining dot
+    below (p. 2, Heavy tone: ꯀꯥ꯬ = kạ̄). Recorded gaps, behavior
+    unchanged: the punctuation row (꫱ question mark, ꫰ comma, ꯫ full
+    stop, p. 2) and the apun iyek/halanta killer ꯭ (p. 2 — its
+    inherent-vowel omission applies to the preceding consonant and
+    needs context-sensitive handling) are not yet encoded."
+  }
+}
+
+tests {
+   "\uabc1\uabe6" ->  "se"
+   "\uabf3" ->  "3"
+   "\uabdb" ->  "k"
+   "\uabc0\uabe5\uabec" ->  "k\u0101\u0323"
+# Exhaustive per-row tests for alalc-mni-Mtei-Latn-2022, generated from the source
+# document's table.
+# Source: ALA-LC Modern Manipuri (Meitei script) Romanization Table, June
+# 2022, pp. 1-2 (vowels, consonants, finals, visarga, anusvara, numerals);
+# held source interscript-private-references/alalc/alalc-manipuri.pdf.
+# Extraction: PDF text layer, every value cell cross-checked against the
+# rendered page image. Vowel rows are transcribed as printed: the table
+# pairs independent signs with romanization. Composite printed cells are
+# transcribed as their printed composites: ꯑꯥ -> ā, ꯑꫵ -> aḥ, ꯁꯪ -> saṃ.
+# Consonants are printed with inherent vowel "a"; final consonants are
+# printed as a separate table (without inherent vowel) and transcribed as
+# their own rows. Skipped printed rows: ꯬ (heavy tone) — printed value cell
+# "◌̣" (a dot applied to the preceding vowel): a mark, not a standalone
+# transliteration string; skipped as un-expressible. | ꯭ (apun iyek /
+# "killer") — instruction cell (omits the preceding consonant's inherent
+# vowel); no romanization value. | Punctuation marks ꫱, ꫰, ꯯ — the printed
+# table names them (question mark, comma, full stop/period) but the value
+# pairing in the text layer is layout-dependent; not transcribed as rows.
+# Provenance artifact: scripts/row-sources/alalc-mni-Mtei-Latn-2022.json (53 rows).
+# generated-by: maps/scripts/gen-row-tests.mjs (2026-11-16); regenerate from the artifact, do not hand-edit.
+  "ꯑ" -> "a"
+  "ꯑꯥ" -> "ā"
+  "ꯏ" -> "i"
+  "ꯎ" -> "u"
+  "ꯑꯦ" -> "e"
+  "ꯑꯩ" -> "ai"
+  "ꯑꯣ" -> "o"
+  "ꯑꯧ" -> "au"
+  "ꯀ" -> "ka"
+  "ꯁ" -> "sa"
+  "ꯂ" -> "la"
+  "ꯃ" -> "ma"
+  "ꯄ" -> "pa"
+  "ꯅ" -> "na"
+  "ꯆ" -> "ca"
+  "ꯇ" -> "ta"
+  "ꯈ" -> "kha"
+  "ꯉ" -> "ṅa"
+  "ꯊ" -> "tha"
+  "ꯋ" -> "va"
+  "ꯌ" -> "ya"
+  "ꯍ" -> "ha"
+  "ꯐ" -> "pha"
+  "ꯒ" -> "ga"
+  "ꯓ" -> "jha"
+  "ꯔ" -> "ra"
+  "ꯕ" -> "ba"
+  "ꯖ" -> "ja"
+  "ꯗ" -> "da"
+  "ꯘ" -> "gha"
+  "ꯙ" -> "dha"
+  "ꯚ" -> "bha"
+  "ꯛ" -> "k"
+  "ꯜ" -> "l"
+  "ꯝ" -> "m"
+  "ꯞ" -> "p"
+  "ꯟ" -> "n"
+  "ꯠ" -> "t"
+  "ꯡ" -> "ṅ"
+  "ꫵ" -> "ḥ"
+  "ꯑꫵ" -> "aḥ"
+  "ꯪ" -> "ṃ"
+  "ꯁꯪ" -> "saṃ"
+  "꯰" -> "0"
+  "꯱" -> "1"
+  "꯲" -> "2"
+  "꯳" -> "3"
+  "꯴" -> "4"
+  "꯵" -> "5"
+  "꯶" -> "6"
+  "꯷" -> "7"
+  "꯸" -> "8"
+  "꯹" -> "9"
+}
+stage main {
+  parallel {
+    sub "ꯀꯥ" "kā"
+    sub "ꯂꯥ" "lā"
+    sub "ꯃꯥ" "mā"
+    sub "ꯄꯥ" "pā"
+    sub "ꯅꯥ" "nā"
+    sub "ꯆꯥ" "cā"
+    sub "ꯇꯥ" "tā"
+    sub "ꯈꯥ" "khā"
+    sub "ꯉꯥ" "ṅā"
+    sub "ꯊꯥ" "thā"
+    sub "ꯋꯥ" "vā"
+    sub "ꯌꯥ" "yā"
+    sub "ꯍꯥ" "hā"
+    sub "ꯐꯥ" "phā"
+    sub "ꯒꯥ" "gā"
+    sub "ꯓꯥ" "jhā"
+    sub "ꯔꯥ" "rā"
+    sub "ꯕꯥ" "bā"
+    sub "ꯖꯥ" "jā"
+    sub "ꯗꯥ" "dā"
+    sub "ꯘꯥ" "ghā"
+    sub "ꯙꯥ" "dhā"
+    sub "ꯚꯥ" "bhā"
+    sub "ꯁꯥ" "sā"
+    sub "ꯀꯤ" "ki"
+    sub "ꯂꯤ" "li"
+    sub "ꯃꯤ" "mi"
+    sub "ꯄꯤ" "pi"
+    sub "ꯅꯤ" "ni"
+    sub "ꯆꯤ" "ci"
+    sub "ꯇꯤ" "ti"
+    sub "ꯈꯤ" "khi"
+    sub "ꯉꯤ" "ṅi"
+    sub "ꯊꯤ" "thi"
+    sub "ꯋꯤ" "vi"
+    sub "ꯌꯤ" "yi"
+    sub "ꯍꯤ" "hi"
+    sub "ꯐꯤ" "phi"
+    sub "ꯒꯤ" "gi"
+    sub "ꯓꯤ" "jhi"
+    sub "ꯔꯤ" "ri"
+    sub "ꯕꯤ" "bi"
+    sub "ꯖꯤ" "ji"
+    sub "ꯗꯤ" "di"
+    sub "ꯘꯤ" "ghi"
+    sub "ꯙꯤ" "dhi"
+    sub "ꯚꯤ" "bhi"
+    sub "ꯁꯤ" "si"
+    sub "ꯀꯨ" "ku"
+    sub "ꯂꯨ" "lu"
+    sub "ꯃꯨ" "mu"
+    sub "ꯄꯨ" "pu"
+    sub "ꯅꯨ" "nu"
+    sub "ꯆꯨ" "cu"
+    sub "ꯇꯨ" "tu"
+    sub "ꯈꯨ" "khu"
+    sub "ꯉꯨ" "ṅu"
+    sub "ꯊꯨ" "thu"
+    sub "ꯋꯨ" "vu"
+    sub "ꯌꯨ" "yu"
+    sub "ꯍꯨ" "hu"
+    sub "ꯐꯨ" "phu"
+    sub "ꯒꯨ" "gu"
+    sub "ꯓꯨ" "jhu"
+    sub "ꯔꯨ" "ru"
+    sub "ꯕꯨ" "bu"
+    sub "ꯖꯨ" "ju"
+    sub "ꯗꯨ" "du"
+    sub "ꯘꯨ" "ghu"
+    sub "ꯙꯨ" "dhu"
+    sub "ꯚꯨ" "bhu"
+    sub "ꯁꯨ" "su"
+    sub "ꯀꯦ" "ke"
+    sub "ꯂꯦ" "le"
+    sub "ꯃꯦ" "me"
+    sub "ꯄꯦ" "pe"
+    sub "ꯅꯦ" "ne"
+    sub "ꯆꯦ" "ce"
+    sub "ꯇꯦ" "te"
+    sub "ꯈꯦ" "khe"
+    sub "ꯉꯦ" "ṅe"
+    sub "ꯊꯦ" "the"
+    sub "ꯋꯦ" "ve"
+    sub "ꯌꯦ" "ye"
+    sub "ꯍꯦ" "he"
+    sub "ꯐꯦ" "phe"
+    sub "ꯒꯦ" "ge"
+    sub "ꯓꯦ" "jhe"
+    sub "ꯔꯦ" "re"
+    sub "ꯕꯦ" "be"
+    sub "ꯖꯦ" "je"
+    sub "ꯗꯦ" "de"
+    sub "ꯘꯦ" "ghe"
+    sub "ꯙꯦ" "dhe"
+    sub "ꯚꯦ" "bhe"
+    sub "ꯁꯦ" "se"
+    sub "ꯀꯩ" "kai"
+    sub "ꯂꯩ" "lai"
+    sub "ꯃꯩ" "mai"
+    sub "ꯄꯩ" "pai"
+    sub "ꯅꯩ" "nai"
+    sub "ꯆꯩ" "cai"
+    sub "ꯇꯩ" "tai"
+    sub "ꯈꯩ" "khai"
+    sub "ꯉꯩ" "ṅai"
+    sub "ꯊꯩ" "thai"
+    sub "ꯋꯩ" "vai"
+    sub "ꯌꯩ" "yai"
+    sub "ꯍꯩ" "hai"
+    sub "ꯐꯩ" "phai"
+    sub "ꯒꯩ" "gai"
+    sub "ꯓꯩ" "jhai"
+    sub "ꯔꯩ" "rai"
+    sub "ꯕꯩ" "bai"
+    sub "ꯖꯩ" "jai"
+    sub "ꯗꯩ" "dai"
+    sub "ꯘꯩ" "ghai"
+    sub "ꯙꯩ" "dhai"
+    sub "ꯚꯩ" "bhai"
+    sub "ꯁꯩ" "sai"
+    sub "ꯀꯣ" "ko"
+    sub "ꯂꯣ" "lo"
+    sub "ꯃꯣ" "mo"
+    sub "ꯄꯣ" "po"
+    sub "ꯅꯣ" "no"
+    sub "ꯆꯣ" "co"
+    sub "ꯇꯣ" "to"
+    sub "ꯈꯣ" "kho"
+    sub "ꯉꯣ" "ṅo"
+    sub "ꯊꯣ" "tho"
+    sub "ꯋꯣ" "vo"
+    sub "ꯌꯣ" "yo"
+    sub "ꯍꯣ" "ho"
+    sub "ꯐꯣ" "pho"
+    sub "ꯒꯣ" "go"
+    sub "ꯓꯣ" "jho"
+    sub "ꯔꯣ" "ro"
+    sub "ꯕꯣ" "bo"
+    sub "ꯖꯣ" "jo"
+    sub "ꯗꯣ" "do"
+    sub "ꯘꯣ" "gho"
+    sub "ꯙꯣ" "dho"
+    sub "ꯚꯣ" "bho"
+    sub "ꯁꯣ" "so"
+    sub "ꯀꯧ" "kau"
+    sub "ꯂꯧ" "lau"
+    sub "ꯃꯧ" "mau"
+    sub "ꯄꯧ" "pau"
+    sub "ꯅꯧ" "nau"
+    sub "ꯆꯧ" "cau"
+    sub "ꯇꯧ" "tau"
+    sub "ꯈꯧ" "khau"
+    sub "ꯉꯧ" "ṅau"
+    sub "ꯊꯧ" "thau"
+    sub "ꯋꯧ" "vau"
+    sub "ꯌꯧ" "yau"
+    sub "ꯍꯧ" "hau"
+    sub "ꯐꯧ" "phau"
+    sub "ꯒꯧ" "gau"
+    sub "ꯓꯧ" "jhau"
+    sub "ꯔꯧ" "rau"
+    sub "ꯕꯧ" "bau"
+    sub "ꯖꯧ" "jau"
+    sub "ꯗꯧ" "dau"
+    sub "ꯘꯧ" "ghau"
+    sub "ꯙꯧ" "dhau"
+    sub "ꯚꯧ" "bhau"
+    sub "ꯁꯧ" "sau"
+  }
+
+  parallel {
+    sub "ꯀ" "ka"
+    sub "ꯂ" "la"
+    sub "ꯃ" "ma"
+    sub "ꯄ" "pa"
+    sub "ꯅ" "na"
+    sub "ꯆ" "ca"
+    sub "ꯇ" "ta"
+    sub "ꯈ" "kha"
+    sub "ꯉ" "ṅa"
+    sub "ꯊ" "tha"
+    sub "ꯋ" "va"
+    sub "ꯌ" "ya"
+    sub "ꯍ" "ha"
+    sub "ꯐ" "pha"
+    sub "ꯒ" "ga"
+    sub "ꯓ" "jha"
+    sub "ꯔ" "ra"
+    sub "ꯕ" "ba"
+    sub "ꯖ" "ja"
+    sub "ꯗ" "da"
+    sub "ꯘ" "gha"
+    sub "ꯙ" "dha"
+    sub "ꯚ" "bha"
+    sub "ꯁ" "sa"
+  }
+
+  parallel {
+    sub "ꯛ" "k"
+    sub "ꯜ" "l"
+    sub "ꯝ" "m"
+    sub "ꯞ" "p"
+    sub "ꯟ" "n"
+    sub "ꯠ" "t"
+    sub "ꯡ" "ṅ"
+  }
+
+  parallel {
+    sub "꯰" "0"
+    sub "꯱" "1"
+    sub "꯲" "2"
+    sub "꯳" "3"
+    sub "꯴" "4"
+    sub "꯵" "5"
+    sub "꯶" "6"
+    sub "꯷" "7"
+    sub "꯸" "8"
+    sub "꯹" "9"
+  }
+
+  parallel {
+    sub "ꯑ" "a"
+    sub "ꯑꯥ" "ā"
+    sub "ꯏ" "i"
+    sub "ꯎ" "u"
+    sub "ꯑꯦ" "e"
+    sub "ꯑꯩ" "ai"
+    sub "ꯑꯣ" "o"
+    sub "ꯑꯧ" "au"
+  }
+
+  parallel {
+    sub "ꫵ" "ḥ"
+    sub "ꯪ" "ṃ"
+    sub "꯬" "̣"
+    sub "ꯥ" "ā"
+    sub "ꯤ" "i"
+    sub "ꯨ" "u"
+    sub "ꯦ" "e"
+    sub "ꯩ" "ai"
+    sub "ꯣ" "o"
+    sub "ꯧ" "au"
+  }
+}
+}
