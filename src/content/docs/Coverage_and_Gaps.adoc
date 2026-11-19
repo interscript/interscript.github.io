@@ -7,10 +7,10 @@ check.
 
 == What is covered
 
-The map registry contains **450 systems** drawn from
+The map registry contains **451 systems** drawn from
 https://github.com/interscript/maps[the maps repository] — each an
 executable, test-carrying transliteration map with a named authority
-and source document, 15,464 embedded tests from those documents, all
+and source document, 15,485 embedded tests from those documents, all
 green. Browse them on the
 https://interscript.org/maps[map catalogue]; every system has its own
 page with its description, source document, scripts, mapping counts,

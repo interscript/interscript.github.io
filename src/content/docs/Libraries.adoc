@@ -13,7 +13,7 @@ Install:
 npm install interscript
 ```
 
-Transliterate with any of the 450 authority systems:
+Transliterate with any of the 451 authority systems:
 
 ```ts
 import { transliterateAsync } from "interscript"
@@ -39,7 +39,7 @@ All four language runtimes execute the same canonical grammar: the
  ISC grammar has a single normative source (the parsanol `.parg`
  file, checksum-pinned), and the TypeScript and Python parsers are
  generated from it — verified structurally identical across the whole
- 457-file corpus on every change.
+ 458-file corpus on every change.
 
 == Rust (crates.io)
 
