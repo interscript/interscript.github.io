@@ -7,10 +7,10 @@ check.
 
 == What is covered
 
-The map registry contains **451 systems** drawn from
+The map registry contains **457 systems** drawn from
 https://github.com/interscript/maps[the maps repository] — each an
 executable, test-carrying transliteration map with a named authority
-and source document, 15,485 embedded tests from those documents, all
+and source document, 16,325 embedded tests from those documents, all
 green. Browse them on the
 https://interscript.org/maps[map catalogue]; every system has its own
 page with its description, source document, scripts, mapping counts,
@@ -23,6 +23,28 @@ ledger]: systems are classed as lossless one-to-one (reversible),
 lossy many-to-one, or context-only. The counts are re-derived from the
 maps themselves, not asserted.
 
+The six ISO 2026-edition systems added in maps v3.3.2 follow the
+provenance conventions of the
+https://github.com/interscript/maps/tree/main/docs/coverage[coverage
+ledger]. Three are encoded from purchased published editions —
+verification-grade sources acquired from the ISO Store (order
+OP-1130631): `iso-kat-Geor-Latn-9984-2026` (ISO 9984:2026, second
+edition), `iso-hye-Armn-Latn-9985-2026` (ISO 9985:2026, second
+edition; no first-edition map exists), and `iso-prs-Arab-Latn-233-3-2026`
+(ISO 233-3:2026, third edition, the strict clause-4 system) — each
+carrying exhaustive per-row embedded tests generated from its
+row-sources provenance artifact. Three are encoded from FDIS ballot
+copies held in the project's private reference collection and await
+verification against the published editions: `iso-rus-Cyrl-Latn-9-2026`
+(ISO/FDIS 9:2026, ballot N127) and the ISO/FDIS 233-1:2026 Arabic pair
+`iso-ara-Arab-Latn-233-2026` and `iso-ara-Arab-Latn-233-2026-modified`
+(ballot N129; the strict clause-4 system and the clause-5 modified
+system, which share the `ara-latn-233-2026` ruleset library). The
+in-place refreshes of `iso-tha-Thai-Latn-11940-1998` and the Pali map
+that runs through it correct the phinthu rendering (the spurious en
+dash before ring below is gone) under the interim working source
+recorded in the coverage ledger.
+
 == What is not covered yet
 
 The open queue is tracked as work orders in
@@ -33,7 +55,9 @@ source:
 * *ISO* — ISO 9 non-Russian Cyrillic coverage check, ISO 7089/7098
   Chinese pinyin, and the remaining ISO 15919 Indic scripts. The source
   documents are not yet in the project's reference collection;
-  acquisition is owner-held.
+  acquisition is owner-held. The published editions that would lift the
+  FDIS-grade maps (ISO 9:2026, ISO 233-1:2026) to published-edition
+  provenance are likewise owner-held acquisitions.
 * *ALA-LC* — the batch campaigns landed through 2026-11-09 (Brahmic/
   SE-Asian, Arabic-script, Cyrillic, East Asian, and misc-script
   systems; 93 ALA-LC maps in the registry). The systems listed in the

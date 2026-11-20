@@ -13,7 +13,7 @@ Install:
 npm install interscript
 ```
 
-Transliterate with any of the 451 authority systems:
+Transliterate with any of the 457 authority systems:
 
 ```ts
 import { transliterateAsync } from "interscript"

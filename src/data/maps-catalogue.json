@@ -7573,6 +7573,48 @@
       "one_to_many": 0
     }
   },
+  "iso-ara-Arab-Latn-233-2026-modified": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "233-2026-modified",
+      "language": "iso-639-2:ara",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ISO 233-1:2026 Information and documentation -- Transliteration of Perso-Arabic characters into Latin characters -- Part 1: Arabic language (modified transliteration, clause 5; FDIS stage)",
+      "description": "Modified (clause 5) transliteration of ISO 233-1:2026: Tables 6-8 plus the\n    mechanical clauses (5.2.2 initial alif, 5.2.4 tāʾ marbūṭaẗ, 5.3.2 definite\n    article) over the strict tables (5.1.2). Not necessarily reversible by design\n    (5.1.1). Encoded from ISO/TC 46/WG 3 N129 (FDIS) with the N130 adjudications.\n    See notes for the language-knowledge steps that stay outside stateless scope.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "أَخ",
+      "aẖ",
+      null
+    ],
+    "skip_js": false
+  },
+  "iso-ara-Arab-Latn-233-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "233-2026",
+      "language": "iso-639-2:ara",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ISO 233-1:2026 Information and documentation -- Transliteration of Perso-Arabic characters into Latin characters -- Part 1: Arabic language (strict transliteration, clause 4; FDIS stage)",
+      "description": "Strict (fully reversible, level (a)) transliteration of ISO 233-1:2026, clause 4,\n    Tables 1-5: written signs only, diacritical vowels transliterated only where written\n    in the source. Encoded from the committee ballot ISO/TC 46/WG 3 N129 (FDIS,\n    2026-11-02; ballot closed 2026-11-07) with the comment adjudications of N130.\n    See notes for provenance, errata and reversibility.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "أَلشَّمْسُ",
+      "ʾˈalš̄am̊su",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-asm-Beng-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -7867,6 +7909,27 @@
       "one_to_many": 0
     }
   },
+  "iso-hye-Armn-Latn-9985-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "9985-2026",
+      "language": "iso-639-2:hye",
+      "source_script": "Armn",
+      "destination_script": "Latn",
+      "name": "ISO 9985:2026 Information and documentation -- Transliteration of Armenian characters into Latin characters",
+      "description": "Second edition (cancels and replaces ISO 9985:1996; no map for the\n    first edition exists in the corpus). Table 1 transliterates all 38\n    letters of the Armenian alphabet, each upper/lower case pair to its\n    upper/lower Latin pair, with the aspirate rows (Թ Չ Ց Փ Ք) carrying\n    the neutral (vertical line) apostrophe U+0027 - the edition's stated\n    change is that all aspirates now share the one visual convention\n    (formerly a right single quotation mark U+2019) and the unaspirated\n    pairs Ծ/Ճ are now shown unmarked like their p/t/k counterparts.\n    The yew ligature և is transliterated as the digraph /ew/; the ու\n    letter sequence romanizes /ow/ character by character. Table 2\n    transliterates the eight Armenian punctuation marks.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "և",
+      "ew",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-inc-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8062,6 +8125,27 @@
       "many_to_one": 0,
       "one_to_many": 0
     }
+  },
+  "iso-kat-Geor-Latn-9984-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "9984-2026",
+      "language": "iso-639-2:kat",
+      "source_script": "Geor",
+      "destination_script": "Latn",
+      "name": "ISO 9984:2026 Information and documentation -- Transliteration of Georgian characters into Latin characters",
+      "description": "Second edition. The main system (Table 4) is limited to the 33\n    characters of the current Georgian alphabet and is now based on the\n    Georgian national system of 2002 (presidential decree of 2011), with\n    modifications incorporated to ensure reversibility. Ten romanizations\n    changed from the 1996 edition: the digraph letters now romanize as\n    zh (ჟ), gh (ღ), sh (შ), ch (ჩ), ts (ც), dz (ძ), kh (ხ); ჯ loses its\n    caron (ǰ -> j); the glottalized consonants კ პ ტ ყ წ ჭ gain the\n    neutral (vertical line) apostrophe U+0027 (k' p' t' q' ts' ch'),\n    which the aspirated თ ფ ქ ჩ ც lose. Obsolete letters are retained\n    for reference in Table 5 (its rows 1-6 are unchanged from 1996). A\n    new digraph-disambiguation provision (4.2) inserts a middle dot\n    U+00B7 between adjoining source characters whose romanization would\n    form a digraph.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "ამბროლაური",
+      "ambrolauri",
+      null
+    ],
+    "skip_js": false
   },
   "iso-kor-Hang-Latn-1996-method1": {
     "class": "Interscript::Node::MetaData",
@@ -8464,7 +8548,7 @@
     },
     "test": [
       "โย กปฺปโกฏีหิปิ อปฺปเมยฺยํ;",
-      "oy kp–̥pokṭīh̄ipi xp–̥pemy–̥ẙ;",
+      "oy kp̥pokṭīh̄ipi xp̥pemy̥ẙ;",
       null
     ],
     "skip_js": false,
@@ -8553,6 +8637,27 @@
       "one_to_many": 35
     }
   },
+  "iso-prs-Arab-Latn-233-3-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "233-3-2026",
+      "language": "iso-639-3:prs",
+      "source_script": "Arab",
+      "destination_script": "Latn",
+      "name": "ISO 233-3:2026 Information and documentation -- Transliteration of Perso-Arabic characters into Latin characters -- Part 3: Persian language",
+      "description": "Third edition (cancels and replaces ISO 233-3:2023 as a minor\n    revision; the corpus's legacy map implements the 1999 first edition).\n    Encodes the strict transliteration of clause 4, the one-to-one\n    fully reversible system: Table 1 consonants (32 rows), Table 2\n    vowels (alef madda and the three written diacritical vowel signs),\n    Table 3 conventional signs (tashdid and the three tanvin marks),\n    4.4.3 ta marbuta per ISO 233, 4.4.4 the Allah word, Table 4 hamze\n    forms, Table 5 the ezafe he-plus-hamze form, Table 1 note d's\n    strict provision for the yeh-plus-superscript-alef clarity variant,\n    Table 6 punctuation and Table 7 numerals. The clause 5 modified\n    transliteration (Tables 8-11) is not reversible - it depends on\n    word position and on whether a letter functions as consonant or\n    vowel - and is not encoded.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "آذَر",
+      "âẕar",
+      null
+    ],
+    "skip_js": false
+  },
   "iso-rus-Cyrl-Latn-9-1995": {
     "class": "Interscript::Node::MetaData",
     "data": {
@@ -8580,6 +8685,27 @@
       "many_to_one": 2,
       "one_to_many": 0
     }
+  },
+  "iso-rus-Cyrl-Latn-9-2026": {
+    "class": "Interscript::Node::MetaData",
+    "data": {
+      "authority_id": "iso",
+      "id": "9-2026",
+      "language": "iso-639-2:rus",
+      "source_script": "Cyrl",
+      "destination_script": "Latn",
+      "name": "ISO/FDIS 9:2026 Information and documentation -- Transliteration of Cyrillic characters into Latin characters -- Slavic and non-Slavic languages (Russian) (FDIS stage)",
+      "description": "Third edition (FDIS stage) of ISO 9, Transliteration of Cyrillic characters into\n    Latin characters. Table 1 encodes all 168 main rows (upper and lower case\n    where given; rows 158-159 are caseless), Table 2 the 15 rare-or-obsolete\n    rows (lower case only), and the clause 4.4 formula example. Hex columns of\n    the source table are authoritative over printed glyphs.",
+      "url": "https://www.iso.org/committee/48820.html",
+      "creation_date": "2026",
+      "nonstandard": {}
+    },
+    "test": [
+      "А",
+      "A",
+      null
+    ],
+    "skip_js": false
   },
   "iso-san-Deva-Latn-15919-2001": {
     "class": "Interscript::Node::MetaData",
