@@ -27,6 +27,7 @@ const LIBRARY_STEMS = new Set([
   "unicode",
   "var-Cyrl",
   "var-kor",
+  "ara-latn-233-2026",
   "hebr-latn",
   "jawi-latn",
   "thai-latn",
