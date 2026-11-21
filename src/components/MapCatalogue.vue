@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /**
- * MapCatalogue — searchable, filterable browser for all 287 maps.
+ * MapCatalogue — searchable, filterable browser for the whole map corpus.
  *
  * Visual metaphor: library card catalogue. Each map is a card with an
  * authority "stamp", script flow (source → destination), and a sample
@@ -14,7 +14,6 @@ import { ref, computed, defineProps } from "vue"
 interface Invertibility {
   verdict: string
   pairs: number
-  context_rules?: number
   many_to_one: number
   one_to_many: number
 }
@@ -26,7 +25,6 @@ interface CatalogueEntry {
   sourceScript: string
   destinationScript: string
   year: string
-  language?: string
   description?: string
   invertibility?: Invertibility | null
   hasTest: boolean

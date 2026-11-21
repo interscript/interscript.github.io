@@ -91,24 +91,32 @@ const liveDemoable = entries.filter((e) => bundledCodes.has(e.code)).length
   <section class="container catalogue-section">
     <MapCatalogue
       client:load
-      entries={entries.map((e) => ({
-        code: e.code,
-        authority: e.data.authority_id,
-        name: e.data.name,
-        sourceScript: e.data.source_script,
-        sourceScriptName: scriptName(e.data.source_script),
-        destinationScript: e.data.destination_script,
-        destinationScriptName: scriptName(e.data.destination_script),
-        year: e.data.creation_date ?? e.data.id,
-        language: e.data.language,
-        description: e.data.description,
-        invertibility:
-          (e as unknown as { invertibility?: Invertibility }).invertibility ?? null,
-        hasTest: Boolean(e.test && e.test[0]),
-        testInput: e.test?.[0] ?? null,
-        testExpected: e.test?.[1] ?? null,
-        liveDemoable: bundledCodes.has(e.code),
-      }))}
+      entries={entries.map((e) => {
+        const inv = (e as unknown as { invertibility?: Invertibility }).invertibility
+        // Hydration pays for this payload twice (SSR markup + serialized
+        // props), so pass only the fields MapCatalogue actually renders.
+        return {
+          code: e.code,
+          authority: e.data.authority_id,
+          name: e.data.name,
+          sourceScript: e.data.source_script,
+          destinationScript: e.data.destination_script,
+          year: e.data.creation_date ?? e.data.id,
+          description: e.data.description,
+          invertibility: inv
+            ? {
+                verdict: inv.verdict,
+                pairs: inv.pairs,
+                many_to_one: inv.many_to_one,
+                one_to_many: inv.one_to_many,
+              }
+            : null,
+          hasTest: Boolean(e.test && e.test[0]),
+          testInput: e.test?.[0] ?? null,
+          testExpected: e.test?.[1] ?? null,
+          liveDemoable: bundledCodes.has(e.code),
+        }
+      })}
       authorities={authorities}
       sourceScripts={sourceScripts}
       destinationScripts={destinationScripts}
