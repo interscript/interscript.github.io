@@ -70,9 +70,10 @@ const lastSyncDate = new Date(newest.mtime).toISOString().slice(0, 10)
 const corpusSizeMb = (totalSizeBytes / 1024 / 1024).toFixed(1)
 
 // Ruby parity — comes from the parity suite in interscript-ts.
-// Update via: cd ../interscript-ts && npx tsx scripts/full-parity.ts
+// Counts mirror interscript-ts/test/fixtures/full-parity.json; regenerate
+// via: cd ../interscript-ts && npx tsx scripts/full-parity.ts
 const parityPercent = "100.0%"
-const paritySampleCount = 7502
+const paritySampleCount = 7544
 const parityMapCount = 271
 ---
 
