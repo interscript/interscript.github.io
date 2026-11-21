@@ -1,18 +1,30 @@
 ---
-// Playground: the full two-layer stack in the browser — pick any of the
-// 289 authority systems, optionally vocalize Arabic through the neural
+// Playground: the full two-layer stack in the browser — pick any
+// authority system, optionally vocalize Arabic through the neural
 // layer first, transliterate off-main-thread, share the state by URL,
 // and copy the exact TS that does the same thing.
 import Base from "../layouts/Base.astro"
-import catalogue from "../data/maps-catalogue.json"
+import catalogue from "../data/maps-catalogue.json" with { type: "json" }
 
+// Importing the whole catalogue from the client script used to bundle
+// ~450 KB of map metadata the page never renders. The playground only
+// needs {code, name}, so trim it at build time and inject it as
+// data; counts read the same source, so prose and placeholder cannot
+// drift stale.
+interface CatalogueEntry {
+  data: { name: string }
+}
+const systems = Object.entries(catalogue as Record<string, CatalogueEntry>).map(
+  ([code, m]) => ({ code, name: m.data.name }),
+)
+const systemCount = systems.length
 ---
 
 <Base title="Playground">
-  <section class="page-narrow">
+  <section class="page-narrow" id="playground" data-systems={JSON.stringify(systems)}>
     <h1>Playground</h1>
     <p>
-      Runs entirely in your browser: {289} authority systems and the neural
+      Runs entirely in your browser: {systemCount} authority systems and the neural
       models for text that has no published system. No text is sent to a
       server.
     </p>
@@ -30,7 +42,11 @@ import catalogue from "../data/maps-catalogue.json"
         </select>
 
         <label for="filter">System</label>
-        <input id="filter" type="search" placeholder="Filter 289 systems — try “BGN”, “Thai”, “ISO 9”…" />
+        <input
+          id="filter"
+          type="search"
+          placeholder={`Filter ${systemCount} systems — try “BGN”, “Thai”, “ISO 9”…`}
+        />
         <select id="system"></select>
 
         <button id="run" class="btn">Transliterate</button>
@@ -109,16 +125,17 @@ import catalogue from "../data/maps-catalogue.json"
 <script>
   import { createWorkerClient } from "../scripts/worker-client"
   import { imf } from "interscript/ml"
-  import catalogue from "../data/maps-catalogue.json"
 
   const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v5/models-index.yaml"
 
-  type Sys = { code: string; name: string; lang: string }
-  const systems: Sys[] = Object.entries(
-    catalogue as Record<string, { data: { name: string; language: string } }>,
+  // System list is trimmed at build time and injected on #playground
+  // (see frontmatter) — importing the catalogue here would bundle it.
+  const root = document.getElementById("playground")
+  if (!root) throw new Error("playground root missing")
+  type Sys = { code: string; name: string }
+  const systems: Sys[] = (JSON.parse(root.dataset.systems ?? "[]") as Sys[]).sort((a, b) =>
+    a.name.localeCompare(b.name),
   )
-    .map(([code, m]) => ({ code, name: m.data.name, lang: m.data.language }))
-    .sort((a, b) => a.name.localeCompare(b.name))
 
   const $ = (id: string) => document.getElementById(id)!
   const worker = createWorkerClient()
