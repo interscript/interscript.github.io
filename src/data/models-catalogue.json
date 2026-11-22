@@ -28,7 +28,7 @@
     "task": "g2p",
     "scripts": [],
     "precision": "fp32",
-    "size": 1111939721,
+    "size": 1111068394,
     "sizeHuman": "1.0 GiB",
     "splitParts": null,
     "filename": "tha-phonemic-1.0.zip",
@@ -862,6 +862,33 @@
     "license": "BSD-3-Clause",
     "paritySamples": null
   },
+  "heb-vocalized-plane-3.0": {
+    "id": "heb-vocalized-plane-3.0",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "int8",
+    "size": 416041780,
+    "sizeHuman": "397 MiB",
+    "splitParts": null,
+    "filename": "heb-vocalized-plane-3.0-int8-dynamic.zip",
+    "releaseTag": "heb-vocalized-plane-3.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-plane-3.0",
+    "metrics": [
+      {
+        "name": "der_total_greedy",
+        "value": 6.6078
+      },
+      {
+        "name": "der_crown_baseline",
+        "value": 8.18
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
   "urd-ipa-base-1.0": {
     "id": "urd-ipa-base-1.0",
     "task": "g2p",
@@ -961,5 +988,55 @@
     ],
     "license": "BSD-3-Clause",
     "paritySamples": 500
+  },
+  "urd-vocalized-int8static-1.0": {
+    "id": "urd-vocalized-int8static-1.0",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 509376958,
+    "sizeHuman": "486 MiB",
+    "splitParts": null,
+    "filename": "urd-vocalized-int8static-1.0-int8.zip",
+    "releaseTag": "urd-vocalized-int8static-1.0",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-int8static-1.0",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 3.74
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
+  "heb-vocalized-int8static-1.1": {
+    "id": "heb-vocalized-int8static-1.1",
+    "task": "diacritization",
+    "scripts": [
+      "Hebr",
+      "Hebr"
+    ],
+    "precision": "int8",
+    "size": 1024275398,
+    "sizeHuman": "977 MiB",
+    "splitParts": null,
+    "filename": "heb-vocalized-int8static-1.1-int8.zip",
+    "releaseTag": "heb-vocalized-int8static-1.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-int8static-1.1",
+    "metrics": [
+      {
+        "name": "der_greedy",
+        "value": 16.44
+      },
+      {
+        "name": "der_beam4",
+        "value": 16.43
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
   }
 }

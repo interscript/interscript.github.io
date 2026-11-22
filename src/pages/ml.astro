@@ -134,6 +134,26 @@ const modelCount = all.length
           ))
         }
       </ul>
+      {/* STAGED — urd-diac-2.0 (TODO-on-ship): DO NOT RENDER UNTIL SHIPPED.
+           urd-diac-2.0 has NOT shipped: both release-blocking gates are still
+           PENDING — (1) quality gate, full-split raw CER <= 0.0377 on the
+           11,940-row data-diacrit test split (WO37 protocol, urd-vocalized-1.0
+           champion bar); (2) calibrated Clause 16(e) extraction/memorization
+           suite (reference google/byt5-small, self-control 0.5 required, AUC
+           tolerance +/-0.05, success-rate tolerance 0.6, 25-consecutive-word
+           verbatim floor). Gates run AFTER training; ledger of record:
+           interscript/interscript-models TODO.sota/92-urd-16e-recovery-distill.md.
+           ON SHIP (all gates PASS + owner-stated version):
+           1. regenerate src/data/models-catalogue.json (npm run generate:models)
+              from the shipped interscript-models models.yaml entry — the row
+              renders here automatically (task diacritization, Arab -> Arab,
+              CER metric from the index);
+           2. verify the metric value against the ledger verdict before publish;
+           3. delete this block.
+           Expected staged row (metric to be filled from the verdict):
+             diacritization · urd-diac-2.0 · Arab → Arab · CER <verdict> · int8/fp32 · <size>
+           If a gate FAILS, urd-diac-2.0 does not ship and this entry never
+           renders — record the negative in the ledger instead. */}
       <p class="ledger-note">
         “Releasing” = passing its parity gate now, entering the release pipeline. Distillation
         budgets and per-model provenance: <a
