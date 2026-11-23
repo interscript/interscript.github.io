@@ -92,6 +92,56 @@ const baseline = [
     perMap: 377,
   },
 ]
+
+// The first runtime baselines are frozen by design: quoted verbatim from
+// interscript-rs docs/benchmarks/BASELINES-2026-11.md (2026-11-21 run) —
+// one-shot serial numbers, not medians; the protocol lives in the rs repo.
+const firstBaselines = [
+  {
+    runtime: "Rust (interscript-rs)",
+    coldLoad: "9.55",
+    loaded: "456/457",
+    rssLoad: "342.7",
+    docsPerSec: "145.1",
+    charsPerSec: "3,975",
+    rssThroughput: "406.2",
+    peakDoc: "318",
+    rssPeak: "16.2",
+  },
+  {
+    runtime: "TypeScript (interscript-ts)",
+    coldLoad: "0.28",
+    loaded: "457/457",
+    rssLoad: "202.7",
+    docsPerSec: "1,475.3",
+    charsPerSec: "40,408",
+    rssThroughput: "613.2",
+    peakDoc: "22",
+    rssPeak: "49.6",
+  },
+  {
+    runtime: "Ruby (interscript-ruby)",
+    coldLoad: "137.59",
+    loaded: "457/457",
+    rssLoad: "974.2",
+    docsPerSec: "1,976.3",
+    charsPerSec: "54,130",
+    rssThroughput: "594.3",
+    peakDoc: "863",
+    rssPeak: "33.4",
+  },
+  {
+    runtime: "Python (interscript-py)",
+    coldLoad: "3.59",
+    loaded: "435/457",
+    rssLoad: "273.0",
+    docsPerSec: "52.1",
+    charsPerSec: "1,426",
+    rssThroughput: "241.3",
+    peakDoc: "42",
+    rssPeak: "19.4",
+  },
+]
 ---
 
 <Base
@@ -360,6 +410,86 @@ const baseline = [
 
     <section class="detail-card">
       <header>
+        <p class="eyebrow">First baselines (frozen)</p>
+        <h2>Registry cold load, RSS, and end-to-end throughput — 2026-11-21</h2>
+      </header>
+      <div class="prose">
+        <p>
+          Quoted verbatim from{" "}
+          <a href="https://github.com/interscript/interscript-rs/blob/main/docs/benchmarks/BASELINES-2026-11.md">
+            interscript-rs <code>docs/benchmarks/BASELINES-2026-11.md</code>
+          </a>{" "}
+          (2026-11-21 run): the first measured baselines of the full registry path. One-shot serial
+          run on an otherwise idle machine (Apple M1 Max, 10 cores, 64&nbsp;GB, macOS 14.1.1) —
+          numbers are single-run baselines, not medians. All four runtimes loaded the same maps
+          corpus pin (<code>9cfbf4cf</code>, 457 maps) and transliterated the same deterministic
+          200-doc sample. Measure definitions and the runner interface: the{" "}
+          <a href="https://github.com/interscript/interscript-rs/blob/main/docs/benchmarks/PROTOCOL.md">
+            full protocol</a
+          >.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Runtime</th>
+                <th>Cold load (s)</th>
+                <th>Loaded</th>
+                <th>RSS @ load (MB)</th>
+                <th>Docs/sec</th>
+                <th>Chars/sec</th>
+                <th>RSS @ throughput (MB)</th>
+                <th>Peak doc (ms)</th>
+                <th>RSS @ peak (MB)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {firstBaselines.map((row) => (
+                <tr>
+                  <td>{row.runtime}</td>
+                  <td class="tnum">{row.coldLoad}</td>
+                  <td class="tnum">{row.loaded}</td>
+                  <td class="tnum">{row.rssLoad}</td>
+                  <td class="tnum">{row.docsPerSec}</td>
+                  <td class="tnum">{row.charsPerSec}</td>
+                  <td class="tnum">{row.rssThroughput}</td>
+                  <td class="tnum">{row.peakDoc}</td>
+                  <td class="tnum">{row.rssPeak}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="fine-print">
+          Definitions (from the protocol): <strong>cold load</strong> = a fresh process loading all
+          457 maps through the runtime's standard registry path; <strong>docs/sec</strong> = warm
+          throughput over the 200-doc set × 5 loops; <strong>peak doc</strong> = fresh-process load
+          plus a single transliteration of the largest input doc; <strong>RSS</strong> = process
+          resident set of the whole runner, so cross-runtime deltas include each interpreter's own
+          baseline — per-runtime trends over time are the primary signal.
+        </p>
+        <p class="fine-print">
+          Reading the spread: TypeScript's 0.28&nbsp;s cold load reads the pre-compiled JSON-IR
+          artifact (deserialise + link, not ISC parsing); Ruby's 137.6&nbsp;s / 974&nbsp;MB is
+          per-map parsanol compilation, after which it is the fastest runtime warm (1,976
+          docs/sec); Rust parses <code>.isc</code> at load and cannot load one map whose{" "}
+          <code>rababa</code> funcall needs external ML engines (unsupported in that slice, by
+          design); the Python row is the pre-<code>#49</code> engine — 22 parser-gap maps did not
+          load.
+        </p>
+        <p class="fine-print">
+          Same-day refresh: after py caching (<code>#48</code>) and full parser coverage
+          (<code>#49</code>), py loads 457/457, cold load 7.27&nbsp;s, and reaches 91.1 docs/sec
+          (2,496 chars/sec) with zero errors — +75% warm throughput while decoding strictly more
+          work (all 200 docs vs the baseline's 193); peak doc unchanged at 42&nbsp;ms. Per the
+          baselines doc, that refresh number is not directly comparable to the baseline row — the
+          honest statement is more work, fewer errors, on the same machine and corpus pin.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <header>
         <p class="eyebrow">Reproduce</p>
         <h2>Exact commands</h2>
       </header>
@@ -416,6 +546,9 @@ node scripts/benchmarks/generate.mjs
   .fine-print {
     font-size: 0.85rem;
     color: var(--color-stone);
+  }
+  .table-scroll {
+    overflow-x: auto;
   }
   td.fine-print {
     max-width: 22rem;

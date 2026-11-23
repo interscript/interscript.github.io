@@ -414,37 +414,80 @@ const modelCount = all.length
         <p class="eyebrow">The crystals</p>
         <h2>Three runtimes, same bytes out.</h2>
         <p class="section-deck">
-          The neural layer is served by <em>secryst</em> — the same cross-runtime contract as the map
-          layer. Ruby, Python, and TypeScript resolve a model id against the index, fetch (or reuse the
-          cache), verify every checksum, and decode with the KV-cache graph. Golden sets pin the three
-          implementations to each other.
+          The neural layer is served by the runtimes themselves — the same cross-runtime contract
+          as the map layer. Ruby, Python, and TypeScript resolve a model id against the index, fetch
+          (or reuse the cache), verify every checksum, and decode locally — KV-cache streaming for
+          the seq2seq family, mask-predict passes for the plane family. Golden sets pin the three
+          implementations to each other; install lines and the three-line recipe are in{" "}
+          <a href="/ml#getting-started">Use the models</a> below.
         </p>
       </header>
-      <div class="crystal-code">
-        <pre><code># Ruby
-gem install secryst
-
-# Python
-pip install secryst
-
-# TypeScript / JavaScript
-npm install secryst</code></pre>
-        <pre><code>require "secryst"
-model = Secryst::Model.load("tha-g2p-small-1.0")
-model.translate("สวัสดี")
-# =&gt; "sa˨˩.wat̚˨˩.diː˧"</code></pre>
-      </div>
       <p class="env-note">
-        Point deployments at a mirror with <code>SECRYST_INDEX</code>; pin the cache with <code
-          >SECRYST_CACHE</code
-        >. Both are read at call time in all three runtimes.
+        Point deployments at a mirror with <code>INTERSCRIPT_ML_INDEX</code>; pin the cache with{" "}
+        <code>INTERSCRIPT_ML_CACHE</code> (the old <code>SECRYST_*</code> names still work as
+        aliases). Both are read at call time in all three runtimes.
       </p>
       <p class="env-note">
         Without installing anything: the same models answer the REST
         endpoint <code>POST https://api.interscript.org/v1/infer</code> (open CORS, no key), and run in the
         browser at <a href="/neural">the demo page</a>. In a script with no build step, the map
-        layer loads from <a href="https://esm.sh/interscript@5.3.1">esm.sh</a> — full recipe in the
+        layer loads from <a href="https://esm.sh/interscript@6.0.0">esm.sh</a> — full recipe in the
         package's <code>docs/CDN.md</code>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section surface-deep" id="getting-started">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Getting started</p>
+        <h2>Use the models.</h2>
+        <p class="section-deck">
+          A model id resolves against the models.yaml index, downloads once, and is sha256-verified
+          on every load — then it runs locally, no server involved. Three lines per runtime. The
+          example restores the nikud a scribe left out; the input and output are a frozen
+          conformance vector, and all three runtimes are gated to produce it byte-exactly.
+        </p>
+      </header>
+      <div class="crystal-code">
+        <pre><code>{`# install — the neural layer ships inside the same package
+npm install interscript          # TypeScript / JavaScript
+gem install interscript          # Ruby (onnxruntime loads lazily)
+pip install "interscript[ml]"    # Python`}</code></pre>
+        <pre><code>{`// TypeScript
+import { imf, PlaneModel } from "interscript/ml"
+
+const model = await PlaneModel.fromZip((await imf.resolve("heb-vocalized-plane-3.0")).bytes)
+await model.transform("ואם הזה, כשר")
+// → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+        <pre><code>{`# Ruby
+require "interscript/ml"
+
+model = Interscript::ML::PlaneModel.from_zip(
+  File.binread(Interscript::ML::IMF.resolve("heb-vocalized-plane-3.0")))
+model.translate("ואם הזה, כשר")
+# => "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+        <pre><code>{`# Python
+import interscript
+
+interscript.transliterate("heb-vocalized-plane-3.0", "ואם הזה, כשר")
+# → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+      </div>
+      <p class="env-note">
+        First use downloads the int8 artifact (about 416&nbsp;MB for this model) and caches it —
+        point the cache at <code>INTERSCRIPT_ML_CACHE</code> (default{" "}
+        <code>~/.cache/interscript-ml</code>); every later load re-verifies the sha256, the cache is
+        never trusted blindly. Other model kinds share the same three steps: seq2seq ids load
+        through{" "}
+        <code>Interscript::ML::Translator.new(model_file:)</code> in Ruby,{" "}
+        <code>Model.load(id)</code> in Python, <code>imf.IMFModel.load(id)</code> in TypeScript.
+      </p>
+      <p class="env-note">
+        Version note: Python 0.2.1 still pins the previous model index — until its next release
+        ships the index-v16 pin, set <code>INTERSCRIPT_ML_INDEX</code> to the index-v16{" "}
+        <code>models-index.yaml</code> URL (all three runtimes read the variable at call time). The
+        Rust runtime serves the map layer; neural inference ships in the TypeScript, Ruby, and
+        Python runtimes.
       </p>
     </div>
   </section>
