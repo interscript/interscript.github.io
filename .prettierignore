@@ -32,3 +32,4 @@ src/pages/api-docs.astro
 # hand-wrapped prose (Astro whitespace trap) — see CLAUDE.md
 src/pages/playground.astro
 src/pages/docs/isc-language.astro
+src/pages/benchmarks.astro
