@@ -2,9 +2,9 @@
 import Base from "../layouts/Base.astro"
 
 // Facts verified 2026-11-25 against the primary sources, not memory:
-// - releases heb-vocalized-plane-3.0 + urd-vocalized-2.0
+// - releases heb-vocalized-plane-3.0 + urd-vocalized-2.0 + urd-vocalized-2.1
 //   (github.com/interscript/interscript-models)
-// - index-v17 models-index.yaml (release asset + sha256 sidecar)
+// - index-v18 models-index.yaml (release asset + sha256 sidecar)
 // - models#488 (SOTA-2027 Persian poetry vocalization campaign, owner-approved)
 // - urdu-dev#17 + urdu-dev#23-#26 (Clause 16(e) calibrated matched-split instrument)
 const models = [
@@ -21,7 +21,22 @@ const models = [
       "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-plane-3.0",
     hf: "https://huggingface.co/Interscript/heb-vocalized-plane-3.0",
     index:
-      "https://github.com/interscript/interscript-models/releases/tag/index-v17",
+      "https://github.com/interscript/interscript-models/releases/tag/index-v18",
+  },
+  {
+    id: "urd-vocalized-2.1",
+    language: "Urdu",
+    pair: "Arab → Arab",
+    kind: "seq2seq (ByT5-small)",
+    result: "CER 3.632%",
+    gate: "gate 3.77% PASS · champion 3.74% beaten · distilled 3.641% beaten",
+    method: "direct-gold (no teacher, single hop)",
+    artifact: "int8-dynamic · 249 MiB",
+    release:
+      "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-2.1",
+    hf: "https://huggingface.co/Interscript/urd-vocalized-2.1",
+    index:
+      "https://github.com/interscript/interscript-models/releases/tag/index-v18",
   },
   {
     id: "urd-vocalized-2.0",
@@ -36,7 +51,7 @@ const models = [
       "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-2.0",
     hf: "https://huggingface.co/Interscript/urd-vocalized-2.0",
     index:
-      "https://github.com/interscript/interscript-models/releases/tag/index-v17",
+      "https://github.com/interscript/interscript-models/releases/tag/index-v18",
   },
 ]
 ---
@@ -74,7 +89,7 @@ const models = [
         <p class="eyebrow">The released models</p>
         <h2>Two languages shipped, each gated before release.</h2>
         <p class="section-deck">
-          Both ids resolve against the models.yaml index (index-v17), are mirrored on{" "}
+          All ids resolve against the models.yaml index (index-v18), are mirrored on{" "}
           <a href="https://huggingface.co/Interscript">the Hugging Face Interscript org</a>, and
           carry BSD-3-Clause code and weights. Numbers below are quoted from the release records
           and the index — decode protocol included.
@@ -130,10 +145,13 @@ const models = [
         (models<a
           href="https://github.com/interscript/interscript-models/pull/459"
           >#459</a
-        >). Urdu: urd-vocalized-2.0 is a ByT5-small student (run-096) scored on the full split —
-        all 11,940 held-out rows, greedy decode, WO37 protocol — at raw CER 3.641% against the
-        pre-registered gate 3.77%, beating the shipped champion urd-vocalized-1.0 (3.74%) by
-        0.099pp; int8 parity cer_delta 0.0062pp on 600 samples.
+        >). Urdu: urd-vocalized-2.1 (run-097) is a ByT5-small trained directly on the human-verified
+        gold pairs — no teacher, no distillation, single hop — scored on the full split, all 11,940
+        held-out rows, greedy decode, WO37 protocol, at raw CER 3.632% against the pre-registered
+        gate 3.77%; it beats both the shipped champion urd-vocalized-1.0 (3.74%) and the shipped
+        distilled student urd-vocalized-2.0 (3.641%, listed above and still available) — the
+        finding of record: human-verified gold labels beat distilled labels on the same corpus.
+        int8 parity cer_delta 0.0671pp on 600 samples.
       </p>
     </div>
   </section>
@@ -165,10 +183,11 @@ const models = [
         <div class="method-card">
           <h3>Clean-room direct-gold / distill</h3>
           <p>
-            A student distilled on the guarded outputs of a teacher whose lineage is verified
-            license-clean; the restricted corpus is never input, target, or label — the corpus
-            overlap discriminator measured zero shared shingles. Validated on Urdu: run-096, CER
-            3.641% under the 3.77% gate.
+            Train on human-verified gold labels only — directly, or distilled through a teacher
+            whose lineage is verified license-clean. The restricted corpus is never input, target,
+            or label — the corpus overlap discriminator measured zero shared shingles. Validated on
+            Urdu: run-097 direct-gold, CER 3.632% under the 3.77% gate — beating the distilled
+            run-096 (3.641%) on the same corpus, confirming the gold-labels hypothesis.
           </p>
         </div>
       </div>
@@ -183,10 +202,11 @@ const models = [
           <a href="https://github.com/interscript/urdu-dev/issues/23">urdu-dev#23</a>–<a
             href="https://github.com/interscript/urdu-dev/issues/26"
             >#26</a
-          >) run against the trained artifact. For urd-vocalized-2.0 the calibrated AUC was 0.4933
+          >) run against the trained artifact. For urd-vocalized-2.1 the calibrated AUC was 0.4816
           against chance 0.5 (tolerance 0.05), with a verbatim probe of 200 probes and 125
           extraction prompts producing zero violations — verdict PASS, records retained to
-          2028-11-24. The instrument, its falsification chain, and the ledger entries live in the{" "}
+          2028-11-25 (urd-vocalized-2.0's own PASS at AUC 0.4933 is in its release record). The
+          instrument, its falsification chain, and the ledger entries live in the{" "}
           <a href="https://github.com/interscript/urdu-dev">urdu-dev repository</a>.
         </p>
       </div>
@@ -254,7 +274,7 @@ const models = [
         </p>
       </div>
       <div class="cta-code">
-        <pre><code>github.com/interscript/interscript-models   # releases + index-v17
+        <pre><code>github.com/interscript/interscript-models   # releases + index-v18
 github.com/interscript/urdu-dev             # clause 16(e) instrument</code></pre>
       </div>
     </div>
