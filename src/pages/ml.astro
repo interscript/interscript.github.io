@@ -441,19 +441,19 @@ import { imf, PlaneModel } from "interscript/ml"
 
 const model = await PlaneModel.fromZip((await imf.resolve("heb-vocalized-plane-3.0")).bytes)
 await model.transform("ואם הזה, כשר")
-// → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+// → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
         <pre><code>{`# Ruby
 require "interscript/ml"
 
 model = Interscript::ML::PlaneModel.from_zip(
   File.binread(Interscript::ML::IMF.resolve("heb-vocalized-plane-3.0")))
 model.translate("ואם הזה, כשר")
-# => "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+# => "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
         <pre><code>{`# Python
 import interscript
 
 interscript.transliterate("heb-vocalized-plane-3.0", "ואם הזה, כשר")
-# → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
+# → "וְאִם הִזָּה, כָּשֵׁר"`}</code></pre>
       </div>
       <p class="env-note">
         First use downloads the int8 artifact (about 416&nbsp;MB for this model) and caches it —
