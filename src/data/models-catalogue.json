@@ -143,6 +143,29 @@
     "license": "BSD-3-Clause",
     "paritySamples": 600
   },
+  "urd-vocalized-2.1": {
+    "id": "urd-vocalized-2.1",
+    "task": "diacritization",
+    "scripts": [
+      "Arab",
+      "Arab"
+    ],
+    "precision": "int8",
+    "size": 261179496,
+    "sizeHuman": "249 MiB",
+    "splitParts": null,
+    "filename": "urd-vocalized-2.1-int8-dynamic.zip",
+    "releaseTag": "urd-vocalized-2.1",
+    "releaseUrl": "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-2.1",
+    "metrics": [
+      {
+        "name": "cer",
+        "value": 3.632
+      }
+    ],
+    "license": "BSD-3-Clause",
+    "paritySamples": 600
+  },
   "heb-vocalized-1.0": {
     "id": "heb-vocalized-1.0",
     "task": "diacritization",
