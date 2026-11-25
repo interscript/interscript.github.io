@@ -34,7 +34,7 @@
     "@iso24229/iso15924-data": "^0.2.0",
     "@iso24229/iso639-data": "^0.2.0",
     "@litertjs/core": "^2.5.3",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.3.5",
     "interscript": "^6.0.2",
     "onnxruntime-web": "^1.31.1",
