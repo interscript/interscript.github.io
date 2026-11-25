@@ -9,32 +9,56 @@ import Base from "../layouts/Base.astro"
   <section class="page-narrow">
     <h1>Neural models demo</h1>
     <p>
-      Authority-backed diacritization running locally in your browser. The model
-      downloads once (content-verified), then works offline.
+      Authority-backed diacritization and vocalization running locally in your browser, off the main
+      thread. The model downloads once (content-verified), then works offline.
     </p>
-    <noscript><p>This demo needs JavaScript.</p></noscript>
+    <noscript>
+      <p>This demo needs JavaScript.</p>
+    </noscript>
 
     <label for="model">Model</label>
     <select id="model">
-      <option value="ara-diac-layerdrop-1.0-int4">Arabic diacritization — lite (int4, 95 MB)</option>
-      <option value="ara-diac-small-2.1-int8">Arabic diacritization — 2.1 (int8, 264 MB)</option>
-      <option value="ara-diac-small-2.0-int8">Arabic diacritization — 2.0 (int8, 264 MB)</option>
-      <option value="ara-diac-small-1.0-int8">Arabic diacritization — 1.0 (int8, 264 MB)</option>
-      <option value="tha-g2p-small-1.0">Thai G2P — small (int8, 202 MB)</option>
+      <option value="heb-vocalized-plane-3.0" data-kind="plane">
+        Hebrew vocalization — plane-3.0 (int8, 397 MB)
+      </option>
+      <option value="urd-vocalized-2.0" data-kind="imf">
+        Urdu vocalization — 2.0 (int8, 249 MB)
+      </option>
+      <option value="ara-diac-layerdrop-1.0-int4" data-kind="imf">
+        Arabic diacritization — lite (int4, 95 MB)
+      </option>
+      <option value="ara-diac-small-2.1-int8" data-kind="imf">
+        Arabic diacritization — 2.1 (int8, 264 MB)
+      </option>
+      <option value="ara-diac-small-2.0-int8" data-kind="imf">
+        Arabic diacritization — 2.0 (int8, 264 MB)
+      </option>
+      <option value="ara-diac-small-1.0-int8" data-kind="imf">
+        Arabic diacritization — 1.0 (int8, 264 MB)
+      </option>
+      <option value="tha-g2p-small-1.0" data-kind="imf">
+        Thai G2P — small (int8, 202 MB)
+      </option>
     </select>
     <p class="tier-hint">
-      Full-set numbers for every tier — the leaderboard and the client ladder —
-      on <a href="/ml#leaderboard">the neural layer page</a>.
+      Full-set numbers for every tier — the leaderboard and the client ladder — on{" "}
+      <a href="/ml#leaderboard">the neural layer page</a>.
     </p>
 
     <label for="input">Input</label>
     <textarea id="input" rows="4" dir="auto">السلام عليكم ورحمة الله</textarea>
 
-    <button id="run" class="btn">Transliterate</button>
-    <button id="clear-cache" class="btn">Clear cached models</button>
+    <button id="run" class="btn">
+      Transliterate
+    </button>
+    <button id="clear-cache" class="btn">
+      Clear cached models
+    </button>
 
     <div id="progress" hidden>
-      <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-fill"></div>
+      </div>
       <span id="progress-label"></span>
     </div>
 
@@ -101,58 +125,66 @@ import Base from "../layouts/Base.astro"
 </style>
 
 <script>
-  import { imf } from "interscript/ml"
+  import { createVocalizationClient, type VocalizationClient } from "../scripts/vocalization-client"
 
-  const ASSET_INDEX = "https://api.interscript.org/v1/assets/index-v5/models-index.yaml"
+  // Built-in examples are the frozen conformance vectors — the same
+  // rows the runtimes are gated to reproduce byte-exactly (the Hebrew
+  // one is the /ml quickstart row).
+  const EXAMPLES: Record<string, string> = {
+    "heb-vocalized-plane-3.0": "ואם הזה, כשר",
+    "urd-vocalized-2.0": "فاسد العقیدہ",
+    "ara-diac-layerdrop-1.0-int4": "السلام عليكم ورحمة الله",
+    "ara-diac-small-2.1-int8": "السلام عليكم ورحمة الله",
+    "ara-diac-small-2.0-int8": "السلام عليكم ورحمة الله",
+    "ara-diac-small-1.0-int8": "السلام عليكم ورحمة الله",
+    "tha-g2p-small-1.0": "ก",
+  }
 
   const $ = (id: string) => document.getElementById(id)!
-  let current: { dispose?(): Promise<void> } | null = null
+  const client: VocalizationClient = createVocalizationClient()
 
-  async function load(modelId: string): Promise<{ translate(t: string, m?: number, o?: object): Promise<string> }> {
+  function selected(): { id: string; kind: "plane" | "imf" } {
+    const option = ($("model") as HTMLSelectElement).selectedOptions[0]!
+    return { id: option.value, kind: (option.dataset["kind"] as "plane" | "imf") ?? "imf" }
+  }
+
+  // Switching models swaps in that model's conformance example.
+  $("model").addEventListener("change", () => {
+    const input = $("input") as HTMLTextAreaElement
+    input.value = EXAMPLES[selected().id] ?? ""
+    $("confidence").hidden = true
+    $("confidence").textContent = ""
+  })
+
+  $("run").addEventListener("click", async () => {
     const progress = $("progress")
     const bar = $("progress-bar")
     const label = $("progress-label")
-    progress.hidden = false
-    label.textContent = "Resolving verified index…"
-    const resolved = await imf.resolve(modelId, ASSET_INDEX, {
-      onProgress: (fraction, bytes) => {
-        bar.style.width = `${Math.round(fraction * 100)}%`
-        label.textContent = `${(bytes / 1e6).toFixed(0)} MB (${Math.round(fraction * 100)}%)`
-      },
-    })
-    label.textContent = "Opening session…"
-    const model = await imf.IMFModel.fromZipBytes(resolved.bytes)
-    progress.hidden = true
-    return model
-  }
-
-  $("run").addEventListener("click", async () => {
     const out = $("output")
     const conf = $("confidence")
     out.textContent = ""
+    conf.hidden = true
+    conf.textContent = ""
+    const { id, kind } = selected()
     try {
-      const model = await load(($("model") as HTMLSelectElement).value)
-      current?.dispose?.()
-      current = model as unknown as { dispose?(): Promise<void> }
-      const gaps: number[] = []
-      const parts: string[] = []
-      const text = ($("input") as HTMLTextAreaElement).value
-      const result = await model.translate(text, 2048, {
-        onToken: (token: number) => {
-          parts.push(imf.decode([token]))
-          out.textContent = parts.join("")
-        },
-        onConfidence: (gap: number) => gaps.push(gap),
+      progress.hidden = false
+      label.textContent = "Resolving verified index…"
+      const info = await client.load(id, kind, (fraction, bytes) => {
+        bar.style.width = `${Math.round(fraction * 100)}%`
+        label.textContent = `${(bytes / 1e6).toFixed(0)} MB (${Math.round(fraction * 100)}%)`
       })
-      out.textContent = result
-      if (gaps.length) {
-        const min = Math.min(...gaps)
-        conf.hidden = false
-        conf.textContent = `Decode confidence: min top-2 gap ${min.toFixed(2)} across ${gaps.length} steps (lower = less certain)`
-      }
+      label.textContent = info.kPasses
+        ? `Decoding (${info.kPasses} mask-predict passes)…`
+        : "Decoding…"
+      const stats = await client.transform(id, kind, ($("input") as HTMLTextAreaElement).value)
+      out.textContent = stats.output
+      const gap = stats.minGap !== undefined ? ` · min top-2 gap ${stats.minGap.toFixed(2)}` : ""
+      conf.hidden = false
+      conf.textContent = `decode ${stats.ms} ms in-worker${gap} (lower gap = more certain)`
     } catch (e) {
-      const cause = (e as Error).cause as Error | undefined
-      out.textContent = `Error: ${(e as Error).message}${cause ? " | cause: " + cause.message : ""}`
+      out.textContent = `Error: ${(e as Error).message}`
+    } finally {
+      progress.hidden = true
     }
   })
 
