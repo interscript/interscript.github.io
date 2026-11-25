@@ -1,0 +1,474 @@
+---
+import Base from "../layouts/Base.astro"
+
+// Facts verified 2026-11-25 against the primary sources, not memory:
+// - releases heb-vocalized-plane-3.0 + urd-vocalized-2.0
+//   (github.com/interscript/interscript-models)
+// - index-v17 models-index.yaml (release asset + sha256 sidecar)
+// - models#488 (SOTA-2027 Persian poetry vocalization campaign, owner-approved)
+// - urdu-dev#17 + urdu-dev#23-#26 (Clause 16(e) calibrated matched-split instrument)
+const models = [
+  {
+    id: "heb-vocalized-plane-3.0",
+    language: "Hebrew",
+    pair: "Hebr → Hebr",
+    kind: "plane (mask-predict)",
+    result: "DER 6.6078",
+    gate: "crown gate 8.18 cleared, −1.57pp",
+    method: "curriculum weak→gold",
+    artifact: "int8-dynamic · 397 MiB",
+    release:
+      "https://github.com/interscript/interscript-models/releases/tag/heb-vocalized-plane-3.0",
+    hf: "https://huggingface.co/Interscript/heb-vocalized-plane-3.0",
+    index:
+      "https://github.com/interscript/interscript-models/releases/tag/index-v17",
+  },
+  {
+    id: "urd-vocalized-2.0",
+    language: "Urdu",
+    pair: "Arab → Arab",
+    kind: "seq2seq (ByT5-small)",
+    result: "CER 3.641%",
+    gate: "gate 3.77% PASS · champion 3.74% beaten by 0.099pp",
+    method: "clean-room distillation",
+    artifact: "int8-dynamic · 249 MiB",
+    release:
+      "https://github.com/interscript/interscript-models/releases/tag/urd-vocalized-2.0",
+    hf: "https://huggingface.co/Interscript/urd-vocalized-2.0",
+    index:
+      "https://github.com/interscript/interscript-models/releases/tag/index-v17",
+  },
+]
+---
+
+<Base
+  title="The Interscript vocalization suite"
+  description="The Interscript vocalization suite: Hebrew and Urdu vocalization models with measured gates and clean-room lineage, and the announced Persian campaign. One artifact format, sha256-verified, three runtimes."
+>
+  <!-- ════════════════════════════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow eyebrow-accent">The model family</p>
+      <h1 class="page-headline">
+        The Interscript <em>vocalization suite</em>.
+      </h1>
+      <p class="hero-lead">
+        Vocalization is writing back in what a keyboard, a printing tradition, or a scribe left
+        out: the nikud of unpointed Hebrew, the marks of bare Urdu. No committee publishes these
+        conversions, so they are learned — and they ship under the same discipline as every
+        Interscript model: a measured metric against a pre-registered gate, an artifact format
+        verified by checksum, and byte-identical output from all three runtimes. This page is the
+        family page; the full catalogue lives on <a href="/ml">the neural layer page</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE MODELS — per-model table
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="models">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">The released models</p>
+        <h2>Two languages shipped, each gated before release.</h2>
+        <p class="section-deck">
+          Both ids resolve against the models.yaml index (index-v17), are mirrored on{" "}
+          <a href="https://huggingface.co/Interscript">the Hugging Face Interscript org</a>, and
+          carry BSD-3-Clause code and weights. Numbers below are quoted from the release records
+          and the index — decode protocol included.
+        </p>
+      </header>
+
+      <div class="table-wrap">
+        <table class="suite-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Task</th>
+              <th>Measured result</th>
+              <th>Method</th>
+              <th>Artifact</th>
+              <th>Links</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              models.map((m) => (
+                <tr>
+                  <td>
+                    <code class="model-id">
+                      <a href={m.release}>{m.id}</a>
+                    </code>
+                    <span class="model-lang">{m.language}</span>
+                  </td>
+                  <td>
+                    {m.pair}
+                    <span class="model-kind">{m.kind}</span>
+                  </td>
+                  <td class="tnum">
+                    <strong>{m.result}</strong>
+                    <span class="gate">{m.gate}</span>
+                  </td>
+                  <td>{m.method}</td>
+                  <td class="tnum">{m.artifact}</td>
+                  <td class="links-cell">
+                    <a href={m.release}>release</a> · <a href={m.hf}>HF mirror</a> ·{" "}
+                    <a href={m.index}>index entry</a>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">
+        Hebrew: heb-vocalized-plane-3.0 is the WO92 gold-SFT stage over weak-pretrain
+        (run-093→run-094) — DER 6.6078 against the crown gate 8.18, with the classification parity
+        gate (DER-delta ≤ 0.25pp) measured at 0.0549pp over 600 samples
+        (models<a
+          href="https://github.com/interscript/interscript-models/pull/459"
+          >#459</a
+        >). Urdu: urd-vocalized-2.0 is a ByT5-small student (run-096) scored on the full split —
+        all 11,940 held-out rows, greedy decode, WO37 protocol — at raw CER 3.641% against the
+        pre-registered gate 3.77%, beating the shipped champion urd-vocalized-1.0 (3.74%) by
+        0.099pp; int8 parity cer_delta 0.0062pp on 600 samples.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       THE METHODS — how the family is trained
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section surface-deep" id="methods">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">The methods</p>
+        <h2>Two validated training methods.</h2>
+        <p class="section-deck">
+          Each shipped model of the family was produced by one of two training methods, each
+          validated by a gated measurement on its own language before release. Neither uses an
+          LLM as a label source — language-model teachers hallucinate diacritics.
+        </p>
+      </header>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <h3>Curriculum weak→gold</h3>
+          <p>
+            Weak-pretrain on unvocalized text, then gold SFT on fully vocalized gold. Validated on
+            Hebrew: the curriculum took the plane lineage from 8.18 to 6.6078 DER — the −1.57pp
+            "curriculum verdict" of WO92 (run-093→run-094).
+          </p>
+        </div>
+        <div class="method-card">
+          <h3>Clean-room direct-gold / distill</h3>
+          <p>
+            A student distilled on the guarded outputs of a teacher whose lineage is verified
+            license-clean; the restricted corpus is never input, target, or label — the corpus
+            overlap discriminator measured zero shared shingles. Validated on Urdu: run-096, CER
+            3.641% under the 3.77% gate.
+          </p>
+        </div>
+      </div>
+
+      <div class="gate-block">
+        <h3>The license-cleanliness gate</h3>
+        <p>
+          "Clean-room" is a claim, so the family measures it. The instrument of record is the
+          calibrated matched-split Clause 16(e) audit — a reference-calibrated membership-inference
+          suite (urdu-dev<a href="https://github.com/interscript/urdu-dev/issues/17">#17</a>,
+          matched-split methodology per{" "}
+          <a href="https://github.com/interscript/urdu-dev/issues/23">urdu-dev#23</a>–<a
+            href="https://github.com/interscript/urdu-dev/issues/26"
+            >#26</a
+          >) run against the trained artifact. For urd-vocalized-2.0 the calibrated AUC was 0.4933
+          against chance 0.5 (tolerance 0.05), with a verbatim probe of 200 probes and 125
+          extraction prompts producing zero violations — verdict PASS, records retained to
+          2028-11-24. The instrument, its falsification chain, and the ledger entries live in the{" "}
+          <a href="https://github.com/interscript/urdu-dev">urdu-dev repository</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       COMING — Persian
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section" id="coming">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Coming — announced</p>
+        <h2>Persian: the next member of the family.</h2>
+        <p class="section-deck">
+          Owner-approved public campaign (models<a
+            href="https://github.com/interscript/interscript-models/issues/488"
+            >#488</a
+          >, sources approved 2026-11-24): Persian poetry vocalization under the working name
+          fas-vocalized — the version number is stated at ship. The recipe is the Hebrew
+          curriculum mapped to Persian: weak-pretrain on OSCAR-fa, gold SFT on Ganjoor poetry from
+          license-clean sources (Ganjoor CC BY-SA 3.0, fa-Wikisource CC BY-SA 4.0). The measured
+          headroom is the largest in the org — news CER 0.603% against poetry 33.67%, a 56×
+          register gap (WO66) — and the register fine-tune precedent already halved poetry CER. It
+          ships with an index entry and a Hugging Face mirror when its gates pass, gated by the
+          same calibrated matched-split 16(e) methodology.
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       USE IT
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section surface-deep" id="use-it">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Use it</p>
+        <h2>Three lines, any runtime.</h2>
+        <p class="section-deck">
+          A vocalization id resolves against the models.yaml index, downloads once, and is
+          sha256-verified on every load — then it runs locally, no server involved, with
+          byte-identical output from TypeScript, Ruby, and Python. The worked example on the
+          neural layer page is this family's own heb-vocalized-plane-3.0 restoring the nikud of
+          unpointed Hebrew. Install lines, cache configuration, and the REST endpoint are in{" "}
+          <a href="/ml#getting-started">Use the models</a> on <a href="/ml">the /ml page</a>; the
+          browser demo is at <a href="/neural">/neural</a>.
+        </p>
+      </header>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PROVENANCE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="section cta surface-ink">
+    <div class="container cta-grid">
+      <div class="cta-text">
+        <p class="eyebrow eyebrow-accent">Provenance</p>
+        <h2>Every gate is pre-registered.</h2>
+        <p class="cta-deck">
+          Each model above carries its gate, its decode protocol, and its license audit in the open
+          release records. BSD-3-Clause, code and weights. The full model catalogue — every
+          language, every measured score — is on <a href="/ml">the neural layer page</a>.
+        </p>
+      </div>
+      <div class="cta-code">
+        <pre><code>github.com/interscript/interscript-models   # releases + index-v17
+github.com/interscript/urdu-dev             # clause 16(e) instrument</code></pre>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ── Header ────────────────────────────────────────────────────── */
+  .hero {
+    padding-block: 4rem 3rem;
+  }
+  .page-headline {
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    margin: 1.25rem 0 1.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .page-headline em {
+    font-style: italic;
+    color: var(--color-brand);
+  }
+  .hero-lead {
+    font-size: var(--text-lead);
+    color: var(--color-stone);
+    max-width: 44rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .hero-lead a {
+    color: var(--color-highlight);
+  }
+
+  /* ── Section heads ─────────────────────────────────────────────── */
+  .section-head {
+    max-width: 48rem;
+    margin-bottom: 3rem;
+  }
+  .section-head h2 {
+    font-size: var(--text-h1);
+    margin: 1rem 0 1.25rem;
+  }
+  .section-deck {
+    font-size: 1.0625rem;
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .section-deck a {
+    color: var(--color-highlight);
+  }
+
+  /* ── The models table ──────────────────────────────────────────── */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0 -1.5rem;
+    padding: 0 1.5rem;
+  }
+  .suite-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .suite-table th {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--color-stone);
+    border-bottom: 2px solid var(--color-ink);
+    padding: 0.6rem 1.25rem 0.6rem 0;
+    white-space: nowrap;
+  }
+  .suite-table td {
+    padding: 1rem 1.25rem 1rem 0;
+    border-bottom: 1px dotted var(--color-rule);
+    vertical-align: top;
+  }
+  .suite-table th.tnum,
+  .suite-table td.tnum {
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+  }
+  .model-id {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  .model-id a {
+    color: var(--color-ink);
+  }
+  .model-lang {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    margin-top: 0.25rem;
+  }
+  .model-kind {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-stone);
+    margin-top: 0.25rem;
+  }
+  .gate {
+    display: block;
+    font-size: 0.8125rem;
+    color: var(--color-stone);
+    margin-top: 0.25rem;
+  }
+  .links-cell {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+  .links-cell a {
+    color: var(--color-highlight);
+  }
+  .table-note {
+    font-size: 0.875rem;
+    color: var(--color-stone);
+    margin-top: 1.5rem;
+    max-width: 48rem;
+    line-height: 1.55;
+  }
+  .table-note a {
+    color: var(--color-highlight);
+  }
+
+  /* ── Methods ───────────────────────────────────────────────────── */
+  .method-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .method-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  .method-card {
+    border: 1px solid var(--color-rule);
+    border-radius: 0.5rem;
+    padding: 1.5rem 1.75rem;
+  }
+  .method-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.75rem;
+    color: var(--color-brand-deep);
+  }
+  .method-card p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .gate-block {
+    margin-top: 2.5rem;
+    border-top: 2px solid var(--color-ink);
+    padding-top: 1.5rem;
+  }
+  .gate-block h3 {
+    font-family: var(--font-mono);
+    font-size: var(--text-micro);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-brand-deep);
+    margin: 0 0 0.75rem;
+  }
+  .gate-block p {
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 48rem;
+  }
+  .gate-block a {
+    color: var(--color-highlight);
+  }
+
+  /* ── CTA ───────────────────────────────────────────────────────── */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .cta-grid {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+    }
+  }
+  .cta-text h2 {
+    color: var(--color-vellum);
+    margin: 1rem 0 1.25rem;
+  }
+  .cta-deck {
+    color: color-mix(in srgb, var(--color-vellum) 75%, transparent);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 30rem;
+  }
+  .cta-deck a {
+    color: var(--color-highlight);
+  }
+  .cta-code pre {
+    margin: 0;
+    background: var(--color-ink-soft);
+    border-color: var(--color-ink-soft);
+  }
+</style>
