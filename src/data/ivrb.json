@@ -1,0 +1,240 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-11-26T23:08:21.000Z",
+  "protocol": "ivrb-v1",
+  "title": "IVRB (vocalization benchmark) — v1 results",
+  "description": "Interscript Vocalization-Romanization Benchmark: per romanization system, how much diacritic information survives the system. Source of truth: interscript/interscript-models docs/benchmarks/ivrb/RESULTS-v1.md, transcribed verbatim (no rounding, no recomputation).",
+  "provenance": {
+    "repo": "interscript/interscript-models",
+    "ref": "main",
+    "docPath": "docs/benchmarks/ivrb/RESULTS-v1.md",
+    "specPath": "docs/benchmarks/IVRB-SPEC.md",
+    "decodeDates": "2026-11-25/26",
+    "artifactsBucket": "rhtse/jobs-artifacts/ivrb/",
+    "pins": {
+      "interscriptPy": "bf3ac6f",
+      "maps": "cc67dd3 (maps release v3.2.0, maps/ byte-identical)",
+      "interscriptRs": "f054108 (release/0.2.2)",
+      "dataShas": {
+        "urd": "6d822ae7… (WO37 set, sha256-verified in-job before decode)",
+        "heb": "77e9b5dc… (crown set, sha256-verified in-job before decode)"
+      }
+    }
+  },
+  "metricNotes": {
+    "retention": "1 − recovery_cer / skel_cer, both in the system's own Latin output space — the fraction of the no-info error the model's recovery eliminates through S; the headline metric (SPEC §3)",
+    "cerNat": "the direct arm, the model ceiling, reported beside every table (SPEC §3)",
+    "markLeak": "rows whose Latin output leaks raw combining marks / total rows (SPEC §3)",
+    "ranking": "systems ordered by retention (descending) per language; ties break on encode_rate — no ties occurred, so the tie-break did not fire (SPEC §3.4)"
+  },
+  "openGates": [
+    {
+      "gate": "crossval",
+      "spec": "SPEC §9.4",
+      "status": "open",
+      "note": "SPEC §9.4 cross-validation did not run in these legs: every landed record carries crossval: null — no ≥ 200-row iscrs cross-check per system was captured. The ranking above is published with that gate OPEN; adjudication is owner-side."
+    }
+  ],
+  "findings": {
+    "hebrewDirectCerInversion": "heb-vocalized-1.1 shows direct CER 30.46% vs heb-vocalized-1.0's 25.18%, although 1.1 is the stronger house model (DER greedy 16.44 vs 29.0). The shipped Hebrew anchors are DER, not corpus-level CER, so this is not an anchor violation — reported verbatim, not normalized.",
+    "hebrewMarkLeak": "Hebrew mark_leak is material (icao 1193/1864, din 851/1864) — the genuine map-robustness finding SPEC §10.4 anticipates, published not dropped."
+  },
+  "languages": {
+    "urd": {
+      "rows": 11940,
+      "rankingNote": "identical order under both models",
+      "models": [
+        {
+          "id": "urd-vocalized-1.0",
+          "precision": "fp32",
+          "rows": 11940,
+          "directCer": "3.74%",
+          "systems": [
+            {
+              "rank": 1,
+              "system": "un-urd-Arab-Latn-1972",
+              "retention": "67.95%",
+              "recoveryCer": "5.80%",
+              "skelCer": "18.11%",
+              "encodeRate": "65.58%",
+              "markLeak": "119/11940"
+            },
+            {
+              "rank": 2,
+              "system": "bgnpcgn-urd-Arab-Latn-2007",
+              "retention": "67.59%",
+              "recoveryCer": "5.79%",
+              "skelCer": "17.87%",
+              "encodeRate": "65.46%",
+              "markLeak": "119/11940"
+            },
+            {
+              "rank": 3,
+              "system": "alalc-urd-Arab-Latn-2013",
+              "retention": "67.05%",
+              "recoveryCer": "5.28%",
+              "skelCer": "16.01%",
+              "encodeRate": "69.10%",
+              "markLeak": "102/11940"
+            },
+            {
+              "rank": 4,
+              "system": "odni-urd-Arab-Latn-2015",
+              "retention": "65.62%",
+              "recoveryCer": "5.07%",
+              "skelCer": "14.74%",
+              "encodeRate": "70.18%",
+              "markLeak": "59/11940"
+            },
+            {
+              "rank": 5,
+              "system": "din-urd-Arab-Latn-31635-2011",
+              "retention": "65.18%",
+              "recoveryCer": "5.69%",
+              "skelCer": "16.33%",
+              "encodeRate": "65.29%",
+              "markLeak": "59/11940"
+            }
+          ]
+        },
+        {
+          "id": "urd-vocalized-2.1",
+          "precision": "int8-dynamic",
+          "rows": 11940,
+          "directCer": "3.59%",
+          "systems": [
+            {
+              "rank": 1,
+              "system": "un-urd-Arab-Latn-1972",
+              "retention": "69.21%",
+              "recoveryCer": "5.57%",
+              "skelCer": "18.11%",
+              "encodeRate": "65.58%",
+              "markLeak": "119/11940"
+            },
+            {
+              "rank": 2,
+              "system": "bgnpcgn-urd-Arab-Latn-2007",
+              "retention": "68.91%",
+              "recoveryCer": "5.56%",
+              "skelCer": "17.87%",
+              "encodeRate": "65.46%",
+              "markLeak": "119/11940"
+            },
+            {
+              "rank": 3,
+              "system": "alalc-urd-Arab-Latn-2013",
+              "retention": "68.46%",
+              "recoveryCer": "5.05%",
+              "skelCer": "16.01%",
+              "encodeRate": "69.10%",
+              "markLeak": "102/11940"
+            },
+            {
+              "rank": 4,
+              "system": "odni-urd-Arab-Latn-2015",
+              "retention": "67.01%",
+              "recoveryCer": "4.86%",
+              "skelCer": "14.74%",
+              "encodeRate": "70.18%",
+              "markLeak": "59/11940"
+            },
+            {
+              "rank": 5,
+              "system": "din-urd-Arab-Latn-31635-2011",
+              "retention": "66.65%",
+              "recoveryCer": "5.45%",
+              "skelCer": "16.33%",
+              "encodeRate": "65.29%",
+              "markLeak": "59/11940"
+            }
+          ]
+        }
+      ]
+    },
+    "heb": {
+      "rows": 1864,
+      "rankingNote": "identical order under all three models",
+      "models": [
+        {
+          "id": "heb-vocalized-1.0",
+          "precision": "fp32",
+          "rows": 1864,
+          "directCer": "25.18%",
+          "systems": [
+            {
+              "rank": 1,
+              "system": "icao-heb-Hebr-Latn-9303",
+              "retention": "39.72%",
+              "recoveryCer": "24.75%",
+              "skelCer": "41.05%",
+              "encodeRate": "98.06%",
+              "markLeak": "1193/1864"
+            },
+            {
+              "rank": 2,
+              "system": "din-heb-Hebr-Latn-31636-2018",
+              "retention": "35.44%",
+              "recoveryCer": "25.34%",
+              "skelCer": "39.25%",
+              "encodeRate": "98.06%",
+              "markLeak": "851/1864"
+            }
+          ]
+        },
+        {
+          "id": "heb-vocalized-1.1",
+          "precision": "fp32",
+          "rows": 1864,
+          "directCer": "30.46%",
+          "systems": [
+            {
+              "rank": 1,
+              "system": "icao-heb-Hebr-Latn-9303",
+              "retention": "26.28%",
+              "recoveryCer": "30.26%",
+              "skelCer": "41.05%",
+              "encodeRate": "98.06%",
+              "markLeak": "1193/1864"
+            },
+            {
+              "rank": 2,
+              "system": "din-heb-Hebr-Latn-31636-2018",
+              "retention": "21.85%",
+              "recoveryCer": "30.67%",
+              "skelCer": "39.25%",
+              "encodeRate": "98.06%",
+              "markLeak": "851/1864"
+            }
+          ]
+        },
+        {
+          "id": "heb-vocalized-small-1.0",
+          "precision": "fp32",
+          "rows": 1864,
+          "directCer": "27.11%",
+          "systems": [
+            {
+              "rank": 1,
+              "system": "icao-heb-Hebr-Latn-9303",
+              "retention": "35.86%",
+              "recoveryCer": "26.33%",
+              "skelCer": "41.05%",
+              "encodeRate": "98.06%",
+              "markLeak": "1193/1864"
+            },
+            {
+              "rank": 2,
+              "system": "din-heb-Hebr-Latn-31636-2018",
+              "retention": "31.13%",
+              "recoveryCer": "27.03%",
+              "skelCer": "39.25%",
+              "encodeRate": "98.06%",
+              "markLeak": "851/1864"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro"
 import data from "../data/benchmarks.json" with { type: "json" }
+import ivrbData from "../data/ivrb.json" with { type: "json" }
 
 interface DriverLeg {
   runs: number[]
@@ -49,6 +50,45 @@ interface BenchData {
 }
 
 const d = data as unknown as BenchData
+
+interface IvrbSystem {
+  rank: number
+  system: string
+  retention: string
+  recoveryCer: string
+  skelCer: string
+  encodeRate: string
+  markLeak: string
+}
+interface IvrbModel {
+  id: string
+  precision: string
+  rows: number
+  directCer: string
+  systems: IvrbSystem[]
+}
+interface IvrbLanguage {
+  rows: number
+  rankingNote: string
+  models: IvrbModel[]
+}
+interface IvrbData {
+  protocol: string
+  provenance: {
+    repo: string
+    docPath: string
+    specPath: string
+    decodeDates: string
+  }
+  openGates: { gate: string; spec: string; note: string }[]
+  findings: { hebrewDirectCerInversion: string; hebrewMarkLeak: string }
+  languages: Record<string, IvrbLanguage>
+}
+
+const iv = ivrbData as unknown as IvrbData
+const ivrbLangLabels: Record<string, string> = { urd: "Urdu", heb: "Hebrew" }
+const ivrbSourceUrl = (path: string): string =>
+  `https://github.com/${iv.provenance.repo}/blob/main/${path}`
 
 const ms = (v: number): string => `${Math.round(v).toLocaleString("en-US")} ms`
 const secs = (v: number): string => `${(v / 1000).toFixed(v >= 10000 ? 1 : 2)} s`
@@ -484,6 +524,92 @@ const firstBaselines = [
           work (all 200 docs vs the baseline's 193); peak doc unchanged at 42&nbsp;ms. Per the
           baselines doc, that refresh number is not directly comparable to the baseline row — the
           honest statement is more work, fewer errors, on the same machine and corpus pin.
+        </p>
+      </div>
+    </section>
+
+    <section class="detail-card">
+      <header>
+        <p class="eyebrow">IVRB (vocalization benchmark)</p>
+        <h2>How much diacritic information survives each romanization system</h2>
+      </header>
+      <div class="prose">
+        <p>
+          The Interscript Vocalization-Romanization Benchmark (protocol{" "}
+          <code>{iv.protocol}</code>) asks, in the spec's words, "per romanization system, how much
+          of that diacritic information survives the system and which systems preserve the most
+          recoverable information" (IVRB-SPEC §1). Decoding is greedy single-row (base budgets urd
+          256 / heb 512 new tokens; truncated rows re-decoded at ⌈1.2 × generated⌉, iterated),
+          ONNXRuntime CPU single-thread; all CERs are corpus-level; retention = 1 − recovery CER /
+          skeleton CER, both in the system's own Latin output space, and systems are ranked by it
+          (SPEC §3.4). Tables below show retention; the numbers are transcribed verbatim from the
+          merged results document.
+        </p>
+        {Object.entries(iv.languages).map(([lang, group]) => (
+          <>
+            <h3>
+              {ivrbLangLabels[lang]!} — {group.rows.toLocaleString("en-US")} rows
+            </h3>
+            <p class="fine-print">
+              Direct CER anchors (the model ceiling, <code>cer_nat</code>, reported beside every
+              table):{" "}
+              {group.models.map((m, i) => (
+                <>
+                  {i > 0 && "; "}
+                  <code>{m.id}</code> ({m.precision}) {m.directCer}
+                </>
+              ))}
+              .
+            </p>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Romanization system (ranked by retention)</th>
+                    {group.models.map((m) => (
+                      <th>
+                        <code>{m.id}</code> ({m.precision})
+                      </th>
+                    ))}
+                    <th>Mark leak</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {group.models[0]!.systems.map((sys) => (
+                    <tr>
+                      <td>
+                        {sys.rank}. <code>{sys.system}</code>
+                      </td>
+                      {group.models.map((m) => {
+                        const s = m.systems.find((x) => x.system === sys.system)!
+                        return <td class="tnum">{s.retention}</td>
+                      })}
+                      <td class="tnum">{sys.markLeak}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="fine-print">
+              Ranking ({group.rankingNote}):{" "}
+              <code>{group.models[0]!.systems.map((s) => s.system).join(" > ")}</code>. Per-system
+              recovery CER, skeleton CER, and encode rate accompany each row in{" "}
+              <code>src/data/ivrb.json</code> and the results document; mark leak = rows whose Latin
+              output leaks raw combining marks / total rows.
+            </p>
+          </>
+        ))}
+        <p class="fine-print">
+          <strong>Open gate ({iv.openGates[0]!.spec}):</strong> {iv.openGates[0]!.note}
+        </p>
+        <p class="fine-print">{iv.findings.hebrewDirectCerInversion}</p>
+        <p class="fine-print">{iv.findings.hebrewMarkLeak}</p>
+        <p>
+          Full protocol and metric definitions:{" "}
+          <a href={ivrbSourceUrl(iv.provenance.specPath)}>IVRB-SPEC.md</a>; merged v1 results
+          (decode records landed {iv.provenance.decodeDates}):{" "}
+          <a href={ivrbSourceUrl(iv.provenance.docPath)}>RESULTS-v1.md</a> in{" "}
+          <code>{iv.provenance.repo}</code>.
         </p>
       </div>
     </section>
