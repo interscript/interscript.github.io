@@ -27,14 +27,18 @@
     "markLeak": "rows whose Latin output leaks raw combining marks / total rows (SPEC §3)",
     "ranking": "systems ordered by retention (descending) per language; ties break on encode_rate — no ties occurred, so the tie-break did not fire (SPEC §3.4)"
   },
-  "openGates": [
-    {
-      "gate": "crossval",
-      "spec": "SPEC §9.4",
-      "status": "open",
-      "note": "SPEC §9.4 cross-validation did not run in these legs: every landed record carries crossval: null — no ≥ 200-row iscrs cross-check per system was captured. The ranking above is published with that gate OPEN; adjudication is owner-side."
-    }
-  ],
+  "crossval": {
+    "gate": "SPEC §9.4",
+    "status": "closed",
+    "agreement": "1.0",
+    "systems_checked": 7,
+    "checks_per_system": 400,
+    "sample_rows": 200,
+    "seed": 20261125,
+    "job": "6b0906e06c5d61fff1887455",
+    "record": "rhtse/jobs-artifacts/ivrb-crossval/crossval-records.json",
+    "date": "2026-11-27"
+  },
   "findings": {
     "hebrewDirectCerInversion": "heb-vocalized-1.1 shows direct CER 30.46% vs heb-vocalized-1.0's 25.18%, although 1.1 is the stronger house model (DER greedy 16.44 vs 29.0). The shipped Hebrew anchors are DER, not corpus-level CER, so this is not an anchor violation — reported verbatim, not normalized.",
     "hebrewMarkLeak": "Hebrew mark_leak is material (icao 1193/1864, din 851/1864) — the genuine map-robustness finding SPEC §10.4 anticipates, published not dropped."

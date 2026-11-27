@@ -80,7 +80,18 @@ interface IvrbData {
     specPath: string
     decodeDates: string
   }
-  openGates: { gate: string; spec: string; note: string }[]
+  crossval: {
+    gate: string
+    status: string
+    agreement: string
+    systems_checked: number
+    checks_per_system: number
+    sample_rows: number
+    seed: number
+    job: string
+    record: string
+    date: string
+  }
   findings: { hebrewDirectCerInversion: string; hebrewMarkLeak: string }
   languages: Record<string, IvrbLanguage>
 }
@@ -600,7 +611,11 @@ const firstBaselines = [
           </>
         ))}
         <p class="fine-print">
-          <strong>Open gate ({iv.openGates[0]!.spec}):</strong> {iv.openGates[0]!.note}
+          <strong>{iv.crossval.gate} cross-validation closed {iv.crossval.date}:</strong>{" "}
+          {iv.crossval.systems_checked}/{iv.crossval.systems_checked} systems at 100% agreement
+          (py engine vs iscrs, {iv.crossval.checks_per_system} checks per system,{" "}
+          {iv.crossval.sample_rows} sampled rows/language, seed {iv.crossval.seed} pinned); ranking
+          stands.
         </p>
         <p class="fine-print">{iv.findings.hebrewDirectCerInversion}</p>
         <p class="fine-print">{iv.findings.hebrewMarkLeak}</p>
