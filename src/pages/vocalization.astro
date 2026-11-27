@@ -239,23 +239,83 @@ const models = [
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       USE IT
+       GETTING STARTED — vocalization quickstart
        ════════════════════════════════════════════════════════════════ -->
-  <section class="section surface-deep" id="use-it">
+  <section class="section surface-deep" id="getting-started">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">Use it</p>
-        <h2>Three lines, any runtime.</h2>
+        <p class="eyebrow">Getting started</p>
+        <h2>Vocalize, in three lines per runtime.</h2>
         <p class="section-deck">
           A vocalization id resolves against the models.yaml index, downloads once, and is
           sha256-verified on every load — then it runs locally, no server involved, with
-          byte-identical output from TypeScript, Ruby, and Python. The worked example on the
-          neural layer page is this family's own heb-vocalized-plane-3.0 restoring the nikud of
-          unpointed Hebrew. Install lines, cache configuration, and the REST endpoint are in{" "}
-          <a href="/ml#getting-started">Use the models</a> on <a href="/ml">the /ml page</a>; the
-          browser demo is at <a href="/neural">/neural</a>.
+          byte-identical output from TypeScript, Ruby, and Python. Both worked examples below are
+          frozen conformance vectors from the models fixtures — unpointed text in, vocalized text
+          out — so what your runtime prints can be diffed byte against byte.
         </p>
       </header>
+      <div class="crystal-code">
+        <pre><code>{`# install — the neural layer ships inside the same package
+npm install interscript          # TypeScript / JavaScript
+gem install interscript          # Ruby (onnxruntime loads lazily)
+pip install "interscript[ml]"    # Python`}</code></pre>
+        <pre><code>{`// TypeScript — heb-vocalized-plane-3.0 (plane, mask-predict)
+import { imf, PlaneModel } from "interscript/ml"
+
+const model = await PlaneModel.fromZip((await imf.resolve("heb-vocalized-plane-3.0")).bytes)
+await model.transform("ואם הזה, כשר")
+// → "\\u05d5\\u05b0\\u05d0\\u05b4\\u05dd \\u05d4\\u05b4\\u05d6\\u05bc\\u05b8\\u05d4, \\u05db\\u05bc\\u05b8\\u05e9\\u05c1\\u05b5\\u05e8"`}</code></pre>
+        <pre><code>{`# Ruby
+require "interscript/ml"
+
+model = Interscript::ML::PlaneModel.from_zip(
+  File.binread(Interscript::ML::IMF.resolve("heb-vocalized-plane-3.0")))
+model.translate("ואם הזה, כשר")
+# => "\\u05d5\\u05b0\\u05d0\\u05b4\\u05dd \\u05d4\\u05b4\\u05d6\\u05bc\\u05b8\\u05d4, \\u05db\\u05bc\\u05b8\\u05e9\\u05c1\\u05b5\\u05e8"`}</code></pre>
+        <pre><code>{`# Python
+import interscript
+
+interscript.transliterate("heb-vocalized-plane-3.0", "ואם הזה, כשר")
+# → "\\u05d5\\u05b0\\u05d0\\u05b4\\u05dd \\u05d4\\u05b4\\u05d6\\u05bc\\u05b8\\u05d4, \\u05db\\u05bc\\u05b8\\u05e9\\u05c1\\u05b5\\u05e8"`}</code></pre>
+        <pre><code>{`// TypeScript — urd-vocalized-2.0 (seq2seq, ByT5-small)
+import { imf } from "interscript/ml"
+
+const model = await imf.IMFModel.load("urd-vocalized-2.0")
+await model.translate("فاسد العقیدہ")
+// → "\\u0641\\u0652\\u0627\\u0633\\u0652\\u062f\\u0650 \\u0627\\u0644\\u0652\\u0639\\u064f\\u0642\\u0652\\u06cc\\u062f\\u0652\\u06c1\\u064e"`}</code></pre>
+        <pre><code>{`# Ruby
+require "interscript/ml"
+
+model = Interscript::ML::Translator.new(
+  model_file: Interscript::ML::IMF.resolve("urd-vocalized-2.0"))
+model.translate("فاسد العقیدہ")
+# => "\\u0641\\u0652\\u0627\\u0633\\u0652\\u062f\\u0650 \\u0627\\u0644\\u0652\\u0639\\u064f\\u0642\\u0652\\u06cc\\u062f\\u0652\\u06c1\\u064e"`}</code></pre>
+        <pre><code>{`# Python
+import interscript
+
+interscript.transliterate("urd-vocalized-2.0", "فاسد العقیدہ")
+# → "\\u0641\\u0652\\u0627\\u0633\\u0652\\u062f\\u0650 \\u0627\\u0644\\u0652\\u0639\\u064f\\u0642\\u0652\\u06cc\\u062f\\u0652\\u06c1\\u064e"`}</code></pre>
+      </div>
+      <p class="env-note">
+        The expected outputs are printed as <code>\u</code> escape sequences on purpose: Hebrew
+        combining-mark order is bidi-fragile, and escapes let you diff the bytes your runtime
+        produced against the frozen vector instead of trusting screen rendering. Both vectors are
+        machine-checked in a real browser by the site's conformance gate,{" "}
+        <a
+          href="https://github.com/interscript/interscript.github.io/blob/main/e2e/neural-vocalization.spec.ts"
+          >e2e/neural-vocalization.spec.ts</a
+        > — run as <code>BROWSER_VOCAL_E2E=1 npx playwright test e2e/neural-vocalization.spec.ts</code>,
+        it downloads the released artifacts through the <a href="/neural">/neural</a> demo's worker
+        and asserts each output byte-exactly.
+      </p>
+      <p class="env-note">
+        First use downloads the int8 artifact (397&nbsp;MiB for the Hebrew plane model,
+        249&nbsp;MiB for either Urdu model) and caches it — point the cache at{" "}
+        <code>INTERSCRIPT_ML_CACHE</code>; every later load re-verifies the sha256. Install lines,
+        mirrors, and the REST endpoint <code>POST https://api.interscript.org/v1/infer</code> are
+        documented in <a href="/ml#getting-started">Use the models</a> on{" "}
+        <a href="/ml">the /ml page</a>.
+      </p>
     </div>
   </section>
 
@@ -457,6 +517,37 @@ github.com/interscript/urdu-dev             # clause 16(e) instrument</code></pr
     max-width: 48rem;
   }
   .gate-block a {
+    color: var(--color-highlight);
+  }
+
+  /* ── Quickstart code ───────────────────────────────────────────── */
+  .crystal-code {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 900px) {
+    .crystal-code {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+  }
+  .crystal-code > * {
+    min-width: 0;
+  }
+  .crystal-code pre {
+    margin: 0;
+  }
+  .env-note {
+    margin-top: 1.5rem;
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+  }
+  .env-note code {
+    font-size: 0.8125rem;
+  }
+  .env-note a {
     color: var(--color-highlight);
   }
 
